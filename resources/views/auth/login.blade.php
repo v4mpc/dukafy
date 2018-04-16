@@ -16,13 +16,7 @@
 
 @endsection
 
-@section('topbar')
 
-@endsection
-
-@section('sidebar')
-
-@endsection
 
 @section('content')
 <div class="app-content content">
@@ -91,9 +85,7 @@
   </div>
 @endsection
 
-@section('footer')
 
-@endsection
 
 @section('page_vendor_js')
 <script src="{{asset('vendor/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>

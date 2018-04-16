@@ -3,13 +3,18 @@
 data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
  
 {{-- fixed-top --}}
+@if(Auth::check())
+    @include('partials._topbar')
+    {{-- end fixed-top --}}
+    @include('partials._sidebar')
+@endif
 
-@yield('topbar')
-
-{{-- end fixed-top --}}
-@yield('sidebar')
 @yield('content')
-@yield('footer')
+
+@if(Auth::check())
+    @include('partials._footer')
+@endif
+
 
 <!-- BEGIN VENDOR JS-->
 <script src="{{asset('vendor/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
