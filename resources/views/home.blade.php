@@ -2,6 +2,11 @@
 
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/weather-icons/climacons.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/meteocons/style.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/charts/morris.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/charts/chartist.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/charts/chartist-plugin-tooltip.css')}}">
 
 @endsection
 
@@ -11,6 +16,10 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/menu/menu-types/vertical-menu-modern.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/timeline.min.css')}}">
+
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/dashboard-ecommerce.min.css')}}">
 
 @endsection
 
@@ -34,16 +43,13 @@
                   <div class="media d-flex">
                     <div class="media-body text-left">
                       <h3 class="info">850</h3>
-                      <h6>Products Sold</h6>
+                      <h6> All Products</h6>
                     </div>
                     <div>
-                      <i class="icon-basket-loaded info font-large-2 float-right"></i>
+                      <i class="icon-bag info font-large-2 float-right"></i>
                     </div>
                   </div>
-                  <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                    <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%"
-                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -54,17 +60,14 @@
                 <div class="card-body">
                   <div class="media d-flex">
                     <div class="media-body text-left">
-                      <h3 class="warning">$748</h3>
-                      <h6>Net Profit</h6>
+                      <h3 class="warning">748</h3>
+                      <h6>Available Products</h6>
                     </div>
                     <div>
-                      <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                      <i class="icon-basket-loaded warning font-large-2 float-right"></i>
                     </div>
                   </div>
-                  <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                    <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%"
-                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -75,38 +78,32 @@
                 <div class="card-body">
                   <div class="media d-flex">
                     <div class="media-body text-left">
-                      <h3 class="success">146</h3>
-                      <h6>Products Available</h6>
-                    </div>
-                    <div>
-                      <i class="icon-tag success font-large-2 float-right"></i>
-                    </div>
-                  </div>
-                  <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                    <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%"
-                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
-              <div class="card-content">
-                <div class="card-body">
-                  <div class="media d-flex">
-                    <div class="media-body text-left">
-                      <h3 class="danger">45</h3>
+                      <h3 class="danger">146</h3>
                       <h6>Out Of Stock</h6>
                     </div>
                     <div>
-                      <i class="icon-heart danger font-large-2 float-right"></i>
+                      <i class="icon-social-dropbox danger font-large-2 float-right"></i>
                     </div>
                   </div>
-                  <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                    <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 85%"
-                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+               
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card pull-up">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="media-body text-left">
+                      <h3 class="success">45,4565</h3>
+                      <h6>Total Salaes</h6>
+                    </div>
+                    <div>
+                      <i class="icon-wallet success font-large-2 float-right"></i>
+                    </div>
                   </div>
+                
                 </div>
               </div>
             </div>
@@ -120,12 +117,12 @@
               <div class="card card-shadow">
                 <div class="card-header card-header-transparent py-20">
                   <div class="btn-group dropdown">
-                    <a href="#" class="text-body dropdown-toggle blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
-                    <div class="dropdown-menu animate" role="menu">
+                    <a href="#" class="text-body  blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
+                    {{-- <div class="dropdown-menu animate" role="menu">
                       <a class="dropdown-item" href="#" role="menuitem">Sales</a>
                       <a class="dropdown-item" href="#" role="menuitem">Total sales</a>
                       <a class="dropdown-item" href="#" role="menuitem">profit</a>
-                    </div>
+                    </div> --}}
                   </div>
                   <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
                     <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Day</a></li>
@@ -298,15 +295,19 @@
 
 
 @section('page_vendor_js')
-<script src="{{asset('vendor/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>
-  <script src="{{asset('vendor/vendors/js/forms/validation/jqBootstrapValidation.js')}}"
+<script src="{{asset('vendor/vendors/js/charts/chartist.min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/charts/chartist-plugin-tooltip.min.js')}}"
   type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/charts/morris.min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/timeline/horizontal-timeline.js')}}" type="text/javascript"></script>
 @endsection
 
 
 
 @section('page_level_js')
 
-<script src="{{asset('vendor/js/scripts/forms/form-login-register.min.js')}}" type="text/javascript"></script>
+
+<script src="{{asset('vendor/js/scripts/pages/dashboard-ecommerce.min.js')}}" type="text/javascript"></script>
 
 @endsection
