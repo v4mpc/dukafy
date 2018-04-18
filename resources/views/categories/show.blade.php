@@ -99,7 +99,7 @@
                                    <h4> <li>Price: <strong>12,000</strong> <span class="badge badge-success">Visible</span></li></h4>
                                     <h4><li>Category: <strong>Men</strong></li></h4>
                                     <h4><li>Sub-category: <strong>Clothes</strong></li></h4>
-                                   <h4> <li>Description: <strong></h4> as opposed to the round neckline of the more common crew neck shirt</strong></li>
+                                    <li>Description: <strong>as opposed to the round neckline of the more common crew neck shirt</strong></li>
                                     <li></li>
                                 </ul>
 
