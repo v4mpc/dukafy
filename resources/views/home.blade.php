@@ -230,6 +230,7 @@
                           <th class="border-top-0">Categories</th>
                          
                           <th class="border-top-0">Amount</th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -247,6 +248,7 @@
                           </td>
                          
                           <td class="text-truncate"> 1200.00</td>
+                          <td> <a class="btn btn-outline-primary edit-item-btn">View</a></td>
                         </tr>
                         <tr>
                           
@@ -262,6 +264,7 @@
                           </td>
                          
                           <td class="text-truncate"> 1200.00</td>
+                          <td> <a class="btn btn-outline-primary edit-item-btn">View</a></td>
                         </tr>
                         <tr>
                           
@@ -277,6 +280,7 @@
                           </td>
                          
                           <td class="text-truncate"> 1200.00</td>
+                          <td> <a class="btn btn-outline-primary edit-item-btn">View</a></td>
                         </tr>
                        </tbody>
                     </table>

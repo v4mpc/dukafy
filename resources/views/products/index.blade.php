@@ -3,6 +3,7 @@
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/tables/datatable/datatables.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/zoom.css')}}">
 
 
   
@@ -15,8 +16,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/menu/menu-types/vertical-menu-modern.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/forms/checkboxes-radios.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/forms/switch.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-tooltip.min.css')}}">
 
 @endsection
 
@@ -76,312 +78,142 @@
                                     <th>Name</th>
                                     <th>Category</th>
                                     <th>Sub-category</th>
-                                    <th>Age</th>
-    
+                                    <th>Image</th>
                                     <th>Price</th>
-                                    {{-- <th>Action</th> --}}
-                                    
+                                    <th></th>    
                                   </tr>
                                 </thead>
                                 <tbody>
+                                 
+                                  
+                                 
+                              
                                   <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>320,800</td>
-                                    {{-- <td> <div class="btn-group mr-1 mb-1">
-                                            <button type="button" class="btn btn-light btn-sm"> Action</button>
-                                            <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              <span class="sr-only">Toggle Dropdown</span>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="#"><i class="fa fa-eye" aria-hidden="true"></i> Details</a>
-                                              <a class="dropdown-item" href="#"><i class="fa fa-edit"></i> Edit</a>
-                                              <a class="dropdown-item" href="#"><i class="fa fa-recycle"></i> Out Of Stock</a>
-                                              <div class="dropdown-divider"></div>
-                                              <a class="dropdown-item" href="#"><i class="fa fa-remove"></i> Delete</a>
-                                            </div>
-                                          </div> --}}
-</td>
-                                        </tr>
-                                  <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    
-                                    <td>170,750</td>
-
-                                  </tr>
-                                  <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    
-                                    <td>86,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    
-                                    <td>433,060</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    
-                                    <td>162,700</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Brielle Williamson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>New York</td>
-                                    <td>61</td>
-                                    
-                                    <td>372,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Herrod Chandler</td>
-                                    <td>Sales Assistant</td>
-                                    <td>San Francisco</td>
-                                    <td>59</td>
-                                    
-                                    <td>137,500</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Rhona Davidson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Tokyo</td>
-                                    <td>55</td>
-                                    
-                                    <td>327,900</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Colleen Hurst</td>
-                                    <td>Javascript Developer</td>
-                                    <td>San Francisco</td>
-                                    <td>39</td>
-                                    
-                                    <td>205,500</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Sonya Frost</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>23</td>
-                                    
-                                    <td>103,600</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Jena Gaines</td>
-                                    <td>Sub-category Manager</td>
-                                    <td>London</td>
-                                    <td>30</td>
-                                    
-                                    <td>90,560</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Quinn Flynn</td>
-                                    <td>Support Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    
-                                    <td>342,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Charde Marshall</td>
-                                    <td>Regional Director</td>
-                                    <td>San Francisco</td>
-                                    <td>36</td>
-                                    
-                                    <td>470,600</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Haley Kennedy</td>
-                                    <td>Senior Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>43</td>
-                                    
-                                    <td>313,500</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Tatyana Fitzpatrick</td>
-                                    <td>Regional Director</td>
-                                    <td>London</td>
-                                    <td>19</td>
-                                    
-                                    <td>385,750</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Michael Silva</td>
-                                    <td>Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>66</td>
-                                    
-                                    <td>198,500</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Paul Byrd</td>
-                                    <td>Chief Financial Sub-categoryr (CFO)</td>
-                                    <td>New York</td>
-                                    <td>64</td>
-                                    
-                                    <td>725,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Gloria Little</td>
-                                    <td>Systems Administrator</td>
-                                    <td>New York</td>
-                                    <td>59</td>
-                                    
-                                    <td>237,500</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Bradley Greer</td>
-                                    <td>Software Engineer</td>
-                                    <td>London</td>
-                                    <td>41</td>
-                                    
-                                    <td>132,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Dai Rios</td>
-                                    <td>Personnel Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>35</td>
-                                    
-                                    <td>217,500</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Jenette Caldwell</td>
-                                    <td>Development Lead</td>
-                                    <td>New York</td>
-                                    <td>30</td>
-                                    
-                                    <td>345,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Yuri Berry</td>
-                                    <td>Chief Marketing Sub-categoryr (CMO)</td>
-                                    <td>New York</td>
-                                    <td>40</td>
-                                    
-                                    <td>675,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Caesar Vance</td>
-                                    <td>Pre-Sales Support</td>
-                                    <td>New York</td>
-                                    <td>21</td>
-                                    
-                                    <td>106,450</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Doris Wilder</td>
-                                    <td>Sales Assistant</td>
-                                    <td>Sidney</td>
-                                    <td>23</td>
-                                    
-                                    <td>85,600</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Angelica Ramos</td>
-                                    <td>Chief Executive Sub-categoryr (CEO)</td>
-                                    <td>London</td>
-                                    <td>47</td>
+                                    <td>Iphone 6 </td>
+                                    <td>Electronics</td>
+                                    <td>Phone</td>
+                                    <td><img src="{{asset('images/iphone6.png ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>1,200,000</td>
+                                
+                                  <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     
+                                    </td>
                                   </tr>
                                   <tr>
-                                    <td>Gavin Joyce</td>
-                                    <td>Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>42</td>
+                                    <td>Tshirt</td>
+                                    <td>Men</td>
+                                    <td>Casual</td>
+                                    <td><img data-action="zoom" src="{{asset('images/tshirt.jpg  ')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>92,575</td>
+                                    <td>10,000</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Jennifer Chang</td>
-                                    <td>Regional Director</td>
-                                    <td>Singapore</td>
-                                    <td>28</td>
+                                    <td>Watch</td>
+                                    <td>Men</td>
+                                    <td>Accessories</td>
+                                    <td><img src="{{asset('images/watch.jpg ')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>357,650</td>
+                                    <td>137,500</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Brenden Wagner</td>
-                                    <td>Software Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>28</td>
+                                    <td>Shoe</td>
+                                    <td>Men</td>
+                                    <td>Casual</td>
+                                    <td><img src="{{asset('images/shoe.jpg')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>206,850</td>
+                                    
+                                    <td>327,900</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Fiona Green</td>
-                                    <td>Chief Operating Sub-categoryr (COO)</td>
-                                    <td>San Francisco</td>
-                                    <td>48</td>
+                                    <td>Drone</td>
+                                    <td>Electronics</td>
+                                    <td>Tools</td>
+                                    <td><img src="{{asset('images/drone.jpg')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>850,000</td>
+                                    <td>205,500</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Shou Itou</td>
-                                    <td>Regional Marketing</td>
-                                    <td>Tokyo</td>
-                                    <td>20</td>
-                                    <td>850,000</td>
+                                    <td>  Dress</td>
+                                    <td>Female</td>
+                                    <td>Clothes</td>
+                                    <td><img src="{{asset('images/dress.jpg')}}" width="70" height="100" alt="">
+                                    </td>
                                     
-                            
+                                    <td>103,600</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Michelle House</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Sidney</td>
-                                    <td>37</td>
+                                    <td>Handbag</td>
+                                    <td>Female</td>
+                                    <td>Accessories</td>
+                                    <td><img src="{{asset('images/handbag.jpeg')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>95,400</td>
+                                    <td>90,560</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Suki Burks</td>
-                                    <td>Developer</td>
-                                    <td>London</td>
-                                    <td>53</td>
+                                    <td>Diper</td>
+                                    <td>Kids</td>
+                                    <td>-</td>
+                                    <td><img src="{{asset('images/dipers.jpeg')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>114,500</td>
+                                    <td>342,000</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
+                                  </tr>
+                                
+                                  <tr>
+                                    <td>Cake</td>
+                                    <td>Food</td>
+                                    <td>Party</td>
+                                    <td><img src="{{asset('images/cake.jpg ')}}" width="104" height="98" alt=""></td>
+                                    
+                                    <td>313,500</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>Prescott Bartlett</td>
-                                    <td>Technical Author</td>
-                                    <td>London</td>
-                                    <td>27</td>
+                                    <td>Flower/td>
+                                    <td>Decoration</td>
+                                    <td>Party</td>
+                                    <td><img src="{{asset('images/flower.jpg ')}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>145,000</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Gavin Cortez</td>
-                                    <td>Team Leader</td>
-                                    <td>San Francisco</td>
-                                    <td>22</td>
-                                    
-                                    <td>235,500</td>
+                                    <td>385,750</td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Details" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Out Stock" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-box"></i></a>
+                                     </td>
                                   </tr>
                                  
-                                </tbody>
-                                <tfoot>
-                                  <tr>
-                                    <th>Name</th>
-                                    <th>Category</th>
-                                    <th>Sub-category</th>
-                                    <th>Age</th>
-                                
-                                    <th>Price</th>
-                                  </tr>
                                 </tfoot>
                               </table>
                             </div>
@@ -404,6 +236,7 @@
 @section('page_vendor_js')
 
 <script src="{{asset('vendor/vendors/js/tables/datatable/datatables.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/extensions/zoom.min.js')}}" type="text/javascript"></script>
 
 @endsection
 
@@ -412,9 +245,10 @@
 @section('page_level_js')
 
 <script src="{{asset('vendor/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/tooltip/tooltip.min.js')}}" type="text/javascript"></script>
 
 @endsection
-{{-- <div class="btn-group mr-1 mb-1">
+ <div class="btn-group mr-1 mb-1">
         <button type="button" class="btn btn-light"> Action</button>
         <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{-- <span class="sr-only">Toggle Dropdown</span> --}}
@@ -426,4 +260,4 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#"><i class="fa fa-remove"></i> Delete</a>
         </div>
-      </div> --}}
+      </div>
