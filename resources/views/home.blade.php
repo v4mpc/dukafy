@@ -82,7 +82,7 @@
                       <h6>Out Of Stock</h6>
                     </div>
                     <div>
-                      <i class="icon-social-dropbox danger font-large-2 float-right"></i>
+                      <i class="ft-log-out danger font-large-2 float-right"></i>
                     </div>
                   </div>
                

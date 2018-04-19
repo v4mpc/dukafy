@@ -25,8 +25,8 @@ Route::middleware('auth')->group(function(){
 Route::resource('/categories', 'CategoryController');
 Route::resource('/sub_categories', 'SubCategoryController');
 Route::resource('/out_stock', 'OutStockController');
-Route::resource('/featured', 'SubCategoryController');
-Route::resource('/reports', 'ReportController');
+Route::resource('/featured', 'FeaturedController');
+//Route::resource('/reports', 'ReportController');
 Route::resource('/users', 'UserController');
 });
 
