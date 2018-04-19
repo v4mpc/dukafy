@@ -229,7 +229,7 @@
                           <i class="ft-x"></i> Cancel
                         </button>
                         <button type="submit" class="btn btn-primary">
-                          <i class="la la-check-square-o"></i> Save
+                          <i class="ft-save"></i> Save
                         </button>
                       </div>
                     </form>

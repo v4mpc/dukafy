@@ -20,6 +20,7 @@
   <!-- END VENDOR CSS-->
   <!-- BEGIN MODERN CSS-->
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/app.min.css')}}">
+  
   <!-- END MODERN CSS-->
   <!-- BEGIN Page Level CSS-->
   @yield('page_level_css')

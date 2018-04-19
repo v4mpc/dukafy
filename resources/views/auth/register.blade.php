@@ -64,14 +64,14 @@
                         <input type="password" class="form-control form-control-lg input-lg" name="password" id="user-password"
                         placeholder="Enter Password" required>
                         <div class="form-control-position">
-                          <i class="la la-key"></i>
+                          <i class="ft-lock"></i>
                         </div>
                       </fieldset>
                       <fieldset class="form-group position-relative has-icon-left">
                         <input type="password" class="form-control form-control-lg input-lg" name="password_confirmation" id="user-password-confirm"
                         placeholder="Confirm Password" required>
                         <div class="form-control-position">
-                          <i class="la la-key"></i>
+                          <i class="ft-lock"></i>
                         </div>
                       </fieldset>
                       <button type="submit" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> Register</button>

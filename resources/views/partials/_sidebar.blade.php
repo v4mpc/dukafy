@@ -30,6 +30,20 @@
         <li class=" nav-item {{Request::is('users')?"open":""}}"><a href="{{route('users.index')}}"><i class="ft-user"></i><span class="menu-title" data-i18n="nav.dash.main">User Management</span></a>
          
         </li>
+
+        <li class=" nav-item {{Request::is('settings/*')?"open":""}}"><a href=""><i class="ft-settings"></i><span class="menu-title" data-i18n="nav.dash.main">Settings</span></a>
+          <ul class="menu-content">
+              <li><a class="menu-item" href="{{route('settings.create')}}" data-i18n="nav.cards.card_statistics">Layout Wizard</a>
+              </li>
+              <li><a class="menu-item" href="{{route('settings.layout_form')}}" data-i18n="nav.cards.card_weather">Layout</a>
+              </li>
+              <li><a class="menu-item" href="{{route('settings.logo_form')}}" data-i18n="nav.cards.card_charts">Logo</a>
+              </li>
+              <li><a class="menu-item" href="{{route('settings.company_address_form')}}" data-i18n="nav.cards.card_interactive">Company Address</a>
+              </li>
+        
+            </ul>
+        </li>
       
        
       </ul>

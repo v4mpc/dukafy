@@ -96,8 +96,8 @@
                                     
                                     <td>1,200,000</td>
                                 
-                                  <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                  <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      
                                      
@@ -110,8 +110,8 @@
                                     <td><img data-action="zoom" src="{{asset('images/tshirt.jpg  ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>10,000</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -122,8 +122,8 @@
                                     <td><img src="{{asset('images/watch.jpg ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>137,500</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -135,8 +135,8 @@
                                     
                                     
                                     <td>327,900</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -147,8 +147,8 @@
                                     <td><img src="{{asset('images/drone.jpg')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>205,500</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -160,8 +160,8 @@
                                     </td>
                                     
                                     <td>103,600</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -172,8 +172,8 @@
                                     <td><img src="{{asset('images/handbag.jpeg')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>90,560</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -184,8 +184,8 @@
                                     <td><img src="{{asset('images/dipers.jpeg')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>342,000</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -197,8 +197,8 @@
                                     <td><img src="{{asset('images/cake.jpg ')}}" width="104" height="98" alt=""></td>
                                     
                                     <td>313,500</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>
@@ -209,8 +209,8 @@
                                     <td><img src="{{asset('images/flower.jpg ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>385,750</td>
-                                    <td><a href="{{route('featured.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <td>
+                                     
                                       <a data-toggle="tooltip" data-original-title="Unfeatured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-x-square"></i></a>
                                      </td>
                                   </tr>

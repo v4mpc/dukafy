@@ -1,9 +1,13 @@
 @extends('layouts.layout')
 
+
+
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/tables/datatable/datatables.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/zoom.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
+
 
 
   
@@ -20,12 +24,18 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-tooltip.min.css')}}">
 
+  
+
 @endsection
 
 
 
 
+
+
 @section('content')
+
+@include('partials._messages')  
 
 <div class="app-content content">
         <div class="content-wrapper">
@@ -85,7 +95,12 @@
                                 </thead>
                                 <tbody>
                                  
-                                  
+                                    {{-- <div class="col-md-6 col-sm-12">
+                                        <h5>Confirm Button Color</h5>
+                                        <p>Use <code>className: "btn-warning"</code> option to change the
+                                          background color of the "Confirm"-button.</p>
+                                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-2" id="confirm-color">Confirm Button Color</button>
+                                      </div> --}}
                                  
                               
                                   <tr>
@@ -96,11 +111,10 @@
                                     
                                     <td>1,200,000</td>
                                 
-                                  <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     
-                                     
+                                  <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                    <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                    <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>  
                                     </td>
                                   </tr>
                                   <tr>
@@ -110,10 +124,10 @@
                                     <td><img data-action="zoom" src="{{asset('images/tshirt.jpg  ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>10,000</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                   <tr>
                                     <td>Watch</td>
@@ -122,10 +136,10 @@
                                     <td><img src="{{asset('images/watch.jpg ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>137,500</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                   <tr>
                                     <td>Shoe</td>
@@ -135,9 +149,10 @@
                                     
                                     
                                     <td>327,900</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                                      </td>
                                   </tr>
                                   <tr>
@@ -147,9 +162,10 @@
                                     <td><img src="{{asset('images/drone.jpg')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>205,500</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                                      </td>
                                   </tr>
                                   <tr>
@@ -160,10 +176,10 @@
                                     </td>
                                     
                                     <td>103,600</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                   <tr>
                                     <td>Handbag</td>
@@ -172,10 +188,10 @@
                                     <td><img src="{{asset('images/handbag.jpeg')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>90,560</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                   <tr>
                                     <td>Diper</td>
@@ -184,10 +200,10 @@
                                     <td><img src="{{asset('images/dipers.jpeg')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>342,000</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                 
                                   <tr>
@@ -197,10 +213,10 @@
                                     <td><img src="{{asset('images/cake.jpg ')}}" width="104" height="98" alt=""></td>
                                     
                                     <td>313,500</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                   <tr>
                                     <td>Flower</td>
@@ -209,10 +225,10 @@
                                     <td><img src="{{asset('images/flower.jpg ')}}" width="100" height="100" alt=""></td>
                                     
                                     <td>385,750</td>
-                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary edit-item-btn"><i class="ft-eye"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"  class="btn btn-outline-warning edit-item-btn"><i class="ft-star"></i></a>
-                                     </td>
+                                    <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
                                   </tr>
                                  
                                 </tfoot>
@@ -239,6 +255,7 @@
 <script src="{{asset('vendor/vendors/js/tables/datatable/datatables.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/extensions/zoom.min.js')}}" type="text/javascript"></script>
 
+
 @endsection
 
 
@@ -248,17 +265,6 @@
 <script src="{{asset('vendor/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/tooltip/tooltip.min.js')}}" type="text/javascript"></script>
 
+
+
 @endsection
- <div class="btn-group mr-1 mb-1">
-        <button type="button" class="btn btn-light"> Action</button>
-        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{-- <span class="sr-only">Toggle Dropdown</span> --}}
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#"><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-edit"></i> Edit</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-recycle"></i> Out Of Stock</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"><i class="fa fa-remove"></i> Delete</a>
-        </div>
-      </div>

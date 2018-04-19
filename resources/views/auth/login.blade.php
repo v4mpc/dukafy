@@ -19,7 +19,7 @@
 
 
 @section('content')
-<div class="app-content content">
+<div class="app-content content"> 
     <div class="content-wrapper">
       <div class="content-header row">
       </div>
@@ -54,7 +54,7 @@
                         <input type="password" class="form-control form-control-lg input-lg" name="password" id="user-password"
                         placeholder="Enter Password" required>
                         <div class="form-control-position">
-                          <i class="la la-key"></i>
+                          <i class="ft-lock"></i>
                         </div>
                       </fieldset>
                       <div class="form-group row">

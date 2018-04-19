@@ -28,6 +28,14 @@ Route::resource('/out_stock', 'OutStockController');
 Route::resource('/featured', 'FeaturedController');
 //Route::resource('/reports', 'ReportController');
 Route::resource('/users', 'UserController');
+Route::resource('/settings', 'SettingController');
+Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
+Route::get('/logo_form','SettingController@getLogoForm')->name('settings.logo_form');
+Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
+Route::get('/company_address_form','SettingController@getCompanyAddressForm')->name('settings.company_address_form');
+
+
+
 });
 
 

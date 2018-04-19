@@ -151,7 +151,7 @@ aria-hidden="true">
                                     
                                     <td>
                                       <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger edit-item-btn"><i class="ft-trash"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"   class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                                      </td>
                                   </tr>
                                   
@@ -165,7 +165,7 @@ aria-hidden="true">
                                 
                                     <td>
                                       <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger edit-item-btn"><i class="ft-trash"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top" class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                                      </td>
                                   </tr>
                                   <tr>
@@ -177,7 +177,7 @@ aria-hidden="true">
                                     
                                     <td>
                                       <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger edit-item-btn"><i class="ft-trash"></i></a>
+                                      <a data-toggle="tooltip" data-original-title="Delete"  data-placement="top"   class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                                      </td>
                                   </tr>
                                                                
