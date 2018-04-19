@@ -80,34 +80,36 @@
                 <div class="card-content collapse show">
                   <div class="card-body">
                     <form action="#">
-                      
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                              <label for="eventName1">Address #</label>
-                              <input type="text" class="form-control" id="eventName1">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="eventName1">Phone #</label>
-                                <input type="text" class="form-control" id="eventName1">
-                              </div>
-
+                        <div class="row">
+                            <div class="col-md-12">
+                           <i>   <h5>Use "|" for multiple value</h5></i>
                               <div class="form-group">
-                                  <label for="eventName1">Mobile #</label>
-                                  <input type="text" class="form-control" id="eventName1">
+                                <label for="eventName1">Address #</label>
+                                <input type="text" class="form-control" id="eventName1" placeholder="address1|address2">
+                              </div>
+  
+                              <div class="form-group">
+                                  <label for="eventName1">Phone #</label>
+                                  <input type="text" class="form-control" id="eventName1" placeholder="phone1|phone2">
                                 </div>
-
+  
                                 <div class="form-group">
-                                    <label for="eventName1">Email </label>
-                                    <input type="text" class="form-control" id="eventName1">
+                                    <label for="eventName1">Mobile #</label>
+                                    <input type="text" class="form-control" id="eventName1" placeholder="mobile1|mobile2">
                                   </div>
-
+  
                                   <div class="form-group">
-                                      <label for="eventName1">Working Hours</label>
-                                      <input type="text" class="form-control" id="eventName1">
+                                      <label for="eventName1">Email </label>
+                                      <input type="text" class="form-control" id="eventName1" placeholder="email1|email2">
                                     </div>
-                         
+  
+                                    <div class="form-group">
+                                        <label for="eventName1">Working Hours </label>
+                                        <input type="text" class="form-control" id="eventName1" placeholder="start|close">
+                                      </div>
+                           
+                             
+                          </div>
 
      
                    
