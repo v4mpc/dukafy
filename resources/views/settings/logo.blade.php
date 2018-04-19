@@ -97,7 +97,7 @@
 
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label class="col-md-3 label-control">Home Slider </label>
+                                  <label class="col-md-3 label-control">Home Slider(max 3 images) </label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block">
                                       <input type="file" id="file">
