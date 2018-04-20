@@ -45,11 +45,11 @@
               </div>
             </div>
             <div class="content-header-right col-md-6 col-12">
-              <div class="dropdown float-md-right">
-                  <button data-toggle="modal" data-target="#inlineForm" class="btn btn-float btn-round btn-primary">Add User</button>
-                
+                <div class="dropdown float-md-right">
+                <a href="{{route('users.create')}}" class="btn btn-float btn-round btn-primary">Add User</a>
+                  
+                </div>
               </div>
-            </div>
           </div>
 
 <!-- Modal -->
@@ -215,16 +215,4 @@ aria-hidden="true">
 <script src="{{asset('vendor/js/scripts/tooltip/tooltip.min.js')}}" type="text/javascript"></script>
 
 @endsection
- <div class="btn-group mr-1 mb-1">
-        <button type="button" class="btn btn-light"> Action</button>
-        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{-- <span class="sr-only">Toggle Dropdown</span> --}}
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#"><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-edit"></i> Edit</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-recycle"></i> Out Of Stock</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"><i class="fa fa-remove"></i> Delete</a>
-        </div>
-      </div>
+ 

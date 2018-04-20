@@ -10,6 +10,10 @@
          
         </li>
 
+        <li class=" nav-item {{Request::is('orders')?"open":""}}"><a href="{{route('orders.index')}}"><i class="ft-package"></i><span class="menu-title" data-i18n="nav.dash.main">Orders</span></a>
+         
+        </li>
+
         <li class=" nav-item {{Request::is('categories')?"open":""}}"><a href="{{route('categories.index')}}"><i class="ft-list"></i><span class="menu-title" data-i18n="nav.dash.main">Categories</span></a>
          
         </li>
