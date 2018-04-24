@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Session;
+// use App\Http\Requests;
+use App\Http\Requests\StoreCategory;
+
 
 class CategoryController extends Controller
 {
@@ -14,7 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('categories.index');
+        $categories=Category::all();
+        return view('categories.index')->with('categories',$categories);
     }
 
     /**
@@ -30,12 +35,20 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreCategory $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategory $request)
     {
-        //
+
+
+       $category=new Category;
+
+       $category->name=$request->name;
+       $category->save();
+
+        Session::flash('success', 'Category Saved!');
+         return redirect()->route('categories.index');
     }
 
     /**
@@ -55,9 +68,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category=Category::FindOrFail($id);
+        return view('categories.edit')->with('category',$category);
     }
 
     /**
@@ -67,9 +81,13 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategory $request, $id)
     {
-        //
+        $category=Category::findOrFail($id);
+        $category->name=$request->name;
+        $category->save();
+        Session::flash('success', 'Category Saved!');
+         return redirect()->route('categories.index');
     }
 
     /**
@@ -78,8 +96,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category=Category::findOrFail($id);
+        $category->delete();
+        return response()->json($category);
     }
 }

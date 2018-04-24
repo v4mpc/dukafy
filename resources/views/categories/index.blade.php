@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-            <!-- Modal -->
+            <!-- Modal create -->
             <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
             aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -62,11 +62,13 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form action="#">
+                <form action="{{route('categories.store')}}" method="POST" >
+
+                  {{csrf_field()}}
                     <div class="modal-body">
                       <label>Category Name </label>
                       <div class="form-group">
-                        <input type="text" placeholder="category name" class="form-control">
+                        <input type="text" placeholder="category name" class="form-control" name="name">
                       </div>
                      
                     </div>
@@ -79,7 +81,13 @@
                 </div>
               </div>
             </div>
+
+
+
+            
           <div class="content-body">
+
+             @include('partials._messages')
             <!-- Zero configuration table -->
             <section id="configuration">
                     <div class="row">
@@ -114,48 +122,34 @@
                                  
                                   
                                  
-                              
-                                  <tr>
+                              @foreach($categories as $category)
+
+                              <tr>
                                   
-                                    <td>Electronics</td>
-                                    <td>
+                              <td>{{$category->name}}</td>
+                                  <td>
 <ul>
-  <li>Phone</li>
-  <li>Computers</li>
-  <li>Watch</li>
-  <li>Home</li>
+  @foreach($category->subCategories as $sub_category)
+<li>{{$sub_category->name}}</li>
+@endforeach
+
+
 </ul>
 
-                                    </td>
+                                  </td>
+                                 
+                              
+                                <td>
+                                <a href="{{route('categories.edit', $category->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                <a data-toggle="tooltip" data-id="{{$category->id}}"  data-original-title="Delete"  data-placement="top" data-url="categories/" data-name="Category"  class="btn btn-outline-danger edit-item-btn confirm-color" ><i class="ft-trash"></i></a>
                                    
-                                
-                                  <td>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete"  data-placement="top"  class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                     
-                                    </td>
-                                  </tr>
+                                  </td>
+                                </tr>
 
-                                  <tr>
-                                  
-                                      <td>Men</td>
-                                      <td>
-  <ul>
-    <li>Clothes</li>
-    <li>Accessories</li>
-   
-  </ul>
-  
-                                      </td>
-                                     
-                                  
-                                    <td>
-                                        <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                        <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                       
-                                      </td>
-                                    </tr>
-  
+                              @endforeach
+
+
+    
 
                                   
                                  

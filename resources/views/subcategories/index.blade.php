@@ -62,24 +62,25 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form action="#">
+                <form action="{{route('sub_categories.store')}}" method="POST">
+
+                  {{csrf_field()}}
                     <div class="modal-body">
                         
                             <label class="label-control" for="projectinput6">Category</label>
                             <div class="form-group">
-                              <select id="projectinput6" name="interested" class="form-control">
+                              <select id="projectinput6" name="category_id" class="form-control">
                                 <option value="none" selected="" disabled="">Select Categoty...</option>
-                                <option value="design">Men</option>
-                                <option value="development">Electronic</option>
-                                <option value="illustration">Cars</option>
-                                <option value="branding">House</option>
-                                <option value="video">Food</option>
+                                @foreach($categories as $category)
+                              <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                               
                               </select>
                             
                           </div>
                       <label>Sub-category Name </label>
                       <div class="form-group">
-                        <input type="text" placeholder="Sub-category name" class="form-control">
+                        <input type="text" placeholder="Sub-category name" name="name" class="form-control">
                       </div>
                      
                     </div>
@@ -94,6 +95,7 @@
             </div>
           <div class="content-body">
             <!-- Zero configuration table -->
+            @include('partials._messages')
             <section id="configuration">
                     <div class="row">
                       <div class="col-12">
@@ -127,37 +129,24 @@
                                  
                                   
                                  
-                              
-                                  <tr>
-                                  
-                                    <td>Phone</td>
-                                    <td>
-                                        Electronics
-                                    </td>
-                                   
-                                
-                                  <td>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                     
-                                    </td>
-                                  </tr>
+                              @foreach($sub_categories as $sub_category)
 
-                                  <tr>
+                              <tr>
                                   
-                                      <td>Accessories</td>
-                                      <td>
-  Men
-  
-                                      </td>
-                                     
-                                  
-                                    <td>
-                                        <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                        <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                       
-                                      </td>
-                                    </tr>
+                              <td>{{$sub_category->name}}</td>
+                                  <td>
+                                    {{$sub_category->category->name}}
+
+                                  </td>
+                                 
+                              
+                                <td>
+                                <a href="{{route('sub_categories.edit',$sub_category->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  data-id="{{$sub_category->id}}" data-url="sub_categories/" data-name="Sub-category" class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
+                                   
+                                  </td>
+                                </tr>
+                              @endforeach
   
 
                                   

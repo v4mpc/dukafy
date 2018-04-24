@@ -31,6 +31,7 @@
 <script src="{{asset('vendor/js/core/app-menu.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/core/app.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/customizer.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/extensions/toastr.min.js')}}" type="text/javascript"></script>
 
 
 

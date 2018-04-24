@@ -86,42 +86,20 @@
                           <label class="col-md-3 label-control" for="projectinput1">Name</label>
                           <div class="col-md-9">
                             <input type="text" id="projectinput1" class="form-control" placeholder="Name"
-                            name="fname">
+                            name="name ">
                           </div>
                         </div>
                     
-
-                        {{-- <div class="form-group row">
-                          <label class="col-md-3 label-control" for="projectinput2">Price</label>
-                          <div class="col-md-9">
-                            <input type="text" id="projectinput2" class="form-control" placeholder="Price"
-                            name="lname">
-                          </div>
-                        </div> --}}
-
-                        {{-- <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput2">Price</label>
-                            <div class="col-md-9">
-                              
-                                  
-                                      <span class="input-group-text" id="radio-addon3">
-                                        <input type="checkbox" id="switchery" class="switchery" data-size="xs" checked="" data-switchery="true" style="display: none;"><span class="switchery switchery-xsmall switchery-default" style="background-color: rgb(55, 188, 155); border-color: rgb(55, 188, 155); box-shadow: rgb(55, 188, 155) 0px 0px 0px 9px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"><small style="left: 12px; transition: background-color 0.4s, left 0.2s; background-color: rgb(255, 255, 255);"></small></span>
-                                      </span>
-                                    
-                                    <input type="text" class="form-control" placeholder="Input with Left switchery" aria-describedby="radio-addon3">
-                                  
-                            </div>
-                          </div> --}}
 
                           <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput2">Price</label>
                               <div class="col-md-9">
                                   <fieldset>
                                       <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Enter Price then Toggle Show Price" aria-describedby="radio-addon4">
+                                        <input type="text" name="price" class="form-control" placeholder="Enter Price then Toggle Show Price" aria-describedby="radio-addon4">
                                         <div class="input-group-append">
                                           <span class="input-group-text" id="radio-addon4">
-                                            <input type="checkbox" id="switchery2" class="switchery" data-size="xs" checked="" data-switchery="true" style="display: none;"><span class="switchery switchery-xsmall switchery-default" style="background-color: rgb(55, 188, 155); border-color: rgb(55, 188, 155); box-shadow: rgb(55, 188, 155) 0px 0px 0px 9px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"><small style="left: 12px; background-color: rgb(255, 255, 255); transition: background-color 0.4s, left 0.2s;"></small></span>
+                                            <input type="checkbox" id="switchery2" name="price_visibility" class="switchery" data-size="xs" checked/>
                                           </span>
                                         </div>
                                       </div>
@@ -135,7 +113,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 label-control" for="projectinput6">Category</label>
                             <div class="col-md-9">
-                              <select id="projectinput6" name="interested" class="form-control">
+                              <select id="projectinput6" name="interested" class="form-control" name="category_id">
                                 <option value="none" selected="" disabled="">Select Categoty...</option>
                                 <option value="design">Men</option>
                                 <option value="development">Electronic</option>
@@ -149,7 +127,7 @@
                           <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput6">Sub-category</label>
                               <div class="col-md-9">
-                                <select id="projectinput6" name="interested" class="form-control">
+                                <select id="projectinput6" name="interested" class="form-control" name="sub_category_id">
                                   <option value="none" selected="" disabled="">Select Sub-categoty...</option>
                                   <option value="design">Men</option>
                                   <option value="development">Electronic</option>
@@ -162,7 +140,7 @@
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="userinput8">Description</label>
                                 <div class="col-md-9">
-                                  <textarea id="userinput8" rows="6" class="form-control" name="bio" placeholder="Describe your product..."></textarea>
+                                  <textarea id="userinput8" rows="6" class="form-control" name="description" placeholder="Describe your product..."></textarea>
                                 </div>
                               </div>
 
@@ -170,7 +148,7 @@
                                   <label class="col-md-3 label-control">Product Image(s)</label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file">
+                                      <input type="file" id="file" name="images">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>

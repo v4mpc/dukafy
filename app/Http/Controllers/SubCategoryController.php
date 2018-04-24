@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\subCategory;
+use App\SubCategory;
 use Illuminate\Http\Request;
+use App\Category;
+use Session;
+use App\Http\Requests\StoreSubCategory;
 
 class SubCategoryController extends Controller
 {
@@ -14,7 +17,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        return view('subcategories.index');
+        $sub_categories=SubCategory::all();
+        $categories=Category::all();
+        return view('subcategories.index')->with('sub_categories',$sub_categories)->with('categories',$categories);
     }
 
     /**
@@ -33,9 +38,15 @@ class SubCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSubCategory $request)
     {
-        //
+        $sub_category=new SubCategory;
+
+        $sub_category->name=$request->name;
+        $sub_category->category_id=$request->category_id;
+        $sub_category->save();
+        Session::flash('success','Sub-Category Saved!');
+        return redirect()->route('sub_categories.index');
     }
 
     /**
@@ -55,9 +66,11 @@ class SubCategoryController extends Controller
      * @param  \App\subCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(subCategory $subCategory)
+    public function edit($id)
     {
-        //
+        $sub_category=SubCategory::findOrFail($id);
+        $categories=Category::all();
+        return view('subcategories.edit')->with('sub_category',$sub_category)->with('categories',$categories);
     }
 
     /**
@@ -67,9 +80,14 @@ class SubCategoryController extends Controller
      * @param  \App\subCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, subCategory $subCategory)
+    public function update(storeSubCategory $request, $id)
     {
-        //
+        $sub_category=SubCategory::findOrFail($id);
+        $sub_category->name=$request->name;
+        $sub_category->category_id=$request->category_id;
+        $sub_category->save();
+        Session::flash('success', 'Sub Category Saved!');
+         return redirect()->route('sub_categories.index');  
     }
 
     /**
@@ -78,8 +96,10 @@ class SubCategoryController extends Controller
      * @param  \App\subCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(subCategory $subCategory)
+    public function destroy($id)
     {
-        //
+        $sub_category=SubCategory::findOrFail($id);
+        $sub_category->delete();
+         return response()->json($sub_category);
     }
 }
