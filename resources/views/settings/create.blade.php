@@ -9,6 +9,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/switchery.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
+
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')}}">
  
 
 @endsection
@@ -23,6 +26,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
 
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/gallery.min.css')}}">
 
 @endsection
 
@@ -79,7 +83,7 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body">
-                    <form action="#" class="number-tab-steps wizard-circle">
+                    <form action="#" id="layoutForm" class="number-tab-steps wizard-circle" enctype="multipart/form-data">
                       <!-- Step 1 -->
                       <h6>Step 1</h6>
                     
@@ -111,8 +115,8 @@
                               
                             </label> --}}
 
-                            <table>
-                              <tr>
+                            
+                              {{-- <tr>
                                 <td align="center"><label class="btn">
                             
                                     <input type="checkbox" name="chk5" id="item5" value="val1" class="hidden">
@@ -146,8 +150,122 @@
  <td align="center"><button type="button" class="btn btn-outline-info btn-min-width mr-1 mb-1">Preview</button></td>
  <td align="center"><button type="button" class="btn btn-outline-info btn-min-width mr-1 mb-1">Preview</button></td>
 
-                              </tr>
-                            </table>
+                              </tr> --}}
+
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                    
+                                      <th>Layout</th>
+                                      <th>Colour Theme</th>
+                                      <th>Select</th>
+                            
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                            
+                                      <td>
+                                          <div class="card-body">
+                                            <div class="icheck1">
+                                              <fieldset>
+                                                <img src="{{asset('template1/images/home-1.jpg')}}" width="150" height="150" alt="..." class="img-thumbnail">
+                                              </fieldset>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      <td>
+
+
+
+                                          {{-- <div class="card-body">
+                                              <div class="icheck1">
+                                                <fieldset>
+                                                  <input type="radio" name="colour" value="green">
+                                                  <label for="input-2">
+                                                      <div class="badge badge-danger round">
+                                                          <i class="la la-file-o font-medium-2"></i>
+                                                          <span>Red</span>
+                                                        </div>
+                                                      <a href="{{route('template1.previews','red')}}" data-toggle="tooltip" data-original-title="Preview" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a></label>
+                                                </fieldset>
+                                              </div>
+                                            </div> --}}
+
+                                     
+
+                                        <div class="card-body">
+                                              <div class="icheck1">
+                                                <fieldset>
+                                                  <input type="radio" name="colour" value="blue">
+                                                  <label for="input-2">
+                                                    </label>
+                                                      <div class="badge badge-info round">
+                                                          <i class="la la-file-o font-medium-2"></i>
+                                                          <span>Blue</span>
+                                                        </div>   <a href="{{route('template1.previews','blue')}}" data-toggle="tooltip" data-original-title="Preview" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                                </fieldset>
+                                              </div>
+                                            </div>
+
+                                            <div class="card-body">
+                                                <div class="icheck1">
+                                                  <fieldset>
+                                                    <input type="radio" name="colour" value="green">
+                                                    <label for="input-2">
+                                                        <div class="badge badge-primary round">
+                                                            <i class="la la-file-o font-medium-2"></i>
+                                                            <span>Navy</span>
+                                                          </div>
+                                                      <a href="{{route('template1.previews','navy')}}" data-toggle="tooltip" data-original-title="Preview" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a></label>
+                                                  </fieldset>
+                                                </div>
+                                              </div>
+
+                                            <div class="card-body">
+                                                  <div class="icheck1">
+                                                    <fieldset>
+                                                      <input type="radio" name="colour" value="navy">
+                                                      <label for="input-2">
+                                                        <div class="badge badge-success round">
+                                                        <i class="la la-file-o font-medium-2"></i>
+                                                        <span>Green</span>
+                                                      </div> <a href="{{route('template1.previews','green')}}" data-toggle="tooltip" data-original-title="Preview" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a></label>
+                                                    </fieldset>
+                                                  </div>
+                                                </div>
+
+
+                                      </td>
+
+                                      <td>
+                                        <div class="card-body">
+                                          <div class="icheck1">
+                                            <fieldset>
+                                              <input type="radio" name="template" value="template1">
+                                              <label for="input-2"></label>
+                                            </fieldset>
+                                          </div>
+                                        </div>
+
+
+
+                                      </td>
+            </tr>
+
+     
+                                         
+                                  </tbody>
+                                </table>
+                              </div>
+
+                        
+                       
+                       
+                    
+                      
+                            
                         </fieldset>
      
                       <!-- Step 2 -->
@@ -160,7 +278,7 @@
                                   <label class="col-md-3 label-control">Company Logo</label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file">
+                                      <input type="file" id="file" name="logo">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
@@ -171,8 +289,8 @@
                               <div class="form-group">
                                   <label class="col-md-3 label-control">Home Slider(max 3 images) </label>
                                   <div class="col-md-9">
-                                    <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file">
+                                    <label id="projectinput8" class="file center-block" >
+                                      <input type="file" id="file" multiple name="images[]">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
@@ -188,34 +306,34 @@
                          <i>   <h5>Use "|" for multiple value</h5></i>
                             <div class="form-group">
                               <label for="eventName1">Address #</label>
-                              <input type="text" class="form-control" id="eventName1" placeholder="address1|address2">
+                              <input type="text" class="form-control" name="address" id="eventName1" placeholder="address1|address2">
                             </div>
 
                             <div class="form-group">
                                 <label for="eventName1">Phone #</label>
-                                <input type="text" class="form-control" id="eventName1" placeholder="phone1|phone2">
+                                <input type="text" class="form-control" name="phone" id="eventName1" placeholder="phone1|phone2">
                               </div>
 
                               <div class="form-group">
                                   <label for="eventName1">Mobile #</label>
-                                  <input type="text" class="form-control" id="eventName1" placeholder="mobile1|mobile2">
+                                  <input type="text" class="form-control" name="mobile" id="eventName1" placeholder="mobile1|mobile2">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="eventName1">Email </label>
-                                    <input type="text" class="form-control" id="eventName1" placeholder="email1|email2">
+                                    <input type="text" class="form-control" name="email" id="eventName1" placeholder="email1|email2">
                                   </div>
 
                                   <div class="form-group">
                                       <label for="eventName1">Working Hours </label>
-                                      <input type="text" class="form-control" id="eventName1" placeholder="start|close">
+                                      <input type="text" class="form-control" name="working_hours" id="eventName1" placeholder="start|close">
                                     </div>
                          
                            
                         </div>
                         <fieldset>
                           <div class="row">
-                              <button type="button" class="btn btn-outline-info btn-min-width mr-1 mb-1">Preview</button>
+                              <button type="button" id="preview" class="btn btn-outline-info btn-min-width mr-1 mb-1">Preview</button>
 
                           </div>
                         </fieldset>
@@ -241,14 +359,16 @@
 @section('page_vendor_js')
 
 <script src="{{asset('vendor/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>
-  <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-checkbox.min.js')}}"
-  type="text/javascript"></script>
-  <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-switch.min.js')}}"
-  type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-checkbox.min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-switch.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('vendor/vendors/js/forms/toggle/switchery.min.js')}}" type="text/javascript"></script>
 
   <script src="{{asset('vendor/vendors/js/extensions/jquery.steps.min.js')}}" type="text/javascript"></script>
   {{-- <script src="{{asset('vendor/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}" --}}
+
+  <script src="{{asset('vendor/vendors/js/gallery/masonry/masonry.pkgd.min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js')}}" type="text/javascript"></script>
   
 @endsection
 
@@ -260,66 +380,61 @@
   <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
-  
+  <script src="{{asset('vendor/js/scripts/gallery/photo-swipe/photoswipe-script.js')}}" type="text/javascript"></script>
 
   <script>
 
     $(document).ready(function () {
-      var room = 1;
-   function variation_fields() {
+      //start
+      $('input').iCheck({
+    checkboxClass: 'icheckbox_square',
+    radioClass: 'iradio_square',
+    // increaseArea: '20%' // optional
+  });//end 
 
-     alert('heloo');
 
-room++;
-// var objTo = document.getElementById('variation_fields');
-// var divtest = document.createElement("div");
-// divtest.setAttribute("class", "form-group removeclass" + room);
-// var rdiv = 'removeclass' + room;
-// divtest.innerHTML =
-//     '<div class="form-group row">
-//      \                       <div class="col-sm-3 nopadding">
-//                            \     <div class="form-group">
-//                             \      <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Title">
-//                              \   </div>
-//                             \  </div>
-//                             \  <div class="col-sm-3 nopadding">
-//                             \    <div class="form-group">
-//                             \      <div class="input-group">
-//                              \       <input type="file" class="form-control" id="Degree" name="" value="" placeholder="Images"> 
-//                              \     </div>
-//                              \   </div>
-//                             \  </div>
-//                             \  <div class="col-sm-3 nopadding">
-//                             \      <div class="form-group">
-//                              \       <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Description">
-//                              \     </div>
-//                              \   </div>
-//                              \   <div class="col-sm-3 nopadding">
-//                               \    <div class="form-group">
-//                                \     <div class="input-group">
-//                                \         <fieldset>
-//                                 \            <div class="input-group">
-//                                 \              <input type="text" class="form-control" placeholder="Price" aria-describedby="button-addon2">
-//                                  \             <div class="input-group-append">
-//                                   \              <button class="btn btn-danger" "onclick="remove_variation_fields(' +room +')" type="button">-</button>
-//                                   \            </div>
-//                                   \          </div>
-//                                   \        </fieldset>
-//                                   \  </div>
-//                                 \  </div>
-//                                \ </div>                          
-//                          \ </div>';
+$('#preview').on('click', function(e){
+  e.preventDefault();
+var myForm = document.getElementById('layoutForm');
+        $.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+				$.ajax({
+          type: "POST",
+        
+					url: '/manage/preview',
+          data:new FormData(myForm),
+          contentType:false,
+          processData:false,
+          cache:false,
+					success: function (data) {
+            // console.log(data);
+            
+            document.location.href="{!! route('preview.show','1'); !!}";
+                e.preventDefault(); //
+					}
+        });
+        // var template=$('input[name="template"]').val();
+        // var colour=$('input[name="colour"]').val();
+        // var address=$('input[name="address"]').val();
+        // var mobile=$('input[name="mobile"]').val();
+        // var phone=$('input[name="phone"]').val();
+        // var email=$('input[name="email"]').val();
+        // var workinig=$('input[name="workinig"]').val();
+        
+        
+        
+        
+        
+        
 
-// objTo.appendChild(divtest);
-// }
 
-// function remove_variation_fields(rid) {
-// $('.removeclass' + rid).remove();
-// }
-  
+});
 
-    }
-    });
+
+    }); //end document .ready
   </script>
 
 @endsection

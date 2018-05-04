@@ -42,7 +42,7 @@
                 <div class="card-body">
                   <div class="media d-flex">
                     <div class="media-body text-left">
-                      <h3 class="info">850</h3>
+                    <h3 class="info">{{count($products)}}</h3>
                       <h6> All Products</h6>
                     </div>
                     <div>
@@ -60,7 +60,7 @@
                 <div class="card-body">
                   <div class="media d-flex">
                     <div class="media-body text-left">
-                      <h3 class="warning">748</h3>
+                    <h3 class="warning">{{count($available_products)}}</h3>
                       <h6>Available Products</h6>
                     </div>
                     <div>
@@ -78,7 +78,7 @@
                 <div class="card-body">
                   <div class="media d-flex">
                     <div class="media-body text-left">
-                      <h3 class="danger">146</h3>
+                    <h3 class="danger">{{count($outstock)}}</h3>
                       <h6>Out Of Stock</h6>
                     </div>
                     <div>

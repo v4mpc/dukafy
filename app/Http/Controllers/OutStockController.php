@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class OutStockController extends Controller
 {
@@ -13,7 +14,8 @@ class OutStockController extends Controller
      */
     public function index()
     {
-        return view('outstocks.index');
+        $products=Product::where('out_stock',"1")->get();
+        return view('outstocks.index')->with('products',$products);
     }
 
     /**

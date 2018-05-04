@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Template1Controller@index');
+Route::get('/products','Template1Controller@products')->name('products');
+Route::get('/products/{id}','Template1Controller@productshow')->name('product.show');
+Route::get('/shopping_cart','Template1Controller@cart')->name('cart');
+
+
 
 Auth::routes();
-Route::middleware('auth')->group(function(){
+Route::prefix('manage')->middleware('auth')->group(function(){
     
-    Route::resource('products', 'ProductController');
-    
-    
+   
 
+    
+Route::resource('/products', 'ProductController');
+Route::resource('/variations', 'VariationController');
 Route::resource('/categories', 'CategoryController');
 Route::resource('/sub_categories', 'SubCategoryController');
 Route::resource('/out_stock', 'OutStockController');
@@ -30,10 +34,27 @@ Route::resource('/featured', 'FeaturedController');
 Route::resource('/users', 'UserController');
 Route::resource('/orders', 'OrderController');
 Route::resource('/settings', 'SettingController');
+Route::resource('/variations', 'VariationController');
+
 Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
 Route::get('/logo_form','SettingController@getLogoForm')->name('settings.logo_form');
 Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
 Route::get('/company_address_form','SettingController@getCompanyAddressForm')->name('settings.company_address_form');
+Route::get('/sub_cat/{id}', 'ProductController@getSubCategories')->name('subcategory_ajax');
+Route::get('/make_featured/{id}', 'ProductController@makeFeatured')->name('make_featured_ajax');
+Route::get('/remove_featured/{id}', 'ProductController@removeFeatured')->name('remove_featured_ajax');
+Route::get('/make_out_stock/{id}', 'ProductController@makeOutstock')->name('make_out_stock_ajax');
+Route::get('/remove_out_stock/{id}', 'ProductController@removeOutstock')->name('remove_out_stock_ajax');
+Route::resource('/preview','PreviewController');
+
+Route::get('/template/{colour}', function($colour){
+
+
+   
+    
+    return view('template.template1.previews.index')->with('colour',$colour);
+    
+})->name('template1.previews');
 
 
 

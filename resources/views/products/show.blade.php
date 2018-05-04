@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/tables/datatable/datatables.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/zoom.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')}}">
 
 
   
@@ -16,8 +18,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/menu/menu-types/vertical-menu-modern.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/forms/checkboxes-radios.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/forms/switch.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/gallery.min.css')}}">
 
 @endsection
 
@@ -30,7 +33,7 @@
         <div class="content-wrapper">
           <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-              <h3 class="content-header-title mb-0 d-inline-block">T Shirt</h3>
+              <h3 class="content-header-title mb-0 d-inline-block">{{$product->name}}</h3>
               <div class="row breadcrumbs-top d-inline-block">
                 <div class="breadcrumb-wrapper col-12">
                   <ol class="breadcrumb">
@@ -70,7 +73,7 @@
                       <div class="card">
                         <div class="card-header">
                           {{-- <h4 class="card-title">Zero configuration</h4> --}}
-                          <h4 class="form-section"><i class="ft-layers"></i> Product Detail</h4>
+                          <h4 class="form-section"><i class="ft-shopping-cart"></i> Product Detail</h4>
                           <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                           <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -86,26 +89,102 @@
                            
                             <div class="row">
                                 <div class="col-6">
-                                    <div class="row"><img src="{{asset('images/tshirt_small.jpg ')}}" width="300" height="300" alt=""></div>
-                                <div class="row">
-                                    <img data-action="zoom" src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                    <img data-action="zoom" src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                    <img data-action="zoom" src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                    <img data-action="zoom"    src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                </div>
+                                 
+                                  
+
+                                    <section id="image-gallery" class="card">
+                                      
+                                        <div class="card-content">
+                                          
+                                          <div class="card-body  my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                                            <div class="row">
+                                              @foreach($product->images as $image)
+                                              <figure class="col-lg-3 col-md-6 col-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                                <a href="{{asset('images/'.$image->image)}}" itemprop="contentUrl" data-size="480x360">
+                                                  <img class="img-thumbnail img-fluid" src="{{asset('images/'.$image->image)}}"
+                                                  itemprop="thumbnail" alt="Image description" />
+                                                </a>
+                                              </figure>
+                                              @endforeach
+                                              
+                                            </div>
+                                          </div>
+                                          <!--/ Image grid -->
+                                          <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                                          <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <!-- Background of PhotoSwipe. 
+                                           It's a separate element as animating opacity is faster than rgba(). -->
+                                            <div class="pswp__bg"></div>
+                                            <!-- Slides wrapper with overflow:hidden. -->
+                                            <div class="pswp__scroll-wrap">
+                                              <!-- Container that holds slides. 
+                                              PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                                              Don't modify these 3 pswp__item elements, data is added later on. -->
+                                              <div class="pswp__container">
+                                                <div class="pswp__item"></div>
+                                                <div class="pswp__item"></div>
+                                                <div class="pswp__item"></div>
+                                              </div>
+                                              <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                                              <div class="pswp__ui pswp__ui--hidden">
+                                                <div class="pswp__top-bar">
+                                                  <!--  Controls are self-explanatory. Order can be changed. -->
+                                                  <div class="pswp__counter"></div>
+                                                  <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                                                  <button class="pswp__button pswp__button--share" title="Share"></button>
+                                                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                                                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                                                  <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                                                  <!-- element will get class pswp__preloader-active when preloader is running -->
+                                                  <div class="pswp__preloader">
+                                                    <div class="pswp__preloader__icn">
+                                                      <div class="pswp__preloader__cut">
+                                                        <div class="pswp__preloader__donut"></div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                                  <div class="pswp__share-tooltip"></div>
+                                                </div>
+                                                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                                                </button>
+                                                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                                                </button>
+                                                <div class="pswp__caption">
+                                                  <div class="pswp__caption__center"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--/ PhotoSwipe -->
+                                      </section>
+
+
+
+
                             </div>
                                 <div class="col-6"><ul style="list-style: none;">
-                                    <h4><li>Name: <strong>Tshirt</strong></li></h4>
-                                   <h4> <li>Price: <strong>12,000</strong> <span class="badge badge-success">Visible</span></li></h4>
-                                    <h4><li>Category: <strong>Men</strong></li></h4>
-                                    <h4><li>Sub-category: <strong>Clothes</strong></li></h4>
-                                   <h4> <li>Description: <strong></h4> as opposed to the round neckline of the more common crew neck shirt</strong></li>
+                                <h4><li>Name: <strong>{{$product->name}}</strong></li></h4>
+                                <h4> <li>Price: <strong>{{number_format($product->price)}}</strong> 
+                                  @if($product->price_visibility)
+                                  <span class="badge badge-success">Visible</span>
+                                @else 
+                                <span class="badge badge-danger">Invisible</span>
+                                @endif
+
+                                </li><h4>Discount:<strong>{{number_format(round(($product->price*$product->discount)/100))}}<span class="badge badge-danger"> -{{ $product->discount}}%</span></strong></h4></h4>
+                                <li></li>
+                                <h4><li>Category: <strong>{{$product->category->name}}</strong></li></h4>
+                                <h4><li>Sub-category: <strong>{{$product->subCategory->name}}</strong></li></h4>
+                                <h4> <li>Description: <strong></h4> {{$product->description}}</strong></li>
                                     <li></li>
                                 </ul>
 
                                 <div class="form-group">
-                                        <button type="button" class="btn btn-outline-warning btn-min-width mr-1 mb-1">Out Stock</button>
-                                        <button type="button" class="btn btn-outline-danger btn-min-width mr-1 mb-1">Delete</button>
+                                    <a   class="btn btn-outline-warning edit-item-btn">Out Stock</a>
+                                    <a   class="btn btn-outline-danger edit-item-btn">Delete</a>
                                         
                                       </div>
                             </div>
@@ -147,38 +226,21 @@
                         <tbody>
                          
                           
-                         
+                         @foreach($product->variations as $variation)
+                         <tr>
+                         <td>{{$variation->variation}}</td>
+                         <td>{{$variation->value}}</td>
+                        
+                            <td><img src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
+                                <img src="{{asset('images/tshirt.jpg ')}}" width="100" height="100" alt=""></td>
+                            <td>{{number_format($variation->price)}}</td>
+                        
+                           
+                          </tr>
+
+                         @endforeach
                       
-                          <tr>
-                            <td>Size</td>
-                            <td>Small</td>
                         
-                            <td><img src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                <img src="{{asset('images/tshirt.jpg ')}}" width="100" height="100" alt=""></td>
-                            <td>1,200,000</td>
-                        
-                           
-                          </tr>
-                          <tr>
-                            <td>Size</td>
-                            <td>Medium</td>
-                    
-                            <td><img src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                <img src="{{asset('images/tshirt.jpg ')}}" width="100" height="100" alt=""></td>
-                            
-                            <td>10,000</td>
-                           
-                          </tr>
-                          <tr>
-                            <td>Size</td>
-                            <td>Large</td>
-                            
-                            <td><img src="{{asset('images/tshirt_small.jpg ')}}" width="100" height="100" alt="">
-                                <img src="{{asset('images/tshirt.jpg ')}}" width="100" height="100" alt=""></td>
-                            
-                            <td>137,500</td>
-                            
-                          </tr>
                           
                           
                          
@@ -205,6 +267,11 @@
 @section('page_vendor_js')
 
 <script src="{{asset('vendor/vendors/js/extensions/zoom.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/cards/card-ecommerce.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/gallery/masonry/masonry.pkgd.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/gallery/photo-swipe/photoswipe-script.js')}}" type="text/javascript"></script>
 
 
 

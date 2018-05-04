@@ -88,132 +88,23 @@
                                   
                                  
                               
-                                  <tr>
-                                    <td>Iphone 6 </td>
-                                    <td>Electronics</td>
-                                    <td>Phone</td>
-                                    <td><img src="{{asset('images/iphone6.png ')}}" width="100" height="100" alt=""></td>
+                                 @foreach($products as $product)
+                                 <tr>
+                                 <td>{{$product->name}}</td>
+                                 <td>{{$product->category->name}}</td>
+                                 <td>{{$product->subCategory->name}}</td>
+                                  <td><img src="{{asset('images/iphone6.png ')}}" width="100" height="100" alt=""></td>
+                                  
+                                 <td>{{number_format($product->price)}}</td>
+                              
+                                <td>
                                     
-                                    <td>1,200,000</td>
-                                
-                                  <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     
-                                     
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Tshirt</td>
-                                    <td>Men</td>
-                                    <td>Casual</td>
-                                    <td><img data-action="zoom" src="{{asset('images/tshirt.jpg  ')}}" width="100" height="100" alt=""></td>
-                                    
-                                    <td>10,000</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Watch</td>
-                                    <td>Men</td>
-                                    <td>Accessories</td>
-                                    <td><img src="{{asset('images/watch.jpg ')}}" width="100" height="100" alt=""></td>
-                                    
-                                    <td>137,500</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Shoe</td>
-                                    <td>Men</td>
-                                    <td>Casual</td>
-                                    <td><img src="{{asset('images/shoe.jpg')}}" width="100" height="100" alt=""></td>
-                                    
-                                    
-                                    <td>327,900</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Drone</td>
-                                    <td>Electronics</td>
-                                    <td>Tools</td>
-                                    <td><img src="{{asset('images/drone.jpg')}}" width="100" height="100" alt=""></td>
-                                    
-                                    <td>205,500</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>  Dress</td>
-                                    <td>Female</td>
-                                    <td>Clothes</td>
-                                    <td><img src="{{asset('images/dress.jpg')}}" width="70" height="100" alt="">
-                                    </td>
-                                    
-                                    <td>103,600</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Handbag</td>
-                                    <td>Female</td>
-                                    <td>Accessories</td>
-                                    <td><img src="{{asset('images/handbag.jpeg')}}" width="100" height="100" alt=""></td>
-                                    
-                                    <td>90,560</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Diper</td>
-                                    <td>Kids</td>
-                                    <td>-</td>
-                                    <td><img src="{{asset('images/dipers.jpeg')}}" width="100" height="100" alt=""></td>
-                                    
-                                    <td>342,000</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                
-                                  <tr>
-                                    <td>Cake</td>
-                                    <td>Food</td>
-                                    <td>Party</td>
-                                    <td><img src="{{asset('images/cake.jpg ')}}" width="104" height="98" alt=""></td>
-                                    
-                                    <td>313,500</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Flower/td>
-                                    <td>Decoration</td>
-                                    <td>Party</td>
-                                    <td><img src="{{asset('images/flower.jpg ')}}" width="100" height="100" alt=""></td>
-                                    
-                                    <td>385,750</td>
-                                    <td>
-                                      
-                                      <a data-toggle="tooltip" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn confirm-color-stock-in"><i class="ft-log-in"></i></a>
-                                     </td>
-                                  </tr>
+                                <a data-toggle="tooltip" data-id="{{$product->id}}" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn stock-in"><i class="ft-log-in"></i></a>
+                                   
+                                   
+                                  </td>
+                                </tr>
+                                 @endforeach
                                  
                                 </tfoot>
                               </table>

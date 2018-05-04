@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products=Product::all();
+        $available_products=Product::where('out_stock',0)->get();
+        $outstock=Product::where('out_stock',1)->get();;
+
+        return view('home')->with('products',$products)->with('available_products',$available_products)->with('outstock',$outstock);
     }
 }

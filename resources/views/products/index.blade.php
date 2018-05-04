@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/tables/datatable/datatables.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/zoom.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')}}">
 
 
 
@@ -95,28 +97,27 @@
                                 </thead>
                                 <tbody>
                                  
-                                    {{-- <div class="col-md-6 col-sm-12">
-                                        <h5>Confirm Button Color</h5>
-                                        <p>Use <code>className: "btn-warning"</code> option to change the
-                                          background color of the "Confirm"-button.</p>
-                                        <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-2" id="confirm-color">Confirm Button Color</button>
-                                      </div> --}}
-                                 
-                              
-                                  <tr>
-                                    <td>Iphone 6 </td>
-                                    <td>Electronics</td>
-                                    <td>Phone</td>
-                                    <td><img src="{{asset('images/iphone6.png ')}}" width="100" height="100" alt=""></td>
+                                 @foreach($products as $product)
+
+                                 <tr>
+                                 <td>{{$product->name}}</td>
+                                 <td>{{$product->category->name}}</td>
+                                 <td>{{$product->subCategory->name}}</td>
+                                    <td><img src="{{asset('images/'.$product->images[0]->image)}}" width="100" height="100" alt=""></td>
                                     
-                                    <td>1,200,000</td>
+                                    <td>{{number_format($product->price)}}</td>
                                 
-                                  <td><a href="{{route('products.show','1')}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
-                                    <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
-                                    <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>  
+                                  <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail" data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
+                                    <a href="{{route('products.edit',$product->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                                  <a data-toggle="tooltip" data-original-title="Featured" data-id="{{$product->id}}" data-placement="top"    class="btn btn-outline-info btn-sm edit-item-btn confirm-featured"><i class="ft-star"></i></a>
+                                    <a data-toggle="tooltip" data-original-title="Out-Stock" data-id="{{$product->id}}" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn make-out-stock"><i class="ft-log-out"></i></a>
+                                  <a data-toggle="tooltip" data-id="{{$product->id}}" data-url="/manage/products/" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>  
                                     </td>
                                   </tr>
+
+                                 @endforeach
+                              
+{{--                                   
                                   <tr>
                                     <td>Tshirt</td>
                                     <td>Men</td>
@@ -229,7 +230,7 @@
                                       <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>
                                       <a data-toggle="tooltip" data-original-title="Featured" data-placement="top"    class="btn btn-outline-warning btn-sm edit-item-btn confirm-color-stock-out"><i class="ft-star"></i></a>
                                       <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"  class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a></td>
-                                  </tr>
+                                  </tr> --}}
                                  
                                 </tfoot>
                               </table>
@@ -264,6 +265,9 @@
 
 <script src="{{asset('vendor/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/tooltip/tooltip.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/gallery/photo-swipe/photoswipe-script.js')}}" type="text/javascript"></script>
 
 
 

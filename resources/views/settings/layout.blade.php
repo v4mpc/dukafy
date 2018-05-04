@@ -146,8 +146,11 @@
 @endsection
 
 
+<!-- jQuery -->
 
 @section('page_vendor_js')
+
+
 
 <script src="{{asset('vendor/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-checkbox.min.js')}}"
@@ -170,5 +173,4 @@
   <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
   
-
 @endsection

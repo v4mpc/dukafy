@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class FeaturedController extends Controller
 {
@@ -13,7 +14,8 @@ class FeaturedController extends Controller
      */
     public function index()
     {
-    return view('featured.index');
+        $products=Product::where('featured',1)->where('out_stock',0)->get();
+    return view('featured.index')->with('products',$products);
     }
 
     /**

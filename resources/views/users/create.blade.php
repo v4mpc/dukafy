@@ -397,60 +397,11 @@
   <script>
 
     $(document).ready(function () {
-      var room = 1;
-   function variation_fields() {
-
-     alert('heloo');
-
-room++;
-// var objTo = document.getElementById('variation_fields');
-// var divtest = document.createElement("div");
-// divtest.setAttribute("class", "form-group removeclass" + room);
-// var rdiv = 'removeclass' + room;
-// divtest.innerHTML =
-//     '<div class="form-group row">
-//      \                       <div class="col-sm-3 nopadding">
-//                            \     <div class="form-group">
-//                             \      <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Title">
-//                              \   </div>
-//                             \  </div>
-//                             \  <div class="col-sm-3 nopadding">
-//                             \    <div class="form-group">
-//                             \      <div class="input-group">
-//                              \       <input type="file" class="form-control" id="Degree" name="" value="" placeholder="Images"> 
-//                              \     </div>
-//                              \   </div>
-//                             \  </div>
-//                             \  <div class="col-sm-3 nopadding">
-//                             \      <div class="form-group">
-//                              \       <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Description">
-//                              \     </div>
-//                              \   </div>
-//                              \   <div class="col-sm-3 nopadding">
-//                               \    <div class="form-group">
-//                                \     <div class="input-group">
-//                                \         <fieldset>
-//                                 \            <div class="input-group">
-//                                 \              <input type="text" class="form-control" placeholder="Price" aria-describedby="button-addon2">
-//                                  \             <div class="input-group-append">
-//                                   \              <button class="btn btn-danger" "onclick="remove_variation_fields(' +room +')" type="button">-</button>
-//                                   \            </div>
-//                                   \          </div>
-//                                   \        </fieldset>
-//                                   \  </div>
-//                                 \  </div>
-//                                \ </div>                          
-//                          \ </div>';
-
-// objTo.appendChild(divtest);
-// }
-
-// function remove_variation_fields(rid) {
-// $('.removeclass' + rid).remove();
-// }
-  
-
-    }
+      $('input').iCheck({
+    checkboxClass: 'icheckbox_minimal',
+    radioClass: 'iradio_minimal',
+    increaseArea: '20%' // optional
+  });
     });
   </script>
 

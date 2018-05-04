@@ -58,6 +58,7 @@
         </div>
       </div>
       <div class="content-body">
+        @include('partials._messages')
         <!-- Basic form layout section start -->
         <section id="horizontal-form-layouts">
           <div class="row">
@@ -79,24 +80,26 @@
                   <div class="card-body">
                     <div class="card-text">
                     </div>
-                    <form class="form form-horizontal">
+                  <form class="form form-horizontal" action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
+
+
+                      {{csrf_field()}}
                       <div class="form-body">
                         <h4 class="form-section"><i class="ft-shopping-cart"></i>Product</h4>
                         <div class="form-group row">
                           <label class="col-md-3 label-control" for="projectinput1">Name</label>
-                          <div class="col-md-9">
-                            <input type="text" id="projectinput1" class="form-control" placeholder="Name"
-                            name="name ">
+                          <div class="col-md-7">
+                          <input type="text" id="projectinput1" class="form-control" value="{{old('name')}}" placeholder="Name" name="name">
                           </div>
                         </div>
                     
 
                           <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput2">Price</label>
-                              <div class="col-md-9">
+                              <div class="col-md-7">
                                   <fieldset>
                                       <div class="input-group">
-                                        <input type="text" name="price" class="form-control" placeholder="Enter Price then Toggle Show Price" aria-describedby="radio-addon4">
+                                      <input type="text" name="price" class="form-control" value="{{old('price')}}" placeholder="Enter Price then Toggle Show Price" aria-describedby="radio-addon4">
                                         <div class="input-group-append">
                                           <span class="input-group-text" id="radio-addon4">
                                             <input type="checkbox" id="switchery2" name="price_visibility" class="switchery" data-size="xs" checked/>
@@ -109,46 +112,70 @@
                                     
                               </div>
                             </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput2">Discount</label>
+                                <div class="col-md-7">
+                                    <fieldset>
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="radio-addon4">
+                                                  <input type="checkbox" id="switchery3" name="price_visibility" class="switchery js-check-change" data-size="xs"/>
+                                                </span>
+                                              </div>
+                                        <input type="text" id="discount" disabled name="discount" disabled class="form-control" value="{{old('price')}}" placeholder="Amount or Percentage eg 40000 or 80%" aria-describedby="radio-addon4">
+                                          
+                                        </div>
+                                      </fieldset>
+                                      
+                                          
+                                      
+                                </div>
+                              </div>
+
+                          
                          
                         <div class="form-group row">
                             <label class="col-md-3 label-control" for="projectinput6">Category</label>
-                            <div class="col-md-9">
-                              <select id="projectinput6" name="interested" class="form-control" name="category_id">
+                            <div class="col-md-7">
+                              <select id="projectinput6" name="category_id" class="form-control" name="category_id">
                                 <option value="none" selected="" disabled="">Select Categoty...</option>
-                                <option value="design">Men</option>
-                                <option value="development">Electronic</option>
-                                <option value="illustration">Cars</option>
-                                <option value="branding">House</option>
-                                <option value="video">Food</option>
+                                @foreach($categories as $category)
+                              <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                               
                               </select>
                             </div>
                           </div>
                         
                           <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput6">Sub-category</label>
-                              <div class="col-md-9">
-                                <select id="projectinput6" name="interested" class="form-control" name="sub_category_id">
+                              <div class="col-md-7">
+                                <select id="projectinput6" name="sub_category_id" class="form-control" name="sub_category_id">
                                   <option value="none" selected="" disabled="">Select Sub-categoty...</option>
-                                  <option value="design">Men</option>
-                                  <option value="development">Electronic</option>
-                                  <option value="illustration">Cars</option>
-                                  <option value="branding">House</option>
-                                  <option value="video">Food</option>
+                                  
                                 </select>
                               </div>
+                              <div class="col-md-2">
+                                <span id="loader1">
+                                  <i class="fa fa-spinner fa-2x fa-spin"></i>
+                                </span>
+                              </div>
+
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="userinput8">Description</label>
-                                <div class="col-md-9">
-                                  <textarea id="userinput8" rows="6" class="form-control" name="description" placeholder="Describe your product..."></textarea>
+                                <div class="col-md-7">
+                                <textarea id="userinput8" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{old('description')}}</textarea>
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                   <label class="col-md-3 label-control">Product Image(s)</label>
-                                  <div class="col-md-9">
+                                  <div class="col-md-7">
                                     <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file" name="images">
+                                      <input type="file" id="file" name="images[]" multiple>
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
@@ -161,19 +188,19 @@
                         <div class="form-group row">
                             <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                  <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Title">
+                                  <input type="text" class="form-control" id="Degree" name="variation[]" value="" placeholder="Title">
                                 </div>
                               </div>
                               <div class="col-sm-3 nopadding">
                                 <div class="form-group">
                                   <div class="input-group">
-                                    <input type="file" class="form-control" id="Degree" name="" value="" placeholder="Images"> 
+                                    <input type="file" class="form-control" id="Degree" name="variation_images[]" value="" placeholder="Images"> 
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-3 nopadding">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Description">
+                                    <input type="text" class="form-control" id="Degree" name="variation_value[]" value="" placeholder="Description">
                                   </div>
                                 </div>
                                 <div class="col-sm-3 nopadding">
@@ -181,9 +208,9 @@
                                     <div class="input-group">
                                         <fieldset>
                                             <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Price" aria-describedby="button-addon2">
+                                              <input type="text" class="form-control" name="variation_price[]" placeholder="Price" aria-describedby="button-addon2">
                                               <div class="input-group-append">
-                                                <button type="button" class="btn btn-success" onclick="variation_fields()">+</button>
+                                                <button type="button" class="btn btn-success" id="add_field" > <i class="ft-plus"></i></button>
                                               </div>
                                             </div>
                                           </fieldset>
@@ -251,64 +278,32 @@
   <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
 
+
+
   <script>
-
-    $(document).ready(function () {
-      var room = 1;
-   function variation_fields() {
-
-     alert('heloo');
-
-room++;
-// var objTo = document.getElementById('variation_fields');
-// var divtest = document.createElement("div");
-// divtest.setAttribute("class", "form-group removeclass" + room);
-// var rdiv = 'removeclass' + room;
-// divtest.innerHTML =
-//     '<div class="form-group row">
-//      \                       <div class="col-sm-3 nopadding">
-//                            \     <div class="form-group">
-//                             \      <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Title">
-//                              \   </div>
-//                             \  </div>
-//                             \  <div class="col-sm-3 nopadding">
-//                             \    <div class="form-group">
-//                             \      <div class="input-group">
-//                              \       <input type="file" class="form-control" id="Degree" name="" value="" placeholder="Images"> 
-//                              \     </div>
-//                              \   </div>
-//                             \  </div>
-//                             \  <div class="col-sm-3 nopadding">
-//                             \      <div class="form-group">
-//                              \       <input type="text" class="form-control" id="Degree" name="" value="" placeholder="Description">
-//                              \     </div>
-//                              \   </div>
-//                              \   <div class="col-sm-3 nopadding">
-//                               \    <div class="form-group">
-//                                \     <div class="input-group">
-//                                \         <fieldset>
-//                                 \            <div class="input-group">
-//                                 \              <input type="text" class="form-control" placeholder="Price" aria-describedby="button-addon2">
-//                                  \             <div class="input-group-append">
-//                                   \              <button class="btn btn-danger" "onclick="remove_variation_fields(' +room +')" type="button">-</button>
-//                                   \            </div>
-//                                   \          </div>
-//                                   \        </fieldset>
-//                                   \  </div>
-//                                 \  </div>
-//                                \ </div>                          
-//                          \ </div>';
-
-// objTo.appendChild(divtest);
-// }
-
-// function remove_variation_fields(rid) {
-// $('.removeclass' + rid).remove();
-// }
-  
-
+  function remove_income_fields(rid) {
+        $('.removeclass' + rid).remove();
     }
-    });
+
+$(document).ready(function () {
+  
+  // $("#switchery3").click(function() {
+    var changeCheckbox = document.querySelector('.js-check-change');
+  // , changeField = document.querySelector('.js-check-change-field');
+
+changeCheckbox.onchange = function() {
+  if (changeCheckbox.checked) {
+    $("#discount").prop('disabled', false);
+  }else{
+    $("#discount").prop('disabled', true);
+  }
+};
+
+});
+
+
+// });
+   
   </script>
 
 @endsection
