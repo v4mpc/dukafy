@@ -177,7 +177,7 @@
                                 </li><h4>Discount:<strong>{{number_format(round(($product->price*$product->discount)/100))}}<span class="badge badge-danger"> -{{ $product->discount}}%</span></strong></h4></h4>
                                 <li></li>
                                 <h4><li>Category: <strong>{{$product->category->name}}</strong></li></h4>
-                                <h4><li>Sub-category: <strong>{{$product->subCategory->name}}</strong></li></h4>
+                                {{-- <h4><li>Sub-category: <strong>{{$product->subCategory->name}}</strong></li></h4> --}}
                                 <h4> <li>Description: <strong></h4> {{$product->description}}</strong></li>
                                     <li></li>
                                 </ul>
@@ -194,11 +194,11 @@
                       </div>
                     </div>
                   </div>
-            <div class="row">
+            {{-- <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    {{-- <h4 class="card-title">Zero configuration</h4> --}}
+                   
                     <h4 class="form-section"><i class="ft-layers"></i> Product Variation(s)</h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">
@@ -250,7 +250,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </section>
 
     <!--/ Zero configuration table -->

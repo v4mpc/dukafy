@@ -9,9 +9,9 @@
         <li class=" nav-item {{Request::is('products')?"open":""}}"><a href="{{route('products.index')}}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="nav.dash.main">Products</span></a>
          
         </li>
-        <li class=" nav-item {{Request::is('products')?"open":""}}"><a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="nav.dash.main">Product Variations</span></a>
+        {{-- <li class=" nav-item {{Request::is('products')?"open":""}}"><a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="nav.dash.main">Product Variations</span></a>
          
-        </li>
+        </li> --}}
 
         <li class=" nav-item {{Request::is('orders')?"open":""}}"><a href="{{route('orders.index')}}"><i class="ft-package"></i><span class="menu-title" data-i18n="nav.dash.main">Orders</span></a>
          
@@ -20,9 +20,9 @@
         <li class=" nav-item {{Request::is('categories')?"open":""}}"><a href="{{route('categories.index')}}"><i class="ft-list"></i><span class="menu-title" data-i18n="nav.dash.main">Categories</span></a>
          
         </li>
-        <li class=" nav-item {{Request::is('sub_categories')?"open":""}}"><a href="{{route('sub_categories.index')}}"><i class="ft-align-left"></i><span class="menu-title" data-i18n="nav.dash.main">Sub-Categories</span></a>
+        {{-- <li class=" nav-item {{Request::is('sub_categories')?"open":""}}"><a href="{{route('sub_categories.index')}}"><i class="ft-align-left"></i><span class="menu-title" data-i18n="nav.dash.main">Sub-Categories</span></a>
          
-        </li>
+        </li> --}}
 
         <li class=" nav-item {{Request::is('out_stock')?"open":""}}"><a href="{{route('out_stock.index')}}"><i class="ft-log-out"></i><span class="menu-title" data-i18n="nav.dash.main">Out-Stock</span></a>
          

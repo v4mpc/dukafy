@@ -58,7 +58,7 @@ class ProductController extends Controller
         
         $product->price_visibility=$price_visibility;
         $product->category_id=$request->category_id;
-        $product->sub_category_id=$request->sub_category_id;
+        // $product->sub_category_id=$request->sub_category_id;
         $product->description=$request->description;
 
         //temp data
@@ -120,16 +120,16 @@ if($request->hasFile('images')) {
 }
 
 
-if (count($request->variation)===0) {
+// if (count($request->variation)===0) {
     
-for ($i=0; $i<count($request->variation);$i++) {
-    $productVariation=new ProductVariation;
-    $productVariation->variation=$request->variation[$i];
-    $productVariation->value=$request->variation_value[$i];
-    $productVariation->price=$request->variation_price[$i];
-    $productVariation->product_id=$product->id;
-    $productVariation->save();
-}
+// for ($i=0; $i<count($request->variation);$i++) {
+//     $productVariation=new ProductVariation;
+//     $productVariation->variation=$request->variation[$i];
+//     $productVariation->value=$request->variation_value[$i];
+//     $productVariation->price=$request->variation_price[$i];
+//     $productVariation->product_id=$product->id;
+//     $productVariation->save();
+// }
 
 // if($request->hasFile('variation_images')) {
 //     foreach($request->file('variation_images') as $image) {
@@ -144,7 +144,7 @@ for ($i=0; $i<count($request->variation);$i++) {
 //     }
 // }
 
-}
+// }
 
 
 

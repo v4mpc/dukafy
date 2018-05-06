@@ -18,8 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->integer('price');
             $table->boolean('price_visibility');
+            // $table->integer('discount')->nullable();
             $table->integer('category_id');
-            $table->integer('sub_category_id');
+            $table->integer('sub_category_id')->nullable();
             $table->string('description');
             $table->boolean('out_stock')->nullable();
             $table->boolean('featured')->nullable();

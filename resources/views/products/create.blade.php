@@ -20,7 +20,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
-
+{{-- //template specific css --}}
+<link rel="stylesheet" href="{{asset('template1/css/product.css')}}">
+  
 @endsection
 
 
@@ -78,168 +80,193 @@
                 </div>
                 <div class="card-content collpase show">
                   <div class="card-body">
-                    <div class="card-text">
-                    </div>
-                  <form class="form form-horizontal" action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
-
-
-                      {{csrf_field()}}
-                      <div class="form-body">
-                        <h4 class="form-section"><i class="ft-shopping-cart"></i>Product</h4>
-                        <div class="form-group row">
-                          <label class="col-md-3 label-control" for="projectinput1">Name</label>
-                          <div class="col-md-7">
-                          <input type="text" id="projectinput1" class="form-control" value="{{old('name')}}" placeholder="Name" name="name">
-                          </div>
-                        </div>
-                    
-
-                          <div class="form-group row">
-                              <label class="col-md-3 label-control" for="projectinput2">Price</label>
-                              <div class="col-md-7">
-                                  <fieldset>
-                                      <div class="input-group">
-                                      <input type="text" name="price" class="form-control" value="{{old('price')}}" placeholder="Enter Price then Toggle Show Price" aria-describedby="radio-addon4">
-                                        <div class="input-group-append">
-                                          <span class="input-group-text" id="radio-addon4">
-                                            <input type="checkbox" id="switchery2" name="price_visibility" class="switchery" data-size="xs" checked/>
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </fieldset>
-                                    
-                                        
-                                    
-                              </div>
-                            </div>
-
-
+                    {{-- <div class="card-text">
+                    </div> --}}
+                    {{-- <h4 class="form-section"><i class="ft-shopping-cart"></i>Product</h4> --}}
+                    <div class="row">
+                    <div class="col-md-8">
+                        <form class="form form-horizontal" action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
+                          {{csrf_field()}}
+                          <div class="form-body">
+                           
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput2">Discount</label>
-                                <div class="col-md-7">
-                                    <fieldset>
-                                        <div class="input-group">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="radio-addon4">
-                                                  <input type="checkbox" id="switchery3" name="price_visibility" class="switchery js-check-change" data-size="xs"/>
-                                                </span>
-                                              </div>
-                                        <input type="text" id="discount" disabled name="discount" disabled class="form-control" value="{{old('price')}}" placeholder="Amount or Percentage eg 40000 or 80%" aria-describedby="radio-addon4">
-                                          
-                                        </div>
-                                      </fieldset>
-                                      
-                                          
-                                      
-                                </div>
-                              </div>
-
-                          
-                         
-                        <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput6">Category</label>
-                            <div class="col-md-7">
-                              <select id="projectinput6" name="category_id" class="form-control" name="category_id">
-                                <option value="none" selected="" disabled="">Select Categoty...</option>
-                                @foreach($categories as $category)
-                              <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
-                               
-                              </select>
-                            </div>
-                          </div>
-                        
-                          <div class="form-group row">
-                              <label class="col-md-3 label-control" for="projectinput6">Sub-category</label>
+                              <label class="col-md-3 label-control" for="projectinput1">Name</label>
                               <div class="col-md-7">
-                                <select id="projectinput6" name="sub_category_id" class="form-control" name="sub_category_id">
-                                  <option value="none" selected="" disabled="">Select Sub-categoty...</option>
-                                  
-                                </select>
+                              <input type="text" id="name" class="form-control" value="{{old('name')}}" placeholder="Name" name="name">
                               </div>
-                              <div class="col-md-2">
-                                <span id="loader1">
-                                  <i class="fa fa-spinner fa-2x fa-spin"></i>
-                                </span>
-                              </div>
-
                             </div>
-                            <div class="form-group row">
-                                <label class="col-md-3 label-control" for="userinput8">Description</label>
-                                <div class="col-md-7">
-                                <textarea id="userinput8" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{old('description')}}</textarea>
-                                </div>
-                              </div>
-
                               <div class="form-group row">
-                                  <label class="col-md-3 label-control">Product Image(s)</label>
+                                  <label class="col-md-3 label-control" for="price">Price</label>
                                   <div class="col-md-7">
-                                    <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file" name="images[]" multiple>
-                                      <span class="file-custom"></span>
-                                    </label>
+                                      <fieldset>
+                                          <div class="input-group">
+                                          <input type="text" name="price" id="price"class="form-control" value="{{old('price')}}" placeholder="Enter Price then Toggle Show Price" aria-describedby="radio-addon4">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text" id="radio-addon4">
+                                                <input type="checkbox" id="switchery2" name="price_visibility" class="switchery js-price-visible" data-size="xs" checked/>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </fieldset> 
                                   </div>
                                 </div>
-                        <h4 class="form-section"><i class="ft-layers"></i>Product Variation</h4>
-                        
-                        <div id="variation_fields">
-                          </div>
-
-                        <div class="form-group row">
-                            <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                  <input type="text" class="form-control" id="Degree" name="variation[]" value="" placeholder="Title">
-                                </div>
-                              </div>
-                              <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                  <div class="input-group">
-                                    <input type="file" class="form-control" id="Degree" name="variation_images[]" value="" placeholder="Images"> 
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-sm-3 nopadding">
-                                  <div class="form-group">
-                                    <input type="text" class="form-control" id="Degree" name="variation_value[]" value="" placeholder="Description">
-                                  </div>
-                                </div>
-                                <div class="col-sm-3 nopadding">
-                                  <div class="form-group">
-                                    <div class="input-group">
+    
+    
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput2">Discount</label>
+                                    <div class="col-md-7">
                                         <fieldset>
                                             <div class="input-group">
-                                              <input type="text" class="form-control" name="variation_price[]" placeholder="Price" aria-describedby="button-addon2">
-                                              <div class="input-group-append">
-                                                <button type="button" class="btn btn-success" id="add_field" > <i class="ft-plus"></i></button>
-                                              </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="radio-addon4">
+                                                      <input type="checkbox" id="switchery3" name="price_visibility" class="switchery js-check-change" data-size="xs"/>
+                                                    </span>
+                                                  </div>
+                                            <input type="text" id="discount" disabled name="discount" disabled class="form-control" value="{{old('price')}}" placeholder="Amount or Percentage eg 40000 or 80%" aria-describedby="radio-addon4">
+                                              
                                             </div>
                                           </fieldset>
+                                          
+                                              
+                                          
                                     </div>
                                   </div>
+    
+                              
+                             
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput6">Category</label>
+                                <div class="col-md-7">
+                                  <select id="category" class="form-control" name="category_id">
+                                    <option value="none" selected="" disabled="">Select Category...</option>
+                                    
+                                    @foreach($categories as $category)
+                                  <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach
+                                   
+                                  </select>
                                 </div>
-
-
-                                
-                          
+                                <div class="col-md-1"> <a  data-toggle="tooltip" data-target="#inlineForm" data-original-title="Add Category" data-placement="top"  class="btn btn-xm btn-outline-success edit-item-btn" id="add_category"><i class="ft-plus"></i></a></div>
+                              </div>
+                              
+                              {{-- <div class="form-group row">
+                                  <label class="col-md-3 label-control" for="projectinput6">Sub-category</label>
+                                  <div class="col-md-7">
+                                    <select id="projectinput6" name="sub_category_id" class="form-control" name="sub_category_id">
+                                      <option value="none" selected="" disabled="">Select Sub-categoty...</option>
+                                      
+                                    </select>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <span id="loader1">
+                                      <i class="fa fa-spinner fa-2x fa-spin"></i>
+                                    </span>
+                                  </div>
+    
+                                </div> --}}
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="userinput8">Description</label>
+                                    <div class="col-md-7">
+                                    <textarea id="userinput8" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{old('description')}}</textarea>
+                                    </div>
+                                  </div>
+    
+                                  <div class="form-group row">
+                                      <label class="col-md-3 label-control">Product Image(s)</label>
+                                      <div class="col-md-7">
+                                        <label id="projectinput8" class="file center-block">
+                                          <input type="file" id="file" name="images[]" onchange="readURL(this);" multiple>
+                                          <span class="file-custom"></span>
+                                        </label>
+                                      </div>
+                                    </div>
+                            {{-- <h4 class="form-section"><i class="ft-layers"></i>Product Variation</h4>
+                            
+                            <div id="variation_fields">
+                              </div>
+    
+                            <div class="form-group row">
+                                <div class="col-sm-3 nopadding">
+                                    <div class="form-group">
+                                      <input type="text" class="form-control" id="Degree" name="variation[]" value="" placeholder="Title">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3 nopadding">
+                                    <div class="form-group">
+                                      <div class="input-group">
+                                        <input type="file" class="form-control" id="Degree" name="variation_images[]" value="" placeholder="Images"> 
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3 nopadding">
+                                      <div class="form-group">
+                                        <input type="text" class="form-control" id="Degree" name="variation_value[]" value="" placeholder="Description">
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-3 nopadding">
+                                      <div class="form-group">
+                                        <div class="input-group">
+                                            <fieldset>
+                                                <div class="input-group">
+                                                  <input type="text" class="form-control" name="variation_price[]" placeholder="Price" aria-describedby="button-addon2">
+                                                  <div class="input-group-append">
+                                                    <button type="button" class="btn btn-success" id="add_field" > <i class="ft-plus"></i></button>
+                                                  </div>
+                                                </div>
+                                              </fieldset>
+                                        </div>
+                                      </div>
+                                    </div>
+    
+    
+                                    
+                              
+                              </div>--}}
+                            
+                            </div>
+    
+                            
+                           
+                           
+                        
+                          <div class="form-actions">
+                            <button type="button" class="btn btn-warning mr-1">
+                              <i class="ft-x"></i> Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                              <i class="ft-save"></i> Save
+                            </button>
                           </div>
-                        </div>
                         
+                        </form>
+                    </div>
 
-                        
-                       
-                       
                     
-                      <div class="form-actions">
-                        <button type="button" class="btn btn-warning mr-1">
-                          <i class="ft-x"></i> Cancel
-                        </button>
-                        <button type="submit" class="btn btn-primary">
-                          <i class="ft-save"></i> Save
-                        </button>
+
+                     <div class="col-md-4">
+                        <!-- Product -->
+                         <div class="product">
+                                          <article>
+                                              <img  class="img-responsive" id="product_image" src="{{asset('images/productplaceholder.png')}}" alt="">
+                                              <span id="sale_tag"></span>
+                                              <!-- Content -->
+                                              <span class="tag" id="category_output"></span>
+                                             
+                                              <div> <a href="#." class="tittle" id="name_output"></a></div>
+                                              <div class="price" id="new_price_output">
+                                               <span id="old_price_output"></span>
+                                              </div>
+                                              <a href="#." class="cart-btn">
+                                                <i class="icon-basket-loaded"></i>
+                                              </a>
+                                            </article>
+                                        </div> 
+                                        
+                              </div>
+                            </div>
+                    
                       </div>
-                    </form>
-                  </div>
-                </div>
+                    </div>
               </div>
             </div>
           </div>
@@ -298,6 +325,95 @@ changeCheckbox.onchange = function() {
     $("#discount").prop('disabled', true);
   }
 };
+
+var togglePrice=document.querySelector('.js-price-visible');
+  togglePrice.onchange=function(){
+    if (togglePrice.checked) {
+    $("#new_price_output").show();
+    } else {
+
+      $("#new_price_output").hide();
+      
+    }
+  }
+
+///input binding to a preview
+$("#name").keyup(function(event) {
+  var stt = $(this).val();
+  $("#name_output").text(stt);
+});
+
+$("#price").keyup(function(event) {
+  var stt = $(this).val();
+  $("#new_price_output").text(addCommas(stt));
+});
+
+var wait_time=1000;
+var wait_key_stroke=3;
+var count_time;
+var count_key_stroke;
+$('#discount').keyup(function(){
+    clearTimeout(count_time);
+    count_time=setTimeout(done_typing,wait_time);
+});
+
+  function done_typing(params) {
+   var discount=$('#discount').val();
+    // alert(input);
+    var lastChar = discount[discount.length-1];
+      if (lastChar=='%') {
+        var percentage='-'+discount;
+        var numerice_percentage=discount.replace('%','');
+        var old_price_output=$("#new_price_output").text();
+        var new_price_output=$("#new_price_output").text().replace(/,/g , '');
+        new_price_output=new_price_output-((new_price_output*numerice_percentage)/100);
+        $("#new_price_output").text(addCommas(new_price_output)).append('<span>'+old_price_output+'</span>');
+        $("#sale_tag").addClass('sale-tag').text(percentage);
+      } else {
+        // alert('its not a percentage');
+      }
+    }
+  
+
+// $("#category").on('change',function () {
+//   alert("this.value");
+// }):
+$('select[name="category_id"]').on('change', function () {
+  var category=$("#category option:selected").text();
+  $("#category_output").text(category);
+
+});
+
+
+function addCommas(nStr) {
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
+ function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#product_image').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+        // this is the id of the form
+
+
 
 });
 

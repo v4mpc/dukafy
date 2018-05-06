@@ -102,4 +102,14 @@ class CategoryController extends Controller
         $category->delete();
         return response()->json($category);
     }
+
+    public function addCategory(Request $request){
+  
+        $category=new Category;
+        $category->name=$request->name;
+        $category->save();
+        $categories=Category::get()->pluck('name','id');
+        return response()->json($categories);
+
+    }
 }

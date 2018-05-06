@@ -77,7 +77,7 @@
                                   <tr>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <th>Sub-category</th>
+                                    {{-- <th>Sub-category</th> --}}
                                     <th>Image</th>
                                     <th>Price</th>
                                     <th></th>    
@@ -92,7 +92,7 @@
                                  <tr>
                                  <td>{{$product->name}}</td>
                                  <td>{{$product->category->name}}</td>
-                                 <td>{{$product->subCategory->name}}</td>
+                                 {{-- <td>{{$product->subCategory->name}}</td> --}}
                                   <td><img src="{{asset('images/iphone6.png ')}}" width="100" height="100" alt=""></td>
                                   
                                  <td>{{number_format($product->price)}}</td>

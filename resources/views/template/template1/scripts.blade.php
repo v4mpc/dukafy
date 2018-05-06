@@ -13,6 +13,8 @@
 <script src="{{asset('template1/js/vendors/jquery.nouislider.min.js')}}"></script> 
 <script>
         jQuery(document).ready(function($) {
+
+         
           
           //  Price Filter ( noUiSlider Plugin)
             $("#price-range").noUiSlider({

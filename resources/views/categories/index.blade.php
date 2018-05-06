@@ -113,7 +113,7 @@
                                   <tr>
                                     
                                     <th>Category</th>
-                                    <th>Sub-category</th>
+                                    {{-- <th>Sub-category</th> --}}
           
                                     <th>Action</th>    
                                   </tr>
@@ -127,7 +127,7 @@
                               <tr>
                                   
                               <td>{{$category->name}}</td>
-                                  <td>
+                                  {{-- <td>
 <ul>
   @foreach($category->subCategories as $sub_category)
 <li>{{$sub_category->name}}</li>
@@ -136,7 +136,7 @@
 
 </ul>
 
-                                  </td>
+                                  </td> --}}
                                  
                               
                                 <td>
