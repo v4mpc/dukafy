@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use App\User;
+use App\Http\Requests\StoreUser;
+use Hash;
+use Image;
 
 class UserController extends Controller
 {
@@ -13,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        $users=User::all();
+        return view('users.index')->with('users',$users);
     }
 
     /**
@@ -32,10 +38,29 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUser $request)
     {
-        //
+        $user=new User;
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+
+        if($request->hasFile('image')) {
+                $filename = $request->image->getClientOriginalName();
+                $location=public_path('images/'.$filename);
+                Image::make($request->image)->resize(400, 400)->save($location);
+                $user->image=$filename;
+  
+    }else {
+        $user->image='userplaceholder.png';
     }
+
+    $user->save();
+
+    Session::flash('success','User Saved');
+    return redirect()->route('users.index');
+
+}
 
     /**
      * Display the specified resource.
@@ -79,6 +104,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::findOrFail($id);
+        $user->delete();
+        return response()->json($user);
+
     }
 }

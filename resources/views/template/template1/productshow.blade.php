@@ -467,7 +467,7 @@
            </div>
         </div>
      </section>  <!-- Clients img -->
-    <section class="light-gry-bg clients-img">
+    {{-- <section class="light-gry-bg clients-img">
       <div class="container">
         <ul>
           <li><img src="{{asset('template1/images/c-img-1.png')}}" alt="" ></li>
@@ -477,7 +477,7 @@
           <li><img src="{{asset('template1/images/c-img-5.png')}}" alt="" ></li>
         </ul>
       </div>
-    </section>
+    </section> --}}
     
     <!-- Newslatter -->
 

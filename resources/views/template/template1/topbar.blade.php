@@ -9,12 +9,16 @@
 <!-- Top bar -->
 <div class="top-bar">
     <div class="container">
+        @if($settings->working_hours===null)
+    <p>{{$settings->working_hours}}</p>
+        @endif
      
-      <p>Mon-Fri | 08:00-13:00</p>
       <div class="right-sec">
         <ul>
         <li><a href="{{route('login')}}">Login </a></li>
           <li><a href="#.">Store Location </a></li>
+        <li><a href="{{route('contact')}}">Contact Us </a></li>
+        <li><a href="{{route('about')}}">About Us </a></li>
           {{-- <li><a href="#.">FAQ </a></li> --}}
           {{-- <li><a href="#.">Newsletter </a></li> --}}
           {{-- <li>
@@ -33,7 +37,9 @@
               <option>JPY</option>
             </select>
           </li> --}}
-          <li><i class="fa fa-phone"></i> <strong>Hotline:</strong> (+100) 123 456 7890</span> </li>
+        @if(count($settings->mobile)!=null)
+        <li><i class="fa fa-phone"></i> <strong>Hotline:</strong> {{$settings->mobile}}</span> </li>
+        @endif
         </ul>
         {{-- <div class="social-top"> <span class="call-mun"><i class="fa fa-phone"></i> <strong>Hotline:</strong> (+100) 123 456 7890</span> </div> --}}
         {{-- <div class="social-top"> <a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-linkedin"></i></a> <a href="#."><i class="fa fa-dribbble"></i></a> <a href="#."><i class="fa fa-pinterest"></i></a> </div> --}}
@@ -46,17 +52,11 @@
       <div class="logo"> <a href="index-2.html"><img src="images/logo.png" alt="" ></a> </div>
       <div class="search-cate">
         <select class="selectpicker">
-          <option> All Categories</option>
-          <option> Home Audio & Theater</option>
-          <option> TV & Video</option>
-          <option> Camera, Photo & Video</option>
-          <option> Cell Phones & Accessories</option>
-          <option> Headphones</option>
-          <option> Video Games</option>
-          <option> Bluetooth & Wireless </option>
-          <option> Gaming Console</option>
-          <option> Computers & Tablets</option>
-          <option> Monitors </option>
+          
+
+          @foreach($categories as $category)
+        <option>{{$category->name}}</option>
+            @endforeach
         </select>
         <input type="search" placeholder="Search entire store here...">
         <button class="submit" type="submit"><i class="icon-magnifier"></i></button>

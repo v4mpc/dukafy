@@ -62,96 +62,21 @@
           <div role="tabpanel" class="tab-pane active fade in" id="featur"> 
             <!-- Items Slider -->
             <div class="item-slide-5 with-nav"> 
+
+              {{-- @foreach($products as $product)
               <!-- Product -->
               <div class="product">
                 <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="" > 
                   <!-- Content --> 
-                  <span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7 Perfect For Playing Game</a> 
+                <span class="tag">{{$product->category->name}}</span> <a href="#." class="tittle">{{$product->category->name}}</a> 
                   <!-- Reviews -->
                  
                   <div class="price">350.00 </div>
                   <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
               </div>
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="" > <span class="sale-tag">-25%</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim Con 8GB</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00 <span>200.00</span></div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
+
+              @endforeach --}}
               
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart Watch M26 Touch Bluetooh </a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-4.jpg')}}" alt="" > <span class="new-tag">New</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico Bluetooth Con Air Mouse</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-5.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7" 128GB full HD</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-6.jpg')}}" alt="" > <span class="sale-tag">-25%</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim Con 8GB</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00 <span>200.00</span></div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-7.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart Watch M26 Touch Bluetooh </a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-8.jpg')}}" alt="" > <span class="new-tag">New</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico Bluetooth Con Air Mouse</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
             </div>
           </div>
           

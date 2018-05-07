@@ -59,6 +59,7 @@
       </div>
       <div class="content-body">
         <!-- Basic form layout section start -->
+        @include('partials._messages')
         <section id="horizontal-form-layouts">
           <div class="row">
             <div class="col-md-12">
@@ -79,37 +80,34 @@
                   <div class="card-body">
                     <div class="card-text">
                     </div>
-                    <form class="form form-horizontal">
+                  <form class="form form-horizontal" method="POST" action="{{route('users.store')}}" enctype="multipart/form-data">
+                    {{csrf_field()}}
                       <div class="form-body">
                         <h4 class="form-section"><i class="ft-user"></i>User Info</h4>
                         <div class="form-group row">
                           <label class="col-md-3 label-control" for="projectinput1">Name</label>
                           <div class="col-md-9">
-                            <input type="text" id="projectinput1" class="form-control" placeholder="Name"
-                            name="fname">
+                          <input type="text" id="projectinput1" class="form-control" value="{{old('name')}}" placeholder="Name" name="name">
                           </div>
                         </div>
                     
                         <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Email</label>
                                 <div class="col-md-9">
-                                  <input type="email" id="projectinput1" class="form-control" placeholder="Email"
-                                  name="fname">
+                                <input type="email" id="projectinput1" class="form-control" value="{{old('email')}}" placeholder="Email" name="email">
                                 </div>
                               </div>
                               <div class="form-group row">
                                     <label class="col-md-3 label-control" for="projectinput1">Password</label>
                                     <div class="col-md-9">
-                                      <input type="password" id="projectinput1" class="form-control" placeholder="Password"
-                                      name="fname">
+                                      <input type="password" id="projectinput1" class="form-control" placeholder="Password" name="password">
                                     </div>
                                   </div>
 
                                   <div class="form-group row">
                                         <label class="col-md-3 label-control" for="projectinput1">Confirm Password</label>
                                         <div class="col-md-9">
-                                          <input type="password" id="projectinput1" class="form-control" placeholder="Re-type password"
-                                          name="fname">
+                                          <input type="password" id="projectinput1" class="form-control" placeholder="Re-type password" name="password_confirmation">
                                         </div>
                                       </div>
                               
@@ -123,12 +121,12 @@
                                   <label class="col-md-3 label-control">User Image</label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file">
+                                      <input type="file" name="image"="file">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
                                 </div>
-                        <h4 class="form-section"><i class="ft-lock"></i>User Permissions</h4>
+                        {{-- <h4 class="form-section"><i class="ft-lock"></i>User Permissions</h4>
                         
                         <div class="table-responsive">
                                 <table class="table">
@@ -338,7 +336,7 @@
                                               </tr>       
                                   </tbody>
                                 </table>
-                              </div>
+                              </div> --}}
 
                         
                        

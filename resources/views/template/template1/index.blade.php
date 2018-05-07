@@ -63,95 +63,20 @@
             <!-- Items Slider -->
             <div class="item-slide-5 with-nav"> 
               <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7 Perfect For Playing Game</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00 </div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
+               @foreach($products as $product)
               <!-- Product -->
               <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="" > <span class="sale-tag">-25%</span> 
-                  
+                <article> <img class="img-responsive" src="{{asset('images/'.$product->images[0]->image)}}" alt="" > 
                   <!-- Content --> 
-                  <span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim Con 8GB</a> 
+                <span class="tag">{{$product->category->name}}</span>
+                <div> <a href="#." class="tittle">{{$product->name}}</a> </div>
                   <!-- Reviews -->
                  
-                  <div class="price">350.00 <span>200.00</span></div>
+                  <div class="price">{{number_format($product->price)}} </div>
                   <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
               </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart Watch M26 Touch Bluetooh </a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-4.jpg')}}" alt="" > <span class="new-tag">New</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico Bluetooth Con Air Mouse</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-5.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7" 128GB full HD</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-6.jpg')}}" alt="" > <span class="sale-tag">-25%</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim Con 8GB</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00 <span>200.00</span></div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-7.jpg')}}" alt="" > 
-                  <!-- Content --> 
-                  <span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart Watch M26 Touch Bluetooh </a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
-              
-              <!-- Product -->
-              <div class="product">
-                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-8.jpg')}}" alt="" > <span class="new-tag">New</span> 
-                  
-                  <!-- Content --> 
-                  <span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico Bluetooth Con Air Mouse</a> 
-                  <!-- Reviews -->
-                 
-                  <div class="price">350.00</div>
-                  <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-              </div>
+
+              @endforeach
             </div>
           </div>
           
@@ -230,21 +155,8 @@
  
         
 
+
     
-    <!-- Clients img -->
-    <section class="light-gry-bg clients-img">
-      <div class="container">
-        <ul>
-          <li><img src="{{asset('template1/images/c-img-1.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-2.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-3.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-4.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-5.png')}}" alt="" ></li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- Newslatter -->
 
   </div>
   <!-- End Content --> 

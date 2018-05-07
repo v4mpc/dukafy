@@ -317,12 +317,17 @@ $(document).ready(function () {
   // $("#switchery3").click(function() {
     var changeCheckbox = document.querySelector('.js-check-change');
   // , changeField = document.querySelector('.js-check-change-field');
-
+  var old1_price_output=$("#new_price_output").text();
 changeCheckbox.onchange = function() {
   if (changeCheckbox.checked) {
     $("#discount").prop('disabled', false);
+    $("#sale_tag").show();
+    $("#old_price_output").show();
+    // $("#new_price_output").text(addCommas(old1_price_output))
   }else{
     $("#discount").prop('disabled', true);
+    $("#sale_tag").hide();
+    $("#old_price_output").hide();
   }
 };
 
@@ -367,7 +372,7 @@ $('#discount').keyup(function(){
         var old_price_output=$("#new_price_output").text();
         var new_price_output=$("#new_price_output").text().replace(/,/g , '');
         new_price_output=new_price_output-((new_price_output*numerice_percentage)/100);
-        $("#new_price_output").text(addCommas(new_price_output)).append('<span>'+old_price_output+'</span>');
+        $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
         $("#sale_tag").addClass('sale-tag').text(percentage);
       } else {
         // alert('its not a percentage');

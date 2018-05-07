@@ -98,16 +98,7 @@
                           </li>
                        </ul>
                     </div>
-                    <!-- Rating -->
-                    <h6>Rating</h6>
-                    <div class="rating">
-                       <ul>
-                          <li><a href="#."><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i> <span>(218)</span></a></li>
-                          <li><a href="#."><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> <span>(178)</span></a></li>
-                          <li><a href="#."><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> <span>(79)</span></a></li>
-                          <li><a href="#."><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> <span>(188)</span></a></li>
-                       </ul>
-                    </div>
+                    
                     <!-- Colors -->
                     <h6>Size</h6>
                     <div class="sizes"> <a href="#.">S</a> <a href="#.">M</a> <a href="#.">L</a> <a href="#.">XL</a> </div>
@@ -467,20 +458,7 @@
            </div>
         </div>
      </section>  <!-- Clients img -->
-    <section class="light-gry-bg clients-img">
-      <div class="container">
-        <ul>
-          <li><img src="{{asset('template1/images/c-img-1.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-2.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-3.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-4.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-5.png')}}" alt="" ></li>
-        </ul>
-      </div>
-    </section>
     
-    <!-- Newslatter -->
-
   </div>
   <!-- End Content --> 
 

@@ -12,6 +12,9 @@
 
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')}}">
+
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
  
 
 @endsection
@@ -83,8 +86,10 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body">
-                    <form action="#" id="layoutForm" class="number-tab-steps wizard-circle" enctype="multipart/form-data">
-                      <!-- Step 1 -->
+                  <form action="{{route('settings.store')}}" method="POST" id="layoutForm" class="number-tab-steps wizard-circle" enctype="multipart/form-data">
+                    {{csrf_field()}}  
+                    
+                    <!-- Step 1 -->
                       <h6>Step 1</h6>
                     
                       <fieldset class="form-group">
@@ -243,7 +248,7 @@
                                         <div class="card-body">
                                           <div class="icheck1">
                                             <fieldset>
-                                              <input type="radio" name="template" value="template1">
+                                              <input type="radio" name="layout" value="template1">
                                               <label for="input-2"></label>
                                             </fieldset>
                                           </div>
@@ -278,7 +283,7 @@
                                   <label class="col-md-3 label-control">Company Logo</label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block">
-                                      <input type="file" id="file" name="logo">
+                                      <input type="file" name="logo" id="file" name="logo">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
@@ -290,7 +295,19 @@
                                   <label class="col-md-3 label-control">Home Slider(max 3 images) </label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block" >
-                                      <input type="file" id="file" multiple name="images[]">
+                                      <input type="file" id="file" multiple name="slider_images[]">
+                                      <span class="file-custom"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                          </div>
+
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label class="col-md-3 label-control">Brand Images(max 5 images) </label>
+                                  <div class="col-md-9">
+                                    <label id="projectinput8" class="file center-block" >
+                                      <input type="file" id="file" multiple name="brand_images[]">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
@@ -298,36 +315,91 @@
                           </div>
                         </div>
                       </fieldset>
-                      <!-- Step 3 -->
+
+
                       <h6>Step 3</h6>
                       <fieldset>
                         <div class="row">
                           <div class="col-md-12">
-                         <i>   <h5>Use "|" for multiple value</h5></i>
+                        
+                            <div class="form-group">
+                              <label for="eventName1">About Us</label>
+                              <textarea name="about" rows="20">Describe your business!</textarea>
+                            </div>
+                          </fieldset>
+                      <!-- Step 4 -->
+                      <h6>Step 4</h6>
+                      <fieldset>
+                        <div class="row">
+                          <div class="col-md-12">
+                         {{-- <i>   <h5>Use "|" for multiple value</h5></i> --}}
                             <div class="form-group">
                               <label for="eventName1">Address #</label>
-                              <input type="text" class="form-control" name="address" id="eventName1" placeholder="address1|address2">
+                              <input type="text" class="form-control" name="address" id="eventName1" placeholder="address">
                             </div>
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="eventName1">Phone #</label>
                                 <input type="text" class="form-control" name="phone" id="eventName1" placeholder="phone1|phone2">
-                              </div>
+                              </div> --}}
 
                               <div class="form-group">
                                   <label for="eventName1">Mobile #</label>
-                                  <input type="text" class="form-control" name="mobile" id="eventName1" placeholder="mobile1|mobile2">
+                                  <input type="text" class="form-control" name="mobile" id="eventName1" placeholder="hot line">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="eventName1">Email </label>
-                                    <input type="text" class="form-control" name="email" id="eventName1" placeholder="email1|email2">
+                                    <input type="text" class="form-control" name="email" id="eventName1" placeholder="email">
                                   </div>
 
                                   <div class="form-group">
                                       <label for="eventName1">Working Hours </label>
-                                      <input type="text" class="form-control" name="working_hours" id="eventName1" placeholder="start|close">
+                                      <input type="text" class="form-control" name="working_hours" id="eventName1" >
                                     </div>
+
+                                    <h4 class="form-section"><i class="ft-share"></i>Social Links</h4>
+                                    
+                                    <div class="form-group">
+                                        <label for="timesheetinput1">Facebook</label>
+                                        <div class="position-relative has-icon-left">
+                                          <input type="text" id="timesheetinput1" class="form-control" name="facebook" placeholder="facebook link" >
+                                          <div class="form-control-position">
+                                            <i class="ft-facebook"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="timesheetinput1">Twitter</label>
+                                          <div class="position-relative has-icon-left">
+                                            <input type="text" id="timesheetinput1" class="form-control" placeholder="twitter link" name="twitter">
+                                            <div class="form-control-position">
+                                              <i class="ft-twitter"></i>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="timesheetinput1">Instagram</label>
+                                            <div class="position-relative has-icon-left">
+                                              <input type="text" id="timesheetinput1" class="form-control" placeholder="instagram link" name="instagram">
+                                              <div class="form-control-position">
+                                                <i class="ft-instagram"></i>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+                                          {{-- <div class="form-group">
+                                              <label for="timesheetinput1">Youtube</label>
+                                              <div class="position-relative has-icon-left">
+                                                <input type="text" id="timesheetinput1" class="form-control" placeholder="youtube link" name="employeename">
+                                                <div class="form-control-position">
+                                                  <i class="ft-instagram"></i>
+                                                </div>
+                                              </div>
+                                            </div> --}}
                          
                            
                         </div>

@@ -88,10 +88,10 @@
                                 <input type="text" class="form-control" id="eventName1" placeholder="address1|address2">
                               </div>
   
-                              <div class="form-group">
+                              {{-- <div class="form-group">
                                   <label for="eventName1">Phone #</label>
                                   <input type="text" class="form-control" id="eventName1" placeholder="phone1|phone2">
-                                </div>
+                                </div> --}}
   
                                 <div class="form-group">
                                     <label for="eventName1">Mobile #</label>
@@ -105,7 +105,7 @@
   
                                     <div class="form-group">
                                         <label for="eventName1">Working Hours </label>
-                                        <input type="text" class="form-control" id="eventName1" placeholder="start|close">
+                                        <input type="text" class="form-control" id="eventName1" >
                                       </div>
                            
                              

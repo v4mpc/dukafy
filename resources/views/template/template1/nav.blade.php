@@ -6,7 +6,10 @@
         <div class="cate-bar-in">
           <div id="cater" class="collapse">
             <ul>
-                <li><a href="#."> Home Audio & Theater</a></li>
+              @foreach($categories as $category)
+            <li><a href="#."> {{$category->name}}</a></li>
+              @endforeach
+                {{-- <li><a href="#."> Home Audio & Theater</a></li>
                 <li><a href="#."> TV & Video</a></li>
                 <li><a href="#."> Camera, Photo & Video</a></li>
                 <li class="sub-menu"><a href="#."> Cell Phones & Accessories</a>
@@ -35,7 +38,7 @@
                 <li><a href="#."> Computers & Tablets</a></li>
                 <li><a href="#."> Monitors</a></li>
                 <li><a href="#."> Home Appliances</a></li>
-                <li><a href="#."> Office Supplies</a></li>
+                <li><a href="#."> Office Supplies</a></li> --}}
               </ul>
           </div>
         </div>
@@ -109,9 +112,22 @@
 
       <div class="nav-right">
 <ul>
-  <li><a href="#."><i  class="fa fa-facebook white-fonts"></i></a></li>
-  <li><a href="#."><i  class="fa fa-twitter white-fonts"></i></a></li>
-  <li><a href="#."><i  class="fa fa-instagram white-fonts"></i></a></li>
+  @if($settings->facebook!=null)
+  <li><a href="{{$settings->facebook}}"><i  class="fa fa-facebook white-fonts"></i></a></li>
+  @endif
+
+  @if($settings->instagram!=null)
+  <li><a href="{{$settings->instagram}}"><i  class="fa fa-instagram white-fonts"></i></a></li>
+  @endif
+
+  @if($settings->twitter!=null)
+  <li><a href="{{$settings->twitter}}"><i  class="fa fa-twitter white-fonts"></i></a></li>
+  @endif
+
+
+ 
+  
+  
 </ul>
 
       </div>

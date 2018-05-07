@@ -44,38 +44,42 @@ class PreviewController extends Controller
         $preview=new Preview;
         
         $preview->user_id=Auth::id();
-        $preview->template=$request->template;
+        $preview->template=$request->layout;
         $preview->colour=$request->colour;
         $preview->address=$request->address;
         $preview->phone=$request->phone;
         $preview->mobile=$request->mobile;
         $preview->email=$request->email;
+        $setting->facebook=$request->facebook;
+        $setting->twitter=$request->twitter;
+        $setting->instagram=$request->instagram;
         $preview->working_hours=$request->working_hours;
+        $preview->working_hours=$request->about;
 
-        if($request->hasFile('logo')) {
+        // if($request->hasFile('logo')) {
            
-                $filename = $request->logo->getClientOriginalName();
-                $location=public_path('images/'.$filename);
-                Image::make($request->logo)->resize(400, 400)->save($location);
-                $preview->logo=$filename;
-        }
+        //         $filename = $request->logo->getClientOriginalName();
+        //         $location=public_path('images/'.$filename);
+        //         Image::make($request->logo)->resize(400, 400)->save($location);
+        //         $preview->logo=$filename;
+        // }
 
         $preview->save();
 
-        if($request->hasFile('images')) {
-            foreach($request->file('images') as $image) {
-                $filename = $image->getClientOriginalName();
-                $location=public_path('images/'.$filename);
-                Image::make($image)->resize(400, 400)->save($location);
-                $preview_image=new PreviewImage;
-                $preview_image->image=$filename;
-                $preview_image->preview_id=$preview->id;
+        // if($request->hasFile('images')) {
+        //     foreach($request->file('images') as $image) {
+        //         $filename = $image->getClientOriginalName();
+        //         $location=public_path('images/'.$filename);
+        //         Image::make($image)->resize(400, 400)->save($location);
+        //         $preview_image=new PreviewImage;
+        //         $preview_image->image=$filename;
+        //         $preview_image->preview_id=$preview->id;
            
-                $preview_image->save();
-            }
+        //         $preview_image->save();
+        //     }
 
-            dd($preview_image);
-        }
+            //dd($preview_image);
+        // }
         return json_encode($preview);
     }
 
@@ -87,9 +91,9 @@ class PreviewController extends Controller
      */
     public function show($id)
     {
-        $template=Preview::where('user_id',Auth::id())->orderBy('id', 'desc')->first();
+        // $template=Preview::where('user_id',Auth::id())->orderBy('id', 'desc')->first();
         // dd($template);
-        return view('template.template1.samples.index')->with('template',$template);
+        // return view('template.template1.samples.index')->with('template',$template);
     }
 
     /**

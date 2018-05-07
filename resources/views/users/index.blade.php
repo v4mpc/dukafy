@@ -141,51 +141,29 @@ aria-hidden="true">
                                   
                                   
                                   
-                                  <tr>
-                                    <td>John Doe</td>
-                                    <td>jd@gmail.com</td>
-                                    <td>1 day ago</td>
-                                    <td><img src="{{asset('images/profile1.png')}}" width="100" height="100" alt=""></td>
+                                 @foreach($users as $user)
+                                 <tr>
+                                  <td>{{$user->name}}</td>
+                                  <td>{{$user->email}}</td>
+                                  <td>{{$user->created_at}}</td>
+                                    <td><img src="{{asset('images/'.$user->image)}}" width="100" height="100" alt=""></td>
                                     
                                     
                                     
                                     <td>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top"   class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
+                                      <a href="{{route('users.edit',$user->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                    <a  data-toggle="tooltip" data-id="{{$user->id}}" data-url="/manage/users/" data-name="User" data-original-title="Delete" data-placement="top"   class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                                      </td>
                                   </tr>
+                                 @endforeach
                                   
-                                  <tr>
-                                    <td>Alice Paul</td>
-                                    <td>ap@hotmail.com</td>
-                                    <td>4 min ago</td>
-                                    <td><img src="{{asset('images/profile2.png')}}" width="100" height="100" alt="">
-                                    </td>
-                                    
-                                
-                                    <td>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete" data-placement="top" class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Vampc</td>
-                                    <td>Marlin</td>
-                                    <td>3 month ago</td>
-                                    <td><img src="{{asset('images/profile.png')}}" width="100" height="100" alt=""></td>
-                                    
-                                    
-                                    <td>
-                                      <a data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                      <a data-toggle="tooltip" data-original-title="Delete"  data-placement="top"   class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                     </td>
-                                  </tr>
+                                 
                                                                
                                 </tfoot>
                               </table>
                             </div>
                           </div>
-                        </div>
+        d                </div>
                       </div>
                     </div>
                   </section>

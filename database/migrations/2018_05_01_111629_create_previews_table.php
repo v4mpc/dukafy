@@ -16,14 +16,19 @@ class CreatePreviewsTable extends Migration
         Schema::create('previews', function (Blueprint $table) {
             $table->increments('id');
             $table->string('template');
+            $table->string('about')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('colour');
             $table->string('logo')->nullable();
-            $table->string('address');
-            $table->string('phone');
-            $table->string('mobile');
-            $table->string('email');
-            $table->string('working_hours');
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('email')->nullable();
+            $table->string('working_hours')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            
 
             $table->timestamps();
         });

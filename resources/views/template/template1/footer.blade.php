@@ -69,6 +69,27 @@
     </div>
   </footer>
    --}}
+   @if(count($brand_images)!=0)
+   <!-- Clients img -->
+   <section class="light-gry-bg clients-img">
+       <div class="container">
+         <ul>
+           @foreach($brand_images as $brand)
+           <li><img src="{{asset('images/'.$brand->image)}}" alt="" ></li>
+           @endforeach
+           {{-- <li><img src="{{asset('template1/images/c-img-1.png')}}" alt="" ></li>
+           <li><img src="{{asset('template1/images/c-img-2.png')}}" alt="" ></li>
+           <li><img src="{{asset('template1/images/c-img-3.png')}}" alt="" ></li>
+           <li><img src="{{asset('template1/images/c-img-4.png')}}" alt="" ></li>
+           <li><img src="{{asset('template1/images/c-img-5.png')}}" alt="" ></li> --}}
+         </ul>
+       </div>
+     </section>
+     
+   
+       @endif
+
+
   <!-- Rights -->
   <div class="rights">
     <div class="container">

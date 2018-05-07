@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', 'Template1Controller@index');
+Route::get('/', 'Template1Controller@index')->name('start');
 Route::get('/products','Template1Controller@products')->name('products');
 Route::get('/products/{id}','Template1Controller@productshow')->name('product.show');
 Route::get('/shopping_cart','Template1Controller@cart')->name('cart');
+Route::get('/contact_us','Template1Controller@contact')->name('contact');
+Route::get('/about_us','Template1Controller@about')->name('about');
+
+
 
 
 
@@ -25,7 +29,7 @@ Route::prefix('manage')->middleware('auth')->group(function(){
 
     
 Route::resource('/products', 'ProductController');
-Route::resource('/variations', 'VariationController');
+// Route::resource('/variations', 'VariationController');
 Route::resource('/categories', 'CategoryController');
 Route::resource('/sub_categories', 'SubCategoryController');
 Route::resource('/out_stock', 'OutStockController');
@@ -34,7 +38,7 @@ Route::resource('/featured', 'FeaturedController');
 Route::resource('/users', 'UserController');
 Route::resource('/orders', 'OrderController');
 Route::resource('/settings', 'SettingController');
-Route::resource('/variations', 'VariationController');
+// Route::resource('/variations', 'VariationController');
 
 Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
 Route::get('/logo_form','SettingController@getLogoForm')->name('settings.logo_form');

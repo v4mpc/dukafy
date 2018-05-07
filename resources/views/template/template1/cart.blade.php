@@ -115,7 +115,7 @@
           </div>
           
           <!-- Button -->
-          <div class="pro-btn"> <a href="#." class="btn-round btn-light">Continue Shopping</a> <a href="#." class="btn-round">Go Payment Methods</a> </div>
+        <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue Shopping</a> <a href="#." class="btn-round">Go Payment Methods</a> </div>
         </div>
       </section>
       
@@ -127,20 +127,9 @@
         
 
     
-    <!-- Clients img -->
-    <section class="light-gry-bg clients-img">
-      <div class="container">
-        <ul>
-          <li><img src="{{asset('template1/images/c-img-1.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-2.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-3.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-4.png')}}" alt="" ></li>
-          <li><img src="{{asset('template1/images/c-img-5.png')}}" alt="" ></li>
-        </ul>
-      </div>
-    </section>
+
     
-    <!-- Newslatter -->
+   
 
   </div>
   <!-- End Content --> 

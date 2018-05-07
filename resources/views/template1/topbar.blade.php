@@ -14,6 +14,9 @@
       <div class="right-sec">
         <ul>
         <li><a href="{{route('login')}}">Login </a></li>
+        <li><a href="#">Contact Us </a></li>
+        <li><a href="#">About </a></li>
+        
           <li><a href="#.">Store Location </a></li>
           {{-- <li><a href="#.">FAQ </a></li> --}}
           {{-- <li><a href="#.">Newsletter </a></li> --}}
