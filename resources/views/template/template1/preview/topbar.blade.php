@@ -1,7 +1,7 @@
 <body>
 
   <!-- Page Wrapper -->
-  <div id="wrap" class="layout-1 {{$settings->colour}}">
+  <div id="wrap" class="layout-1 {{$previews->colour}}">
 
 
 
@@ -9,17 +9,17 @@
     <!-- Top bar -->
     <div class="top-bar">
       <div class="container">
-        <p>Welcome to {{$settings->store_name}}</p>
-        @if($settings->working_hours===null)
-        <p>{{$settings->working_hours}}</p>
+        <p>Welcome to {{$previews->store_name}}</p>
+        @if($previews->working_hours===null)
+        <p>{{$previews->working_hours}}</p>
         @endif
 
         <div class="right-sec">
           <ul>
             <li><a href="{{route('login')}}">Login </a></li>
             <li><a href="#.">Store Location </a></li>
-            <li><a href="{{route('contact')}}">Contact Us </a></li>
-            <li><a href="{{route('about')}}">About Us </a></li>
+            <li><a href="{{route('preview.contact')}}">Contact Us </a></li>
+            <li><a href="{{route('preview.about')}}">About Us </a></li>
             {{--
             <li><a href="#.">FAQ </a></li> --}} {{--
             <li><a href="#.">Newsletter </a></li> --}} {{--
@@ -38,8 +38,8 @@
               <option>Euro</option>
               <option>JPY</option>
             </select>
-            </li> --}} @if(count($settings->mobile)!=null)
-            <li><i class="fa fa-phone"></i> <strong>Hotline:</strong> {{$settings->mobile}}</span>
+            </li> --}} @if(count($previews->mobile)!=null)
+            <li><i class="fa fa-phone"></i> <strong>Hotline:</strong> {{$previews->mobile}}</span>
             </li>
             @endif
           </ul>
@@ -53,7 +53,7 @@
 
     <header>
       <div class="container">
-        @if($settings->logo!=null)
+        @if($previews->logo!=null)
         <div class="logo"> <a href="{{route('start')}}"><img src="{{asset('template1/images/week-sale-bg-green-1.jpg')}}" alt="" ></a> </div>
         @endif
         <div class="search-cate">

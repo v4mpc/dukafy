@@ -17,6 +17,9 @@ class CreateSettingsTable extends Migration
             $table->increments('id');
             $table->string('layout');
             $table->string('colour');
+            $table->string('store_name');
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->string('logo')->nullable();
             $table->string('working_hours')->nullable();
             $table->string('address')->nullable();
@@ -26,7 +29,6 @@ class CreateSettingsTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
-            
             $table->timestamps();
         });
     }

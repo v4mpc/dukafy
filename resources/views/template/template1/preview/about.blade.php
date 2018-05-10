@@ -1,4 +1,4 @@
-@extends('template.template1.layout') 
+@extends('template.template1.preview.layout') 
 @section('content')
 <!-- Content -->
 <div id="content">
@@ -68,7 +68,7 @@
   <section class="skills padding-top-60">
     <div class="container">
 
-      {!!$settings->about!!}
+      {!!$previews->about!!}
 
     </div>
 </div>

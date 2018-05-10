@@ -11,13 +11,17 @@
 |
 */
 
-Route::get('/', 'Template1Controller@index')->name('start');
-Route::get('/products','Template1Controller@products')->name('products');
-Route::get('/products/{id}','Template1Controller@productshow')->name('product.show');
-Route::get('/shopping_cart','Template1Controller@cart')->name('cart');
-Route::get('/contact_us','Template1Controller@contact')->name('contact');
-Route::get('/about_us','Template1Controller@about')->name('about');
+Route::get('/', 'TemplateController@index')->name('start');
+Route::get('/products','TemplateController@products')->name('products');
+Route::get('/products/{id}','TemplateController@productshow')->name('product.show');
+Route::get('/shopping_cart','TemplateController@cart')->name('cart');
+Route::get('/contact_us','TemplateController@contact')->name('contact');
+Route::get('/about_us','TemplateController@about')->name('about');
 
+//previews
+Route::get('/shopping_cart','PreviewController@cart')->name('preview.cart');
+Route::get('/contact_us','PreviewController@contact')->name('preview.contact');
+Route::get('/about_us','PreviewController@about')->name('preview.about');
 
 
 
@@ -52,16 +56,16 @@ Route::get('/remove_out_stock/{id}', 'ProductController@removeOutstock')->name('
 Route::post('/add_category','CategoryController@addCategory');
 Route::resource('/preview','PreviewController');
 
-Route::get('/template/{colour}', function($colour){
+// Route::get('/template/{colour}', function($colour){
 
 
    
     
-    return view('template.template1.previews.index')->with('colour',$colour);
+//     return view('template.template1.previews.index')->with('colour',$colour);
     
-})->name('template1.previews');
+// })->name('template1.previews');
 
-
+Route::post('/upload','SettingController@upload')->name('upload');
 
 });
 

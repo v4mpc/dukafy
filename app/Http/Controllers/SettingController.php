@@ -39,9 +39,11 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
+        // dd("sfd");
         $setting=new Setting;
         $setting->layout=$request->layout;
         $setting->colour=$request->colour;
+        $setting->store_name=$request->store_name;
         $setting->logo=$request->logo;
         $setting->working_hours=$request->working_hours;
         $setting->address=$request->address;
@@ -51,9 +53,10 @@ class SettingController extends Controller
         $setting->twitter=$request->twitter;
         $setting->instagram=$request->instagram;
         $setting->about=$request->about;
+        $setting->longitude=$request->longitude;
+        $setting->latitude=$request->latitude;
         
-        
-        $settin->save();
+        $setting->save();
 
         if($request->hasFile('brand_images')) {
             foreach($request->file('brand_images') as $image) {
@@ -78,7 +81,7 @@ class SettingController extends Controller
         }
 
 }
-
+  return response()->json($setting);
 }
 
     /**
@@ -139,5 +142,10 @@ class SettingController extends Controller
     public function getCompanyAddressForm()
     {
         return view('settings.companyaddress');
+    }
+
+    public function upload()
+    {
+        return response()->json('ok');
     }
 }

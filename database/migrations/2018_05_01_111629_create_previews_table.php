@@ -15,21 +15,20 @@ class CreatePreviewsTable extends Migration
     {
         Schema::create('previews', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('template');
-            $table->string('about')->nullable();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->string('layout');
             $table->string('colour');
+            $table->string('store_name');
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->string('logo')->nullable();
-            $table->string('address')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('mobile')->nullable();
-            $table->string('email')->nullable();
             $table->string('working_hours')->nullable();
+            $table->string('address')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('email');
+            $table->string('about')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
-            
-
             $table->timestamps();
         });
     }

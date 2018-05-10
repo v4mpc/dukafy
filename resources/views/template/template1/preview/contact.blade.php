@@ -1,4 +1,4 @@
-@extends('template.template1.layout') 
+@extends('template.template1.preview.layout') 
 @section('content')
 <div id="content">
 
@@ -60,25 +60,25 @@
                 </ul>
               </div>
 
-              @if($settings->email!=null||$settings->mobile!=null||$settings->address!=null)
+              @if($previews->email!=null||$previews->mobile!=null||$previews->address!=null)
               <!-- Conatct Infomation -->
               <div class="col-md-4">
                 <div class="contact-info">
                   {{--
                   <h5>SmartTech</h5>
                   <p>The most powerful PSD for Digital & Electronic!</p>
-                  <hr> --}} @if($settings->address!=null)
+                  <hr> --}} @if($previews->address!=null)
                   <h6>Address:</h6>
 
-                  <p>{{$settings->address}}</p>
-                  @endif @if($settings->mobile!=null)
+                  <p>{{$previews->address}}</p>
+                  @endif @if($previews->mobile!=null)
                   <h6>Phone:</h6>
 
-                  <p>{{$settings->mobile}}</p>
-                  @endif @if($settings->email!=null)
+                  <p>{{$previews->mobile}}</p>
+                  @endif @if($previews->email!=null)
                   <h6>Email:</h6>
 
-                  <p>{{$settings->email}}</p>
+                  <p>{{$previews->email}}</p>
                   @endif
                 </div>
               </div>

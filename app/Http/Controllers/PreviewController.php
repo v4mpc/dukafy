@@ -17,7 +17,7 @@ class PreviewController extends Controller
      */
     public function index()
     {
-        //
+        return view('template.template1.preview.index');
     }
 
     /**
@@ -25,6 +25,30 @@ class PreviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function products()
+    {
+        return view('template.template1.preview.products');
+    }
+
+    public function productshow($id)
+    {
+     
+        return view('template.template1.preview.productshow');
+    }
+
+
+    public function contact()
+     {
+        return view('template.template1.preview.contact');   
+     }
+
+     public function about()
+     {
+        return view('template.template1.preview.about');   
+     }
+
+
     public function create()
     {
         //
@@ -43,18 +67,25 @@ class PreviewController extends Controller
         // return json_encode($request->template);
         $preview=new Preview;
         
-        $preview->user_id=Auth::id();
-        $preview->template=$request->layout;
+        // $preview->user_id=Auth::id();
+        $preview->layout=$request->layout;
         $preview->colour=$request->colour;
+        $preview->store_name=$request->store_name;
+        $preview->logo=$request->logo;
         $preview->address=$request->address;
-        $preview->phone=$request->phone;
+        // $preview->phone=$request->phone;
         $preview->mobile=$request->mobile;
         $preview->email=$request->email;
-        $setting->facebook=$request->facebook;
-        $setting->twitter=$request->twitter;
-        $setting->instagram=$request->instagram;
+        $preview->facebook=$request->facebook;
+        $preview->twitter=$request->twitter;
+        $preview->about=$request->about;
+        $preview->instagram=$request->instagram;
         $preview->working_hours=$request->working_hours;
         $preview->working_hours=$request->about;
+        $preview->longitude=$request->longitude;
+        $preview->latitude=$request->latitude;
+
+
 
         // if($request->hasFile('logo')) {
            
