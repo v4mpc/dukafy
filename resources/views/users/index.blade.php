@@ -1,196 +1,177 @@
-@extends('layouts.layout')
-
+@extends('layouts.layout') 
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/tables/datatable/datatables.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/zoom.css')}}">
-
-
-  
-
 @endsection
-
-
-
+ 
 @section('page_level_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/menu/menu-types/vertical-menu-modern.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-tooltip.min.css')}}">
-
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-tooltip.min.css')}}">
 @endsection
-
-
-
-
+ 
 @section('content')
 
 <div class="app-content content">
-        <div class="content-wrapper">
-          <div class="content-header row">
-            <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-              <h3 class="content-header-title mb-0 d-inline-block">All Users</h3>
-              <div class="row breadcrumbs-top d-inline-block">
-                <div class="breadcrumb-wrapper col-12">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index-2.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">Users</a>
-                    </li>
-                    
-                  </ol>
-                </div>
-              </div>
-            </div>
-            <div class="content-header-right col-md-6 col-12">
-                <div class="dropdown float-md-right">
-                <a href="{{route('users.create')}}" class="btn btn-float btn-round btn-primary">Add User</a>
-                  
-                </div>
-              </div>
-          </div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+        <h3 class="content-header-title mb-0 d-inline-block">All Users</h3>
+        <div class="row breadcrumbs-top d-inline-block">
+          <div class="breadcrumb-wrapper col-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index-2.html">Home</a>
+              </li>
+              <li class="breadcrumb-item"><a href="#">Users</a>
+              </li>
 
-<!-- Modal -->
-<div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
-aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <label class="modal-title text-text-bold-600" id="myModalLabel33">Enter User Info</label>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="content-header-right col-md-6 col-12">
+        <div class="dropdown float-md-right">
+          <a href="{{route('users.create')}}" class="btn btn-float btn-round btn-primary">Add User</a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <label class="modal-title text-text-bold-600" id="myModalLabel33">Enter User Info</label>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <form class="form-horizontal form-simple" method="POST" action="{{route('register')}}" novalidate>
-          {{ csrf_field() }}
-          <div class="modal-body">
+          </div>
+          <form class="form-horizontal form-simple" method="POST" action="{{route('register')}}" novalidate>
+            {{ csrf_field() }}
+            <div class="modal-body">
               <label>User Name </label>
               <div class="form-group">
                 <input type="text" placeholder="user name" class="form-control">
               </div>
-             
+
             </div>
             <div class="modal-body">
-                <label>Email</label>
-                <div class="form-group">
-                  <input type="email" placeholder="email" class="form-control">
-                </div>
-               
+              <label>Email</label>
+              <div class="form-group">
+                <input type="email" placeholder="email" class="form-control">
               </div>
-              <div class="modal-body">
-                  <label>Password </label>
-                  <div class="form-group">
-                    <input type="password" placeholder="password" class="form-control">
-                  </div>
-                 
-                </div>
-                <div class="modal-body">
-                    <label>Profile Image </label>
-                    <div class="form-group">
-                      <input type="file"  class="form-control">
-                    </div>
-                   
-                  </div>
-            
+
+            </div>
+            <div class="modal-body">
+              <label>Password </label>
+              <div class="form-group">
+                <input type="password" placeholder="password" class="form-control">
+              </div>
+
+            </div>
+            <div class="modal-body">
+              <label>Profile Image </label>
+              <div class="form-group">
+                <input type="file" class="form-control">
+              </div>
+
+            </div>
+
           </form>
 
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content-body">
+      <!-- Zero configuration table -->
+      <section id="configuration">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                {{--
+                <h4 class="card-title">Zero configuration</h4> --}}
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                  <ul class="list-inline mb-0">
+                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                    <li><a data-action="close"><i class="ft-x"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-content collapse show">
+                <div class="card-body card-dashboard">
+
+                  <table class="table table-striped table-bordered zero-configuration">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Added</th>
+                        <th>Image</th>
+
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+
+
+
+
+
+
+                      @foreach($users as $user)
+                      <tr>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->created_at}}</td>
+                        <td><img src="{{asset('images/'.$user->image)}}" width="100" height="100" alt=""></td>
+
+
+
+                        <td>
+                          <a href="{{route('users.edit',$user->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top" class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                          <a data-toggle="tooltip" data-id="{{$user->id}}" data-url="/manage/users/" data-name="User" data-original-title="Delete"
+                            data-placement="top" class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
+                        </td>
+                      </tr>
+                      @endforeach
+
+
+
+                      </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--/ Zero configuration table -->
     </div>
   </div>
 </div>
-
-
-          <div class="content-body">
-            <!-- Zero configuration table -->
-            <section id="configuration">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="card">
-                          <div class="card-header">
-                            {{-- <h4 class="card-title">Zero configuration</h4> --}}
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                            <div class="heading-elements">
-                              <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                <li><a data-action="close"><i class="ft-x"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="card-content collapse show">
-                            <div class="card-body card-dashboard">
-                             
-                              <table class="table table-striped table-bordered zero-configuration">
-                                <thead>
-                                  <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Added</th>
-                                    <th>Image</th>
-                                   
-                                    <th></th>    
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                 
-                                  
-                                 
-                              
-                                  
-                                  
-                                  
-                                 @foreach($users as $user)
-                                 <tr>
-                                  <td>{{$user->name}}</td>
-                                  <td>{{$user->email}}</td>
-                                  <td>{{$user->created_at}}</td>
-                                    <td><img src="{{asset('images/'.$user->image)}}" width="100" height="100" alt=""></td>
-                                    
-                                    
-                                    
-                                    <td>
-                                      <a href="{{route('users.edit',$user->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
-                                    <a  data-toggle="tooltip" data-id="{{$user->id}}" data-url="/manage/users/" data-name="User" data-original-title="Delete" data-placement="top"   class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                                     </td>
-                                  </tr>
-                                 @endforeach
-                                  
-                                 
-                                                               
-                                </tfoot>
-                              </table>
-                            </div>
-                          </div>
-        d                </div>
-                      </div>
-                    </div>
-                  </section>
-
-            <!--/ Zero configuration table -->
-          </div>
-        </div>
-      </div>
-
-
 @endsection
-
-
-
+ 
 @section('page_vendor_js')
 
 <script src="{{asset('vendor/vendors/js/tables/datatable/datatables.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/extensions/zoom.min.js')}}" type="text/javascript"></script>
-
 @endsection
-
-
-
+ 
 @section('page_level_js')
 
 <script src="{{asset('vendor/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/tooltip/tooltip.min.js')}}" type="text/javascript"></script>
-
 @endsection
- 

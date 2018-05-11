@@ -45,4 +45,9 @@ class Product extends Model
          return round($new_price);
         // return '345435345345345';
     }
+
+    public function orders()
+    {           
+        return $this->belongsToMany('App\Order')->withPivot('quantity');
+    }
 }

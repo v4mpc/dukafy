@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class CheckOutController extends Controller
 {
@@ -13,7 +14,7 @@ class CheckOutController extends Controller
      */
     public function index()
     {
-        return view('template.template1.checkOut');
+       
     }
 
     /**
@@ -23,7 +24,11 @@ class CheckOutController extends Controller
      */
     public function create()
     {
-        //
+        // dd(session('id'));
+        if (session('id')) {
+            return redirect()->route('check_out.edit',session('id')); 
+        }
+        return view('template.template1.checkOut');
     }
 
     /**
@@ -56,7 +61,9 @@ class CheckOutController extends Controller
      */
     public function edit($id)
     {
-        //
+        // dd($id);
+        $order=Order::findOrFail($id);
+        return view('template.template1.checkOutEdit')->with('order',$order);
     }
 
     /**

@@ -55,20 +55,20 @@
                     <hr>
                 </div>
 
-                @foreach (Cart::content() as $item)
+                @foreach ($order->products as $product)
                 <!-- Check Item List -->
                 <ul class="row check-item">
                     <li class="col-xs-6">
-                        <p>{{$item->name}}</p>
+                        <p>{{$product->name}}</p>
                     </li>
                     <li class="col-xs-2 text-center">
-                        <p>{{$item->price}}</p>
+                        <p>{{$product->price}}</p>
                     </li>
                     <li class="col-xs-2 text-center">
-                        <p>{{$item->qty}}</p>
+                        <p>{{$product->pivot->quantity}}</p>
                     </li>
                     <li class="col-xs-2 text-center">
-                        <p>{{$item->qty*$item->price}}</p>
+                        <p>{{$product->pivot->quantity*$product->price}}</p>
                     </li>
                 </ul>
                 @endforeach
@@ -76,20 +76,20 @@
 
 
                 <!-- Payment information -->
-                {{--
                 <div class="heading margin-top-50">
                     <h2>Payment information</h2>
                     <hr>
-                </div> --}} {{--
+                </div>
                 <!-- Check Item List -->
                 <ul class="row check-item">
                     <li class="col-xs-6">
-                        <p><img class="margin-right-20" src="images/visa-card.jpg" alt=""> Visa Credit Card</p>
+                        <p><img class="margin-right-20" src="images/visa-card.jpg" alt=""> Cash On Delivery</p>
                     </li>
+                    {{--
                     <li class="col-xs-6 text-center">
                         <p>Card number: XXX-XXX-XXX-6886</p>
-                    </li>
-                </ul> --}}
+                    </li> --}}
+                </ul>
 
                 <!-- Delivery infomation -->
                 <div class="heading margin-top-50">
@@ -101,17 +101,17 @@
                 <ul class="row check-item infoma">
                     <li class="col-sm-3">
                         <h6>Name</h6>
-                        <span>Alex Adkins</span> </li>
+                        <span>{{$order->customer->first_name}} {{$order->customer->last_name}}</span> </li>
                     <li class="col-sm-3">
                         <h6>Phone</h6>
-                        <span>(+100) 987 654 3210</span> </li>
+                        <span>{{$order->customer->phone}}</span> </li>
                     {{--
                     <li class="col-sm-3">
                         <h6>Country</h6>
                         <span>USA</span> </li> --}}
                     <li class="col-sm-3">
                         <h6>Email</h6>
-                        <span>Alexadkins@gmail.com</span> </li>
+                        <span>{{$order->customer->email}}</span> </li>
                     {{--
                     <li class="col-sm-3">
                         <h6>City</h6>
@@ -124,29 +124,36 @@
                         <span>01234</span> </li> --}}
                     <li class="col-sm-3">
                         <h6>Address</h6>
-                        <span>569 Lexington Ave, New York, NY</span> </li>
+                        <span>{{$order->customer->email}}</span> </li>
                 </ul>
 
-                {{--
+
                 <!-- Information -->
                 <ul class="row check-item infoma exp">
-                    <li class="col-sm-6"> <span>Expert Delivery</span> </li>
+                    <li class="col-sm-6"> <span>Free Delivery</span> </li>
+                    {{--
                     <li class="col-sm-3">
                         <h6>24 - 48 hours</h6>
                     </li>
                     <li class="col-sm-3">
                         <h5>+25</h5>
-                    </li>
-                </ul> --}}
+                    </li> --}}
+                </ul>
 
                 <!-- Totel Price -->
                 <div class="totel-price">
-                    <h4><small> Total Price: </small> {{Cart::subtotal()}}</h4>
+                    <h4><small> Total Price: </small> {{$total_cost}}</h4>
                 </div>
             </div>
 
             <!-- Button -->
-            <div class="pro-btn"> <a href="#." class="btn-round btn-light">Back to Delivery</a> <a href="{{route('thankyou')}}" class="btn-round">Proceed to Checkout</a>                </div>
+            <div class="pro-btn"> <a href="{{route('check_out.edit',$order->id)}}" class="btn-round btn-light">Back to Delivery</a> <a href="{{route('thank_you.store')}}"
+                    onclick="event.preventDefault();document.getElementById('confirmation-form').submit();" class="btn-round">Proceed to Checkout</a>
+                <form id="confirmation-form" action="{{route('thank_you.store')}}" method="POST">
+                    {{csrf_field()}}
+                </form>
+
+            </div>
         </div>
     </section>
 

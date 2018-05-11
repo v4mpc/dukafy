@@ -119,7 +119,7 @@
       </div>
 
       <!-- Button -->
-      <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue Shopping</a> @if(Cart::count())<a href="{{route('check_out.index')}}"
+      <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue Shopping</a> @if(Cart::count())<a href="{{route('check_out.create')}}"
           class="btn-round">Go Delivery Information</a> @endif </div>
     </div>
   </section>

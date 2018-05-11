@@ -56,21 +56,21 @@
                             <h2>Your information</h2>
                             <hr>
                         </div>
-                        <form action="{{route('order.store')}}" id="checkout-form" method="POST">
-                            {{csrf_field()}}
+                        <form action="{{route('order.update',$order->id)}}" id="checkout-form" method="POST">
+                            {{method_field('PUT')}} {{csrf_field()}}
                             <div class="row">
 
                                 <!-- Name -->
                                 <div class="col-sm-6">
                                     <label> First name
-                    <input class="form-control" type="text" name="first_name">
+                                    <input class="form-control" type="text" name="first_name" value="{{$order->customer->first_name}}">
                   </label>
                                 </div>
 
                                 <!-- Number -->
                                 <div class="col-sm-6">
                                     <label> Last Name
-                    <input class="form-control" type="text" name="last_name">
+                    <input class="form-control" type="text" name="last_name" value="{{$order->customer->last_name}}">
                   </label>
                                 </div>
 
@@ -118,21 +118,21 @@
                                 <!-- Address -->
                                 <div class="col-sm-8">
                                     <label> Address
-                    <input class="form-control" type="text" name="address">
+                    <input class="form-control" type="text" name="address" value="{{$order->customer->address}}">
                   </label>
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="col-sm-6">
                                     <label> Phone
-                    <input class="form-control" type="text" name="phone">
+                    <input class="form-control" type="text" name="phone" value="{{$order->customer->phone}}">
                   </label>
                                 </div>
 
                                 <!-- Number -->
                                 <div class="col-sm-6">
                                     <label> Email
-                    <input class="form-control" type="email" name="email">
+                    <input class="form-control" type="email" name="email" value="{{$order->customer->email}}">
                   </label>
                                 </div>
                             </div>

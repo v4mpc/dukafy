@@ -16,11 +16,10 @@ Route::get('/products','TemplateController@products')->name('products');
 Route::get('/product/{id}','TemplateController@productshow')->name('product.show');
 Route::resource('/cart','CartController');
 Route::resource('/check_out','CheckOutController');
-Route::resource('/confirmation','ConfirmationController');
-Route::get('/thank_you', function(){
+Route::resource('/order','OrderController');
 
-    return view('template.template1.thankyou');
-})->name('thankyou');
+Route::resource('/confirmation','ConfirmationController');
+Route::resource('/thank_you','ThankYouController');
 
 
 

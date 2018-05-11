@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
-use App\Order;
 
-class ConfirmationController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ConfirmationController extends Controller
      */
     public function index()
     {
-        return view('template.template1.confirmation');
+        //
     }
 
     /**
@@ -24,7 +24,7 @@ class ConfirmationController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -35,43 +35,27 @@ class ConfirmationController extends Controller
      */
     public function store(Request $request)
     {
-        $order=New Order;
-        $order->first_name=$requst->first_name;
-        $order->last_name=$requst->last_name;
-        $order->phone=$requst->phone;
-        $order->address=$requst->address;
-        $order->email=$requst->email;
-        
-        
-        
-        
-        
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Customer $customer)
     {
-        $order=Order::findOrFail($id);
-        $sum=0;
-
-        foreach ($order->products as $product) {
-            $sum+=$product->pivot->quantity*$product->price;
-        }
-        return view('template.template1.confirmation')->with('order',$order)->with('total_cost',$sum);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Customer $customer)
     {
         //
     }
@@ -80,10 +64,10 @@ class ConfirmationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Customer $customer)
     {
         //
     }
@@ -91,10 +75,10 @@ class ConfirmationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Customer $customer)
     {
         //
     }

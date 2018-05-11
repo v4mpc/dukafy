@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use Cart;
 
-class ConfirmationController extends Controller
+class ThankYouController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ConfirmationController extends Controller
      */
     public function index()
     {
-        return view('template.template1.confirmation');
+        //
     }
 
     /**
@@ -24,7 +25,7 @@ class ConfirmationController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -35,17 +36,19 @@ class ConfirmationController extends Controller
      */
     public function store(Request $request)
     {
-        $order=New Order;
-        $order->first_name=$requst->first_name;
-        $order->last_name=$requst->last_name;
-        $order->phone=$requst->phone;
-        $order->address=$requst->address;
-        $order->email=$requst->email;
-        
-        
-        
-        
-        
+
+        // dd('am here');
+        $order=Order::findOrFail(session('id'));
+
+        //send mail here
+
+
+        $order->status='completed';
+        $order->save();
+
+        Cart::destroy();
+        session()->forget('id');
+        return view('template.template1.thankyou');
     }
 
     /**
@@ -56,13 +59,7 @@ class ConfirmationController extends Controller
      */
     public function show($id)
     {
-        $order=Order::findOrFail($id);
-        $sum=0;
-
-        foreach ($order->products as $product) {
-            $sum+=$product->pivot->quantity*$product->price;
-        }
-        return view('template.template1.confirmation')->with('order',$order)->with('total_cost',$sum);
+        //
     }
 
     /**
