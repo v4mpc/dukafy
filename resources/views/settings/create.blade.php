@@ -1,7 +1,7 @@
 @extends('layouts.layout') 
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/ui/prism.min.css')}}">
+
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/file-uploaders/dropzone.min.css')}}">
 
 
@@ -12,18 +12,27 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
 
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')}}"> {{--
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/images/cropper/cropper.min.css')}}"> {{--
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> --}}
 
-<style>
-  div#logoDropZone {
-    width: 100px;
-    height: 100px;
-    background-color: gray;
-  }
-</style>
+
 <script>
   tinymce.init({ selector:'textarea' });
+
+
+  // Dropzone.autoDiscover = false;
+// or disable for specific dropzone:
+// Dropzone.options.myDropzone = false;
+
+// $(function() {
+//   // Now that the DOM is fully loaded, create the dropzone, and setup the
+//   // event listeners
+//   $("div#logoDropZone").dropzone({ 
+//             url: "/manage/upload",
+//             maxFilesize: 7,
+//             });
+// });
 
 </script>
 @endsection
@@ -34,9 +43,10 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/file-uploaders/dropzone.min.css')}}">
+
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/gallery.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/file-uploaders/dropzone.min.css')}}">
 @endsection
  
 @section('content')
@@ -300,18 +310,46 @@
                       <h4 class="form-section"><i class="ft-layers"></i>Logo</h4>
                       <div class="row">
 
-                        <div class="col-md-12">
-                          <!-- Dropzone section start -->
-                          <div id="logoDropZone">
-
-
-
+                        <div class="col-md-9">
+                          <div class="img-container overflow-hidden">
+                            <img class="main-demo-image img-fluid" src="{{asset('vendor/images/crop-pic.jpg')}}" alt="Picture">
                           </div>
-                          <!-- // Dropzone section end -->
-
-
-
                         </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="docs-preview clearfix">
+                              <div class="img-preview preview-lg img-fluid"></div>
+
+                            </div>
+                          </div>
+                          <div class="docs-data">
+                            <fieldset class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">Width</span>
+                                </div>
+                                <input type="text" class="form-control main-demo-dataWidth" placeholder="width">
+                                <div class="input-group-append">
+                                  <span class="input-group-text">px</span>
+                                </div>
+                              </div>
+                            </fieldset>
+                            <fieldset class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">Height</span>
+                                </div>
+                                <input type="text" class="form-control main-demo-dataHeight" placeholder="height">
+                                <div class="input-group-append">
+                                  <span class="input-group-text">px</span>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+
+
+
 
                         <div class="col-md-12">
                           <div class="form-group">
@@ -477,8 +515,7 @@
       <script src="{{asset('vendor/vendors/js/gallery/masonry/masonry.pkgd.min.js')}}" type="text/javascript"></script>
       <script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe.min.js')}}" type="text/javascript"></script>
       <script src="{{asset('vendor/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js')}}" type="text/javascript"></script>
-      <script src="{{asset('vendor/vendors/js/extensions/dropzone.min.js')}}" type="text/javascript"></script>
-      <script src="{{asset('vendor/vendors/js/ui/prism.min.js')}}" type="text/javascript"></script>
+      <script src="{{asset('vendor/vendors/js/extensions/cropper.min.js')}}" type="text/javascript"></script>
 @endsection
  
 @section('page_level_js')
@@ -488,18 +525,22 @@
       <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
       <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
       <script src="{{asset('vendor/js/scripts/gallery/photo-swipe/photoswipe-script.js')}}" type="text/javascript"></script>
-      <script src="{{asset('vendor/js/scripts/extensions/dropzone.min.js')}}" type="text/javascript"></script>
+      <script src="{{asset('vendor/js/scripts/extensions/image-cropper.min.js')}}" type="text/javascript"></script>
 
 
 
       <script>
         $(document).ready(function () {
+     
+          
+     
+   
 
-          $("div#logoDropZone").dropzone({ 
-            url: "/manage/upload",
-            maxFilesize: 7,
-            
-            });
+
+
+
+
+
 
         
 

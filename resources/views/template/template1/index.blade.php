@@ -66,10 +66,10 @@
                @foreach($products as $product)
               <!-- Product -->
               <div class="product">
-                <article> <img class="img-responsive" src="{{asset('images/'.$product->images[0]->image)}}" alt="" > 
+                <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="" > 
                   <!-- Content --> 
                 <span class="tag">{{$product->category->name}}</span>
-                <div> <a href="#." class="tittle">{{$product->name}}</a> </div>
+                <div> <a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a> </div>
                   <!-- Reviews -->
                  
                   <div class="price">{{number_format($product->price)}} </div>

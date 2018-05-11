@@ -13,15 +13,23 @@
 
 Route::get('/', 'TemplateController@index')->name('start');
 Route::get('/products','TemplateController@products')->name('products');
-Route::get('/products/{id}','TemplateController@productshow')->name('product.show');
-Route::get('/shopping_cart','TemplateController@cart')->name('cart');
+Route::get('/product/{id}','TemplateController@productshow')->name('product.show');
+Route::resource('/cart','CartController');
+Route::resource('/check_out','CheckOutController');
+Route::resource('/confirmation','ConfirmationController');
+Route::get('/thank_you', function(){
+
+    return view('template.template1.thankyou');
+})->name('thankyou');
+
+
+
+// Route::get('/shopping_cart','TemplateController@cart')->name('cart');
 Route::get('/contact_us','TemplateController@contact')->name('contact');
 Route::get('/about_us','TemplateController@about')->name('about');
 
 //previews
-Route::get('/shopping_cart','PreviewController@cart')->name('preview.cart');
-Route::get('/contact_us','PreviewController@contact')->name('preview.contact');
-Route::get('/about_us','PreviewController@about')->name('preview.about');
+
 
 
 
@@ -31,7 +39,9 @@ Route::prefix('manage')->middleware('auth')->group(function(){
     
    
 
-    
+// Route::get('/shopping_cart','PreviewController@cart')->name('preview.cart');
+// Route::get('/contact_us','PreviewController@contact')->name('preview.contact');
+// Route::get('/about_us','PreviewController@about')->name('preview.about');
 Route::resource('/products', 'ProductController');
 // Route::resource('/variations', 'VariationController');
 Route::resource('/categories', 'CategoryController');

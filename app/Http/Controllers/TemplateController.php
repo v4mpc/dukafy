@@ -42,7 +42,9 @@ class TemplateController extends Controller
      */
     public function products()
     {
-        return view('template.template1.products');
+        $products=Product::paginate(20);
+        // dd($products);
+        return view('template.template1.products')->with('products',$products);
     }
 
     /**
@@ -64,8 +66,8 @@ class TemplateController extends Controller
      */
     public function productshow($id)
     {
-     
-        return view('template.template1.productshow');
+     $product=Product::findOrFail($id);
+        return view('template.template1.productshow')->with('product',$product);
     }
 
     /**
