@@ -163,7 +163,14 @@
                       </p>
                     </div>
 
-                    {{--
+                    @if($order->customer->comment)
+
+                    <div class="col">
+
+                      <h3>Comment:</h3>
+                      <p>{{$order->customer->comment}}</p>
+                    </div>
+                    @endif {{--
                     <div class="col loader-wrapper">
                       <div class="loader-container">
                         <div class="ball-pulse loader-primary">

@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use Cart;
+use App\User;
+use Notification;
+use Mail;
+use App\Notifications\OrderCompleted;
+// use App\Mail\OrderCompleted;
+
 
 class ThankYouController extends Controller
 {
@@ -48,6 +54,14 @@ class ThankYouController extends Controller
 
         Cart::destroy();
         session()->forget('id');
+
+        $users=User::all();
+
+        Notification::send($users, new OrderCompleted($order));
+
+        // Mail::send(new OrderCompleted($order));
+
+
         return view('template.template1.thankyou');
     }
 

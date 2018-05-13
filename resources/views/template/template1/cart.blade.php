@@ -48,7 +48,7 @@
   <section class="shopping-cart padding-bottom-60">
     <div class="container">
       @if(Cart::count())
-      <h5>{{Cart::count()}} Item(s) in Shopping Cart</h5>
+      <h5><span class="itm-cont">{{Cart::count()}}</span> Item(s) in Shopping Cart</h5>
       <table class="table">
         <thead>
           <tr>
@@ -62,7 +62,8 @@
         <tbody>
           @foreach(Cart::content() as $item)
           <!-- Item Cart -->
-          <tr>
+          <tr id="item{{$item->rowId}}">
+            {{--
             <td>
               <div class="media">
                 <div class="media-left"> <a href="#."> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="" > </a>                  </div>
@@ -87,14 +88,38 @@
 
             <form id="remove-form" action="{{ route('cart.destroy',$item->rowId) }}" method="POST" style="display: none;">
               {{ csrf_field() }} {{method_field('DELETE')}}
-            </form>
+            </form> --}}
+
+            <td>
+              <div class="media">
+                <div class="media-left"> <a href="#."> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="" > </a>                  </div>
+                <div class="media-body">
+                  <p>{{$item->name}}</p>
+                </div>
+              </div>
+            </td>
+            <td class="text-center padding-top-60">{{$item->price}}</td>
+            <td class="text-center">
+              <!-- Quinty -->
+
+              <div class="quinty padding-top-20">
+                <input type="number" value="{{$item->qty}}">
+              </div>
+            </td>
+            <td class="text-center padding-top-60">{{$item->price*$item->qty}}</td>
+            <td class="text-center padding-top-60"><a href="#" data-id="{{$item->rowId}}" class="remove"><i class="fa fa-close"></i></a></td>
+
+            </a>
+
+
+
           </tr>
 
           @endforeach
         </tbody>
       </table>
       <div class="g-totel">
-        <h5>Grand total: <span>{{Cart::subtotal()}}</span></h5>
+        <h5>Grand total: <span class="items-price">{{Cart::subtotal()}}</span></h5>
       </div>
       @else
       <div>
@@ -120,7 +145,7 @@
 
       <!-- Button -->
       <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue Shopping</a> @if(Cart::count())<a href="{{route('check_out.create')}}"
-          class="btn-round">Go Delivery Information</a> @endif </div>
+          class="btn-round" id="delivery-button">Go Delivery Information</a> @endif </div>
     </div>
   </section>
 

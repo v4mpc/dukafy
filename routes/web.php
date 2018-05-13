@@ -18,6 +18,14 @@ Route::resource('/cart','CartController');
 Route::resource('/check_out','CheckOutController');
 Route::resource('/order','OrderController');
 
+Route::get('/mailable', function () {
+    $order = App\Order::find(7);
+    return new App\Mail\OrderCompleted($order);
+});
+
+Route::post('/add_to_cart','CartController@addToCart')->name('add_to_cart');
+Route::delete('/remove_from_cart/{id}','CartController@removeFromCart')->name('remove_from_cart');
+
 Route::resource('/confirmation','ConfirmationController');
 Route::resource('/thank_you','ThankYouController');
 

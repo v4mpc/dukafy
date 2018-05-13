@@ -5,6 +5,8 @@
 <script src="{{asset('template1/js/vendors/own-menu.js')}}"></script>
 <script src="{{asset('template1/js/vendors/jquery.sticky.js')}}"></script>
 <script src="{{asset('template1/js/vendors/owl.carousel.min.js')}}"></script>
+<script src="{{asset('vendor/toaster/toaster.min.js')}}"></script>
+
 
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="{{asset('template1/rs-plugin/js/jquery.tp.t.min.js')}}"></script>
@@ -15,10 +17,164 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&callback=initMap"></script> --}} {{--
 <script src="{{asset('template1/js/vendors/map.js')}}"></script> --}}
 <script>
-  jQuery(document).ready(function($) {
+  jQuery(document).ready(function() {
+
+
+    $('.cart-btn').click(function() {
+
+      // alert("data");
+
+      $(this).empty().append('<i class="fa fa-spinner fa-spin"></i>');
+      var id=$(this).data('id');
+      var product_id='product'+id;
+    //  console.log(id);
+
+    
+
+      $.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+      });
+      
+
+      $.ajax({
+				type: "POST",
+				url: "/add_to_cart",
+				dataType: "JSON",
+				data: { id:id},
+				success: function (data) {
+          $('#'+product_id).empty().append('<i class="icon-basket-loaded"></i>');
+          
+          //  var items_count={{Cart::count()}}+1;
+
+          // var items_price='{{Cart::subtotal()}}';
+
+          // var item_price=items_count+" item(s) - "+items_price;
+
+          $('.items-price').empty().text(data.sub_total);
+          $('.itm-cont').empty().text(data.cart_count);
+
+
+          toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "30",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+          
+          toastr.success('Product added to cart!');
+          
+
+				
+				}
+			});
+
+
+      // console.log(id,name,price,qty)
+
+
+    });
+
+
+
+    $('.remove').click(function() {
+
+
+       toastr.options = {
+        "closeButton": false,
+"debug": false,
+"newestOnTop": false,
+"progressBar": false,
+"positionClass": "toast-top-right",
+"preventDuplicates": true,
+"onclick": null,
+"showDuration": "30",
+"hideDuration": "1000",
+"timeOut": "5000",
+"extendedTimeOut": "1000",
+"showEasing": "swing",
+"hideEasing": "linear",
+"showMethod": "fadeIn",
+"hideMethod": "fadeOut"
+}
+    
+    toastr.info('Removing product from cart...');
+
+// var id=$(this).data('id');
+var item_id=$(this).data('id');
+
+//  console.log(id);
+
+
+
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+
+$.ajax({
+  type: "DELETE",
+  url: "/remove_from_cart/"+item_id,
+  dataType: "JSON",
+
+  success: function (data) {
+    $('#item'+item_id).remove();
+    if (data.count) {
+      $('.items-price').empty();
+  $('.itm-cont').empty();
+    } else {
+      $('.items-price').empty().text(data.sub_total);
+  $('.itm-cont').empty().text(data.cart_count);
+    }
+
+  $('#delivery-button').remove();
+
+    toastr.options = {
+"closeButton": false,
+"debug": false,
+"newestOnTop": false,
+"progressBar": false,
+"positionClass": "toast-top-right",
+"preventDuplicates": false,
+"onclick": null,
+"showDuration": "30",
+"hideDuration": "1000",
+"timeOut": "5000",
+"extendedTimeOut": "1000",
+"showEasing": "swing",
+"hideEasing": "linear",
+"showMethod": "fadeIn",
+"hideMethod": "fadeOut"
+}
+    
+    toastr.success('Product removed from cart!');
 
 
     
+
+  
+  }
+});
+
+
+// console.log(id,name,price,qty)
+
+
+});
 
          
           
@@ -52,6 +208,7 @@
 
 </script>
 
+{{--
 <script>
   function initMap() {
       var uluru = {lat: -25.363, lng: 131.044};
@@ -68,7 +225,7 @@
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&callback=initMap">
 
-</script>
+</script> --}}
 
 </body>
 

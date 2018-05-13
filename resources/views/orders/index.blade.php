@@ -69,6 +69,7 @@
                       <tr>
                         <th>Customer Name</th>
                         <th>Products</th>
+                        <th>Status</th>
 
                         <th>Amount</th>
                         <th>Time</th>
@@ -86,7 +87,12 @@
                       <tr>
                         <td>{{$order->customer->first_name}}</td>
                         <td>{{count($order->products)}}</td>
+                        <td>
 
+                          @if ($order->status==='Completed')<span class="badge badge-default badge-success">Completed</span>                          @elseif($order->status==='Pending')<span class="badge badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
+
+
+                        </td>
                         <td>{{$order->totalCost()}}</td>
                         <td>{{$order->created_at->diffForHumans()}}</td>
 

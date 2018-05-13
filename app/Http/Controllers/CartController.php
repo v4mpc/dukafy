@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Cart;
+use App\Product;
 
 use Illuminate\Http\Request;
 
@@ -86,4 +87,29 @@ class CartController extends Controller
         // dd($id);
         return back()->with('message','Item has been removed!');
     }
+
+    public function addToCart(Request $request)
+    {
+        sleep(3);
+        $product=Product::findOrFail($request->id);
+        Cart::add($product->id,$product->name,1,$product->price)->associate('App\Product');
+        return response()->json(['cart_count'=>Cart::count(),
+                                 'sub_total'=>Cart::subtotal()   
+        ]);
+    }
+
+
+    public function removeFromCart($id)
+    {
+        sleep(3);
+        Cart::remove($id);
+        // dd($id);
+        // return back()->with('message','Item has been removed!');
+        return response()->json(['cart_count'=>Cart::count(),
+                                 'sub_total'=>Cart::subtotal()   
+        ]);
+    
+    }
+
+
 }

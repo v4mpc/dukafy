@@ -30,10 +30,27 @@ class AppServiceProvider extends ServiceProvider
         $brand_images=BrandImage::all();
         $slider_images=SliderImage::all();
 
+        switch ($settings->colour) {
+            case 'navy':
+                $colour_code='#424378';
+                break;
+            
+                case 'green':
+                $colour_code='#7a9b08';
+                break;
+
+
+                case 'blue':
+                $colour_code='#0088cc';
+                break;
+           
+        }
+
         View::share('products',$featured);
         View::share('categories',$categories);
         View::share('settings',$settings);
         View::share('previews',$previews);
+        View::share('colour_code',$colour_code);
         
         View::share('brand_images',$brand_images);
         View::share('slider_images',$slider_images);

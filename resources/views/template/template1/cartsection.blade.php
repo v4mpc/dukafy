@@ -1,7 +1,7 @@
 <!-- Cart Part -->
 <ul class="nav navbar-right cart-pop">
-  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="itm-cont">3</span> <i class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>
-      <span>3 item(s) - 500.00</span></a>
+  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="itm-cont">{{Cart::count()}}</span> <i class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>
+  <span class="items-price">{{Cart::subtotal()}}</span></a>
     <ul class="dropdown-menu">
       <li>
         <div class="media-left"> <a href="#." class="thumb"> <img src="{{asset('template1/images/item-img-1-1.jpg')}}" class="img-responsive" alt="" > </a>          </div>

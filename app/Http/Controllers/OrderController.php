@@ -51,6 +51,7 @@ class OrderController extends Controller
         $customer->phone=$request->phone;
         $customer->address=$request->address;
         $customer->email=$request->email;
+        $customer->comment=$request->comment;
          $customer->save();
 
         $order=new Order;
@@ -107,6 +108,7 @@ foreach (Cart::content() as $item) {
         $customer->phone=$request->phone;
         $customer->address=$request->address;
         $customer->email=$request->email;
+        $customer->comment=$request->comment;
         $customer->save();
 
        

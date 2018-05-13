@@ -62,14 +62,14 @@
 
                                 <!-- Name -->
                                 <div class="col-sm-6">
-                                    <label> First name
+                                    <label> <span class="required">*</span>  First name
                                     <input class="form-control" type="text" name="first_name" value="{{$order->customer->first_name}}">
                   </label>
                                 </div>
 
                                 <!-- Number -->
                                 <div class="col-sm-6">
-                                    <label> Last Name
+                                    <label> <span class="required">*</span>  Last Name
                     <input class="form-control" type="text" name="last_name" value="{{$order->customer->last_name}}">
                   </label>
                                 </div>
@@ -117,23 +117,32 @@
 
                                 <!-- Address -->
                                 <div class="col-sm-8">
-                                    <label> Address
+                                    <label> <span class="required">*</span>  Address
                     <input class="form-control" type="text" name="address" value="{{$order->customer->address}}">
                   </label>
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="col-sm-6">
-                                    <label> Phone
+                                    <label> <span class="required">*</span>  Phone
                     <input class="form-control" type="text" name="phone" value="{{$order->customer->phone}}">
                   </label>
                                 </div>
 
                                 <!-- Number -->
                                 <div class="col-sm-6">
-                                    <label> Email
+                                    <label> <span class="required">*</span>  Email
                     <input class="form-control" type="email" name="email" value="{{$order->customer->email}}">
                   </label>
+                                </div>
+
+                                <div class="col-sm-10">
+                                    <label for="">Comment</label>
+                                    <textarea class="form-control" name="comment" cols="40" rows="8" id="" placeholder="Add Your Comment">{{$order->comment}}</textarea>
+                                </div>
+
+                                <div class="col-sm-10">
+                                    <p> <span class="required">*</span><i> Means the field is required!</i></p>
                                 </div>
                             </div>
                         </form>
