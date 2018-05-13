@@ -17,7 +17,7 @@
         <div class="right-sec">
           <ul>
             <li><a href="{{route('login')}}">Login </a></li>
-            <li><a href="#.">Store Location </a></li>
+            <li><a href="#." data-micromodal-trigger="modal-1">Store Location </a></li>
             <li><a href="{{route('contact')}}">Contact Us </a></li>
             <li><a href="{{route('about')}}">About Us </a></li>
 

@@ -13,11 +13,13 @@
 <script type="text/javascript" src="{{asset('template1/rs-plugin/js/jquery.tp.min.js')}}"></script>
 <script src="{{asset('template1/js/main.js')}}"></script>
 <script src="{{asset('template1/js/vendors/jquery.nouislider.min.js')}}"></script>
-{{--
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&callback=initMap"></script> --}} {{--
-<script src="{{asset('template1/js/vendors/map.js')}}"></script> --}}
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&callback=initMap"></script>
+<script src="{{asset('template1/js/vendors/map.js')}}"></script>
 <script>
   jQuery(document).ready(function() {
+
 
 
     $('.cart-btn').click(function() {
@@ -207,6 +209,7 @@ $.ajax({
         })
 
 </script>
+
 
 {{--
 <script>

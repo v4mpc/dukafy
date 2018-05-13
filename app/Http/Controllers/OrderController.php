@@ -133,4 +133,13 @@ foreach (Cart::content() as $item) {
     {
         //
     }
+
+    public function cancelOrder(Request $request,$id)
+    {
+        $order=Order::findOrFail($id);
+        $order->status='cancelled';
+        $order->save();
+
+        return response()->json('ok');
+    }
 }

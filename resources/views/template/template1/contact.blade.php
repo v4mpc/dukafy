@@ -18,12 +18,15 @@
 
       <!-- MAP -->
       <section class="map-block margin-bottom-40">
-        {{--
-        <div class="map-wrapper" id="map-canvas" data-lat="-37.814199" data-lng="144.961560" data-zoom="13" data-style="1"></div>
-        <div class="markers-wrapper addresses-block"> <a class="marker" data-rel="map-canvas" data-lat="-37.814199" data-lng="144.961560" data-string="Smart Tech"></a>          </div> --}}
-        <div id="map"></div>
 
-        mpap
+        <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
+          data-style="0"></div>
+        <div class="markers-wrapper addresses-block"> <a class="marker" data-rel="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-string="{{$settings->store_name}}"></a>          </div>
+
+
+
+
+
       </section>
 
       <!-- Conatct -->

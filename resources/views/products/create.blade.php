@@ -363,13 +363,26 @@ $('#discount').keyup(function(){
       if (lastChar=='%') {
         var percentage='-'+discount;
         var numerice_percentage=discount.replace('%','');
-        var old_price_output=$("#new_price_output").text();
-        var new_price_output=$("#new_price_output").text().replace(/,/g , '');
+        // var old_price_output=$("#new_price_output").text();
+        // var new_price_output=$("#new_price_output").text().replace(/,/g , '');
+
+        var old_price_output=$("#price").val();
+        var new_price_output=$("#price").val();
         new_price_output=new_price_output-((new_price_output*numerice_percentage)/100);
         $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
         $("#sale_tag").addClass('sale-tag').text(percentage);
       } else {
         // alert('its not a percentage');
+        var price=$('#price').val();
+console.log(price);
+        var numeric_percentage=Math.ceil((discount/price)*100);
+        var percentage='-'+numeric_percentage+'%';
+
+var old_price_output=$("#new_price_output").text();
+        var new_price_output=$("#new_price_output").text().replace(/,/g , '');
+        new_price_output=new_price_output-discount;
+        $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
+        $("#sale_tag").addClass('sale-tag').text(percentage);
       }
     }
   

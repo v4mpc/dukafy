@@ -99,7 +99,7 @@
                         <td><a href="{{route('orders.show',$order->id)}}" data-toggle="tooltip" data-original-title="Detail"
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
 
-                          <a data-toggle="tooltip" data-original-title="Cancel" data-placement="top" class="btn btn-outline-danger btn-sm edit-item-btn cancel-order"><i class="ft-x"></i></a>
+                          <a data-toggle="tooltip" data-original-title="Cancel" data-id="{{$order->id}}" data-placement="top" class="btn btn-outline-danger btn-sm edit-item-btn cancel-order"><i class="ft-x"></i></a>
                         </td>
                       </tr>
                       @endforeach

@@ -71,6 +71,8 @@ Route::get('/remove_featured/{id}', 'ProductController@removeFeatured')->name('r
 Route::get('/make_out_stock/{id}', 'ProductController@makeOutstock')->name('make_out_stock_ajax');
 Route::get('/remove_out_stock/{id}', 'ProductController@removeOutstock')->name('remove_out_stock_ajax');
 Route::post('/add_category','CategoryController@addCategory');
+Route::put('/cancel_order/{id}','OrderController@cancelOrder');
+
 Route::resource('/preview','PreviewController');
 
 // Route::get('/template/{colour}', function($colour){

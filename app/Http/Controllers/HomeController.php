@@ -32,6 +32,20 @@ class HomeController extends Controller
         $orders=Order::take(5)->get();
         $outstock=Product::where('out_stock',1)->get();
 
-        return view('home')->with('products',$products)->with('available_products',$available_products)->with('outstock',$outstock)->with('orders',$orders)->with('products_sold',$products_sold);
+        $total_sales=0;
+        $completed_orders=Order::where('status','Completed')->get();
+
+        foreach ($completed_orders as $order) {
+            $total_sales+=$order->totalCost();
+        }
+// dd($total_sales);
+
+        return view('home')->with(['products'=>$products,
+                                    'available_products'=>$available_products,
+                                    'outstock'=>$outstock,
+                                    'orders'=>$orders,
+                                    'products_sold'=>$products_sold,
+                                    'total_sales'=>$total_sales
+        ]);
     }
 }

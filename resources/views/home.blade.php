@@ -88,7 +88,7 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    <h3 class="success">45,4565</h3>
+                    <h3 class="success">{{number_format($total_sales)}}</h3>
                     <h6>Total Sales</h6>
                   </div>
                   <div>
