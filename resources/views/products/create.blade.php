@@ -173,7 +173,7 @@
                             <label class="col-md-3 label-control">Product Image(s)</label>
                             <div class="col-md-7">
                               <label id="projectinput8" class="file center-block">
-                                          <input type="file" id="file" name="images[]" onchange="readURL(this);" multiple>
+                                          <input type="file" id="product-picture" name="images[]" multiple>
                                           <span class="file-custom"></span>
                                         </label>
                             </div>
@@ -430,6 +430,11 @@ function addCommas(nStr) {
     return x1 + x2;
 }
 
+
+
+$("#product-picture").change(function(){
+                    readURL(this);
+                });
  function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
