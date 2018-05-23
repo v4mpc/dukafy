@@ -109,9 +109,9 @@
                           <th>Qty</th>
                           <th>Products Name</th>
 
-                          <th>Product Price</th>
+                          <th>Unit Price (TZS)</th>
 
-                          <th>Cost</th>
+                          <th>Cost (TZS)</th>
 
                           <th></th>
                         </tr>
@@ -128,9 +128,9 @@
                           <td>{{$product->pivot->quantity}}</td>
                           <td>{{$product->name}}</td>
 
-                          <td>{{$product->price}}</td>
+                          <td>{{number_format($product->price)}}</td>
 
-                          <td>{{$product->pivot->quantity*$product->price}}</td>
+                          <td>{{number_format($product->pivot->quantity*$product->price)}}</td>
                           <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail"
                               data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
 
@@ -154,13 +154,14 @@
                     <div class="col">
                       <h3>Payment Method:</h3>
                       <p>Cash On Delivery</p>
+                      {{--
                       <h3>Order Status:</h3>
                       <p>
 
                         @if($order->status==='Completed') <span class="badge badge-success"><i class="ft-check"></i> {{$order->status}}</span>                        @elseif($order->status==='Pending')
                         <span class="badge badge-warning"><i class="ft-loader"></i> {{$order->status}}</span> @else
                         <span class="badge badge-danger"><i class="ft-x"></i> {{$order->status}}</span> @endif
-                      </p>
+                      </p> --}}
                     </div>
 
                     @if($order->customer->comment)
@@ -186,7 +187,7 @@
                           <tbody>
                             <tr>
                               <th style="width:50%">Subtotal:</th>
-                              <td>{{$order->totalCost()}} TZS</td>
+                              <td>{{number_format($order->totalCost())}} TZS</td>
                             </tr>
 
                             <tr>
@@ -195,7 +196,7 @@
                             </tr>
                             <tr>
                               <th>Total:</th>
-                              <td>{{$order->totalCost()}} TZS</td>
+                              <td>{{number_format($order->totalCost())}} TZS</td>
                             </tr>
                           </tbody>
                         </table>

@@ -20,20 +20,6 @@
 <script>
   tinymce.init({ selector:'textarea' });
 
-
-  // Dropzone.autoDiscover = false;
-// or disable for specific dropzone:
-// Dropzone.options.myDropzone = false;
-
-// $(function() {
-//   // Now that the DOM is fully loaded, create the dropzone, and setup the
-//   // event listeners
-//   $("div#logoDropZone").dropzone({ 
-//             url: "/manage/upload",
-//             maxFilesize: 7,
-//             });
-// });
-
 </script>
 @endsection
  

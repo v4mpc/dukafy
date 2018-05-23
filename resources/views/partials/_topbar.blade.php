@@ -36,7 +36,7 @@
               <span class="avatar avatar-online">
                 <img src="{{asset('images/'.Auth::user()->image)}}" alt="avatar"><i></i></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
+            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('users.edit',Auth::id())}}"><i class="ft-user"></i> Edit Profile</a>
 
               <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();"><i class="ft-power"></i> Logout
@@ -48,13 +48,13 @@
           </li>
 
           <li class="dropdown dropdown-notification nav-item">
-            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
-            @if(Auth::user()->notifications)<span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">{{count(Auth::user()->notifications)!=0?count(Auth::user()->notifications):""}}</span>@endif
+            <a class="nav-link nav-link-label" href="#" id="notification" data-toggle="dropdown"><i class="ficon ft-bell"></i>
+            @if(Auth::user()->unreadNotifications)<span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">{{count(Auth::user()->unreadNotifications)!=0?count(Auth::user()->unreadNotifications):""}}</span>@endif
             </a>
             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
 
               <li class="scrollable-container media-list w-100">
-                @forelse (Auth::user()->notifications as $notification) @if ($notification->type=='App\Notifications\OrderCompleted')
+                @forelse (Auth::user()->unreadNotifications as $notification) @if ($notification->type=='App\Notifications\OrderCompleted')
                 <a href="{{route('orders.show',$notification->data['order_id'])}}">
                   <div class="media">
                     <div class="media-left align-self-center"><i class="ft-plus-square icon-bg-circle bg-cyan"></i></div>

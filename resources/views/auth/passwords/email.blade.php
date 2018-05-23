@@ -1,29 +1,22 @@
-@extends('layouts.layout')
-
+@extends('layouts.layout') 
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/icheck/icheck.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/icheck/custom.css')}}">
-
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/icheck/icheck.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/icheck/custom.css')}}">
 @endsection
-
-
-
+ 
 @section('page_level_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/menu/menu-types/vertical-menu-modern.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/login-register.min.css')}}">
-
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/login-register.min.css')}}">
 @endsection
-
+ 
 @section('topbar')
-
 @endsection
-
+ 
 @section('sidebar')
-
 @endsection
-
+ 
 @section('content')
 <div class="app-content content">
   <div class="content-wrapper">
@@ -36,8 +29,7 @@
             <div class="card border-grey border-lighten-3 px-2 py-2 m-0">
               <div class="card-header border-0 pb-0">
                 <div class="card-title text-center">
-                 system logo goes here
-                  {{-- <img src="../../../app-assets/images/logo/logo-dark.png" alt="branding logo"> --}}
+                  system logo goes here {{-- <img src="../../../app-assets/images/logo/logo-dark.png" alt="branding logo">                  --}}
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
                   <span>We will send you a link to reset password.</span>
@@ -45,10 +37,10 @@
               </div>
               <div class="card-content">
                 <div class="card-body">
-                  <form class="form-horizontal" action="http://www.pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/login-simple.html" novalidate>
+                  <form class="form-horizontal" action="http://www.pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/login-simple.html"
+                    novalidate>
                     <fieldset class="form-group position-relative has-icon-left">
-                      <input type="email" class="form-control form-control-lg input-lg" id="user-email"
-                      placeholder="Your Email Address" required>
+                      <input type="email" class="form-control form-control-lg input-lg" id="user-email" placeholder="Your Email Address" required>
                       <div class="form-control-position">
                         <i class="ft-mail"></i>
                       </div>
@@ -58,8 +50,9 @@
                 </div>
               </div>
               <div class="card-footer border-0">
-              <p class="float-sm-left text-center"><a href="{{route('login')}}" class="card-link">Login</a></p>
-              <p class="float-sm-right text-center">New to Member ? <a href="{{route('register')}}" class="card-link">Create Account</a></p>
+                <p class="float-sm-left text-center"><a href="{{route('login')}}" class="card-link">Login</a></p>
+                {{--
+                <p class="float-sm-right text-center">New to Member ? <a href="{{route('register')}}" class="card-link">Create Account</a></p> --}}
               </div>
             </div>
           </div>
@@ -68,23 +61,17 @@
     </div>
   </div>
 </div>
-    
 @endsection
-
+ 
 @section('footer')
-
 @endsection
-
+ 
 @section('page_vendor_js')
 <script src="{{asset('vendor/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>
-  <script src="{{asset('vendor/vendors/js/forms/validation/jqBootstrapValidation.js')}}"
-  type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/forms/validation/jqBootstrapValidation.js')}}" type="text/javascript"></script>
 @endsection
-
-
-
+ 
 @section('page_level_js')
 
 <script src="{{asset('vendor/js/scripts/forms/form-login-register.min.js')}}" type="text/javascript"></script>
-
 @endsection

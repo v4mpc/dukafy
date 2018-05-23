@@ -324,4 +324,33 @@ return redirect()->route('products.show',$product->id);
         return json_encode($product);
 
     }
+
+    public function search(Request $request)
+    {
+
+            $request->validate([
+                'query'=>'required|min:3'
+            ]);
+        $category=$request->input('category_name');;
+        $query=$request->input('query');
+
+        
+        if ($category=='all') {
+            $products = Product::search($query)->paginate(20);
+        }else{
+            // dd('it came');
+            $products = Product::where('category_id',$category)->search($query)->paginate(20);
+        }
+
+        $products = Product::search($query)->paginate(20);
+       
+        return view('template.template1.search')->with('products',$products);
+    }
+
+    public function category($id){
+
+        $products=Product::where('category_id',$id)->paginate(20);
+        return view('template.template1.search')->with('products',$products);
+
+    }
 }

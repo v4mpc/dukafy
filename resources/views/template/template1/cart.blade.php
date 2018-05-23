@@ -53,9 +53,9 @@
         <thead>
           <tr>
             <th>Items</th>
-            <th class="text-center">Price</th>
+            <th class="text-center">Unit Price (TZS)</th>
             <th class="text-center">Quantity</th>
-            <th class="text-center">Total Price </th>
+            <th class="text-center">Total Price (TZS) </th>
             <th>&nbsp; </th>
           </tr>
         </thead>
@@ -98,7 +98,7 @@
                 </div>
               </div>
             </td>
-            <td class="text-center padding-top-60">{{$item->price}}</td>
+            <td class="text-center padding-top-60">{{number_format($item->price)}}</td>
             <td class="text-center">
               <!-- Quinty -->
 
@@ -106,7 +106,7 @@
                 <input type="number" value="{{$item->qty}}">
               </div>
             </td>
-            <td class="text-center padding-top-60">{{$item->price*$item->qty}}</td>
+            <td class="text-center padding-top-60">{{number_format($item->price*$item->qty)}}</td>
             <td class="text-center padding-top-60"><a href="#" data-id="{{$item->rowId}}" class="remove"><i class="fa fa-close"></i></a></td>
 
             </a>

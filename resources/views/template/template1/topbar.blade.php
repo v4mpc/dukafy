@@ -17,7 +17,7 @@
         <div class="right-sec">
           <ul>
             <li><a href="{{route('login')}}">Login </a></li>
-            <li><a href="#." data-micromodal-trigger="modal-1">Store Location </a></li>
+            <li><a data-fancybox data-src="#hidden-content" href="javascript:;">Store Location </a></li>
             <li><a href="{{route('contact')}}">Contact Us </a></li>
             <li><a href="{{route('about')}}">About Us </a></li>
 
@@ -34,19 +34,26 @@
       </div>
     </div>
 
+
+
+
+
     <header>
       <div class="container">
         @if($settings->logo!=null)
-        <div class="logo"> <a href="{{route('start')}}"><img src="{{asset('template1/images/week-sale-bg-green-1.jpg')}}" alt="" ></a> </div>
+        <div class="logo"> <a href="{{route('start')}}"><img src="{{asset('images/'.$settings->logo)}}" alt="" ></a> </div>
         @endif
-        <div class="search-cate">
-          <select class="selectpicker">
+        <form action="{{route('search')}}" method="GET" style="display:inline!important;">
+          {{csrf_field()}}
+          <div class="search-cate">
+            <select class="selectpicker" name="category_name">
           
-
+            <option value="all">All Categories</option>
           @foreach($categories as $category)
-        <option>{{$category->name}}</option>
+        <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
         </select>
-          <input type="search" placeholder="Search entire store here...">
-          <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
-        </div>
+            <input type="search" name="query" value="{{request()->input('query')}}" placeholder="Search entire store here...">
+            <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
+          </div>
+        </form>

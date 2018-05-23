@@ -44,7 +44,7 @@ class SettingController extends Controller
         $setting->layout=$request->layout;
         $setting->colour=$request->colour;
         $setting->store_name=$request->store_name;
-        $setting->logo=$request->logo;
+       
         $setting->working_hours=$request->working_hours;
         $setting->address=$request->address;
         $setting->mobile=$request->mobile;
@@ -55,10 +55,19 @@ class SettingController extends Controller
         $setting->about=$request->about;
         $setting->longitude=$request->longitude;
         $setting->latitude=$request->latitude;
-        
+        // dd($request->all());
+
+        if($request->has('logo')){
+            $png_url = "logo-".time().".png";
+            $location = public_path('images/' . $png_url);
+            Image::make(file_get_contents($request->logo))->save($location);
+            $setting->logo=$png_url;
+        }
+     
+
         $setting->save();
 
-        if($request->hasFile('brand_images')) {
+        if($request->has('brand_images')) {
             foreach($request->file('brand_images') as $image) {
                 $filename = $image->getClientOriginalName();
                 $location=public_path('images/'.$filename);
@@ -70,18 +79,41 @@ class SettingController extends Controller
 
     }
 
-    if($request->hasFile('slider_images')) {
-        foreach($request->file('slider_images') as $image) {
-            $filename = $image->getClientOriginalName();
-            $location=public_path('images/'.$filename);
-            Image::make($image)->save($location);
+    if($request->has('slider_one')) {
+    
+            $png_url = "slider-".time(). uniqid().".png";
+            $location = public_path('images/' . $png_url);
+            Image::make(file_get_contents($request->slider_one))->save($location);
             $slider_image=new SliderImage;
-            $slider_image->image=$filename;
+            $slider_image->image=$png_url;
             $slider_image->save();      
-        }
+        
 
 }
-  return response()->json($setting);
+
+if($request->has('slider_two')) {
+    
+    $png_url = "slider-".time(). uniqid().".png";
+    $location = public_path('images/' . $png_url);
+    Image::make(file_get_contents($request->slider_two))->save($location);
+    $slider_image=new SliderImage;
+    $slider_image->image=$png_url;
+    $slider_image->save();      
+
+
+}
+if($request->has('slider_three')) {
+    
+    $png_url = "slider-".time(). uniqid().".png";
+    $location = public_path('images/' . $png_url);
+    Image::make(file_get_contents($request->slider_three))->save($location);
+    $slider_image=new SliderImage;
+    $slider_image->image=$png_url;
+    $slider_image->save();      
+
+
+}
+  return redirect()->route('home');
 }
 
     /**

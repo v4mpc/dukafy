@@ -9,6 +9,25 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/switchery.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/file-uploaders/dropzone.min.css')}}">
+
+
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
+
+<script>
+  tinymce.init({ 
+  selector:'textarea',
+  plugins: "lists",
+  branding: false,
+  height : 200,
+  menubar:false,
+  statusbar:false,
+   toolbar: "undo redo | fontsizeselect bold italic | underline strikethrough |numlist bullist",	
+  
+   });
+
+</script>
 @endsection
  
 @section('page_level_css')

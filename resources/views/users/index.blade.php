@@ -134,7 +134,7 @@
                       <tr>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->created_at}}</td>
+                        <td>{{$user->created_at->diffForHumans()}}</td>
                         <td><img src="{{asset('images/'.$user->image)}}" width="100" height="100" alt=""></td>
 
 

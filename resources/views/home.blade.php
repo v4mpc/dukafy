@@ -88,8 +88,8 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    <h3 class="success">{{number_format($total_sales)}}</h3>
-                    <h6>Total Sales</h6>
+                    <h3 class="success">{{number_format($total_sales)}} TZS</h3>
+                    <h6>Total Sales </h6>
                   </div>
                   <div>
                     <i class="icon-wallet success font-large-2 float-right"></i>
@@ -109,12 +109,7 @@
           <div class="card card-shadow">
             <div class="card-header card-header-transparent py-20">
               <div class="btn-group dropdown">
-                <a href="#" class="text-body  blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a> {{--
-                <div class="dropdown-menu animate" role="menu">
-                  <a class="dropdown-item" href="#" role="menuitem">Sales</a>
-                  <a class="dropdown-item" href="#" role="menuitem">Total sales</a>
-                  <a class="dropdown-item" href="#" role="menuitem">profit</a>
-                </div> --}}
+                <a href="#" class="text-body  blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
               </div>
               <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
                 <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Day</a></li>
@@ -122,11 +117,15 @@
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToMonth">Month</a></li>
               </ul>
             </div>
+            {{--
             <div class="widget-content tab-content bg-white p-20">
+
               <div class="ct-chart tab-pane active scoreLineShadow" id="scoreLineToDay"></div>
               <div class="ct-chart tab-pane scoreLineShadow" id="scoreLineToWeek"></div>
               <div class="ct-chart tab-pane scoreLineShadow" id="scoreLineToMonth"></div>
-            </div>
+            </div> --}}
+            <div>{!! $chart->container() !!}</div>
+
           </div>
         </div>
         <div class="col-xl-4 col-lg-12">
@@ -148,7 +147,7 @@
                       <tr>
                         <th class="border-top-0">Product</th>
                         <th class="border-top-0">Customers</th>
-                        <th class="border-top-0">Total</th>
+                        <th class="border-top-0">Total(TZS)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -158,7 +157,11 @@
                         <td class="text-truncate p-1">
                           {{count($product->orders)}}
                         </td>
-                        <td class="text-truncate">8999</td>
+                        <td class="text-truncate">
+
+                          @php $sum=0; foreach ($product->orders as $order) { $sum+=$order->totalCost(); } echo number_format($sum); 
+@endphp
+                        </td>
                       </tr>
 
                       @endforeach
@@ -196,7 +199,7 @@
                       {{--
                       <th class="border-top-0">Categories</th> --}}
 
-                      <th class="border-top-0">Amount</th>
+                      <th class="border-top-0">Amount (TZS)</th>
                       <th class="border-top-0">Time</th>
                       <th></th>
                     </tr>
@@ -218,7 +221,7 @@
                         <button type="button" class="btn btn-sm btn-outline-danger round">Food</button>
                       </td> --}}
 
-                      <td class="text-truncate"> {{$order->totalCost()}}</td>
+                      <td class="text-truncate"> {{number_format($order->totalCost())}}</td>
                       <td class="text-truncate"> {{$order->created_at->diffForHumans()}}</td>
 
                       <td> <a href="{{route('orders.show',$order->id)}}" class="btn btn-outline-primary edit-item-btn">View</a></td>
@@ -242,9 +245,11 @@
 @section('page_vendor_js')
 <script src="{{asset('vendor/vendors/js/charts/chartist.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/charts/chartist-plugin-tooltip.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/vendors/js/charts/morris.min.js')}}" type="text/javascript"></script>
+{{--
+<script src="{{asset('vendor/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script> --}}
+<script src="{{asset('vendor/vendors/js/charts/chart.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/timeline/horizontal-timeline.js')}}" type="text/javascript"></script>
+{!! $chart->script() !!}
 @endsection
  
 @section('page_level_js')

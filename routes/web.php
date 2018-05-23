@@ -34,6 +34,9 @@ Route::resource('/thank_you','ThankYouController');
 // Route::get('/shopping_cart','TemplateController@cart')->name('cart');
 Route::get('/contact_us','TemplateController@contact')->name('contact');
 Route::get('/about_us','TemplateController@about')->name('about');
+Route::post('/send_contact_form','MailerController@sendContactForm')->name('send_contact_form');
+Route::get('/search','ProductController@search')->name('search');
+Route::get('/category/{id}','ProductController@category')->name('category');
 
 //previews
 
@@ -72,8 +75,8 @@ Route::get('/make_out_stock/{id}', 'ProductController@makeOutstock')->name('make
 Route::get('/remove_out_stock/{id}', 'ProductController@removeOutstock')->name('remove_out_stock_ajax');
 Route::post('/add_category','CategoryController@addCategory');
 Route::put('/cancel_order/{id}','OrderController@cancelOrder');
-
 Route::resource('/preview','PreviewController');
+Route::get('/markOrderAsRead','OrderController@markOrderAsRead');
 
 // Route::get('/template/{colour}', function($colour){
 
@@ -90,3 +93,5 @@ Route::post('/upload','SettingController@upload')->name('upload');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/initial_setup', 'HomeController@initialSetup')->name('initial_setup');
+

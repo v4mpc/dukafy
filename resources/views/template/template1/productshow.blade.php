@@ -238,7 +238,7 @@
                   <h5>{{$product->name}}</h5>
 
                   <div class="row">
-                    <div class="col-sm-6"><span class="price">{{$product->presentPrice()}}</span></div>
+                    <div class="col-sm-6"><span class="price">{{number_format($product->price)}} TZS</span></div>
                     <div class="col-sm-6">
 
                       <p>Availability: @if(!$product->out_stock)
@@ -249,6 +249,7 @@
                     </div>
                   </div>
                   <!-- List Details -->
+                  {{--
                   <ul class="bullet-round-list">
                     <li>Screen: 1920 x 1080 pixels</li>
                     <li>Processor: 2.5 GHz None</li>
@@ -256,7 +257,10 @@
                     <li>Hard Drive: Flash memory solid state</li>
                     <li>Graphics : Intel HD Graphics 520 Integrated</li>
                     <li>Card Description: Integrated</li>
-                  </ul>
+                  </ul> --}}
+                  <div>
+                    {!!$product->description!!}
+                  </div>
                   {{--
                   <!-- Colors -->
                   <div class="row">

@@ -6,6 +6,8 @@ use App\Order;
 use App\Customer;
 use Cart;
 use Illuminate\Http\Request;
+use Auth;
+use App\Http\Requests\StoreOrder;
 
 class OrderController extends Controller
 {
@@ -36,7 +38,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOrder $request)
     {
 
         //check if order is already present
@@ -141,5 +143,13 @@ foreach (Cart::content() as $item) {
         $order->save();
 
         return response()->json('ok');
+    }
+
+    public function markOrderAsRead()
+    {
+        $user=Auth::user();
+        $user->unreadNotifications->markAsRead();
+        return response()->json(200);
+
     }
 }

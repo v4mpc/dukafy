@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        if(count(Setting::all())){
         $featured=Product::where('featured','1')->get();
         $categories=Category::all();
         $settings=Setting::orderBy('id','desc')->first();
@@ -55,7 +55,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('brand_images',$brand_images);
         View::share('slider_images',$slider_images);
         
-        
+    }
     }
 
     /**

@@ -74,7 +74,7 @@
                         {{--
                         <th>Sub-category</th> --}}
                         <th>Image</th>
-                        <th>Price</th>
+                        <th>Price (TZS)</th>
                         <th></th>
                       </tr>
                     </thead>

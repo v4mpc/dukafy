@@ -17,6 +17,7 @@
     <div class="container">
 
       <!-- MAP -->
+
       <section class="map-block margin-bottom-40">
 
         <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
@@ -33,7 +34,8 @@
       <div class="contact">
         <div class="contact-form">
           <!-- FORM  -->
-          <form role="form" id="contact_form" class="contact-form" method="post" onSubmit="return false">
+          <form role="form" method="POST" id="contact_form" class="contact-form" action="{{route('send_contact_form')}}">
+            {{csrf_field()}}
             <div class="row">
               <div class="col-md-8">
 
@@ -43,12 +45,12 @@
                 </div>
                 <ul class="row">
                   <li class="col-sm-6">
-                    <label>First Name
-                            <input type="text" class="form-control" name="name" id="name" placeholder="">
+                    <label>Name
+                            <input type="text" class="form-control" name="name" id="name"  placeholder="">
                           </label>
                   </li>
                   <li class="col-sm-6">
-                    <label>Last Name
+                    <label>Email
                             <input type="text" class="form-control" name="email" id="email" placeholder="">
                           </label>
                   </li>

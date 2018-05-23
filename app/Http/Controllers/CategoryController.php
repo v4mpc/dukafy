@@ -109,6 +109,7 @@ class CategoryController extends Controller
         $category->name=$request->name;
         $category->save();
         $categories=Category::get()->pluck('name','id');
+        $category_id=$category->id;
         return response()->json($categories);
 
     }

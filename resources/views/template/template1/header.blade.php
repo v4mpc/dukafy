@@ -7,7 +7,7 @@
     <meta name="author" content="M_Adnan" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Document Title -->
-    <title>Smart Tech - Ecommerce HTML5 Template</title>
+    <title>{{$settings->store_name}}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset('template1/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('template1/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/toaster/toaster.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
 
 
     <style>

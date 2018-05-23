@@ -1,5 +1,6 @@
 <!-- JavaScripts -->
 <script src="{{asset('template1/js/vendors/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('template1/js/vendors/wow.min.js')}}"></script>
 <script src="{{asset('template1/js/vendors/bootstrap.min.js')}}"></script>
 <script src="{{asset('template1/js/vendors/own-menu.js')}}"></script>
@@ -211,7 +212,57 @@ $.ajax({
 </script>
 
 
-{{--
+@if($errors->any())
+<script>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "30",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+            @php
+          $message='';
+foreach($errors->all() as $error){
+$message.='<li>'.$error.'</li>';
+
+
+}
+
+// echo "toastr.error(sfsdfs)";
+
+
+
+
+ echo 'toastr.error("'.$message.'");';
+
+
+
+
+
+
+
+
+
+
+
+
+@endphp
+
+</script>
+
+
+@endif {{--
 <script>
   function initMap() {
       var uluru = {lat: -25.363, lng: 131.044};

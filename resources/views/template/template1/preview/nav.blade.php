@@ -7,7 +7,7 @@
         <div id="cater" class="collapse">
           <ul>
             @foreach($categories as $category)
-            <li><a href="#."> {{$category->name}}</a></li>
+            <li><a href="{{route('category',$id)}}"> {{$category->name}}</a></li>
             @endforeach {{--
             <li><a href="#."> Home Audio & Theater</a></li>
             <li><a href="#."> TV & Video</a></li>

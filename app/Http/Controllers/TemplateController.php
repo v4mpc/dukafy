@@ -31,7 +31,9 @@ class TemplateController extends Controller
         //                                         ->with('brand_images',$brand_images)
         //                                         ->with('slider_images',$slider_images);
 
-
+if (!count(Setting::all())) {
+    return view('maintanance');
+}
         return view('template.template1.index');
     }
 
