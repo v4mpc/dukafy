@@ -6,9 +6,9 @@
       <div class="cate-bar-in">
         <div id="cater" class="collapse">
           <ul>
-            @foreach($categories as $category)
+            @foreach($categories as $category) @if(count($category->products))
             <li><a href="{{route('category',$category->id)}}"> {{$category->name}}</a></li>
-            @endforeach {{--
+            @endif @endforeach {{--
             <li><a href="#."> Home Audio & Theater</a></li>
             <li><a href="#."> TV & Video</a></li>
             <li><a href="#."> Camera, Photo & Video</a></li>

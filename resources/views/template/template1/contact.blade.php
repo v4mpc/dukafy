@@ -17,7 +17,7 @@
     <div class="container">
 
       <!-- MAP -->
-
+      {{--
       <section class="map-block margin-bottom-40">
 
         <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
@@ -28,7 +28,7 @@
 
 
 
-      </section>
+      </section> --}}
 
       <!-- Conatct -->
       <div class="contact">

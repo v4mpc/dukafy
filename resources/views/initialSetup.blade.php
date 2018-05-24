@@ -229,7 +229,7 @@
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group" align="center">
                                                     <label>Select Template and Colour</label>
-                                                    <img src="home-1.jpg" alt="..." class="img-thumbnail">
+                                                    <img src="{{asset('template1/images/home-1.jpg')}}" alt="..." class="img-thumbnail">
                                                     <div>
                                                         <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour"></button>
                                                         <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour"></button>

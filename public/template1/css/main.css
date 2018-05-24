@@ -3858,7 +3858,7 @@ header .navbar li.active a:before {}
 
 .nav-right li {
 	padding: 0 0px;
-	margin: 0 10px !important;
+	margin: 0 1px !important;
 }
 
 .nav-right {

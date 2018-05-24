@@ -8,6 +8,7 @@
     <div class="container">
       <div class="row">
         <!-- Shop Side Bar -->
+        {{--
         <div class="col-md-3">
           <div class="shop-side-bar">
             <!-- Categories -->
@@ -150,7 +151,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> --}}
         <!-- Products -->
         <div class="col-md-9">
           <div class="product-detail">
@@ -186,47 +187,23 @@
                                                                       </div> -->
                     <div id="slider" class="flexslider">
                       <ul class="slides">
+                        @foreach($product->images as $image)
                         <li>
-                          <img src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="">
+                          <img src="{{asset('images/'.$image->image)}}" alt="">
                         </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
-                        </li>
+                        @endforeach
                         <!-- items mirrored twice, total of 12 -->
                       </ul>
                     </div>
                     <div id="carousel" class="flexslider">
                       <ul class="slides">
+                        @foreach($product->images as $image)
                         <li>
-                          <img src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="">
+                          <img src="{{asset('images/'.$image->image)}}" alt="">
                         </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="">
-                        </li>
-                        <li>
-                          <img src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
-                        </li>
+                        @endforeach
+
+
                         <!-- items mirrored twice, total of 12 -->
                       </ul>
                     </div>
@@ -258,7 +235,7 @@
                     <li>Graphics : Intel HD Graphics 520 Integrated</li>
                     <li>Card Description: Integrated</li>
                   </ul> --}}
-                  <div>
+                  <div class="bullet-round-list">
                     {!!$product->description!!}
                   </div>
                   {{--

@@ -34,6 +34,7 @@ class TemplateController extends Controller
 if (!count(Setting::all())) {
     return view('maintanance');
 }
+
         return view('template.template1.index');
     }
 
@@ -46,7 +47,10 @@ if (!count(Setting::all())) {
     {
         $products=Product::paginate(20);
         // dd($products);
-        return view('template.template1.products')->with('products',$products);
+        $min_price=Product::min('price');
+        $max_price=Product::max('price');
+        
+        return view('template.template1.products')->with('products',$products)->with('min_price',$min_price)->with('max_price',$max_price);
     }
 
     /**

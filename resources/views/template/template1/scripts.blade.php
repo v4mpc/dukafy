@@ -21,6 +21,38 @@
 <script>
   jQuery(document).ready(function() {
 
+    
+ $('#filter-price').click(function(params) {
+   var min_price=$('#price-min').text();
+   var max_price=$('#price-max').text();
+   $('input[name="max_price"]').val(max_price);
+	$('input[name="min_price"]').val(min_price);
+  $('#filter-form').submit();
+
+
+  // var formData = $('#category-filter').serialize();
+  // console.log('Posting the following: ', formData);
+
+  //  $.ajaxSetup({
+	// 			headers: {
+	// 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	// 			}
+  //     });
+
+  //     $.ajax({
+	// 			type: "GET",
+	// 			url: "/filter_product",
+	// 			dataType: "JSON",
+	// 			data: formData,
+	// 			success: function (data) {}
+  //         console.log(data);
+
+  //     });
+ });
+
+
+    
+
 
 
     $('.cart-btn').click(function() {
@@ -183,11 +215,12 @@ $.ajax({
           
           //  Price Filter ( noUiSlider Plugin)
             $("#price-range").noUiSlider({
+            
             range: {
-              'min': [ 0 ],
-              'max': [ 1000 ]
+              'min': [ {{$start_min_price}} ],
+              'max': [ {{$start_max_price}} ]
             },
-            start: [40, 940],
+            start: [{{$min_price}}, {{$max_price}}],
                 connect:true,
                 serialization:{
                     lower: [
@@ -202,7 +235,7 @@ $.ajax({
               ],
               format: {
               // Set formatting
-                decimals: 2,
+                decimals:0,
                 prefix: ''
               }
                 }
@@ -245,6 +278,40 @@ $message.='<li>'.$error.'</li>';
 
 
  echo 'toastr.error("'.$message.'");';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

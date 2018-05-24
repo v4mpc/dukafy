@@ -22,6 +22,7 @@ Route::get('/mailable', function () {
     $order = App\Order::find(7);
     return new App\Mail\OrderCompleted($order);
 });
+Route::get('/filter_product','ProductController@filterProduct')->name('filter_products');
 
 Route::post('/add_to_cart','CartController@addToCart')->name('add_to_cart');
 Route::delete('/remove_from_cart/{id}','CartController@removeFromCart')->name('remove_from_cart');

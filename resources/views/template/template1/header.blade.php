@@ -31,6 +31,13 @@
         .required {
             color: red;
             font-weight: bold;
+
+
+        }
+
+        #hidden-content {
+            width: 600px;
+            height: 400px;
         }
     </style>
 

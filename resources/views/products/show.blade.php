@@ -90,11 +90,12 @@
                             <div class="row">
                               @foreach($product->images as $image)
                               <figure class="col-lg-3 col-md-6 col-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                <a href="{{asset('images/'.$image->image)}}" itemprop="contentUrl" data-size="480x360">
+                                <a href="{{asset('images/'.$image->image)}}" itemprop="contentUrl" data-size="{{Image::make(file_get_contents(asset('images/'.$image->image)))->width()}}x{{Image::make(file_get_contents(asset('images/'.$image->image)))->height()}}">
                                                   <img class="img-thumbnail img-fluid" src="{{asset('images/'.$image->image)}}"
                                                   itemprop="thumbnail" alt="Image description" />
                                                 </a>
                               </figure>
+
                               @endforeach
 
                             </div>

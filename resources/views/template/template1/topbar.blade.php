@@ -16,7 +16,8 @@
 
         <div class="right-sec">
           <ul>
-            <li><a href="{{route('login')}}">Login </a></li>
+            {{--
+            <li><a href="{{route('login')}}">Login </a></li> --}}
             <li><a data-fancybox data-src="#hidden-content" href="javascript:;">Store Location </a></li>
             <li><a href="{{route('contact')}}">Contact Us </a></li>
             <li><a href="{{route('about')}}">About Us </a></li>
@@ -32,6 +33,21 @@
           <div class="social-top"> <a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-linkedin"></i></a>            <a href="#."><i class="fa fa-dribbble"></i></a> <a href="#."><i class="fa fa-pinterest"></i></a> </div> --}}
         </div>
       </div>
+    </div>
+
+    <div style="display: none;" id="hidden-content">
+
+      <section class="map-block">
+
+        <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
+          data-style="0"></div>
+        <div class="markers-wrapper addresses-block"> <a class="marker" data-rel="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-string="{{$settings->store_name}}"></a>          </div>
+
+
+
+
+
+      </section>
     </div>
 
 

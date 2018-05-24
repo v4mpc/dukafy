@@ -21,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         if(count(Setting::all())){
+            $max_price=0;
+$min_price=0;
+
+$start_max_price=Product::max('price');
+$start_min_price=Product::min('price');
         $featured=Product::where('featured','1')->get();
         $categories=Category::all();
         $settings=Setting::orderBy('id','desc')->first();
@@ -54,6 +59,13 @@ class AppServiceProvider extends ServiceProvider
         
         View::share('brand_images',$brand_images);
         View::share('slider_images',$slider_images);
+
+        View::share('min_price',$min_price);
+        View::share('max_price',$max_price);
+
+        View::share('start_min_price',$start_min_price);
+        View::share('start_max_price',$start_max_price);
+
         
     }
     }
