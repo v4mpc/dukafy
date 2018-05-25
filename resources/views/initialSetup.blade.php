@@ -22,7 +22,8 @@
     <!-- Fonts and Icons -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-    <link href="{{asset('initial_screen/css/themify-icons.css')}}" rel="stylesheet"> {{--
+    <link href="{{asset('initial_screen/css/themify-icons.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}"> {{--
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/loaders/loaders.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-loader.min.css')}}"> --}}
 
@@ -229,17 +230,60 @@
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group" align="center">
                                                     <label>Select Template and Colour</label>
-                                                    <img src="{{asset('template1/images/home-1.jpg')}}" alt="..." class="img-thumbnail">
+                                                    <a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview" data-width="1366" data-height="768"
+                                                        data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
                                                     <div>
-                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour"></button>
-                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour"></button>
-                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour"></button>
+                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
+                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
+                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
                                                         <input type="hidden" name="layout">
                                                         <input type="hidden" name="colour">
                                                     </div>
 
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        {{-- navy previews --}}
+
+                                        <div style="display: none;">
+
+
+                                            <a href="{{asset('template1/previews/navy/2.png')}}" data-fancybox="navy-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/navy/2.png')}}"></a>
+
+                                            <a href="{{asset('template1/previews/navy/3.png')}}" data-fancybox="navy-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/navy/3.png')}}"></a>
+
+                                            <a href="{{asset('template1/previews/navy/4.png')}}" data-fancybox="navy-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/navy/4.png')}}"></a>
+
+
+                                        </div>
+
+                                        {{-- green previews --}}
+                                        <div style="display: none;">
+
+
+                                            <a href="{{asset('template1/previews/green/2.png')}}" data-fancybox="green-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/green/2.png')}}"></a>
+
+                                            <a href="{{asset('template1/previews/green/3.png')}}" data-fancybox="green-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/green/3.png')}}"></a>
+
+                                            <a href="{{asset('template1/previews/green/4.png')}}" data-fancybox="green-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/green/4.png')}}"></a>
+
+
+                                        </div>
+
+
+                                        {{-- blue previews --}}
+
+                                        <div style="display: none;">
+
+
+                                            <a href="{{asset('template1/previews/blue/2.png')}}" data-fancybox="blue-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/blue/2.png')}}"></a>
+
+                                            <a href="{{asset('template1/previews/blue/3.png')}}" data-fancybox="blue-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/blue/3.png')}}"></a>
+
+                                            <a href="{{asset('template1/previews/blue/4.png')}}" data-fancybox="blue-preview" data-width="1366" data-height="768" data-thumb="{{asset('template1/previews/blue/4.png')}}"></a>
+
+
                                         </div>
 
                                     </div>
@@ -562,6 +606,7 @@
 <!--   Core JS Files   -->
 <script src="{{asset('initial_screen/js/jquery-2.2.4.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('initial_screen/js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
 <script src="{{asset('initial_screen/js/jquery.bootstrap.wizard.js')}}" type="text/javascript"></script>
 
 <!--  Plugin for the Wizard -->
@@ -612,6 +657,27 @@ $('#located').click(function(params) {
 			$(this).append('<i class="ti-check"></i>');
 			var colour = $(this).data('colour');
 			var layout = $(this).data('layout');
+            if (colour=="navy") {
+                $('#img-thumb').attr('src',"{{asset('template1/previews/navy/1.png')}}");
+                $('#img-link').attr('src',"{{asset('template1/previews/navy/1.png')}}");
+                $('#img-link').attr('href',"{{asset('template1/previews/navy/1.png')}}");
+                // $('#img-link').data('fancybox','navy-preview');
+                $('#img-link').attr('data-fancybox','navy-preview');
+            } else if(colour=="green") {
+                $('#img-thumb').attr('src',"{{asset('template1/previews/green/1.png')}}");
+                $('#img-link').attr('src',"{{asset('template1/previews/green/1.png')}}");
+                $('#img-link').attr('data-fancybox','green-preview');
+                $('#img-link').attr('href',"{{asset('template1/previews/green/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
+            }else{
+                $('#img-thumb').attr('src',"{{asset('template1/previews/blue/1.png')}}");
+                $('#img-link').attr('src',"{{asset('template1/previews/blue/1.png')}}");
+                $('#img-link').attr('data-fancybox','blue-preview');
+                $('#img-link').attr('href',"{{asset('template1/previews/blue/1.png')}}");
+                
+    
+            
+            }
 			$('input[name="layout"]').val(layout);
 			$('input[name="colour"]').val(colour);
 
