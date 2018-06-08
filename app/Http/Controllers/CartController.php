@@ -90,7 +90,7 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        sleep(3);
+       
         $product=Product::findOrFail($request->id);
         Cart::add($product->id,$product->name,1,$product->price)->associate('App\Product');
         return response()->json(['cart_count'=>Cart::count(),

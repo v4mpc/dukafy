@@ -62,13 +62,13 @@
                         <p>{{$product->name}}</p>
                     </li>
                     <li class="col-xs-2 text-center">
-                        <p>{{$product->price}}</p>
+                        <p>{{number_format($product->price)}} TZS</p>
                     </li>
                     <li class="col-xs-2 text-center">
                         <p>{{$product->pivot->quantity}}</p>
                     </li>
                     <li class="col-xs-2 text-center">
-                        <p>{{$product->pivot->quantity*$product->price}}</p>
+                        <p>{{number_format($product->pivot->quantity*$product->price)}} TZS</p>
                     </li>
                 </ul>
                 @endforeach
@@ -142,7 +142,7 @@
 
                 <!-- Totel Price -->
                 <div class="totel-price">
-                    <h4><small> Total Price: </small> {{$total_cost}}</h4>
+                    <h4><small> Total Price: </small> {{number_format($total_cost)}} TZS</h4>
                 </div>
             </div>
 

@@ -43,7 +43,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProduct $request)
     {
         
 
@@ -321,10 +321,10 @@ return redirect()->route('products.show',$product->id);
 
         
         if ($category=='all') {
-            $products = Product::search($query)->paginate(20);
+            $products = Product::where('out_stock',0)->search($query)->paginate(20);
           
-            $min_price=Product::search($query)->min('price');
-            $max_price=Product::search($query)->max('price');
+            $min_price=Product::where('out_stock',0)->search($query)->min('price');
+            $max_price=Product::where('out_stock',0)->search($query)->max('price');
             $checked_categories=array();
             foreach($products as $product){
                 $checked_categories[]=$product->category->id;
@@ -334,9 +334,9 @@ return redirect()->route('products.show',$product->id);
 
         }else{
             // dd('it came');
-            $products = Product::where('category_id',$category)->search($query)->paginate(20);
-            $min_price=Product::where('category_id',$category)->search($query)->min('price');
-            $max_price=Product::where('category_id',$category)->search($query)->max('price');
+            $products = Product::where('out_stock',0)->where('category_id',$category)->search($query)->paginate(20);
+            $min_price=Product::where('out_stock',0)->where('category_id',$category)->search($query)->min('price');
+            $max_price=Product::where('out_stock',0)->where('category_id',$category)->search($query)->max('price');
             $checked_categories=array();
             foreach($products as $product){
                 $checked_categories[]=$product->category->id;
@@ -350,11 +350,11 @@ return redirect()->route('products.show',$product->id);
 
     public function category($id){
 
-        $products=Product::where('category_id',$id)->paginate(20);
+        $products=Product::where('out_stock',0)->where('category_id',$id)->paginate(20);
         $checked_categories=array();
         $checked_categories[]=$id;
-        $min_price=Product::where('category_id',$id)->min('price');
-        $max_price=Product::where('category_id',$id)->max('price');
+        $min_price=Product::where('out_stock',0)->where('category_id',$id)->min('price');
+        $max_price=Product::where('out_stock',0)->where('category_id',$id)->max('price');
 
 
         return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
@@ -369,7 +369,7 @@ return redirect()->route('products.show',$product->id);
         $checked_categories=array();
         $checked_categories=$request->category_id;
         // dd($request->category_id);
-        $products=Product::whereIn('category_id',$request->category_id)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
+        $products=Product::where('out_stock',0)->whereIn('category_id',$request->category_id)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
         return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
 
         dd($request->all());

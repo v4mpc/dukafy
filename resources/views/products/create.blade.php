@@ -372,8 +372,11 @@ $("#name").keyup(function(event) {
 
 $("#price").keyup(function(event) {
   var stt = $(this).val();
-  $("#new_price_output").text(addCommas(stt));
+  if (!isNaN(stt) && stt!=0) {
+    $("#new_price_output").text(addCommas(stt));
   done_typing();
+  }
+ 
 });
 
 var wait_time=1000;
@@ -387,9 +390,11 @@ $('#discount').keyup(function(){
 
   function done_typing(params) {
    var discount=$('#discount').val();
-    // alert(input);
+
+   
+      // alert(input);
     var lastChar = discount[discount.length-1];
-      if (lastChar=='%') {
+      if (lastChar=='%' && discount!=0) {
         var percentage='-'+discount;
         var numerice_percentage=discount.replace('%','');
         // var old_price_output=$("#new_price_output").text();
@@ -405,6 +410,7 @@ $('#discount').keyup(function(){
           $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
         $("#sale_tag").addClass('sale-tag').text(percentage);
       } else {
+        if(!isNaN(discount) && discount!=0){
         // alert('its not a percentage');
         var price=$('#price').val();
         console.log(price);
@@ -423,7 +429,11 @@ $('#discount').keyup(function(){
         $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
        
         $("#sale_tag").addClass('sale-tag').text(percentage);
+        }
+
       }
+   
+   
     }
   
 

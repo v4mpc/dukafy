@@ -119,7 +119,8 @@
                         <th>Added</th>
                         <th>Image</th>
 
-                        <th></th>
+                        {{--
+                        <th></th> --}}
                       </tr>
                     </thead>
                     <tbody>
@@ -139,11 +140,12 @@
 
 
 
+                        {{--
                         <td>
                           <a href="{{route('users.edit',$user->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top" class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
                           <a data-toggle="tooltip" data-id="{{$user->id}}" data-url="/manage/users/" data-name="User" data-original-title="Delete"
                             data-placement="top" class="btn btn-outline-danger edit-item-btn confirm-color"><i class="ft-trash"></i></a>
-                        </td>
+                        </td> --}}
                       </tr>
                       @endforeach
 

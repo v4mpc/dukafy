@@ -63,14 +63,14 @@
                                 <!-- Name -->
                                 <div class="col-sm-6">
                                     <label> <span class="required">*</span> First name
-                    <input class="form-control" type="text" name="first_name">
+                    <input class="form-control" type="text" name="first_name" required>
                   </label>
                                 </div>
 
                                 <!-- Number -->
                                 <div class="col-sm-6">
                                     <label> <span class="required">*</span> Last Name
-                    <input class="form-control" type="text" name="last_name">
+                    <input class="form-control" type="text" name="last_name" required>
                   </label>
                                 </div>
 
@@ -118,21 +118,21 @@
                                 <!-- Address -->
                                 <div class="col-sm-8">
                                     <label>  <span class="required">*</span>Address
-                    <input class="form-control" type="text" name="address">
+                    <input class="form-control" type="text" name="address" required>
                   </label>
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="col-sm-6">
                                     <label> <span class="required">*</span> Phone
-                    <input class="form-control" type="text" name="phone">
+                    <input class="form-control" type="text" name="phone" required>
                   </label>
                                 </div>
 
                                 <!-- Number -->
                                 <div class="col-sm-6">
                                     <label> <span class="required">*</span> Email
-                    <input class="form-control" type="email" name="email">
+                    <input class="form-control" type="email" name="email" required>
                   </label>
                                 </div>
 
@@ -161,8 +161,8 @@
                                 <div class="col-sm-6">
                                     <div class="charges">
                                         <h6>Free Delivery</h6>
-                                        <br>
-                                        <span>7 - 12 days</span> </div>
+                                        <br> {{-- <span>7 - 12 days</span> --}}
+                                    </div>
                                 </div>
 
                                 {{--

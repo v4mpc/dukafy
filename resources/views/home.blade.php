@@ -111,11 +111,12 @@
               <div class="btn-group dropdown">
                 <a href="#" class="text-body  blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
               </div>
+              {{--
               <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
                 <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Day</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToWeek">Week</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToMonth">Month</a></li>
-              </ul>
+              </ul> --}}
             </div>
             {{--
             <div class="widget-content tab-content bg-white p-20">

@@ -58,7 +58,7 @@
 
                     <!-- Items -->
                     <div class="item-col-4">
-                        {{-- @foreach($products as $product)
+                        @foreach($products as $product)
                         <!-- Product -->
                         <div class="product">
                             <article>
@@ -75,85 +75,9 @@
                                 <div class="price">{{number_format($product->price)}} TZS</div>
 
                                 @endif
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
+                                <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
                         </div>
-                        @endforeach --}}
-
-                        <div class="product">
-                            <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="">
-                                <span class="sale-tag">-25%</span>
-
-                                <!-- Content -->
-                                <span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim Con 8GB</a>
-                                <!-- Reviews -->
-
-                                <div class="price">350.00 <span>200.00</span></div>
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-                        </div>
-
-                        <div class="product">
-                            <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="">
-                                <!-- Content -->
-                                <span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart Watch M26 </a>
-
-                                <div class="price">350.00</div>
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-                        </div>
-
-
-                        <!-- Product -->
-                        <div class="product">
-                            <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
-                                <span class="new-tag">New</span>
-
-                                <!-- Content -->
-                                <span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico Bluetooth Con Air Mouse</a>
-                                <!-- Reviews -->
-
-                                <div class="price">350.00</div>
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-                        </div>
-
-
-
-                        <div class="product">
-                            <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="">
-                                <span class="sale-tag">-25%</span>
-
-                                <!-- Content -->
-                                <span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim Con 8GB</a>
-                                <!-- Reviews -->
-
-                                <div class="price">350.00 <span>200.00</span></div>
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-                        </div>
-
-                        <div class="product">
-                            <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-2.jpg')}}" alt="">
-                                <!-- Content -->
-                                <span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart Watch M26 </a>
-
-                                <div class="price">350.00</div>
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-                        </div>
-
-
-                        <!-- Product -->
-                        <div class="product">
-                            <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
-                                <span class="new-tag">New</span>
-
-                                <!-- Content -->
-                                <span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico Bluetooth Con Air Mouse</a>
-                                <!-- Reviews -->
-
-                                <div class="price">350.00</div>
-                                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
-                        </div>
-
-
-
-
+                        @endforeach
 
 
 

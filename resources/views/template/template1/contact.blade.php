@@ -34,62 +34,65 @@
       <div class="contact">
         <div class="contact-form">
           <!-- FORM  -->
+          {{--
           <form role="form" method="POST" id="contact_form" class="contact-form" action="{{route('send_contact_form')}}">
-            {{csrf_field()}}
-            <div class="row">
-              <div class="col-md-8">
+            --}}
+            <form action="" role="form" class="contact-form" id="contact_form">
+              {{csrf_field()}}
+              <div class="row">
+                <div class="col-md-8">
 
-                <!-- Payment information -->
-                <div class="heading">
-                  <h2>Dou You have a Question for Us ?</h2>
-                </div>
-                <ul class="row">
-                  <li class="col-sm-6">
-                    <label>Name
+                  <!-- Payment information -->
+                  <div class="heading">
+                    <h2>Dou You have a Question for Us ?</h2>
+                  </div>
+                  <ul class="row">
+                    <li class="col-sm-6">
+                      <label>Name
                             <input type="text" class="form-control" name="name" id="name"  placeholder="">
                           </label>
-                  </li>
-                  <li class="col-sm-6">
-                    <label>Email
+                    </li>
+                    <li class="col-sm-6">
+                      <label>Email
                             <input type="text" class="form-control" name="email" id="email" placeholder="">
                           </label>
-                  </li>
-                  <li class="col-sm-12">
-                    <label>Message
+                    </li>
+                    <li class="col-sm-12">
+                      <label>Message
                             <textarea class="form-control" name="message" id="message" rows="5" placeholder=""></textarea>
                           </label>
-                  </li>
-                  <li class="col-sm-12 no-margin">
-                    <button type="submit" value="submit" class="btn-round" id="btn_submit" onClick="proceed();">Send Message</button>
-                  </li>
-                </ul>
-              </div>
-
-              @if($settings->email!=null||$settings->mobile!=null||$settings->address!=null)
-              <!-- Conatct Infomation -->
-              <div class="col-md-4">
-                <div class="contact-info">
-                  {{--
-                  <h5>SmartTech</h5>
-                  <p>The most powerful PSD for Digital & Electronic!</p>
-                  <hr> --}} @if($settings->address!=null)
-                  <h6>Address:</h6>
-
-                  <p>{{$settings->address}}</p>
-                  @endif @if($settings->mobile!=null)
-                  <h6>Phone:</h6>
-
-                  <p>{{$settings->mobile}}</p>
-                  @endif @if($settings->email!=null)
-                  <h6>Email:</h6>
-
-                  <p>{{$settings->email}}</p>
-                  @endif
+                    </li>
+                    <li class="col-sm-12 no-margin">
+                      <button type="submit" value="submit" class="btn-round" id="btn_submit" onClick="proceed();">Send Message</button>
+                    </li>
+                  </ul>
                 </div>
+
+                @if($settings->email!=null||$settings->mobile!=null||$settings->address!=null)
+                <!-- Conatct Infomation -->
+                <div class="col-md-4">
+                  <div class="contact-info">
+                    {{--
+                    <h5>SmartTech</h5>
+                    <p>The most powerful PSD for Digital & Electronic!</p>
+                    <hr> --}} @if($settings->address!=null)
+                    <h6>Address:</h6>
+
+                    <p>{{$settings->address}}</p>
+                    @endif @if($settings->mobile!=null)
+                    <h6>Phone:</h6>
+
+                    <p>{{$settings->mobile}}</p>
+                    @endif @if($settings->email!=null)
+                    <h6>Email:</h6>
+
+                    <p>{{$settings->email}}</p>
+                    @endif
+                  </div>
+                </div>
+                @endif
               </div>
-              @endif
-            </div>
-          </form>
+            </form>
         </div>
       </div>
     </div>

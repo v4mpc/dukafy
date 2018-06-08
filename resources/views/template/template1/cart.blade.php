@@ -92,7 +92,7 @@
 
             <td>
               <div class="media">
-                <div class="media-left"> <a href="#."> <img class="img-responsive" src="{{asset('template1/images/item-img-1-1.jpg')}}" alt="" > </a>                  </div>
+                <div class="media-left"> <a href="#."> <img class="img-responsive" src="{{asset('images/'.App\Product::find($item->id)->images[0]->image)}}" alt="" > </a>                  </div>
                 <div class="media-body">
                   <p>{{$item->name}}</p>
                 </div>
@@ -103,7 +103,7 @@
               <!-- Quinty -->
 
               <div class="quinty padding-top-20">
-                <input type="number" value="{{$item->qty}}">
+                <input type="number" value="{{$item->qty}}" disabled>
               </div>
             </td>
             <td class="text-center padding-top-60">{{number_format($item->price*$item->qty)}}</td>
@@ -119,7 +119,7 @@
         </tbody>
       </table>
       <div class="g-totel">
-        <h5>Grand total: <span class="items-price">{{Cart::subtotal()}}</span></h5>
+        <h5>Grand total: <span class="items-price">{{Cart::subtotal()}} TZS</span></h5>
       </div>
       @else
       <div>

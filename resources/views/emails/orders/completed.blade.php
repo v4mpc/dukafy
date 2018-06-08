@@ -6,8 +6,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link href="{{asset('initial_screen/css/bootstrap.min.css')}}" rel="stylesheet" />
 
     <style>
         body {
@@ -99,9 +98,9 @@
                         <thead>
                             <tr>
                                 <td><strong>Item</strong></td>
-                                <td class="text-center"><strong>Price</strong></td>
+                                <td class="text-center"><strong>Unit Price(TZS)</strong></td>
                                 <td class="text-center"><strong>Quantity</strong></td>
-                                <td class="text-right"><strong>Total</strong></td>
+                                <td class="text-right"><strong>Total(TZS)</strong></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,9 +110,9 @@
 
                             <tr>
                                 <td>{{$product->name}}</td>
-                                <td class="text-center">{{$product->price}}</td>
+                                <td class="text-center">{{number_format($product->price)}}</td>
                                 <td class="text-center">{{$product->pivot->quantity}}</td>
-                                <td class="text-right">{{$product->pivot->quantity*$product->price}}</td>
+                                <td class="text-right">{{number_format($product->pivot->quantity*$product->price)}}</td>
                             </tr>
 
                             @endforeach
@@ -121,7 +120,7 @@
                                 <td class="no-line"></td>
                                 <td class="no-line"></td>
                                 <td class="no-line text-center"><strong>Grand Total</strong></td>
-                                <td class="no-line text-right">{{$order->totalCost()}}</td>
+                                <td class="no-line text-right">{{number_format($order->totalCost())}} TZS</td>
                             </tr>
                         </tbody>
                     </table>

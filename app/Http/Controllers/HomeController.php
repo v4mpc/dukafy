@@ -58,12 +58,12 @@ class HomeController extends Controller
               
                 }
     
-                $monthly_gross_order[$i]=$monthly_total;
+                $monthly_gross_order[]=($monthly_total);
     
             }
-         
+        //  dd($monthly_gross_order);
             $chart = new ProductSalesChart;
-            $chart->dataset('Amount', 'line',$monthly_gross_order );
+            $chart->dataset('Amount', 'line',$monthly_gross_order);
             $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May','Jun', 'Jul','Aug','Sept','Oct','Nov','Dec']);
     
     

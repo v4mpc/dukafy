@@ -67,6 +67,7 @@
                   <table class="table table-striped table-bordered zero-configuration">
                     <thead>
                       <tr>
+                        <th>Order #</th>
                         <th>Customer Name</th>
                         <th>Products</th>
                         {{--
@@ -86,6 +87,7 @@
                         <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-2" id="confirm-color">Confirm Button Color</button>
                       </div> --}} @foreach($orders as $order)
                       <tr>
+                        <td>{{$order->id}}</td>
                         <td>{{$order->customer->first_name}}</td>
                         <td>{{count($order->products)}}</td>
                         {{--

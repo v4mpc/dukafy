@@ -38,13 +38,13 @@ class StoreProduct extends FormRequest
         return [
             'name'=>'required|min:2|max:255',
             'price'=>'required|numeric',
-            'category_id'=>'required',
-            'sub_category_id'=>'required',
+            // 'category_id'=>'required',
+            // 'sub_category_id'=>'required',
             'description'=>'nullable|sometimes|max:255',
-            'images[]'=>'image|max:150',
-            'variation[]'=>'sometimes|max:255',
-            'variation_images[]'=>'sometimes|image|max:150',
-            'variation_price[]'=>'sometimes|numeric'
+            'images[]'=>'required|image',
+            // 'variation[]'=>'sometimes|max:255',
+            // 'variation_images[]'=>'sometimes|image|max:150',
+            // 'variation_price[]'=>'sometimes|numeric'
         ];
     }
 }

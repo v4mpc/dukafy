@@ -19,6 +19,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders=Order::orderBy('id','desc')->get();
+        
         return view('orders.index')->with('orders',$orders);
     }
 

@@ -47,9 +47,12 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
-        <li role="presentation" class="active"><a href="#featur" aria-controls="featur" role="tab" data-toggle="tab">Featured</a></li>
-
-        <li role="presentation"><a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a></li>
+        <li role="presentation" class="active">
+          <a href="#featur" aria-controls="featur" role="tab" data-toggle="tab">Featured</a>
+        </li>
+        <li role="presentation">
+          <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a>
+        </li>
       </ul>
 
       <!-- Tab panes -->
@@ -62,14 +65,24 @@
             @foreach($products as $product)
             <!-- Product -->
             <div class="product">
-              <article> <a href="{{route('product.show',$product->id)}}"> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt=""></a>
+              <article>
+                <div style="height:210px"><a href="{{route('product.show',$product->id)}}"><img class="img-responsive" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>                  </div> @if($product->discount)
+                <span class="sale-tag">-{{$product->discount}}%</span> @endif
                 <!-- Content -->
                 <span class="tag">{{$product->category->name}}</span>
-                <div> <a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a> </div>
+                <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
                 <!-- Reviews -->
+                @if($product->discount)
+                <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
+                </div>
+                @else
+                <div class="price">{{number_format($product->price)}} TZS</div>
 
-                <div class="price">{{number_format($product->price)}} TZS </div>
-                <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a></article>
+                @endif
+                <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
+                  <i class="icon-basket-loaded"></i>
+                </a>
+              </article>
             </div>
 
             @endforeach
@@ -85,16 +98,27 @@
           <!-- Items Slider -->
           <div class="item-col-5">
 
-            @foreach($products as $product) @if($product->discount)
+            @foreach($products as $product) @if(($product->discount)!=0)
             <!-- Product -->
             <div class="product">
-              <article> <img class="img-responsive" src="{{asset('template1/images/item-img-1-3.jpg')}}" alt="">
+              <article>
+                <div style="height:210px"><a href="{{route('product.show',$product->id)}}"><img class="img-responsive" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>                  </div> @if($product->discount)
+                <span class="sale-tag">-{{$product->discount}}%</span> @endif
                 <!-- Content -->
-                <span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7 Perfect For Playing Game</a>
+                <span class="tag">{{$product->category->name}}</span>
+                <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
                 <!-- Reviews -->
+                @if($product->discount)
+                <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
+                </div>
+                @else
+                <div class="price">{{number_format($product->price)}} TZS</div>
 
-                <div class="price">350.00 </div>
-                <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
+                @endif
+                <a href="#." class="cart-btn">
+                  <i class="icon-basket-loaded"></i>
+                </a>
+              </article>
             </div>
             @endif @endforeach
 

@@ -65,9 +65,9 @@
             <select class="selectpicker" name="category_name">
           
             <option value="all">All Categories</option>
-          @foreach($categories as $category)
+            @foreach($categories as $category) @if(count($category->products))
         <option value="{{$category->id}}">{{$category->name}}</option>
-            @endforeach
+           @endif @endforeach
         </select>
             <input type="search" name="query" value="{{request()->input('query')}}" placeholder="Search entire store here...">
             <button class="submit" type="submit"><i class="icon-magnifier"></i></button>

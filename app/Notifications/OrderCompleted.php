@@ -43,7 +43,7 @@ class OrderCompleted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->view('vendor.emails.orders.completed',['order'=>$this->order]);
+                    ->view('emails.orders.completed',['order'=>$this->order]);
                     
     }
 
