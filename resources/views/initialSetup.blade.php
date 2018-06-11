@@ -34,12 +34,12 @@
     <script>
         tinymce.init({ 
   selector:'textarea',
-  plugins: "lists",
+  plugins: "lists link image textcolor",
   branding: false,
   height : 200,
   menubar:false,
   statusbar:false,
-   toolbar: "undo redo | fontsizeselect bold italic | underline strikethrough |numlist bullist",	
+   toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify | link image",	
   
    });
     </script>
@@ -162,7 +162,7 @@
                                                     <div class="input-group">
 
                                                         <span class="input-group-addon" id="basic-addon1">+255</span>
-                                                        <input type="text" class="form-control" placeholder="Hotline?" name="mobile" aria-describedby="basic-addon1">
+                                                        <input type="number" class="form-control" placeholder="XXX XXX XXX" name="mobile" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,7 +226,7 @@
                                                         <div class="input-group">
 
                                                             <span class="input-group-addon" id="basic-addon1">+255</span>
-                                                            <input type="text" class="form-control" placeholder="754 565 565" name="linkedin" aria-describedby="basic-addon1">
+                                                            <input type="number" class="form-control" placeholder="XXX XXX XXX" name="linkedin" aria-describedby="basic-addon1">
                                                         </div>
                                                     </div>
                                                 </div>
