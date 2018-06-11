@@ -39,7 +39,7 @@
   height : 200,
   menubar:false,
   statusbar:false,
-   toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify link image",	
+    toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify link image"	
   
    });
     </script>
