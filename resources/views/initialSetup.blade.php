@@ -39,10 +39,32 @@
   height : 200,
   menubar:false,
   statusbar:false,
-   toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify | link image",	
+   toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify link image",	
   
    });
     </script>
+
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            /* Light grey */
+            border-top: 16px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -240,15 +262,19 @@
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group" align="center">
                                                     <label>Select Template and Colour</label>
-                                                    <a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview" data-width="1366" data-height="768"
-                                                        data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
-                                                    <div>
-                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
-                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
-                                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
-                                                        <input type="hidden" name="layout">
-                                                        <input type="hidden" name="colour">
+                                                    <div id="loader" class="loader hidden"></div>
+
+                                                    <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
+                                                            data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                        <div>
+                                                            <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
+                                                            <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
+                                                            <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
+                                                            <input type="hidden" name="layout">
+                                                            <input type="hidden" name="colour">
+                                                        </div>
                                                     </div>
+
 
                                                 </div>
                                             </div>
@@ -308,15 +334,15 @@
                                                     <br>
                                                     <br>
                                                     <input type="file" id="logo-input" style="display: none;" name="logo">
-                                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                                        <button type="button" id="logo-input-button" class="btn btn-primary">
+
+                                                    <button type="button" id="logo-input-button" class="btn btn-primary">
 															Upload
 														</button>
-                                                        <button type="button" id="remove-logo" class="btn btn-danger">
+                                                    <button type="button" id="remove-logo" class="btn btn-danger disabled">
 															Remove
 														</button>
 
-                                                    </div>
+
 
                                                 </div>
                                             </div>
@@ -337,15 +363,15 @@
                                                     <br>
                                                     <br>
 
-                                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                                        <button type="button" id="slider1-input-button" class="btn btn-primary">
-															<span class="ti-plus"></span>
+
+                                                    <button type="button" id="slider1-input-button" class="btn btn-primary">
+															Upload
 														</button>
-                                                        <button type="button" id="remove-slider1" class="btn btn-danger">
-															<span class="ti-close"></span>
+                                                    <button type="button" id="remove-slider1" class="btn btn-danger disabled">
+															Remove
 														</button>
 
-                                                    </div>
+
 
                                                 </div>
                                             </div>
@@ -359,15 +385,15 @@
                                                     <br>
                                                     <br>
 
-                                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                                        <button type="button" id="slider2-input-button" class="btn btn-primary">
-															<span class="ti-plus"></span>
+
+                                                    <button type="button" id="slider2-input-button" class="btn btn-primary">
+															Upload
 														</button>
-                                                        <button type="button" id="remove-slider2" class="btn btn-danger">
-															<span class="ti-close"></span>
+                                                    <button type="button" id="remove-slider2" class="btn btn-danger disabled">
+														Remove
 														</button>
 
-                                                    </div>
+
 
                                                 </div>
                                             </div>
@@ -381,15 +407,15 @@
                                                     <br>
                                                     <br>
 
-                                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                                        <button type="button" id="slider3-input-button" class="btn btn-primary">
-															<span class="ti-plus"></span>
+
+                                                    <button type="button" id="slider3-input-button" class="btn btn-primary">
+															Upload
 														</button>
-                                                        <button type="button" id="remove-slider3" class="btn btn-danger">
-															<span class="ti-close"></span>
+                                                    <button type="button" id="remove-slider3" class="btn btn-danger disabled">
+														Remove
 														</button>
 
-                                                    </div>
+
 
                                                 </div>
                                             </div>
@@ -668,6 +694,8 @@ $('#located').click(function(params) {
 			$(this).append('<i class="ti-check"></i>');
 			var colour = $(this).data('colour');
 			var layout = $(this).data('layout');
+            $('#loader').removeClass('hidden');
+            $('#template-buttons').addClass('hidden');
             if (colour=="navy") {
                 $('#img-thumb').attr('src',"{{asset('template1/previews/navy/1.png')}}");
                 $('#img-link').attr('src',"{{asset('template1/previews/navy/1.png')}}");
@@ -691,13 +719,15 @@ $('#located').click(function(params) {
             }
 			$('input[name="layout"]').val(layout);
 			$('input[name="colour"]').val(colour);
+            $('#loader').addClass('hidden');
+            $('#template-buttons').removeClass('hidden');
 
 			// alert("the template "+layout+" is and the colour is "+colour)
 
 		});
 
 		$('#remove-logo').click(function () {
-			$('#cropped-logo').attr('src', 'productplaceholder.png');
+			$('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
 		});
 		$('#logo-input-button').click(function () {
 			$('#logo-input').click();
@@ -747,6 +777,7 @@ $('#located').click(function(params) {
 
 			}).then(function (response) {
 				$('#cropped-logo').attr('src', response);
+                $('#remove-logo').removeClass('disabled');
 				$('#logo-modal').modal('hide');
                 $('input[name="logo"]').val(response);
 			})
@@ -759,21 +790,25 @@ $('#located').click(function(params) {
 
 		//slider image 1
 		$('#remove-slider1').click(function () {
-			$('#cropped-slider1').attr('src', 'productplaceholder.png');
+			
+            $('#cropped-slider1').attr('src', "{{asset('images/productplaceholder.png')}}");
 		});
 		$('#slider1-input-button').click(function () {
 			$('#slider1-input').click();
 		});
 
 		$('#remove-slider2').click(function () {
-			$('#cropped-slider2').attr('src', 'productplaceholder.png');
+			
+            $('#cropped-slider2').attr('src', "{{asset('images/productplaceholder.png')}}");
+            
 		});
 		$('#slider2-input-button').click(function () {
 			$('#slider2-input').click();
 		});
 
 		$('#remove-slider3').click(function () {
-			$('#cropped-slider3').attr('src', 'productplaceholder.png');
+			
+            $('#cropped-slider3').attr('src', "{{asset('images/productplaceholder.png')}}");
 		});
 		$('#slider3-input-button').click(function () {
 			$('#slider3-input').click();
@@ -899,6 +934,7 @@ $('#located').click(function(params) {
 
 			}).then(function (response) {
 				$('#cropped-slider1').attr('src', response);
+                $('#remove-slider1').removeClass('disabled');
 				$('#slider1-modal').modal('hide');
                 $('input[name="slider_one"]').val(response);
 			})
@@ -911,6 +947,7 @@ $('#located').click(function(params) {
 
 			}).then(function (response) {
 				$('#cropped-slider2').attr('src', response);
+                $('#remove-slider2').removeClass('disabled');
 				$('#slider2-modal').modal('hide');
                 $('input[name="slider_two"]').val(response);
                 
@@ -925,6 +962,7 @@ $('#located').click(function(params) {
 
 			}).then(function (response) {
 				$('#cropped-slider3').attr('src', response);
+                $('#remove-slider3').removeClass('disabled');
 				$('#slider3-modal').modal('hide');
                 $('input[name="slider_three"]').val(response);
                 
