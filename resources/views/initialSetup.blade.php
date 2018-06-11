@@ -151,13 +151,19 @@
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Email</label>
-                                                    <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder="what email ?">
+                                                    <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder="what is your email ?">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
+
+
                                                 <div class="form-group">
                                                     <label>Hotline</label>
-                                                    <input type="text" class="form-control" name="mobile" id="exampleInputEmail1" placeholder="what email ?">
+                                                    <div class="input-group">
+
+                                                        <span class="input-group-addon" id="basic-addon1">+255</span>
+                                                        <input type="text" class="form-control" placeholder="Hotline?" name="mobile" aria-describedby="basic-addon1">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -216,8 +222,12 @@
                                                 </div>
                                                 <div class="col-sm-5 col-sm-offset-1">
                                                     <div class="form-group">
-                                                        <label>LinkedIn</label>
-                                                        <input type="text" class="form-control" name="linkedin" id="exampleInputEmail1" placeholder="LinkedIn page link?">
+                                                        <label>Whatsapp</label>
+                                                        <div class="input-group">
+
+                                                            <span class="input-group-addon" id="basic-addon1">+255</span>
+                                                            <input type="text" class="form-control" placeholder="754 565 565" name="linkedin" aria-describedby="basic-addon1">
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -300,10 +310,10 @@
                                                     <input type="file" id="logo-input" style="display: none;" name="logo">
                                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                                         <button type="button" id="logo-input-button" class="btn btn-primary">
-															<span class="ti-plus"></span>
+															Upload
 														</button>
                                                         <button type="button" id="remove-logo" class="btn btn-danger">
-															<span class="ti-close"></span>
+															Remove
 														</button>
 
                                                     </div>
@@ -416,13 +426,14 @@
         </div>
         <!--  big container -->
 
+        {{--
         <div class="footer">
             <div class="container text-center">
                 Made by
                 <a href="#">Lengendary IT</a>.
 
             </div>
-        </div>
+        </div> --}}
     </div>
 
 
@@ -570,7 +581,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Location</label>
-                                        <input type="text" class="form-control location_trigger" autocomplete="off" placeholder="Search location...">
+                                        <input type="text" class="form-control location_trigger" id="address" style="width: 500px;" placeholder="Search location...">
 
                                     </div>
                                 </div>
@@ -922,6 +933,18 @@ $('#located').click(function(params) {
 
 
 	});
+
+</script>
+
+
+
+<script>
+    var autocomplete = new google.maps.places.Autocomplete($("#address")[0], {});
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        console.log(place.address_components);
+    });
 
 </script>
 
