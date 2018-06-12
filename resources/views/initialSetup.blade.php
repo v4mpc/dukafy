@@ -201,8 +201,12 @@
 
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
-                                                    <label>Address</label>
-                                                    <input type="text" class="form-control" name="address" id="exampleInputEmail1" placeholder="where should your customer reach you?">
+                                                        <label>Postal Address</label>
+                                                    <div class="input-group">
+
+                                                        <span class="input-group-addon" id="basic-addon1">P O BOX</span>
+                                                        <input type="number" class="form-control" placeholder="XXX.." name="address" aria-describedby="basic-addon1">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -328,14 +332,14 @@
                                             <div class="col-sm-4 col-sm-offset-4">
                                                 <div class="form-group">
                                                     <label>Logo</label>
-                                                    <img src="{{asset('images/productplaceholder.png')}}" id="cropped-logo" class="img-thumbnail" alt="" srcset="">
+                                                    <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="logo-input" style="display: none;">
                                                     <input type="hidden" name="logo">
                                                     <br>
                                                     <br>
                                                     <input type="file" id="logo-input" style="display: none;" name="logo">
 
-                                                    <button type="button" id="logo-input-button" class="btn btn-primary">
+                                                    <button type="button" id="logo-input-button" class="btn btn-primary logo-input-button">
 															Upload
 														</button>
                                                     <button type="button" id="remove-logo" class="btn btn-danger disabled">
@@ -356,15 +360,15 @@
                                             <h5 class="info-text"> Upload Your Slider Images</h5>
                                             <div class="col-sm-4">
                                                 <div class="form-group" align="center">
-
-                                                    <img src="{{asset('images/productplaceholder.png')}}" id="cropped-slider1" class="img-thumbnail" alt="" srcset="">
+<a href="#" class="slider1-input-button"><img src="{{asset('images/productplaceholder.png')}}" id="cropped-slider1" class="img-thumbnail " alt="" srcset=""></a>
+                                                    
                                                     <input type="file" id="slider1-input" style="display: none;">
                                                     <input type="hidden" name="slider_one">
                                                     <br>
                                                     <br>
 
 
-                                                    <button type="button" id="slider1-input-button" class="btn btn-primary">
+                                                    <button type="button" id="slider1-input-button" class="btn btn-primary slider1-input-button">
 															Upload
 														</button>
                                                     <button type="button" id="remove-slider1" class="btn btn-danger disabled">
@@ -379,14 +383,14 @@
                                             <div class="col-sm-4">
                                                 <div class="form-group" align="center">
 
-                                                    <img src="{{asset('images/productplaceholder.png')}}" id="cropped-slider2" class="img-thumbnail" alt="" srcset="">
+                                                        <a href="#" class="slider2-input-button"> <img src="{{asset('images/productplaceholder.png')}}" id="cropped-slider2" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="slider2-input" style="display: none;">
                                                     <input type="hidden" name="slider_two">
                                                     <br>
                                                     <br>
 
 
-                                                    <button type="button" id="slider2-input-button" class="btn btn-primary">
+                                                    <button type="button" id="slider2-input-button" class="btn btn-primary slider2-input-button">
 															Upload
 														</button>
                                                     <button type="button" id="remove-slider2" class="btn btn-danger disabled">
@@ -401,14 +405,14 @@
                                             <div class="col-sm-4">
                                                 <div class="form-group" align="center">
 
-                                                    <img src="{{asset('images/productplaceholder.png')}}" id="cropped-slider3" class="img-thumbnail" alt="" srcset="">
+                                                        <a href="#" class="slider3-input-button"> <img src="{{asset('images/productplaceholder.png')}}" id="cropped-slider3" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="slider3-input" style="display: none;">
                                                     <input type="hidden" name="slider_three">
                                                     <br>
                                                     <br>
 
 
-                                                    <button type="button" id="slider3-input-button" class="btn btn-primary">
+                                                    <button type="button" id="slider3-input-button" class="btn btn-primary slider3-input-button">
 															Upload
 														</button>
                                                     <button type="button" id="remove-slider3" class="btn btn-danger disabled">
@@ -652,7 +656,7 @@
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="{{asset('initial_screen/js/jquery.validate.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('initial_screen/Croppie/croppie.min.js')}}"></script>
-<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&sensor=false&libraries=places'></script>
 <script src="{{asset('initial_screen/js/locationpicker.jquery.min.js')}}"></script>
 
 <script>
@@ -729,7 +733,7 @@ $('#located').click(function(params) {
 		$('#remove-logo').click(function () {
 			$('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
 		});
-		$('#logo-input-button').click(function () {
+		$('.logo-input-button').click(function () {
 			$('#logo-input').click();
 		});
 		var basic = $('#image-demo').croppie({
@@ -793,7 +797,7 @@ $('#located').click(function(params) {
 			
             $('#cropped-slider1').attr('src', "{{asset('images/productplaceholder.png')}}");
 		});
-		$('#slider1-input-button').click(function () {
+		$('.slider1-input-button').click(function () {
 			$('#slider1-input').click();
 		});
 
@@ -802,7 +806,7 @@ $('#located').click(function(params) {
             $('#cropped-slider2').attr('src', "{{asset('images/productplaceholder.png')}}");
             
 		});
-		$('#slider2-input-button').click(function () {
+		$('.slider2-input-button').click(function () {
 			$('#slider2-input').click();
 		});
 
@@ -810,7 +814,7 @@ $('#located').click(function(params) {
 			
             $('#cropped-slider3').attr('src', "{{asset('images/productplaceholder.png')}}");
 		});
-		$('#slider3-input-button').click(function () {
+		$('.slider3-input-button').click(function () {
 			$('#slider3-input').click();
 		});
 		var slider1 = $('#slider1-demo').croppie({
