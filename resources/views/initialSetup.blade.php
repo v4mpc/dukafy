@@ -738,17 +738,21 @@ $('#located').click(function(params) {
 		});
 		var basic = $('#image-demo').croppie({
 			viewport: {
-				width: 205,
-				height: 47,
+				// width: 205,
+				// height: 47,
+                width: 326,
+				height: 75,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 300,
-				height: 300
+				width: 400,
+				height: 400
 
 			}
+    
+
 		})
 
 		$("#logo-input").change(function () {
