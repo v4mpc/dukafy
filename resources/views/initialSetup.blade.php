@@ -64,6 +64,19 @@
                 transform: rotate(360deg);
             }
         }
+
+
+        #geocomplete { width: 200px}
+
+.map_canvas { 
+  width: 550px; 
+  height: 400px; 
+  margin: 10px 20px 10px 0;
+}
+
+.pac-container {
+    z-index: 1051 !important;
+}
     </style>
 </head>
 
@@ -192,12 +205,14 @@
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Location</label>
-                                                    <input type="text" class="form-control location_trigger" placeholder="where should your customer reach you?">
+                                                    <input type="text" class="form-control location_trigger" name="formatted_address" placeholder="where should your customer reach you?">
                                                 </div>
                                             </div>
-                                            <input type="hidden" id="lat" name="latitude">
-                                            <input type="hidden" id="lon" name="longitude">
-
+                                            <form >
+                                                <input type="hidden" id="lat" name="lat">
+                                                <input type="hidden" id="lon" name="lng">
+    </form>
+                                            
 
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
@@ -331,7 +346,7 @@
                                         <div class="row" align="center">
                                             <div class="col-sm-4 col-sm-offset-4">
                                                 <div class="form-group">
-                                                    <label>Logo</label>
+                                                        <h5 class="info-text"> Upload Your Logo</h5>
                                                     <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="logo-input" style="display: none;">
                                                     <input type="hidden" name="logo">
@@ -611,16 +626,40 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Location</label>
-                                        <input type="text" class="form-control location_trigger" id="address" style="width: 500px;" placeholder="Search location...">
+                                        <form><input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="" placeholder="Start Typing...">
+                                        {{-- <p id="see">Click me</p> --}}
+                                        </form>
+                                        
 
                                     </div>
                                 </div>
 
                             </div>
                             <hr>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div id="somecomponent" style="width: 590px; height: 400px;"></div>
-                            </div>
+                            </div> --}}
+
+                            <div class="map_canvas" ></div>
+
+
+                            {{-- <form> --}}
+                                    {{-- <input id="geocomplete" type="text" placeholder="Type in an address" value="Dar es Salaam,Tanzania" /> --}}
+                                    {{-- <input id="find" type="button" value="find" /> --}}
+                                    
+                                    {{-- <fieldset>
+                                      <label>Latitude</label>
+                                      <input name="lat" type="text" value="">
+                                    
+                                      <label>Longitude</label>
+                                      <input name="lng" type="text" value="">
+                                    
+                                      <label>Formatted Address</label>
+                                      <input name="formatted_address" type="text" value="">
+                                    </fieldset>
+                                    
+                                    <a id="reset" href="#" style="display:none;">Reset Marker</a>
+                                  </form> --}}
                             <hr>
 
                             <button type="button" id="located" class="btn btn-info pull-right" id="button">Done</button>
@@ -656,29 +695,31 @@
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="{{asset('initial_screen/js/jquery.validate.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('initial_screen/Croppie/croppie.min.js')}}"></script>
-<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&sensor=false&libraries=places'></script>
-<script src="{{asset('initial_screen/js/locationpicker.jquery.min.js')}}"></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyDF4QoRQKs5jt2XXeREKK8jB0cbrB3dhEw&sensor=false&libraries=places'></script>
+{{-- <script src="{{asset('initial_screen/js/locationpicker.jquery.min.js')}}"></script> --}}
+<script src="{{asset('initial_screen/js/jquery.geocomplete.min.js')}}"></script>
+
 
 <script>
     $(function () {
 $('.location_trigger').focus(function(params) {
 
-     $('#somecomponent').locationpicker({
+//      $('#somecomponent').locationpicker({
 
-location: {
-           latitude:-6.792354,
-           longitude:39.208328
-       },
-       radius: 300,
-       inputBinding: {
-           latitudeInput: $('#lat'),
-           longitudeInput: $('#lon'),
-           radiusInput: $('#us2-radius'),
-           locationNameInput: $('.location_trigger')
-       }
+// location: {
+//            latitude:-6.792354,
+//            longitude:39.208328
+//        },
+//        radius: 300,
+//        inputBinding: {
+//            latitudeInput: $('#lat'),
+//            longitudeInput: $('#lon'),
+//            radiusInput: $('#us2-radius'),
+//            locationNameInput: $('.location_trigger')
+//        }
 
 
-});
+// });
     
     $('#location-modal').modal('show');
 });
@@ -985,13 +1026,46 @@ $('#located').click(function(params) {
 
 
 <script>
-    var autocomplete = new google.maps.places.Autocomplete($("#address")[0], {});
+        $(function(){
+          $("#geocomplete").geocomplete({
+            map: ".map_canvas",
+            details: "form ",
+            location: "Dar es Salaam, Tanzania",
+            markerOptions: {
+              draggable: true,
+              zoom:60
+            }
 
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-        var place = autocomplete.getPlace();
-        console.log(place.address_components);
-    });
+            
+          });
+          
+          $("#geocomplete").bind("geocode:dragged", function(event, latLng){
+            // $("input[name=lat]").val(latLng.lat());
+            // $("input[name=lng]").val(latLng.lng());
 
-</script>
+             $("#lat").val(latLng.lat());
+            $("#lon").val(latLng.lng());
+
+            console.log('longitude: '+$('#lon').val()+' latitude: '+$('#lat').val())
+            $("#reset").show();
+          });
+          
+          
+          $("#reset").click(function(){
+            $("#geocomplete").geocomplete("resetMarker");
+            $("#reset").hide();
+            return false;
+          });
+          
+          $("#see").click(function(){
+           
+            console.log('longitude: '+$('#lon').val()+' latitude: '+$('#lat').val())
+          });
+
+          $("#find").click(function(){
+            $("#geocomplete").trigger("geocode");
+          }).click();
+        });
+      </script>
 
 </html>

@@ -53,8 +53,8 @@ class SettingController extends Controller
         $setting->twitter=$request->twitter;
         $setting->instagram=$request->instagram;
         $setting->about=$request->about;
-        $setting->longitude=$request->longitude;
-        $setting->latitude=$request->latitude;
+        $setting->longitude=$request->lng;
+        $setting->latitude=$request->lat;
         // dd($request->all());
 
         if($request->has('logo')){
