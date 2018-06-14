@@ -276,11 +276,11 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="facilities">
-                                        <h5 class="info-text">Design the look of your store. </h5>
+                                        <h5 class="info-text">Select Template and Colour. </h5>
                                         <div class="row">
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group" align="center">
-                                                    <label>Select Template and Colour</label>
+                                            
                                                     <div id="loader" class="loader hidden"></div>
 
                                                     <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
