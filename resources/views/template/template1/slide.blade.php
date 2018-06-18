@@ -3,9 +3,7 @@
   <div class="container">
     <div class="container-fluid">
       <div class="row">
-        @php
-dd($slider_images);
-        @endphp
+        
         @if(count($slider_images))
 
         <!-- Main Slider  -->

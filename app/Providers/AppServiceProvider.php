@@ -38,7 +38,7 @@ $start_min_price=Product::min('price');
         // dd($settings->working_hours);
         $brand_images=BrandImage::all();
         $slider_images=SliderImage::all();
-
+// dd($slider_images);
         switch ($settings->colour) {
             case 'navy':
                 $colour_code='#424378';
