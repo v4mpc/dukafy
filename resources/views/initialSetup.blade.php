@@ -77,6 +77,11 @@
 .pac-container {
     z-index: 1051 !important;
 }
+
+
+.mce-notification-inner{
+    display:none;
+}
     </style>
 </head>
 
@@ -179,7 +184,7 @@
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
-                                                    <label>Working Hours</label>
+                                                    <label>Working Hours </label><span> <i class="ti-info-alt" data-toggle="tooltip" data-placement="right" title="9 AM to 9PM (Thursday's closed)"></i></span>
                                                     <input type="text" class="form-control" name="working_hours" id="exampleInputEmail1" placeholder="When is your store opened?">
                                                 </div>
                                             </div>
@@ -244,21 +249,34 @@
 
                                             <div class="row">
                                                 <div class="col-sm-5 col-sm-offset-1">
-                                                    <div class="form-group">
+                                                   
                                                         <label>Facebook</label>
+                                                     
+
+                                                    <div class="input-group">
+
+                                                        <span class="input-group-addon" id="basic-addon1">https://</span>
                                                         <input type="text" class="form-control" name="facebook" id="exampleInputEmail1" placeholder="Facebook page link?">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-5 col-sm-offset-1">
-                                                    <div class="form-group">
-                                                        <label>Twitter</label>
-                                                        <input type="text" class="form-control" name="twitter" id="exampleInputEmail1" placeholder="Twitter page link?">
+                                                    <label>Twitter</label>
+                                                     
+
+                                                    <div class="input-group">
+
+                                                        <span class="input-group-addon" id="basic-addon1">https://</span>
+                                                        <input type="text" class="form-control" name="twitter" id="exampleInputEmail1" placeholder="Facebook page link?">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-5 col-sm-offset-1">
-                                                    <div class="form-group">
-                                                        <label>Instagram</label>
-                                                        <input type="text" class="form-control" name="instagram" id="exampleInputEmail1" placeholder="Instagram page link?">
+                                                    <label>Instagram</label>
+                                                     
+
+                                                    <div class="input-group">
+
+                                                        <span class="input-group-addon" id="basic-addon1">https://</span>
+                                                        <input type="text" class="form-control" name="instagram" id="exampleInputEmail1" placeholder="Facebook page link?">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-5 col-sm-offset-1">
@@ -501,7 +519,7 @@
                                 <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
                             </div>
                             <button type="button" id="crop-image" class="btn btn-info" id="button">Done</button>
-                            <button type="button" id="rotate" class="btn btn-info" id="button">Rotate</button>
+                            
                         </div>
 
 
@@ -535,7 +553,7 @@
                                 <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
                             </div>
                             <button type="button" id="crop-slider1" class="btn btn-info" id="button">Done</button>
-                            <button type="button" id="rotate" class="btn btn-info" id="button">Rotate</button>
+                            
                         </div>
 
 
@@ -565,7 +583,7 @@
                                 <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
                             </div>
                             <button type="button" id="crop-slider2" class="btn btn-info" id="button">Done</button>
-                            <button type="button" id="rotate" class="btn btn-info" id="button">Rotate</button>
+                            
                         </div>
 
 
@@ -595,7 +613,7 @@
                                 <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
                             </div>
                             <button type="button" id="crop-slider3" class="btn btn-info" id="button">Done</button>
-                            <button type="button" id="rotate" class="btn btn-info" id="button">Rotate</button>
+                            
                         </div>
 
 
@@ -781,17 +799,21 @@ $('#located').click(function(params) {
 			viewport: {
 				// width: 205,
 				// height: 47,
-                width: 326,
-				height: 75,
+                width: 205,
+				height: 47,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
+               
 			},
 			boundary: {
-				width: 400,
-				height: 400
+				width: 300,
+				height: 300
 
-			}
+			},
+
+             showZoomer: false,
+                enableResize: true,
     
 
 		})
