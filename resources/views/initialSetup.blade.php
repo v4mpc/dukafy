@@ -370,7 +370,7 @@
                                                     <input type="hidden" name="logo">
                                                     <br>
                                                     <br>
-                                                    <input type="file" id="logo-input" style="display: none;" name="logo">
+                                                   
 
                                                     <button type="button" id="logo-input-button" class="btn btn-primary logo-input-button">
 															Upload
@@ -850,6 +850,7 @@ $('#located').click(function(params) {
                 $('#remove-logo').removeClass('disabled');
 				$('#logo-modal').modal('hide');
                 $('input[name="logo"]').val(response);
+                console.log();
 			})
 		});
 		$('#rotate').click(function (params) {
