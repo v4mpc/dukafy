@@ -800,7 +800,7 @@ $('#located').click(function(params) {
 				// width: 205,
 				// height: 47,
                 width: 205,
-				height: 47,
+				height: 100,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
@@ -812,8 +812,7 @@ $('#located').click(function(params) {
 
 			},
 
-             showZoomer: false,
-                enableResize: true,
+            
     
 
 		})
