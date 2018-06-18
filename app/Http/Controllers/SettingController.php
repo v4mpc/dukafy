@@ -46,12 +46,12 @@ class SettingController extends Controller
         $setting->store_name=$request->store_name;
        
         $setting->working_hours=$request->working_hours;
-        $setting->address=$request->address;
-        $setting->mobile=$request->mobile;
+        $setting->address="P O BOX ".$request->address;
+        $setting->mobile="+255".$request->mobile;
         $setting->email=$request->email;
-        $setting->facebook=$request->facebook;
-        $setting->twitter=$request->twitter;
-        $setting->instagram=$request->instagram;
+        $setting->facebook="https//".$request->facebook;
+        $setting->twitter="https//".$request->twitter;
+        $setting->instagram="https//".$request->instagram;
         $setting->about=$request->about;
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
@@ -60,7 +60,23 @@ class SettingController extends Controller
         if($request->has('logo')){
             $png_url = "logo-".time().".png";
             $location = public_path('images/' . $png_url);
-            Image::make(file_get_contents($request->logo))->save($location);
+            // Image::make(file_get_contents($request->logo))->save($location);
+
+            $img=Image::make($image);
+        $image_width=$img->width();
+        $image_height=$img->height();
+
+        
+            $img->resize(null, 50, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($location);
+        
+        
+        // else {
+        //     $img->resize(, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     })->save($location);
+        // }
             $setting->logo=$png_url;
         }
      

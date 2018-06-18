@@ -184,7 +184,7 @@
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
-                                                    <label>Working Hours </label><span> <i class="ti-info-alt" data-toggle="tooltip" data-placement="right" title="9 AM to 9PM (Thursday's closed)"></i></span>
+                                                    <label>Working Hours </label><span> <i class="ti-info-alt" data-toggle="tooltip" data-placement="right" title="e.g 9 AM to 9PM (Thursday's closed)"></i></span>
                                                     <input type="text" class="form-control" name="working_hours" id="exampleInputEmail1" placeholder="When is your store opened?">
                                                 </div>
                                             </div>
