@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/home', 'TemplateController@index')->name('start');
+Route::get('/start', 'TemplateController@index')->name('start');
 Route::get('/products','TemplateController@products')->name('products');
 Route::get('/product/{id}','TemplateController@productshow')->name('product.show');
 Route::resource('/cart','CartController');
