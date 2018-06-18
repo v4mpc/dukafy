@@ -115,7 +115,7 @@
                     <!--      Wizard container        -->
                     <div class="wizard-container">
                         <div class="card wizard-card" data-color="green" id="wizard">
-                            <form action="{{route('settings.store')}}" method="POST" enctype='multipart/form-data'>
+                            <form action="{{route('settings.store')}}" method="POST" >
                                 <!--        You can switch " data-color="green" "  with one of the next bright colors: "blue", "azure", "orange", "red"       -->
                                 {{csrf_field()}}
                                 <div class="wizard-header">
@@ -213,10 +213,10 @@
                                                     <input type="text" class="form-control location_trigger" name="formatted_address" placeholder="where should your customer reach you?">
                                                 </div>
                                             </div>
-                                            <form >
+                                            {{-- <form > --}}
                                                 <input type="hidden" id="lat" name="lat">
                                                 <input type="hidden" id="lon" name="lng">
-    </form>
+    {{-- </form> --}}
                                             
 
                                             <div class="col-sm-5 col-sm-offset-1">
@@ -644,9 +644,10 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Location</label>
-                                        <form><input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="" placeholder="Start Typing...">
+                                        {{-- <form> --}}
+                                            <input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="" placeholder="Start Typing...">
                                         {{-- <p id="see">Click me</p> --}}
-                                        </form>
+                                        {{-- </form> --}}
                                         
 
                                     </div>

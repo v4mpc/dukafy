@@ -49,9 +49,9 @@ class SettingController extends Controller
         $setting->address="P O BOX ".$request->address;
         $setting->mobile="+255".$request->mobile;
         $setting->email=$request->email;
-        $setting->facebook="https//".$request->facebook;
-        $setting->twitter="https//".$request->twitter;
-        $setting->instagram="https//".$request->instagram;
+        $setting->facebook="https://".$request->facebook;
+        $setting->twitter="https://".$request->twitter;
+        $setting->instagram="https://".$request->instagram;
         $setting->about=$request->about;
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
@@ -62,7 +62,7 @@ class SettingController extends Controller
             $location = public_path('images/' . $png_url);
             // Image::make(file_get_contents($request->logo))->save($location);
 
-            $img=Image::make($image);
+            $img=Image::make(file_get_contents($request->logo));
         $image_width=$img->width();
         $image_height=$img->height();
 
