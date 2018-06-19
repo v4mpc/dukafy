@@ -36,7 +36,11 @@ transparent = true;
         		    },
         		    email: {
         		      required: true
-        		    }
+                    },
+                    store_name:{
+                        required: true
+                    }
+                    
                 },
         	});
 
@@ -103,7 +107,6 @@ transparent = true;
                 }
 	        });
 
-
                 // Prepare the preview for profile picture
                 $("#wizard-picture").change(function(){
                     readURL(this);
@@ -130,8 +133,6 @@ transparent = true;
                 $('.set-full-height').css('height', 'auto');
 
             });
-
-
 
          //Function to show image before upload
 
