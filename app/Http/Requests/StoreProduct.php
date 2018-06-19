@@ -41,7 +41,7 @@ class StoreProduct extends FormRequest
             // 'category_id'=>'required',
             // 'sub_category_id'=>'required',
             'description'=>'nullable|sometimes|max:255',
-            'images[]'=>'required|image',
+            // 'images[]'=>'required|image',
             // 'variation[]'=>'sometimes|max:255',
             // 'variation_images[]'=>'sometimes|image|max:150',
             // 'variation_price[]'=>'sometimes|numeric'
