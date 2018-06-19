@@ -57,7 +57,7 @@ class SettingController extends Controller
         $setting->latitude=$request->lat;
         // dd($request->all());
 
-        if($request->has('logo')){
+        if($request->logo){
             $png_url = "logo-".time().".png";
             $location = public_path('images/' . $png_url);
             // Image::make(file_get_contents($request->logo))->save($location);
@@ -95,7 +95,7 @@ class SettingController extends Controller
 
     }
 
-    if($request->has('slider_one')) {
+    if($request->slider_one) {
     
             $png_url = "slider-".time(). uniqid().".png";
             $location = public_path('images/' . $png_url);
@@ -107,7 +107,7 @@ class SettingController extends Controller
 
 }
 
-if($request->has('slider_two')) {
+if($request->slider_two) {
     
     $png_url = "slider-".time(). uniqid().".png";
     $location = public_path('images/' . $png_url);
@@ -118,7 +118,7 @@ if($request->has('slider_two')) {
 
 
 }
-if($request->has('slider_three')) {
+if($request->slider_three) {
     
     $png_url = "slider-".time(). uniqid().".png";
     $location = public_path('images/' . $png_url);
