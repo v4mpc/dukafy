@@ -8,8 +8,9 @@ use Cart;
 use App\User;
 use Notification;
 use Mail;
-use App\Notifications\OrderCompleted;
-// use App\Mail\OrderCompleted;
+// use App\Notifications\OrderCompleted;
+use App\Setting;
+use App\Mail\OrderCompleted;
 
 
 class ThankYouController extends Controller
@@ -21,7 +22,35 @@ class ThankYouController extends Controller
      */
     public function index()
     {
-        //
+          // dd('am here');
+          $order=Order::findOrFail(session('id'));
+
+          //send mail here
+  
+  
+          $order->status='completed';
+          $order->save();
+  
+          Cart::destroy();
+          session()->forget('id');
+  
+          $users=User::all();
+  
+          // Notification::route('mail', 'taylor@laravel.com')
+          //     ->notify(new OrderCompleted($order));
+       $settings=Setting::orderBy('id','desc')->first();
+          // Notification::send($users, new OrderCompleted($order,$settings->email));
+  
+           Mail::send(new OrderCompleted($order,$settings->email));
+  
+  
+        //  dd($users);
+          if(config('app.settings')->layout=='template2'){
+              return view('template.template2.thankyou');
+          }else{
+              return view('template.template1.thankyou');
+          }
+  
     }
 
     /**
@@ -57,12 +86,20 @@ class ThankYouController extends Controller
 
         $users=User::all();
 
-        Notification::send($users, new OrderCompleted($order));
+        // Notification::route('mail', 'taylor@laravel.com')
+        //     ->notify(new OrderCompleted($order));
+     $settings=Setting::orderBy('id','desc')->first();
+        // Notification::send($users, new OrderCompleted($order,$settings->email));
 
-        // Mail::send(new OrderCompleted($order));
+         Mail::send(new OrderCompleted($order,$settings->email));
 
 
-        return view('template.template1.thankyou');
+       dd($users);
+        if(config('app.settings')->layout=='template2'){
+            return view('template.template2.thankyou');
+        }else{
+            return view('template.template1.thankyou');
+        }
     }
 
     /**

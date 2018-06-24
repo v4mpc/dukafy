@@ -22,7 +22,7 @@
                         <ul>
                             <!-- Short List -->
                             <li>
-                                <p>Showing {{$products->firstItem()}}–{{$products->lastItem()}} of {{$products->total()}}</p>
+                                <p>Showing {{$products->firstItem()}}&ndash;{{$products->lastItem()}} of {{$products->total()}}</p>
                             </li>
                             <!-- Short  -->
                             {{--

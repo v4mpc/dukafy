@@ -1,7 +1,0 @@
-@include('template.template1.preview.header')
-    @include('template.template1.preview.topbar')
-    @include('template.template1.preview.cartsection')
-    @include('template.template1.preview.nav') @if(Request::is('/')||Request::is('manage/template/*')||Request::is('manage/preview'))
-    @include('template.template1.preview.slide') @endif @yield('content')
-    @include('template.template1.preview.footer')
-    @include('template.template1.preview.scripts')

@@ -17,7 +17,9 @@ class TemplateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+     
+    public function index(Request $request)
     {
         // $featured=Product::where('featured','1')->get();
         // $categories=Category::all();
@@ -31,11 +33,20 @@ class TemplateController extends Controller
         //                                         ->with('brand_images',$brand_images)
         //                                         ->with('slider_images',$slider_images);
 
+
+        // dd(config('app.settings'));
 if (!count(Setting::all())) {
     return view('maintanance');
 }
 
-        return view('template.template1.index');
+
+
+        if(config('app.settings')->layout=='template2'){
+            return view('template.template2.index');
+        }else{
+            return view('template.template1.index');
+        }
+        
     }
 
     /**
@@ -49,6 +60,8 @@ if (!count(Setting::all())) {
         // dd($products);
         $min_price=Product::min('price');
         $max_price=Product::max('price');
+
+     
         
         return view('template.template1.products')->with('products',$products)->with('min_price',$min_price)->with('max_price',$max_price);
     }
@@ -70,10 +83,17 @@ if (!count(Setting::all())) {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function productshow($id)
+    public function productshow(Request $request,$id)
     {
      $product=Product::findOrFail($id);
+
+     if(config('app.settings')->layout=='template2'){
+         $body_class="single-product full-width extended";
+        return view('template.template2.productshow')->with('product',$product)->with('body_class',$body_class);
+    }else{
         return view('template.template1.productshow')->with('product',$product);
+    }
+        
     }
 
     /**
@@ -95,14 +115,29 @@ if (!count(Setting::all())) {
      * @return \Illuminate\Http\Response
      */
 
-     public function contact()
+     public function contact(Request $request)
      {
-        return view('template.template1.contact');   
+
+        if(config('app.settings')->layout=='template2'){
+            $body_class="single-product full-width extended";
+            return view('template.template2.contact');   
+       }else{
+        return view('template.template1.contact');    
+       }
+       
      }
 
-     public function about()
+     public function about(Request $request)
      {
-        return view('template.template1.about');   
+        
+
+        if(config('app.settings')->layout=='template2'){
+            $body_class="single-product full-width extended";
+            return view('template.template2.about'); 
+       }else{
+        return view('template.template1.about'); 
+       }
+         
      }
 
 

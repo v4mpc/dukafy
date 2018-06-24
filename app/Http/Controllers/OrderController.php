@@ -43,10 +43,11 @@ class OrderController extends Controller
     {
 
         //check if order is already present
-
+        if(config('app.settings')->layout=='template1'){
         if(session('id')){
             return redirect()->route('order.update',session('id'));
         }
+    }
         // dd(Cart::content());
         $customer= new Customer;
         $customer->first_name=$request->first_name;
@@ -67,7 +68,15 @@ foreach (Cart::content() as $item) {
     $order->products()->attach($item->id,['quantity'=>$item->qty]);
 }
        
-     return redirect()->route('confirmation.show',$order->id);
+// dd($request);
+
+if(config('app.settings')->layout=='template2'){
+    return redirect()->action('ThankYouController@index');
+}else{
+   
+    return redirect()->route('confirmation.show',$order->id);
+}
+    
         
     }
 

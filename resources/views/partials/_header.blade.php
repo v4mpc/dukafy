@@ -24,6 +24,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-callout.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/toastr.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/extensions/toastr.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
   
   <!-- END MODERN CSS-->
   <!-- BEGIN Page Level CSS-->

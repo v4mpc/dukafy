@@ -16,7 +16,7 @@
 <script src="{{asset('template1/js/vendors/jquery.nouislider.min.js')}}"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{$maps_api_key}}&callback=initMap"></script>
 <script src="{{asset('template1/js/vendors/map.js')}}"></script>
 <script>
   jQuery(document).ready(function() {
@@ -87,8 +87,10 @@
 
           // var item_price=items_count+" item(s) - "+items_price;
 
-          $('.items-price').empty().text(data.sub_total);
+          $('.items-price').empty().text(data.sub_total+' TZS');
           $('.itm-cont').empty().text(data.cart_count);
+          $('.cart-glance-content').empty().append(data.cart_content);
+
 
 
           toastr.options = {
@@ -167,16 +169,17 @@ $.ajax({
   dataType: "JSON",
 
   success: function (data) {
-    $('#item'+item_id).remove();
-    if (data.count) {
-      $('.items-price').empty();
-  $('.itm-cont').empty();
-    } else {
-      $('.items-price').empty().text(data.sub_total);
-  $('.itm-cont').empty().text(data.cart_count);
-    }
+    $('.item'+item_id).remove();
+    if (data.cart_count) {
+     
 
+    } else {
   $('#delivery-button').remove();
+  
+    }
+$('.items-price').empty().text(data.sub_total);
+ $('.itm-cont').empty().text(data.cart_count);
+ 
 
     toastr.options = {
 "closeButton": false,

@@ -24,16 +24,23 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
+        $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
+        
+        View::share('maps_api_key',$maps_api_key);
         if(count(Setting::all())){
             $max_price=0;
 $min_price=0;
 
 $start_max_price=Product::max('price');
 $start_min_price=Product::min('price');
-        $featured=Product::where('featured','1')->get();
+        $featureds=Product::where('featured','1')->get();
+        $on_sales=Product::where('discount','>','1')->get();
+        $products=Product::all();
+
         $categories=Category::all();
         $settings=Setting::orderBy('id','desc')->first();
         $previews=Preview::orderBy('id','desc')->first();
+        config(['app.settings' => $settings]);
         
         // dd($settings->working_hours);
         $brand_images=BrandImage::all();
@@ -52,10 +59,27 @@ $start_min_price=Product::min('price');
                 case 'blue':
                 $colour_code='#0088cc';
                 break;
+
+                case 'yellow':
+                $colour_code='#fed700';
+                break;
+
+                case 'pink':
+                $colour_code='#ce1d76';
+                break;
+
+                case 'black':
+                $colour_code='#000';
+                break;
            
         }
+$body_class="page home page-template-default";
+        View::share('featureds',$featureds);
+        View::share('body_class',$body_class);
 
-        View::share('products',$featured);
+        View::share('products_count',$products);
+
+        View::share('on_sales',$on_sales);
         View::share('categories',$categories);
         View::share('settings',$settings);
         View::share('previews',$previews);
@@ -81,6 +105,14 @@ $start_min_price=Product::min('price');
      */
     public function register()
     {
-        //
+        // 
+      
+          
+           
+        
+
+            
+        
+
     }
 }

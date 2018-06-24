@@ -39,7 +39,21 @@ Route::post('/send_contact_form','MailerController@sendContactForm')->name('send
 Route::get('/search','ProductController@search')->name('search');
 Route::get('/category/{id}','ProductController@category')->name('category');
 
-//previews
+//this is only for demo perpose for template 2
+Route::get('/template2/start', 'TemplateController@index')->name('template2.start');
+Route::get('/template2/cart','CartController@index')->name('template2.cart.index');
+Route::get('/template2/product/{id}','TemplateController@productshow')->name('template2.product.show');
+Route::get('/template2/category/{id}','ProductController@category')->name('template2.category');
+Route::get('/template2/contact_us','TemplateController@contact')->name('template2.contact');
+Route::get('/template2/about_us','TemplateController@about')->name('template2.about');
+Route::get('/template2/check_out','CheckOutController@create');
+Route::view('/template2/thank_you','template/template2/thankyou');
+
+
+
+
+
+
 
 
 

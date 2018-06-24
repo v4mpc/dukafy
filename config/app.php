@@ -230,4 +230,6 @@ return [
 
     ],
 
+    'settings'=>'dfdf',
+
 ];

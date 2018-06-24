@@ -21,7 +21,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=Product::where('featured',0)->where('out_stock',0)->get();
+        // $products=Product::where('featured',0)->where('out_stock',0)->get();
+         $products=Product::get();
+
         return view('products.index')->with('products',$products);
     }
 
@@ -312,7 +314,7 @@ return redirect()->route('products.show',$product->id);
 
     public function search(Request $request)
     {
-
+// dd($request->query);
             $request->validate([
                 'query'=>'required|min:3'
             ]);
@@ -344,11 +346,15 @@ return redirect()->route('products.show',$product->id);
         }
 
         // $products = Product::search($query)->paginate(20);
-       
-        return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+        if(config('app.settings')->layout=='template2'){
+            $body_class="left-sidebar";
+            return view('template.template2.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
+        }else{
+            return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+        }
     }
 
-    public function category($id){
+    public function category(Request $request,$id){
 
         $products=Product::where('out_stock',0)->where('category_id',$id)->paginate(20);
         $checked_categories=array();
@@ -356,8 +362,13 @@ return redirect()->route('products.show',$product->id);
         $min_price=Product::where('out_stock',0)->where('category_id',$id)->min('price');
         $max_price=Product::where('out_stock',0)->where('category_id',$id)->max('price');
 
-
-        return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+        if(config('app.settings')->layout=='template2'){
+            $body_class="left-sidebar";
+            return view('template.template2.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
+        }else{
+            return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+        }
+       
 
     }
 

@@ -61,10 +61,10 @@ return [
     ],
 
 
-    'to' => [
-        'address' => 'helo@helo.com',
-        'name' => 'Example'
-    ],
+    // 'to' => [
+    //     'address' => 'helo@helo.com',
+    //     'name' => 'Example'
+    // ],
 
     /*
     |--------------------------------------------------------------------------

@@ -27,6 +27,7 @@
         <script src="{{asset('vendor/js/core/app.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('vendor/js/scripts/customizer.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('vendor/js/scripts/extensions/toastr.min.js')}}" type="text/javascript"></script>
+        {{-- <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script> --}}
 
 
 
@@ -126,6 +127,20 @@ divtest.innerHTML='<div class="form-group row"><div class="col-sm-3 nopadding"> 
     //end variation field
    
    });
+
+$('#visit-store').click(function (params) {
+    
+    var win = window.open('{{route("start")}}', '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+
+});
+  
         </script>
 
 

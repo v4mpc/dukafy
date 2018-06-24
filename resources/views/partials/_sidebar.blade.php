@@ -6,7 +6,7 @@
 
       </li>
 
-      <li class=" nav-item {{Request::is('products')?" open ":" "}}"><a href="{{route('products.index')}}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="nav.dash.main">Products</span></a>
+    <li class=" nav-item {{Request::is('products')?" open ":" "}}"><a href="{{route('products.index')}}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="nav.dash.main">Products</span></a>
 
       </li>
       {{--
@@ -40,6 +40,14 @@
       <li class=" nav-item {{Request::is('users')?" open ":" "}}"><a href="{{route('users.index')}}"><i class="ft-user"></i><span class="menu-title" data-i18n="nav.dash.main">User Management</span></a>
 
       </li>
+
+
+      <li class=" nav-item "><a id="visit-store" ><i class="ft-corner-up-right"></i><span class="menu-title" data-i18n="nav.dash.main">Visit Site</span></a>
+
+      </li>
+
+
+     
 
       {{--
       <li class=" nav-item {{Request::is('settings/*')||Request::is('layout_form')||Request::is('logo_form')||Request::is('company_address_form')?"

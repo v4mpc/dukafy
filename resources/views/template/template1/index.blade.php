@@ -47,12 +47,17 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
+      @if(count($featureds))
         <li role="presentation" class="active">
-          <a href="#featur" aria-controls="featur" role="tab" data-toggle="tab">Featured</a>
-        </li>
+            <a href="#featur" aria-controls="featur" role="tab" data-toggle="tab">Featured</a>
+          </li>
+      @endif
+       
+      @if(count($on_sales))
         <li role="presentation">
           <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a>
         </li>
+        @endif
       </ul>
 
       <!-- Tab panes -->
@@ -62,7 +67,7 @@
           <!-- Items Slider -->
           <div class="item-slide-5 with-nav">
             <!-- Product -->
-            @foreach($products as $product)
+            @foreach($featureds as $product)
             <!-- Product -->
             <div class="product">
               <article>
@@ -98,7 +103,7 @@
           <!-- Items Slider -->
           <div class="item-col-5">
 
-            @foreach($products as $product) @if(($product->discount)!=0)
+            @foreach($on_sales as $product) @if(($product->discount)!=0)
             <!-- Product -->
             <div class="product">
               <article>
@@ -115,7 +120,7 @@
                 <div class="price">{{number_format($product->price)}} TZS</div>
 
                 @endif
-                <a href="#." class="cart-btn">
+                <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
                   <i class="icon-basket-loaded"></i>
                 </a>
               </article>

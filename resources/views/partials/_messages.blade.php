@@ -21,4 +21,10 @@
       </div>
 @endif
 
+@if (Session::has('initial_screen'))
+<div class="bs-callout-success callout-border-right mt-1 p-1">
+        <strong>Welcome to Your Store Dashboard!</strong>
+        </p> Your Site is not Yet active! Activate it in the Menu section.</p>
+      </div>
+@endif
 

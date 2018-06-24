@@ -22,13 +22,20 @@ class CheckOutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         // dd(session('id'));
-        if (session('id')) {
-            return redirect()->route('check_out.edit',session('id')); 
+       
+        if(config('app.settings')->layout=='template2'){
+            return view('template.template2.checkOut');
+        }else{
+            if (session('id')) {
+                return redirect()->route('check_out.edit',session('id')); 
+            }
+            return view('template.template1.checkOut');
         }
-        return view('template.template1.checkOut');
+
+        // return view('template.template1.checkOut');
     }
 
     /**

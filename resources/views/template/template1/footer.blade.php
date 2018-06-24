@@ -95,7 +95,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <p>Copyright © {{date('Y')}} <a href="#." class="ri-li"> Legendary IT </a> All rights reserved</p>
+          <p> © {{date('Y')}} <a href="#." class="ri-li"> {{$settings->store_name}} </a> </p>
         </div>
         <div class="col-sm-6 text-right"> <img src="images/card-icon.png" alt=""> </div>
       </div>

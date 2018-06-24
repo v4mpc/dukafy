@@ -82,6 +82,42 @@
 .mce-notification-inner{
     display:none;
 }
+
+.btn-yellow,
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:visited,
+.btn-yellow:focus {
+    background-color: #fed700;
+    border-color: #fed700;
+
+    #ce1d76
+}
+
+.btn-pink,
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink:visited,
+.btn-pink:focus {
+    background-color:#ce1d76;
+    border-color:#ce1d76;
+
+  
+}
+
+
+.btn-black,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:visited,
+.btn-black:focus {
+    background-color:#000;
+    border-color:#000;
+
+  
+}
+
+
     </style>
 </head>
 
@@ -296,7 +332,7 @@
                                     <div class="tab-pane" id="facilities">
                                         <h5 class="info-text">Select Template and Colour. </h5>
                                         <div class="row">
-                                            <div class="col-sm-5 col-sm-offset-1">
+                                            <div class="col-sm-3">
                                                 <div class="form-group" align="center">
                                             
                                                     <div id="loader" class="loader hidden"></div>
@@ -315,7 +351,52 @@
 
                                                 </div>
                                             </div>
+
+                                            <div class="col-sm-3">
+                                                    <div class="form-group" align="center">
+                                                
+                                                        <div id="loader" class="loader hidden"></div>
+    
+                                                        <div id="template-buttons"><a id="img-link-2" href="{{asset('template2/previews/yellow/1.png')}}" data-fancybox="yellow-preview"
+                                                                data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-2" src="{{asset('template2/previews/yellow/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                            <div>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="black" title="Black" class="btn btn-black colour"></button>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="pink" title="Pink" class="btn btn-pink colour"></button>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="yellow" title="Yellow" class="btn btn-yellow colour"></button>
+                                                                {{-- <input type="hidden" name="layout">
+                                                                <input type="hidden" name="colour"> --}}
+                                                            </div>
+                                                        </div>
+    
+    
+                                                    </div>
+                                                </div>
+
+
+
+                                            {{-- <div class="col-sm-3">
+                                                    <div class="form-group" align="center">
+                                                
+                                                        <div id="loader" class="loader hidden"></div>
+    
+                                                        <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
+                                                                data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                            <div>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
+                                                                <input type="hidden" name="layout">
+                                                                <input type="hidden" name="colour">
+                                                            </div>
+                                                        </div>
+    
+    
+                                                    </div>
+                                                </div> --}}
                                         </div>
+
+
+                                        
 
                                         {{-- navy previews --}}
 
@@ -358,6 +439,48 @@
 
 
                                         </div>
+                                        {{-- template 2 starts here --}}
+                                        {{-- yellow --}}
+                                        <div style="display: none;">
+
+
+                                                <a href="{{asset('template2/previews/yellow/2.png')}}" data-fancybox="yellow-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/yellow/2.png')}}"></a>
+    
+                                                <a href="{{asset('template2/previews/yellow/3.png')}}" data-fancybox="yellow-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/yellow/3.png')}}"></a>
+    
+                                                <a href="{{asset('template2/previews/yellow/4.png')}}" data-fancybox="yellow-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/yellow/4.png')}}"></a>
+    
+    
+                                            </div>
+
+
+
+                                             {{-- black--}}
+                                        <div style="display: none;">
+
+
+                                                <a href="{{asset('template2/previews/black/2.png')}}" data-fancybox="black-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/black/2.png')}}"></a>
+    
+                                                <a href="{{asset('template2/previews/black/3.png')}}" data-fancybox="black-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/black/3.png')}}"></a>
+    
+                                                <a href="{{asset('template2/previews/black/4.png')}}" data-fancybox="black-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/black/4.png')}}"></a>
+    
+    
+                                            </div>
+
+
+                                                {{-- pink--}}
+                                        <div style="display: none;">
+
+
+                                                <a href="{{asset('template2/previews/pink/2.png')}}" data-fancybox="pink-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/pink/2.png')}}"></a>
+    
+                                                <a href="{{asset('template2/previews/pink/3.png')}}" data-fancybox="pink-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/pink/3.png')}}"></a>
+    
+                                                <a href="{{asset('template2/previews/pink/4.png')}}" data-fancybox="pink-preview" data-width="1366" data-height="768" data-thumb="{{asset('template2/previews/pink/4.png')}}"></a>
+    
+    
+                                            </div>
 
                                     </div>
                                     <div class="tab-pane" id="slider">
@@ -634,7 +757,7 @@
                 <div class="modal-header">
 
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Use Pointer To Locate Your Business</h4>
+                    <h4 class="modal-title">Locate Your Business</h4>
 
                 </div>
                 <div class="modal-body">
@@ -714,7 +837,7 @@
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="{{asset('initial_screen/js/jquery.validate.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('initial_screen/Croppie/croppie.min.js')}}"></script>
-<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyDF4QoRQKs5jt2XXeREKK8jB0cbrB3dhEw&sensor=false&libraries=places'></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?key={{$maps_api_key}}&sensor=false&libraries=places'></script>
 {{-- <script src="{{asset('initial_screen/js/locationpicker.jquery.min.js')}}"></script> --}}
 <script src="{{asset('initial_screen/js/jquery.geocomplete.min.js')}}"></script>
 
@@ -766,7 +889,25 @@ $('#located').click(function(params) {
                 $('#img-link').attr('href',"{{asset('template1/previews/navy/1.png')}}");
                 // $('#img-link').data('fancybox','navy-preview');
                 $('#img-link').attr('data-fancybox','navy-preview');
-            } else if(colour=="green") {
+            }else if(colour=="yellow") {
+                $('#img-thumb-2').attr('src',"{{asset('template2/previews/yellow/1.png')}}");
+                $('#img-link-2').attr('src',"{{asset('template2/previews/yellow/1.png')}}");
+                $('#img-link-2').attr('data-fancybox','yellow-preview');
+                $('#img-link-2').attr('href',"{{asset('template2/previews/yellow/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
+            }else if(colour=="black") {
+                $('#img-thumb-2').attr('src',"{{asset('template2/previews/black/1.png')}}");
+                $('#img-link-2').attr('src',"{{asset('template2/previews/black/1.png')}}");
+                $('#img-link-2').attr('data-fancybox','black-preview');
+                $('#img-link-2').attr('href',"{{asset('template2/previews/black/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
+            }else if(colour=="pink") {
+                $('#img-thumb-2').attr('src',"{{asset('template2/previews/pink/1.png')}}");
+                $('#img-link-2').attr('src',"{{asset('template2/previews/pink/1.png')}}");
+                $('#img-link-2').attr('data-fancybox','pink-preview');
+                $('#img-link-2').attr('href',"{{asset('template2/previews/pink/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
+            }else if(colour=="green") {
                 $('#img-thumb').attr('src',"{{asset('template1/previews/green/1.png')}}");
                 $('#img-link').attr('src',"{{asset('template1/previews/green/1.png')}}");
                 $('#img-link').attr('data-fancybox','green-preview');

@@ -129,6 +129,10 @@ if($request->slider_three) {
 
 
 }
+
+
+
+Session::flash('initial_screen','Welcome! Please Activate your Site in the Settins menu!');
   return redirect()->route('home');
 }
 

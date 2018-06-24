@@ -62,7 +62,7 @@
         <tbody>
           @foreach(Cart::content() as $item)
           <!-- Item Cart -->
-          <tr id="item{{$item->rowId}}">
+          <tr class="item{{$item->rowId}}">
             {{--
             <td>
               <div class="media">
@@ -92,7 +92,7 @@
 
             <td>
               <div class="media">
-                <div class="media-left"> <a href="#."> <img class="img-responsive" src="{{asset('images/'.App\Product::find($item->id)->images[0]->image)}}" alt="" > </a>                  </div>
+                <div class="media-left"> <a href="{{route('product.show',$item->model->id)}}"> <img class="img-responsive" src="{{asset('images/'.$item->model->images[0]->image)}}" alt="" > </a>                  </div>
                 <div class="media-body">
                   <p>{{$item->name}}</p>
                 </div>
