@@ -23,7 +23,7 @@
             <li><a href="{{route('about')}}">About Us </a></li>
 
             @if(count($settings->mobile)!=null)
-            <li><i class="fa fa-phone"></i> <strong>Hotline:</strong> {{$settings->mobile}}</span>
+            <li><i class="fa fa-phone"></i> <strong>Hotline:</strong>+255{{$settings->mobile}}</span>
             </li>
             @endif
           </ul>

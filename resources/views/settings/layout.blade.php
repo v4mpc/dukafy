@@ -52,6 +52,7 @@
       </div>
     </div>
     <div class="content-body">
+        @include('partials._messages')
       <section id="demo">
         <div class="row">
           <div class="col-12">

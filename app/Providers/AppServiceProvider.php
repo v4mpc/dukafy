@@ -23,8 +23,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-
-        $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
+        //production
+        $maps_api_key="AIzaSyDF4QoRQKs5jt2XXeREKK8jB0cbrB3dhEw";
+        //local
+        // $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
         
         View::share('maps_api_key',$maps_api_key);
         if(count(Setting::all())){

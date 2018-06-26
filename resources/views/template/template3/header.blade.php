@@ -75,6 +75,12 @@
 	border: 2px solid #fff;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+
+.copyright-bar {
+    background: #f4f4f4;
+    padding: 20px 0px;
+}
 		
 		</style>
 

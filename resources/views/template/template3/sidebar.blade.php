@@ -7,7 +7,7 @@
     <ul class="nav">
             @foreach($categories as $category) @if(count($category->products))
         <li class="dropdown menu-item">
-            <a href="{{route('category',$category->id)}}" >{{$category->name}}</a>
+            <a href="{{route('category',$category->id)}}" class="dropdown-toggle" data-toggle="dropdown" >{{$category->name}}</a>
                         </li><!-- /.menu-item -->
 
 @endif @endforeach
@@ -17,7 +17,7 @@
 </nav><!-- /.megamenu-horizontal -->
 </div><!-- /.side-menu -->
 <!-- ================================== TOP NAVIGATION : END ================================== -->
-@if(Request::is('template3/category/*'))
+@if(Request::is('category/*'))
 @include('template.template3.filter')
 @endif
     </div>

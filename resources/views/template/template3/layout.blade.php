@@ -15,7 +15,7 @@
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
 	<div class="container">
 	<div class="row {{$row_class}}">
-@if(!Request::is('template3/cart'))
+@if(!Request::is('cart'))
 @include('template.template3.sidebar')
 @endif
 @yield('content')

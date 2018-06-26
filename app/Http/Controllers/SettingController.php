@@ -46,12 +46,12 @@ class SettingController extends Controller
         $setting->store_name=$request->store_name;
        
         $setting->working_hours=$request->working_hours;
-        $setting->address="P O BOX ".$request->address;
-        $setting->mobile="+255".$request->mobile;
+        $setting->address=$request->address;
+        $setting->mobile=$request->mobile;
         $setting->email=$request->email;
-        $setting->facebook="https://".$request->facebook;
-        $setting->twitter="https://".$request->twitter;
-        $setting->instagram="https://".$request->instagram;
+        $setting->facebook=$request->facebook;
+        $setting->twitter=$request->twitter;
+        $setting->instagram=$request->instagram;
         $setting->about=$request->about;
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
@@ -172,12 +172,12 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
         $setting->store_name=$request->store_name;
        
         $setting->working_hours=$request->working_hours;
-        $setting->address="P O BOX ".$request->address;
-        $setting->mobile="+255".$request->mobile;
+        $setting->address=$request->address;
+        $setting->mobile=$request->mobile;
         $setting->email=$request->email;
-        $setting->facebook="https://".$request->facebook;
-        $setting->twitter="https://".$request->twitter;
-        $setting->instagram="https://".$request->instagram;
+        $setting->facebook=$request->facebook;
+        $setting->twitter=$request->twitter;
+        $setting->instagram=$request->instagram;
         $setting->about=$request->about;
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;

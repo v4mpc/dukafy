@@ -73,10 +73,10 @@
                                 <div class="wpb_wrapper">
                                     <h2 class="contact-page-title">Our Store</h2>
                                     @if($settings->address!=null)
-                               <h3>Address:</h3> <address>{{$settings->address}}</address>
+                               <h3>Address:</h3> <address>P O BOX {{$settings->address}}</address>
                                 <h3>Phone: </h3>
                                 @endif @if($settings->mobile!=null)
-                                <p>{{$settings->mobile}}</p>
+                                <p>+255{{$settings->mobile}}</p>
                                 @endif @if($settings->email!=null)
                                 <h3>Email: </h3>
                                 <p>{{$settings->email}}</p>

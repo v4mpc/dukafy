@@ -3,11 +3,14 @@
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="icon fa fa-user"></i>Welcome to {{$settings->store_name}} </a></li>
+                    <li><a href="{{route("start")}}"><i class="icon fa fa-user"></i>Welcome to {{$settings->store_name}} </a></li>
     <li>
         <a href="#">
             <i class="icon fa fa-location-arrow"></i>Store Locator</a>
+
     </li>
+
+<li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                         <!-- <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                         <li><a href="#"><i class="icon fa fa-key"></i>Checkout</a></li>
                         <li><a href="#"><i class="icon fa fa-sign-in"></i>Login</a></li> -->
@@ -37,10 +40,10 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
                         <div class="contact-row">
         <div class="phone inline">
-            <i class="icon fa fa-phone"></i> {{$settings->mobile}}
+            <i class="icon fa fa-phone"></i>+255{{$settings->mobile}}
         </div>
         <div class="contact inline">
-            <i class="icon fa fa-envelope"></i> <a href="https://demo2.chethemes.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9fecfef3faeddfeaf1f6fcfeecfab1fcf0f2">{{$settings->email}}</a>
+            <i class="icon fa fa-envelope"></i> <a href="#." class="__cf_email__" data-cfemail="9fecfef3faeddfeaf1f6fcfeecfab1fcf0f2">{{$settings->email}}</a>
         </div>
     </div><!-- /.contact-row -->
     <!-- ============================================================= SEARCH AREA ============================================================= -->

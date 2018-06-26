@@ -78,11 +78,11 @@
                     <hr> --}} @if($settings->address!=null)
                     <h6>Address:</h6>
 
-                    <p>{{$settings->address}}</p>
+                    <p>P O BOX {{$settings->address}}</p>
                     @endif @if($settings->mobile!=null)
                     <h6>Phone:</h6>
 
-                    <p>{{$settings->mobile}}</p>
+                    <p>+255{{$settings->mobile}}</p>
                     @endif @if($settings->email!=null)
                     <h6>Email:</h6>
 
