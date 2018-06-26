@@ -85,7 +85,7 @@
     
                                 @forelse(Cart::content() as $item)
                             <li class="mini_cart_item item{{$item->rowId}}" id="item{{$item->rowId}}">
-                                <a title="Remove this item" class="remove" href="#">×</a>
+                                <a title="Remove this item" class="remove" href="#" data-id="{{$item->rowId}}" >×</a>
                                 <a href="{{route('product.show',$item->model->id)}}">
                                     <img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="{{asset('images/'.$item->model->images[0]->image)}}" alt="">{{$item->name}}
                                 </a>

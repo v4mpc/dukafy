@@ -105,7 +105,7 @@
                                       <input type="hidden" name="email" value="{{$settings->email}}">
                                       <input type="hidden" name="longitude" value="{{$settings->longitude}}">
                                       <input type="hidden" name="latitude" value="{{$settings->latitude}}">
-                                      <input type="hidden" name="logo" value="{{$settings->logo}}">
+                                      {{-- <input type="hidden" name="logo" value="{{$settings->logo}}"> --}}
                                       <input type="hidden" name="working_hours" value="{{$settings->working_hours}}">
 
                                       <input type="hidden" name="address" value="{{$settings->address}}">
