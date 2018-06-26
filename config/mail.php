@@ -29,7 +29,7 @@ return [
     */
 
    
-    'host' => 'mail.legendaryits.com',
+    'host' => 'rs47.registrar-servers.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,9 +90,9 @@ return [
     |
     */
 
-    'username' => 'alistore@legendaryits.com',
+    'username' => 'lits@legendaryits.com',
 
-    'password' => 's(CD7z9F&tnF',
+    'password' => 'lits@786',
 
     /*
     |--------------------------------------------------------------------------
