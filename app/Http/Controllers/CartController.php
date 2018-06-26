@@ -134,7 +134,7 @@ class CartController extends Controller
             }
             $cart_html.=' </ul><p class="total"><strong>Subtotal:</strong> <span class="amount">'.Cart::subtotal().' TZS</span></p>';
                 $cart_html.='<p class="buttons"><a class="button wc-forward" href="'.route('cart.index').'">View Cart</a>';
-                $cart_html.=' <a class="button checkout wc-forward" href="#">Checkout</a></p></div>';
+                $cart_html.=' <a class="button checkout wc-forward" href="'.route("check_out.create").'">Checkout</a></p></div>';
 
         }else if(config('app.settings')->layout=='template1'){
             foreach(Cart::content() as $item){
