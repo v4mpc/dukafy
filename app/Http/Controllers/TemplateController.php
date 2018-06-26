@@ -40,11 +40,16 @@ if (!count(Setting::all())) {
 }
 
 
-
+        // if($request->is('template3/*')){
+         
+        //     return view('template.template3.index');
+        // }
         if(config('app.settings')->layout=='template2'){
             return view('template.template2.index');
-        }else{
+        }else if(config('app.settings')->layout=='template1'){
             return view('template.template1.index');
+        }else if(config('app.settings')->layout=='template3'){
+            return view('template.template3.index');
         }
         
     }
@@ -87,11 +92,20 @@ if (!count(Setting::all())) {
     {
      $product=Product::findOrFail($id);
 
+
+    //  if($request->is('template3/*')){
+    //      $row_class='single-product outer-bottom-sm';
+    //     return view('template.template3.productshow')->with('product',$product)->with('row_class',$row_class);
+    // }
+
      if(config('app.settings')->layout=='template2'){
          $body_class="single-product full-width extended";
         return view('template.template2.productshow')->with('product',$product)->with('body_class',$body_class);
-    }else{
+    }else if(config('app.settings')->layout=='template1'){
         return view('template.template1.productshow')->with('product',$product);
+    }else if(config('app.settings')->layout=='template3'){
+        $row_class='single-product outer-bottom-sm';
+        return view('template.template3.productshow')->with('product',$product)->with('row_class',$row_class);
     }
         
     }

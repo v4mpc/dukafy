@@ -49,22 +49,24 @@
 
      
 
-      {{--
+      
       <li class=" nav-item {{Request::is('settings/*')||Request::is('layout_form')||Request::is('logo_form')||Request::is('company_address_form')?"
         open ":" "}}"><a href=""><i class="ft-settings"></i><span class="menu-title" data-i18n="nav.dash.main">Settings</span></a>
         <ul class="menu-content">
 
-          <li><a class="menu-item {{Request::is('settings/create')?" active ":" "}}" href="{{route('settings.create')}}" data-i18n="nav.cards.card_statistics">Layout Wizard</a>
+          {{-- <li><a class="menu-item {{Request::is('settings/create')?" active ":" "}}" href="{{route('settings.create')}}" data-i18n="nav.cards.card_statistics">Basic Info</a>
           </li>
+          <li><a class="menu-item {{Request::is('settings/create')?" active ":" "}}" href="{{route('settings.create')}}" data-i18n="nav.cards.card_statistics">About Store</a>
+          </li> --}}
           <li><a class="menu-item {{Request::is('layout_form')?" active ":" "}}" href="{{route('settings.layout_form')}}" data-i18n="nav.cards.card_weather">Layout</a>
           </li>
-          <li><a class="menu-item" href="{{route('settings.logo_form')}}" data-i18n="nav.cards.card_charts">Logo</a>
+          {{-- <li><a class="menu-item" href="{{route('settings.logo_form')}}" data-i18n="nav.cards.card_charts">Logo</a>
           </li>
-          <li><a class="menu-item" href="{{route('settings.company_address_form')}}" data-i18n="nav.cards.card_interactive">Company Address</a>
-          </li>
+          <li><a class="menu-item" href="{{route('settings.company_address_form')}}" data-i18n="nav.cards.card_interactive">Slider Images</a>
+          </li> --}}
 
         </ul>
-      </li> --}}
+      </li>
 
 
     </ul>

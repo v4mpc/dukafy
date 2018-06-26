@@ -13,7 +13,7 @@
     @foreach($categories as $category) @if(count($category->products))
 
     <li class="yamm-tfw menu-item menu-item-has-children animate-dropdown dropdown">
-    <a href="{{route('category',$category->id)}}" title="{{$category->name}}"  href="product-category.html"  >{{$category->name}}</a>
+    <a href="{{route('category',$category->id)}}" title="{{$category->name}}"    >{{$category->name}}</a>
 
     </li>
 

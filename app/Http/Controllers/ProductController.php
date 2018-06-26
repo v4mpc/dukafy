@@ -349,8 +349,10 @@ return redirect()->route('products.show',$product->id);
         if(config('app.settings')->layout=='template2'){
             $body_class="left-sidebar";
             return view('template.template2.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
-        }else{
+        }else if(config('app.settings')->layout=='template1'){
             return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+        }else if(config('app.settings')->layout=='template3'){
+            return view('template.template3.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
         }
     }
 
@@ -362,11 +364,21 @@ return redirect()->route('products.show',$product->id);
         $min_price=Product::where('out_stock',0)->where('category_id',$id)->min('price');
         $max_price=Product::where('out_stock',0)->where('category_id',$id)->max('price');
 
+
+
+//      if($request->is('template3/*')){
+//         $row_class='single-product outer-bottom-sm';
+//        return view('template.template3.search')->with('products',$products)->with('row_class',$row_class)->with('min_price',$min_price)->with('max_price',$max_price);
+//    }
+
         if(config('app.settings')->layout=='template2'){
             $body_class="left-sidebar";
             return view('template.template2.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
-        }else{
+        }else if(config('app.settings')->layout=='template1'){
             return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+        }else if(config('app.settings')->layout=='template3'){
+            $row_class='single-product outer-bottom-sm';
+            return view('template.template3.search')->with('products',$products)->with('row_class',$row_class)->with('min_price',$min_price)->with('max_price',$max_price);
         }
        
 

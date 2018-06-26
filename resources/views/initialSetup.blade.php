@@ -118,6 +118,43 @@
 }
 
 
+
+
+.btn-red,
+.btn-red:hover,
+.btn-red:active,
+.btn-red:visited,
+.btn-red:focus {
+    background-color: #ff6c6c;
+    border-color: #ff6c6c;
+
+    #ce1d76
+}
+
+.btn-orange,
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange:visited,
+.btn-orange:focus {
+    background-color:#f39c12;
+    border-color:#f39c12;
+
+  
+}
+
+
+.btn-dark_green,
+.btn-dark_green:hover,
+.btn-dark_green:active,
+.btn-dark_green:visited,
+.btn-dark_green:focus {
+    background-color:#12cca7;
+    border-color:#12cca7;
+
+  
+}
+
+
     </style>
 </head>
 
@@ -332,7 +369,7 @@
                                     <div class="tab-pane" id="facilities">
                                         <h5 class="info-text">Select Template and Colour. </h5>
                                         <div class="row">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                                 <div class="form-group" align="center">
                                             
                                                     <div id="loader" class="loader hidden"></div>
@@ -352,7 +389,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                                     <div class="form-group" align="center">
                                                 
                                                         <div id="loader" class="loader hidden"></div>
@@ -374,25 +411,25 @@
 
 
 
-                                            {{-- <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                                     <div class="form-group" align="center">
                                                 
                                                         <div id="loader" class="loader hidden"></div>
     
-                                                        <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
-                                                                data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                        <div id="template-buttons"><a id="img-link-3" href="{{asset('template3/previews/dark_green/1.png')}}" data-fancybox="dark_green-preview"
+                                                                data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-3" src="{{asset('template3/previews/dark_green/1.png')}}" alt="..." class="img-thumbnail"></a>
                                                             <div>
-                                                                <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
-                                                                <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
-                                                                <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
-                                                                <input type="hidden" name="layout">
-                                                                <input type="hidden" name="colour">
+                                                                <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="dark_green" title="Dark Green" class="btn btn-dark_green colour "></button>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="red" title="Red" class="btn btn-red colour "></button>
+                                                                <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="orange" title="Orange" class="btn btn-orange colour "></button>
+                                                                {{-- <input type="hidden" name="layout">
+                                                                <input type="hidden" name="colour"> --}}
                                                             </div>
                                                         </div>
     
     
                                                     </div>
-                                                </div> --}}
+                                                </div>
                                         </div>
 
 
@@ -481,6 +518,53 @@
     
     
                                             </div>
+
+
+
+
+
+                                             {{-- template 3 starts here --}}
+                                        {{-- dark_green --}}
+                                        <div style="display: none;">
+
+
+                                            <a href="{{asset('template3/previews/dark_green/2.png')}}" data-fancybox="dark_green-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/dark_green/2.png')}}"></a>
+
+                                            <a href="{{asset('template3/previews/dark_green/3.png')}}" data-fancybox="dark_green-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/dark_green/3.png')}}"></a>
+
+                                            <a href="{{asset('template3/previews/dark_green/4.png')}}" data-fancybox="dark_green-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/dark_green/4.png')}}"></a>
+
+
+                                        </div>
+
+
+
+                                         {{-- red--}}
+                                    <div style="display: none;">
+
+
+                                            <a href="{{asset('template3/previews/red/2.png')}}" data-fancybox="red-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/red/2.png')}}"></a>
+
+                                            <a href="{{asset('template3/previews/red/3.png')}}" data-fancybox="red-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/red/3.png')}}"></a>
+
+                                            <a href="{{asset('template3/previews/red/4.png')}}" data-fancybox="red-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/red/4.png')}}"></a>
+
+
+                                        </div>
+
+
+                                            {{-- orange --}}
+                                    <div style="display: none;">
+
+
+                                            <a href="{{asset('template3/previews/orange/2.png')}}" data-fancybox="orange-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/orange/2.png')}}"></a>
+
+                                            <a href="{{asset('template3/previews/orange/3.png')}}" data-fancybox="orange-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/orange/3.png')}}"></a>
+
+                                            <a href="{{asset('template3/previews/orange/4.png')}}" data-fancybox="orange-preview" data-width="1366" data-height="768" data-thumb="{{asset('template3/previews/orange/4.png')}}"></a>
+
+
+                                        </div>
 
                                     </div>
                                     <div class="tab-pane" id="slider">
@@ -913,14 +997,29 @@ $('#located').click(function(params) {
                 $('#img-link').attr('data-fancybox','green-preview');
                 $('#img-link').attr('href',"{{asset('template1/previews/green/1.png')}}");
                 // $('#img-link').data('fancybox','green-preview');
-            }else{
+            }else if(colour=="blue"){
                 $('#img-thumb').attr('src',"{{asset('template1/previews/blue/1.png')}}");
                 $('#img-link').attr('src',"{{asset('template1/previews/blue/1.png')}}");
                 $('#img-link').attr('data-fancybox','blue-preview');
                 $('#img-link').attr('href',"{{asset('template1/previews/blue/1.png')}}");
-                
-    
-            
+            }else if(colour=="dark_green") {
+                $('#img-thumb-3').attr('src',"{{asset('template3/previews/dark_green/1.png')}}");
+                $('#img-link-3').attr('src',"{{asset('template3/previews/dark_green/1.png')}}");
+                $('#img-link-3').attr('data-fancybox','dark_green-preview');
+                $('#img-link-3').attr('href',"{{asset('template3/previews/dark_green/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
+            }else if(colour=="red") {
+                $('#img-thumb-3').attr('src',"{{asset('template3/previews/red/1.png')}}");
+                $('#img-link-3').attr('src',"{{asset('template3/previews/red/1.png')}}");
+                $('#img-link-3').attr('data-fancybox','red-preview');
+                $('#img-link-3').attr('href',"{{asset('template3/previews/red/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
+            }else if(colour=="orange") {
+                $('#img-thumb-3').attr('src',"{{asset('template3/previews/orange/1.png')}}");
+                $('#img-link-3').attr('src',"{{asset('template3/previews/orange/1.png')}}");
+                $('#img-link-3').attr('data-fancybox','orange-preview');
+                $('#img-link-3').attr('href',"{{asset('template3/previews/orange/1.png')}}");
+                // $('#img-link').data('fancybox','green-preview');
             }
 			$('input[name="layout"]').val(layout);
 			$('input[name="colour"]').val(colour);

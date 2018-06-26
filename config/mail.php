@@ -15,8 +15,7 @@ return [
     |            "sparkpost", "log", "array"
     |
     */
-
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'sendmail',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +28,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+   
+    'host' => 'mail.legendaryits.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' =>'465',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => 'ssl',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,9 +90,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => 'alistore@legendaryits.com',
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => 's(CD7z9F&tnF',
 
     /*
     |--------------------------------------------------------------------------

@@ -39,6 +39,79 @@
     #loader1{
     visibility:hidden;
     }
+
+
+.btn-yellow,
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:visited,
+.btn-yellow:focus {
+    background-color: #fed700;
+    border-color: #fed700;
+
+    #ce1d76
+}
+
+.btn-pink,
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink:visited,
+.btn-pink:focus {
+    background-color:#ce1d76;
+    border-color:#ce1d76;
+
+  
+}
+
+
+.btn-black,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:visited,
+.btn-black:focus {
+    background-color:#000;
+    border-color:#000;
+
+  
+}
+
+
+
+
+.btn-red,
+.btn-red:hover,
+.btn-red:active,
+.btn-red:visited,
+.btn-red:focus {
+    background-color: #ff6c6c;
+    border-color: #ff6c6c;
+
+    #ce1d76
+}
+
+.btn-orange,
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange:visited,
+.btn-orange:focus {
+    background-color:#f39c12;
+    border-color:#f39c12;
+
+  
+}
+
+
+.btn-dark_green,
+.btn-dark_green:hover,
+.btn-dark_green:active,
+.btn-dark_green:visited,
+.btn-dark_green:focus {
+    background-color:#12cca7;
+    border-color:#12cca7;
+
+  
+}
+
     </style>
 
 </head>

@@ -121,6 +121,27 @@ toastr.success('Product removed from cart!');
 
            $('.add_to_cart_button').click(function() {
 
+
+toastr.options = {
+        "closeButton": false,
+"debug": false,
+"newestOnTop": false,
+"progressBar": false,
+"positionClass": "toast-top-right",
+"preventDuplicates": true,
+"onclick": null,
+"showDuration": "30",
+"hideDuration": "1000",
+"timeOut": "5000",
+"extendedTimeOut": "1000",
+"showEasing": "swing",
+"hideEasing": "linear",
+"showMethod": "fadeIn",
+"hideMethod": "fadeOut"
+}
+    
+    toastr.info('Adding product to cart...');
+
 // alert("data");
 
 // $(this).empty().append('<i class="fa fa-spinner fa-spin"></i>');

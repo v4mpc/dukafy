@@ -59,6 +59,28 @@
 
       // alert("data");
 
+toastr.options = {
+        "closeButton": false,
+"debug": false,
+"newestOnTop": false,
+"progressBar": false,
+"positionClass": "toast-top-right",
+"preventDuplicates": true,
+"onclick": null,
+"showDuration": "30",
+"hideDuration": "1000",
+"timeOut": "5000",
+"extendedTimeOut": "1000",
+"showEasing": "swing",
+"hideEasing": "linear",
+"showMethod": "fadeIn",
+"hideMethod": "fadeOut"
+}
+    
+    toastr.info('Adding product to cart...');
+
+
+
       $(this).empty().append('<i class="fa fa-spinner fa-spin"></i>');
       var id=$(this).data('id');
       var product_id='product'+id;

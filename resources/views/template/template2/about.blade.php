@@ -11,6 +11,10 @@
             <div id="primary" class="content-area">
                     <main id="main" class="site-main">
                         {!!$settings->about!!}
+
+                        
                     </main>
-            </div>                   
+            </div>   
+        </div> 
+</div>               
 @endsection

@@ -22,80 +22,99 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+//         Schema::defaultStringLength(191);
 
-        $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
+//         $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
         
-        View::share('maps_api_key',$maps_api_key);
-        if(count(Setting::all())){
-            $max_price=0;
-$min_price=0;
+//         View::share('maps_api_key',$maps_api_key);
+//         if(count(Setting::all())){
+//             $max_price=0;
+// $min_price=0;
 
-$start_max_price=Product::max('price');
-$start_min_price=Product::min('price');
-        $featureds=Product::where('featured','1')->get();
-        $on_sales=Product::where('discount','>','1')->get();
-        $products=Product::all();
+// $start_max_price=Product::max('price');
+// $start_min_price=Product::min('price');
+//         $featureds=Product::where('featured','1')->get();
+//         $on_sales=Product::where('discount','>','1')->get();
+//         $products=Product::all();
 
-        $categories=Category::all();
-        $settings=Setting::orderBy('id','desc')->first();
-        $previews=Preview::orderBy('id','desc')->first();
-        config(['app.settings' => $settings]);
+//         $categories=Category::all();
+//         $settings=Setting::orderBy('id','desc')->first();
+//         $previews=Preview::orderBy('id','desc')->first();
+//         config(['app.settings' => $settings]);
         
-        // dd($settings->working_hours);
-        $brand_images=BrandImage::all();
-        $slider_images=SliderImage::all();
-// dd($slider_images);
-        switch ($settings->colour) {
-            case 'navy':
-                $colour_code='#424378';
-                break;
+//         // dd($settings->working_hours);
+//         $brand_images=BrandImage::all();
+//         $slider_images=SliderImage::all();
+// // dd($slider_images);
+//         switch ($settings->colour) {
+//             case 'navy':
+//                 $colour_code='#424378';
+//                 break;
             
-                case 'green':
-                $colour_code='#7a9b08';
-                break;
+//                 case 'green':
+//                 $colour_code='#7a9b08';
+//                 break;
 
 
-                case 'blue':
-                $colour_code='#0088cc';
-                break;
+//                 case 'blue':
+//                 $colour_code='#0088cc';
+//                 break;
 
-                case 'yellow':
-                $colour_code='#fed700';
-                break;
+//                 case 'yellow':
+//                 $colour_code='#fed700';
+//                 break;
 
-                case 'pink':
-                $colour_code='#ce1d76';
-                break;
+//                 case 'pink':
+//                 $colour_code='#ce1d76';
+//                 break;
 
-                case 'black':
-                $colour_code='#000';
-                break;
+//                 case 'black':
+//                 $colour_code='#000';
+//                 break;
+
+
+//                 case 'red':
+//                 $colour_code='#ff6c6c';
+//                 break;
+
+//                 case 'orange':
+//                 $colour_code='#f39c12';
+//                 break;
+
+//                 case 'dark_green':
+//                 $colour_code='#12cca7';
+//                 break;
            
-        }
-$body_class="page home page-template-default";
-        View::share('featureds',$featureds);
-        View::share('body_class',$body_class);
+//         }
+//         //this is for template2
+// $body_class="page home page-template-default";
 
-        View::share('products_count',$products);
+// //this is for template3
+// $row_class='';
 
-        View::share('on_sales',$on_sales);
-        View::share('categories',$categories);
-        View::share('settings',$settings);
-        View::share('previews',$previews);
-        View::share('colour_code',$colour_code);
+//         View::share('featureds',$featureds);
+//         View::share('body_class',$body_class);
+//         View::share('row_class',$row_class);
+
+//         View::share('products_count',$products);
+
+//         View::share('on_sales',$on_sales);
+//         View::share('categories',$categories);
+//         View::share('settings',$settings);
+//         View::share('previews',$previews);
+//         View::share('colour_code',$colour_code);
         
-        View::share('brand_images',$brand_images);
-        View::share('slider_images',$slider_images);
+//         View::share('brand_images',$brand_images);
+//         View::share('slider_images',$slider_images);
 
-        View::share('min_price',$min_price);
-        View::share('max_price',$max_price);
+//         View::share('min_price',$min_price);
+//         View::share('max_price',$max_price);
 
-        View::share('start_min_price',$start_min_price);
-        View::share('start_max_price',$start_max_price);
+//         View::share('start_min_price',$start_min_price);
+//         View::share('start_max_price',$start_max_price);
 
         
-    }
+//     }
     }
 
     /**

@@ -65,7 +65,7 @@
 
         <div class="wc-proceed-to-checkout">
 
-            <a  class="checkout-button button alt wc-forward" href="checkout.html">Proceed to Checkout</a>
+        <a  class="checkout-button button alt wc-forward" href="{{route('check_out.create')}}">Proceed to Checkout</a>
         </div>
 
         <input type="hidden" value="1eafc42c5e" name="_wpnonce" id="_wpnonce"><input type="hidden" value="/electro/cart/" name="_wp_http_referer">

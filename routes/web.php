@@ -49,7 +49,15 @@ Route::get('/template2/about_us','TemplateController@about')->name('template2.ab
 Route::get('/template2/check_out','CheckOutController@create');
 Route::view('/template2/thank_you','template/template2/thankyou');
 
-
+//this is only for demo perpose for template 3
+Route::get('/template3/start', 'TemplateController@index')->name('template3.start');
+Route::get('/template3/cart','CartController@index')->name('template3.cart.index');
+Route::get('/template3/product/{id}','TemplateController@productshow')->name('template3.product.show');
+Route::get('/template3/category/{id}','ProductController@category')->name('template3.category');
+Route::get('/template3/contact_us','TemplateController@contact')->name('template3.contact');
+Route::get('/template3/about_us','TemplateController@about')->name('template3.about');
+Route::get('/template3/check_out','CheckOutController@create');
+Route::view('/template3/thank_you','template/template3/thankyou');
 
 
 
@@ -77,6 +85,8 @@ Route::resource('/featured', 'FeaturedController');
 Route::resource('/users', 'UserController');
 Route::resource('/orders', 'OrderController');
 Route::resource('/settings', 'SettingController');
+// Route::put('/settings/layout/{id}', 'SettingController@updateLayout')->name('update.layout');
+
 // Route::resource('/variations', 'VariationController');
 
 Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');

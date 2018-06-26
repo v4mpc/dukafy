@@ -94,7 +94,7 @@ class ThankYouController extends Controller
          Mail::send(new OrderCompleted($order,$settings->email));
 
 
-       dd($users);
+    //    dd($users);
         if(config('app.settings')->layout=='template2'){
             return view('template.template2.thankyou');
         }else{

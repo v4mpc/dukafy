@@ -56,7 +56,7 @@
                     <div class="product-outer">
         <div class="product-inner">
             <span class="loop-product-categories"><a href="product-category.html" rel="tag">{{$product->category->name}}</a></span>
-            <a href="{{route('template2.product.show',$product->id)}}">
+            <a href="{{route('product.show',$product->id)}}">
                 <h3>{{$product->name}}</h3>
                 <div class="product-thumbnail">
                     <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" alt="">
@@ -271,7 +271,7 @@
                                                                     <div class="product-outer">
                                                         <div class="product-inner">
                                                             <span class="loop-product-categories"><a href="product-category.html" rel="tag">{{$product->category->name}}</a></span>
-                                                            <a href="{{route('template2.product.show',$product->id)}}">
+                                                            <a href="{{route('product.show',$product->id)}}">
                                                                 <h3>{{$product->name}}</h3>
                                                                 <div class="product-thumbnail">
                                                                     <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" alt="">

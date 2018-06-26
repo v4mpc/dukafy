@@ -7,7 +7,7 @@
 
         <div class="copyright-bar">
             <div class="container">
-                <div class="pull-left flip copyright">&copy; <a href="http://demo2.transvelo.in/html/electro/">Electro</a> - All Rights Reserved</div>
+            <div class="pull-left flip copyright">&copy; {{date('Y')}} <a href="{{route('start')}}">{{$settings->store_name}}</a></div>
                 
                 </div>
             </div><!-- /.container -->
