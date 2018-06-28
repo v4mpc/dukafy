@@ -148,6 +148,7 @@
     </div><!-- /.estimate-ship-tax -->
      --}}
     <div class="col-md-4 col-sm-12 cart-shopping-total">
+            @if(Cart::count())
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -162,16 +163,21 @@
                 </tr>
             </thead><!-- /thead -->
             <tbody>
+                   
                     <tr>
                         <td>
                             <div class="cart-checkout-btn pull-right">
+                               
                                 <a href="{{route('check_out.create')}}" class="btn btn-primary">PROCCED TO CHEKOUT</a>
                                 {{-- <span class="">Checkout with multiples address!</span> --}}
+                               
                             </div>
                         </td>
                     </tr>
+                   
             </tbody><!-- /tbody -->
         </table><!-- /table -->
+        @endif
     </div><!-- /.cart-shopping-total -->			</div><!-- /.shopping-cart -->
             </div> <!-- /.row -->
 

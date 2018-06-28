@@ -6,7 +6,7 @@
         <li class="nav-item mr-auto">
           <a class="navbar-brand" href="index-2.html">
             {{-- <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png"> --}}
-            <h3 class="brand-text">E-commerce</h3>
+          <h3 class="brand-text">{{$settings->store_name}}</h3>
           </a>
         </li>
         <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon ft-toggle-right font-medium-3 white" data-ticon="ft-toggle-right"></i></a></li>
@@ -34,10 +34,10 @@
               <span class="user-name text-bold-700">{{Auth::user()->name}}</span>
               </span>
               <span class="avatar avatar-online">
-                <img src="{{asset('images/'.Auth::user()->image)}}" alt="avatar"><i></i></span>
+                <img src="{{is_null(Auth::user()->image)?asset('images/userplaceholder.png'):asset('images/'.Auth::user()->image)}}" alt="avatar"><i></i></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              {{-- <a class="dropdown-item" href="{{route('users.edit',Auth::id())}}"><i class="ft-user"></i> Edit Profile</a>              --}}
+              <a class="dropdown-item" href="{{route('users.edit',Auth::id())}}"><i class="ft-user"></i> Edit Profile</a>             
 
               <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();"><i class="ft-power"></i> Logout

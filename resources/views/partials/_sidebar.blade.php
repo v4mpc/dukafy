@@ -37,9 +37,9 @@
       <li class=" nav-item"><a href="{{route('reports.index')}}"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="nav.dash.main">Reports</span></a>
 
       </li> --}}
-      <li class=" nav-item {{Request::is('users')?" open ":" "}}"><a href="{{route('users.index')}}"><i class="ft-user"></i><span class="menu-title" data-i18n="nav.dash.main">User Management</span></a>
+      {{-- <li class=" nav-item {{Request::is('users')?" open ":" "}}"><a href="{{route('users.index')}}"><i class="ft-user"></i><span class="menu-title" data-i18n="nav.dash.main">User Management</span></a>
 
-      </li>
+      </li> --}}
 
 
       <li class=" nav-item "><a id="visit-store" ><i class="ft-corner-up-right"></i><span class="menu-title" data-i18n="nav.dash.main">Visit Site</span></a>

@@ -55,7 +55,7 @@
                 <ul class="categories-filter animate-dropdown">
                     <li class="dropdown">
     
-                        <a class="dropdown-toggle"  data-toggle="dropdown" href="indexe2f2.html?page=category">Categories <b class="caret"></b></a>
+                        <a class="dropdown-toggle"  data-toggle="dropdown" href="#.">Categories <b class="caret"></b></a>
     
                         <ul class="dropdown-menu" role="menu" >
                                 <option value="all">All Categories</option>
@@ -68,7 +68,7 @@
     
                 <input class="search-field" placeholder="Search here..." />
     
-                <a class="search-button" href="#" ></a>    
+                <a class="search-button"  href="#" ></a>    
     
             </div>
         </form>
@@ -129,8 +129,9 @@
                             
                     </div>
                     <div class="clearfix"></div>
-                        
+                        @if(Cart::count())
                 <a href="{{route('check_out.create')}}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	
+                @endif
                 </div><!-- /.cart-total-->
                         
                     

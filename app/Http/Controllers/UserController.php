@@ -43,7 +43,7 @@ class UserController extends Controller
         $user=new User;
         $user->name=$request->name;
         $user->email=$request->email;
-        $user->password=Hash::make($request->password);
+        // $user->password=Hash::make($request->password);
 
         if($request->hasFile('image')) {
                 $filename = $request->image->getClientOriginalName();
@@ -51,8 +51,6 @@ class UserController extends Controller
                 Image::make($request->image)->resize(400, 400)->save($location);
                 $user->image=$filename;
   
-    }else {
-        $user->image='userplaceholder.png';
     }
 
     $user->save();
@@ -81,7 +79,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::findOrFail($id);
+        return view('users.edit')->with('user',$user);
     }
 
     /**
@@ -91,9 +90,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->name=$request->name;
+        $user->email=$request->email;
+        // $user->password=Hash::make($request->password);
+
+        if($request->hasFile('image')) {
+                $filename = $request->image->getClientOriginalName();
+                $location=public_path('images/'.$filename);
+                Image::make($request->image)->resize(400, 400)->save($location);
+                $user->image=$filename;
+  
+    }
+    $user->save();
+
+    Session::flash('success','User Saved!');
+    return redirect()->back();
     }
 
     /**

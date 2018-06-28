@@ -39,10 +39,11 @@
 
       <section class="map-block">
 
-        <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
+        {{-- <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
           data-style="0"></div>
         <div class="markers-wrapper addresses-block"> <a class="marker" data-rel="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-string="{{$settings->store_name}}"></a>          </div>
-
+ --}}
+        <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=40.7127837,-74.0059413&amp;key={{$maps_api_key}}"></iframe>
 
 
 

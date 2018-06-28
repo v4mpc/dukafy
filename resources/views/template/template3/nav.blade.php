@@ -14,19 +14,19 @@
                         <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
                 <ul class="nav navbar-nav">
-                    <li class="active dropdown yamm-fw">
-                        <a href="{{route("start")}}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                <li class="{{Route::is('start')?"active":""}} dropdown">
+                        <a href="{{route("start")}}">Home</a>
                     
                     </li>
                 
         
                 
         
-                    <li class="dropdown">
+                    <li class="{{Route::is('about')?"active":""}}  dropdown">
                         <a href="{{route('about')}}">About</a>
                     </li>
         
-                    <li class="dropdown">
+                    <li class="{{Route::is('contact')?"active":""}}  dropdown">
                     <a href="{{route('contact')}}">Contact</a>
                     </li>
                     
