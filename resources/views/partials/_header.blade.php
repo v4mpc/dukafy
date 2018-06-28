@@ -11,11 +11,12 @@
   <title>E-Commerce
   </title>
   <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+  <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/line-awesome/css/line-awesome.min.css')}}">
   {{-- <link rel="shortcut icon" type="image/x-icon" href="http://www.pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/app-assets/images/ico/favicon.ico"> --}}
-  <link href="../../../../../fonts.googleapis.com/cssea9a.css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
   rel="stylesheet">
-  <link href="../../../../../maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.html"
-  rel="stylesheet">
+  {{-- <link href="../../../../../maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.html"
+  rel="stylesheet"> --}}
   <!-- BEGIN VENDOR CSS-->
   @yield('vendor_css')
   <!-- END VENDOR CSS-->
@@ -25,6 +26,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/toastr.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/extensions/toastr.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
+ 
   
   <!-- END MODERN CSS-->
   <!-- BEGIN Page Level CSS-->
