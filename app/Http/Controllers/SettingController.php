@@ -167,22 +167,28 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
      */
     public function update(Request $request, Setting $setting)
     {
-        $setting->layout=$request->layout;
-        $setting->colour=$request->colour;
+        
+        if($request->store_name){
         $setting->store_name=$request->store_name;
-       
         $setting->working_hours=$request->working_hours;
         $setting->address=$request->address;
-        $setting->mobile=$request->mobile;
+        $setting->longitude=$request->lng;
+        $setting->latitude=$request->lat;
         $setting->email=$request->email;
+        }
+  
+        if($request->about){
+        $setting->mobile=$request->mobile;
         $setting->facebook=$request->facebook;
         $setting->twitter=$request->twitter;
         $setting->instagram=$request->instagram;
         $setting->about=$request->about;
-        $setting->longitude=$request->lng;
-        $setting->latitude=$request->lat;
-        // dd($request->all());
+        }
 
+        if($request->layout){
+        $setting->layout=$request->layout;
+        $setting->colour=$request->colour;
+        }
         if($request->logo){
             $png_url = "logo-".time().".png";
             $location = public_path('images/' . $png_url);
@@ -278,14 +284,24 @@ Session::flash('success','Setting Saved!');
         return view('settings.layout');
     }
 
+    public function getBasicInfoForm()
+    {
+        return view('settings.basicinfo');
+    }
+
+    public function getAboutForm()
+    {
+        return view('settings.about');
+    }
+
     public function getLogoForm()
     {
         return view('settings.logo');
     }
 
-    public function getCompanyAddressForm()
+    public function getSliderForm()
     {
-        return view('settings.companyaddress');
+        return view('settings.slider');
     }
 
     public function upload()

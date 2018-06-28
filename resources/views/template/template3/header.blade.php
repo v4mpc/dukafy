@@ -1,7 +1,6 @@
 
 	
-<!-- Mirrored from demo2.chethemes.com/html/unicase/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Apr 2018 21:23:39 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 		<!-- Meta -->
 		<meta charset="utf-8">

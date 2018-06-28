@@ -89,10 +89,14 @@ Route::resource('/settings', 'SettingController');
 
 // Route::resource('/variations', 'VariationController');
 
-Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
-Route::get('/logo_form','SettingController@getLogoForm')->name('settings.logo_form');
-Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
-Route::get('/company_address_form','SettingController@getCompanyAddressForm')->name('settings.company_address_form');
+Route::get('/layout','SettingController@getLayoutForm')->name('settings.layout_form');
+Route::get('/basic_info','SettingController@getBasicInfoForm')->name('settings.basic_info_form');
+Route::get('/about_store','SettingController@getAboutForm')->name('settings.about_store_form');
+
+
+Route::get('/logo','SettingController@getLogoForm')->name('settings.logo_form');
+// Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
+Route::get('/slider_images','SettingController@getSliderForm')->name('settings.slider_form');
 Route::get('/sub_cat/{id}', 'ProductController@getSubCategories')->name('subcategory_ajax');
 Route::get('/make_featured/{id}', 'ProductController@makeFeatured')->name('make_featured_ajax');
 Route::get('/remove_featured/{id}', 'ProductController@removeFeatured')->name('remove_featured_ajax');

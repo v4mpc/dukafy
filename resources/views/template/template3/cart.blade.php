@@ -24,8 +24,8 @@
                         <td colspan="7">
                             <div class="shopping-cart-btn">
                                 <span class="">
-                                    <a href="#" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
-                                    <a href="#" class="btn btn-upper btn-primary pull-right outer-right-xs">Update shopping cart</a>
+                                <a href="{{route('start')}}" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
+                                    {{-- <a href="#" class="btn btn-upper btn-primary pull-right outer-right-xs">Update shopping cart</a> --}}
                                 </span>
                             </div><!-- /.shopping-cart-btn -->
                         </td>
@@ -62,7 +62,7 @@
                                       <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
                                       <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
                                     </div>
-                                    <input type="text" value="{{$item->qty}}">
+                                    <input disabled type="text" value="{{$item->qty}}">
                               </div>
                         </td>
                         <td class="cart-product-sub-total"><span class="cart-sub-total-price">{{number_format($item->price)}}</span></td>
@@ -165,7 +165,7 @@
                     <tr>
                         <td>
                             <div class="cart-checkout-btn pull-right">
-                                <button type="submit" class="btn btn-primary">PROCCED TO CHEKOUT</button>
+                                <a href="{{route('check_out.create')}}" class="btn btn-primary">PROCCED TO CHEKOUT</a>
                                 {{-- <span class="">Checkout with multiples address!</span> --}}
                             </div>
                         </td>

@@ -72,9 +72,11 @@ foreach (Cart::content() as $item) {
 
 if(config('app.settings')->layout=='template2'){
     return redirect()->action('ThankYouController@index');
-}else{
+}else if (config('app.settings')->layout=='template1'){
    
     return redirect()->route('confirmation.show',$order->id);
+}else if(config('app.settings')->layout=='template3'){
+    return redirect()->action('ThankYouController@index');
 }
     
         

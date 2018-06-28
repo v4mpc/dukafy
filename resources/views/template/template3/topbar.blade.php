@@ -130,7 +130,7 @@
                     </div>
                     <div class="clearfix"></div>
                         
-                    <a href="index994a.html?page=checkout" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	
+                <a href="{{route('check_out.create')}}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	
                 </div><!-- /.cart-total-->
                         
                     

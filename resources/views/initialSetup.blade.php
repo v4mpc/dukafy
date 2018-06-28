@@ -339,7 +339,7 @@
                                                     <div class="input-group">
 
                                                         <span class="input-group-addon" id="basic-addon1">https://</span>
-                                                        <input type="text" class="form-control" name="twitter" id="exampleInputEmail1" placeholder="Facebook page link?">
+                                                        <input type="text" class="form-control" name="twitter" id="exampleInputEmail1" placeholder="Twitter page link?">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-5 col-sm-offset-1">
@@ -349,7 +349,7 @@
                                                     <div class="input-group">
 
                                                         <span class="input-group-addon" id="basic-addon1">https://</span>
-                                                        <input type="text" class="form-control" name="instagram" id="exampleInputEmail1" placeholder="Facebook page link?">
+                                                        <input type="text" class="form-control" name="instagram" id="exampleInputEmail1" placeholder="Instagram page link?">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-5 col-sm-offset-1">

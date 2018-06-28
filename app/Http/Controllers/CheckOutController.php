@@ -28,11 +28,13 @@ class CheckOutController extends Controller
        
         if(config('app.settings')->layout=='template2'){
             return view('template.template2.checkOut');
-        }else{
+        }else if(config('app.settings')->layout=='template1'){
             if (session('id')) {
                 return redirect()->route('check_out.edit',session('id')); 
             }
             return view('template.template1.checkOut');
+        }else if(config('app.settings')->layout=='template3'){
+            return view('template.template3.checkOut');
         }
 
         // return view('template.template1.checkOut');

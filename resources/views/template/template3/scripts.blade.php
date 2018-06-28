@@ -22,6 +22,9 @@
 <script src="switchstylesheet/switchstylesheet.js"></script>
 
 <script>
+
+(function($) {
+
     $(document).ready(function(){ 
         $(".changecolor").switchstylesheet( { seperator:"color"} );
         $('.show-theme-options').click(function(){
@@ -33,7 +36,7 @@
          $('.add_to_cart_button').click(function() {
 
 // alert("data");
-
+console.log(id);
 toastr.options = {
         "closeButton": false,
 "debug": false,
@@ -126,6 +129,9 @@ $.ajax({
 
 
     });
+
+
+ })(jQuery);   
 
     $(window).bind("load", function() {
        $('.show-theme-options').delay(2000).trigger('click');

@@ -14,7 +14,7 @@ class Setting extends Model
 
     // public function getMobileAttribute($value)
     // {
-    //     return "+255".$value;
+    //     return number_format($value,0, '.', ' ');
     // }
 
 

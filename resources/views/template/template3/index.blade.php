@@ -82,11 +82,11 @@
                         <div class="cart clearfix animate-effect">
                     <div class="action">
                         <ul class="list-unstyled">
-                            <li class="add-cart-button btn-group">
+                            <li class="add-cart-button btn-group add_to_cart_button" data-id="{{$product->id}}">
                                 <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
                                     <i class="fa fa-shopping-cart"></i>													
                                 </button>
-                                <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">Add to cart</button>
+                                <button class="btn btn-primary" type="button" >Add to cart</button>
                                                         
                             </li>
                            

@@ -18,6 +18,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
 
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
+
 @endsection
  
 @section('content')
@@ -43,11 +45,11 @@
       <div class="content-header-right col-md-6 col-12">
         <div class="dropdown float-md-right">
 
-          <div class="dropdown-menu" aria-labelledby="dropdownBreadcrumbButton"><a class="dropdown-item" href="#"><i class="la la-calendar-check-o"></i> Calender</a>
+          {{-- <div class="dropdown-menu" aria-labelledby="dropdownBreadcrumbButton"><a class="dropdown-item" href="#"><i class="la la-calendar-check-o"></i> Calender</a>
             <a class="dropdown-item" href="#"><i class="la la-cart-plus"></i> Cart</a>
             <a class="dropdown-item" href="#"><i class="la la-life-ring"></i> Support</a>
             <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="la la-cog"></i> Settings</a>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
@@ -61,12 +63,12 @@
 
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                 <div class="heading-elements">
-                  <ul class="list-inline mb-0">
+                  {{-- <ul class="list-inline mb-0">
                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
                     <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                     <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
                     <li><a data-action="close"><i class="ft-x"></i></a></li>
-                  </ul>
+                  </ul> --}}
                 </div>
               </div>
               <div class="card-content collapse show">
@@ -101,19 +103,19 @@
                                         </button>
                                         <input type="hidden" name="layout">
                                         <input type="hidden" name="colour">
-                                      <input type="hidden" name="store_name" value="{{$settings->store_name}}">
+                                      {{-- <input type="hidden" name="store_name" value="{{$settings->store_name}}">
                                       <input type="hidden" name="email" value="{{$settings->email}}">
                                       <input type="hidden" name="longitude" value="{{$settings->longitude}}">
-                                      <input type="hidden" name="latitude" value="{{$settings->latitude}}">
+                                      <input type="hidden" name="latitude" value="{{$settings->latitude}}"> --}}
                                       {{-- <input type="hidden" name="logo" value="{{$settings->logo}}"> --}}
-                                      <input type="hidden" name="working_hours" value="{{$settings->working_hours}}">
+                                      {{-- <input type="hidden" name="working_hours" value="{{$settings->working_hours}}">
 
                                       <input type="hidden" name="address" value="{{$settings->address}}">
                                       <input type="hidden" name="mobile" value="{{$settings->mobile}}">
                                       <input type="hidden" name="about" value="{{$settings->about}}">
                                       <input type="hidden" name="facebook" value="{{$settings->facebook}}">
                                       <input type="hidden" name="instagram" value="{{$settings->instagram}}">
-                                      <input type="hidden" name="twitter" value="{{$settings->twitter}}">
+                                      <input type="hidden" name="twitter" value="{{$settings->twitter}}"> --}}
                                     </div>
                                 </div>
 
@@ -400,6 +402,7 @@
 <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
 
 <script>
   $(".colour").click(function () {

@@ -97,8 +97,10 @@ class ThankYouController extends Controller
     //    dd($users);
         if(config('app.settings')->layout=='template2'){
             return view('template.template2.thankyou');
-        }else{
+        }else if(config('app.settings')->layout=='template1'){
             return view('template.template1.thankyou');
+        }else if(config('app.settings')->layout=='template3'){
+            return view('template.template3.thankyou');
         }
     }
 

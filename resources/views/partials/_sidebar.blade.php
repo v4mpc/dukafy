@@ -50,20 +50,21 @@
      
 
       
-      <li class=" nav-item {{Request::is('settings/*')||Request::is('layout_form')||Request::is('logo_form')||Request::is('company_address_form')?"
-        open ":" "}}"><a href=""><i class="ft-settings"></i><span class="menu-title" data-i18n="nav.dash.main">Settings</span></a>
+    <li class=" nav-item has-sub {{Request::is('manage/basic_info')||Request::is('manage/about_store')||Request::is('manage/layout')||Request::is('manage/logo')||Request::is('manage/slider_images')?"menu-collapsed-open":""}}"><a href=""><i class="ft-settings"></i><span class="menu-title" data-i18n="nav.dash.main">Settings</span></a>
         <ul class="menu-content">
 
-          {{-- <li><a class="menu-item {{Request::is('settings/create')?" active ":" "}}" href="{{route('settings.create')}}" data-i18n="nav.cards.card_statistics">Basic Info</a>
+        <li class="{{Request::is('manage/basic_info')?"active":""}}"><a class="menu-item" href="{{route('settings.basic_info_form')}}" data-i18n="nav.cards.card_statistics">Basic Info</a>
           </li>
-          <li><a class="menu-item {{Request::is('settings/create')?" active ":" "}}" href="{{route('settings.create')}}" data-i18n="nav.cards.card_statistics">About Store</a>
-          </li> --}}
-          <li><a class="menu-item {{Request::is('layout_form')?" active ":" "}}" href="{{route('settings.layout_form')}}" data-i18n="nav.cards.card_weather">Layout</a>
+          
+          <li class="{{Request::is('manage/about_store')?"active":""}}" ><a href="{{route('settings.about_store_form')}}" class="menu-item "  data-i18n="nav.cards.card_statistics">About Store</a>
           </li>
-          {{-- <li><a class="menu-item" href="{{route('settings.logo_form')}}" data-i18n="nav.cards.card_charts">Logo</a>
+          <li class="{{Request::is('manage/layout')?"active":""}}"><a class="menu-item " href="{{route('settings.layout_form')}}" data-i18n="nav.cards.card_weather">Layout</a>
           </li>
-          <li><a class="menu-item" href="{{route('settings.company_address_form')}}" data-i18n="nav.cards.card_interactive">Slider Images</a>
-          </li> --}}
+         <li class="{{Request::is('manage/logo')?"active":""}}"><a class="menu-item" href="{{route('settings.logo_form')}}" data-i18n="nav.cards.card_charts">Logo</a>
+          </li>
+          
+          <li class="{{Request::is('manage/slider_images')?"active":""}}"><a class="menu-item" href="{{route('settings.slider_form')}}" data-i18n="nav.cards.card_interactive">Slider Images</a>
+          </li>
 
         </ul>
       </li>

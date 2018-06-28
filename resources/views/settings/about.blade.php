@@ -19,7 +19,6 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
-<link rel="stylesheet" href="{{asset('initial_screen/Croppie/croppie.css')}}">
 
 @endsection
  
@@ -37,7 +36,7 @@
               </li>
               <li class="breadcrumb-item"><a href="#">Settings</a>
               </li>
-              <li class="breadcrumb-item active">Logo
+              <li class="breadcrumb-item active">Basic Info
               </li>
             </ol>
           </div>
@@ -79,32 +78,60 @@
                   {{method_field('PUT')}}
                    
 
-                  <div class="row" align="center">
-                      <div class="col-sm-4 col-sm-offset-4">
-                          <div class="form-group">
-                                  <h5 class="info-text"> Upload Your Logo</h5>
-                              <a href="#" class="logo-input-button">  <img src="{{is_null($settings->logo)?asset('images/productplaceholder.png'):asset('images/'.$settings->logo)}}" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
-                              <input type="file" id="logo-input" style="display: none;">
-                              <input type="hidden" name="logo">
-                              <br>
-                              <br>
-                             
+                  <div class="col-sm-10 col-sm-offset-1">
+                      <div class="form-group">
+                          <label>About Us</label>
+                          <textarea class="form-control" placeholder="" name="about" rows="9">{!!$settings->about_us!!}</textarea>
+                      </div>
+                  </div>
 
-                              <button type="button" id="logo-input-button" class="btn btn-primary logo-input-button">
-        Upload
-      </button>
-                              <button type="button" id="remove-logo" class="btn btn-danger ">
-        Remove
-      </button>
+              </div>
 
+              <div class="row">
+                  <div class="col-sm-5 col-sm-offset-1">
+                     
+                          <label>Facebook</label>
+                       
 
+                      <div class="input-group">
 
+                          <span class="input-group-addon" id="basic-addon1">https://</span>
+                          <input type="text" class="form-control" name="facebook" value="{{$settings->facebook}}" id="exampleInputEmail1" placeholder="Facebook page link?">
+                      </div>
+                  </div>
+                  <div class="col-sm-5 col-sm-offset-1">
+                      <label>Twitter</label>
+                       
+
+                      <div class="input-group">
+
+                          <span class="input-group-addon" id="basic-addon1">https://</span>
+                          <input type="text" class="form-control" name="twitter" id="exampleInputEmail1" value="{{$settings->twitter}}" placeholder="Twitter page link?">
+                      </div>
+                  </div>
+                  <div class="col-sm-5 col-sm-offset-1">
+                      <label>Instagram</label>
+                       
+
+                      <div class="input-group">
+
+                          <span class="input-group-addon" id="basic-addon1">https://</span>
+                          <input type="text" class="form-control" name="instagram" id="exampleInputEmail1" value="{{$settings->instagram}}" placeholder="Instagram page link?">
+                      </div>
+                  </div>
+                  <div class="col-sm-5 col-sm-offset-1">
+                      <div class="form-group">
+                          <label>Whatsapp</label>
+                          <div class="input-group">
+
+                              <span class="input-group-addon" id="basic-addon1">+255</span>
+                          <input type="number" class="form-control" placeholder="XXX XXX XXX" value="{{$settings->linkedin}}" name="linkedin" aria-describedby="basic-addon1">
                           </div>
                       </div>
-
-
-
                   </div>
+
+              </div>
+
 
                     <div class="form-actions">
                       <button type="button" class="btn btn-warning mr-1">
@@ -122,45 +149,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Modal -->
-    <div id="logo-modal" class="modal" role="dialog">
-        <div class="modal-dialog modal-md">
-
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="image-demo" class="img-container overflow-hidden">
-                                <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
-                                
-                            </div>
-
-
-                            
-                            
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-12">
-                          <button type="button" id="crop-image" class="btn btn-info btn-block" id="button">Done</button>
-                      </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
     </div>
   </div>
@@ -222,78 +210,9 @@
 <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
-<script src="{{asset('initial_screen/Croppie/croppie.min.js')}}"></script>
 
 <script>
-  $('#remove-logo').click(function () {
-			$('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
-		});
-		$('.logo-input-button').click(function () {
-			$('#logo-input').click();
-		});
-		var basic = $('#image-demo').croppie({
-			viewport: {
-				// width: 205,
-				// height: 47,
-                width: 205,
-				height: 100,
-				type: 'square',
-				enableOrientation: true,
-				enableExif: true
-               
-			},
-			boundary: {
-				width: 300,
-				height: 300
-
-			},
-
-            
-    
-
-		})
-
-		$("#logo-input").change(function () {
-			readURL(this);
-		});
-
-		function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-
-				reader.onload = function (e) {
-
-					basic.croppie('bind', {
-						url: e.target.result,
-
-					});
-
-				};
-				reader.readAsDataURL(input.files[0]);
-
-				$('#logo-modal').modal('show');
-			}
-		}
-
-
-		$('#crop-image').click(function (params) {
-			basic.croppie('result', {
-				type: 'canvas',
-				size: 'viewport',
-
-			}).then(function (response) {
-				$('#cropped-logo').attr('src', response);
-                $('#remove-logo').removeClass('disabled');
-				$('#logo-modal').modal('hide');
-                $('input[name="logo"]').val(response);
-                console.log();
-			})
-		});
-		$('#rotate').click(function (params) {
-			basic.croppie('rotate', 90);
-
-		})
-
+  
 
 </script>
 @endsection
