@@ -20,6 +20,23 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
 
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
+
+<script>
+    tinymce.init({ 
+selector:'textarea',
+plugins: "lists link image textcolor",
+branding: false,
+height : 200,
+menubar:false,
+statusbar:false,
+toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify link image"	
+
+});
+</script>
+
+
 @endsection
  
 @section('content')
@@ -77,7 +94,7 @@
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
                    
-
+<div class="row">
                   <div class="col-sm-10 col-sm-offset-1">
                       <div class="form-group">
                           <label>About Us</label>
