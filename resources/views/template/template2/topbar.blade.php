@@ -26,7 +26,7 @@
 
                     <section class="map-block">
               
-                    <iframe src="https://www.google.com/maps/embed/v1/place?key={{$maps_api_key}}&q=40.7127837,-74.0059413" width="600" height="288" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="http://maps.google.com/maps?q={{$settings->latitude}},{{$settings->longitude}}&z=15&output=embed" width="530" height="330" frameborder="0" style="border:0"></iframe>
               
               
               

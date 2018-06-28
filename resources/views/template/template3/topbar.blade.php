@@ -5,10 +5,22 @@
                     <ul class="list-unstyled">
                     <li><a href="{{route("start")}}"><i class="icon fa fa-user"></i>Welcome to {{$settings->store_name}} </a></li>
     <li>
-        <a href="#">
-            <i class="icon fa fa-location-arrow"></i>Store Locator</a>
+        <a  data-fancybox data-src="#hidden-content" href="javascript:;">
+            <i class="icon fa fa-location-arrow" ></i>Store Locator</a>
 
     </li>
+
+    <div style="display: none;" id="hidden-content">
+
+            <section class="map-block">
+      
+                    <iframe src="http://maps.google.com/maps?q={{$settings->latitude}},{{$settings->longitude}}&z=15&output=embed" width="530" height="330" frameborder="0" style="border:0"></iframe>
+      
+      
+      
+      
+            </section>
+          </div>
 
 <li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                         <!-- <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
