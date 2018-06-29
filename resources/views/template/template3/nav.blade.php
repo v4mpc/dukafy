@@ -21,11 +21,11 @@
                 
         
                 
-        
+        @if($settings->about)
                     <li class="{{Route::is('about')?"active":""}}  dropdown">
                         <a href="{{route('about')}}">About</a>
                     </li>
-        
+        @endif
                     <li class="{{Route::is('contact')?"active":""}}  dropdown">
                     <a href="{{route('contact')}}">Contact</a>
                     </li>
@@ -33,8 +33,14 @@
                     
                     
                 </ul><!-- /.navbar-nav -->
-                <div class="clearfix"></div>				
+             
+                <div class="clearfix"></div>
+
+              
+               				
             </div><!-- /.nav-outer -->
+
+           
         </div><!-- /.navbar-collapse -->
         
         

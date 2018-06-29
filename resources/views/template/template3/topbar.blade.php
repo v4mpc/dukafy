@@ -23,9 +23,21 @@
           </div>
 
 <li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
-                        <!-- <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
-                        <li><a href="#"><i class="icon fa fa-key"></i>Checkout</a></li>
-                        <li><a href="#"><i class="icon fa fa-sign-in"></i>Login</a></li> -->
+                    @if($settings->facebook)
+                      <li><a href="{{$settings->facebook}}"><i class="icon fa fa-facebook"></i>Facebook</a></li> 
+                      @endif
+                      @if($settings->twitter)
+                        <li><a href="{{$settings->twitter}}"><i class="icon fa fa-twitter"></i>Twitter</a></li>
+                        @endif
+                        @if($settings->instagram)
+        <li><a href="{{$settings->instagram}}"><i class="icon fa fa-instagram"></i>Instagram</a></li>
+                        @endif
+                        @if($settings->linkedin)
+        <li><a href="https://wa.me/255{{$linkedin}}"><i class="icon fa fa-whatsapp"></i>Whatsapp</a></li>
+                        @endif
+                    </ul>
+                    <ul class="list-unstyled pull-right">
+                        
                     </ul>
                 </div><!-- /.cnt-account -->
     

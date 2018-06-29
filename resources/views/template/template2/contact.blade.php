@@ -15,7 +15,7 @@
                     
                                         <div class="vc_row-full-width vc_clearfix"></div>
                                         <div class="vc_row wpb_row vc_row-fluid">
-                                            <div class="contact-form wpb_column vc_column_container vc_col-sm-9 col-sm-9">
+                                            <div class="contact-form wpb_column vc_column_container vc_col-sm-6 col-sm-6">
                     <div class="vc_column-inner ">
                         <div class="wpb_wrapper">
                             <div class="wpb_text_column wpb_content_element ">
@@ -25,10 +25,10 @@
                                 </div>
                             </div>
                             <div lang="en-US" dir="ltr" id="wpcf7-f2507-p2508-o1" class="wpcf7" role="form">
-                                    {{csrf_field()}}
+                                   
                                 <div class="screen-reader-response"></div>
                                 <form class="wpcf7-form" method="post" action="#">
-                
+                                    {{csrf_field()}}
                                     {{-- <div style="display: none;">
                                         <input type="hidden" value="2507" name="_wpcf7">
                                         <input type="hidden" value="4.4.1" name="_wpcf7_version">
@@ -66,10 +66,18 @@
                 </div>
 
                 @if($settings->email!=null||$settings->mobile!=null||$settings->address!=null)
-                                            <div class="store-info wpb_column vc_column_container vc_col-sm-3 col-sm-3">
+                                            <div class="store-info wpb_column vc_column_container vc_col-sm-6 col-sm-6">
                     <div class="vc_column-inner ">
                         <div class="wpb_wrapper">
                             <div class="wpb_text_column wpb_content_element ">
+                                    <div class="wpb_wrapper">
+                                    <div class="inner-left-xs outer-bottom-xs">
+
+                                            {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.593303940039!2d-0.15470444843858283!3d51.53901886611164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ae62edd5771%3A0x27f2d823e2be0249!2sPrincess+Rd%2C+London+NW1+8JR%2C+UK!5e0!3m2!1sen!2s!4v1458827996435" width="600" height="288" style="border:0" allowfullscreen=""></iframe> --}}
+                                            <iframe src="http://maps.google.com/maps?q={{$settings->latitude}},{{$settings->longitude}}&z=15&output=embed" width="600" height="228"  style="border:0" frameborder="0"></iframe>
+
+                                        </div>
+                                    </div>
                                 <div class="wpb_wrapper">
                                     <h2 class="contact-page-title">Our Store</h2>
                                     @if($settings->address!=null)

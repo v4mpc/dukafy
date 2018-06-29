@@ -123,15 +123,21 @@
     <ul class="navbar-wishlist nav navbar-nav pull-right flip">
             @if($settings->facebook!=null)
         <li class="nav-item">
-            <a href="{{$settings->facebook}}" class="nav-link"><i class="fa fa-facebook"></i></i></a>
+            <a href="https://{{$settings->facebook}}" class="nav-link"><i class="fa fa-facebook"></i></i></a>
         </li>
         @endif @if($settings->instagram!=null)
         <li class="nav-item">
-            <a href="{{$settings->instagram}}" class="nav-link"><i class="fa fa-instagram"></i></i></a>
+            <a href="https://{{$settings->instagram}}" class="nav-link"><i class="fa fa-instagram"></i></i></a>
         </li>
         @endif @if($settings->twitter!=null)
         <li class="nav-item">
-            <a href="{{$settings->twitter}}" class="nav-link"><i class="fa fa-twitter"></i></i></a>
+            <a href="https://{{$settings->twitter}}" class="nav-link"><i class="fa fa-twitter"></i></i></a>
+        </li>
+        @endif
+
+        @if($settings->linkedin!=null)
+        <li class="nav-item">
+            <a href="https://wa.me/255{{$linkedin}}" class="nav-link"><i class="fa fa-whatsapp"></i></i></a>
         </li>
         @endif
         

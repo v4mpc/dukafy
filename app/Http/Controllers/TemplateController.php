@@ -135,8 +135,10 @@ if (!count(Setting::all())) {
         if(config('app.settings')->layout=='template2'){
             $body_class="single-product full-width extended";
             return view('template.template2.contact');   
-       }else{
+       }else if(config('app.settings')->layout=='template1'){
         return view('template.template1.contact');    
+       }else if(config('app.settings')->layout=='template3'){
+        return view('template.template3.contact');    
        }
        
      }
@@ -148,8 +150,10 @@ if (!count(Setting::all())) {
         if(config('app.settings')->layout=='template2'){
             $body_class="single-product full-width extended";
             return view('template.template2.about'); 
-       }else{
+       }else if(config('app.settings')->layout=='template1'){
         return view('template.template1.about'); 
+       }else if(config('app.settings')->layout=='template3'){
+        return view('template.template3.about');    
        }
          
      }

@@ -17,18 +17,14 @@
     <div class="container">
 
       <!-- MAP -->
-      {{--
+    
       <section class="map-block margin-bottom-40">
 
-        <div class="map-wrapper" id="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-zoom="13"
-          data-style="0"></div>
-        <div class="markers-wrapper addresses-block"> <a class="marker" data-rel="map-canvas" data-lat="{{$settings->latitude}}" data-lng="{{$settings->longitude}}" data-string="{{$settings->store_name}}"></a>          </div>
+      {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.593303940039!2d-0.15470444843858283!3d51.53901886611164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ae62edd5771%3A0x27f2d823e2be0249!2sPrincess+Rd%2C+London+NW1+8JR%2C+UK!5e0!3m2!1sen!2s!4v1458827996435" width="100%" height="288" style="border:0" allowfullscreen=""></iframe> --}}
+      <iframe src="http://maps.google.com/maps?q={{$settings->latitude}},{{$settings->longitude}}&z=15&output=embed" width="100%" height="450"  style="border:0" frameborder="0"></iframe>
 
 
-
-
-
-      </section> --}}
+      </section> 
 
       <!-- Conatct -->
       <div class="contact">

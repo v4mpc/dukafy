@@ -119,6 +119,9 @@
         @endif @if($settings->twitter!=null)
         <li><a href="https://{{$settings->twitter}}"><i  class="fa fa-twitter white-fonts"></i></a></li>
         @endif
+        @if($settings->linkedin!=null)
+        <li><a href="https://wa.me/255{{$linkedin}}"><i  class="fa fa-whatsapp white-fonts"></i></a></li>
+        @endif
 
 
 
