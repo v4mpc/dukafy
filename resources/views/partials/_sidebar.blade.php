@@ -6,7 +6,11 @@
 
       </li>
 
-    <li class=" nav-item {{Request::is('products')?" open ":" "}}"><a href="{{route('products.index')}}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="nav.dash.main">Products</span></a>
+    <li class=" nav-item {{Request::is('products')?" open ":" "}}"><a href="{{route('products.index')}}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="nav.dash.main">Products</span>
+    @if($product_count)
+    <span class="badge badge badge-info float-right">{{$product_count}}</span>
+    @endif
+    </a>
 
       </li>
       {{--
@@ -14,11 +18,19 @@
 
       </li> --}}
 
-      <li class=" nav-item {{Request::is('orders')?" open ":" "}}"><a href="{{route('orders.index')}}"><i class="ft-package"></i><span class="menu-title" data-i18n="nav.dash.main">Orders</span></a>
+      <li class=" nav-item {{Request::is('orders')?" open ":" "}}"><a href="{{route('orders.index')}}"><i class="ft-package"></i><span class="menu-title" data-i18n="nav.dash.main">Orders</span>
+        @if($order_count)
+        <span class="badge badge badge-info float-right">{{$order_count}}</span>
+        @endif
+      </a>
 
       </li>
 
-      <li class=" nav-item {{Request::is('categories')?" open ":" "}}"><a href="{{route('categories.index')}}"><i class="ft-list"></i><span class="menu-title" data-i18n="nav.dash.main">Categories</span></a>
+      <li class=" nav-item {{Request::is('categories')?" open ":" "}}"><a href="{{route('categories.index')}}"><i class="ft-list"></i><span class="menu-title" data-i18n="nav.dash.main">Categories</span>
+        @if($category_count)
+        <span class="badge badge badge-info float-right">{{$category_count}}</span>
+        @endif
+      </a>
 
       </li>
       {{--
@@ -26,11 +38,20 @@
 
       </li> --}}
 
-      <li class=" nav-item {{Request::is('out_stock')?" open ":" "}}"><a href="{{route('out_stock.index')}}"><i class="ft-log-out"></i><span class="menu-title" data-i18n="nav.dash.main">Out-Stock</span></a>
+      <li class=" nav-item {{Request::is('out_stock')?" open ":" "}}"><a href="{{route('out_stock.index')}}"><i class="ft-log-out"></i><span class="menu-title" data-i18n="nav.dash.main">Out-Stock</span>
+        @if($out_stock_count)
+        <span class="badge badge badge-info float-right">{{$out_stock_count}}</span>
+        @endif
+      </a>
 
       </li>
 
-      <li class=" nav-item {{Request::is('featured')?" open ":" "}}"><a href="{{route('featured.index')}}"><i class="ft-star"></i><span class="menu-title" data-i18n="nav.dash.main">Featured</span></a>
+      <li class=" nav-item {{Request::is('featured')?" open ":" "}}"><a href="{{route('featured.index')}}"><i class="ft-star"></i><span class="menu-title" data-i18n="nav.dash.main">Featured</span>
+        @if($featured_count)
+        <span class="badge badge badge-info float-right">{{$featured_count}}</span>
+        @endif
+
+      </a>
 
       </li>
       {{--

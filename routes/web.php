@@ -106,6 +106,9 @@ Route::post('/add_category','CategoryController@addCategory');
 Route::put('/cancel_order/{id}','OrderController@cancelOrder');
 Route::resource('/preview','PreviewController');
 Route::get('/markOrderAsRead','OrderController@markOrderAsRead');
+Route::get('/go_back',function(){
+    return back();
+})->name('back');
 
 // Route::get('/template/{colour}', function($colour){
 

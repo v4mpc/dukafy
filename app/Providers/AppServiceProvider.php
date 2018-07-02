@@ -9,6 +9,7 @@ use App\Category;
  use App\Preview;
 use App\SliderImage;
 use App\BrandImage;
+use App\Order;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 
@@ -24,9 +25,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         //production
-        $maps_api_key="AIzaSyDF4QoRQKs5jt2XXeREKK8jB0cbrB3dhEw";
+        // $maps_api_key="AIzaSyDF4QoRQKs5jt2XXeREKK8jB0cbrB3dhEw";
         //local
-        // $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
+        $maps_api_key="AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY";
         
         View::share('maps_api_key',$maps_api_key);
         if(count(Setting::all())){
@@ -38,8 +39,17 @@ $start_min_price=Product::min('price');
         $featureds=Product::where('featured','1')->get();
         $on_sales=Product::where('discount','>','1')->get();
         $products=Product::all();
+        $orders=Order::all();
+        $out_stocks=Product::where('out_stock','1')->get();
+
+
+        $product_count=count($products);
+        $featured_count=count($featureds);
+        $out_stock_count=count($out_stocks);
+        $order_count=count($orders);
 
         $categories=Category::all();
+        $category_count=count($categories);
         $settings=Setting::orderBy('id','desc')->first();
         $previews=Preview::orderBy('id','desc')->first();
         config(['app.settings' => $settings]);
@@ -114,6 +124,14 @@ $row_class='';
 
         View::share('start_min_price',$start_min_price);
         View::share('start_max_price',$start_max_price);
+
+
+        View::share('product_count',$product_count);
+        View::share('featured_count',$featured_count);
+        View::share('order_count',$order_count);
+        View::share('category_count',$category_count);
+        View::share('out_stock_count',$out_stock_count);
+        View::share('category_count',$category_count);
 
         
     }

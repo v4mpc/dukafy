@@ -24,9 +24,9 @@
         <div class="row breadcrumbs-top d-inline-block">
           <div class="breadcrumb-wrapper col-12">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index-2.html">Home</a>
+              <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a>
               </li>
-              <li class="breadcrumb-item"><a href="#">Orders</a>
+            <li class="breadcrumb-item"><a href="{{route('orders.index')}}">Orders</a>
               </li>
               <li class="breadcrumb-item"><a href="#">Details</a>
               </li>
@@ -113,7 +113,7 @@
 
                           <th>Cost (TZS)</th>
 
-                          <th></th>
+                          {{-- <th></th> --}}
                         </tr>
                       </thead>
                       <tbody>
@@ -131,11 +131,11 @@
                           <td>{{number_format($product->price)}}</td>
 
                           <td>{{number_format($product->pivot->quantity*$product->price)}}</td>
-                          <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail"
+                          {{-- <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail"
                               data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
 
 
-                          </td>
+                          </td> --}}
                         </tr>
 
                         @endforeach

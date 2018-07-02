@@ -20,6 +20,26 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
 
+<style>
+
+   #geocomplete { width: 100px}
+
+.map_canvas { 
+  width: 550px; 
+  height: 400px; 
+  margin: 10px 20px 10px 0;
+}
+
+.pac-container {
+    z-index: 1051 !important;
+}
+
+
+.mce-notification-inner{
+    display:none;
+}
+</style>
+
 @endsection
  
 @section('content')
@@ -88,7 +108,7 @@
                       </div>
                       <div class="col-sm-5 col-sm-offset-1">
                           <div class="form-group">
-                              <label>Working Hours </label><span> <i class="ti-info-alt" data-toggle="tooltip" data-placement="right" title="e.g 9 AM to 9PM (Thursday's closed)"></i></span>
+                              <label>Working Hours </label><span> <i class="ft-info" data-toggle="tooltip" data-placement="right" title="e.g 9 AM to 9PM (Thursday's closed)"></i></span>
                               <input type="text" class="form-control" name="working_hours" id="exampleInputEmail1" value="{{$settings->working_hours}}" placeholder="When is your store opened?">
                           </div>
                       </div>
@@ -153,11 +173,85 @@
             </div>
           </div>
         </div>
+        <div id="location-modal" class="modal" role="dialog">
+          <div class="modal-dialog modal-lg">
+  
+  
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+  
+
+                    <h4 class="modal-title">Locate Your Business</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     
+  
+                  </div>
+                  <div class="modal-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="form-group">
+                                          <label>Location</label>
+                                          {{-- <form> --}}
+                                              <input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="" placeholder="Start Typing...">
+                                          {{-- <p id="see">Click me</p> --}}
+                                          {{-- </form> --}}
+                                          
+  
+                                      </div>
+                                  </div>
+  
+                              </div>
+                              <hr>
+                              {{-- <div class="row">
+                                  <div id="somecomponent" style="width: 590px; height: 400px;"></div>
+                              </div> --}}
+  
+                              <div class="map_canvas" ></div>
+  
+  
+                              {{-- <form> --}}
+                                      {{-- <input id="geocomplete" type="text" placeholder="Type in an address" value="Dar es Salaam,Tanzania" /> --}}
+                                      {{-- <input id="find" type="button" value="find" /> --}}
+                                      
+                                      {{-- <fieldset>
+                                        <label>Latitude</label>
+                                        <input name="lat" type="text" value="">
+                                      
+                                        <label>Longitude</label>
+                                        <input name="lng" type="text" value="">
+                                      
+                                        <label>Formatted Address</label>
+                                        <input name="formatted_address" type="text" value="">
+                                      </fieldset>
+                                      
+                                      <a id="reset" href="#" style="display:none;">Reset Marker</a>
+                                    </form> --}}
+                              <hr>
+  
+                              <button type="button" id="located" class="btn btn-info pull-right" id="button">Done</button>
+  
+                          </div>
+  
+  
+                      </div>
+                  </div>
+  
+              </div>
+  
+          </div>
+      </div>
       </section>
+     
+     
 
     </div>
   </div>
 </div>
+
+
 @endsection
 
 
@@ -215,9 +309,82 @@
 <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
-
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?key={{$maps_api_key}}&sensor=false&libraries=places'></script>
+<script src="{{asset('initial_screen/js/jquery.geocomplete.min.js')}}"></script>
 <script>
   
 
+$('.location_trigger').focus(function(params) {
+
+//      $('#somecomponent').locationpicker({
+
+// location: {
+//            latitude:-6.792354,
+//            longitude:39.208328
+//        },
+//        radius: 300,
+//        inputBinding: {
+//            latitudeInput: $('#lat'),
+//            longitudeInput: $('#lon'),
+//            radiusInput: $('#us2-radius'),
+//            locationNameInput: $('.location_trigger')
+//        }
+
+
+// });
+    
+    $('#location-modal').modal('show');
+});
+
+$('#located').click(function(params) {
+
+      $('#location-modal').modal('hide');
+    
+});
+
 </script>
+
+
+<script>
+        $(function(){
+          $("#geocomplete").geocomplete({
+            map: ".map_canvas",
+            details: "form ",
+            location: "Dar es Salaam, Tanzania",
+            markerOptions: {
+              draggable: true,
+              zoom:60
+            }
+
+            
+          });
+          
+          $("#geocomplete").bind("geocode:dragged", function(event, latLng){
+            // $("input[name=lat]").val(latLng.lat());
+            // $("input[name=lng]").val(latLng.lng());
+
+             $("#lat").val(latLng.lat());
+            $("#lon").val(latLng.lng());
+
+            console.log('longitude: '+$('#lon').val()+' latitude: '+$('#lat').val())
+            $("#reset").show();
+          });
+          
+          
+          $("#reset").click(function(){
+            $("#geocomplete").geocomplete("resetMarker");
+            $("#reset").hide();
+            return false;
+          });
+          
+          $("#see").click(function(){
+           
+            console.log('longitude: '+$('#lon').val()+' latitude: '+$('#lat').val())
+          });
+
+          $("#find").click(function(){
+            $("#geocomplete").trigger("geocode");
+          }).click();
+        });
+      </script>
 @endsection

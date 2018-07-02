@@ -178,13 +178,32 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
         }
   
         if($request->about){
-        $setting->mobile=$request->mobile;
-        $setting->facebook=$request->facebook;
-        $setting->twitter=$request->twitter;
-        $setting->instagram=$request->instagram;
+        
+       
         $setting->about=$request->about;
+       
+
         }
 
+        if($request->mobile){
+            $setting->mobile=$request->mobile;
+        }
+
+        if($request->facebook){
+            $setting->facebook=$request->facebook;
+        }
+
+        if($request->twitter){
+            $setting->twitter=$request->twitter;
+        }
+
+        if($request->instagram){
+            $setting->instagram=$request->instagram;
+        }
+
+        if( $request->linkedin){
+            $setting->linkedin=$request->linkedin; 
+        }
         if($request->layout){
         $setting->layout=$request->layout;
         $setting->colour=$request->colour;

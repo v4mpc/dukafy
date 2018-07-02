@@ -98,7 +98,7 @@ toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline
                   <div class="col-sm-10 col-sm-offset-1">
                       <div class="form-group">
                           <label>About Us</label>
-                          <textarea class="form-control" placeholder="" name="about" rows="9">{!!$settings->about_us!!}</textarea>
+                          <textarea class="form-control" placeholder="" name="about" rows="9">{!!$settings->about!!}</textarea>
                       </div>
                   </div>
 

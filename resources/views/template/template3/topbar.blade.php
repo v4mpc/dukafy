@@ -76,10 +76,10 @@
                 {{csrf_field()}}
             <div class="control-group">
     
-                <ul class="categories-filter animate-dropdown">
+                {{-- <ul class="categories-filter animate-dropdown">
                     <li class="dropdown">
     
-                        <a class="dropdown-toggle"  data-toggle="dropdown" href="#.">Categories <b class="caret"></b></a>
+                        <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Categories <b class="caret"></b></a>
     
                         <ul class="dropdown-menu" role="menu" >
                                 <option value="all">All Categories</option>
@@ -88,7 +88,7 @@
                                 @endif @endforeach
                         </ul>
                     </li>
-                </ul>
+                </ul> --}}
     
                 <input class="search-field" placeholder="Search here..." />
     

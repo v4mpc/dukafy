@@ -4,7 +4,7 @@
 <div class="body-content outer-top-bd">
         <div class="container">
             <div class="row inner-bottom-sm">
-                {{$settings->about}}
+                {!!$settings->about!!}
             </div>
         </div>
 </div>

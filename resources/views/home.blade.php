@@ -132,7 +132,7 @@
         <div class="col-xl-4 col-lg-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title"></h4>
+              <h4 class="card-title">Top Most Sold Products</h4>
               <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
               <div class="heading-elements">
                 <ul class="list-inline mb-0">
@@ -148,7 +148,7 @@
                       <tr>
                         <th class="border-top-0">Product</th>
                         <th class="border-top-0">Customers</th>
-                        <th class="border-top-0">Total(TZS)</th>
+                        {{-- <th class="border-top-0">Total(TZS)</th> --}}
                       </tr>
                     </thead>
                     <tbody>
@@ -158,11 +158,11 @@
                         <td class="text-truncate p-1">
                           {{count($product->orders)}}
                         </td>
-                        <td class="text-truncate">
+                        {{-- <td class="text-truncate">
 
                           @php $sum=0; foreach ($product->orders as $order) { $sum+=$order->totalCost(); } echo number_format($sum); 
 @endphp
-                        </td>
+                        </td> --}}
                       </tr>
 
                       @endforeach

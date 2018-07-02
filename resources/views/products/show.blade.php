@@ -167,7 +167,7 @@
                             <span class="badge badge-danger">Invisible</span> @endif
 
                           </li>
-                          <h4>Discount:<strong>{{number_format(round(($product->price*$product->discount)/100))}}<span class="badge badge-danger"> -{{ $product->discount}}%</span></strong></h4>
+                          <h4>Discount: <strong>{{number_format(round(($product->price*$product->discount)/100))}} TZS <span class="badge badge-danger"> -{{ $product->discount}}%</span></strong></h4>
                         </h4>
                         <li></li>
                         <h4>
@@ -185,7 +185,12 @@
                       <div class="form-group">
                         {{-- <a href="{{route('products.edit',$product->id)}}" data-toggle="tooltip" data-original-title="Edit"
                           data-placement="top" class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>                        --}}
+                          @if($product->out_stock!=1)
                         <a data-toggle="tooltip" data-original-title="Out-Stock" data-id="{{$product->id}}" data-placement="top" class="btn btn-outline-warning btn-sm edit-item-btn make-out-stock"><i class="ft-log-out"></i></a>
+                        @endif
+                        @if($product->featured!=1)
+                        <a data-toggle="tooltip" data-original-title="Featured" data-id="{{$product->id}}" data-placement="top" class="btn btn-outline-info btn-sm edit-item-btn confirm-featured"><i class="ft-star"></i></a>
+                        @endif
                         <a data-toggle="tooltip" data-id="{{$product->id}}" data-url="/manage/products/" data-original-title="Delete" data-placement="top"
                           class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                       </div>

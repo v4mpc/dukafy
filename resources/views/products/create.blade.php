@@ -113,7 +113,7 @@
                             <div class="col-md-7">
                               <fieldset>
                                 <div class="input-group">
-                                  <input type="text" name="price" id="price" class="form-control" value="{{old('price')}}" placeholder="Enter Price then Toggle Show Price"
+                                  <input type="number" name="price" id="price" class="form-control" value="{{old('price')}}" placeholder="Enter Price then Toggle Show Price"
                                     aria-describedby="radio-addon4">
                                   <div class="input-group-append">
                                     <span class="input-group-text" id="radio-addon4">
@@ -250,9 +250,9 @@
 
 
                         <div class="form-actions">
-                          <button type="button" class="btn btn-warning mr-1">
+                        <a href="{{route('back')}}"  class="btn btn-warning">
                               <i class="ft-x"></i> Cancel
-                            </button>
+                            </a>
                           <button type="submit" class="btn btn-primary">
                               <i class="ft-save"></i> Save
                             </button>
