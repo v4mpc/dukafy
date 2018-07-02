@@ -73,6 +73,7 @@
                         <th>Category</th>
                         {{--
                         <th>Sub-category</th> --}}
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Price (TZS)</th>
                         <th></th>
@@ -85,8 +86,20 @@
                       <tr>
                         <td>{{$product->name}}</td>
                         <td>{{$product->category->name}}</td>
+                        <td>
+
+                          @if($product->out_stock==1)
+                          <span class="badge badge badge-danger">Out stock</span>
+                          @else
+                          <span class="badge badge badge-success">Available</span>
+                          @endif
+                        </td>
+                       
                         {{--
                         <td>{{$product->subCategory->name}}</td> --}}
+                        {{-- <td>Status</td> --}}
+
+                        <td></td>
                         <td>
                           <div width="300" height="300">
                             <img src="{{asset('images/'.$product->images[0]->image)}}" width="90" height="auto" alt="">
@@ -98,8 +111,16 @@
                         <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail"
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>                          {{-- <a href="{{route('products.edit',$product->id)}}" data-toggle="tooltip" data-original-title="Edit"
                             data-placement="top" class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-edit"></i></a>                          --}}
-                          <a data-toggle="tooltip" data-original-title="Featured" data-id="{{$product->id}}" data-placement="top" class="btn btn-outline-info btn-sm edit-item-btn confirm-featured"><i class="ft-star"></i></a>
+                            @if($product->featured!=1)
+                          <a data-toggle="tooltip" data-original-title="Featured" data-id="{{$product->id}}" data-placement="top"  class="btn btn-outline-info btn-sm edit-item-btn confirm-featured" ><i class="ft-star"></i></a>
+                          @else
+                          <a data-toggle="tooltip" data-original-title="Unfeature" data-id="{{$product->id}}" data-placement="top"  class="btn btn-outline-info btn-sm edit-item-btn active remove-featured" ><i class="ft-star"></i></a>
+                          @endif
+                          @if($product->out_stock!=1)
                           <a data-toggle="tooltip" data-original-title="Out-Stock" data-id="{{$product->id}}" data-placement="top" class="btn btn-outline-warning btn-sm edit-item-btn make-out-stock"><i class="ft-log-out"></i></a>
+                          @else
+                          <a data-toggle="tooltip" data-id="{{$product->id}}" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning btn-sm active edit-item-btn stock-in"><i class="ft-log-in"></i></a>
+                          @endif
                           <a data-toggle="tooltip" data-id="{{$product->id}}" data-url="/manage/products/" data-original-title="Delete" data-placement="top"
                             class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>
                         </td>

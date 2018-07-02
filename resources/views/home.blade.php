@@ -154,7 +154,12 @@
                     <tbody>
                       @foreach($products_sold as $product)
                       <tr>
+                        @if(strlen($product->name)>=7)
+                      <td class="text-truncate" title="{{$product->name}}">{{substr($product->name,0,4)}}...</td>
+                        @else
                         <td class="text-truncate">{{$product->name}}</td>
+                        @endif
+            
                         <td class="text-truncate p-1">
                           {{count($product->orders)}}
                         </td>
