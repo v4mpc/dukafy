@@ -142,7 +142,7 @@ toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline
                           <div class="input-group">
 
                               <span class="input-group-addon" id="basic-addon1">+255</span>
-                          <input type="number" class="form-control" placeholder="XXX XXX XXX" value="{{$settings->linkedin}}" name="linkedin" aria-describedby="basic-addon1">
+                          <input type="number" class="form-control" placeholder="XXX XXX XXX" value="{{$settings->whatsapp}}" name="whatsapp" aria-describedby="basic-addon1">
                           </div>
                       </div>
                   </div>

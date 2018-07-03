@@ -134,7 +134,7 @@
                       <div class="col-sm-5 col-sm-offset-1">
                           <div class="form-group">
                               <label>Location</label>
-                              <input type="text" class="form-control location_trigger" name="formatted_address" placeholder="where should your customer reach you?">
+                          <input type="text" class="form-control location_trigger" value="{{$settings->location_name}}" name="formatted_address" placeholder="where should your customer reach you?">
                           </div>
                       </div>
                       {{-- <form > --}}
@@ -195,7 +195,7 @@
                                       <div class="form-group">
                                           <label>Location</label>
                                           {{-- <form> --}}
-                                              <input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="" placeholder="Start Typing...">
+                                          <input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="{{$settings->location_name}}" placeholder="Start Typing...">
                                           {{-- <p id="see">Click me</p> --}}
                                           {{-- </form> --}}
                                           

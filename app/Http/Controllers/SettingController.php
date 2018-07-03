@@ -201,8 +201,8 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
             $setting->instagram=$request->instagram;
         }
 
-        if( $request->linkedin){
-            $setting->linkedin=$request->linkedin; 
+        if( $request->whatsapp){
+            $setting->whatsapp=$request->whatsapp; 
         }
         if($request->layout){
         $setting->layout=$request->layout;

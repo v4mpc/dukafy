@@ -86,14 +86,14 @@
                         <p>Use <code>className: "btn-warning"</code> option to change the background color of the "Confirm"-button.</p>
                         <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-2" id="confirm-color">Confirm Button Color</button>
                       </div> --}} @foreach($orders as $order)
-                      <tr>
+                    <tr>
                         <td>{{$order->id}}</td>
                         <td>{{$order->customer->first_name}}</td>
                         {{-- <td>{{count($order->products)}}</td> --}}
                         
                         <td>
 
-                          @if ($order->status==='Completed')<span class="badge badge-default badge-success">Completed</span>                          @elseif($order->status==='Pending')<span class="badge badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
+                        @if ($order->status==='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status==='Pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
 
 
                         </td>
@@ -102,8 +102,9 @@
 
                         <td><a href="{{route('orders.show',$order->id)}}" data-toggle="tooltip" data-original-title="Detail"
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
-
-                          <a data-toggle="tooltip" data-original-title="Cancel" data-id="{{$order->id}}" data-placement="top" class="btn btn-outline-danger btn-sm edit-item-btn cancel-order"><i class="ft-x"></i></a>
+                            @if($order->status!='Cancelled')
+                          <a data-toggle="tooltip" id="cancel-{{$order->id}}" data-original-title="Cancel" data-id="{{$order->id}}" data-placement="top" class="btn  btn-outline-danger btn-sm edit-item-btn cancel-order"><i class="ft-x"></i></a>
+                          @endif
                         </td>
                       </tr>
                       @endforeach

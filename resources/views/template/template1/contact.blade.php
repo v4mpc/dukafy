@@ -78,7 +78,7 @@
                     @endif @if($settings->mobile!=null)
                     <h6>Phone:</h6>
 
-                    <p>+255{{$settings->mobile}}</p>
+                    <p>+255 {{number_format($settings->mobile)}}</p>
                     @endif @if($settings->email!=null)
                     <h6>Email:</h6>
 

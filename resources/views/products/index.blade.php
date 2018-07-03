@@ -99,7 +99,7 @@
                         <td>{{$product->subCategory->name}}</td> --}}
                         {{-- <td>Status</td> --}}
 
-                        <td></td>
+                        {{-- <td></td> --}}
                         <td>
                           <div width="300" height="300">
                             <img src="{{asset('images/'.$product->images[0]->image)}}" width="90" height="auto" alt="">
