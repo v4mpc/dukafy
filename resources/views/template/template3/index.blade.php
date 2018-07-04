@@ -89,6 +89,11 @@
                                 <button class="btn btn-primary" type="button" >Add to cart</button>
                                                         
                             </li>
+                            <li class="lnk wishlist">
+                                <a class="add-to-cart" href="indexbd17.html?page=detail" title="Wishlist">
+                                     <i class="icon fa fa-heart"></i>
+                                </a>
+                            </li>
                            
                         </ul>
                     </div><!-- /.action -->

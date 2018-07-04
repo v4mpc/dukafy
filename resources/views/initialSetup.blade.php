@@ -151,7 +151,77 @@
     background-color:#12cca7;
     border-color:#12cca7;
 
+
+
+
+    
+
   
+}
+
+
+
+.vertical-divider {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 50%;
+  line-height: 0;
+  text-align:center;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.vertical-divider:before, 
+.vertical-divider:after {
+  position: absolute;
+  left: 50%;
+  content: '';
+  z-index: 9;
+  border-left: 1px solid rgba(34,36,38,.15);
+  border-right: 1px solid rgba(255,255,255,.1);
+  width: 0;
+  height: calc(100% - 1rem);
+}
+
+.row-divided > .vertical-divider {
+  height: calc(50% - 1rem);    
+}
+
+.vertical-divider:before {
+  top: -100%;
+}
+
+.vertical-divider:after {
+  top: auto;
+  bottom: 0;
+}
+
+.row-divided {
+  position:relative;
+}
+
+.row-divided > [class^="col-"],
+.row-divided > [class*=" col-"] {
+  padding-left: 30px;  /* gutter width (give a little extra room) 2x default */
+  padding-right: 30px; /* gutter width (give a little extra room) 2x default */
+}
+
+
+
+
+/* just to set different column heights - not needed to function */          
+.column-one {
+  height: 300px; 
+  background-color: #EBFFF9;
+}
+.column-two {
+  height: 400px;
+  background-color: #F7F3FF;
 }
 
 
@@ -568,7 +638,7 @@
 
                                     </div>
                                     <div class="tab-pane" id="slider">
-                                        <div class="row" align="center">
+                                        {{-- <div class="row" align="center">
                                             <div class="col-sm-4 col-sm-offset-4">
                                                 <div class="form-group">
                                                         <h5 class="info-text"> Upload Your Logo</h5>
@@ -593,6 +663,33 @@
 
 
 
+                                        </div> --}}
+                                        <h5 class="info-text"> Upload Your Logo</h5>
+                                        <div class="row row-divided">
+                                            <div class="col-xs-6 column-one">
+                                                <h4>Logo</h4>
+                                                <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
+                                                    <input type="file" id="logo-input" style="display: none;">
+                                                    <input type="hidden" name="logo">
+                                                    <br>
+                                                    <br>
+                                                   
+
+                                                    <button type="button" id="logo-input-button" class="btn btn-primary logo-input-button">
+															Upload
+														</button>
+                                                    <button type="button" id="remove-logo" class="btn btn-danger disabled">
+															Remove
+														</button>
+                                            </div>
+                                              <div class="vertical-divider">or</div>
+                                            <div class="col-xs-6 column-two">
+                                                <h4>Logo Text</h4>
+                                                <div class="form-group">
+                                                    {{-- <label>Logo Text</label> --}}
+                                                    <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder=" Text to Display as logo">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="slider-images">

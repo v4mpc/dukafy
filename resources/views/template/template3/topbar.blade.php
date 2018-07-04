@@ -32,8 +32,8 @@
                         @if($settings->instagram)
         <li><a href="{{$settings->instagram}}"><i class="icon fa fa-instagram"></i>Instagram</a></li>
                         @endif
-                        @if($settings->linkedin)
-        <li><a href="https://wa.me/255{{$linkedin}}"><i class="icon fa fa-whatsapp"></i>Whatsapp</a></li>
+                        @if($settings->whatsapp)
+        <li><a href="https://wa.me/255{{$settings->whatsapp}}"><i class="icon fa fa-whatsapp"></i>Whatsapp</a></li>
                         @endif
                     </ul>
                     <ul class="list-unstyled pull-right">

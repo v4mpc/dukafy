@@ -42,6 +42,14 @@
     visibility:hidden;
     }
 
+    .badge-sidebar{
+        background-color:#fff;
+    }
+
+    .badges{
+        color: #000;
+    }
+
 
 .btn-yellow,
 .btn-yellow:hover,

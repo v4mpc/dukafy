@@ -135,9 +135,9 @@
         </li>
         @endif
 
-        @if($settings->linkedin!=null)
+        @if($settings->whatsapp!=null)
         <li class="nav-item">
-            <a href="https://wa.me/255{{$linkedin}}" class="nav-link"><i class="fa fa-whatsapp"></i></i></a>
+            <a href="https://wa.me/255{{$settings->whatsapp}}" class="nav-link"><i class="fa fa-whatsapp"></i></i></a>
         </li>
         @endif
         

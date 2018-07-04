@@ -35,7 +35,7 @@ class HomeController extends Controller
 
             $products_sold=Product::has('orders')->get();
             $available_products=Product::where('out_stock',0)->get();
-            $orders=Order::orderBy('created_at','desc')->take(5)->get();
+            $orders=Order::where('status','Completed')->orderBy('created_at','desc')->take(5)->get();
             $outstock=Product::where('out_stock',1)->get();
     
             $total_sales=0;

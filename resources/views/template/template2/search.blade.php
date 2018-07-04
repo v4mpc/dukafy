@@ -97,7 +97,16 @@
                                     </span>
                                     <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
                                 </div><!-- /.price-add-to-cart -->
-        
+                                @if($settings->whatsapp)
+                                <div class="hover-area">
+                                    <div class="action-buttons">
+                        
+                                    <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
+                        
+                                        
+                                    </div>
+                                </div>
+                                @endif
               
                             </div><!-- /.product-inner -->
                         </div><!-- /.product-outer -->
@@ -146,6 +155,17 @@
                                     </span>
                                     <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
                                 </div><!-- /.price-add-to-cart -->
+
+                                @if($settings->whatsapp)
+                                <div class="hover-area">
+                                    <div class="action-buttons">
+                        
+                                    <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
+                        
+                                        
+                                    </div>
+                                </div>
+                                @endif
                    
                             </div><!-- /.product-inner -->
                         </div><!-- /.product-outer -->

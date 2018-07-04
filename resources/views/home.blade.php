@@ -154,8 +154,8 @@
                     <tbody>
                       @foreach($products_sold as $product)
                       <tr>
-                        @if(strlen($product->name)>=7)
-                      <td class="text-truncate" title="{{$product->name}}">{{substr($product->name,0,4)}}...</td>
+                        @if(strlen($product->name)>=10)
+                      <td class="text-truncate" title="{{$product->name}}">{{substr($product->name,0,7)}}...</td>
                         @else
                         <td class="text-truncate">{{$product->name}}</td>
                         @endif
