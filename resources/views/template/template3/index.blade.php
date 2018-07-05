@@ -20,7 +20,7 @@
 </div>
         
 <!-- ========================================= SECTION – HERO : END ========================================= -->	
-<div class="wide-banners wow fadeInUp outer-bottom-vs">
+{{-- <div class="wide-banners wow fadeInUp outer-bottom-vs">
         <div class="row">
     
             <div class="col-md-7">
@@ -39,7 +39,7 @@
     
     
         </div><!-- /.row -->
-    </div><!-- /.wide-banners -->
+    </div><!-- /.wide-banners --> --}}
 </div>
     <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
     @if(count($featureds))
@@ -89,9 +89,9 @@
                                 <button class="btn btn-primary" type="button" >Add to cart</button>
                                                         
                             </li>
-                            <li class="lnk wishlist">
-                                <a class="add-to-cart" href="indexbd17.html?page=detail" title="Wishlist">
-                                     <i class="icon fa fa-heart"></i>
+                            <li>
+                                <a class="add-to-cart" href="indexbd17.html?page=detail" title="Inquire this Product">
+                                     <i class="fa fa-whatsappp" style="font-size:15px;color:green;"></i>
                                 </a>
                             </li>
                            

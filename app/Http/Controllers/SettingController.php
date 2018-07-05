@@ -167,6 +167,7 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
      */
     public function update(Request $request, Setting $setting)
     {
+        // abort(404,'usdf');
         
         if($request->store_name){
         $setting->store_name=$request->store_name;
@@ -187,6 +188,10 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
 
         if($request->mobile){
             $setting->mobile=$request->mobile;
+        }
+
+        if($request->logo_text){
+            $setting->logo_text=$request->logo_text;
         }
 
         if($request->facebook){

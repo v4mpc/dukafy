@@ -82,6 +82,7 @@
                                     <h2 class="contact-page-title">Our Store</h2>
                                     @if($settings->address!=null)
                                <h3>Address:</h3> <address>P O BOX {{$settings->address}}</address>
+                                <p>{{$settings->location_name}}</p>
                                 <h3>Phone: </h3>
                                 @endif @if($settings->mobile!=null)
                                 <p>+255{{$settings->mobile}}</p>

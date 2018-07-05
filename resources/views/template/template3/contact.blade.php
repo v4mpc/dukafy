@@ -56,6 +56,7 @@
 	<div class="clearfix address">
 		<span class="contact-i"><i class="fa fa-map-marker"></i></span>
 		<span class="contact-span">P O BOX {{$settings->address}}</span>
+	<p>{{$settings->location_name}}</p>
     </div>
     @endif
     @if($settings->mobile!=null)

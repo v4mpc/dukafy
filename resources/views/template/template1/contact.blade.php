@@ -75,6 +75,7 @@
                     <h6>Address:</h6>
 
                     <p>P O BOX {{$settings->address}}</p>
+                    <p>{{$settings->location_name}}</p>
                     @endif @if($settings->mobile!=null)
                     <h6>Phone:</h6>
 

@@ -14,7 +14,10 @@ $(document).ready(function() {
 *       js of zero configuration        *
 ****************************************/
 
-$('.zero-configuration').DataTable();
+$('.zero-configuration').DataTable({
+
+    "ordering": false
+});
 
 /**************************************
 *       js of default ordering        *
@@ -110,6 +113,5 @@ $('.comma-decimal-place').DataTable( {
         "thousands": "."
     }
 } );
-
 
 });

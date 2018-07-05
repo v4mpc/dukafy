@@ -81,11 +81,13 @@
                         <div class="col-sm-4">
                             <div class="form-group" align="center">
                         
+                                
                                 <div id="loader" class="loader hidden"></div>
 
                                 <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
                                         data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
-                                    <div>
+                                    <hr>
+                                        <div>
                                         <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active">
                                           @if($settings->colour=="navy")
                                           <i class="ft-check"></i>
@@ -130,7 +132,8 @@
 
                                     <div id="template-buttons"><a id="img-link-2" href="{{asset('template2/previews/yellow/1.png')}}" data-fancybox="yellow-preview"
                                             data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-2" src="{{asset('template2/previews/yellow/1.png')}}" alt="..." class="img-thumbnail"></a>
-                                        <div>
+                                            <hr>
+                                            <div>
                                             <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="black" title="Black" class="btn btn-black colour">
                                               @if($settings->colour=="black")
                                           <i class="ft-check"></i>
@@ -164,7 +167,8 @@
 
                                     <div id="template-buttons"><a id="img-link-3" href="{{asset('template3/previews/dark_green/1.png')}}" data-fancybox="dark_green-preview"
                                             data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-3" src="{{asset('template3/previews/dark_green/1.png')}}" alt="..." class="img-thumbnail"></a>
-                                        <div>
+                                        <hr>
+                                            <div>
                                             <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="dark_green" title="Dark Green" class="btn btn-dark_green colour ">
                                               @if($settings->colour=="dark_green")
                                           <i class="ft-check"></i>

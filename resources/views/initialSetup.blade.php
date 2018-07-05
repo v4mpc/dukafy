@@ -217,11 +217,11 @@
 /* just to set different column heights - not needed to function */          
 .column-one {
   height: 300px; 
-  background-color: #EBFFF9;
+  /* background-color: #EBFFF9; */
 }
 .column-two {
   height: 400px;
-  background-color: #F7F3FF;
+  /* background-color: #F7F3FF; */
 }
 
 
@@ -665,10 +665,10 @@
 
                                         </div> --}}
                                         <h5 class="info-text"> Upload Your Logo</h5>
-                                        <div class="row row-divided">
+                                        <div class="row row-divided" align="center">
                                             <div class="col-xs-6 column-one">
                                                 <h4>Logo</h4>
-                                                <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
+                                                <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" width="200" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="logo-input" style="display: none;">
                                                     <input type="hidden" name="logo">
                                                     <br>
@@ -687,7 +687,7 @@
                                                 <h4>Logo Text</h4>
                                                 <div class="form-group">
                                                     {{-- <label>Logo Text</label> --}}
-                                                    <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder=" Text to Display as logo">
+                                                    <input type="text" class="form-control" name="logo_text" id="exampleInputEmail1" maxlength="8" title="maximum 8 character" placeholder=" Text to Display as logo">
                                                 </div>
                                             </div>
                                         </div>

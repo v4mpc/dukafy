@@ -23,7 +23,7 @@
             <li><a href="{{route('about')}}">About Us </a></li>
 
             @if(count($settings->mobile)!=null)
-            <li><i class="fa fa-phone"></i> <strong>Hotline:</strong>+255{{$settings->mobile}}</span>
+            <li><i class="fa fa-phone"></i> <strong>Hotline:</strong>+255 {{number_format($settings->mobile)}}</span>
             </li>
             @endif
           </ul>
@@ -60,6 +60,11 @@
       <div class="container">
         @if($settings->logo!=null)
         <div class="logo"> <a href="{{route('start')}}"><img src="{{asset('images/'.$settings->logo)}}" alt="" ></a> </div>
+      @elseif($settings->logo_text!=null)
+      <div class="logo"><h2 color="{{$colour_code}}">{{$settings->logo_text}}</h2></div>
+        @else
+       
+
         @endif
         <form action="{{route('search')}}" method="GET" style="display:inline!important;">
           {{csrf_field()}}
