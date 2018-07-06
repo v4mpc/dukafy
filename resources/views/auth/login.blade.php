@@ -9,6 +9,13 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/menu/menu-types/vertical-menu-modern.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/pages/login-register.min.css')}}">
+<style>
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+</style>
 @endsection
  
 @section('content')
@@ -24,8 +31,7 @@
               <div class="card-header border-0">
                 <div class="card-title text-center">
                   <div class="p-1">
-                    {{-- <img src="../../../app-assets/images/logo/logo-dark.png" alt="branding logo"> --}} System logo goes
-                    here
+                  <img src="{{asset('images/logo2.png')}}" class="responsive"  lt="branding logo"> 
                   </div>
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
@@ -58,7 +64,7 @@
                       </div>
                       <div class="col-md-6 col-12 text-center text-md-right"><a href="{{route('password.request')}}" class="card-link">Forgot Password?</a></div>
                     </div>
-                    <button type="submit" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> Login</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block"><i class="ft-unlock"></i> Login</button>
                   </form>
                 </div>
               </div>

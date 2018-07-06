@@ -37,7 +37,8 @@
                 <img src="{{is_null(Auth::user()->image)?asset('images/userplaceholder.png'):asset('images/'.Auth::user()->image)}}" alt="avatar"><i></i></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="{{route('users.edit',Auth::id())}}"><i class="ft-user"></i> Edit Profile</a>             
+              <a class="dropdown-item" href="{{route('users.edit',Auth::id())}}"><i class="ft-user"></i> Edit Profile</a>
+              <a class="dropdown-item" href="{{route('change.password',Auth::id())}}"><i class="ft-lock"></i> Change Password</a>                          
 
               <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();"><i class="ft-power"></i> Logout

@@ -216,11 +216,11 @@
 
 /* just to set different column heights - not needed to function */          
 .column-one {
-  height: 300px; 
+  /* height: 300px;  */
   /* background-color: #EBFFF9; */
 }
 .column-two {
-  height: 400px;
+  /* height: 400px; */
   /* background-color: #F7F3FF; */
 }
 
@@ -446,6 +446,7 @@
 
                                                     <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
                                                             data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                            <hr>
                                                         <div>
                                                             <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
                                                             <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
@@ -466,6 +467,7 @@
     
                                                         <div id="template-buttons"><a id="img-link-2" href="{{asset('template2/previews/yellow/1.png')}}" data-fancybox="yellow-preview"
                                                                 data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-2" src="{{asset('template2/previews/yellow/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                                <hr>
                                                             <div>
                                                                 <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="black" title="Black" class="btn btn-black colour"></button>
                                                                 <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="pink" title="Pink" class="btn btn-pink colour"></button>
@@ -488,6 +490,7 @@
     
                                                         <div id="template-buttons"><a id="img-link-3" href="{{asset('template3/previews/dark_green/1.png')}}" data-fancybox="dark_green-preview"
                                                                 data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-3" src="{{asset('template3/previews/dark_green/1.png')}}" alt="..." class="img-thumbnail"></a>
+                                                                <hr>
                                                             <div>
                                                                 <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="dark_green" title="Dark Green" class="btn btn-dark_green colour "></button>
                                                                 <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="red" title="Red" class="btn btn-red colour "></button>

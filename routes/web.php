@@ -83,6 +83,9 @@ Route::resource('/out_stock', 'OutStockController');
 Route::resource('/featured', 'FeaturedController');
 //Route::resource('/reports', 'ReportController');
 Route::resource('/users', 'UserController');
+Route::get('/change_password/{id}', 'UserController@getPasswordForm')->name('change.password');
+
+
 Route::resource('/orders', 'OrderController');
 Route::resource('/settings', 'SettingController');
 // Route::put('/settings/layout/{id}', 'SettingController@updateLayout')->name('update.layout');

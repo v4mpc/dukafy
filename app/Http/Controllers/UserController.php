@@ -83,6 +83,12 @@ class UserController extends Controller
         return view('users.edit')->with('user',$user);
     }
 
+    public function getPasswordForm($id)
+    {
+        $user=User::findOrFail($id);
+        return view('users.password')->with('user',$user);
+    }
+
     /**
      * Update the specified resource in storage.
      *

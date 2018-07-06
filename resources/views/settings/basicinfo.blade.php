@@ -350,7 +350,7 @@ $('#located').click(function(params) {
           $("#geocomplete").geocomplete({
             map: ".map_canvas",
             details: "form ",
-            location: "Dar es Salaam, Tanzania",
+            location: "{{$settings->location_name}}",
             markerOptions: {
               draggable: true,
               zoom:60
