@@ -3,7 +3,7 @@
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
-                    <li><a href="{{route("start")}}"><i class="icon fa fa-user"></i>Welcome to {{$settings->store_name}} </a></li>
+                    <li><a href="{{route("start")}}">Welcome to {{$settings->store_name}} </a></li>
     <li>
         <a  data-fancybox data-src="#hidden-content" href="javascript:;">
             <i class="icon fa fa-location-arrow" ></i>Store Locator</a>
@@ -57,7 +57,7 @@
         @if($settings->logo!=null)
             <img src="{{asset('images/'.$settings->logo)}}" alt="">
             @elseif($settings->logo_text!=null)
-            <h2>{{$settings->logo_text}}</h2>
+            <h3 style="color:{{$colour_code}};margin-top: 30px; ">{{$settings->logo_text}}</h3>
             @else
        
 

@@ -54,6 +54,10 @@
     height: 350px;
     margin-bottom: 0px;
 }
+
+.social-icons{
+    font-size: 22px;
+}
         
         </style>
     </head>

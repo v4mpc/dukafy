@@ -250,7 +250,7 @@
 
 
                         <div class="form-actions">
-                        <a href="{{route('back')}}"  class="btn btn-warning">
+                        <a href="{{route('products.index')}}"  class="btn btn-warning">
                               <i class="ft-x"></i> Cancel
                             </a>
                           <button type="submit" class="btn btn-primary">

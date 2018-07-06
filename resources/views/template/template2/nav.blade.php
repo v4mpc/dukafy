@@ -47,7 +47,7 @@
             @if($settings->logo!=null)
             <img src="{{asset('images/'.$settings->logo)}}" alt="" >
             @elseif($settings->logo_text!=null)
-            <h2>{{$settings->logo_text}}</h2>
+            <h3 style="color:{{$colour_code}};margin-top: 0px; ">{{$settings->logo_text}}</h2>
             @else
        
 
@@ -129,21 +129,21 @@
     <ul class="navbar-wishlist nav navbar-nav pull-right flip">
             @if($settings->facebook!=null)
         <li class="nav-item">
-            <a href="https://{{$settings->facebook}}" class="nav-link"><i class="fa fa-facebook"></i></i></a>
+            <a href="https://{{$settings->facebook}}" class="nav-link"><i class="fa fa-facebook social-icons"></i></i></a>
         </li>
         @endif @if($settings->instagram!=null)
         <li class="nav-item">
-            <a href="https://{{$settings->instagram}}" class="nav-link"><i class="fa fa-instagram"></i></i></a>
+            <a href="https://{{$settings->instagram}}" class="nav-link"><i class="fa fa-instagram social-icons"></i></i></a>
         </li>
         @endif @if($settings->twitter!=null)
         <li class="nav-item">
-            <a href="https://{{$settings->twitter}}" class="nav-link"><i class="fa fa-twitter"></i></i></a>
+            <a href="https://{{$settings->twitter}}" class="nav-link"><i class="fa fa-twitter social-icons"></i></i></a>
         </li>
         @endif
 
         @if($settings->whatsapp!=null)
         <li class="nav-item">
-            <a href="https://wa.me/255{{$settings->whatsapp}}" class="nav-link"><i class="fa fa-whatsapp"></i></i></a>
+            <a href="https://wa.me/255{{$settings->whatsapp}}" class="nav-link"><i class="fa fa-whatsapp social-icons"></i></i></a>
         </li>
         @endif
         

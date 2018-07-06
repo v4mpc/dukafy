@@ -80,7 +80,7 @@
                   <div class="card-body">
                     <div class="card-text">
                     </div>
-                  <form class="form form-horizontal" method="POST" action="{{route('users.update',$user->id)}}" >
+                  <form class="form form-horizontal" method="POST" action="{{route('update.password',$user->id)}}" >
                     {{csrf_field()}}
                     {{method_field('PUT')}}
                       <div class="form-body">
@@ -95,14 +95,14 @@
                         <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">New Password</label>
                                 <div class="col-md-9">
-                                <input type="password" id="projectinput1" class="form-control"  placeholder="New Password" name="new_password" required>
+                                <input type="password" id="projectinput1" class="form-control"  placeholder="New Password" name="password" required>
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Confirm New Password</label>
                                 <div class="col-md-9">
-                                <input type="password" id="projectinput1" class="form-control"  placeholder="Confirm New Password" name="new_password" required>
+                                <input type="password" id="projectinput1" class="form-control"  placeholder="Confirm New Password" name="password_confirmation" required>
                                 </div>
                               </div>
                               {{-- <div class="form-group row">

@@ -61,7 +61,7 @@
         @if($settings->logo!=null)
         <div class="logo"> <a href="{{route('start')}}"><img src="{{asset('images/'.$settings->logo)}}" alt="" ></a> </div>
       @elseif($settings->logo_text!=null)
-      <div class="logo"><h2 color="{{$colour_code}}">{{$settings->logo_text}}</h2></div>
+      <div class="logo"><a href="{{route('start')}}"><h3 style="color:{{$colour_code}};margin-top: 0px; " >{{$settings->logo_text}}</h3></a></div>
         @else
        
 

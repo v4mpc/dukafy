@@ -26,6 +26,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/toastr.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/extensions/toastr.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
+  <link rel="stylesheet" href="{{asset('vendor/toaster/toaster.min.css')}}">
  
   
   <!-- END MODERN CSS-->
@@ -48,6 +49,7 @@
 
     .badges{
         color: #000;
+
     }
 
 

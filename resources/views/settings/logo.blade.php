@@ -173,7 +173,7 @@
                         <h4>Logo Text</h4>
                         <div class="form-group">
                             {{-- <label>Logo Text</label> --}}
-                        <input type="text" class="form-control" value="{{$settings->logo_text}}" name="logo_text" id="exampleInputEmail1" maxlength="8" title="maximum 8 characters" placeholder=" Text to Display as logo">
+                        <input type="text" class="form-control" value="{{$settings->logo_text}}" name="logo_text" id="exampleInputEmail1" maxlength="15" title="maximum 15 characters" placeholder=" Text to Display as logo">
                         </div>
                     </div>
 

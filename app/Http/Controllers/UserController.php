@@ -8,6 +8,7 @@ use App\User;
 use App\Http\Requests\StoreUser;
 use Hash;
 use Image;
+use Auth;
 
 class UserController extends Controller
 {
@@ -96,6 +97,32 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function updatePassword(Request $request, $id)
+    {
+    //    dd($user);
+$user=User::findOrFail($id);
+        $request->validate([
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        if (Hash::check($request->old_password, Auth::user()->password)) {
+            
+           
+            $user->password=Hash::make($request->password);
+
+            
+            $user->save();
+            Session::flash('success','Password Saved!');
+            return redirect()->back();
+        }
+
+        Session::flash('error','Password entered does not match the old one!');
+            return redirect()->back();
+
+         
+    }
+
+
     public function update(Request $request, User $user)
     {
         $user->name=$request->name;

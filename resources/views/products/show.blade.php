@@ -150,9 +150,12 @@
                           </div>
                         </div>
                         <!--/ PhotoSwipe -->
+                        
                       </section>
 
-
+                      <a href="{{route('products.index')}}"  class="btn btn-warning">
+                        <i class="ft-x"></i> Back
+                      </a>
 
 
                     </div>
@@ -193,6 +196,7 @@
                         @endif
                         <a data-toggle="tooltip" data-id="{{$product->id}}" data-url="/manage/products/" data-original-title="Delete" data-placement="top"
                           class="btn btn-outline-danger btn-sm edit-item-btn confirm-color"><i class="ft-trash"></i></a>
+                          
                       </div>
                     </div>
                   </div>

@@ -71,10 +71,11 @@
                         <th>Customer Name</th>
                         {{-- <th>Products</th> --}}
                         
-                        <th>Status</th>
+                       
 
                         <th>Amount (TZS)</th>
                         <th>Time</th>
+                        <th>Status</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -91,14 +92,16 @@
                         <td>{{$order->customer->first_name}}</td>
                         {{-- <td>{{count($order->products)}}</td> --}}
                         
-                        <td>
-
-                        @if ($order->status==='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status==='Pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
-
-
-                        </td>
+                  
                         <td>{{number_format($order->totalCost())}}</td>
                         <td>{{$order->created_at->diffForHumans()}}</td>
+
+                        <td>
+
+                          @if ($order->status==='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status==='Pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
+  
+  
+                          </td>
 
                         <td><a href="{{route('orders.show',$order->id)}}" data-toggle="tooltip" data-original-title="Detail"
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>

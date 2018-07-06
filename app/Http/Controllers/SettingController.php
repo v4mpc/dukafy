@@ -288,7 +288,7 @@ if($request->slider_three) {
 
 
 
-Session::flash('success','Setting Saved!');
+Session::flash('success_settings','Setting Saved!');
   return redirect()->back();
     }
 

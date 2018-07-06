@@ -203,6 +203,8 @@
                       </div>
                     </div>
 
+                  
+
                     {{-- end --}}
 
                   </div>
@@ -210,7 +212,12 @@
               </div>
             </div>
           </div>
+          <a href="{{route('orders.index')}}"  class="btn btn-warning">
+            <i class="ft-x"></i> Back
+          </a>
         </div>
+
+        
 
       </section>
 

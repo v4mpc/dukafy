@@ -1,7 +1,7 @@
 <footer class="footer footer-static footer-light navbar-border navbar-shadow">
   <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-    <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2018 <a class="text-bold-800 grey darken-2" href="../../../../../themeforest.net/user/pixinvent/portfolioc32ahtml.html?ref=pixinvent"
-      target="_blank">Legendary IT </a>, All rights reserved. </span>
+    <span class="float-md-left d-block d-md-inline-block"> {{date('Y')}} <a class="text-bold-800 grey darken-2" href="#"
+      target="_blank">Dukafy </a> version 1.0.0</span>
    
   </p>
 </footer>

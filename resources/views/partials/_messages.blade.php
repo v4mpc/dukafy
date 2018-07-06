@@ -10,6 +10,19 @@
 @endif
 
 
+
+@if (Session::has('error'))
+   
+
+
+<div class="bs-callout-danger callout-border-right callout-bordered callout-transparent mt-1 p-1">
+        <h4 class="danger">Error!</h4>
+        <p>{{Session::get('error')}}</p>
+      </div>
+
+@endif
+
+
 @if ($errors->any())
 <div class="bs-callout-danger callout-border-right mt-1 p-1">
         <strong>Error!</strong>

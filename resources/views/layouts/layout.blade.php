@@ -18,6 +18,7 @@
         <script src="{{asset('vendor/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('vendor/toaster/toaster.min.js')}}"></script>
         <!-- BEGIN VENDOR JS-->
         <!-- BEGIN PAGE VENDOR JS-->
         @yield('page_vendor_js')
@@ -143,7 +144,92 @@ if (win) {
   
         </script>
 
+@if(Session::has('success_settings'))
+<script>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "30",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+            @php
+          $message='';
 
+$message.='<li>Setting Saved!</li>';
+
+
+
+
+// echo "toastr.error(sfsdfs)";
+
+
+
+
+ echo 'toastr.success("'.$message.'");';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endphp
+
+</script>
+
+
+@endif
 
 
     </body>

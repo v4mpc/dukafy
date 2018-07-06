@@ -84,6 +84,8 @@ Route::resource('/featured', 'FeaturedController');
 //Route::resource('/reports', 'ReportController');
 Route::resource('/users', 'UserController');
 Route::get('/change_password/{id}', 'UserController@getPasswordForm')->name('change.password');
+Route::put('/save_password/{id}', 'UserController@updatePassword')->name('update.password');
+
 
 
 Route::resource('/orders', 'OrderController');
