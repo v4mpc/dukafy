@@ -20,13 +20,64 @@
 
 <!-- For demo purposes – can be removed on production -->
 
-<script src="switchstylesheet/switchstylesheet.js"></script>
+{{-- <script src="switchstylesheet/switchstylesheet.js"></script> --}}
 
 <script>
 
 (function($) {
 
     $(document).ready(function(){ 
+
+// Price Slider
+// if ($('.price-slider').length > 0) {
+   var myslider=$('.price-slider').slider({
+        min: {{$start_min_price}},
+        max: {{$start_max_price}},
+        step: 10,
+        value: [{{$min_price}}, {{$max_price}}],
+        handle: "square"
+
+    });
+
+
+
+
+// }
+
+
+$('#filter-price').click(function() {
+//    var min_price=$('#price-min').text();
+//    var max_price=$('#price-max').text();
+//    $('input[name="max_price"]').val(max_price);
+//     $('input[name="min_price"]').val(min_price);
+    var price=$('#price').val();
+    console.log($('#price').val());
+  $('#filter-form').submit();
+
+
+  // var formData = $('#category-filter').serialize();
+  // console.log('Posting the following: ', formData);
+
+  //  $.ajaxSetup({
+	// 			headers: {
+	// 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	// 			}
+  //     });
+
+  //     $.ajax({
+	// 			type: "GET",
+	// 			url: "/filter_product",
+	// 			dataType: "JSON",
+	// 			data: formData,
+	// 			success: function (data) {}
+  //         console.log(data);
+
+  //     });
+ });
+
+
+
+
         $(".changecolor").switchstylesheet( { seperator:"color"} );
         $('.show-theme-options').click(function(){
             $(this).parent().toggleClass('open');

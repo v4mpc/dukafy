@@ -1,7 +1,7 @@
 @extends('template.template3.layout')
 @section('content')
 <!-- ============================================== CONTENT ============================================== -->
-<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+<div class="col-xs-12 col-sm-12 col-md-9">
         <!-- ========================================== SECTION – HERO ========================================= -->
         
 <div id="hero">
@@ -20,7 +20,7 @@
 </div>
         
 <!-- ========================================= SECTION – HERO : END ========================================= -->	
-{{-- <div class="wide-banners wow fadeInUp outer-bottom-vs">
+<div class="wide-banners wow fadeInUp outer-bottom-vs">
         <div class="row">
     
             <div class="col-md-7">
@@ -39,7 +39,7 @@
     
     
         </div><!-- /.row -->
-    </div><!-- /.wide-banners --> --}}
+    </div><!-- /.wide-banners -->
 </div>
     <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
     @if(count($featureds))
@@ -74,7 +74,7 @@
                                                  <span class="price-before-discount">{{number_format($product->price)}}</span>
                                         @else
                                         <span class="price">
-                                                {{number_format($product->price)}}				</span>
+                                                {{number_format($product->price)}}	TZS			</span>
                                         @endif
                 </div><!-- /.product-price -->
                 
@@ -83,14 +83,16 @@
                     <div class="action">
                         <ul class="list-unstyled">
                             <li class="add-cart-button btn-group add_to_cart_button" data-id="{{$product->id}}">
-                                <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-                                    <i class="fa fa-shopping-cart"></i>													
-                                </button>
-                                <button class="btn btn-primary" type="button" >Add to cart</button>
+                                    @if($settings->whatsapp)
+                                <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                                    <i class="fa fa-whatsapp"></i>													
+                                </a>
+                                @endif
+                                <button class="btn btn-primary" type="button" title="add to cart" >Add to cart</button>
                                                         
                             </li>
                             <li>
-                                <a class="add-to-cart" href="indexbd17.html?page=detail" title="Inquire this Product">
+                                <a class="add-to-cart" href="#." title="Inquire this Product">
                                      <i class="fa fa-whatsappp" style="font-size:15px;color:green;"></i>
                                 </a>
                             </li>
@@ -141,7 +143,7 @@
                                                              <span class="price-before-discount">{{number_format($product->price)}}</span>
                                                     @else
                                                     <span class="price">
-                                                            {{number_format($product->price)}}				</span>
+                                                            {{number_format($product->price)}}		TZS		</span>
                                                     @endif
                             </div><!-- /.product-price -->
                             
@@ -150,9 +152,11 @@
                                 <div class="action">
                                     <ul class="list-unstyled">
                                         <li class="add-cart-button btn-group">
-                                            <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-                                                <i class="fa fa-shopping-cart"></i>													
-                                            </button>
+                                                @if($settings->whatsapp)
+                                                <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                                                    <i class="fa fa-whatsapp"></i>													
+                                                </a>
+                                                @endif
                                             <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">Add to cart</button>
                                                                     
                                         </li>

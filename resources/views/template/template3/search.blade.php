@@ -2,6 +2,8 @@
 @section('content')
 
 
+
+
 <div class='col-md-9'>
     <!-- ========================================== SECTION – HERO ========================================= -->
 
@@ -14,17 +16,17 @@
 <div class="row">
 <div class="col col-sm-6 col-md-2">
 <div class="filter-tabs">
-<ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
+{{-- <ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
     <li class="active">
         <a data-toggle="tab" href="#grid-container"><i class="icon fa fa-th-list"></i>Grid</a>
     </li>
     <li><a data-toggle="tab" href="#list-container"><i class="icon fa fa-th"></i>List</a></li>
-</ul>
+</ul> --}}
 </div><!-- /.filter-tabs -->
 </div><!-- /.col -->
 <div class="col col-sm-12 col-md-6">
 <div class="col col-sm-3 col-md-6 no-padding">
-<div class="lbl-cnt">
+{{-- <div class="lbl-cnt">
     <span class="lbl">Sort by</span>
     <div class="fld inline">
         <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
@@ -40,10 +42,10 @@
             </ul>
         </div>
     </div><!-- /.fld -->
-</div><!-- /.lbl-cnt -->
+</div><!-- /.lbl-cnt --> --}}
 </div><!-- /.col -->
 <div class="col col-sm-3 col-md-6 no-padding">
-<div class="lbl-cnt">
+{{-- <div class="lbl-cnt">
     <span class="lbl">Show</span>
     <div class="fld inline">
         <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
@@ -65,20 +67,23 @@
             </ul>
         </div>
     </div><!-- /.fld -->
-</div><!-- /.lbl-cnt -->
+</div><!-- /.lbl-cnt --> --}}
 </div><!-- /.col -->
 </div><!-- /.col -->
 <div class="col col-sm-6 col-md-4 text-right">
 <div class="pagination-container">
-<ul class="list-inline list-unstyled">
+{{-- <ul class="list-inline list-unstyled">
 <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
 <li><a href="#">1</a></li>	
 <li class="active"><a href="#">2</a></li>	
 <li><a href="#">3</a></li>	
 <li><a href="#">4</a></li>	
 <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-</ul><!-- /.list-inline -->
-</div><!-- /.pagination-container -->		</div><!-- /.col -->
+</ul><!-- /.list-inline --> --}}
+{{ $products->links('vendor.pagination.template3') }}
+</div><!-- /.pagination-container -->		</div>
+
+<!-- /.col -->
 </div><!-- /.row -->
 </div>
 <div class="search-result-container">
@@ -124,9 +129,11 @@
         <div class="action">
             <ul class="list-unstyled">
                 <li class="add-cart-button btn-group">
-                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-                        <i class="fa fa-shopping-cart"></i>													
-                    </button>
+                        @if($settings->whatsapp)
+                        <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                            <i class="fa fa-whatsapp"></i>													
+                        </a>
+                        @endif
                     <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">Add to cart</button>
                                             
                 </li>
@@ -139,6 +146,7 @@
 </div><!-- /.products -->
 </div><!-- /.item -->
 @empty
+<h4>Product Not Found!! </h4>
 @endforelse
                         </div><!-- /.row -->
             </div><!-- /.category-product -->
@@ -216,6 +224,7 @@
 </div><!-- /.category-product-inner -->
 
 @empty
+<h4>Product Not Found </h4>
 @endforelse
                         
             </div><!-- /.category-product -->
@@ -225,14 +234,14 @@
         
             <div class="text-right">
                  <div class="pagination-container">
-<ul class="list-inline list-unstyled">
+{{-- <ul class="list-inline list-unstyled">
 <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
 <li><a href="#">1</a></li>	
 <li class="active"><a href="#">2</a></li>	
 <li><a href="#">3</a></li>	
 <li><a href="#">4</a></li>	
 <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-</ul><!-- /.list-inline -->
+</ul><!-- /.list-inline --> --}}
 </div><!-- /.pagination-container -->						    </div><!-- /.text-right -->
         
     </div><!-- /.filters-container -->

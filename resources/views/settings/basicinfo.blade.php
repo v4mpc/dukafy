@@ -103,7 +103,7 @@
                       <div class="col-sm-5 col-sm-offset-1">
                           <div class="form-group">
                               <label>Store Name</label>
-                          <input type="text" class="form-control" name="store_name" id="exampleInputEmail1" value="{{$settings->store_name}}" placeholder="What is your place store name?">
+                          <input type="text" class="form-control" name="store_name" id="exampleInputEmail1" value="{{$settings->store_name}}" required placeholder="What is your place store name?">
                           </div>
                       </div>
                       <div class="col-sm-5 col-sm-offset-1">
@@ -115,7 +115,7 @@
                       <div class="col-sm-5 col-sm-offset-1">
                           <div class="form-group">
                               <label>Email</label>
-                              <input type="text" class="form-control" name="email" value="{{$settings->email}}" id="exampleInputEmail1" placeholder="what is your email ?">
+                              <input type="text" class="form-control" name="email" value="{{$settings->email}}" required id="exampleInputEmail1" placeholder="what is your email ?">
                           </div>
                       </div>
                       <div class="col-sm-5 col-sm-offset-1">

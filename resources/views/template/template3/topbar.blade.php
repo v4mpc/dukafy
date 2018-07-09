@@ -57,7 +57,7 @@
         @if($settings->logo!=null)
             <img src="{{asset('images/'.$settings->logo)}}" alt="">
             @elseif($settings->logo_text!=null)
-            <h3 style="color:{{$colour_code}};margin-top: 30px; ">{{$settings->logo_text}}</h3>
+            <h3 style="color:{{$colour_code}};margin-top: 30px;" id="logo">{{$settings->logo_text}}</h3>
             @else
        
 
@@ -77,7 +77,7 @@
     </div><!-- /.contact-row -->
     <!-- ============================================================= SEARCH AREA ============================================================= -->
     <div class="search-area">
-        <form action="{{route('search')}}" method="GET">
+        <form action="{{route('search')}}" id="search-form" method="GET">
                 {{csrf_field()}}
             <div class="control-group">
     
@@ -95,9 +95,10 @@
                     </li>
                 </ul> --}}
     
-                <input class="search-field" placeholder="Search here..." />
+                <input class="search-field" name="query" value="{{request()->input('query')}}" placeholder="Search here..." />
     
-                <a class="search-button"  href="#" ></a>    
+                <a class="search-button" href="{{ route('search') }}" onclick="event.preventDefault();
+                document.getElementById('search-form').submit();" ></a>    
     
             </div>
         </form>

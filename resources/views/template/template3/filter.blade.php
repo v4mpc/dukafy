@@ -1,3 +1,4 @@
+<div class="sidebar-module-container">
 <div class="sidebar-filter">
         <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
 
@@ -10,18 +11,24 @@
 <div class="sidebar-widget-body m-t-20">
 <div class="price-range-holder">
 <span class="min-max">
- <span class="pull-left">$200.00</span>
- <span class="pull-right">$800.00</span>
+<span class="pull-left">{{$min_price}}</span>
+<span class="pull-right">{{$max_price}}</span>
 </span>
-<input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
+{{-- <input type="text" id="amount"  style="border:0; color:#666666; font-weight:bold;text-align:center;"> --}}
+<form action="{{route('filter_products')}}" method="GET" id="filter-form">
+                {{csrf_field()}}
+<input type="text" class="price-slider" name="price" id="price" value="" >
 
-<input type="text" class="price-slider" value="" >
+{{-- <input id="cate" name="category_id[]" value="{{$category->id}}" class="styled" type="checkbox" {{in_array($category->id,$checked_categories)?"checked":""}}> --}}
 
 </div><!-- /.price-range-holder -->
-<a href="#" class="lnk btn btn-primary">Show Now</a>
+<a id="filter-price" class="lnk btn btn-primary filter-price">Show Now</a>
 </div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 <!-- ============================================== PRICE SILDER : END ============================================== -->
-
+</form>
 
     </div><!-- /.sidebar-filter -->
+
+
+</div>

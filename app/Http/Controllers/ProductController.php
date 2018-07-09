@@ -352,7 +352,8 @@ return redirect()->route('products.show',$product->id);
         }else if(config('app.settings')->layout=='template1'){
             return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
         }else if(config('app.settings')->layout=='template3'){
-            return view('template.template3.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
+            // dd($products);
+            return view('template.template3.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
         }
     }
 
@@ -387,6 +388,9 @@ return redirect()->route('products.show',$product->id);
     public function filterProduct(Request $request)
     {
 
+
+        dd($request->all());
+
         $min_price=$request->min_price;
         $max_price=$request->max_price;
         $checked_categories=array();
@@ -395,6 +399,6 @@ return redirect()->route('products.show',$product->id);
         $products=Product::where('out_stock',0)->whereIn('category_id',$request->category_id)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
         return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
 
-        dd($request->all());
+        // dd($request->all());
     }
 }

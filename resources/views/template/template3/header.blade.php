@@ -40,7 +40,7 @@
 
 
 
-		<!-- Demo Purpose Only. Should be removed in production -->
+		{{-- <!-- Demo Purpose Only. Should be removed in production -->
 		<link rel="stylesheet" href="assets/css/config.css">
 
 		<link href="{{asset('template3/assets/css/green.css')}}" rel="alternate stylesheet" title="Green color">
@@ -48,12 +48,12 @@
 		<link href="{{asset('template3/assets/css/red.css')}}" rel="alternate stylesheet" title="Red color">
 		<link href="{{asset('template3/assets/css/orange.css')}}" rel="alternate stylesheet" title="Orange color">
 		<link href="{{asset('template3/assets/css/dark-green.css')}}" rel="alternate stylesheet" title="Darkgreen color">
-		<!-- Demo Purpose Only. Should be removed in production : END -->
+		<!-- Demo Purpose Only. Should be removed in production : END --> --}}
 
 		
 		<!-- Icons/Glyphs -->
-		<link rel="stylesheet" href="{{asset('template3/assets/css/font-awesome.min.css')}}">
-
+		{{-- <link rel="stylesheet" href="{{asset('template3/assets/css/font-awesome.min.css')}}"> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
         <!-- Fonts --> 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
@@ -82,6 +82,16 @@
     padding: 20px 0px;
 }
 		
+
+
+		@media only screen and (max-width: 980px) {
+			.main-header{
+				padding: 0px 0px 60px 0px
+			}
+			#logo{
+				margin-top: 0px !important;
+			}
+}
 		</style>
 
 	</head>

@@ -14,7 +14,7 @@
 
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
 	<div class="container">
-	<div class="row {{$row_class}}">
+	<div class="row">
 @if(!Request::is('cart')&&!Request::is('check_out/create')&&!Request::is('about_us')&&!Request::is('contact_us')&&!Request::is('thank_you'))
 @include('template.template3.sidebar')
 @endif

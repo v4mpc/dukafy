@@ -31,7 +31,14 @@
               <div class="card-header border-0">
                 <div class="card-title text-center">
                   <div class="p-1">
-                  <img src="{{asset('images/logo2.png')}}" class="responsive"  lt="branding logo"> 
+                      @if($settings->logo!=null)
+                  <img src="{{asset('images/'.$settings->logo)}}" class="responsive"  lt="branding logo"> 
+                  @elseif($settings->logo_text!=null)
+               
+            <h3 style="color:{{$colour_code}};margin-top: 30px;" id="logo">{{$settings->logo_text}}</h3>
+            @else
+
+            @endif
                   </div>
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">

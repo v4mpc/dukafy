@@ -295,17 +295,17 @@ $(document).ready(function(){
 $(document).ready(function () {
 
 // Price Slider
-if ($('.price-slider').length > 0) {
-    $('.price-slider').slider({
-        min: 100,
-        max: 700,
-        step: 10,
-        value: [200, 500],
-        handle: "square"
+// if ($('.price-slider').length > 0) {
+//     $('.price-slider').slider({
+//         min: 100,
+//         max: 700,
+//         step: 10,
+//         value: [200, 500],
+//         handle: "square"
 
-    });
+//     });
 
-}
+// }
 
 });
 
