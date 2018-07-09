@@ -15,7 +15,7 @@ return [
     |            "sparkpost", "log", "array"
     |
     */
-    'driver' => 'sendmail',
+    'driver' => 'smtp',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,9 @@ return [
     */
 
    
-    'host' => 'rs47.registrar-servers.com',
+    // 'host' => 'rs47.registrar-servers.com',
+    'host' => 'smtp.gmail.com',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +44,7 @@ return [
     |
     */
 
-    'port' =>'465',
+    'port' =>'587',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +79,7 @@ return [
     |
     */
 
-    'encryption' => 'ssl',
+    'encryption' => 'tls',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,9 +92,11 @@ return [
     |
     */
 
-    'username' => 'lits@legendaryits.com',
+    'username' => 'yona101992@gmail.com',
 
-    'password' => 'lits@786',
+    'password' => 'novusordoseclorum',
+
+    //dukafy password lits=Op2K8(HWi2ZD
 
     /*
     |--------------------------------------------------------------------------

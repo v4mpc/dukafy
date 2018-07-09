@@ -55,6 +55,7 @@
                         <i class="ft-user"></i>
                       </div>
                     </fieldset>
+                    <br>
                     <fieldset class="form-group position-relative has-icon-left">
                       <input type="password" class="form-control form-control-lg input-lg" name="password" id="user-password" placeholder="Enter Password"
                         required>
@@ -62,6 +63,7 @@
                         <i class="ft-lock"></i>
                       </div>
                     </fieldset>
+                    
                     <div class="form-group row">
                       <div class="col-md-6 col-12 text-center text-md-left">
                         <fieldset>

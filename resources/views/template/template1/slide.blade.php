@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row">
         
-        @if(count($slider_images))
+        @if(is_null($slider_images))
 
         <!-- Main Slider  -->
         <div class="col-md-12 no-padding">
@@ -15,6 +15,7 @@
               <ul>
                 @foreach ($slider_images as $slider)
                 <!-- SLIDE  -->
+                
                 <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
                   <!-- MAIN IMAGE -->
                   <img src="{{asset('images/'.$slider->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">                  {{--

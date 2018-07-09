@@ -29,7 +29,14 @@
             <div class="card border-grey border-lighten-3 px-2 py-2 m-0">
               <div class="card-header border-0 pb-0">
                 <div class="card-title text-center">
-                  system logo goes here {{-- <img src="../../../app-assets/images/logo/logo-dark.png" alt="branding logo">                  --}}
+                  @if($settings->logo!=null)
+                  <img src="{{asset('images/'.$settings->logo)}}" class="responsive"  lt="branding logo"> 
+                  @elseif($settings->logo_text!=null)
+               
+            <h3 style="color:{{$colour_code}};margin-top: 30px;" id="logo">{{$settings->logo_text}}</h3>
+            @else
+
+            @endif
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
                   <span>We will send you a link to reset password.</span>
@@ -37,10 +44,16 @@
               </div>
               <div class="card-content">
                 <div class="card-body">
-                  <form class="form-horizontal" action="http://www.pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/login-simple.html"
+                  <form class="form-horizontal"  method="POST" action="{{ route('password.email') }}"
                     novalidate>
+                    {{ csrf_field() }}
                     <fieldset class="form-group position-relative has-icon-left">
-                      <input type="email" class="form-control form-control-lg input-lg" id="user-email" placeholder="Your Email Address" required>
+                      <input type="email" class="form-control form-control-lg input-lg" name="email" value="{{ old('email') }}" id="user-email" placeholder="Your Email Address" required>
+                      @if ($errors->has('email'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
                       <div class="form-control-position">
                         <i class="ft-mail"></i>
                       </div>
