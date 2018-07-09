@@ -20,7 +20,7 @@ Route::resource('/order','OrderController');
 
 Route::get('/mailable', function () {
     $order = App\Order::find(7);
-    return new App\Mail\OrderCompleted($order);
+    return new App\Mail\OrderCompleted($order,'yona101992@gmail.com');
 });
 Route::get('/filter_product','ProductController@filterProduct')->name('filter_products');
 
