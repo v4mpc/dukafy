@@ -97,7 +97,9 @@
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
                    
-
+                  <h4 class="info-text" align="center" >Basic Info </h4>
+                  <br>
+                 
                   <div class="row">
                      
                       <div class="col-sm-5 col-sm-offset-1">
@@ -159,10 +161,8 @@
 
 
                     <div class="form-actions">
-                      <button type="button" class="btn btn-warning mr-1">
-                                  <i class="ft-x"></i> Cancel
-                                </button>
-                      <button type="submit" class="btn btn-primary">
+                     
+                      <button type="submit" class="btn btn-success">
                                   <i class="ft-save"></i> Save
                                 </button>
                     </div>

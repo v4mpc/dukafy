@@ -91,7 +91,7 @@
     background-color: #fed700;
     border-color: #fed700;
 
-    #ce1d76
+    /* #ce1d76 */
 }
 
 .btn-pink,
@@ -128,7 +128,7 @@
     background-color: #ff6c6c;
     border-color: #ff6c6c;
 
-    #ce1d76
+    /* #ce1d76 */
 }
 
 .btn-orange,
@@ -214,15 +214,7 @@
 
 
 
-/* just to set different column heights - not needed to function */          
-.column-one {
-  /* height: 300px;  */
-  /* background-color: #EBFFF9; */
-}
-.column-two {
-  /* height: 400px; */
-  /* background-color: #F7F3FF; */
-}
+
 
 
     </style>

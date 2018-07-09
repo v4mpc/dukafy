@@ -90,6 +90,10 @@ Route::put('/save_password/{id}', 'UserController@updatePassword')->name('update
 
 Route::resource('/orders', 'OrderController');
 Route::resource('/settings', 'SettingController');
+Route::put('/update_logo/{id}','SettingController@updateLogo')->name('update.logo');
+Route::put('/update_slider/{id}','SettingController@updateSlider')->name('update.slider');
+
+
 // Route::put('/settings/layout/{id}', 'SettingController@updateLayout')->name('update.layout');
 
 // Route::resource('/variations', 'VariationController');

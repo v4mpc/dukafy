@@ -147,7 +147,7 @@
                     <thead>
                       <tr>
                         <th class="border-top-0">Product</th>
-                        <th class="border-top-0">Customers</th>
+                        <th class="">Unit Sold</th>
                         {{-- <th class="border-top-0">Total(TZS)</th> --}}
                       </tr>
                     </thead>
@@ -160,7 +160,7 @@
                         <td class="text-truncate">{{$product->name}}</td>
                         @endif
             
-                        <td class="text-truncate p-1">
+                        <td class="text-truncate">
                           {{count($product->orders)}}
                         </td>
                         {{-- <td class="text-truncate">

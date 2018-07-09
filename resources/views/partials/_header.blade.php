@@ -17,6 +17,8 @@
   rel="stylesheet">
   {{-- <link href="../../../../../maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.html"
   rel="stylesheet"> --}}
+  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+  rel="stylesheet">
   <!-- BEGIN VENDOR CSS-->
   @yield('vendor_css')
   <!-- END VENDOR CSS-->
@@ -36,7 +38,7 @@
   <!-- BEGIN Custom CSS-->
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/style.css')}}">
   <!-- END Custom CSS-->
-  <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+
 
   <style>
     #loader1{

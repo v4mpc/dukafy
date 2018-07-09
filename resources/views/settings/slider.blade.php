@@ -74,19 +74,20 @@
               </div>
               <div class="card-content collapse show">
                 <div class="card-body">
-                <form action="{{route('settings.update',$settings->id)}}" method="POST" >
+                <form action="{{route('update.slider',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
-                   
+                  <h4 class="info-text" align="center"> Upload Your Slider Images</h4>
+                  <br>
 
                   <div class="row">
-                        {{-- <h5 class="info-text"> Upload Your Slider Images</h5> --}}
-                        <div class="col-sm-3">
+                        
+                        <div class="col-sm-4">
                             <div class="form-group" align="center">
 <a href="#" class="slider1-input-button"><img src="{{is_null($slider_images[0]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[0]->image)}}" id="cropped-slider1" class="img-thumbnail " alt="" srcset=""></a>
                                 
                                 <input type="file" id="slider1-input" style="display: none;">
-                                <input type="hidden" name="slider_one">
+                            <input type="hidden" name="slider_one" value="{{is_null($slider_images[0]->image)?"":Image::make(Storage::disk('images')->get($slider_images[0]->image))->encode('data-url')}}" >
                                 <br>
                                 <br>
 
@@ -103,12 +104,12 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group" align="center">
 
                                     <a href="#" class="slider2-input-button"> <img src="{{is_null($slider_images[1]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[1]->image)}}" id="cropped-slider2" class="img-thumbnail" alt="" srcset=""></a>
                                 <input type="file" id="slider2-input" style="display: none;">
-                                <input type="hidden" name="slider_two">
+                                <input type="hidden" name="slider_two" value="{{is_null($slider_images[1]->image)?"":Image::make(Storage::disk('images')->get($slider_images[1]->image))->encode('data-url')}}">
                                 <br>
                                 <br>
 
@@ -125,12 +126,12 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group" align="center">
 
                                     <a href="#" class="slider3-input-button"> <img src="{{is_null($slider_images[2]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[2]->image)}}" id="cropped-slider3" class="img-thumbnail" alt="" srcset=""></a>
                                 <input type="file" id="slider3-input" style="display: none;">
-                                <input type="hidden" name="slider_three">
+                                <input type="hidden" name="slider_three" value="{{is_null($slider_images[2]->image)?"":Image::make(Storage::disk('images')->get($slider_images[2]->image))->encode('data-url')}}">
                                 <br>
                                 <br>
 
@@ -152,10 +153,8 @@
                     </div>
 
                     <div class="form-actions">
-                      <button type="button" class="btn btn-warning mr-1">
-                                  <i class="ft-x"></i> Cancel
-                                </button>
-                      <button type="submit" class="btn btn-primary">
+                    
+                      <button type="submit" class="btn btn-success">
                                   <i class="ft-save"></i> Save
                                 </button>
                     </div>
@@ -342,6 +341,9 @@
      $('#remove-slider1').click(function () {
 			
             $('#cropped-slider1').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="slider_one"]').removeAttr('value');
+            console.log($('input[name="slider_one"]').val());
+
 		});
 		$('.slider1-input-button').click(function () {
 			$('#slider1-input').click();
@@ -350,6 +352,7 @@
 		$('#remove-slider2').click(function () {
 			
             $('#cropped-slider2').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="slider_two"]').removeAttr('value');
             
 		});
 		$('.slider2-input-button').click(function () {
@@ -359,6 +362,7 @@
 		$('#remove-slider3').click(function () {
 			
             $('#cropped-slider3').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="slider_three"]').removeAttr('value');
 		});
 		$('.slider3-input-button').click(function () {
 			$('#slider3-input').click();

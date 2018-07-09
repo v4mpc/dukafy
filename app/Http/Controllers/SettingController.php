@@ -8,6 +8,7 @@ use Session;
 use App\BrandImage;
 use App\SliderImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
@@ -184,57 +185,72 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
         $setting->about=$request->about;
        
 
+        }else{
+            $setting->about=null;
         }
 
         if($request->mobile){
             $setting->mobile=$request->mobile;
+        }else{
+           $setting->mobile=null;
         }
 
-        if($request->logo_text){
-            $setting->logo_text=$request->logo_text;
-        }
+        // if($request->logo_text){
+        //     $setting->logo_text=$request->logo_text;
+        // }
 
         if($request->facebook){
             $setting->facebook=$request->facebook;
+        }else{
+           $setting->facebook=null;
         }
 
         if($request->twitter){
             $setting->twitter=$request->twitter;
+        }else{
+            $setting->twitter=null;
         }
 
         if($request->instagram){
             $setting->instagram=$request->instagram;
+        }else{
+            $setting->instagram=null;
         }
 
         if( $request->whatsapp){
             $setting->whatsapp=$request->whatsapp; 
+        }else{
+            $setting->whatsapp=null;
         }
+
         if($request->layout){
         $setting->layout=$request->layout;
         $setting->colour=$request->colour;
         }
-        if($request->logo){
-            $png_url = "logo-".time().".png";
-            $location = public_path('images/' . $png_url);
-            // Image::make(file_get_contents($request->logo))->save($location);
+        // if($request->logo){
+        //     $png_url = "logo-".time().".png";
+        //     $location = public_path('images/' . $png_url);
+        //     // Image::make(file_get_contents($request->logo))->save($location);
 
-            $img=Image::make(file_get_contents($request->logo));
-        $image_width=$img->width();
-        $image_height=$img->height();
+        //     $img=Image::make(file_get_contents($request->logo));
+        // $image_width=$img->width();
+        // $image_height=$img->height();
 
         
-            $img->resize(null, 50, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($location);
-        
-        
-        // else {
-        //     $img->resize(, null, function ($constraint) {
+        //     $img->resize(null, 50, function ($constraint) {
         //         $constraint->aspectRatio();
         //     })->save($location);
+        
+        
+        // // else {
+        // //     $img->resize(, null, function ($constraint) {
+        // //         $constraint->aspectRatio();
+        // //     })->save($location);
+        // // }
+        //     $setting->logo=$png_url;
+        // }elseif(config('app.settings')->logo&&$request->logo){
+
         // }
-            $setting->logo=$png_url;
-        }
      
 
         $setting->save();
@@ -291,6 +307,159 @@ if($request->slider_three) {
 Session::flash('success_settings','Setting Saved!');
   return redirect()->back();
     }
+
+
+
+    public function updateLogo(Request $request,$id)
+    {
+        // abort(404,'usdf');
+        $setting=Setting::findOrFail($id);
+       
+        if($request->logo){
+            $png_url = "logo-".time().".png";
+            $location = public_path('images/' . $png_url);
+            // Image::make(file_get_contents($request->logo))->save($location);
+
+            $img=Image::make(file_get_contents($request->logo));
+        $image_width=$img->width();
+        $image_height=$img->height();
+
+        
+            $img->resize(null, 50, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($location);
+        
+        
+        // else {
+        //     $img->resize(, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     })->save($location);
+        // }
+            $setting->logo=$png_url;
+        }else{
+            $setting->logo=null;
+            if(Storage::disk('images')->exists($setting->logo)){
+                Storage::disk('images')->delete($setting->logo);
+            }
+         
+          
+        }
+        if($request->logo_text){
+            $setting->logo_text=$request->logo_text;
+        }else{
+            $setting->logo_text=null;   
+        }
+
+        $setting->save();
+
+     
+
+    
+
+
+
+Session::flash('success_settings','Setting Saved!');
+  return redirect()->back();
+    }
+
+
+    public function updateSlider(Request $request,$id)
+    {
+        // abort(404,'usdf');
+        // $setting=Setting::findOrFail($id);
+        // $sliders=$settings->slider_images;
+        $slider_images=SliderImage::get();
+
+        $image=$slider_images[0]->image;
+        
+
+        // $image = base64_encode(Storage::disk('images')->get($image));
+
+    //     $data = (string) Image::make(Storage::disk('images')->get($image))->encode('data-url');
+    //   dd($data);
+
+    // dd($request->slider_one);
+       
+        if($request->slider_one) {
+    
+            $png_url = "slider-".time(). uniqid().".png";
+            $location = public_path('images/' . $png_url);
+            Image::make(file_get_contents($request->slider_one))->save($location);
+            $id=$slider_images[0]->id;
+            $slider_image=SliderImage::findOrFail($id);
+            $slider_image->image=$png_url;
+            $slider_image->save();      
+        
+
+}else{
+    $id=$slider_images[0]->id;
+    $slider=SliderImage::findOrFail($id);
+if(Storage::disk('images')->exists($slider->image)){
+    Storage::disk('images')->delete($slider->image);
+}
+  
+    $slider->image=null;
+    $slider->save();
+
+}
+
+if($request->slider_two) {
+    
+    $png_url = "slider-".time(). uniqid().".png";
+    $location = public_path('images/' . $png_url);
+    Image::make(file_get_contents($request->slider_two))->save($location);
+    $id=$slider_images[1]->id;
+    $slider_image=SliderImage::findOrFail($id);
+    $slider_image->image=$png_url;
+    $slider_image->save();            
+
+
+}else{
+    $id=$slider_images[1]->id;
+    $slider=SliderImage::findOrFail($id);
+    if(Storage::disk('images')->exists($slider->image)){
+        Storage::disk('images')->delete($slider->image);
+    }
+    $slider->image=null;
+    $slider->save();
+
+}
+if($request->slider_three) {
+    
+    $png_url = "slider-".time(). uniqid().".png";
+    $location = public_path('images/' . $png_url);
+    Image::make(file_get_contents($request->slider_three))->save($location);
+    $id=$slider_images[2]->id;
+    $slider_image=SliderImage::findOrFail($id);
+    $slider_image->image=$png_url;
+    $slider_image->save();       
+
+
+}else{
+    $id=$slider_images[2]->id;
+    $slider=SliderImage::findOrFail($id);
+    if(Storage::disk('images')->exists($slider->image)){
+        Storage::disk('images')->delete($slider->image);
+    }
+    $slider->image=null;
+    $slider->save();
+
+}
+
+
+   
+
+     
+
+    
+
+
+
+Session::flash('success_settings','Setting Saved!');
+  return redirect()->back();
+    }
+
+
 
     /**
      * Remove the specified resource from storage.

@@ -93,6 +93,7 @@ toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline
                 <form action="{{route('settings.update',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
+                  <h4 class="info-text" align="center">Describe Your Business </h4>
                    
 <div class="row">
                   <div class="col-sm-10 col-sm-offset-1">
@@ -151,10 +152,8 @@ toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline
 
 
                     <div class="form-actions">
-                      <button type="button" class="btn btn-warning mr-1">
-                                  <i class="ft-x"></i> Cancel
-                                </button>
-                      <button type="submit" class="btn btn-primary">
+                  
+                      <button type="submit" class="btn btn-success">
                                   <i class="ft-save"></i> Save
                                 </button>
                     </div>

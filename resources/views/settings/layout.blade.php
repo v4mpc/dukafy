@@ -76,7 +76,8 @@
                 <form action="{{route('settings.update',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
-                    <h5 class="info-text">Select Template and Colour. </h5>
+                    <h4 class="info-text" align="center" >Select Template and Colour. </h4>
+                    <br>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group" align="center">
@@ -331,10 +332,8 @@
 
 
                     <div class="form-actions">
-                      <button type="button" class="btn btn-warning mr-1">
-                                  <i class="ft-x"></i> Cancel
-                                </button>
-                      <button type="submit" class="btn btn-primary">
+                    
+                      <button type="submit" class="btn btn-success">
                                   <i class="ft-save"></i> Save
                                 </button>
                     </div>

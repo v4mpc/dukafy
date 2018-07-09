@@ -76,15 +76,7 @@
 
 
 
-/* just to set different column heights - not needed to function */          
-.column-one {
- /* height: 300px; 
-  /* background-color: #EBFFF9; */
-}
-.column-two {
-/*height: 400px;
-  /* background-color: #F7F3FF; */
-}
+
 
 </style>
 
@@ -141,7 +133,7 @@
               </div>
               <div class="card-content collapse show">
                 <div class="card-body">
-                <form action="{{route('settings.update',$settings->id)}}" method="POST" >
+                <form action="{{route('update.logo',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
                    
@@ -149,10 +141,11 @@
                   <div class="row row-divided" align="center">
                     <div class="col-xs-6 column-one">
                          
-                                  <h4> Logo</h4>
+                      <h4 class="info-text">Logo </h4>
+                      <br>
                               <a href="#" class="logo-input-button">  <img src="{{is_null($settings->logo)?asset('images/productplaceholder.png'):asset('images/'.$settings->logo)}}" id="cropped-logo" class="img-thumbnail" width="200" alt="" srcset=""></a>
                               <input type="file" id="logo-input" style="display: none;">
-                              <input type="hidden" name="logo">
+                              <input type="hidden" name="logo" value="{{is_null($settings->logo)?"":Image::make(Storage::disk('images')->get($settings->logo))->encode('data-url')}}">
                               <br>
                               <br>
                              
@@ -169,8 +162,9 @@
                           
                       </div>
                       <div class="vertical-divider">or</div>
-                      <div class="col-xs-6 column-two">
-                        <h4>Logo Text</h4>
+                      <div class="col-xs-5 column-two">
+                        <h4 class="info-text">Logo Text </h4>
+                        <br>
                         <div class="form-group">
                             {{-- <label>Logo Text</label> --}}
                         <input type="text" class="form-control" value="{{$settings->logo_text}}" name="logo_text" id="exampleInputEmail1" maxlength="15" title="maximum 15 characters" placeholder=" Text to Display as logo">
@@ -182,10 +176,10 @@
                   </div>
 
                     <div class="form-actions">
-                      <button type="button" class="btn btn-warning mr-1">
+                      {{-- <button type="button" class="btn btn-warning mr-1">
                                   <i class="ft-x"></i> Cancel
-                                </button>
-                      <button type="submit" class="btn btn-primary">
+                                </button> --}}
+                      <button type="submit" class="btn btn-success">
                                   <i class="ft-save"></i> Save
                                 </button>
                     </div>
@@ -301,7 +295,8 @@
 
 <script>
   $('#remove-logo').click(function () {
-			$('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
+      $('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
+      $('input[name="logo"]').removeAttr('value');
 		});
 		$('.logo-input-button').click(function () {
 			$('#logo-input').click();

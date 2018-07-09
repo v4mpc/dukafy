@@ -105,12 +105,17 @@ class CategoryController extends Controller
 
     public function addCategory(Request $request){
   
-        $category=new Category;
-        $category->name=$request->name;
-        $category->save();
-        $categories=Category::get()->pluck('name','id');
+        $new_category=new Category;
+        $new_category->name=$request->name;
+        $new_category->save();
+        $categories=Category::get();
+        $categories_html='';
+        foreach($categories as $category){
+            $categories_html.='<option '.(($new_category->id==$category->id)?'selected':'').' value="'.$category->id.'">'.$category->name.'</option>';
+        }
+   
         $category_id=$category->id;
-        return response()->json($categories);
+        return response()->json(['categories'=>$categories_html,'category_name'=>$request->name]);
 
     }
 }

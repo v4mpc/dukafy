@@ -73,9 +73,10 @@
                         <th>Category</th>
                         {{--
                         <th>Sub-category</th> --}}
-                        <th>Status</th>
+                        
                         <th>Image</th>
                         <th>Price (TZS)</th>
+                        <th>Status</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -86,14 +87,7 @@
                       <tr>
                         <td>{{$product->name}}</td>
                         <td>{{$product->category->name}}</td>
-                        <td>
-
-                          @if($product->out_stock==1)
-                          <span class="badge badge badge-danger">Out stock</span>
-                          @else
-                          <span class="badge badge badge-success">Available</span>
-                          @endif
-                        </td>
+                       
                        
                         {{--
                         <td>{{$product->subCategory->name}}</td> --}}
@@ -107,6 +101,14 @@
                         </td>
 
                         <td>{{number_format($product->price)}}</td>
+                        <td>
+
+                          @if($product->out_stock==1)
+                          <span class="badge badge badge-danger">Out stock</span>
+                          @else
+                          <span class="badge badge badge-success">Available</span>
+                          @endif
+                        </td>
 
                         <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail"
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>                          {{-- <a href="{{route('products.edit',$product->id)}}" data-toggle="tooltip" data-original-title="Edit"
