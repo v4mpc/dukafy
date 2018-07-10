@@ -92,6 +92,11 @@
 				margin-top: 0px !important;
 			}
 }
+
+
+.img-height{
+	height:250px;
+}
 		</style>
 
 	</head>

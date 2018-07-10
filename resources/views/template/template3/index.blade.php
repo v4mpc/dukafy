@@ -5,15 +5,38 @@
         <!-- ========================================== SECTION – HERO ========================================= -->
         
 <div id="hero">
+        @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
 <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-        @foreach ($slider_images as $slider)
-    <div class="item" style="background-image: url({{asset('images/'.$slider->image)}});">
+        @if(!is_null($slider_images[0]->image))
+    <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
        
     </div><!-- /.item -->
 
    
     
-    @endforeach
+    @endif
+
+
+    @if(!is_null($slider_images[1]->image))
+    <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
+       
+    </div><!-- /.item -->
+
+   
+    
+    @endif
+
+
+    @if(!is_null($slider_images[2]->image))
+    <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
+       
+    </div><!-- /.item -->
+
+   
+    
+    @endif
+
+    @endif
     
 
 </div><!-- /.owl-carousel -->
@@ -26,7 +49,7 @@
             <div class="col-md-7">
                 <div class="wide-banner cnt-strip">
                     <div class="image">
-                        <img class="img-responsive" data-echo="assets/images/banners/1.jpg" src="assets/images/blank.gif" alt="">
+                        <img class="img-responsive" data-echo="assets/images/banners/1.jpg"  src="assets/images/blank.gif" alt="">
                     </div>	
                     <div class="strip">
                         <div class="strip-inner">
@@ -54,7 +77,7 @@
         <div class="product">		
             <div class="product-image">
                 <div class="image">
-                    <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
+                    <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}"  class="img-responsive img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
                 </div><!-- /.image -->			
     
                 {{-- <div class="tag new"><span>new</span></div>                        		    --}}
@@ -123,7 +146,7 @@
                     <div class="product">		
                         <div class="product-image">
                             <div class="image">
-                                <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
+                                <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}"  class="img-responsive img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
                             </div><!-- /.image -->			
                 
                             {{-- <div class="tag new"><span>new</span></div>                        		    --}}

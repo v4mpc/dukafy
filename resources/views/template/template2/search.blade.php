@@ -128,7 +128,7 @@
                                 <a href="{{route('product.show',$product->id)}}">
                                     <h3>{{$product->name}}</h3>
                                     <div class="product-thumbnail">
-                                        <img class="wp-post-image" data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" alt="">
+                                        <img class="wp-post-image img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" alt="">
                                     </div>
         
                                    

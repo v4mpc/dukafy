@@ -37,7 +37,7 @@
                         <td class="romove-item"><a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
                         <td class="cart-image">
                             <a class="entry-thumbnail" href="{{route('product.show',$item->model->id)}}">
-                                <img src="{{asset('images/'.$item->model->images[0]->image)}}" class="img-responsive" alt="">
+                                <img src="{{asset('images/'.$item->model->images[0]->image)}}" class="img-responsive img-height" alt="">
                             </a>
                         </td>
                         <td class="cart-product-name-info">

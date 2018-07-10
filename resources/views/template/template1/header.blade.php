@@ -40,6 +40,10 @@
             width: 600px;
             height: 400px;
         }
+
+        .img-height{
+	height:250px;
+}
     </style>
 
     <!-- Fonts Online -->

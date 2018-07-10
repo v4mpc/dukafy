@@ -1,17 +1,38 @@
 
 
-      @if(count($slider_images))
+       @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
 <div class="home-v1-slider" >
         <!-- ========================================== SECTION – HERO : END========================================= -->
     
         <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-                @foreach ($slider_images as $slider)
-            <div class="item" style="background-image: url({{asset('images/'.$slider->image)}});">
+            @if(!is_null($slider_images[0]->image))
+            <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
              
             </div><!-- /.item -->
 
 
-            @endforeach
+            @endif
+
+
+            @if(!is_null($slider_images[1]->image))
+            <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
+             
+            </div><!-- /.item -->
+
+
+            @endif
+
+
+            @if(!is_null($slider_images[2]->image))
+            <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
+             
+            </div><!-- /.item -->
+
+
+            @endif
+
+
+            
     
     
             
@@ -59,7 +80,7 @@
             <a href="{{route('product.show',$product->id)}}">
                 <h3>{{$product->name}}</h3>
                 <div class="product-thumbnail">
-                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" alt="">
+                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt="">
                 </div>
             </a>
     
@@ -284,7 +305,7 @@
                                                             <a href="{{route('product.show',$product->id)}}">
                                                                 <h3>{{$product->name}}</h3>
                                                                 <div class="product-thumbnail">
-                                                                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" alt="">
+                                                                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt="">
                                                                 </div>
                                                             </a>
                                                     

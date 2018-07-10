@@ -58,6 +58,10 @@
 .social-icons{
     font-size: 22px;
 }
+
+.img-height{
+	height:250px;
+}
         
         </style>
     </head>

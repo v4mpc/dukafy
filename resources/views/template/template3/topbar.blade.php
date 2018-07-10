@@ -68,12 +68,16 @@
     
                     <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
                         <div class="contact-row">
+                            @if($settings->mobile!=null)
         <div class="phone inline">
             <i class="icon fa fa-phone"></i>+255{{$settings->mobile}}
         </div>
+        @endif
+        @if($settings->email!=null)
         <div class="contact inline">
             <i class="icon fa fa-envelope"></i> <a href="#." class="__cf_email__" data-cfemail="9fecfef3faeddfeaf1f6fcfeecfab1fcf0f2">{{$settings->email}}</a>
         </div>
+        @endif
     </div><!-- /.contact-row -->
     <!-- ============================================================= SEARCH AREA ============================================================= -->
     <div class="search-area">

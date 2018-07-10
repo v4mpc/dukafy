@@ -334,6 +334,14 @@ return redirect()->route('products.show',$product->id);
             
             
 
+        }elseif(config('app.settings')->layout=='template3'){
+            $products = Product::where('out_stock',0)->search($query)->paginate(20);
+            $min_price=Product::where('out_stock',0)->search($query)->min('price');
+            $max_price=Product::where('out_stock',0)->search($query)->max('price');
+            $checked_categories=array();
+            foreach($products as $product){
+                $checked_categories[]=$product->category->id;
+            }
         }else{
             // dd('it came');
             $products = Product::where('out_stock',0)->where('category_id',$category)->search($query)->paginate(20);
@@ -359,7 +367,9 @@ return redirect()->route('products.show',$product->id);
 
     public function category(Request $request,$id){
 
+        
         $products=Product::where('out_stock',0)->where('category_id',$id)->paginate(20);
+        // dd($products);
         $checked_categories=array();
         $checked_categories[]=$id;
         $min_price=Product::where('out_stock',0)->where('category_id',$id)->min('price');
@@ -389,7 +399,7 @@ return redirect()->route('products.show',$product->id);
     {
 
 
-        dd($request->all());
+        // dd($request->all());
 
         $min_price=$request->min_price;
         $max_price=$request->max_price;

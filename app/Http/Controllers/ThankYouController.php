@@ -47,9 +47,11 @@ class ThankYouController extends Controller
         //  dd($users);
           if(config('app.settings')->layout=='template2'){
               return view('template.template2.thankyou');
-          }else{
+          }elseif(config('app.settings')->layout=='template1'){
               return view('template.template1.thankyou');
-          }
+          }elseif(config('app.settings')->layout=='template3'){
+            return view('template.template3.thankyou');
+        }
   
     }
 
@@ -90,16 +92,17 @@ class ThankYouController extends Controller
         //     ->notify(new OrderCompleted($order));
      $settings=Setting::orderBy('id','desc')->first();
         // Notification::send($users, new OrderCompleted($order,$settings->email));
-
+// dd(config('app.settings')->layout);
          Mail::send(new OrderCompleted($order,$settings->email));
 
 
-    //    dd($users);
+    //   
         if(config('app.settings')->layout=='template2'){
             return view('template.template2.thankyou');
         }else if(config('app.settings')->layout=='template1'){
             return view('template.template1.thankyou');
         }else if(config('app.settings')->layout=='template3'){
+            
             return view('template.template3.thankyou');
         }
     }

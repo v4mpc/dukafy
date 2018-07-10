@@ -99,7 +99,7 @@
 <div class="product">		
 <div class="product-image">
 <div class="image">
-<a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" alt=""></a>
+<a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
 </div><!-- /.image -->			
 
                         		   
@@ -166,7 +166,7 @@
 <div class="col col-sm-4 col-lg-4">
 <div class="product-image">
 <div class="image">
-    <img data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive" src="assets/images/blank.gif" alt="">
+    <img data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" src="assets/images/blank.gif" alt="">
 </div>
 </div><!-- /.product-image -->
 </div><!-- /.col -->
