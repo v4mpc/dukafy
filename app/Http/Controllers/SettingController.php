@@ -170,64 +170,64 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
     {
         // abort(404,'usdf');
         // dd($request->location_name);
-        if($request->store_name){
-        $setting->store_name=$request->store_name;
-        $setting->working_hours=$request->working_hours;
-        $setting->address=$request->address;
-        $setting->longitude=$request->lng;
-        $setting->latitude=$request->lat;
-        $setting->email=$request->email;
-        }
+        // if($request->store_name){
+        // $setting->store_name=$request->store_name;
+        // $setting->working_hours=$request->working_hours;
+        // $setting->address=$request->address;
+        // $setting->longitude=$request->lng;
+        // $setting->latitude=$request->lat;
+        // $setting->email=$request->email;
+        // }
   
-        if($request->about){
+        // if($request->about){
         
        
-        $setting->about=$request->about;
+        // $setting->about=$request->about;
        
 
-        }else{
-            $setting->about=null;
-        }
+        // }else{
+        //     $setting->about=null;
+        // }
 
-        if($request->mobile){
-            $setting->mobile=$request->mobile;
-        }else{
-           $setting->mobile=null;
-        }
+        // if($request->mobile){
+        //     $setting->mobile=$request->mobile;
+        // }else{
+        //    $setting->mobile=null;
+        // }
 
-        if($request->location_name){
-            $setting->location_name=$request->location_name;
-        }else{
-           $setting->location_name=null;
-        }
+        // if($request->location_name){
+        //     $setting->location_name=$request->location_name;
+        // }else{
+        //    $setting->location_name=null;
+        // }
 
         // if($request->logo_text){
         //     $setting->logo_text=$request->logo_text;
         // }
 
-        if($request->facebook){
-            $setting->facebook=$request->facebook;
-        }else{
-           $setting->facebook=null;
-        }
+        // if($request->facebook){
+        //     $setting->facebook=$request->facebook;
+        // }else{
+        //    $setting->facebook=null;
+        // }
 
-        if($request->twitter){
-            $setting->twitter=$request->twitter;
-        }else{
-            $setting->twitter=null;
-        }
+        // if($request->twitter){
+        //     $setting->twitter=$request->twitter;
+        // }else{
+        //     $setting->twitter=null;
+        // }
 
-        if($request->instagram){
-            $setting->instagram=$request->instagram;
-        }else{
-            $setting->instagram=null;
-        }
+        // if($request->instagram){
+        //     $setting->instagram=$request->instagram;
+        // }else{
+        //     $setting->instagram=null;
+        // }
 
-        if( $request->whatsapp){
-            $setting->whatsapp=$request->whatsapp; 
-        }else{
-            $setting->whatsapp=null;
-        }
+        // if( $request->whatsapp){
+        //     $setting->whatsapp=$request->whatsapp; 
+        // }else{
+        //     $setting->whatsapp=null;
+        // }
 
         if($request->layout){
         $setting->layout=$request->layout;
