@@ -139,7 +139,7 @@
                    
 
                   <div class="row row-divided" align="center">
-                    <div class="col-xs-6 column-one">
+                    <div class="col-md-6 column-one">
                          
                       <h4 class="info-text">Logo </h4>
                       <br>
@@ -162,7 +162,7 @@
                           
                       </div>
                       <div class="vertical-divider">or</div>
-                      <div class="col-xs-5 column-two">
+                      <div class="col-md-6 column-two">
                         <h4 class="info-text">Logo Text </h4>
                         <br>
                         <div class="form-group">

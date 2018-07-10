@@ -342,7 +342,7 @@
 			
             $('#cropped-slider1').attr('src', "{{asset('images/productplaceholder.png')}}");
             $('input[name="slider_one"]').removeAttr('value');
-            console.log($('input[name="slider_one"]').val());
+            // console.log($('input[name="slider_one"]').val());
 
 		});
 		$('.slider1-input-button').click(function () {

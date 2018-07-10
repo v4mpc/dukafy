@@ -1123,7 +1123,8 @@ $('#located').click(function(params) {
 		});
 
 		$('#remove-logo').click(function () {
-			$('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('#cropped-logo').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="logo"]').removeAttr('value');
 		});
 		$('.logo-input-button').click(function () {
 			$('#logo-input').click();
@@ -1196,6 +1197,7 @@ $('#located').click(function(params) {
 		$('#remove-slider1').click(function () {
 			
             $('#cropped-slider1').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="slider_one"]').removeAttr('value');
 		});
 		$('.slider1-input-button').click(function () {
 			$('#slider1-input').click();
@@ -1204,6 +1206,7 @@ $('#located').click(function(params) {
 		$('#remove-slider2').click(function () {
 			
             $('#cropped-slider2').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="slider_two"]').removeAttr('value');
             
 		});
 		$('.slider2-input-button').click(function () {
@@ -1213,6 +1216,7 @@ $('#located').click(function(params) {
 		$('#remove-slider3').click(function () {
 			
             $('#cropped-slider3').attr('src', "{{asset('images/productplaceholder.png')}}");
+            $('input[name="slider_three"]').removeAttr('value');
 		});
 		$('.slider3-input-button').click(function () {
 			$('#slider3-input').click();
