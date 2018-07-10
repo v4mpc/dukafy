@@ -142,6 +142,7 @@
                       {{-- <form > --}}
                           <input type="hidden" id="lat" name="lat">
                           <input type="hidden" id="lon" name="lng">
+                      <input type="hidden" name="location_name" value="{{$settings->location_name}}" id="location_name">
 {{-- </form> --}}
                       
 
@@ -195,7 +196,7 @@
                                       <div class="form-group">
                                           <label>Location</label>
                                           {{-- <form> --}}
-                                          <input type="text" class="form-control location_trigger" id="geocomplete" style="width: 500px;" value="{{$settings->location_name}}" placeholder="Start Typing...">
+                                          <input type="text" class="form-control location_trigger"  id="geocomplete" style="width: 500px;" value="{{$settings->location_name}}" placeholder="Start Typing...">
                                           {{-- <p id="see">Click me</p> --}}
                                           {{-- </form> --}}
                                           
@@ -339,6 +340,10 @@ $('.location_trigger').focus(function(params) {
 $('#located').click(function(params) {
 
       $('#location-modal').modal('hide');
+      var location_name=$('#geocomplete').val();
+      // console.log(location_name);
+      $("#location_name").val(location_name);
+
     
 });
 

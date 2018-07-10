@@ -97,6 +97,15 @@
 .img-height{
 	height:250px;
 }
+
+.product .cart {
+    opacity: 1;
+}
+
+ .product .cart .action ul li.add-cart-button .btn.btn-primary.icon{
+	 background: #25d366;
+
+}
 		</style>
 
 	</head>

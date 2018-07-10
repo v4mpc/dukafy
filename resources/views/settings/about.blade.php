@@ -90,7 +90,7 @@ toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline
               </div>
               <div class="card-content collapse show">
                 <div class="card-body">
-                <form action="{{route('settings.update',$settings->id)}}" method="POST" >
+                <form action="{{route('update.about.us',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
                   <h4 class="info-text" align="center">Describe Your Business </h4>

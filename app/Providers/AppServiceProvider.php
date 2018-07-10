@@ -36,8 +36,8 @@ $min_price=0;
 
 $start_max_price=Product::max('price');
 $start_min_price=Product::min('price');
-        $featureds=Product::where('featured','1')->get();
-        $on_sales=Product::where('discount','>','1')->get();
+        $featureds=Product::where('featured','1')->where('out_stock','0')->get();
+        $on_sales=Product::where('discount','>','1')->where('out_stock','0')->get();
         $products=Product::all();
         $orders=Order::all();
         $out_stocks=Product::where('out_stock','1')->get();

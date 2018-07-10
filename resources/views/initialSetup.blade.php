@@ -662,7 +662,7 @@
                                         <h5 class="info-text"> Upload Your Logo</h5>
                                         <div class="row row-divided" align="center">
                                             <div class="col-xs-6 column-one">
-                                                <h4>Logo</h4>
+                                                <h6>Logo</h6>
                                                 <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" width="200" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="logo-input" style="display: none;">
                                                     <input type="hidden" name="logo">
@@ -679,9 +679,9 @@
                                             </div>
                                               <div class="vertical-divider">or</div>
                                             <div class="col-xs-6 column-two">
-                                                <h4>Logo Text</h4>
+                                                {{-- <h4>Logo Text</h4> --}}
                                                 <div class="form-group">
-                                                    {{-- <label>Logo Text</label> --}}
+                                                    <h6>Logo Text</h6>
                                                     <input type="text" class="form-control" name="logo_text" id="exampleInputEmail1" maxlength="8" title="maximum 8 character" placeholder=" Text to Display as logo">
                                                 </div>
                                             </div>

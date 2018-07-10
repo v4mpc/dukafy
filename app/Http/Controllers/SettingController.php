@@ -317,6 +317,8 @@ Session::flash('success_settings','Setting Saved!');
     public function updateBasicInfo(Request $request,$id)
     {
         $setting=Setting::findOrFail($id);
+
+        // dd($request->location_name);
         if($request->store_name){
             $setting->store_name=$request->store_name;
             $setting->working_hours=$request->working_hours;
@@ -324,6 +326,7 @@ Session::flash('success_settings','Setting Saved!');
             $setting->longitude=$request->lng;
             $setting->latitude=$request->lat;
             $setting->email=$request->email;
+            $setting->mobile=$request->mobile;
             $setting->location_name=$request->location_name;
             }
             $setting->save();
@@ -345,11 +348,7 @@ Session::flash('success_settings','Setting Saved!');
                 $setting->about=null;
             }
     
-            if($request->mobile){
-                $setting->mobile=$request->mobile;
-            }else{
-               $setting->mobile=null;
-            }
+         
     
     
             // if($request->logo_text){
