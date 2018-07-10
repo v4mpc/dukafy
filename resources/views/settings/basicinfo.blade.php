@@ -93,7 +93,7 @@
               </div>
               <div class="card-content collapse show">
                 <div class="card-body">
-                <form action="{{route('settings.update',$settings->id)}}" method="POST" >
+                <form action="{{route('update.basic.info',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
                    

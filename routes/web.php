@@ -92,6 +92,8 @@ Route::resource('/orders', 'OrderController');
 Route::resource('/settings', 'SettingController');
 Route::put('/update_logo/{id}','SettingController@updateLogo')->name('update.logo');
 Route::put('/update_slider/{id}','SettingController@updateSlider')->name('update.slider');
+Route::put('/update_basic_info/{id}','SettingController@updateBasicInfo')->name('update.basic.info');
+
 
 
 // Route::put('/settings/layout/{id}', 'SettingController@updateLayout')->name('update.layout');

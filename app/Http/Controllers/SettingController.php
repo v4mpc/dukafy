@@ -317,6 +317,74 @@ Session::flash('success_settings','Setting Saved!');
     public function updateBasicInfo(Request $request,$id)
     {
         $setting=Setting::findOrFail($id);
+        if($request->store_name){
+            $setting->store_name=$request->store_name;
+            $setting->working_hours=$request->working_hours;
+            $setting->address=$request->address;
+            $setting->longitude=$request->lng;
+            $setting->latitude=$request->lat;
+            $setting->email=$request->email;
+            $setting->location_name=$request->location_name;
+            }
+            $setting->save();
+
+        Session::flash('success_settings','Setting Saved!');
+        return redirect()->back();
+
+    }
+    public function updateAbout(Request $request,$id)
+    {
+        $setting=Setting::findOrFail($id);
+        if($request->about){
+        
+       
+            $setting->about=$request->about;
+           
+    
+            }else{
+                $setting->about=null;
+            }
+    
+            if($request->mobile){
+                $setting->mobile=$request->mobile;
+            }else{
+               $setting->mobile=null;
+            }
+    
+    
+            // if($request->logo_text){
+            //     $setting->logo_text=$request->logo_text;
+            // }
+    
+            if($request->facebook){
+                $setting->facebook=$request->facebook;
+            }else{
+               $setting->facebook=null;
+            }
+    
+            if($request->twitter){
+                $setting->twitter=$request->twitter;
+            }else{
+                $setting->twitter=null;
+            }
+    
+            if($request->instagram){
+                $setting->instagram=$request->instagram;
+            }else{
+                $setting->instagram=null;
+            }
+    
+            if( $request->whatsapp){
+                $setting->whatsapp=$request->whatsapp; 
+            }else{
+                $setting->whatsapp=null;
+            }
+    
+            $setting->save();
+
+        Session::flash('success_settings','Setting Saved!');
+        return redirect()->back();
+
     }
     public function updateLogo(Request $request,$id)
     {
