@@ -169,7 +169,7 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
     public function update(Request $request, Setting $setting)
     {
         // abort(404,'usdf');
-        
+        // dd($request->location_name);
         if($request->store_name){
         $setting->store_name=$request->store_name;
         $setting->working_hours=$request->working_hours;
@@ -193,6 +193,12 @@ Session::flash('initial_screen','Welcome! Please Activate your Site in the Setti
             $setting->mobile=$request->mobile;
         }else{
            $setting->mobile=null;
+        }
+
+        if($request->location_name){
+            $setting->location_name=$request->location_name;
+        }else{
+           $setting->location_name=null;
         }
 
         // if($request->logo_text){
