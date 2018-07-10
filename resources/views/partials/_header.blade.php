@@ -54,6 +54,10 @@
 
     }
 
+           .img-height{
+	height:250px;
+}
+
 
 .btn-yellow,
 .btn-yellow:hover,

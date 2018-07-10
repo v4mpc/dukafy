@@ -314,8 +314,10 @@ Session::flash('success_settings','Setting Saved!');
   return redirect()->back();
     }
 
-
-
+    public function updateBasicInfo(Request $request,$id)
+    {
+        $setting=Setting::findOrFail($id);
+    }
     public function updateLogo(Request $request,$id)
     {
         // abort(404,'usdf');

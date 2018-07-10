@@ -265,7 +265,7 @@
 
                     <div class="col-md-4">
                       <!-- Product -->
-                      <div class="product">
+                      <div class="product img-height">
                         <article>
                           <img class="img-responsive" id="product_image" src="{{asset('images/productplaceholder.png')}}" alt="">
                           <span id="sale_tag"></span>
