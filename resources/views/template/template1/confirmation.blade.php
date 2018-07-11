@@ -147,8 +147,8 @@
             </div>
 
             <!-- Button -->
-            <div class="pro-btn"> <a href="{{route('check_out.edit',$order->id)}}" class="btn-round btn-light">Back to Delivery</a> <a href="{{route('thank_you.store')}}"
-                    onclick="event.preventDefault();document.getElementById('confirmation-form').submit();" class="btn-round">Proceed to Checkout</a>
+            <div class="pro-btn"> <a href="{{route('check_out.edit',$order->id)}}" class="btn-round btn-light">Back to Delivery</a> <a 
+                   id="confirm-order" class="btn-round">Proceed to Checkout</a>
                 <form id="confirmation-form" action="{{route('thank_you.store')}}" method="POST">
                     {{csrf_field()}}
                 </form>

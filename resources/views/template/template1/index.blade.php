@@ -87,7 +87,11 @@
                 <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
                   <i class="icon-basket-loaded"></i>
                 </a>
+                {{-- <span class="whatsapp-area">
+                  <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i></a>
+                </span> --}}
               </article>
+             
             </div>
 
             @endforeach

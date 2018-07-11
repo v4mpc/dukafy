@@ -44,6 +44,7 @@
         <link rel="shortcut icon" href="assets/images/fav-icon.png">
         <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
         <link rel="stylesheet" href="{{asset('vendor/toaster/toaster.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
 
 
         <style>

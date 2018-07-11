@@ -3,7 +3,7 @@
 <article class="page type-page status-publish hentry">
         <header class="entry-header"><h1 itemprop="name" class="entry-title">Checkout</h1></header><!-- .entry-header -->
 
-        <form  action="{{route('order.store')}}" class="checkout woocommerce-checkout" method="post" name="checkout">
+        <form  action="{{route('order.store')}}" class="checkout woocommerce-checkout" id="confirmation-form" method="post" name="checkout">
             {{csrf_field()}}
 <div id="customer_details" class="col2-set">
 <div class="col-1">
@@ -88,7 +88,7 @@
 
   
 
-    <input type="submit" data-value="Place order" value="Place order" class="button alt">
+    <button id="confirm-order"  data-value="Place order" value="Place order" onclick="event.preventDefault();" class="button alt">Place Order</button>
 </div>
 </div>
 </div>

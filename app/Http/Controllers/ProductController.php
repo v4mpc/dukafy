@@ -314,7 +314,7 @@ return redirect()->route('products.show',$product->id);
 
     public function search(Request $request)
     {
-// dd($request->query);
+ dd($request->query);
             $request->validate([
                 'query'=>'required|min:3'
             ]);
@@ -399,16 +399,34 @@ return redirect()->route('products.show',$product->id);
     {
 
 
-        // dd($request->all());
+        //  dd($request->all());
+
+         if(config('app.settings')->layout=='template3'){
+            $price=explode(",",$request->price);
+            $min_price=$price[0];
+            $max_price=$price[1];
+            $products=Product::where('out_stock',0)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
+            return view('template.template3.search')->with('products',$products)->with('min_price',$min_price)->with('max_price',$max_price);
+    
+         }else{
+
 
         $min_price=$request->min_price;
         $max_price=$request->max_price;
         $checked_categories=array();
         $checked_categories=$request->category_id;
-        // dd($request->category_id);
         $products=Product::where('out_stock',0)->whereIn('category_id',$request->category_id)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
         return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
 
-        // dd($request->all());
+         }
+        
+
+        
+
+
+
+      
+        
+     
     }
 }

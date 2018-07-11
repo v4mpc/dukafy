@@ -22,7 +22,8 @@
 {{-- <input id="cate" name="category_id[]" value="{{$category->id}}" class="styled" type="checkbox" {{in_array($category->id,$checked_categories)?"checked":""}}> --}}
 
 </div><!-- /.price-range-holder -->
-<a id="filter-price" class="lnk btn btn-primary filter-price">Show Now</a>
+<a id="filter-price" class="lnk btn btn-primary filter-price" href="{{route('filter_products')}}" onclick="event.preventDefault();
+document.getElementById('filter-form').submit();">Show Now</a>
 </div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 <!-- ============================================== PRICE SILDER : END ============================================== -->

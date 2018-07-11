@@ -1,4 +1,11 @@
+@if(Request::is('check_out/*'))
+<script src="{{asset('template1/js/vendors/jquery/jquery.min.js')}}"></script>
+@else
 <script type="text/javascript" src="{{asset('template2/assets/js/jquery.min.js')}}"></script>
+@endif
+
+
+
 <script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('template2/assets/js/tether.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('template2/assets/js/bootstrap.min.js')}}"></script>
@@ -12,6 +19,9 @@
 <script src="https://maps.googleapis.com/maps/api/js?key={{$maps_api_key}}&callback=initMap"></script>
 <script src="{{asset('vendor/toaster/toaster.min.js')}}"></script>
 <script src="{{asset('template1/js/vendors/map.js')}}"></script>
+<script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
+
 
 <!-- For demo purposes – can be removed on production -->
 

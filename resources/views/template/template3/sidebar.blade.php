@@ -17,7 +17,7 @@
 </nav><!-- /.megamenu-horizontal -->
 </div><!-- /.side-menu -->
 <!-- ================================== TOP NAVIGATION : END ================================== -->
-@if(Request::is('category/*'))
+@if(Request::is('category/*')||Request::is('filter_product'))
 @include('template.template3.filter')
 @endif
     </div>

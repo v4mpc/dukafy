@@ -63,9 +63,7 @@
       </li> --}}
 
 
-      <li class=" nav-item "><a id="visit-store" ><i class="ft-corner-up-right"></i><span class="menu-title" data-i18n="nav.dash.main">Visit Site</span></a>
-
-      </li>
+      
 
 
      
@@ -88,6 +86,11 @@
           </li>
 
         </ul>
+      </li>
+
+
+      <li class=" nav-item "><a id="visit-store" ><i class="ft-corner-up-right"></i><span class="menu-title" data-i18n="nav.dash.main">Visit Site</span></a>
+
       </li>
 
 

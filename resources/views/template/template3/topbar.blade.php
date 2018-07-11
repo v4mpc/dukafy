@@ -74,7 +74,7 @@
                         <div class="contact-row">
                             @if($settings->mobile!=null)
         <div class="phone inline">
-            <i class="icon fa fa-phone"></i>+255{{$settings->mobile}}
+            <i class="icon fa fa-phone"></i>+255 {{substr_replace($settings->mobile," ", 3, 0)}}
         </div>
         @endif
         @if($settings->email!=null)

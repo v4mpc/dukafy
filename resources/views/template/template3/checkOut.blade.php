@@ -60,7 +60,7 @@
                     <div class="col-md-6 col-sm-6 already-registered-login">
                         {{-- <h4 class="checkout-subtitle">Already registered?</h4>
                         <p class="text title-tag-line">Please log in below:</p> --}}
-                        <form class="register-form" role="form" action="{{route('order.store')}}" method="POST">
+                        <form class="register-form" role="form" action="{{route('order.store')}}" id="confirmation-form" method="POST">
                                 {{csrf_field()}}
                                 <div class="form-group">
                                         <label class="info-title" for="exampleInputEmail1"> First Name <span>*</span></label>
@@ -91,7 +91,7 @@
                                 <textarea class="form-control unicase-form-control text-input" name="comment" id="" cols="30" rows="5" placeholder="Special Note of delivery..."></textarea>
                                 
                               </div>
-                          <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Place Order</button>
+                          <button type="button" id="confirm-order" class="btn-upper btn btn-primary checkout-page-button">Place Order</button>
                         </form>
                     </div>	
                     <!-- already-registered-login -->		

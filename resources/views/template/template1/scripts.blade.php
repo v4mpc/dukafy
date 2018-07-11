@@ -15,6 +15,8 @@
 <script src="{{asset('template1/js/main.js')}}"></script>
 <script src="{{asset('template1/js/vendors/jquery.nouislider.min.js')}}"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+<script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{$maps_api_key}}&callback=initMap"></script>
 <script src="{{asset('template1/js/vendors/map.js')}}"></script>

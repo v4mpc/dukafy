@@ -36,6 +36,7 @@
 		<link rel="stylesheet" href="{{asset('template3/assets/css/bootstrap-select.min.css')}}">
 		<link rel="stylesheet" href="{{asset('vendor/toaster/toaster.min.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
 
 
 

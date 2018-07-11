@@ -131,6 +131,10 @@
   
 }
 
+#visit-store{
+    background: #075e54;
+}
+
     </style>
 
 </head>

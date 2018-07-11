@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('template1/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/toaster/toaster.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
 
 
     <style>
@@ -53,6 +54,15 @@
 .crop img {
  height: auto;
  width: 200px;
+}
+.whatsapp-area{
+    display: block;
+    padding-top: 1.071em;
+    border-top: 1px solid #eaeaea;
+    border: none;
+    position: relative;
+    text-align: center;
+    background-color: #FFF;
 }
     </style>
 
