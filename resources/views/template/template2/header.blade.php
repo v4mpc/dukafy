@@ -63,6 +63,13 @@
 .img-height{
 	height:250px;
 }
+
+.img-alig{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
         
         </style>
     </head>
