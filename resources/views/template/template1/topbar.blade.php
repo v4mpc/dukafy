@@ -9,7 +9,7 @@
     <!-- Top bar -->
     <div class="top-bar">
       <div class="container">
-        <p>Welcome to {{$settings->store_name}}</p>
+        {{-- <p>Welcome to {{$settings->store_name}}</p> --}}
         @if($settings->working_hours===null)
         <p>{{$settings->working_hours}}</p>
         @endif

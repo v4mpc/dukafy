@@ -3,11 +3,15 @@
 
         <div class="top-bar">
                 <div class="container">
+                        @if($settings->working_hours===null)
                     <nav>
                         <ul id="menu-top-bar-left" class="nav nav-inline pull-left animate-dropdown flip">
-                        <li class="menu-item animate-dropdown"><a href="{{route('start')}}" title="Welcome to {{$settings->store_name}}" href="#">Welcome to {{$settings->store_name}}</a></li>
+                        {{-- <li class="menu-item animate-dropdown"><a href="{{route('start')}}" title="Welcome to {{$settings->store_name}}" href="#">Welcome to {{$settings->store_name}}</a></li> --}}
+                        <li class="menu-item animate-dropdown"><a href="{{route('start')}}"  href="#"> {{$settings->working_hours}}</a></li>
+
                         </ul>
                     </nav>
+                    @endif
             
                     <nav>
                         <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">

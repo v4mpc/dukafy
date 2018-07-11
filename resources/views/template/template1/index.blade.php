@@ -69,9 +69,9 @@
             <!-- Product -->
             @foreach($featureds as $product)
             <!-- Product -->
-            <div class="product">
+            <div class="product" >
               <article>
-                <div class="img-height"><a href="{{route('product.show',$product->id)}}"><img class="img-responsive" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>                  </div> @if($product->discount)
+                <a href="{{route('product.show',$product->id)}}"> <div  >    <img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}"  alt="">             </div></a> @if($product->discount)
                 <span class="sale-tag">-{{$product->discount}}%</span> @endif
                 <!-- Content -->
                 <span class="tag">{{$product->category->name}}</span>
@@ -107,7 +107,7 @@
             <!-- Product -->
             <div class="product">
               <article>
-                <div class="img-height"><a href="{{route('product.show',$product->id)}}"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>                  </div> @if($product->discount)
+                <div><a href="{{route('product.show',$product->id)}}"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>                  </div> @if($product->discount)
                 <span class="sale-tag">-{{$product->discount}}%</span> @endif
                 <!-- Content -->
                 <span class="tag">{{$product->category->name}}</span>

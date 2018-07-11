@@ -44,6 +44,16 @@
         .img-height{
 	height:250px;
 }
+
+.crop {
+ height: 100px;
+ width: 200px;
+ overflow: hidden;
+}
+.crop img {
+ height: auto;
+ width: 200px;
+}
     </style>
 
     <!-- Fonts Online -->

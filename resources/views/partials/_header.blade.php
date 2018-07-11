@@ -56,6 +56,7 @@
 
            .img-height{
 	height:250px;
+    width:auto;
 }
 
 

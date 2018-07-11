@@ -267,7 +267,7 @@
                       <!-- Product -->
                       <div class="product img-height">
                         <article>
-                          <img class="img-responsive" id="product_image" src="{{asset('images/productplaceholder.png')}}" alt="">
+                          <img class="img-responsive" id="product_image" height="250px" width="auto" src="{{asset('images/productplaceholder.png')}}" alt="">
                           <span id="sale_tag"></span>
                           <!-- Content -->
                           <span class="tag" id="category_output"></span>

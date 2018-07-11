@@ -3,24 +3,16 @@
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
+                            @if($settings->working_hours===null)
                     <li><a href="{{route("start")}}">Welcome to {{$settings->store_name}} </a></li>
+                    @endif
     <li>
         <a  data-fancybox data-src="#hidden-content" href="javascript:;">
             <i class="icon fa fa-location-arrow" ></i>Store Locator</a>
 
     </li>
 
-    <div style="display: none;" id="hidden-content">
-
-            <section class="map-block">
-      
-                    <iframe src="http://maps.google.com/maps?q={{$settings->latitude}},{{$settings->longitude}}&z=15&output=embed" width="530" height="330" frameborder="0" style="border:0"></iframe>
-      
-      
-      
-      
-            </section>
-          </div>
+   
 
 <li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                     @if($settings->facebook)
@@ -46,6 +38,18 @@
             </div><!-- /.header-top-inner -->
         </div><!-- /.container -->
     </div><!-- /.header-top -->
+
+    <div style="display: none;" id="hidden-content">
+
+        <section class="map-block">
+  
+                <iframe src="http://maps.google.com/maps?q={{$settings->latitude}},{{$settings->longitude}}&z=15&output=embed" width="530" height="330" frameborder="0" style="border:0"></iframe>
+  
+  
+  
+  
+        </section>
+      </div>
     <!-- ============================================== TOP MENU : END ============================================== -->
         <div class="main-header">
             <div class="container">

@@ -7,7 +7,7 @@
     <ul class="nav">
             @foreach($categories as $category) @if(count($category->products))
         <li class="dropdown menu-item">
-            <a href="{{route('category',$category->id)}}"  >{{$category->name}}</a>
+            <a href="{{route('category',$category->id)}}">{{$category->name}}</a>
                         </li><!-- /.menu-item -->
 
 @endif @endforeach
