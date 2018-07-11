@@ -64,6 +64,14 @@
     text-align: center;
     background-color: #FFF;
 }
+
+
+.img-alig{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
     </style>
 
     <!-- Fonts Online -->

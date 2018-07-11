@@ -10,7 +10,7 @@
     <div class="top-bar">
       <div class="container">
         {{-- <p>Welcome to {{$settings->store_name}}</p> --}}
-        @if($settings->working_hours===null)
+        @if($settings->working_hours!=null)
         <p>{{$settings->working_hours}}</p>
         @endif
 
@@ -22,7 +22,7 @@
             <li><a href="{{route('contact')}}">Contact Us </a></li>
             <li><a href="{{route('about')}}">About Us </a></li>
 
-            @if(count($settings->mobile)!=null)
+            @if(count($settings->mobile)!=0)
             <li><i class="fa fa-phone"></i> <strong>Hotline:</strong>+255 {{substr_replace($settings->mobile," ", 3, 0)}}</span>
             </li>
             @endif

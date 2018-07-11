@@ -3,8 +3,8 @@
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
-                            @if($settings->working_hours===null)
-                    <li><a href="{{route("start")}}">Welcome to {{$settings->store_name}} </a></li>
+                            @if($settings->working_hours!=null)
+                    <li><a href="{{route("start")}}">{{$settings->working_hours}} </a></li>
                     @endif
     <li>
         <a  data-fancybox data-src="#hidden-content" href="javascript:;">
@@ -16,13 +16,13 @@
 
 <li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                     @if($settings->facebook)
-                      <li><a href="{{$settings->facebook}}"><i class="icon fa fa-facebook"></i>Facebook</a></li> 
+                      <li><a href="https://{{$settings->facebook}}"><i class="icon fa fa-facebook"></i>Facebook</a></li> 
                       @endif
                       @if($settings->twitter)
-                        <li><a href="{{$settings->twitter}}"><i class="icon fa fa-twitter"></i>Twitter</a></li>
+                        <li><a href="https://{{$settings->twitter}}"><i class="icon fa fa-twitter"></i>Twitter</a></li>
                         @endif
                         @if($settings->instagram)
-        <li><a href="{{$settings->instagram}}"><i class="icon fa fa-instagram"></i>Instagram</a></li>
+        <li><a href="https://{{$settings->instagram}}"><i class="icon fa fa-instagram"></i>Instagram</a></li>
                         @endif
                         @if($settings->whatsapp)
         <li><a href="https://wa.me/255{{$settings->whatsapp}}"><i class="icon fa fa-whatsapp"></i>Whatsapp</a></li>
