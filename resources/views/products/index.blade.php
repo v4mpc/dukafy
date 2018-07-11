@@ -96,7 +96,7 @@
                         {{-- <td></td> --}}
                         <td>
                           <div width="300" height="300">
-                            <img src="{{asset('images/'.$product->images[0]->image)}}" alt="">
+                            <img src="{{asset('images/'.$product->images[0]->image)}}" width="100" height="auto" alt="">
                           </div>
                         </td>
 
