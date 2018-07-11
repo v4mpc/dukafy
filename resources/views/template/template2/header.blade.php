@@ -69,6 +69,7 @@
     margin-left: auto;
     margin-right: auto;
     /* width: 40%; */
+    height: 250px;
 }
         
         </style>

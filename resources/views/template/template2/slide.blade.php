@@ -305,7 +305,7 @@
                                                             <a href="{{route('product.show',$product->id)}}">
                                                                 <h3>{{$product->name}}</h3>
                                                                 <div class="product-thumbnail">
-                                                                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt="">
+                                                                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
                                                                 </div>
                                                             </a>
                                                     

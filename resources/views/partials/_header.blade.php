@@ -135,6 +135,12 @@
     background: #075e54;
 }
 
+.img-middle{
+    margin-right:auto;
+    margin-left:auto;
+    display: block;
+}
+
     </style>
 
 </head>

@@ -64,21 +64,21 @@
                                 {{csrf_field()}}
                                 <div class="form-group">
                                         <label class="info-title" for="exampleInputEmail1"> First Name <span>*</span></label>
-                                        <input type="text" class="form-control unicase-form-control text-input" name="first_name" id="exampleInputEmail1" placeholder="Bob">
+                                        <input type="text" class="form-control unicase-form-control text-input" name="first_name" id="exampleInputEmail1" required>
                                       </div>
 
                                       <div class="form-group">
                                             <label class="info-title" for="exampleInputEmail1"> Last Name <span>*</span></label>
-                                            <input type="text" class="form-control unicase-form-control text-input" name="last_name" id="exampleInputEmail1" placeholder="Alice">
+                                            <input type="text" class="form-control unicase-form-control text-input" name="last_name" id="exampleInputEmail1"  required>
                                           </div>
                             <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">Email <span>*</span></label>
-                            <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="email" placeholder="admin@gadgets.com">
+                            <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="email"  required>
                           </div>
 
                           <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1"> Address <span>*</span></label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="address" required placeholder="admin@gadgets.com">
+                                <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="address" required >
                               </div>
                           <div class="form-group">
                             <label class="info-title" for="exampleInputPassword1">Mobile <span>*</span></label>

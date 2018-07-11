@@ -76,7 +76,7 @@
                                     <h3>{{$product->name}}</h3>
                                     <div class="product-thumbnail">
         
-                                        <img data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" alt="">
+                                        <img class="img-responsive img-alig" data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" alt="">
         
                                     </div>
                                 </a>
@@ -213,8 +213,8 @@
                 </li>
             </ul>
         </aside>
-                    <aside class="widget widget_electro_products_filter">
-            <h3 class="widget-title">Filters</h3>
+                    {{-- <aside class="widget widget_electro_products_filter">
+            <h3 class="widget-title">Filters</h3> --}}
             {{-- <aside class="widget woocommerce widget_layered_nav">
                 <h3 class="widget-title">Brands</h3>
                 <ul>
@@ -237,7 +237,7 @@
                 </ul>
                 <p class="maxlist-more"><a href="#">+ Show more</a></p>
             </aside> --}}
-            <aside class="widget woocommerce widget_price_filter">
+            {{-- <aside class="widget woocommerce widget_price_filter">
                 <h3 class="widget-title">Price</h3>
                 <form action="#">
                     <div class="price_slider_wrapper">
@@ -253,7 +253,7 @@
                         </div>
                     </div>
                 </form>
-            </aside>
+            </aside> --}}
      
              
                 </div>

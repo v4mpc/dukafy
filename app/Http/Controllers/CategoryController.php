@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Session;
 // use App\Http\Requests;
 use App\Http\Requests\StoreCategory;
+use App\Product;
 
 
 class CategoryController extends Controller
@@ -98,9 +99,14 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category=Category::findOrFail($id);
-        $category->delete();
-        return response()->json($category);
+        
+        $products=Product::where('category_id',$id)->get();
+        if(count($products)==0){
+            $category=Category::findOrFail($id);
+            $category->delete();
+            return response()->json($category);
+        }
+       
     }
 
     public function addCategory(Request $request){

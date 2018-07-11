@@ -109,4 +109,13 @@
 }
 		</style>
 
+@if(Request::is('start'))
+<style>
+	.section-hack{
+		margin-top: 35%;
+	}
+</style>
+
+@endif
+
 	</head>

@@ -67,7 +67,7 @@
     <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
     @if(count($featureds))
                 <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-    <section class="section featured-product wow fadeInUp">
+    <section class="section featured-product wow fadeInUp section-hack">
         <h3 class="section-title">Featured products</h3>
         <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
                 @foreach($featureds as $product) 

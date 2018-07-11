@@ -285,7 +285,8 @@ table.layout {
 img {
   height: auto;
   max-width: 100%;
-  display: block; }
+  display: block;
+ }
 
 .electro-cute * {
   font-family: "Comic Sans MS", sans-serif; }

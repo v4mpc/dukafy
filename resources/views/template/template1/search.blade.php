@@ -34,13 +34,13 @@
         </select>
                             </li> --}}
                             <!-- by Default -->
-                            <li>
+                            {{-- <li>
                                 <select class="selectpicker">
           <option>Sort by Default </option>
           <option>Low to High </option>
           <option>High to Low </option>
         </select>
-                            </li>
+                            </li> --}}
 
                             <!-- Grid Layer -->
                             {{--
@@ -62,7 +62,7 @@
                         <!-- Product -->
                         <div class="product">
                             <article>
-                                <div class="img-height"><a href="{{route('product.show',$product->id)}}"><img class="img-responsive" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>                                    </div> @if($product->discount)
+                                <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
                                 <span class="sale-tag">-{{$product->discount}}%</span> @endif
                                 <!-- Content -->
                                 <span class="tag">{{$product->category->name}}</span>
