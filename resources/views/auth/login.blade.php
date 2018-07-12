@@ -31,7 +31,7 @@
               <div class="card-header border-0">
                 <div class="card-title text-center">
                   <div class="p-1">
-                    @if(count(Setting::all()))
+                    @if(count(App\Setting::all()))
                       @if($settings->logo!=null)
                   <img src="{{asset('images/'.$settings->logo)}}" class="responsive"  lt="branding logo"> 
                   @elseif($settings->logo_text!=null)
