@@ -6,11 +6,13 @@
                             @if($settings->working_hours!=null)
                     <li><a href="{{route("start")}}">{{$settings->working_hours}} </a></li>
                     @endif
+                    @if($settings->latitude!=null)
     <li>
         <a  data-fancybox data-src="#hidden-content" href="javascript:;">
             <i class="icon fa fa-location-arrow" ></i>Store Locator</a>
 
     </li>
+    @endif
 
    
 

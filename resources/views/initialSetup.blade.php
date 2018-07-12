@@ -351,6 +351,7 @@
                                             {{-- <form > --}}
                                                 <input type="hidden" id="lat" name="lat">
                                                 <input type="hidden" id="lon" name="lng">
+                                                <input type="hidden" name="location_name"  id="location_name">
     {{-- </form> --}}
                                             
 
@@ -1045,6 +1046,9 @@ $('.location_trigger').focus(function(params) {
 $('#located').click(function(params) {
 
       $('#location-modal').modal('hide');
+      var location_name=$('#geocomplete').val();
+    
+      $("#location_name").val(location_name);
     
 });
 

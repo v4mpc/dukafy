@@ -15,8 +15,12 @@
             
                     <nav>
                         <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">
+                                @if($settings->latitude!=null)
                             <li class="menu-item animate-dropdown"><a title="Store Locator" data-fancybox data-src="#hidden-content" href="javascript:;"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
+                            @endif
+                            @if($settings->about!=null)
                             <li class="menu-item animate-dropdown"><a title="Know more about us" href="{{route('about')}}"><i class="{{route('contact')}}"></i>About Us</a></li>
+                            @endif
                         <li class="menu-item animate-dropdown"><a title="Contact Us for Support" href="{{route('contact')}}"><i class="ec ec-support"></i>Contact Us</a></li>
                             
                             <li class="menu-item animate-dropdown"><a title="Call Us 24/7" href="my-account.html"><i class="ec ec-phone"></i>Hotline:+255 {{substr_replace($settings->mobile," ", 3, 0)}}</a></li>

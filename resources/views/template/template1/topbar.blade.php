@@ -18,10 +18,13 @@
           <ul>
             {{--
             <li><a href="{{route('login')}}">Login </a></li> --}}
+            @if($settings->latitude!=null)
             <li><a data-fancybox data-src="#hidden-content" href="javascript:;">Store Location </a></li>
+            @endif
             <li><a href="{{route('contact')}}">Contact Us </a></li>
+            @if($settings->about!=null)
             <li><a href="{{route('about')}}">About Us </a></li>
-
+@endif
             @if(count($settings->mobile)!=0)
             <li><i class="fa fa-phone"></i> <strong>Hotline:</strong>+255 {{substr_replace($settings->mobile," ", 3, 0)}}</span>
             </li>

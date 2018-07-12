@@ -56,6 +56,7 @@ class SettingController extends Controller
         $setting->about=$request->about;
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
+        $setting->location_name=$request->location_name;
         // dd($request->all());
 
         if($request->logo){
