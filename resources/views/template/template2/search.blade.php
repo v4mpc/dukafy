@@ -76,7 +76,7 @@
                                     <h3>{{$product->name}}</h3>
                                     <div class="product-thumbnail">
         
-                                        <img class="img-responsive img-alig" data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" alt="">
+                                        <img class="img-responsive img-alig" data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" class="img-responsive  img-alig" alt="">
         
                                     </div>
                                 </a>
@@ -95,7 +95,7 @@
                                             @endif
                                         </span>
                                     </span>
-                                    <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                    <a rel="nofollow" href="#." class="button add_to_cart_button">Add to cart</a>
                                 </div><!-- /.price-add-to-cart -->
                                 @if($settings->whatsapp)
                                 <div class="hover-area">

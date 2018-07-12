@@ -44,10 +44,10 @@ class OrderCompleted extends Notification //implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        // return (new MailMessage)
-        //             ->view('emails.orders.completed',['order'=>$this->order])->to([$this->order->customer->email,$this->seller_email]);
+        // // return (new MailMessage)
+        // //             ->view('emails.orders.completed',['order'=>$this->order])->to([$this->order->customer->email,$this->seller_email]);
 
-                    return (new Mailable($this->order))->to([$this->order->customer->email,$this->seller_email]);
+        //             return (new Mailable($this->order))->to([$this->order->customer->email,$this->seller_email]);
                     
     }
 
