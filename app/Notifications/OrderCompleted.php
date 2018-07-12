@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use App\Mail\OrderCompleted as Mailable;
+// use App\Mail\OrderCompleted as Mailable;
 
 class OrderCompleted extends Notification //implements ShouldQueue
 {
