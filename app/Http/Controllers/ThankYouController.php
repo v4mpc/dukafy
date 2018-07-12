@@ -8,7 +8,7 @@ use Cart;
 use App\User;
 use Notification;
 use Mail;
-// use App\Notifications\OrderCompleted;
+use App\Notifications\OrderCompleted as OrderCompletedNotification;
 use App\Setting;
 use App\Mail\OrderCompleted;
 
@@ -39,7 +39,7 @@ class ThankYouController extends Controller
           // Notification::route('mail', 'taylor@laravel.com')
           //     ->notify(new OrderCompleted($order));
        $settings=Setting::orderBy('id','desc')->first();
-          Notification::send($users, new App\Notifications\OrderCompleted($order,$settings->email));
+          Notification::send($users, new OrderCompletedNotification($order,$settings->email));
   
            Mail::send(new OrderCompleted($order,$settings->email));
   
