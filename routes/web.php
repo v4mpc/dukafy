@@ -17,6 +17,7 @@ Route::get('/product/{id}','TemplateController@productshow')->name('product.show
 Route::resource('/cart','CartController');
 Route::resource('/check_out','CheckOutController');
 Route::resource('/order','OrderController');
+Route::view('maintanance','maintanance');
 
 Route::get('/mailable', function () {
     $order = App\Order::find(7);
