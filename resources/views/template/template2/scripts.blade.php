@@ -36,6 +36,69 @@
 
 
 
+ //new tab for social links
+
+
+    $('#facebook').click(function (params) {
+    
+    var win = window.open('https://{{$settings->facebook}}', '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+
+});
+
+
+    $('#instagram').click(function (params) {
+    
+    var win = window.open('https://{{$settings->instagram}}', '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+
+});
+
+    $('#twitter').click(function (params) {
+    
+    var win = window.open('https://{{$settings->twitter}}', '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+
+});
+
+
+    $('#whatsapp').click(function (params) {
+    
+    var win = window.open('https://wa.me/255{{$settings->whatsapp}}', '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+
+});
+
+
+
+
+
+
+
 
     $('.remove').click(function() {
 

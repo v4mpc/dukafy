@@ -113,14 +113,14 @@
     <div class="nav-right">
       <ul>
         @if($settings->facebook!=null)
-        <li><a href="https://{{$settings->facebook}}"><i  class="fa fa-facebook white-fonts"></i></a></li>
+        <li><a href="#" id="facebook"><i  class="fa fa-facebook white-fonts"></i></a></li>
         @endif @if($settings->instagram!=null)
-        <li><a href="https://{{$settings->instagram}}"><i  class="fa fa-instagram white-fonts"></i></a></li>
+        <li><a href="#" id="instagram"><i  class="fa fa-instagram white-fonts"></i></a></li>
         @endif @if($settings->twitter!=null)
-        <li><a href="https://{{$settings->twitter}}"><i  class="fa fa-twitter white-fonts"></i></a></li>
+        <li><a href="#" id="twitter"><i  class="fa fa-twitter white-fonts"></i></a></li>
         @endif
         @if($settings->whatsapp!=null)
-        <li><a href="https://wa.me/255{{$settings->whatsapp}}"><i  class="fa fa-whatsapp white-fonts"></i></a></li>
+        <li><a href="#" id="whatsapp"><i  class="fa fa-whatsapp white-fonts"></i></a></li>
         @endif
 
 
