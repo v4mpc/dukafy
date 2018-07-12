@@ -39,7 +39,7 @@ class ThankYouController extends Controller
           // Notification::route('mail', 'taylor@laravel.com')
           //     ->notify(new OrderCompleted($order));
        $settings=Setting::orderBy('id','desc')->first();
-          // Notification::send($users, new OrderCompleted($order,$settings->email));
+          Notification::send($users, new OrderCompleted($order,$settings->email));
   
            Mail::send(new OrderCompleted($order,$settings->email));
   
