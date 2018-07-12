@@ -53,6 +53,7 @@ class SettingController extends Controller
         $setting->facebook=$request->facebook;
         $setting->twitter=$request->twitter;
         $setting->instagram=$request->instagram;
+        $setting->whatsapp=$request->whatsapp;
         $setting->about=$request->about;
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
