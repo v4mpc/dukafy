@@ -8,8 +8,10 @@
   {{-- <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
   <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard"> --}}
   {{-- <meta name="author" content="PIXINVENT"> --}}
+  @if(count(App\Setting::all()))
   <title>{{$settings->store_name}}
   </title>
+  @endif
   <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
   <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/line-awesome/css/line-awesome.min.css')}}">
   {{-- <link rel="shortcut icon" type="image/x-icon" href="http://www.pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/app-assets/images/ico/favicon.ico"> --}}
