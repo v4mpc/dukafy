@@ -14,7 +14,7 @@ class ChangingAboutTableToLongText extends Migration
     public function up()
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->longText('about')->change();
+            $table->longText('about')->nullable()->change();
         });
     }
 
