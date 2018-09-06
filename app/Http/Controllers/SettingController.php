@@ -45,6 +45,7 @@ class SettingController extends Controller
         $request->validate([
                 'colour' => 'required',
                 'layout'=>'required',
+               
             ]);
 
         $setting=new Setting;
@@ -326,6 +327,7 @@ class SettingController extends Controller
     {
         $setting=Setting::findOrFail($id);
         if ($request->about) {
+          
             $setting->about=$request->about;
         } else {
             $setting->about=null;

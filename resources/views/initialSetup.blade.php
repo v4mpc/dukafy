@@ -18,6 +18,7 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('initial_screen/css/demo.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('initial_screen/Croppie/croppie.css')}}">
+    <script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
 
     <!-- Fonts and Icons -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
@@ -28,21 +29,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-loader.min.css')}}"> --}}
 
 
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-
-
-    <script>
-        tinymce.init({ 
-  selector:'textarea',
-  plugins: "lists link image textcolor",
-  branding: false,
-  height : 200,
-  menubar:false,
-  statusbar:false,
-    toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify link image"	
-  
-   });
-    </script>
 
     <style>
         .loader {
@@ -376,8 +362,17 @@
 
                                                 <div class="col-sm-10 col-sm-offset-1">
                                                     <div class="form-group">
-                                                        <label>About Us</label>
-                                                        <textarea class="form-control" placeholder="" name="about" rows="9"></textarea>
+                                                        <label>About Us </label>
+                                                        <small><i id="test2"></i></small>
+                    
+                                                        <textarea class="form-control" id="editor1" maxlength="65535" placeholder=""  name="about" rows="9"></textarea>
+
+                                                        <script>
+                                                            // Replace the <textarea id="editor1"> with a CKEditor
+                                                            // instance, using default configuration.
+                                                            CKEDITOR.replace('editor1');
+                                                        </script>
+                                                        
                                                     </div>
                                                 </div>
 
@@ -445,7 +440,7 @@
                                                             <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
                                                             <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
                                                             <input type="hidden" name="layout">
-                                                            <input type="hidden" name="colour">
+                                                            <input type="hidden"  name="colour">
                                                         </div>
                                                     </div>
 
@@ -664,6 +659,7 @@
                                         <div class="row row-divided" align="center">
                                             <div class="col-xs-6 column-one">
                                                 <h6>Logo</h6>
+                                                
                                                 <a href="#" class="logo-input-button">  <img src="{{asset('images/productplaceholder.png')}}" width="200" id="cropped-logo" class="img-thumbnail" alt="" srcset=""></a>
                                                     <input type="file" id="logo-input" style="display: none;">
                                                     <input type="hidden" name="logo">
@@ -683,7 +679,9 @@
                                                 {{-- <h4>Logo Text</h4> --}}
                                                 <div class="form-group">
                                                     <h6>Logo Text</h6>
-                                                    <input type="text" class="form-control" name="logo_text" id="exampleInputEmail1" maxlength="8" title="maximum 8 character" placeholder=" Text to Display as logo">
+                                                    
+                                                    <input type="text" class="form-control" name="logo_text" onkeyup="countChar(this)"  id="exampleInputEmail1" maxlength="8" title="maximum 8 character" placeholder=" Text to Display as logo">
+                                                    <i><small id="test"></small></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -1429,6 +1427,31 @@ $('#located').click(function(params) {
             $("#geocomplete").trigger("geocode");
           }).click();
         });
+
+
+        function countChar(val) {
+            
+        var len = val.value.length;
+        if (len >= 9) {
+          val.value = val.value.substring(0, 9);
+        } else {
+            console.log(val.value.length)
+          $("#test").text(8-len+" Character Remainig");
+        }
+      };
+
+      function countCharAbout(val) {
+
+          console.log(val.value.length)
+            
+            var len = val.value.length;
+            if (len >= 65536) {
+              val.value = val.value.substring(0, 65536);
+            } else {
+                
+              $("#test2").text(65535-len+" Character Remainig");
+            }
+          };
       </script>
 
 </html>

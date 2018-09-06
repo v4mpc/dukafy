@@ -9,25 +9,10 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/switchery.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/file-uploaders/dropzone.min.css')}}">
+<script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
 
 
 
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-
-
-<script>
-  tinymce.init({ 
-  selector:'textarea',
-  plugins: "lists",
-  branding: false,
-  height : 200,
-  menubar:false,
-  statusbar:false,
-   toolbar: "undo redo | fontsizeselect bold italic | underline strikethrough |numlist bullist",	
-  
-   });
-
-</script>
 @endsection
  
 @section('page_level_css')
@@ -184,7 +169,32 @@
                           <div class="form-group row">
                             <label class="col-md-3 label-control" for="userinput8">Description</label>
                             <div class="col-md-7">
-                              <textarea id="userinput8" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{old('description')}}</textarea>
+                              <textarea id="editor1" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{old('description')}}</textarea>
+                              <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace('editor1',{
+                                  removeButtons:'Subscript,Superscript,Image,Anchor,Table,SpecialChar,Source,RemoveFormat,About,Link,Unlink,HorizontalRule',
+                                  wordcount:{
+
+                                    showWordCount: false,
+
+                                    // Whether or not you want to show the Char Count
+                                    showCharCount: true,
+
+                                    countSpacesAsChars: true,
+
+                                    countHTML: true,
+
+                                    // Maximum allowed Word Count
+                                    maxWordCount: -1,
+
+                                    // Maximum allowed Char Count
+                                    maxCharCount: 255
+
+                                  }
+                                });
+                            </script>
                             </div>
                           </div>
 

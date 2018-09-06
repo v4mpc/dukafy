@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/switchery.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
+<script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
 @endsection
  
 @section('page_level_css')
@@ -20,21 +21,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
 
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 
-
-<script>
-    tinymce.init({ 
-selector:'textarea',
-plugins: "lists link image textcolor",
-branding: false,
-height : 200,
-menubar:false,
-statusbar:false,
-toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline strikethrough |numlist bullist | alignleft aligncenter alignright alignjustify link image"	
-
-});
-</script>
 
 
 @endsection
@@ -99,7 +86,14 @@ toolbar: "undo redo | fontsizeselect bold italic forecolor backcolor | underline
                   <div class="col-sm-10 col-sm-offset-1">
                       <div class="form-group">
                           <label>About Us</label>
-                          <textarea class="form-control" placeholder="" name="about" rows="9">{!!$settings->about!!}</textarea>
+                          <small><i>65,535 characters max</i></small>
+                          <textarea class="form-control" id="editor1" name="about" maxlength="65535" rows="9">{!!$settings->about!!}</textarea>
+
+                          <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor
+                            // instance, using default configuration.
+                            CKEDITOR.replace('editor1');
+                        </script>
                       </div>
                   </div>
 

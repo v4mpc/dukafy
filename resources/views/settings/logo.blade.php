@@ -167,7 +167,8 @@
                         <br>
                         <div class="form-group">
                             {{-- <label>Logo Text</label> --}}
-                        <input type="text" class="form-control" value="{{$settings->logo_text}}" name="logo_text" id="exampleInputEmail1" maxlength="15" title="maximum 15 characters" placeholder=" Text to Display as logo">
+                        <input type="text" class="form-control" onkeyup="countChar(this)" value="{{$settings->logo_text}}" name="logo_text" id="exampleInputEmail1" maxlength="15" title="maximum 15 characters" placeholder=" Text to Display as logo">
+                        <i><small id="test"></small></i>
                         </div>
                     </div>
 
@@ -363,6 +364,18 @@
 			basic.croppie('rotate', 90);
 
 		})
+
+
+    function countChar(val) {
+            
+            var len = val.value.length;
+            if (len >= 9) {
+              val.value = val.value.substring(0, 9);
+            } else {
+                console.log(val.value.length)
+              $("#test").text(8-len+" Character Remainig");
+            }
+          };
 
 
 </script>

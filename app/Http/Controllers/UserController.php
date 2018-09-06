@@ -44,7 +44,7 @@ class UserController extends Controller
         $user=new User;
         $user->name=$request->name;
         $user->email=$request->email;
-        // $user->password=Hash::make($request->password);
+        
 
         if($request->hasFile('image')) {
                 $filename = $request->image->getClientOriginalName();
@@ -99,7 +99,7 @@ class UserController extends Controller
      */
     public function updatePassword(Request $request, $id)
     {
-    //    dd($user);
+    
 $user=User::findOrFail($id);
         $request->validate([
             'password' => 'required|min:6|confirmed',
@@ -127,7 +127,7 @@ $user=User::findOrFail($id);
     {
         $user->name=$request->name;
         $user->email=$request->email;
-        // $user->password=Hash::make($request->password);
+        
 
         if($request->hasFile('image')) {
                 $filename = $request->image->getClientOriginalName();

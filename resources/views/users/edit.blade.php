@@ -122,7 +122,7 @@
                                   <label class="col-md-3 label-control">User Image</label>
                                   <div class="col-md-9">
                                     <label id="projectinput8" class="file center-block">
-                                      <input type="file" name="image"="file">
+                                      <input type="file" name="image">
                                       <span class="file-custom"></span>
                                     </label>
                                   </div>
