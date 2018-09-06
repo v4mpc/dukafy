@@ -97,7 +97,7 @@
 						<label>Quantity:</label>
 						<input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
 					</div>
-					<button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+					<button type="submit" class="single_add_to_cart_button button alt">BUY</button>
 					<input type="hidden" name="id" value="{{$product->id}}" />
 					<input type="hidden" name="name" value="{{$product->name}}" />
 					{{-- <input type="hidden" name="variation_id" class="variation_id" value="0" /> --}}

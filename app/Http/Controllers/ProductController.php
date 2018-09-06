@@ -314,7 +314,7 @@ return redirect()->route('products.show',$product->id);
 
     public function search(Request $request)
     {
- dd($request->query);
+//  dd($request->query);
             $request->validate([
                 'query'=>'required|min:3'
             ]);

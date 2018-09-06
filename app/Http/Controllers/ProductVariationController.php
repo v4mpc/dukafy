@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Variation;
+use App\ProductVariation;
 use Illuminate\Http\Request;
 use Session;
 // use App\Http\Requests;
 use App\Http\Requests\StoreCategory;
 
 
-class CategoryController extends Controller
+class ProductVariationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $variations=Variation::all();
+        // dd('df');
+        $variations=ProductVariation::all();
         return view('variations.index')->with('variations',$variations);
     }
 

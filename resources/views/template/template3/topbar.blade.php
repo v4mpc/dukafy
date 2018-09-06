@@ -18,13 +18,13 @@
 
 <li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                     @if($settings->facebook)
-                      <li><a href="#" id="facebook"><i class="icon fa fa-facebook"></i>Facebook</a></li> 
+                      <li><a href="https://{{$settings->facebook}}" id="facebook"><i class="icon fa fa-facebook"></i>Facebook</a></li> 
                       @endif
                       @if($settings->twitter)
-                        <li><a href="#" id="twitter"><i class="icon fa fa-twitter"></i>Twitter</a></li>
+                        <li><a href="https://{{$settings->twitter}}" id="twitter"><i class="icon fa fa-twitter"></i>Twitter</a></li>
                         @endif
                         @if($settings->instagram)
-        <li><a href="#" id="instagram"><i class="icon fa fa-instagram"></i>Instagram</a></li>
+        <li><a href="https://{{$settings->instagram}}" id="instagram"><i class="icon fa fa-instagram"></i>Instagram</a></li>
                         @endif
                         @if($settings->whatsapp)
         <li><a href="#" id="whatsapp"><i class="icon fa fa-whatsapp"></i>Whatsapp</a></li>

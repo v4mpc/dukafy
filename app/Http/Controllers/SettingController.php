@@ -89,6 +89,12 @@ class SettingController extends Controller
             // }
             $setting->logo=$png_url;
         }
+
+        if ($request->logo_text) {
+            $setting->logo_text=$request->logo_text;
+        } else {
+            $setting->logo_text=null;
+        }
      
 
         $setting->save();
@@ -104,20 +110,29 @@ class SettingController extends Controller
             }
         }
 
+        $slider_images=SliderImage::get();
+
+        $image=$slider_images[0]->image;
+        
+
+        
+       
         if ($request->slider_one) {
             $png_url = "slider-".time(). uniqid().".png";
             $location = public_path('images/' . $png_url);
             Image::make(file_get_contents($request->slider_one))->save($location);
-            $slider_image=new SliderImage;
+            $id=$slider_images[0]->id;
+            $slider_image=SliderImage::findOrFail($id);
             $slider_image->image=$png_url;
             $slider_image->save();
-        }
+        } 
 
         if ($request->slider_two) {
             $png_url = "slider-".time(). uniqid().".png";
             $location = public_path('images/' . $png_url);
             Image::make(file_get_contents($request->slider_two))->save($location);
-            $slider_image=new SliderImage;
+            $id=$slider_images[1]->id;
+            $slider_image=SliderImage::findOrFail($id);
             $slider_image->image=$png_url;
             $slider_image->save();
         }
@@ -125,10 +140,11 @@ class SettingController extends Controller
             $png_url = "slider-".time(). uniqid().".png";
             $location = public_path('images/' . $png_url);
             Image::make(file_get_contents($request->slider_three))->save($location);
-            $slider_image=new SliderImage;
+            $id=$slider_images[2]->id;
+            $slider_image=SliderImage::findOrFail($id);
             $slider_image->image=$png_url;
             $slider_image->save();
-        }
+        } 
 
 
 
@@ -422,20 +438,13 @@ class SettingController extends Controller
 
     public function updateSlider(Request $request, $id)
     {
-        // abort(404,'usdf');
-        // $setting=Setting::findOrFail($id);
-        // $sliders=$settings->slider_images;
+        
         $slider_images=SliderImage::get();
 
         $image=$slider_images[0]->image;
         
 
-        // $image = base64_encode(Storage::disk('images')->get($image));
-
-        //     $data = (string) Image::make(Storage::disk('images')->get($image))->encode('data-url');
-        //   dd($data);
-
-        // dd($request->slider_one);
+        
        
         if ($request->slider_one) {
             $png_url = "slider-".time(). uniqid().".png";

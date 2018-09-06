@@ -95,7 +95,7 @@
                                             @endif
                                         </span>
                                     </span>
-                                    <a rel="nofollow" href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="button add_to_cart_button">Add to cart</a>
+                                    <a rel="nofollow" href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="button add_to_cart_button">BUY</a>
                                 </div><!-- /.price-add-to-cart -->
                                 @if($settings->whatsapp)
                                 <div class="hover-area">
@@ -153,7 +153,7 @@
                                                 @endif
                                         </span>
                                     </span>
-                                    <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                    <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
                                 </div><!-- /.price-add-to-cart -->
 
                                 @if($settings->whatsapp)

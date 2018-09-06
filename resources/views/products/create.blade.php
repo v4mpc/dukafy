@@ -87,6 +87,16 @@
                         {{csrf_field()}}
                         <div class="form-body">
 
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control">Product Image(s)</label>
+                                <div class="col-md-7">
+                                  <label id="projectinput8" class="file center-block">
+                                              <input type="file" id="product-picture" required name="images[]" multiple>
+                                              <span class="file-custom"></span>
+                                            </label>
+                                </div>
+                              </div>
+
                           <div class="form-group row">
                             <label class="col-md-3 label-control" for="projectinput1">Name</label>
                             <div class="col-md-7">
@@ -198,15 +208,7 @@
                             </div>
                           </div>
 
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control">Product Image(s)</label>
-                            <div class="col-md-7">
-                              <label id="projectinput8" class="file center-block">
-                                          <input type="file" id="product-picture" required name="images[]" multiple>
-                                          <span class="file-custom"></span>
-                                        </label>
-                            </div>
-                          </div>
+                          
 
 
                           {{--

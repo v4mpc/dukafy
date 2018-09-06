@@ -100,7 +100,7 @@
                         </span>
                     @endif
                 </span>
-                <a  href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="button add_to_cart_button">Add to cart</a>
+                <a  href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="button add_to_cart_button">BUY</a>
             </div><!-- /.price-add-to-cart -->
 
             @if($settings->whatsapp)
@@ -138,7 +138,7 @@
                                             <span class="amount"> </span>
                     </span>
                 </span>
-                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
             </div><!-- /.price-add-to-cart -->
     
             <div class="hover-area">
@@ -172,7 +172,7 @@
                                             <span class="amount"> $1,999.00</span>
                     </span>
                 </span>
-                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
             </div><!-- /.price-add-to-cart -->
     
             <div class="hover-area">
@@ -207,7 +207,7 @@
                                             <span class="amount"> </span>
                     </span>
                 </span>
-                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
             </div><!-- /.price-add-to-cart -->
     
             <div class="hover-area">
@@ -241,7 +241,7 @@
                                             <span class="amount"> $1,999.00</span>
                     </span>
                 </span>
-                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
             </div><!-- /.price-add-to-cart -->
     
             <div class="hover-area">
@@ -275,7 +275,7 @@
                                             <span class="amount"> $1,999.00</span>
                     </span>
                 </span>
-                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
             </div><!-- /.price-add-to-cart -->
     
             <div class="hover-area">
@@ -325,7 +325,7 @@
                                                                         </span>
                                                                     @endif
                                                                 </span>
-                                                                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                                                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">BUY</a>
                                                             </div><!-- /.price-add-to-cart -->
                                                             @if($settings->whatsapp)
                                                             <div class="hover-area">

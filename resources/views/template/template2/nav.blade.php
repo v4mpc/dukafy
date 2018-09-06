@@ -129,15 +129,15 @@
     <ul class="navbar-wishlist nav navbar-nav pull-right flip">
             @if($settings->facebook!=null)
         <li class="nav-item">
-            <a href="#" id="facebook" class="nav-link"><i class="fa fa-facebook social-icons"></i></i></a>
+            <a href="https://{{$settings->facebook}}" id="facebook" class="nav-link"><i class="fa fa-facebook social-icons"></i></i></a>
         </li>
         @endif @if($settings->instagram!=null)
         <li class="nav-item">
-            <a href="#" id="instagram" class="nav-link"><i class="fa fa-instagram social-icons"></i></i></a>
+            <a href="https://{{$settings->instagram}}" id="instagram" class="nav-link"><i class="fa fa-instagram social-icons"></i></i></a>
         </li>
         @endif @if($settings->twitter!=null)
         <li class="nav-item">
-            <a href="#" id="twitter" class="nav-link"><i class="fa fa-twitter social-icons"></i></i></a>
+            <a href="https://{{$settings->twitter}}" id="twitter" class="nav-link"><i class="fa fa-twitter social-icons"></i></i></a>
         </li>
         @endif
 

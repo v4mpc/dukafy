@@ -125,7 +125,7 @@
                             </div>
 
                             <div class="col-sm-7">
-                            <a href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="btn btn-primary add_to_cart_button"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
+                            <a href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="btn btn-primary add_to_cart_button"><i class="fa fa-shopping-cart inner-right-vs"></i> BUY</a>
                             </div>
 
                             

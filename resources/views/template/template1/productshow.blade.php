@@ -267,7 +267,7 @@
                     <div class="quinty">
                       <input type="number" name="quantity" value="1"> </div>
 
-                    <button class="btn-round" type="submit"><i class="icon-basket-loaded margin-right-5"></i> Add to Cart</button>
+                    <button class="btn-round" type="submit"><i class="icon-basket-loaded margin-right-5"></i> BUY</button>
 
 
                   </form>

@@ -70,46 +70,24 @@ Route::view('/template3/thank_you','template/template3/thankyou');
 
 Auth::routes();
 Route::prefix('manage')->middleware('auth')->group(function(){
-    
-   
-
-// Route::get('/shopping_cart','PreviewController@cart')->name('preview.cart');
-// Route::get('/contact_us','PreviewController@contact')->name('preview.contact');
-// Route::get('/about_us','PreviewController@about')->name('preview.about');
-Route::resource('/products', 'ProductController');
-// Route::resource('/variations', 'VariationController');
-Route::resource('/categories', 'CategoryController');
-Route::resource('/sub_categories', 'SubCategoryController');
-Route::resource('/out_stock', 'OutStockController');
-Route::resource('/featured', 'FeaturedController');
-//Route::resource('/reports', 'ReportController');
-Route::resource('/users', 'UserController');
-Route::get('/change_password/{id}', 'UserController@getPasswordForm')->name('change.password');
-Route::put('/save_password/{id}', 'UserController@updatePassword')->name('update.password');
-
-
-
-Route::resource('/orders', 'OrderController');
-Route::resource('/settings', 'SettingController');
-Route::put('/update_logo/{id}','SettingController@updateLogo')->name('update.logo');
-Route::put('/update_slider/{id}','SettingController@updateSlider')->name('update.slider');
-Route::put('/update_basic_info/{id}','SettingController@updateBasicInfo')->name('update.basic.info');
-Route::put('/update_about_us/{id}','SettingController@updateAbout')->name('update.about.us');
-
-
-
-
-// Route::put('/settings/layout/{id}', 'SettingController@updateLayout')->name('update.layout');
-
-// Route::resource('/variations', 'VariationController');
-
+Route::resource('products', 'ProductController');
+Route::resource('categories', 'CategoryController');
+Route::resource('sub_categories', 'SubCategoryController');
+Route::resource('out_stock', 'OutStockController');
+Route::resource('featured', 'FeaturedController');
+Route::resource('users', 'UserController');
+Route::get('change_password/{id}', 'UserController@getPasswordForm')->name('change.password');
+Route::put('save_password/{id}', 'UserController@updatePassword')->name('update.password');
+Route::resource('orders', 'OrderController');
+Route::resource('settings', 'SettingController');
+Route::put('update_logo/{id}','SettingController@updateLogo')->name('update.logo');
+Route::put('update_slider/{id}','SettingController@updateSlider')->name('update.slider');
+Route::put('update_basic_info/{id}','SettingController@updateBasicInfo')->name('update.basic.info');
+Route::put('update_about_us/{id}','SettingController@updateAbout')->name('update.about.us');
 Route::get('/layout','SettingController@getLayoutForm')->name('settings.layout_form');
 Route::get('/basic_info','SettingController@getBasicInfoForm')->name('settings.basic_info_form');
 Route::get('/about_store','SettingController@getAboutForm')->name('settings.about_store_form');
-
-
 Route::get('/logo','SettingController@getLogoForm')->name('settings.logo_form');
-// Route::get('/layout_form','SettingController@getLayoutForm')->name('settings.layout_form');
 Route::get('/slider_images','SettingController@getSliderForm')->name('settings.slider_form');
 Route::get('/sub_cat/{id}', 'ProductController@getSubCategories')->name('subcategory_ajax');
 Route::get('/make_featured/{id}', 'ProductController@makeFeatured')->name('make_featured_ajax');
@@ -123,16 +101,6 @@ Route::get('/markOrderAsRead','OrderController@markOrderAsRead');
 Route::get('/go_back',function(){
     return back();
 })->name('back');
-
-// Route::get('/template/{colour}', function($colour){
-
-
-   
-    
-//     return view('template.template1.previews.index')->with('colour',$colour);
-    
-// })->name('template1.previews');
-
 Route::post('/upload','SettingController@upload')->name('upload');
 
 });

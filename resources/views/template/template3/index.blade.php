@@ -111,7 +111,7 @@
                                     <i class="fa fa-whatsapp"></i>													
                                 </a>
                                 @endif
-                                <button class="btn btn-primary" type="button" title="add to cart" >Add to cart</button>
+                                <button class="btn btn-primary" type="button" title="BUY" >BUY</button>
                                                         
                             </li>
                             <li>
@@ -180,7 +180,7 @@
                                                     <i class="fa fa-whatsapp"></i>													
                                                 </a>
                                                 @endif
-                                            <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">Add to cart</button>
+                                            <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">BUY</button>
                                                                     
                                         </li>
                                        
