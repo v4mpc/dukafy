@@ -195,6 +195,72 @@
                                   </div><!-- /.home-owl-carousel -->
         </section><!-- /.section -->
         @endif
+
+
+
+
+    @if(count($recent_products))
+    <!-- ============================================== ON  SALE============================================== -->
+ 
+    <section class="section featured-product wow fadeInUp">
+         <h3 class="section-title">Recent products</h3>
+         <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+                 @foreach($recent_products as $product)   
+                 <div class="item item-carousel">
+                         <div class="products">
+                             
+                 <div class="product">		
+                     <div class="product-image">
+                         <div class="image">
+                             <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}"  class="img-responsive img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
+                         </div><!-- /.image -->			
+             
+                         {{-- <div class="tag new"><span>new</span></div>                        		    --}}
+                     </div><!-- /.product-image -->
+                         
+                     
+                     <div class="product-info text-left">
+                         <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                        
+                         <div class="description"></div>
+             
+                         <div class="product-price">	
+         
+                                 @if($product->discount)
+                             <span class="price">
+                                     {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
+                                                          <span class="price-before-discount">{{number_format($product->price)}}</span>
+                                                 @else
+                                                 <span class="price">
+                                                         {{number_format($product->price)}}		TZS		</span>
+                                                 @endif
+                         </div><!-- /.product-price -->
+                         
+                     </div><!-- /.product-info -->
+                                 <div class="cart clearfix animate-effect">
+                             <div class="action">
+                                 <ul class="list-unstyled">
+                                     <li class="add-cart-button btn-group">
+                                             @if($settings->whatsapp)
+                                             <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                                                 <i class="fa fa-whatsapp"></i>													
+                                             </a>
+                                             @endif
+                                         <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">BUY</button>
+                                                                 
+                                     </li>
+                                    
+                                 </ul>
+                             </div><!-- /.action -->
+                         </div><!-- /.cart -->
+                         </div><!-- /.product -->
+                   
+                         </div><!-- /.products -->
+                     </div><!-- /.item -->
+         @endforeach
+                               </div><!-- /.home-owl-carousel -->
+     </section><!-- /.section -->
+     @endif
     
 
     

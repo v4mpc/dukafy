@@ -41,6 +41,7 @@ $start_min_price=Product::min('price');
         $products=Product::all();
         $orders=Order::all();
         $out_stocks=Product::where('out_stock','1')->get();
+        $recent_products=Product::orderBy('id','desc')->take(15)->get();
 
 
         $product_count=count($products);
@@ -124,6 +125,8 @@ $row_class='';
 
         View::share('start_min_price',$start_min_price);
         View::share('start_max_price',$start_max_price);
+
+        View::share('recent_products',$recent_products);
 
 
         View::share('product_count',$product_count);

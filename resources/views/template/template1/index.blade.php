@@ -58,6 +58,13 @@
           <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a>
         </li>
         @endif
+
+
+        @if(count($recent_products))
+        <li role="presentation">
+          <a href="#recent-product" aria-controls="recent-product" role="tab" data-toggle="tab">Recent Product</a>
+        </li>
+        @endif
       </ul>
 
       <!-- Tab panes -->
@@ -134,6 +141,42 @@
 
           </div>
         </div>
+
+        <!-- Featured -->
+        <div role="tabpanel" class="tab-pane active fade in" id="featur">
+            <!-- Items Slider -->
+            <div class="item-slide-5 with-nav">
+              <!-- Product -->
+              @foreach($recent_products as $product)
+              <!-- Product -->
+              <div class="product" >
+                <article>
+                  <a href="{{route('product.show',$product->id)}}"> <div class="text-center">    <img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}"  alt="">             </div></a> @if($product->discount)
+                  <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                  <!-- Content -->
+                  <span class="tag">{{$product->category->name}}</span>
+                  <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
+                  <!-- Reviews -->
+                  @if($product->discount)
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
+                  </div>
+                  @else
+                  <div class="price">{{number_format($product->price)}} TZS</div>
+  
+                  @endif
+                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
+                    <i class="icon-basket-loaded"></i>
+                  </a>
+                  {{-- <span class="whatsapp-area">
+                    <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i></a>
+                  </span> --}}
+                </article>
+               
+              </div>
+  
+              @endforeach
+            </div>
+          </div>
 
 
 
