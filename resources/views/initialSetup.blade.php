@@ -438,9 +438,9 @@
                                                         <div>
                                                             <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active"></button>
                                                             <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active"></button>
-                                                            <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"></button>
-                                                            <input type="hidden" name="layout">
-                                                            <input type="hidden"  name="colour">
+                                                            <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active"><i class="ti-check"></i></button>
+                                                            <input type="hidden" value="template1" name="layout">
+                                                            <input type="hidden" value="blue"  name="colour">
                                                         </div>
                                                     </div>
 
