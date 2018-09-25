@@ -70,8 +70,9 @@
     <section class="section featured-product wow fadeInUp section-hack">
         <h3 class="section-title">Featured products</h3>
         {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
+            <div class="row">
                 @foreach($featureds as $product) 
-                <div class="col-sm-6 col-md-4 wow fadeInUp">
+                <div class="col-sm-6 col-md-4">
                     <div class="products">
                     
                    	
@@ -123,6 +124,7 @@
                  
                     </div>
         @endforeach
+            </div>
                           {{-- </div><!-- /.home-owl-carousel --> --}}
     </section><!-- /.section -->
     <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
@@ -134,6 +136,7 @@
        <section class="section featured-product wow fadeInUp">
             <h3 class="section-title">On Sale products</h3>
             {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
+                    <div class="row">
                     @foreach($on_sales as $product)   
                     <div class="col-sm-6 col-md-4 wow fadeInUp">
                         <div class="products">
@@ -188,6 +191,7 @@
                        
                         </div>
             @endforeach
+                    </div>
                                   {{-- </div><!-- /.home-owl-carousel --> --}}
         </section><!-- /.section -->
         @endif
@@ -201,6 +205,7 @@
     <section class="section featured-product wow fadeInUp">
          <h3 class="section-title">Recent products</h3>
          {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
+                <div class="row">
                  @foreach($recent_products as $product)   
                  <div class="col-sm-6 col-md-4 wow fadeInUp">
                     <div class="products">
@@ -254,6 +259,7 @@
                    
                     </div>
          @endforeach
+                </div>
                                {{-- </div><!-- /.home-owl-carousel --> --}}
      </section><!-- /.section -->
      @endif
