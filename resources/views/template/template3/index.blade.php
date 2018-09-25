@@ -74,7 +74,7 @@
                 <div class="col-sm-6 col-md-4 wow fadeInUp">
                     <div class="products">
                     
-                    <div class="product">		
+                   	
                     <div class="product-image">
                     <div class="image">
                     <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
@@ -120,8 +120,7 @@
                             </div><!-- /.action -->
                         </div><!-- /.cart -->
                     </div><!-- /.product -->
-                    
-                    </div><!-- /.products -->
+                 
                     </div>
         @endforeach
                           {{-- </div><!-- /.home-owl-carousel --> --}}
@@ -139,7 +138,7 @@
                     <div class="col-sm-6 col-md-4 wow fadeInUp">
                         <div class="products">
                         
-                        <div class="product">		
+                      	
                         <div class="product-image">
                         <div class="image">
                         <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
@@ -186,7 +185,7 @@
                             </div><!-- /.cart -->
                         </div><!-- /.product -->
                         
-                        </div><!-- /.products -->
+                       
                         </div>
             @endforeach
                                   {{-- </div><!-- /.home-owl-carousel --> --}}
@@ -205,8 +204,7 @@
                  @foreach($recent_products as $product)   
                  <div class="col-sm-6 col-md-4 wow fadeInUp">
                     <div class="products">
-                    
-                    <div class="product">		
+                    	
                     <div class="product-image">
                     <div class="image">
                     <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
@@ -253,7 +251,7 @@
                         </div><!-- /.cart -->
                     </div><!-- /.product -->
                     
-                    </div><!-- /.products -->
+                   
                     </div>
          @endforeach
                                {{-- </div><!-- /.home-owl-carousel --> --}}
