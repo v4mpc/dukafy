@@ -71,62 +71,58 @@
         <h3 class="section-title">Featured products</h3>
         {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                 @foreach($featureds as $product) 
-            <div class="item item-carousel">
-                <div class="products">
+                <div class="col-sm-6 col-md-4 wow fadeInUp">
+                    <div class="products">
                     
-        <div class="product">		
-            <div class="product-image">
-                <div class="image">
-                    <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}"  class="img-responsive img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
-                </div><!-- /.image -->			
-    
-                {{-- <div class="tag new"><span>new</span></div>                        		    --}}
-            </div><!-- /.product-image -->
-                
-            
-            <div class="product-info text-left">
-                <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
-               
-                <div class="description"></div>
-    
-                <div class="product-price">	
-
-                        @if($product->discount)
-                    <span class="price">
-                            {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
-                                                 <span class="price-before-discount">{{number_format($product->price)}}</span>
-                                        @else
-                                        <span class="price">
-                                                {{number_format($product->price)}}	TZS			</span>
-                                        @endif
-                </div><!-- /.product-price -->
-                
-            </div><!-- /.product-info -->
-                        <div class="cart clearfix animate-effect">
-                    <div class="action">
-                        <ul class="list-unstyled">
-                            <li class="add-cart-button btn-group add_to_cart_button" data-id="{{$product->id}}">
-                                    @if($settings->whatsapp)
-                                <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
-                                    <i class="fa fa-whatsapp"></i>													
-                                </a>
-                                @endif
-                                <button class="btn btn-primary" type="button" title="BUY" >BUY</button>
-                                                        
-                            </li>
-                            <li>
-                                <a class="add-to-cart" href="#." title="Inquire this Product">
-                                     <i class="fa fa-whatsappp" style="font-size:15px;color:green;"></i>
-                                </a>
-                            </li>
-                           
-                        </ul>
-                    </div><!-- /.action -->
-                </div><!-- /.cart -->
-                </div><!-- /.product -->
-          
-                </div><!-- /.products -->
-            </div><!-- /.item -->
+                    <div class="product">		
+                    <div class="product-image">
+                    <div class="image">
+                    <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
+                    </div><!-- /.image -->			
+                    
+                                                       
+                    </div><!-- /.product-image -->
+                    
+                    
+                    <div class="product-info text-left">
+                    <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                    
+                    <div class="description"></div>
+                    
+                    <div class="product-price">	
+                    
+                            @if($product->discount)
+                        <span class="price">
+                                {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
+                                                     <span class="price-before-discount">{{number_format($product->price)}}</span>
+                                            @else
+                                            <span class="price">
+                                                    {{number_format($product->price)}}	 TZS			</span>
+                                            @endif
+                    </div><!-- /.product-price -->
+                    
+                    
+                    </div><!-- /.product-info -->
+                    <div class="cart clearfix animate-effect">
+                            <div class="action">
+                                <ul class="list-unstyled">
+                                    <li class="add-cart-button btn-group">
+                                            @if($settings->whatsapp)
+                                            <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                                                <i class="fa fa-whatsapp"></i>													
+                                            </a>
+                                            @endif
+                                        <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">BUY</button>
+                                                                
+                                    </li>
+                                   
+                                </ul>
+                            </div><!-- /.action -->
+                        </div><!-- /.cart -->
+                    </div><!-- /.product -->
+                    
+                    </div><!-- /.products -->
+                    </div>
         @endforeach
                           {{-- </div><!-- /.home-owl-carousel --> --}}
     </section><!-- /.section -->
@@ -140,38 +136,39 @@
             <h3 class="section-title">On Sale products</h3>
             {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                     @foreach($on_sales as $product)   
-                    <div class="item item-carousel">
-                            <div class="products">
-                                
-                    <div class="product">		
+                    <div class="col-sm-6 col-md-4 wow fadeInUp">
+                        <div class="products">
+                        
+                        <div class="product">		
                         <div class="product-image">
-                            <div class="image">
-                                <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}"  class="img-responsive img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
-                            </div><!-- /.image -->			
-                
-                            {{-- <div class="tag new"><span>new</span></div>                        		    --}}
+                        <div class="image">
+                        <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
+                        </div><!-- /.image -->			
+                        
+                                                           
                         </div><!-- /.product-image -->
-                            
+                        
                         
                         <div class="product-info text-left">
-                            <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
-                           
-                            <div class="description"></div>
-                
-                            <div class="product-price">	
-            
-                                    @if($product->discount)
-                                <span class="price">
-                                        {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
-                                                             <span class="price-before-discount">{{number_format($product->price)}}</span>
-                                                    @else
-                                                    <span class="price">
-                                                            {{number_format($product->price)}}		TZS		</span>
-                                                    @endif
-                            </div><!-- /.product-price -->
-                            
+                        <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                        
+                        <div class="description"></div>
+                        
+                        <div class="product-price">	
+                        
+                                @if($product->discount)
+                            <span class="price">
+                                    {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
+                                                         <span class="price-before-discount">{{number_format($product->price)}}</span>
+                                                @else
+                                                <span class="price">
+                                                        {{number_format($product->price)}}	 TZS			</span>
+                                                @endif
+                        </div><!-- /.product-price -->
+                        
+                        
                         </div><!-- /.product-info -->
-                                    <div class="cart clearfix animate-effect">
+                        <div class="cart clearfix animate-effect">
                                 <div class="action">
                                     <ul class="list-unstyled">
                                         <li class="add-cart-button btn-group">
@@ -187,10 +184,10 @@
                                     </ul>
                                 </div><!-- /.action -->
                             </div><!-- /.cart -->
-                            </div><!-- /.product -->
-                      
-                            </div><!-- /.products -->
-                        </div><!-- /.item -->
+                        </div><!-- /.product -->
+                        
+                        </div><!-- /.products -->
+                        </div>
             @endforeach
                                   {{-- </div><!-- /.home-owl-carousel --> --}}
         </section><!-- /.section -->
@@ -206,57 +203,58 @@
          <h3 class="section-title">Recent products</h3>
          {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                  @foreach($recent_products as $product)   
-                 <div class="item item-carousel">
-                         <div class="products">
-                             
-                 <div class="product">		
-                     <div class="product-image">
-                         <div class="image">
-                             <a href="{{route('product.show',$product->id)}}"><img  src="{{asset('images/'.$product->images[0]->image)}}"  class="img-responsive img-height" data-echo="{{asset('images/'.$product->images[0]->image)}}" alt=""></a>
-                         </div><!-- /.image -->			
-             
-                         {{-- <div class="tag new"><span>new</span></div>                        		    --}}
-                     </div><!-- /.product-image -->
-                         
-                     
-                     <div class="product-info text-left">
-                         <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
-                        
-                         <div class="description"></div>
-             
-                         <div class="product-price">	
-         
-                                 @if($product->discount)
-                             <span class="price">
-                                     {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
-                                                          <span class="price-before-discount">{{number_format($product->price)}}</span>
-                                                 @else
-                                                 <span class="price">
-                                                         {{number_format($product->price)}}		TZS		</span>
-                                                 @endif
-                         </div><!-- /.product-price -->
-                         
-                     </div><!-- /.product-info -->
-                                 <div class="cart clearfix animate-effect">
-                             <div class="action">
-                                 <ul class="list-unstyled">
-                                     <li class="add-cart-button btn-group">
-                                             @if($settings->whatsapp)
-                                             <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
-                                                 <i class="fa fa-whatsapp"></i>													
-                                             </a>
-                                             @endif
-                                         <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">BUY</button>
-                                                                 
-                                     </li>
-                                    
-                                 </ul>
-                             </div><!-- /.action -->
-                         </div><!-- /.cart -->
-                         </div><!-- /.product -->
-                   
-                         </div><!-- /.products -->
-                     </div><!-- /.item -->
+                 <div class="col-sm-6 col-md-4 wow fadeInUp">
+                    <div class="products">
+                    
+                    <div class="product">		
+                    <div class="product-image">
+                    <div class="image">
+                    <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
+                    </div><!-- /.image -->			
+                    
+                                                       
+                    </div><!-- /.product-image -->
+                    
+                    
+                    <div class="product-info text-left">
+                    <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                    
+                    <div class="description"></div>
+                    
+                    <div class="product-price">	
+                    
+                            @if($product->discount)
+                        <span class="price">
+                                {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
+                                                     <span class="price-before-discount">{{number_format($product->price)}}</span>
+                                            @else
+                                            <span class="price">
+                                                    {{number_format($product->price)}}	 TZS			</span>
+                                            @endif
+                    </div><!-- /.product-price -->
+                    
+                    
+                    </div><!-- /.product-info -->
+                    <div class="cart clearfix animate-effect">
+                            <div class="action">
+                                <ul class="list-unstyled">
+                                    <li class="add-cart-button btn-group">
+                                            @if($settings->whatsapp)
+                                            <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                                                <i class="fa fa-whatsapp"></i>													
+                                            </a>
+                                            @endif
+                                        <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">BUY</button>
+                                                                
+                                    </li>
+                                   
+                                </ul>
+                            </div><!-- /.action -->
+                        </div><!-- /.cart -->
+                    </div><!-- /.product -->
+                    
+                    </div><!-- /.products -->
+                    </div>
          @endforeach
                                {{-- </div><!-- /.home-owl-carousel --> --}}
      </section><!-- /.section -->
