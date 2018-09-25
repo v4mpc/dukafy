@@ -142,8 +142,8 @@
           @endforeach
 
       </div>
-          
-        </
+       </div>
+        
             
 
 
