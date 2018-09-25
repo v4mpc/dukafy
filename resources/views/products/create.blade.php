@@ -147,8 +147,8 @@
                           <div class="form-group row">
                             <label class="col-md-3 label-control" for="projectinput6">Category</label>
                             <div class="col-md-7">
-                              <select id="category" class="form-control" name="category_id">
-                                    <option value="none" selected="" disabled="">Select Category...</option>
+                              <select id="category" class="form-control" name="category_id" required>
+                                    <option value selected disabled>Select Category...</option>
                                     
                                     @foreach($categories as $category)
                                   <option value="{{$category->id}}">{{$category->name}}</option>

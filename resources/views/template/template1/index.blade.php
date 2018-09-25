@@ -43,115 +43,32 @@
 
   <!-- tab Section -->
   <section class="featur-tabs padding-top-60 padding-bottom-60">
+    @if(count($featureds))
     <div class="container">
 
       <!-- Nav tabs -->
+     
       <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
-      @if(count($featureds))
+     
         <li role="presentation" class="active">
             <a href="#featur" aria-controls="featur" role="tab" data-toggle="tab">Featured</a>
           </li>
-      @endif
+      
        
-      @if(count($on_sales))
-        <li role="presentation">
-          <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a>
-        </li>
-        @endif
-
-
-        @if(count($recent_products))
-        <li role="presentation">
-          <a href="#recent-product" aria-controls="recent-product" role="tab" data-toggle="tab">Recent Product</a>
-        </li>
-        @endif
+  
       </ul>
 
-      <!-- Tab panes -->
-      <div class="tab-content">
+
+
+       <!-- Tab panes -->
+       <div class="tab-content">
         <!-- Featured -->
-        <div role="tabpanel" class="tab-pane active fade in" id="featur">
-          <!-- Items Slider -->
-          <div class="item-slide-5 with-nav">
-            <!-- Product -->
-            @foreach($featureds as $product)
-            <!-- Product -->
-            <div class="product" >
+        <div class="item-col-4">
+          @foreach($featureds as $product)
+          <!-- Product -->
+          <div class="product">
               <article>
-                <a href="{{route('product.show',$product->id)}}"> <div class="text-center">    <img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}"  alt="">             </div></a> @if($product->discount)
-                <span class="sale-tag">-{{$product->discount}}%</span> @endif
-                <!-- Content -->
-                <span class="tag">{{$product->category->name}}</span>
-                <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
-                <!-- Reviews -->
-                @if($product->discount)
-                <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
-                </div>
-                @else
-                <div class="price">{{number_format($product->price)}} TZS</div>
-
-                @endif
-                <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
-                  <i class="icon-basket-loaded"></i>
-                </a>
-                {{-- <span class="whatsapp-area">
-                  <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i></a>
-                </span> --}}
-              </article>
-             
-            </div>
-
-            @endforeach
-          </div>
-        </div>
-
-
-
-
-
-        <!-- on sale -->
-        <div role="tabpanel" class="tab-pane fade" id="on-sal">
-          <!-- Items Slider -->
-          <div class="item-col-5">
-
-            @foreach($on_sales as $product) @if(($product->discount)!=0)
-            <!-- Product -->
-            <div class="product">
-              <article>
-                <div><a href="{{route('product.show',$product->id)}}"><div class="text-center" ><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                  </div> @if($product->discount)
-                <span class="sale-tag">-{{$product->discount}}%</span> @endif
-                <!-- Content -->
-                <span class="tag">{{$product->category->name}}</span>
-                <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
-                <!-- Reviews -->
-                @if($product->discount)
-                <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
-                </div>
-                @else
-                <div class="price">{{number_format($product->price)}} TZS</div>
-
-                @endif
-                <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
-                  <i class="icon-basket-loaded"></i>
-                </a>
-              </article>
-            </div>
-            @endif @endforeach
-
-
-          </div>
-        </div>
-
-        <!-- Featured -->
-        <div role="tabpanel" class="tab-pane active fade in" id="featur">
-            <!-- Items Slider -->
-            <div class="item-slide-5 with-nav">
-              <!-- Product -->
-              @foreach($recent_products as $product)
-              <!-- Product -->
-              <div class="product" >
-                <article>
-                  <a href="{{route('product.show',$product->id)}}"> <div class="text-center">    <img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}"  alt="">             </div></a> @if($product->discount)
+                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
@@ -162,25 +79,141 @@
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} TZS</div>
-  
+
                   @endif
-                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">
-                    <i class="icon-basket-loaded"></i>
-                  </a>
-                  {{-- <span class="whatsapp-area">
-                    <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i></a>
-                  </span> --}}
-                </article>
-               
-              </div>
-  
-              @endforeach
-            </div>
+                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
           </div>
+          @endforeach
+
+      </div>
+          
+        </div>
+
+    </div>
+
+
+
+
+
+
+      
+
+
+        @endif
+
+        @if(count($on_sales))
+
+        <div class="container">
+
+      
+        <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
+        
+           
+          
+            <li role="presentation" class="active">
+              <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a>
+            </li>
+  
+          </ul>
+
+                   <!-- Tab panes -->
+       <div class="tab-content">
+        <!-- Featured -->
+        <div class="item-col-4">
+          @foreach($on_sales as $product)
+          <!-- Product -->
+          <div class="product">
+              <article>
+                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
+                  <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                  <!-- Content -->
+                  <span class="tag">{{$product->category->name}}</span>
+                  <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
+                  <!-- Reviews -->
+                  @if($product->discount)
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
+                  </div>
+                  @else
+                  <div class="price">{{number_format($product->price)}} TZS</div>
+
+                  @endif
+                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
+          </div>
+          @endforeach
+
+      </div>
+          
+        </
+            
+
+
+      
+
+
+
+        </div>
+        @endif
+        @if(count($recent_products))
+        <div class="container">
+        
+        <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
+            <li role="presentation" class="active">
+              <a href="#recent-product" aria-controls="recent-product" role="tab" data-toggle="tab">Recent Product</a>
+            </li>
+         
+          </ul>
+
+         
+
+
+                <!-- Tab panes -->
+       <div class="tab-content">
+        <!-- Featured -->
+        <div class="item-col-4">
+          @foreach($recent_products as $product)
+          <!-- Product -->
+          <div class="product">
+              <article>
+                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
+                  <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                  <!-- Content -->
+                  <span class="tag">{{$product->category->name}}</span>
+                  <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
+                  <!-- Reviews -->
+                  @if($product->discount)
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
+                  </div>
+                  @else
+                  <div class="price">{{number_format($product->price)}} TZS</div>
+
+                  @endif
+                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
+          </div>
+          @endforeach
+
+      </div>
+          
+        </div>
+
+
 
 
 
       </div>
+
+      @endif
+     
+
+
+     
+
+
+       
+  
+  
+        
+
+     
     </div>
   </section>
 
