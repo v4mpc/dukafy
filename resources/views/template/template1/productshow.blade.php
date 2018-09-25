@@ -268,6 +268,9 @@
                       <input type="number" name="quantity" value="1"> </div>
 
                     <button class="btn-round" type="submit"><i class="icon-basket-loaded margin-right-5"></i> BUY</button>
+                    @if($settings->whatsapp!=null)
+                    <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" id="whatsapp" class="btn-round"><i  class="fa fa-whatsapp white-fonts"></i></a>
+                    @endif
 
 
                   </form>
