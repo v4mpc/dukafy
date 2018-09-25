@@ -69,7 +69,7 @@
                 <!-- ============================================== FEATURED PRODUCTS ============================================== -->
     <section class="section featured-product wow fadeInUp section-hack">
         <h3 class="section-title">Featured products</h3>
-        <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+        {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                 @foreach($featureds as $product) 
             <div class="item item-carousel">
                 <div class="products">
@@ -128,7 +128,7 @@
                 </div><!-- /.products -->
             </div><!-- /.item -->
         @endforeach
-                          </div><!-- /.home-owl-carousel -->
+                          {{-- </div><!-- /.home-owl-carousel --> --}}
     </section><!-- /.section -->
     <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
     @endif
@@ -138,7 +138,7 @@
     
        <section class="section featured-product wow fadeInUp">
             <h3 class="section-title">On Sale products</h3>
-            <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+            {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                     @foreach($on_sales as $product)   
                     <div class="item item-carousel">
                             <div class="products">
@@ -192,7 +192,7 @@
                             </div><!-- /.products -->
                         </div><!-- /.item -->
             @endforeach
-                                  </div><!-- /.home-owl-carousel -->
+                                  {{-- </div><!-- /.home-owl-carousel --> --}}
         </section><!-- /.section -->
         @endif
 
@@ -204,7 +204,7 @@
  
     <section class="section featured-product wow fadeInUp">
          <h3 class="section-title">Recent products</h3>
-         <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+         {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                  @foreach($recent_products as $product)   
                  <div class="item item-carousel">
                          <div class="products">
@@ -258,7 +258,7 @@
                          </div><!-- /.products -->
                      </div><!-- /.item -->
          @endforeach
-                               </div><!-- /.home-owl-carousel -->
+                               {{-- </div><!-- /.home-owl-carousel --> --}}
      </section><!-- /.section -->
      @endif
     
