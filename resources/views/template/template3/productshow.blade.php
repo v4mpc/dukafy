@@ -131,19 +131,20 @@
                             
                         </div><!-- /.row -->
                     </div><!-- /.quantity-container -->
-
+                    @if($settings->whatsapp)
                     <div class="product-social-link m-t-20 text-right">
                         <span class="social-label">Inquire :</span>
                         <div class="social-icons">
                             <ul class="list-inline">
                                 
-                                @if($settings->whatsapp)
+                                
                               
                                 <li><a class="fa fa-whatsapp" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product"></a></li>
-                                @endif
+                                
                             </ul><!-- /.social-icons -->
                         </div>
                     </div>
+                    @endif
 
                     
 

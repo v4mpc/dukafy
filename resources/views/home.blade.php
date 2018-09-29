@@ -134,11 +134,11 @@
             <div class="card-header">
               <h4 class="card-title">Top Most Sold Products</h4>
               <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-              <div class="heading-elements">
+              {{-- <div class="heading-elements">
                 <ul class="list-inline mb-0">
                   <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                 </ul>
-              </div>
+              </div> --}}
             </div>
             <div class="card-content">
               <div id="new-orders" class="media-list position-relative">
