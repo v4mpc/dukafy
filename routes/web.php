@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::view('/', 'dukafy.index');
 //client store routes
 Route::group(['middleware'=>['checkDomain']], function () {
     Route::get('/start', 'TemplateController@index')->name('start');
@@ -110,7 +112,7 @@ Route::prefix('manage')->middleware('auth')->group(function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/initial_setup', 'HomeController@initialSetup')->name('initial_setup');
 
-Route::view('/', 'dukafy.index');
+
 
 
 
