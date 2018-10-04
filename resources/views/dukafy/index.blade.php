@@ -576,7 +576,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <p class="bold price">TZS <span>29,000</span>/Month</p>
+                                    <p class="bold price">TZS <span>49,000</span>/Month</p>
                                 </div>
 
                                 <div class="col-12">
