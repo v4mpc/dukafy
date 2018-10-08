@@ -14,9 +14,9 @@ class AddingField extends Migration
     public function up()
     {
         Schema::table('accounts', function (Blueprint $table) {
-            // $table->integer('package_id');
-            // $table->dateTime('started_at')->nullable()->change();
-            // $table->dateTime('ended_at')->nullable()->change();
+            $table->integer('package_id');
+            $table->dateTime('started_at')->nullable()->change();
+            $table->dateTime('ended_at')->nullable()->change();
         });
     }
 
