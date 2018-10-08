@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
 use Closure;
-use App\Account;
 
-class CheckDomain
+class Client
 {
     /**
      * Handle an incoming request.
@@ -16,13 +16,10 @@ class CheckDomain
      */
     public function handle($request, Closure $next)
     {
-        $account=Account::where('domain', $request->getHost())->first();
-        
-        if ($account) {
-            session(['accoun_id'=>$account->id]);
-            return $next($request);
+        if (Auth::user()->account_id==1) {
+            return redirect()->route('admin/dashboard');
         }
-
-        return abort(404);
+      
+        return $next($request);
     }
 }

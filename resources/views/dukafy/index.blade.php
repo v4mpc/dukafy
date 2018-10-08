@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{asset('dukafy/css/style.css')}}">
     <!-- Media Queries-->
     <link rel="stylesheet" href="{{asset('dukafy/css/media-queries.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
     <!-- Color Theme -->
     <!--<link rel="stylesheet" href="css/color-theme/color-theme-1.css')}}">-->
     <!--<link rel="stylesheet" href="css/color-theme/color-theme-2.css')}}">-->
@@ -35,6 +37,7 @@
     <link rel="stylesheet" href="{{asset('dukafy/css/color-theme/color-theme-5.css')}}">
     <!-- Switch Style -->
     <link id="switch_style" href="css/color-theme/index.html" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <style>
 
@@ -48,11 +51,35 @@
   rgb(44, 184, 36,0.6);
 }
     
+    .input-group-1{
+        display:none;
+    }
+
+   
     </style>
 
 </head>
 
 <body>
+{{-- 
+        @if (Session::has('success'))
+   
+
+
+        <div class="bs-callout-success callout-border-right callout-bordered callout-transparent mt-1 p-1">
+                <h4 class="success">Success!</h4>
+                <p>{{Session::get('success')}}</p>
+              </div>
+        
+        @endif --}}
+
+
+        
+        
+        
+
+        
+       
     <!-- Page -->
     <div id="top" class="page-wrap header-bg">
 
@@ -101,7 +128,7 @@
                         </li>
                         <!-- Navigation Link 6 -->
                         <li class="nav-item button " style="background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824), to(#000100));">
-                            <a class="nav-link" href="#" style="color:#FFF">Register Now</a>
+                            <a class="nav-link " href="#register-form" style="color:#FFF">Register Now</a>
                         </li>
                         <!--<li class="nav-item button header-button bg-color-1">
                             <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i> Purchase now</a>
@@ -168,25 +195,26 @@
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: 0s">1</div>
                         <p class="bold">Register</p>
-                        <p class="light thin">Elit dolor sit amet, consectetur adipisicing elit. Cum, expedita sit.</p>
+                        <p class="light thin">Easily set up your online store with essential business information for your prospective clients.  </p>
                     </div>
                     <!-- Item 2 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: .75s">2</div>
                         <p class="bold">Choose Web Layout</p>
-                        <p class="light thin">Ipsum dolor sit amet, consectetur adipisicing elit. Cum, expedita.</p>
+                        <p class="light thin">Next step would be choosing a web template that would suit your business 
+                            </p>
                     </div>
                     <!-- Item 3 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: 1.5s">3</div>
                         <p class="bold">Add Products</p>
-                        <p class="light thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit expedita.</p>
+                        <p class="light thin">Adding a product has never been this easy just fill in the product information along with an image </p>
                     </div>
                     <!-- Item 4 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: 2.25s">4</div>
                         <p class="bold">Go Live</p>
-                        <p class="light thin">Expedita ipsum dolor sit amet, consectetur adipisicing elit expedita.</p>
+                        <p class="light thin">Hurray, you are all done and ready to showcase your products in your online store</p>
                     </div>
                 </div>
             </div>
@@ -278,11 +306,7 @@
                             <h2><span class="thin">We offer </span> <b>Perfect Solution</b></h2>
                         </div>
                         <!-- Text -->
-                        <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit. Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit. Repellendus dignissimos aspernatur harum odio sit natus, sed
-                            molestiae, iste dolore vero nostrum velit voluptas delectus ullam exercitationem expedita
-                            voluptatum. Esse distinctio dolore nobis ex iure repellendus fuga. Excepturi tempora
-                            numquam odio, dolor velit repudiandae at enim totam autem, perferendis dolorum eaque?</p>
+                        <p class="light thin">Our all-in-one platform gives you everything you need to establish your brand online with a custom domain name and online store Whether you’re just getting started or are an established brand, our powerful platform helps your business grow. Dukafy lets you choose from multiple designer made templates. No tech skills needed.Dukafy features responsive design so that your store looks perfect on any device — desktop, tablet, or mobile phone </p>
                         <!-- Buttons -->
                         <a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
@@ -309,12 +333,7 @@
                             <h2><b>Appeasy</b> <span class="thin"> Created for you</span></h2>
                         </div>
                         <!-- Text -->
-                        <p class="light thin p-0-15">Dolor sit Mollitia harum ea ut eaque velit. Lorem ipsum dolor sit
-                            amet, consectetur adipisicing elit. Repellendus dignissimos aspernatur harum odio sit
-                            natus, sed molestiae, iste dolore vero nostrum velit voluptas delectus ullam exercitationem
-                            expedita voluptatum. Esse distinctio dolore nobis ex iure repellendus fuga. Excepturi
-                            tempora numquam odio, dolor velit repudiandae at enim totam autem, perferendis dolorum
-                            eaque?</p>
+                        <p class="light thin p-0-15">We are here to guide you. Dukafy platform walks you through a series of steps to help you launch your online store with confidence. With your Online Store, there’s no limit to the number of products you can sell. So, whether you're a small boutique or a large business, you can showcase whatever you've got in-store.</p>
                         <!-- Buttons -->
                         <a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
@@ -329,139 +348,9 @@
             </div>
         </section>
         <!-- About left end -->
-        <!-- Call to action -->
-        <section class="call-to-action bg-animation p-90-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-7 align-self-center mb-30">
-                        <!-- Section title -->
-                        <div class="section-title">
-                            <p class="white-light bold small">Purchase Dukafy Today </p>
-                            <h2 class="h1 white"><span class="thin">Request to</span> <b>Call Back</b></h2>
-                            <p class="white-light thin m-0">Fill in the form and our support team will call you within
-                                48 hours.</p>
-                        </div>
-                        <!-- Section title end -->
-                    </div>
-                    <div class="col-12 col-lg-5 align-self-center mb-30">
-                        <form id="form">
-                            <div class="row">
-                                <div class="col-12 col-md">
-                                    <!-- Name input -->
-                                    <input type="text" name="name" placeholder="Full Name" required>
-                                    <!-- Email input -->
-                                    <input type="email" name="email" placeholder="Email" required>
-                                    <input type="text" name="phone" placeholder="Valid Phone #" required>
-                                </div>
-                            </div>
-                        </form>
-                        <a href="#." class="m-0" aria-haspopup="true" style="float:  right;">
-                            <div class="button bg-color-1">Submit</div>
-                        </a>
-                        <!--<a class="white-link m-0" href="#" aria-haspopup="true">Download free trial <i class="fa fa-chevron-right"></i></a>-->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Call to action end -->
-        <!-- Testimonials -->
-        <!--<section id="testimonials" class="testimonials p-90-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-7">
-                        <div class="section-title sm-ac mb-90">
-                            <!--<p class="light bold small">About us are told</p>
-                            <h2><b>Testimonials</b> <span class="thin">About Us</span></h2>
-                            <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
-                        </div>
-                        <!-- Section title end 
-                    </div>
-                    <div class="col-12 col-md-5 testimonials-tooltip">
-                        <div class="nav-container sm-ac"></div>
-                        <p class="light thin small sm-ac">Click To Next Or Prew Slide</p>
-                    </div>
-                </div>
-                <div id="owl" class="testimonial-slider">
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="dialog">
-                                <p class="light thin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices, elit sed faucibus pharetra, diam mauris bibendum orci, sit amet ullamcorper purus dui sit amet augue.</p>
-                            </div>
-                            <div class="user-name">
-                                <div class="user"><img src="img/cli-1.jpg" alt=""></div>
-                                <p class="m-0 bold">Sarah Mazur</p>
-                                <p class="light thin small">Important person, some Company</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="dialog">
-                                <p class="light thin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices, elit sed faucibus pharetra, diam mauris bibendum orci, sit amet ullamcorper purus dui sit amet augue.</p>
-                            </div>
-                            <div class="user-name">
-                                <div class="user"><img src="img/cli-2.jpg" alt=""></div>
-                                <p class="m-0 bold">Pablo Mikołajczak</p>
-                                <p class="light thin small">Important person, some Company</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="dialog">
-                                <p class="light thin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices, elit sed faucibus pharetra, diam mauris bibendum orci, sit amet ullamcorper purus dui sit amet augue.</p>
-                            </div>
-                            <div class="user-name">
-                                <div class="user"><img src="img/cli-3.jpg" alt=""></div>
-                                <p class="m-0 bold">Don Know</p>
-                                <p class="light thin small">Important person, some Company</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="dialog">
-                                <p class="light thin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices, elit sed faucibus pharetra, diam mauris bibendum orci, sit amet ullamcorper purus dui sit amet augue.
-                            </div>
-                            <div class="user-name">
-                                <div class="user"><img src="img/cli-4.jpg" alt=""></div>
-                                <p class="m-0 bold">Don Know</p>
-                                <p class="light thin small">Important person, some Company</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="brands mb-30">
-                    <div class="container">
-                        <div class="owl-carousel brands-slider owl-theme">
-                            <div class="item">
-                                <img src="img/brand-1.png" alt="brand">
-                            </div>
-                            <div class="item">
-                                <img src="img/brand-2.png" alt="brand">
-                            </div>
-                            <div class="item">
-                                <img src="img/brand-3.png" alt="brand">
-                            </div>
-                            <div class="item">
-                                <img src="img/brand-4.png" alt="brand">
-                            </div>
-                            <div class="item">
-                                <img src="img/brand-5.png" alt="brand">
-                            </div>
-                            <div class="item">
-                                
-                                <img src="img/brand-6.png" alt="brand">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        </section>-->
-        <!-- Testimonials end -->
-        <!-- Price --><br><br>
+     
+       
+       
         <section id="price" class="pricing p-0-60">
             <div class="container">
                 <!-- Section title -->
@@ -485,9 +374,9 @@
                                 </div> -->
 
                                 <div class="col-12">
-                                    <select name="" class="form-control plan-A" id="">
-                                        <option value="1">Monthly</option>
-                                        <option value="2">Quaterly</option>
+                                    <select name="test" class="form-control plan-A" id="">
+                                        <option selected value="1">Monthly</option>
+                                        <option  value="2">Quaterly</option>
                                         <option value="3">Half Yearly</option>
                                         <option value="4">Yearly</option>
                                     </select>
@@ -507,8 +396,8 @@
                                     <p class="bold price total-price total-A">Total TZS <span>19,000</span></p>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#." class="button bg-color-2"><i class="fa fa-cart-arrow-down"></i>
-                                        Purchase</a>
+                                    <a href="#register-form" data-plan="plan-A" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
+                                        Select</a>
                                 </div>
                             </div>
                         </div>
@@ -527,8 +416,8 @@
                                 </div> -->
 
                                 <div class="col-12">
-                                    <select name="" class="form-control plan-B" id="">
-                                        <option value="1">Monthly</option>
+                                    <select name="test" class="form-control plan-B" id="">
+                                        <option selected value="1">Monthly</option>
                                         <option value="2">Quaterly</option>
                                         <option value="3">Half Yearly</option>
                                         <option value="4">Yearly</option>
@@ -549,8 +438,8 @@
                                     <p class="bold price total-price total-B">Total TZS <span>29,000</span></p>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#." class="button bg-color-2"><i class="fa fa-cart-arrow-down"></i>
-                                        Purchase</a>
+                                    <a href="#register-form" data-plan="plan-B" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
+                                        Select</a>
                                 </div>
                             </div>
                         </div>
@@ -568,8 +457,8 @@
                                 </div> -->
 
                                 <div class="col-12">
-                                    <select name="" class="form-control plan-C" id="">
-                                        <option value="1">Monthly</option>
+                                    <select name="test" class="form-control plan-C" id="">
+                                        <option selected value="1">Monthly</option>
                                         <option value="2">Quaterly</option>
                                         <option value="3">Half Yearly</option>
                                         <option value="4">Yearly</option>
@@ -590,8 +479,8 @@
                                     <p class="bold price total-price total-C">Total TZS <span>49,000</span></p>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#." class="button bg-color-2"><i class="fa fa-cart-arrow-down"></i>
-                                        Purchase</a>
+                                    <a href="#register-form" data-plan="plan-C" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
+                                        Select</a>
                                 </div>
                             </div>
                         </div>
@@ -609,8 +498,8 @@
                                 </div> -->
 
                                 <div class="col-12">
-                                    <select name="" class="form-control plan-D" id="">
-                                        <option value="1">Monthly</option>
+                                    <select name="test" class="form-control plan-D" id="">
+                                        <option selected value="1">Monthly</option>
                                         <option value="2">Quaterly</option>
                                         <option value="3">Half Yearly</option>
                                         <option value="4">Yearly</option>
@@ -630,9 +519,9 @@
                                 <div class="col-12">
                                     <p class="bold price total-price total-D">Total TZS <span>99,000</span></p>
                                 </div>
-                                <div class="col-12">
-                                    <a href="#." class="button bg-color-2"><i class="fa fa-cart-arrow-down"></i>
-                                        Purchase</a>
+                                <div class="col-12 nav-item">
+                                    <a href="#register-form" data-plan="plan-D" class="button bg-color-2 nav-link select"><i class="fa fa-cart-arrow-down"></i>
+                                        Select</a>
                                 </div>
                             </div>
                         </div>
@@ -640,35 +529,125 @@
                 </div>
             </div>
         </section>
-        <!-- Price end -->
-        <!-- Stats 
-        <div class="stats bg-animation p-90-60">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-6 col-sm-6 col-md-3 mb-30">
-                        <i class="white fa fa-download"></i>
-                        <h2 class="white thin numeric puls" style="animation-delay: 0s">34k</h2>
-                        <p class="white bold">Downloads</p>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3 mb-30">
-                        <i class="white fa fa-smile-o"></i>
-                        <h2 class="white thin numeric puls" style="animation-delay: .75s">32k</h2>
-                        <p class="white bold">Happy Customers</p>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3 mb-30">
-                        <i class="white fa fa-users"></i>
-                        <h2 class="white thin numeric puls" style="animation-delay: 1.5s">27k</h2>
-                        <p class="white bold">Premium Users</p>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3 mb-30">
-                        <i class="white fa fa-trophy"></i>
-                        <h2 class="white thin numeric puls" style="animation-delay: 2.25s">437</h2>
-                        <p class="white bold">Honors & Awards</p>
+
+
+           <!-- Call to action -->
+           <section class="call-to-action bg-animation p-90-60" id="register-form">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-7 align-self-center mb-30">
+                            <!-- Section title -->
+                            <div class="section-title">
+                                <p class="white-light bold small">Purchase Dukafy Today </p>
+                                <h2 class="h1 white"><span class="thin">Request to</span> <b>Call Back</b></h2>
+                                <p class="white-light thin m-0">Fill in the form and our support team will call you within
+                                    48 hours.</p>
+                            </div>
+                            <!-- Section title end -->
+                        </div>
+                        <div class="col-12 col-lg-5 align-self-center mb-30">
+                            <form id="myform" action="{{route('request_account')}}" method="POST">
+                                    {{csrf_field()}}
+                                <div class="row">
+                                    <div class="col-12 col-md">
+                                        <!-- Name input -->
+                                        <input type="text" name="name" value="{{old('name')}}" placeholder="Full Name" required>
+                                        <!-- Email input -->
+                                        <input type="email" name="email" value="{{old('email')}}" placeholder="Email" required>
+                                        <input type="text" name="phone" placeholder="Valid Phone #" required>
+
+
+                                        <select class="custom-select custom-select-lg mb-3" id="domain-source" name="domain_source">
+                                                <option selected value="0">New Domain</option>
+                                                <option value="1">Existing Domain</option>
+                                                
+
+                                              </select>
+
+                                            <br>
+
+  
+
+                                            <input type="text" id="domain-register" class="input-group-1" name="domain1" placeholder="Type Your Domain" >
+                                       
+
+                                        <div class="input-group" id="domain-checker">
+
+                                                <div class="input-group-prepend input-group-1">
+                                                        <span class="input-group-text" id="status">not available</span>
+                                                      </div>
+                                         
+                                            <input type="text" id="domain" class="form-control is-valid" name="domain" placeholder="domain">
+                                            
+                     
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">.co.tz</div>
+                                              </div>
+                                            
+                                          </div>
+                                         
+
+                                          <br>
+
+                                          <select class="custom-select custom-select-lg mb-3" name="package_id">
+                                                <option selected>Select Package</option>
+                                                <option id="basic" value="1">Basic</option>
+                                                <option id="shop" value="2">Shop</option>
+                                                <option id="store" value="3">Store</option>
+                                                <option id="market" value="4">Super Market</option>
+
+                                              </select>
+
+                                            <br>
+                                            
+
+                                        {{-- <input type="text" name="domain" placeholder="Domain Name" required disabled> --}}
+
+                                      
+
+                                            <select class="custom-select custom-select-lg mb-3" name="subscription_id">
+                                                    <option selected>Select Plan</option>
+                                                    <option id="1" value="1">Monthly</option>
+                                                    <option id="2" value="2">Quaterly</option>
+                                                    <option id="3" value="3">Half Yearly</option>
+                                                    <option id="4" value="4">Yearly</option>
+                                                  </select>
+
+                                            <br>
+
+                                            <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">I, Agree to <a href="">Terms and Condition</a></label>
+                                                  </div>
+
+
+                                        
+
+
+                                        
+
+                                        
+
+                                       
+                                       
+                                               
+                                           
+                                    </div>
+                                </div>
+                                <button " class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;">
+                                        {{-- <div class="button bg-color-1">Submit</div> --}}
+                                        Submit
+                                </button>
+                            </form>
+                          
+                            <!--<a class="white-link m-0" href="#" aria-haspopup="true">Download free trial <i class="fa fa-chevron-right"></i></a>-->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>-->
-        <!-- Stats end -->
+            </section>
+
+             <!-- Price --><br><br>
+       
 
 
         <!-- Contact -->
@@ -804,6 +783,117 @@
     <script src="{{asset('dukafy/js/lity.js')}}"></script>
     <!-- Main -->
     <script src="{{asset('dukafy/js/main.js')}}"></script>
+
+    <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
+
+
+    <script>
+
+
+
+        $(document).ready(function() {
+
+
+  @if (Session::has('success'))
+            swal("Good job!", "We will contact You soon!", "success");
+
+@endif
+            $('.select').click(function(){
+                var plan=$(this).data('plan');
+                // console.log($('#'+plan).find(":selected").val());
+                console.log($('select[name=test]').val());
+
+                var id =$('select[name=test]').val();
+
+                $('#'+id).attr('selected','selected');
+                
+                if (plan=='plan-A') {
+                    $('#basic').attr('selected','selected');
+                }else if(plan=='plan-B'){
+                $('#shop').attr('selected','selected');
+                }else if(plan=='plan-C'){
+                $('#store').attr('selected','selected');
+                }else if(plan=='plan-D'){
+                $('#market').attr('selected','selected');
+                    }
+            });
+
+            $("#domain-source").change(function(){
+                // console.log($(this).find(":selected").text());
+                if($(this).find(":selected").text()=='New Domain'){
+                //    console.log($(this).find(":selected").text());
+
+                $('#domain-checker').removeClass('input-group-1');
+                $('#domain-register').addClass('input-group-1');
+
+                
+
+                }else{
+
+                    $('#domain-checker').addClass('input-group-1');
+                $('#domain-register').removeClass('input-group-1');
+
+                }
+
+            });
+            // (function($) {
+            // $.fn.goTo = function() {
+            //     $('html, body').animate({
+            //     scrollTop: $(this).offset().top + 'px'
+            //     }, 'fast');
+            // return this; // for chaining...
+            // }
+            // })(jQuery);
+
+
+            // //click to go to form
+
+            // $('.register').click(function(){
+            //     $('#div_element2').goTo();
+            // });
+
+
+
+    var wait_time=1000;
+    var wait_key_stroke=3;
+    var count_time;
+    var count_key_stroke;
+    $('#domain').keyup(function(){
+        clearTimeout(count_time);
+        count_time=setTimeout(done_typing,wait_time);
+        // console.log('done typping send request know');
+    });
+
+
+function done_typing(){
+    // if (domain!=null) {
+        
+    // }
+    $('.input-group-prepend').removeClass('input-group-1');
+    $('#status').text('Searching...');
+    var domain = $('#domain').val();
+       //should show that we are search
+       console.log(domain);
+        $.ajax({
+            type: "GET",
+            url: "http://dukafy.local/api/whois/"+domain,
+            dataType:'json',
+            success: function( response ) {
+                if (response.status=='unavailable') {
+                    $('#status').text('Not Available');
+                } else if(response.status=='available') {
+                   
+                    $('#status').text('Available');
+                }
+                console.log(response.status);
+            }
+        });
+}
+});
+    
+    
+    </script>
 
 
 </body>

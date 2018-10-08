@@ -10,11 +10,34 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//dukafy home page routes
+// Route::view('/home', 'dukafy.index')->name('dukafy');
 
-Route::view('/', 'dukafy.index');
+//dukafy admin dashboard routes
+// Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::resource('users', 'UserController');
+    Route::resource('accounts', 'AccountController');
+    Route::get('suspend/{id}', 'AccountController@suspend')->name('accounts.suspend');
+    Route::get('activate/{id}', 'AccountController@activate')->name('accounts.activate');
+    Route::put('change_password', 'UserController@updatePassword')->name('admin.update.password');
+    Route::get('change_password', 'UserController@getPassword')->name('admin.get.password');
+    Route::put('edit_user', 'UserController@updateUser')->name('admin.update.user');
+    Route::put('renew/{id}', 'AccountController@renew')->name('renew');
+    Route::get('edit_user', 'UserController@getUser')->name('admin.get.user');
+    Route::get('logs', 'UserController@getLogs')->name('admin.logs');
+});
+
+Route::post('request_account', 'AccountController@store')->name('request_account');
+
+
+
 //client store routes
-Route::group(['middleware'=>['checkDomain']], function () {
-    Route::get('/start', 'TemplateController@index')->name('start');
+
+    //the routes are store dependant
+    //middleware will help us with that
+    Route::get('/', 'TemplateController@index')->name('start');
     Route::get('/products', 'TemplateController@products')->name('products');
     Route::get('/product/{id}', 'TemplateController@productshow')->name('product.show');
     Route::resource('/cart', 'CartController');
@@ -26,54 +49,20 @@ Route::group(['middleware'=>['checkDomain']], function () {
     Route::delete('/remove_from_cart/{id}', 'CartController@removeFromCart')->name('remove_from_cart');
     Route::resource('/confirmation', 'ConfirmationController');
     Route::resource('/thank_you', 'ThankYouController');
-
-
-
     // Route::get('/shopping_cart','TemplateController@cart')->name('cart');
     Route::get('/contact_us', 'TemplateController@contact')->name('contact');
     Route::get('/about_us', 'TemplateController@about')->name('about');
     Route::post('/send_contact_form', 'MailerController@sendContactForm')->name('send_contact_form');
     Route::get('/search', 'ProductController@search')->name('search');
     Route::get('/category/{id}', 'ProductController@category')->name('category');
-
-    //this is only for demo perpose for template 2
-    Route::get('/template2/start', 'TemplateController@index')->name('template2.start');
-    Route::get('/template2/cart', 'CartController@index')->name('template2.cart.index');
-    Route::get('/template2/product/{id}', 'TemplateController@productshow')->name('template2.product.show');
-    Route::get('/template2/category/{id}', 'ProductController@category')->name('template2.category');
-    Route::get('/template2/contact_us', 'TemplateController@contact')->name('template2.contact');
-    Route::get('/template2/about_us', 'TemplateController@about')->name('template2.about');
-    Route::get('/template2/check_out', 'CheckOutController@create');
-    Route::view('/template2/thank_you', 'template/template2/thankyou');
-
-    //this is only for demo perpose for template 3
-    Route::get('/template3/start', 'TemplateController@index')->name('template3.start');
-    Route::get('/template3/cart', 'CartController@index')->name('template3.cart.index');
-    Route::get('/template3/product/{id}', 'TemplateController@productshow')->name('template3.product.show');
-    Route::get('/template3/category/{id}', 'ProductController@category')->name('template3.category');
-    Route::get('/template3/contact_us', 'TemplateController@contact')->name('template3.contact');
-    Route::get('/template3/about_us', 'TemplateController@about')->name('template3.about');
-    Route::get('/template3/check_out', 'CheckOutController@create');
-    Route::view('/template3/thank_you', 'template/template3/thankyou');
-
-    //testig
-
     Route::get('/mailable', function () {
         $order = App\Order::find(7);
         return new App\Mail\OrderCompleted($order, 'yona101992@gmail.com');
     });
-});
-
-
-
-
-
-
-
-
-// client dashboard routes
+//login routes login and admin i think
 Auth::routes();
-Route::prefix('manage')->middleware('auth')->group(function () {
+// client dashboard routes
+Route::prefix('manage')->middleware(['auth','client'])->group(function () {
     Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');
     Route::resource('sub_categories', 'SubCategoryController');
@@ -106,17 +95,9 @@ Route::prefix('manage')->middleware('auth')->group(function () {
         return back();
     })->name('back');
     Route::post('/upload', 'SettingController@upload')->name('upload');
+    Route::get('/home', 'HomeController@index')->name('home');
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/initial_setup', 'HomeController@initialSetup')->name('initial_setup');
-
-
-
-
-
-//dukafy frontend dashbaord
-
-
-//dukafy backend dashboard
