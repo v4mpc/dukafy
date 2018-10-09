@@ -81,16 +81,9 @@ class AccountController extends Controller
      
         
        
-        $account->save();
+        
 
-        if ($request->user_email) {
-            $user=new User;
-            $user->name=$request->user_name;
-            $user->email=$request->user_email;
-            $user->password=bcrypt($request->password);
-            $user->account_id=$account->id;
-            $user->save();
-        }
+      
 
 
         if (Auth::check()) {
@@ -102,8 +95,17 @@ class AccountController extends Controller
         }
         //if admin got to index
         // return redirect()->route('accounts.index');
-
+        $account->save();
         //else go back;
+
+        // if ($request->user_email) {
+        //     $user=new User;
+        //     $user->name=$request->user_name;
+        //     $user->email=$request->user_email;
+        //     $user->password=bcrypt($request->password);
+        //     $user->account_id=$account->id;
+        //     $user->save();
+        // }
 
         // dd($request);
         Session::flash('success', 'god');
