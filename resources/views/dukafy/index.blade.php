@@ -37,7 +37,9 @@
     <link rel="stylesheet" href="{{asset('dukafy/css/color-theme/color-theme-5.css')}}">
     <!-- Switch Style -->
     <link id="switch_style" href="css/color-theme/index.html" rel="stylesheet">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    {{-- <script src='https://www.google.com/recaptcha/api.js'></script> --}}
+
+   
 
     <style>
 
@@ -254,7 +256,11 @@
                             <p class="bold">5 different UI Styles</p>
                             <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
                         </div>
-                    </div>
+                    </div><script>
+                        function onSubmit(token) {
+                          document.getElementById("demo-form").submit();
+                        }
+                      </script>
                     <!-- Features card 4 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
@@ -568,7 +574,7 @@
 
   
 
-                                            <input type="text" id="domain-register" class="input-group-1" name="domain1" placeholder="Type Your Domain" >
+                                            <input type="text" id="domain-register" class="input-group-1" name="domain1" placeholder="Type Your Domain"  >
                                        
 
                                         <div class="input-group" id="domain-checker">
@@ -633,14 +639,16 @@
                                                
                                            
                                     </div>
+                                   
+
                                 </div>
-                                {{-- <button class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;" >Submit</button> --}}
-                                <button
-                                class="g-recaptcha"
-                                data-sitekey="6Lf5-XMUAAAAAKGVBEoUx3dGMi_mzSbPNYddS_F2"
-                                data-callback="YourOnSubmitFn">
-                                Submit
-                                </button>
+                                
+
+                                <div id="ReCaptchContainer"></div>  
+<label id="lblMessage" runat="server" clientidmode="static"></label>  
+<br /> 
+                                <button type="button" class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;" >Submit</button>
+                               
                             </form>
                           
                             <!--<a class="white-link m-0" href="#" aria-haspopup="true">Download free trial <i class="fa fa-chevron-right"></i></a>-->
@@ -790,8 +798,37 @@
     <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
 
+        <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script> 
 
     <script>
+
+
+         var your_site_key = '6LcBJnQUAAAAACvBRP0H0twxO9LljmwIzsRO8nWh';  
+    var renderRecaptcha = function () {  
+        grecaptcha.render('ReCaptchContainer', {  
+            'sitekey': your_site_key,  
+            'callback': reCaptchaCallback,  
+            theme: 'light', //light or dark    
+            type: 'image',// image or audio    
+            size: 'normal'//normal or compact    
+        });  
+    };  
+  
+    var reCaptchaCallback = function (response) {  
+        if (response !== '') {  
+            jQuery('#lblMessage').css('color', 'green').html('Success');  
+        }  
+    };  
+  
+    jQuery('button[type="button"]').click(function(e) {  
+        var message = 'Please checck the checkbox';  
+        if (typeof (grecaptcha) != 'undefined') {  
+            var response = grecaptcha.getResponse();  
+            (response.length === 0) ? (message = 'Captcha verification failed') : (message = 'Success!');  
+        }  
+        jQuery('#lblMessage').html(message);  
+        jQuery('#lblMessage').css('color', (message.toLowerCase() == 'success!') ? "green" : "red");  
+    });
 
 
 
@@ -801,9 +838,7 @@
 
 
 
-            if($('#status').text('Too Short')=='Available'){
-                alert('helo');
-            }
+        
 
 
   @if (Session::has('success'))
