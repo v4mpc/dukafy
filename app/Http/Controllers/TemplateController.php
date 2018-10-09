@@ -22,15 +22,17 @@ class TemplateController extends Controller
     {
 
 
-        // dd(config('app.settings'));
-        if (!count(Setting::all())) {
-            return view('maintanance');
-        }
-        // here i should use .env app_url
+          // here i should use .env app_url
         if ($request->url()==env('APP_URL')) {
             // dd('home dukafy');
             return view('dukafy.index');
         }
+
+        // dd(config('app.settings'));
+        if (!count(Setting::all())) {
+            return view('maintanance');
+        }
+      
 
 
         // if($request->is('template3/*')){
