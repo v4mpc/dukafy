@@ -308,10 +308,10 @@
                         <!-- Text -->
                         <p class="light thin">Our all-in-one platform gives you everything you need to establish your brand online with a custom domain name and online store Whether you’re just getting started or are an established brand, our powerful platform helps your business grow. Dukafy lets you choose from multiple designer made templates. No tech skills needed.Dukafy features responsive design so that your store looks perfect on any device — desktop, tablet, or mobile phone </p>
                         <!-- Buttons -->
-                        <a href="#.">
+                        {{-- <a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
-                        </a>
-                        <a class="gray link" href="#.">Download free trial <i class="fa fa-chevron-right"></i></a>
+                        </a> --}}
+                        {{-- <a class="gray link" href="#.">Download free trial <i class="fa fa-chevron-right"></i></a> --}}
                     </div>
                     <!-- Ilustration -->
                     <div class="col-12 col-lg-7 mb-30 pull-lg-7 align-self-center screens-1">
@@ -335,10 +335,10 @@
                         <!-- Text -->
                         <p class="light thin p-0-15">We are here to guide you. Dukafy platform walks you through a series of steps to help you launch your online store with confidence. With your Online Store, there’s no limit to the number of products you can sell. So, whether you're a small boutique or a large business, you can showcase whatever you've got in-store.</p>
                         <!-- Buttons -->
-                        <a href="#.">
+                        {{-- <a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
-                        </a>
-                        <a class="gray link" href="#.">Download free trial <i class="fa fa-chevron-right"></i></a>
+                        </a> --}}
+                        {{-- <a class="gray link" href="#.">Download free trial <i class="fa fa-chevron-right"></i></a> --}}
                     </div>
                     <!-- Ilustration -->
                     <div class="col-12 col-lg-7 mb-30 align-self-center screens-1">
@@ -801,10 +801,12 @@
 @endif
             $('.select').click(function(){
                 var plan=$(this).data('plan');
-                // console.log($('#'+plan).find(":selected").val());
-                console.log($('select[name=test]').val());
+                
+                // var id =$('select[name=test]').val();
+                var id =$('.'+plan).val();
 
-                var id =$('select[name=test]').val();
+                console.log(id);
+
 
                 $('#'+id).attr('selected','selected');
                 
@@ -877,7 +879,7 @@ function done_typing(){
        console.log(domain);
         $.ajax({
             type: "GET",
-            url: "http://dukafy.local/api/whois/"+domain,
+            url: "{{env('APP_URL')}}/api/whois/"+domain,
             dataType:'json',
             success: function( response ) {
                 if (response.status=='unavailable') {
