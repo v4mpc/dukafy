@@ -605,8 +605,8 @@
 
                                       
 
-                                            <select class="custom-select custom-select-lg mb-3" name="subscription_id">
-                                                    <option selected>Select Plan</option>
+                                            <select class="custom-select custom-select-lg mb-3" name="subscription_id" required>
+                                                    <option value="" selected>Select Plan</option>
                                                     <option id="1" value="1">Monthly</option>
                                                     <option id="2" value="2">Quaterly</option>
                                                     <option id="3" value="3">Half Yearly</option>
@@ -616,7 +616,7 @@
                                             <br>
 
                                             <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <input type="checkbox" required class="custom-control-input" id="customCheck1">
                                                     <label class="custom-control-label" for="customCheck1">I, Agree to <a href="">Terms and Condition</a></label>
                                                   </div>
 
@@ -634,10 +634,14 @@
                                            
                                     </div>
                                 </div>
-                                <button " class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;">
-                                        {{-- <div class="button bg-color-1">Submit</div> --}}
-                                        Submit
-                                </button>
+                                {{-- <button class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;" >Submit</button> --}}
+
+                                <button
+class="g-recaptcha"
+data-sitekey="6Ld8IHQUAAAAANSnPWPmbdbSCol3tIb7VMfdO3q0"
+data-callback="YourOnSubmitFn">
+Submit
+</button>
                             </form>
                           
                             <!--<a class="white-link m-0" href="#" aria-haspopup="true">Download free trial <i class="fa fa-chevron-right"></i></a>-->
@@ -795,6 +799,14 @@
         $(document).ready(function() {
 
 
+
+
+
+            if($('#status').text('Too Short')=='Available'){
+                alert('helo');
+            }
+
+
   @if (Session::has('success'))
             swal("Good job!", "We will contact You soon!", "success");
 
@@ -869,14 +881,15 @@
 
 
 function done_typing(){
-    // if (domain!=null) {
-        
-    // }
-    $('.input-group-prepend').removeClass('input-group-1');
-    $('#status').text('Searching...');
+
+
+    
     var domain = $('#domain').val();
        //should show that we are search
        console.log(domain);
+    if (domain.length>=3) {
+        $('.input-group-prepend').removeClass('input-group-1');
+    $('#status').text('Searching...');
         $.ajax({
             type: "GET",
             url: "{{env('APP_URL')}}/api/whois/"+domain,
@@ -891,6 +904,11 @@ function done_typing(){
                 console.log(response.status);
             }
         });
+    }else{
+        $('#status').text('Too Short');
+    }
+   
+    
 }
 });
     
