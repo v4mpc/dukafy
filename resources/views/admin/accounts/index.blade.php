@@ -83,6 +83,8 @@
 
                       @foreach($accounts as $account)
 
+                      @if($account->id!=1)
+
                       <tr>
                         <td>{{$account->name}}</td>
                         <td>{{$account->domain}}</td>
@@ -113,7 +115,7 @@
                           @endif
                         </td>
                       </tr>
-
+@endif
                       @endforeach
 
                       </tfoot>
