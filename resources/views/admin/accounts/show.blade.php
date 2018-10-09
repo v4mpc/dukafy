@@ -115,7 +115,9 @@
                 <div class="media d-flex">
                   <div class="media-body text-left">
                     <h3 class="danger">Next Due</h3>
+                    @if(!is_null($account->ended_at))
                     <h6>{{Carbon::createFromFormat('Y-m-d H:i:s', $account->ended_at)->diffForHumans()}}</h6>
+                    @endif
                   </div>
 
                 </div>
@@ -190,25 +192,33 @@
                       <tr>
                         <td>Status</td>
                         <td>
-                            @if($account->status!=1)
-                            <span class="badge badge badge-danger">Suspended</span>
-                            @else
-
+                            @if($account->status==1)
+                            @if(!is_null($account->ended_at))
                             @if($account->ended_at->gte(Carbon::now()->SubDays(5))&&(Carbon::now()->gte($account->ended_at)))
                             <span class="badge badge badge-warning">Grace Period</span>
                             @else
                             <span class="badge badge badge-success">Active</span>
                             @endif
                             @endif
+                            @elseif($account->status==2)
+                            <span class="badge badge badge-warning">Pending</span>
+                          @else
+                          <span class="badge badge badge-danger">Suspended</span>
+                          @endif
                         </td>
                       </tr>
                       <tr>
                         <td>Options</td>
-                        <td><button data-toggle="modal" data-target="#inlineForm" class="btn btn-outline-primary btn-sm ">Renew Account</button>
+                      
+                        <td>@if($account->status==2)
+                            <button data-toggle="modal" data-target="#inlineForm1" class="btn btn-outline-secondary btn-sm ">Create Account</button>
+                          @else
+                          <button data-toggle="modal" data-target="#inlineForm" class="btn btn-outline-primary btn-sm ">Renew Account</button>
                           @if($account->status)
                           <a href="{{route('accounts.suspend',$account->id)}}" class="btn btn-outline-danger btn-sm edit-item-btn">Suspend</a>
                           @else
                           <a href="{{route('accounts.activate',$account->id)}}" class="btn btn-outline-success btn-sm edit-item-btn">Activate</a>
+                          @endif
                           @endif
                         </td>
                       </tr>
@@ -268,6 +278,59 @@
           </div>
         </div>
       </div>
+
+
+
+      <div class="modal fade text-left" id="inlineForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <label class="modal-title text-text-bold-600" id="myModalLabel33">New Account</label>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+              </div>
+              <form action="{{route('new',$account->id)}}" method="POST">
+    {{method_field('PUT')}}
+                {{csrf_field()}}
+                <div class="modal-body">
+                    
+                    <div class="form-group row">
+                        <label class="col-md-3 label-control" for="projectinput1">Name</label>
+                        <div class="col-md-9">
+                          <input type="text" id="projectinput1" class="form-control" value="{{old('user_name')}}" placeholder="Name" name="user_name">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 label-control" for="projectinput1">Email</label>
+                        <div class="col-md-9">
+                          <input type="email" id="projectinput1" class="form-control" value="{{old('user_email')}}" placeholder="Email" name="user_email">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-md-3 label-control" for="projectinput1">Password</label>
+                        <div class="col-md-9">
+                          <input type="password" id="projectinput1" class="form-control" placeholder="Password" name="password">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 label-control" for="projectinput1">Confirm Password</label>
+                        <div class="col-md-9">
+                          <input type="password" id="projectinput1" class="form-control" placeholder="Re-type password" name="password_confirmation">
+                        </div>
+                      </div>
+                </div>
+  
+                <div class="modal-footer">
+                  <input type="reset" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" value="Close">
+                  <input type="submit" class="btn btn-outline-primary btn-lg" value="Create Account">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
   
   
 
@@ -295,16 +358,21 @@
                   <div class="media d-flex">
                     <div class="media-body text-left">
                       <h3 class="warning">Expiring</h3>
+                      @if(!is_null($account->ended_at))
                       <h6>{{Carbon::createFromFormat('Y-m-d H:i:s', $account->ended_at)->diffForHumans()}}</h6>
+                      @endif
                     </div>
                     <div>
                       <i class="icon-pie-chart warning font-large-2 float-right"></i>
                     </div>
                   </div>
                   <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                      @if(!is_null($account->ended_at))
                     <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%" aria-valuenow="{{strtotime(Carbon::now())-strtotime($account->started_at)}}"
                       aria-valuemin="0" aria-valuemax="{{strtotime($account->ended_at)-strtotime($account->started_at)}}"></div>
+                      @endif
                   </div>
+               
                 </div>
               </div>
             </div>

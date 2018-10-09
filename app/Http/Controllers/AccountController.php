@@ -71,20 +71,14 @@ class AccountController extends Controller
         //configure domain,database mysql etc
         $account=new Account;
         $account->name=$request->name;
-        $account->domain=$request->domain."co.tz";
+        $account->domain=$request->domain.".co.tz";
         $account->phone=$request->phone;
         $account->email=$request->email;
         $account->package_id=$request->package_id;
         $account->subscription_id=$request->subscription_id;
         
         //this value are set to null till account is alllowed or its an admin acccount
-        if (Auth::check()) {
-            if (Auth::user()->account_id==1) {
-                $this->activateNewAccount($account);
-            }
-        } else {
-            $account->status=0;
-        }
+     
         
        
         $account->save();
@@ -96,6 +90,15 @@ class AccountController extends Controller
             $user->password=bcrypt($request->password);
             $user->account_id=$account->id;
             $user->save();
+        }
+
+
+        if (Auth::check()) {
+            if (Auth::user()->account_id==1) {
+                $this->activateNewAccount($account, $user);
+            }
+        } else {
+            $account->status=2;
         }
         //if admin got to index
         // return redirect()->route('accounts.index');
@@ -263,7 +266,7 @@ class AccountController extends Controller
 
 
 
-    public function activateNewAccount($account)
+    public function activateNewAccount($account, $user)
     {
         #if we are here means the account can now be created
 
@@ -282,6 +285,8 @@ class AccountController extends Controller
         $this->digitalOcean($account, 'subdomain');
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
+
+        $this->createUser($user->email, $user->password, $user->name, $account->id);
 
         
         return;
@@ -356,5 +361,23 @@ class AccountController extends Controller
         file_put_contents("/etc/nginx/sites-available/dukafy", $server_configurarion, FILE_APPEND);
 
         return;
+    }
+
+
+    public function createUser($email, $password, $name='Client', $account_id)
+    {
+        $user=new User;
+        $user->name=$name;
+        $user->email=$email;
+        $user->password=bcrypt($password);
+        $user->admin=0;
+        $user->account_id=$account->id;
+        $user->save();
+        return;
+    }
+
+
+    public function admincreateAccount(Account $account)
+    {
     }
 }

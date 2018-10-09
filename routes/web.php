@@ -25,6 +25,8 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
     Route::get('change_password', 'UserController@getPassword')->name('admin.get.password');
     Route::put('edit_user', 'UserController@updateUser')->name('admin.update.user');
     Route::put('renew/{id}', 'AccountController@renew')->name('renew');
+    Route::put('new_account/{id}', 'AccountController@admincreateAccount')->name('new');
+
     Route::get('edit_user', 'UserController@getUser')->name('admin.get.user');
     Route::get('logs', 'UserController@getLogs')->name('admin.logs');
 });

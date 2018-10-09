@@ -96,7 +96,8 @@
                             @else
                             <span class="badge badge badge-success">Active</span>
                             @endif
-                            
+                            @elseif($account->status==2)
+                            <span class="badge badge badge-warning">Pending</span>
                           @else
                           <span class="badge badge badge-danger">Suspended</span>
                           @endif
@@ -106,12 +107,14 @@
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
                             <a href="{{route('accounts.edit',$account->id)}}" data-toggle="tooltip" data-original-title="Edit"
                               data-placement="top" class="btn btn-outline-secondary btn-sm edit-item-btn"><i class="ft-edit"></i></a>
+                              @if($account->status!=2)
                             @if($account->status)
                             <a href="{{route('accounts.suspend',$account->id)}}" data-toggle="tooltip" data-original-title="Suspend"
                               data-placement="top" class="btn btn-outline-danger btn-sm edit-item-btn"><i class="ft-x"></i></a>
                           @else
                           <a href="{{route('accounts.activate',$account->id)}}" data-toggle="tooltip" data-original-title="Activate"
                             data-placement="top" class="btn btn-outline-success btn-sm edit-item-btn"><i class="ft-check"></i></a>
+                          @endif
                           @endif
                         </td>
                       </tr>
