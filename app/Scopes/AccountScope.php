@@ -24,8 +24,11 @@ class AccountScope implements Scope
 
     public function apply(Builder $builder, Model $model)
     {
-        $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
-        // dd($account_id);
+        if (Request::getHost()=="adshlits.dukafy.co.tz") {
+            $account_id=1;
+        } else {
+            $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
+        }
         $builder->where('account_id', $account_id);
     }
 }
