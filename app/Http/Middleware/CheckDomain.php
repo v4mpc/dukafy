@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Account;
+use Session;
 
 class CheckDomain
 {
@@ -19,9 +20,13 @@ class CheckDomain
         $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
         
         if ($account) {
-            session(['accoun_id'=>$account->id]);
+            // session(['accoun_id'=>$account->id]);
+
+            Session::put('accoun_id', $account->id);
 
             // dd(session('accoun_id'));
+
+
             return $next($request);
         }
 
