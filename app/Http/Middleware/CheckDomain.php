@@ -21,7 +21,7 @@ class CheckDomain
         if ($account) {
             session(['accoun_id'=>$account->id]);
 
-            dd(session('accoun_id'));
+            // dd(session('accoun_id'));
             return $next($request);
         }
 

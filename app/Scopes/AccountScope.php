@@ -20,7 +20,7 @@ class AccountScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         //
-        // dd(session('accoun_id'));
+        dd(session('accoun_id'));
         $builder->where('account_id', session('accoun_id'));
     }
 }
