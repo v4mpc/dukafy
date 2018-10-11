@@ -125,7 +125,7 @@ class SettingController extends Controller
             $slider_image=SliderImage::findOrFail($id);
             $slider_image->image=$png_url;
             $slider_image->save();
-        } 
+        }
 
         if ($request->slider_two) {
             $png_url = "slider-".time(). uniqid().".png";
@@ -144,11 +144,11 @@ class SettingController extends Controller
             $slider_image=SliderImage::findOrFail($id);
             $slider_image->image=$png_url;
             $slider_image->save();
-        } 
+        }
 
 
 
-        Session::flash('initial_screen', 'Welcome! Please Activate your Site in the Settins menu!');
+        Session::flash('initial_screen', 'Welcome! Please Activate your Site in the Settings menu!');
         return redirect()->route('home');
     }
 
@@ -343,7 +343,6 @@ class SettingController extends Controller
     {
         $setting=Setting::findOrFail($id);
         if ($request->about) {
-          
             $setting->about=$request->about;
         } else {
             $setting->about=null;
@@ -438,7 +437,6 @@ class SettingController extends Controller
 
     public function updateSlider(Request $request, $id)
     {
-        
         $slider_images=SliderImage::get();
 
         $image=$slider_images[0]->image;

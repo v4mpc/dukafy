@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Scopes\AccountScope;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
@@ -17,6 +19,10 @@ class Setting extends Model
     //     return number_format($value,0, '.', ' ');
     // }
 
+    protected static function boot()
+    {
+        parent::boot();
 
-
+        static::addGlobalScope(new AccountScope);
+    }
 }
