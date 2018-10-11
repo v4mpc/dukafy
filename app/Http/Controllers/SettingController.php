@@ -112,7 +112,17 @@ class SettingController extends Controller
             }
         }
 
-        $slider_images=SliderImage::get();
+
+
+        $number_of_images=3;
+        for ($i=0; $i < 3; $i++) {
+            $slider=new SliderImage;
+            $slider->image=null;
+            $slider->account_id=$setting->account_id;
+            $slider->save();
+        }
+
+        $slider_images=SliderImage::where('account_id', $setting->account_id)->get();
 
         $image=$slider_images[0]->image;
         
