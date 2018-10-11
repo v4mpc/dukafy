@@ -66,7 +66,7 @@ class SettingController extends Controller
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
         $setting->location_name=$request->location_name;
-        $setting->account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
+        $setting->account_id=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;
         // dd($request->all());
 
         if ($request->logo) {
