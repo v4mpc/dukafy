@@ -19,7 +19,7 @@ class CheckDomain
     {
         $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
         
-        if ($account) {
+        if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
             return $next($request);
         }
 
