@@ -17,7 +17,7 @@ class AccountScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
      */
-    public function apply(Builder $builder, Model $model)
+    public function apply(Builder $builder, Model $model, Request $request)
     {
         //
         $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
