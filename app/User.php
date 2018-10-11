@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use App\Scopes\AccountScope;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -21,7 +22,7 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::addGlobalScope(new AccountScope);
+        static::addGlobalScope(new AccountScope($request));
     }
 
     /**

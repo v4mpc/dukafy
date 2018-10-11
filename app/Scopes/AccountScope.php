@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Account;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Session;
+use Request;
 
 class AccountScope implements Scope
 {
@@ -19,17 +20,12 @@ class AccountScope implements Scope
      * @return void
      */
 
-    public function __construct(Request $request)
-    {
-        dd($request);
-    }
-    
+   
+
     public function apply(Builder $builder, Model $model)
     {
-        //
-        // dd(session('accoun_id'));
-
-        // dd(Session::all());
-        $builder->where('account_id', session('accoun_id'));
+        $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
+        // dd($account_id);
+        $builder->where('account_id', $account_id);
     }
 }
