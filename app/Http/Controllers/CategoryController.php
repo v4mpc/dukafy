@@ -40,10 +40,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd(getAccountId($request));
+        // dd(getAccountId($request));
         $category=new Category;
         $category->account_id=getAccountId($request);
-        
         $category->name=$request->name;
         $category->save();
 
