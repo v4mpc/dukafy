@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Account;
 use Illuminate\Http\Request;
+use Session;
 
 class AccountScope implements Scope
 {
@@ -21,6 +22,8 @@ class AccountScope implements Scope
     {
         //
         // dd(session('accoun_id'));
+
+        dd(Session::all());
         $builder->where('account_id', session('accoun_id'));
     }
 }
