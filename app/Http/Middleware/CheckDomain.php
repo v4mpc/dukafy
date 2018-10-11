@@ -16,8 +16,7 @@ class CheckDomain
      */
     public function handle($request, Closure $next)
     {
-        dd($request->getHost());
-        $account=Account::where('domain', $request->getHost())->first();
+        $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
         
         if ($account) {
             session(['accoun_id'=>$account->id]);
