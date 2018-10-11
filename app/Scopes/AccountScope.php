@@ -23,7 +23,7 @@ class AccountScope implements Scope
         //
         // dd(session('accoun_id'));
 
-        dd(Session::all());
+        // dd(Session::all());
         $builder->where('account_id', session('accoun_id'));
     }
 }
