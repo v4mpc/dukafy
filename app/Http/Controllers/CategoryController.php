@@ -38,10 +38,12 @@ class CategoryController extends Controller
      * @param  StoreCategory $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategory $request)
+    public function store(Request $request)
     {
+        dd(getAccountId($request));
         $category=new Category;
         $category->account_id=getAccountId($request);
+        
         $category->name=$request->name;
         $category->save();
 
