@@ -9,7 +9,7 @@ use App\BrandImage;
 use App\SliderImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Account;
+use App\Account;
 
 class SettingController extends Controller
 {
