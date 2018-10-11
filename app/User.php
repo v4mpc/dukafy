@@ -22,7 +22,7 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::addGlobalScope(new AccountScope($request));
+        static::addGlobalScope(new AccountScope);
     }
 
     /**
