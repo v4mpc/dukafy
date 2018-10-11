@@ -349,7 +349,7 @@ class AccountController extends Controller
         if ($record_to_create=='domain') {
             $server_configurarion.="server_name .".$account->domain.";".PHP_EOL;
         } else {
-            $server_configurarion.="server_name .".$account->domain.".dukafy.co.tz;".PHP_EOL;
+            $server_configurarion.="server_name .".preg_replace('/.co.tz/', "", $account->domain).".dukafy.co.tz;".PHP_EOL;
         }
         $server_configurarion.="location / {".PHP_EOL;
         $server_configurarion.='try_files $uri $uri/ /index.php?$query_string;'.PHP_EOL;
@@ -372,7 +372,7 @@ class AccountController extends Controller
         $user->name=$account->name;
         $user->email=$account->email;
         $user->password=bcrypt($password);
-        $user->admin=0;
+       
         $user->account_id=$account->id;
         $user->save();
         return;
