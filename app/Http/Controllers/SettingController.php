@@ -9,6 +9,7 @@ use App\BrandImage;
 use App\SliderImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Account;
 
 class SettingController extends Controller
 {
@@ -65,6 +66,7 @@ class SettingController extends Controller
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
         $setting->location_name=$request->location_name;
+        $setting->account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
         // dd($request->all());
 
         if ($request->logo) {
