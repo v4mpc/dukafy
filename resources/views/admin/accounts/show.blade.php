@@ -295,19 +295,19 @@
                 {{csrf_field()}}
                 <div class="modal-body">
                     
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="col-md-3 label-control" for="projectinput1">Name</label>
                         <div class="col-md-9">
                           <input type="text" id="projectinput1" class="form-control" value="{{old('user_name')}}" placeholder="Name" name="user_name">
                         </div>
-                      </div>
+                      </div> --}}
 
-                      <div class="form-group row">
+                      {{-- <div class="form-group row">
                         <label class="col-md-3 label-control" for="projectinput1">Email</label>
                         <div class="col-md-9">
                           <input type="email" id="projectinput1" class="form-control" value="{{old('user_email')}}" placeholder="Email" name="user_email">
                         </div>
-                      </div>
+                      </div> --}}
                       <div class="form-group row">
                         <label class="col-md-3 label-control" for="projectinput1">Password</label>
                         <div class="col-md-9">

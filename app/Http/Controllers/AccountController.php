@@ -268,7 +268,7 @@ class AccountController extends Controller
 
 
 
-    public function activateNewAccount($account, $user)
+    public function activateNewAccount($account, $password)
     {
         #if we are here means the account can now be created
 
@@ -288,7 +288,7 @@ class AccountController extends Controller
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
 
-        $this->createUser($user->email, $user->password, $user->name, $account->id);
+        $this->createUser($password, $account);
 
         
         return;
@@ -366,11 +366,11 @@ class AccountController extends Controller
     }
 
 
-    public function createUser($email, $password, $name='Client', $account_id)
+    public function createUser($password, $account)
     {
         $user=new User;
-        $user->name=$name;
-        $user->email=$email;
+        $user->name=$account->name;
+        $user->email=$account->email;
         $user->password=bcrypt($password);
         $user->admin=0;
         $user->account_id=$account->id;
@@ -381,5 +381,9 @@ class AccountController extends Controller
 
     public function admincreateAccount(Account $account)
     {
+        // dd($account);
+
+        $this->activateNewAccount($account, $request->password);
+        return redirect()->back();
     }
 }
