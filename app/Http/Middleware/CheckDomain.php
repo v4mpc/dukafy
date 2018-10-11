@@ -16,6 +16,7 @@ class CheckDomain
      */
     public function handle($request, Closure $next)
     {
+        dd($request->getHost());
         $account=Account::where('domain', $request->getHost())->first();
         
         if ($account) {
