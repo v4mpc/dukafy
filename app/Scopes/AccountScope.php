@@ -20,7 +20,8 @@ class AccountScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         //
-        dd(session('accoun_id'));
+        $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
+        dd($account);
         $builder->where('account_id', session('accoun_id'));
     }
 }

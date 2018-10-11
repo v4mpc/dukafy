@@ -16,15 +16,15 @@ class CheckDomain
      */
     public function handle($request, Closure $next)
     {
-        $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
+        // $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
         
-        if ($account) {
-            session(['accoun_id'=>$account->id]);
+        // if ($account) {
+        // session(['accoun_id'=>$account->id]);
 
-            // dd(session('accoun_id'));
-            return $next($request);
-        }
+        // dd(session('accoun_id'));
+        return $next($request);
+        // }
 
-        return abort(404);
+        // return abort(404);
     }
 }
