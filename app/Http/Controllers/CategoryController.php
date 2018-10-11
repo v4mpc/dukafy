@@ -9,7 +9,6 @@ use Session;
 use App\Http\Requests\StoreCategory;
 use App\Product;
 
-
 class CategoryController extends Controller
 {
     /**
@@ -19,9 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
         $categories=Category::all();
-        return view('categories.index')->with('categories',$categories);
+        return view('categories.index')->with('categories', $categories);
     }
 
     /**
@@ -42,15 +40,13 @@ class CategoryController extends Controller
      */
     public function store(StoreCategory $request)
     {
-
-
-       $category=new Category;
-
-       $category->name=$request->name;
-       $category->save();
+        $category=new Category;
+        $category->account_id=getAccountId($request);
+        $category->name=$request->name;
+        $category->save();
 
         Session::flash('success', 'Category Saved!');
-         return redirect()->route('categories.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -73,7 +69,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category=Category::FindOrFail($id);
-        return view('categories.edit')->with('category',$category);
+        return view('categories.edit')->with('category', $category);
     }
 
     /**
@@ -89,7 +85,7 @@ class CategoryController extends Controller
         $category->name=$request->name;
         $category->save();
         Session::flash('success', 'Category Saved!');
-         return redirect()->route('categories.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -100,29 +96,27 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        
-        $products=Product::where('category_id',$id)->get();
-        if(count($products)==0){
+        $products=Product::where('category_id', $id)->get();
+        if (count($products)==0) {
             $category=Category::findOrFail($id);
             $category->delete();
             return response()->json($category);
         }
-       
     }
 
-    public function addCategory(Request $request){
-  
+    public function addCategory(Request $request)
+    {
         $new_category=new Category;
         $new_category->name=$request->name;
+        $new_category->account_id=getAccountId($request);
         $new_category->save();
         $categories=Category::get();
         $categories_html='';
-        foreach($categories as $category){
+        foreach ($categories as $category) {
             $categories_html.='<option '.(($new_category->id==$category->id)?'selected':'').' value="'.$category->id.'">'.$category->name.'</option>';
         }
    
         $category_id=$category->id;
         return response()->json(['categories'=>$categories_html,'category_name'=>$request->name]);
-
     }
 }
