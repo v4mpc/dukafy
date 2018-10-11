@@ -18,6 +18,12 @@ class AccountScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
      */
+
+    public function __construct(Request $request)
+    {
+        dd($request);
+    }
+    
     public function apply(Builder $builder, Model $model)
     {
         //
