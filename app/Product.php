@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Scopes\AccountScope;
 
 class Product extends Model
 {
     use SearchableTrait;
-      protected $searchable = [
+    protected $searchable = [
         /**
          * Columns and their priority in search results.
          * Columns with higher values are more important.
@@ -48,23 +49,29 @@ class Product extends Model
 
     public function presentPrice()
     {
-        return (money_format('%i',$this->price));
+        return (money_format('%i', $this->price));
     }
 
     public function presentDiscount()
     {
-        
         $deduct_amount=($this->discount*$this->price)/100;
         $new_price=$this->price-$deduct_amount;
 
         // // return money_format('%i',$new_price);
 
-         return round($new_price);
+        return round($new_price);
         // return '345435345345345';
     }
 
     public function orders()
-    {           
+    {
         return $this->belongsToMany('App\Order')->withPivot('quantity');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new AccountScope);
     }
 }

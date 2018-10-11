@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Scopes\AccountScope;
 
 class Order extends Model
 {
     public function products()
-    {           
+    {
         return $this->belongsToMany('App\Product')->withPivot('quantity');
     }
 
@@ -16,18 +17,26 @@ class Order extends Model
         return $this->belongsTo('App\Customer');
     }
 
-    public function totalCost(){
+    public function totalCost()
+    {
         $sum=0;
         foreach ($this->products as $product) {
             $sum+=$product->pivot->quantity*$product->price;
         }
 
         return $sum;
-
     }
 
     public function getStatusAttribute($value)
     {
         return ucfirst($value);
+    }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new AccountScope);
     }
 }
