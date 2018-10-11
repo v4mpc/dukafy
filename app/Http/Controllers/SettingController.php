@@ -66,8 +66,8 @@ class SettingController extends Controller
         $setting->longitude=$request->lng;
         $setting->latitude=$request->lat;
         $setting->location_name=$request->location_name;
-        $setting->account_id=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;
-        // dd($request->all());
+        $setting->account_id=getAccountId($request);
+        
 
         if ($request->logo) {
             $png_url = "logo-".time().".png";
