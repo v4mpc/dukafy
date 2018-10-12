@@ -281,7 +281,7 @@ class AccountController extends Controller
             'action' => 'AddOrder',
             // See https://developers.whmcs.com/api/authentication
             'username' => 'sarfaraz',
-            'password' => 'admin@123',
+            'password' => '$2b$10$Vqvj/2gksrNdBG6bflHvKOD/jC7xwZPiw1ciiUOdCNmj6XKI4Gl5m',
             'clientid' => '596',
             'pid' => array(1),
             'domain' => array('domain1.com'),
