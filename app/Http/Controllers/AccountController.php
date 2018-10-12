@@ -270,6 +270,53 @@ class AccountController extends Controller
 
     public function activateNewAccount($account, $password)
     {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://mydomains.dukafy.co.tz/includes/api.php');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt(
+            $ch,
+            CURLOPT_POSTFIELDS,
+    http_build_query(
+        array(
+            'action' => 'AddOrder',
+            // See https://developers.whmcs.com/api/authentication
+            'username' => 'admin',
+            'password' => 'B5r9gFuu87EDPemF',
+            'clientid' => '596',
+            'pid' => array(1),
+            'domain' => array('domain1.com'),
+            'domaintype' => array('register'),
+            'dnsmanagement' => array(1 => true),
+            'nameserver1' => 'ns1.demo.com',
+            'nameserver2' => 'ns2.demo.com',
+            'paymentmethod' => 'mailin',
+            'responsetype' => 'json',
+        )
+    )
+);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        dd($response);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #if we are here means the account can now be created
 
         #first lets edit some account infos
