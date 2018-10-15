@@ -71,6 +71,10 @@
     -webkit-transition: .4s;
     }
 
+    #status{
+        font-style: italic;
+    }
+
    
     </style>
 
@@ -594,7 +598,7 @@
                                         <div class="input-group" id="domain-checker">
 
                                                 <div class="input-group-prepend input-group-1">
-                                                        <span class="input-group-text"  style="border-radius: 10px 0 0 10px;" id="status">not available</span>
+                                                        <span class="input-group-text text-warning"  style="border-radius: 10px 0 0 10px;" id="status">not available</span>
                                                       </div>
                                          
                                             <input type="text" id="domain" class="form-control is-valid" name="domain" style="
@@ -948,23 +952,23 @@ function done_typing(){
         $('.input-group-prepend').removeClass('input-group-1');
         $('#domain').css('border-radius','0px');
         
-    $('#status').text('Searching...');
+    $('#status').text('Searching...').removeClass('text-danger text-warning').addClass('text-warning');
         $.ajax({
             type: "GET",
             url: "{{env('APP_URL')}}/api/whois/"+domain,
             dataType:'json',
             success: function( response ) {
                 if (response.status=='unavailable') {
-                    $('#status').text('Not Available');
+                    $('#status').text('Not available').removeClass('text-success text-warning').addClass('text-danger');
                 } else if(response.status=='available') {
                    
-                    $('#status').text('Available');
+                    $('#status').text('Available').removeClass('text-danger text-warning').addClass('text-success');
                 }
                 console.log(response.status);
             }
         });
     }else{
-        $('#status').text('Too Short');
+        $('#status').text('Too Short').removeClass('text-success text-warning').addClass('text-danger');
     }
    
     
