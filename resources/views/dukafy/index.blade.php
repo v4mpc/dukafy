@@ -164,8 +164,8 @@
                 <div class="row header-row">
                     <!-- Main title -->
                     <div class="col-sm-12 col-md-6 align-self-center main-title">
-                        <p class="light bold small main-suptitle">Try on the touch</p>
-                        <h1><b>Dukafy</b><span class="thin"> - Сreated To Make Business Easy</span></h1>
+                        {{-- <p class="light bold small main-suptitle">Try on the touch</p> --}}
+                        <h1><b>Dukafy</b><span class="thin"> - Create Your Own Online Store in 60 Seconds!</span></h1>
                         <!-- Buttons -->
                         <!--<a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
@@ -372,6 +372,34 @@
             </div>
         </section>
         <!-- About left end -->
+
+
+        <section id="about" class="about-1 p-90-60">
+            <div class="container">
+                <div class="row">
+                    <!-- Text -->
+                    <div class="col-12 col-lg-5 order-lg-last mb-30 align-self-center">
+                        <!-- Title -->
+                        <div class="section-title mb-30">
+                            
+                            <h2><span class="thin">Your </span> <b>Dashboard</b></h2>
+                        </div>
+                        <!-- Text -->
+                        <p class="light thin">Everything in one place. Selling your products should be every bit as simple as it is from your offline store. With Dukafy's Ecommerce solution you get an easy to use platform to run your online business with ease.(put in a list all the technical features)</p>
+                        <p> <i class="fa fa-check"></i> Choose from 3 Design themes.</p>
+                        <p> <i class="fa fa-check"></i> See yours in one dashboard.</p>
+                        <p> <i class="fa fa-check"></i> Easy add and remove products.</p>
+                        <p> <i class="fa fa-check"></i> Make products featured.</p>
+                        <p> <i class="fa fa-check"></i> Make selected products out of stock.</p>
+                        <p> <i class="fa fa-check"></i> Track your sales with our analytics.</p>
+                    </div>
+                    <!-- Ilustration -->
+                    <div class="col-12 col-lg-7 mb-30 pull-lg-7 align-self-center screens-1">
+                        <img src="{{asset('dukafy/img/artboard-1.png')}}" alt="screens">
+                    </div>
+                </div>
+            </div>
+        </section>
      
        
        
