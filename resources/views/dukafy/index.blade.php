@@ -57,6 +57,20 @@
         display:none;
     }
 
+    .input{
+        padding: 15px 20px;
+    width: 100%;
+    height: 60px;
+    border: none;
+    background-color: rgb(250, 251, 255);
+    border-radius: 10px;
+    margin-bottom: 30px !important;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(5, 16, 44, .15);
+    box-shadow: 0 10px 30px 0 rgba(5, 16, 44, .15);
+    transition: .4s;
+    -webkit-transition: .4s;
+    }
+
    
     </style>
 
@@ -196,27 +210,27 @@
                     <!-- Item 1 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: 0s">1</div>
-                        <p class="bold">Register</p>
-                        <p class="light thin">Easily set up your online store with essential business information for your prospective clients.  </p>
+                        <p class="bold">Sign up </p>
+                        <p class="light thin">Give us a little information on your store including your name and what you'd like to sell. </p>
                     </div>
                     <!-- Item 2 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: .75s">2</div>
-                        <p class="bold">Choose Web Layout</p>
-                        <p class="light thin">Next step would be choosing a web template that would suit your business 
+                        <p class="bold">Choose a Theme</p>
+                        <p class="light thin">Pick 1 from 3 beautiful design themes for your online store. You can also pick the color of your store. 
                             </p>
                     </div>
                     <!-- Item 3 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: 1.5s">3</div>
-                        <p class="bold">Add Products</p>
-                        <p class="light thin">Adding a product has never been this easy just fill in the product information along with an image </p>
+                        <p class="bold">Add your Products</p>
+                        <p class="light thin">Using our unique system, you can add multiple products to your store in less than 30 seconds. </p>
                     </div>
                     <!-- Item 4 -->
                     <div class="col-6 col-sm-6 col-md-3 hiw-item mb-30">
                         <div class="bg-color-2 puls mb-30" style="animation-delay: 2.25s">4</div>
-                        <p class="bold">Go Live</p>
-                        <p class="light thin">Hurray, you are all done and ready to showcase your products in your online store</p>
+                        <p class="bold">Sit Back and Relax</p>
+                        <p class="light thin">Your store is now ready! Watch it go live and inform your customers to come over and start buying.</p>
                     </div>
                 </div>
             </div>
@@ -237,24 +251,24 @@
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/layers.png')}}" alt="icon">
-                            <p class="bold">Perfect UI Design</p>
-                            <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
+                            <p class="bold">Grocery Stores</p>
+                            <p class="light thin">Easly allow people to submit their purchase their groceries from your store</p>
                         </div>
                     </div>
                     <!-- Features card 2 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/running.png')}}" alt="icon">
-                            <p class="bold">Great CSS Animations</p>
-                            <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
+                            <p class="bold">Retail Outlets</p>
+                            <p class="light thin">Allow your customers to see your catalog of products in one single platform</p>
                         </div>
                     </div>
                     <!-- Features card 3 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/pantone.png')}}" alt="icon">
-                            <p class="bold">5 different UI Styles</p>
-                            <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
+                            <p class="bold">Home Base Business</p>
+                            <p class="light thin">Instead of Whatsapping your whole stock list,you can easily send people to your store.</p>
                         </div>
                     </div><script>
                         function onSubmit(token) {
@@ -265,8 +279,8 @@
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/email.png')}}" alt="icon">
-                            <p class="bold">Working Contact Form</p>
-                            <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
+                            <p class="bold">Supermarkets</p>
+                            <p class="light thin">Get ahead of the rest and allow your customers to order their shopping list online.</p>
                         </div>
                     </div>
                 </div>
@@ -312,7 +326,7 @@
                             <h2><span class="thin">We offer </span> <b>Perfect Solution</b></h2>
                         </div>
                         <!-- Text -->
-                        <p class="light thin">Our all-in-one platform gives you everything you need to establish your brand online with a custom domain name and online store Whether you’re just getting started or are an established brand, our powerful platform helps your business grow. Dukafy lets you choose from multiple designer made templates. No tech skills needed.Dukafy features responsive design so that your store looks perfect on any device — desktop, tablet, or mobile phone </p>
+                        <p class="light thin">Dukafy's dashboard will guide you through the setup process so you can single-handedly establish your professional online store. There’s no need to hire a web designer, No need to worry about domains, hosting, security and all that complex stuff. Save time and costs and start selling online instantly!</p>
                         <!-- Buttons -->
                         {{-- <a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
@@ -563,7 +577,7 @@
                                         <input type="text" name="phone" placeholder="Valid Phone #" required>
 
 
-                                        <select class="custom-select custom-select-lg mb-3" id="domain-source" name="domain_source">
+                                        <select class="custom-select custom-select-lg mb-3 input" id="domain-source" name="domain_source">
                                                 <option selected value="0">New Domain</option>
                                                 <option value="1">Existing Domain</option>
                                                 
@@ -580,14 +594,16 @@
                                         <div class="input-group" id="domain-checker">
 
                                                 <div class="input-group-prepend input-group-1">
-                                                        <span class="input-group-text" id="status">not available</span>
+                                                        <span class="input-group-text"  style="border-radius: 10px 0 0 10px;" id="status">not available</span>
                                                       </div>
                                          
-                                            <input type="text" id="domain" class="form-control is-valid" name="domain" placeholder="domain">
+                                            <input type="text" id="domain" class="form-control is-valid" name="domain" style="
+                                            border-radius: 10px 0 0 10px;
+                                        " placeholder="domain">
                                             
                      
                                             <div class="input-group-append">
-                                                <div class="input-group-text">.co.tz</div>
+                                                <div class="input-group-text" style="border-radius: 0 10px 10px 0;">.co.tz</div>
                                               </div>
                                             
                                           </div>
@@ -595,7 +611,7 @@
 
                                           <br>
 
-                                          <select class="custom-select custom-select-lg mb-3" name="package_id">
+                                          <select class="custom-select custom-select-lg mb-3 input" name="package_id">
                                                 <option selected>Select Package</option>
                                                 <option id="basic" value="1">Basic</option>
                                                 <option id="shop" value="2">Shop</option>
@@ -611,7 +627,7 @@
 
                                       
 
-                                            <select class="custom-select custom-select-lg mb-3" name="subscription_id" required>
+                                            <select class="custom-select custom-select-lg mb-3 input" name="subscription_id" required>
                                                     <option value="" selected>Select Plan</option>
                                                     <option id="1" value="1">Monthly</option>
                                                     <option id="2" value="2">Quaterly</option>
@@ -930,6 +946,8 @@ function done_typing(){
        console.log(domain);
     if (domain.length>=3) {
         $('.input-group-prepend').removeClass('input-group-1');
+        $('#domain').css('border-radius','0px');
+        
     $('#status').text('Searching...');
         $.ajax({
             type: "GET",
