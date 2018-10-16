@@ -69,6 +69,9 @@
     box-shadow: 0 10px 30px 0 rgba(5, 16, 44, .15);
     transition: .4s;
     -webkit-transition: .4s;
+    font-size: inherit;
+    font-weight: 405;
+
     }
 
     #status{
@@ -206,7 +209,7 @@
                 <!-- Section title -->
                 <div class="section-title sm-ac mb-90">
                     <p class="light bold small">Easy Steps</p>
-                    <h2><span class="thin">How it</span> <b>Works</b></h2>
+                    <h2><span class="thin">Setup your store</span> <b> in four easy steps</b></h2>
                     <p class="light thin">&nbsp;</p>
                 </div>
                 <!-- Section title end -->
@@ -245,8 +248,8 @@
             <div class="container">
                 <!-- Section title -->
                 <div class="section-title sm-ac mb-90">
-                    <p class="light bold small">Main Features</p>
-                    <h2><span class="thin">Our</span> <b>Features</b></h2>
+                    
+                    <h2><span class="thin">Dukafy </span> <b>is Perfect for</b></h2>
                     <p class="light thin">&nbsp;</p>
                 </div>
                 <!-- Section title end -->
@@ -590,10 +593,9 @@
                         <div class="col-12 col-lg-7 align-self-center mb-30">
                             <!-- Section title -->
                             <div class="section-title">
-                                <p class="white-light bold small">Purchase Dukafy Today </p>
-                                <h2 class="h1 white"><span class="thin">Request to</span> <b>Call Back</b></h2>
-                                <p class="white-light thin m-0">Fill in the form and our support team will call you within
-                                    48 hours.</p>
+                                <p class="white-light bold small">Sign Up</p>
+                                <h2 class="h1 white"><span class="thin">Start Your</span> <b> Store Today</b></h2>
+                                <p class="white-light thin m-0">Fill in the form  to get started</p>
                             </div>
                             <!-- Section title end -->
                         </div>
@@ -630,12 +632,12 @@
                                                       </div>
                                          
                                             <input type="text" id="domain" class="form-control is-valid" name="domain" style="
-                                            border-radius: 10px 0 0 10px;
+                                            border-radius: 10px 0 0 10px; font-weight: 405;
                                         " placeholder="domain">
                                             
                      
                                             <div class="input-group-append">
-                                                <div class="input-group-text" style="border-radius: 0 10px 10px 0;">.co.tz</div>
+                                                <div class="input-group-text" style="border-radius: 0 10px 10px 0; ">.co.tz</div>
                                               </div>
                                             
                                           </div>
