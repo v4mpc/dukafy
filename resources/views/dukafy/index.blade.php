@@ -178,7 +178,7 @@
                     <!-- Main title end -->
                     <!-- Phone -->
                     <div class="col-12 col-md-6 align-self-center header-macbook">
-                        <img class="jump" src="{{asset('dukafy/img/macbook.jpg')}}" alt="macbook">
+                        <img class="jump" src="{{asset('dukafy/img/macbook.png')}}" alt="macbook">
                     </div>
                     <!-- Phone end -->
                     <!-- Social icons -->
