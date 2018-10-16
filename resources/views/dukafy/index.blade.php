@@ -178,7 +178,7 @@
                     <!-- Main title end -->
                     <!-- Phone -->
                     <div class="col-12 col-md-6 align-self-center header-macbook">
-                        <img class="jump" src="{{asset('dukafy/img/macbook.png')}}" alt="macbook">
+                        <img class="jump" src="{{asset('dukafy/img/macbook.jpg')}}" alt="macbook">
                     </div>
                     <!-- Phone end -->
                     <!-- Social icons -->
@@ -329,8 +329,8 @@
                     <div class="col-12 col-lg-5 order-lg-last mb-30 align-self-center">
                         <!-- Title -->
                         <div class="section-title mb-30">
-                            <p class="light bold small">What we offer</p>
-                            <h2><span class="thin">We offer </span> <b>Perfect Solution</b></h2>
+                            
+                            <h2><span class="thin">As easy </span> <b>as pie!</b></h2>
                         </div>
                         <!-- Text -->
                         <p class="light thin">Dukafy's dashboard will guide you through the setup process so you can single-handedly establish your professional online store. There’s no need to hire a web designer, No need to worry about domains, hosting, security and all that complex stuff. Save time and costs and start selling online instantly!</p>
@@ -355,34 +355,7 @@
                     <!-- Text -->
                     <div class="col-12 col-lg-5 mb-30 align-self-center">
                         <!-- Title -->
-                        <div class="section-title mb-30">
-                            <p class="light bold small">What we offer</p>
-                            <h2><b>Appeasy</b> <span class="thin"> Created for you</span></h2>
-                        </div>
-                        <!-- Text -->
-                        <p class="light thin p-0-15">We are here to guide you. Dukafy platform walks you through a series of steps to help you launch your online store with confidence. With your Online Store, there’s no limit to the number of products you can sell. So, whether you're a small boutique or a large business, you can showcase whatever you've got in-store.</p>
-                        <!-- Buttons -->
-                        {{-- <a href="#.">
-                            <div class="button bg-color-1">Explore Now</div>
-                        </a> --}}
-                        {{-- <a class="gray link" href="#.">Download free trial <i class="fa fa-chevron-right"></i></a> --}}
-                    </div>
-                    <!-- Ilustration -->
-                    <div class="col-12 col-lg-7 mb-30 align-self-center screens-1">
-                        <img src="{{asset('dukafy/img/artboard-2.png')}}" alt="screens">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About left end -->
-
-
-        <section id="about" class="about-1 p-90-60">
-            <div class="container">
-                <div class="row">
-                    <!-- Text -->
-                    <div class="col-12 col-lg-5 order-lg-last mb-30 align-self-center">
-                        <!-- Title -->
+                         <!-- Title -->
                         <div class="section-title mb-30">
                             
                             <h2><span class="thin">Your </span> <b>Dashboard</b></h2>
@@ -397,12 +370,16 @@
                         <p> <i class="fa fa-check"></i> Track your sales with our analytics.</p>
                     </div>
                     <!-- Ilustration -->
-                    <div class="col-12 col-lg-7 mb-30 pull-lg-7 align-self-center screens-1">
-                        <img src="{{asset('dukafy/img/artboard-1.png')}}" alt="screens">
+                    <div class="col-12 col-lg-7 mb-30 align-self-center screens-1">
+                        <img src="{{asset('dukafy/img/artboard-2.png')}}" alt="screens">
                     </div>
                 </div>
             </div>
         </section>
+        <!-- About left end -->
+
+
+      
      
        
        
@@ -726,7 +703,7 @@
                             <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    {{-- <div class="col-12 col-md-6">
                         <!-- Social icons -->
                         <div class="contact-social-icons">
                             <ul class="sm-ac">
@@ -736,7 +713,7 @@
                             </ul>
                         </div>
                         <!-- Social icons end -->
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- Section title end -->
                 <form id="form">
