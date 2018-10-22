@@ -143,7 +143,7 @@
                         </li>-->
                         <!-- Navigation Link 5 -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#price">Price</a>
+                            <a class="nav-link" href="#price">Pricing</a>
                         </li>
 
                         <li class="nav-item">

@@ -34,12 +34,12 @@
                 </li>
 
                 <!-- Step 4 -->
-                <li class="col-sm-3">
+                {{-- <li class="col-sm-3">
                     <div class="media-left"> <i class="fa fa-check"></i> </div>
                     <div class="media-body"> <span>Step 3</span>
                         <h6>Confirmation</h6>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
@@ -149,21 +149,21 @@
                     </div>
 
                     <!-- Select Your Transportation -->
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="heading">
                             <h2>Delivery Method</h2>
                             <hr>
                         </div>
                         <div class="transportation">
-                            <div class="row">
+                            <div class="row"> --}}
 
                                 <!-- Free Delivery -->
-                                <div class="col-sm-6">
+                                {{-- <div class="col-sm-6">
                                     <div class="charges">
                                         <h6>Free Delivery</h6>
-                                        <br> {{-- <span>7 - 12 days</span> --}}
+                                        <br> 
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 {{--
                                 <!-- Free Delivery -->
@@ -180,9 +180,9 @@
                                         <br>
                                         <span>24 - 48 Hours</span> <span class="deli-charges"> +$75 </span> </div>
                                 </div> --}}
-                            </div>
+                            {{-- </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

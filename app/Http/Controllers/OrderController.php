@@ -18,9 +18,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders=Order::orderBy('created_at','desc')->get();
+        $orders=Order::orderBy('created_at', 'desc')->get();
         
-        return view('orders.index')->with('orders',$orders);
+        return view('orders.index')->with('orders', $orders);
     }
 
     /**
@@ -43,11 +43,11 @@ class OrderController extends Controller
     {
 
         //check if order is already present
-        if(config('app.settings')->layout=='template1'){
-        if(session('id')){
-            return redirect()->route('order.update',session('id'));
+        if (config('app.settings')->layout=='template1') {
+            if (session('id')) {
+                return redirect()->route('order.update', session('id'));
+            }
         }
-    }
         // dd(Cart::content());
         $customer= new Customer;
         $customer->first_name=$request->first_name;
@@ -56,30 +56,27 @@ class OrderController extends Controller
         $customer->address=$request->address;
         $customer->email=$request->email;
         $customer->comment=$request->comment;
-         $customer->save();
+        $customer->save();
 
         $order=new Order;
         $order->customer_id=$customer->id;
         $order->status='pending';
         $order->save();
 
-session(['id'=>$order->id]);
-foreach (Cart::content() as $item) {
-    $order->products()->attach($item->id,['quantity'=>$item->qty]);
-}
+        session(['id'=>$order->id]);
+        foreach (Cart::content() as $item) {
+            $order->products()->attach($item->id, ['quantity'=>$item->qty]);
+        }
        
-// dd($request);
+        // dd($request);
 
-if(config('app.settings')->layout=='template2'){
-    return redirect()->action('ThankYouController@index');
-}else if (config('app.settings')->layout=='template1'){
-   
-    return redirect()->route('confirmation.show',$order->id);
-}else if(config('app.settings')->layout=='template3'){
-    return redirect()->action('ThankYouController@index');
-}
-    
-        
+        if (config('app.settings')->layout=='template2') {
+            return redirect()->action('ThankYouController@index');
+        } elseif (config('app.settings')->layout=='template1') {
+            return redirect()->action('ThankYouController@index');
+        } elseif (config('app.settings')->layout=='template3') {
+            return redirect()->action('ThankYouController@index');
+        }
     }
 
     /**
@@ -91,7 +88,7 @@ if(config('app.settings')->layout=='template2'){
     public function show($id)
     {
         $order=Order::FindOrFail($id);
-        return view('orders.show')->with('order',$order);
+        return view('orders.show')->with('order', $order);
     }
 
     /**
@@ -129,12 +126,11 @@ if(config('app.settings')->layout=='template2'){
         
 
 
-foreach (Cart::content() as $item) {
-    $order->products()->sync($item->id,['quantity'=>$item->qty]);
-}
+        foreach (Cart::content() as $item) {
+            $order->products()->sync($item->id, ['quantity'=>$item->qty]);
+        }
        
-     return redirect()->route('confirmation.show',$order->id);
-      
+        return redirect()->route('confirmation.show', $order->id);
     }
 
     /**
@@ -148,7 +144,7 @@ foreach (Cart::content() as $item) {
         //
     }
 
-    public function cancelOrder(Request $request,$id)
+    public function cancelOrder(Request $request, $id)
     {
         $order=Order::findOrFail($id);
         $order->status='cancelled';
@@ -162,6 +158,5 @@ foreach (Cart::content() as $item) {
         $user=Auth::user();
         $user->unreadNotifications->markAsRead();
         return response()->json(200);
-
     }
 }

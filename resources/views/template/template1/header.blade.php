@@ -74,6 +74,12 @@
 }
 
 
+@media (max-width: 768px) {
+.item-col-4 .product {
+    width: 50%;
+}
+}
+
     </style>
 
 
