@@ -113,8 +113,8 @@
     
     
     <p class="buttons delivery-button">
-        <a class="button wc-forward" href="{{route('cart.index')}}">View Cart</a>
-        <a class="button checkout wc-forward" href="{{route('check_out.create')}}">Checkout</a>
+        <a class="button wc-forward" href="{{route('cart.index')}}">Checkout</a>
+        
     </p>
     @endif
                         

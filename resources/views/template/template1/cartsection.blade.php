@@ -14,7 +14,7 @@
       <p>No item!</p>
       @endforelse
 
-      <li class="btn-cart"> <a href="{{route('cart.index')}}" class="btn-round">View Cart</a> </li>
+      <li class="btn-cart"> <a href="{{route('cart.index')}}" class="btn-round"> Checkout</a> </li>
     </ul>
   </li>
 </ul>

@@ -44,18 +44,11 @@
                             <h4 class='cart-product-description'><a href="{{route('product.show',$item->model->id)}}">{{$item->name}}</a></h4>
                             <div class="row">
                              
-                                {{-- <div class="col-sm-8">
-                                    <div class="reviews">
-                                        (06 Reviews)
-                                    </div>
-                                </div> --}}
+                                
                             </div><!-- /.row -->
-                            {{-- <div class="cart-product-info">
-                                <span class="product-imel">IMEL:<span>084628312</span></span><br>
-                                <span class="product-color">COLOR:<span>White</span></span>
-                            </div> --}}
+                           
                         </td>
-                        {{-- <td class="cart-product-edit"><a href="#" class="product-edit">Edit</a></td> --}}
+                       
                         <td class="cart-product-quantity">
                             <div class="quant-input">
                                     <div class="arrows">
@@ -74,79 +67,7 @@
             </table><!-- /table -->
         </div>
     </div><!-- /.shopping-cart-table -->				
-    {{-- <div class="col-md-4 col-sm-12 estimate-ship-tax">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>
-                        <span class="estimate-title">Estimate shipping and tax</span>
-                        <p>Enter your destination to get shipping and tax.</p>
-                    </th>
-                </tr>
-            </thead><!-- /thead -->
-            <tbody>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label class="info-title control-label">Country <span>*</span></label>
-                                <select class="form-control unicase-form-control selectpicker">
-                                    <option>--Select options--</option>
-                                    <option>India</option>
-                                    <option>SriLanka</option>
-                                    <option>united kingdom</option>
-                                    <option>saudi arabia</option>
-                                    <option>united arab emirates</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="info-title control-label">State/Province <span>*</span></label>
-                                <select class="form-control unicase-form-control selectpicker">
-                                    <option>--Select options--</option>
-                                    <option>TamilNadu</option>
-                                    <option>Kerala</option>
-                                    <option>Andhra Pradesh</option>
-                                    <option>Karnataka</option>
-                                    <option>Madhya Pradesh</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="info-title control-label">Zip/Postal Code</label>
-                                <input type="text" class="form-control unicase-form-control text-input" placeholder="">
-                            </div>
-                            <div class="pull-right">
-                                <button type="submit" class="btn-upper btn btn-primary">GET A QOUTE</button>
-                            </div>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-    </div><!-- /.estimate-ship-tax --> --}}
-    
-    {{-- <div class="col-md-4 col-sm-12 estimate-ship-tax">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>
-                        <span class="estimate-title">Discount Code</span>
-                        <p>Enter your coupon code if you have one..</p>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <input type="text" class="form-control unicase-form-control text-input" placeholder="You Coupon..">
-                            </div>
-                            <div class="clearfix pull-right">
-                                <button type="submit" class="btn-upper btn btn-primary">APPLY COUPON</button>
-                            </div>
-                        </td>
-                    </tr>
-            </tbody><!-- /tbody -->
-        </table><!-- /table -->
-    </div><!-- /.estimate-ship-tax -->
-     --}}
+   
     <div class="col-md-4 col-sm-12 cart-shopping-total">
             @if(Cart::count())
         <table class="table table-bordered">
@@ -179,7 +100,59 @@
         </table><!-- /table -->
         @endif
     </div><!-- /.cart-shopping-total -->			</div><!-- /.shopping-cart -->
+
+
+    
             </div> <!-- /.row -->
+
+            <h1>Delivery Information</h1>
+            <div class="panel-body">
+                <div class="row">		
+    
+                    
+    
+                    <!-- already-registered-login -->
+                    <div class="col-md-6 col-sm-6 already-registered-login">
+                        {{-- <h4 class="checkout-subtitle">Already registered?</h4>
+                        <p class="text title-tag-line">Please log in below:</p> --}}
+                        <form class="register-form" role="form" action="{{route('order.store')}}" id="confirmation-form" method="POST">
+                                {{csrf_field()}}
+                                <div class="form-group">
+                                        <label class="info-title" for="exampleInputEmail1"> First Name <span>*</span></label>
+                                        <input type="text" class="form-control unicase-form-control text-input" name="first_name" id="exampleInputEmail1" required>
+                                      </div>
+
+                                      <div class="form-group">
+                                            <label class="info-title" for="exampleInputEmail1"> Last Name <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input" name="last_name" id="exampleInputEmail1"  required>
+                                          </div>
+                            <div class="form-group">
+                            <label class="info-title" for="exampleInputEmail1">Email <span>*</span></label>
+                            <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="email"  required>
+                          </div>
+
+                          <div class="form-group">
+                                <label class="info-title" for="exampleInputEmail1"> Address <span>*</span></label>
+                                <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="address" required >
+                              </div>
+                          <div class="form-group">
+                            <label class="info-title" for="exampleInputPassword1">Mobile <span>*</span></label>
+                            <input type="number" class="form-control unicase-form-control text-input" id="exampleInputPassword1" name="phone" required placeholder="0XXXXXXXXX">
+                            
+                          </div>
+
+                          <div class="form-group">
+                                <label class="info-title" for="exampleInputPassword1">Comment </label>
+                                <textarea class="form-control unicase-form-control text-input" name="comment" id="" cols="30" rows="5" placeholder="Special Note of delivery..."></textarea>
+                                
+                              </div>
+                          <button type="button" id="confirm-order" class="btn-upper btn btn-primary checkout-page-button">Place Order</button>
+                        </form>
+                    </div>	
+                    <!-- already-registered-login -->		
+    
+                </div>			
+            </div>
 
     <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
     </div><!-- /.body-content -->
