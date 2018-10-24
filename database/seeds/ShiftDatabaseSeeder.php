@@ -33,10 +33,10 @@ class ShiftDatabaseSeeder extends Seeder
         #image
 
         #first lets fetch some categories from old database
-        $categories=DB::connection('mysql1')->table('categories')->select('name')->get();
+        $categories=DB::connection('mysql1')->table('categories', 'id')->select('name')->get();
 
         #then the products
-        $products=DB::connection('mysql1')->table('products')->select('name', 'price', 'price_visibility', 'description', 'out_stock', 'featured', 'discount', 'category_id')->get();
+        $products=DB::connection('mysql1')->table('products')->select('id', 'name', 'price', 'price_visibility', 'description', 'out_stock', 'featured', 'discount', 'category_id')->get();
         #finaly the images
         $product_images=DB::connection('mysql1')->table('product_images')->select('product_id', 'image')->get();
         foreach ($categories as $category) {
