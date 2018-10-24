@@ -94,10 +94,10 @@
     position: fixed;
     display:none;
     bottom: 0;
-    height: 58px;
+    height: 63px;
     z-index: 90;
     margin: 0; 
-    padding: 0;
+    padding-top: 6px;
     text-align: center;
     color: #FFF;
 }

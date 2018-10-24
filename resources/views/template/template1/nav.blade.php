@@ -46,7 +46,7 @@
 
     <!-- Navbar Header -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
+      {{-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button> --}}
     </div>
     <!-- NAV -->
     <div class="collapse navbar-collapse" id="nav-open-btn">

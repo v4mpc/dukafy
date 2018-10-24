@@ -143,7 +143,7 @@
     height: 58px;
     z-index: 90;
     margin: 0; 
-    padding: 0;
+    padding-top: 14px;
     text-align: center;
     color: #FFF;
 }

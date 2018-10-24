@@ -86,6 +86,10 @@
     display:none !important;
 }
 
+.logo{
+    text-align: center;
+}
+
 }
 
 
@@ -95,10 +99,10 @@
     position: fixed;
     bottom: 0;
     display:none;
-    height: 58px;
+    height: 55px;
     z-index: 90;
     margin: 0; 
-    padding: 0;
+    padding-top: 8px;
     text-align: center;
     color: #FFF;
 }

@@ -23,8 +23,13 @@
           </div>
       </div>
       <div id="rectangle">
-            <a href="#" style="font-size: large;color: white;"> <i class="glyphicon glyphicon-shopping-cart"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)<br>
+            <a href="#" style="font-size: large;color: white;"> <i class="glyphicon glyphicon-shopping-cart"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)
               <span class="items-price">{{Cart::subtotal()}} TZS</span></a>
+              <a class="btn btn-upper btn-primary m-t-20" href="{{route('cart.index')}}" style="
+                background: white;
+                color: {{$colour_code}};
+                margin-top:0px;
+            "  >Checkout</a>
         
            </div>
   </footer>
