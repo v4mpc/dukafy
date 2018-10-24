@@ -19,7 +19,7 @@
                 <main id="main" class="site-main"> --}}
 
 
-@if(Request::is('start'))
+@if(Request::is('/'))
 
 @include('template.template2.slide')
 

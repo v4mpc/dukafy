@@ -151,7 +151,7 @@
     
             </div><!-- /.row -->
     
-            @if(Request::is('start'))
+            @if(Request::is('/'))
 @include('template.template2.menu') 
 
 @endif
