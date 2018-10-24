@@ -104,23 +104,13 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         $product=Product::findOrFail($request->id);
-        Cart::add($product->id, $product->name, 1, $product->price)->associate('App\Product');
+        $product_price=$product->price;
+        if ($product->discount) {
+            $product_price=$product->price-round(($product->discount*$product->price)/100);
+        }
+        Cart::add($product->id, $product->name, 1, $product_price)->associate('App\Product');
         $cart_html='';
 
-     
-        
-        // foreach(Cart::content() as $item){
-        // $cart_html.='<div class="cart-item product-summary"> <div class="row"> <div class="col-xs-4"><div class="image"><a href="'.route('product.show',$item->model->id).'"><img src="'.asset("images/".$item->model->images[0]->image).'" class="img-responsive" alt=""></a></div></div>';
-        // $cart_html.='<div class="col-xs-7"><h3 class="name"><a href="'.route('product.show',$item->model->id).'">'.$item->name.'</a></h3>';
-        // $cart_html.='<div class="price">'.number_format($item->price) .'TZS</div></div><div class="col-xs-1 action"><a href="#"><i class="fa fa-trash"></i></a> </div> </div> </div>';
-        // }
-        // $cart_html.=' <div class="clearfix"></div><hr><div class="clearfix cart-total"><div class="pull-right">';
-        // $cart_html.='<span class="text">Sub Total :</span><span class="price">'.Cart::subtotal().' TZS</span> </div> <div class="clearfix"></div><a href="" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	<div>';
-        // return response()->json(['cart_count'=>Cart::count(),
-        //                          'sub_total'=>Cart::subtotal(),
-        //                          'cart_content'=>$cart_html
-
-        // ]);
         if (config('app.settings')->layout=='template2') {
             $cart_html.='<div class="widget_shopping_cart_content"><ul class="cart_list product_list_widget cart-glance-content ">';
             foreach (Cart::content() as $item) {
