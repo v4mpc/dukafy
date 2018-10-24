@@ -71,6 +71,39 @@
     /* width: 40%; */
     height: 250px;
 }
+
+@media (max-width: 768px) {
+.item-col-4 .product {
+    width: 50%;
+}
+
+#rectangle{
+    display:block !important;
+}
+
+.navbar-mini-cart{
+    display:none !important;
+}
+
+}
+
+
+#rectangle{
+    width: 100%;
+    background-color: {{$colour_code}};
+    position: fixed;
+    display:none;
+    bottom: 0;
+    height: 58px;
+    z-index: 90;
+    margin: 0; 
+    padding: 0;
+    text-align: center;
+    color: #FFF;
+}
+
+
+
         
         </style>
     </head>

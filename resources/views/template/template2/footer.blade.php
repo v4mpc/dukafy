@@ -1,4 +1,11 @@
 <footer id="colophon" class="site-footer">
+
+
+        <div id="rectangle">
+                <a href="#" style="font-size: large;color: white;"> <i class="ec ec-shopping-bag"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)<br>
+                  <span class="items-price">{{Cart::subtotal()}} TZS</span></a>
+            
+               </div>
 	
 
 	

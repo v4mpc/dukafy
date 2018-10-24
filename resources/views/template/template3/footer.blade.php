@@ -22,6 +22,11 @@
               </div> --}}
           </div>
       </div>
+      <div id="rectangle">
+            <a href="#" style="font-size: large;color: white;"> <i class="glyphicon glyphicon-shopping-cart"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)<br>
+              <span class="items-price">{{Cart::subtotal()}} TZS</span></a>
+        
+           </div>
   </footer>
   <!-- ============================================================= FOOTER : END============================================================= -->
   

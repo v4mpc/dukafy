@@ -109,13 +109,50 @@
 }
 		</style>
 
-@if(Request::is('start'))
+{{-- @if(Request::is('start')) --}}
+
+
 <style>
+	@if(Request::is('/'))
 	.section-hack{
 		margin-top: 35%;
 	}
+	@endif
+
+	@media (max-width: 768px) {
+.item-col-4 .product {
+    width: 50%;
+}
+#rectangle{
+    display:block !important;
+}
+
+.dropdown-cart{
+    display:none !important;
+}
+
+}
+
+
+	#rectangle{
+    width: 100%;
+    background-color: {{$colour_code}};
+    position: fixed;
+	display:none;
+    bottom: 0;
+    height: 58px;
+    z-index: 90;
+    margin: 0; 
+    padding: 0;
+    text-align: center;
+    color: #FFF;
+}
+
+
+
+
 </style>
 
-@endif
+
 
 	</head>

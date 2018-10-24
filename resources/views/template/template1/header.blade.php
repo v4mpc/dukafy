@@ -78,6 +78,29 @@
 .item-col-4 .product {
     width: 50%;
 }
+#rectangle{
+    display:block !important;
+}
+
+.cart-pop{
+    display:none !important;
+}
+
+}
+
+
+#rectangle{
+    width: 100%;
+    background-color: {{$colour_code}};
+    position: fixed;
+    bottom: 0;
+    display:none;
+    height: 58px;
+    z-index: 90;
+    margin: 0; 
+    padding: 0;
+    text-align: center;
+    color: #FFF;
 }
 
     </style>
