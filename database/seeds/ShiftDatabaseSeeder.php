@@ -60,9 +60,9 @@ class ShiftDatabaseSeeder extends Seeder
                     $prod->save();
                     foreach ($product_images as $image) {
                         if ($product->id==$image->product_id) {
-                            $img=new ProductImage;
+                            $img = new ProductImage;
                             $img->product_id=$prod->id;
-                            $img->image=$image->$image;
+                            $img->image=$image->image;
                             $img->save();
                         }
                     }
