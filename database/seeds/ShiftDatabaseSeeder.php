@@ -3,7 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Category;
 use App\Product;
-use DB;
+
+// use DB;
 
 class ShiftDatabaseSeeder extends Seeder
 {
