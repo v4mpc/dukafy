@@ -11,7 +11,7 @@
         <!-- Step 1 -->
         <li class="col-sm-3 current">
           <div class="media-left"> <i class="flaticon-shopping"></i> </div>
-          <div class="media-body"> <span>Step 1</span>
+          <div class="media-body"> 
             <h6>Shopping Cart</h6>
           </div>
         </li>
@@ -26,20 +26,20 @@
         </li> --}}
 
         <!-- Step 3 -->
-        <li class="col-sm-3">
+        {{-- <li class="col-sm-3">
           <div class="media-left"> <i class="flaticon-delivery-truck"></i> </div>
           <div class="media-body"> <span>Step 2</span>
             <h6>Delivery Information</h6>
           </div>
-        </li>
+        </li> --}}
 
         <!-- Step 4 -->
-        <li class="col-sm-3">
+        {{-- <li class="col-sm-3">
           <div class="media-left"> <i class="fa fa-check"></i> </div>
           <div class="media-body"> <span>Step 3</span>
             <h6>Confirmation</h6>
           </div>
-        </li>
+        </li> --}}
       </ul>
     </div>
   </div>
@@ -121,6 +121,79 @@
       <div class="g-totel">
         <h5>Grand total: <span class="items-price">{{Cart::subtotal()}} TZS</span></h5>
       </div>
+
+            <div class="pay-method">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <!-- Your information -->
+                        <div class="heading">
+                            <h2>Your information</h2>
+                            <hr>
+                        </div>
+                        <form action="{{route('order.store')}}" id="checkout-form" method="POST">
+                            {{csrf_field()}}
+                            <div class="row">
+
+                                <!-- Name -->
+                                <div class="col-sm-6">
+                                    <label> <span class="required">*</span> First name
+                    <input class="form-control" type="text" name="first_name" required>
+                  </label>
+                                </div>
+
+                                <!-- Number -->
+                                <div class="col-sm-6">
+                                    <label> <span class="required">*</span> Last Name
+                    <input class="form-control" type="text" name="last_name" required>
+                  </label>
+                                </div>
+
+
+                                <!-- Address -->
+                                <div class="col-sm-8">
+                                    <label>  <span class="required">*</span>Address
+                    <input class="form-control" type="text" name="address" required>
+                  </label>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-sm-6">
+                                    <label> <span class="required">*</span> Phone
+                    <input class="form-control" type="text" name="phone" required>
+                  </label>
+                                </div>
+
+                                <!-- Number -->
+                                <div class="col-sm-6">
+                                    <label> <span class="required">*</span> Email
+                    <input class="form-control" type="email" name="email" required>
+                  </label>
+                                </div>
+
+                                <div class="col-sm-10">
+                                    <label for="">Comment</label>
+                                    <textarea class="form-control" name="comment" cols="40" rows="8" id="" placeholder="Add Your Comment"></textarea>
+                                </div>
+
+                                <div class="col-sm-10">
+                                    <p> <span class="required">*</span><i> Means the field is required!</i></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                  
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue shopping</a> <a href="{{route('order.store')}}"
+                    onclick="event.preventDefault();document.getElementById('checkout-form').submit();" class="btn-round">Place Order</a>                {{--
+                <form action="{{route('order.store')}}" method="post"></form> --}}
+
+            </div>
+        
       @else
       <div>
         <h5>No item in Cart!</h5>
@@ -144,9 +217,9 @@
       </div>
 
       <!-- Button -->
-      <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue Shopping</a> @if(Cart::count())<a href="{{route('check_out.create')}}"
+      {{-- <div class="pro-btn"> <a href="{{route('start')}}" class="btn-round btn-light">Continue Shopping</a> @if(Cart::count())<a href="{{route('check_out.create')}}"
           class="btn-round" id="delivery-button">Go Delivery Information</a> @endif </div>
-    </div>
+    </div> --}}
   </section>
 
 

@@ -74,46 +74,6 @@
                   </label>
                                 </div>
 
-                                {{--
-                                <!-- Card Number -->
-                                <div class="col-sm-7">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <label> Country </label>
-                                            <select class="selectpicker">
-                        <option> USA</option>
-                        <option> USA</option>
-                        <option> USA</option>
-                        <option> USA</option>
-                        <option> USA</option>
-                        <option> USA</option>
-                      </select>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <label> City </label>
-                                            <select class="selectpicker">
-                        <option> City</option>
-                        <option> City</option>
-                        <option> City</option>
-                        <option> City</option>
-                        <option> City</option>
-                        <option> City</option>
-                      </select>
-                                        </div>
-                                    </div>
-                                </div> --}} {{--
-                                <div class="col-sm-5">
-                                    <label> State
-                    <input class="form-control" type="text">
-                  </label>
-                                </div>
-
-                                <!-- Zip code -->
-                                <div class="col-sm-4">
-                                    <label> Zip code
-                    <input class="form-control" type="text">
-                  </label>
-                                </div> --}}
 
                                 <!-- Address -->
                                 <div class="col-sm-8">
