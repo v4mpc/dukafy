@@ -38,7 +38,7 @@ class ShiftDatabaseSeeder extends Seeder
         #then the products
         $products=DB::connection('mysql1')->table('products')->select('id', 'name', 'price', 'price_visibility', 'description', 'out_stock', 'featured', 'discount', 'category_id')->get();
         #finaly the images
-        $product_images=DB::connection('mysql1')->table('product_images')->select('product_id', 'image')->get();
+        $product_images=DB::connection('mysql1')->table('product_images')->select('id', 'product_id', 'image')->get();
         foreach ($categories as $category) {
             $cat=new Category;
             $cat->name=$category->name;
