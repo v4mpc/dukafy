@@ -11,6 +11,7 @@ use App\Http\Requests\StoreProduct;
 use Illuminate\Http\Request;
 use Image;
 use Session;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -22,9 +23,9 @@ class ProductController extends Controller
     public function index()
     {
         // $products=Product::where('featured',0)->where('out_stock',0)->get();
-         $products=Product::get();
+        $products=Product::get();
 
-        return view('products.index')->with('products',$products);
+        return view('products.index')->with('products', $products);
     }
 
     /**
@@ -36,7 +37,7 @@ class ProductController extends Controller
     {
         $categories=Category::all();
        
-      return view('products.create')->with('categories',$categories);
+        return view('products.create')->with('categories', $categories);
     }
 
     /**
@@ -47,8 +48,6 @@ class ProductController extends Controller
      */
     public function store(StoreProduct $request)
     {
-        
-
         $product=new Product;
         $product->name=$request->name;
         $product->price=$request->price;
@@ -66,59 +65,60 @@ class ProductController extends Controller
         //temp data
         $product->featured=0;
         $product->out_stock=0;
-            if (substr($request->discount, -1)==='%') {
-                //validate here
-                $discount = rtrim($request->discount, '%'); 
-            } else {
+        if (substr($request->discount, -1)==='%') {
+            //validate here
+            $discount = rtrim($request->discount, '%');
+        } else {
             $discount=round((($request->discount)/($request->price))*100);
-            }
+        }
         $product->discount=$discount;
+        $product->account_id=Auth::user()->account_id;
         
         
         $product->save();
 
 
-if($request->hasFile('images')) {
-    foreach($request->file('images') as $image) {
-        $filename = $image->getClientOriginalName();
-        $location=public_path('images/'.$filename);
-        $img=Image::make($image);
-        $image_width=$img->width();
-        $image_height=$img->height();
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = $image->getClientOriginalName();
+                $location=public_path('images/'.$filename);
+                $img=Image::make($image);
+                $image_width=$img->width();
+                $image_height=$img->height();
 
-        if ($image_height>=$image_width) {
-            $img->resize(null, 600, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($location);
-        } else {
-            $img->resize(600, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($location);
-        }
+                if ($image_height>=$image_width) {
+                    $img->resize(null, 600, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($location);
+                } else {
+                    $img->resize(600, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($location);
+                }
         
         
        
-    //    dd('original height= '.$orignal_height.' new height='.$new_height.' original width= '.$orignal_width.' new width='.$new_width);
-        $product_image=new ProductImage;
-        $product_image->image=$filename;
-        $product_image->product_id=$product->id;
-        $product_image->save();
-    }
-}
+                //    dd('original height= '.$orignal_height.' new height='.$new_height.' original width= '.$orignal_width.' new width='.$new_width);
+                $product_image=new ProductImage;
+                $product_image->image=$filename;
+                $product_image->product_id=$product->id;
+                $product_image->save();
+            }
+        }
 
 
-// if (count($request->variation)===0) {
+        // if (count($request->variation)===0) {
     
-// for ($i=0; $i<count($request->variation);$i++) {
+        // for ($i=0; $i<count($request->variation);$i++) {
 //     $productVariation=new ProductVariation;
 //     $productVariation->variation=$request->variation[$i];
 //     $productVariation->value=$request->variation_value[$i];
 //     $productVariation->price=$request->variation_price[$i];
 //     $productVariation->product_id=$product->id;
 //     $productVariation->save();
-// }
+        // }
 
-// if($request->hasFile('variation_images')) {
+        // if($request->hasFile('variation_images')) {
 //     foreach($request->file('variation_images') as $image) {
 //         $filename = $image->getClientOriginalName();
 //         $location=public_path('images/'.$filename);
@@ -129,17 +129,14 @@ if($request->hasFile('images')) {
 //         $variation_image->save();
 
 //     }
-// }
+        // }
 
-// }
+        // }
 
 
 
-Session::flash('success','Product Saved');
-return redirect()->route('products.show',$product->id);
-       
-
-        
+        Session::flash('success', 'Product Saved');
+        return redirect()->route('products.show', $product->id);
     }
 
     /**
@@ -151,8 +148,7 @@ return redirect()->route('products.show',$product->id);
     public function show($id)
     {
         $product=Product::findOrFail($id);
-        return view('products.show')->with('product',$product);
-
+        return view('products.show')->with('product', $product);
     }
 
     /**
@@ -163,11 +159,10 @@ return redirect()->route('products.show',$product->id);
      */
     public function edit($id)
     {
-    $product=Product::findOrFail($id);
-    $categories=Category::all();
+        $product=Product::findOrFail($id);
+        $categories=Category::all();
 
-    return view('products.edit')->with('product',$product)->with('categories',$categories);
-
+        return view('products.edit')->with('product', $product)->with('categories', $categories);
     }
 
     /**
@@ -200,31 +195,30 @@ return redirect()->route('products.show',$product->id);
         $product->save();
 
 
-if($request->hasFile('images')) {
-    foreach($request->file('images') as $image) {
-        $filename = $image->getClientOriginalName();
-        $location=public_path('images/'.$filename);
-        Image::make($image)->resize(400, 400)->save($location);
-        $product_image=ProductImage::where('product_id',$id)->get();
-        $product_image->image=$filename;
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = $image->getClientOriginalName();
+                $location=public_path('images/'.$filename);
+                Image::make($image)->resize(400, 400)->save($location);
+                $product_image=ProductImage::where('product_id', $id)->get();
+                $product_image->image=$filename;
        
-        $product_image->save();
-
-    }
-}
-
+                $product_image->save();
+            }
+        }
 
 
-for ($i=0; $i<count($request->variation);$i++) {
-    $productVariation=ProductVariation::where('product_image',$id)->get();
-    $productVariation->variation=$request->variation[$i];
-    $productVariation->value=$request->variation_value[$i];
-    $productVariation->price=$request->variation_price[$i];
+
+        for ($i=0; $i<count($request->variation);$i++) {
+            $productVariation=ProductVariation::where('product_image', $id)->get();
+            $productVariation->variation=$request->variation[$i];
+            $productVariation->value=$request->variation_value[$i];
+            $productVariation->price=$request->variation_price[$i];
    
-    $productVariation->save();
-}
+            $productVariation->save();
+        }
 
-// if($request->hasFile('variation_images')) {
+        // if($request->hasFile('variation_images')) {
 //     foreach($request->file('variation_images') as $image) {
 //         $filename = $image->getClientOriginalName();
 //         $location=public_path('images/'.$filename);
@@ -235,14 +229,13 @@ for ($i=0; $i<count($request->variation);$i++) {
 //         $variation_image->save();
 
 //     }
-// }
+        // }
 
 
 
 
-Session::flash('success','Product Saved');
-return redirect()->route('products.show',$product->id);
-       
+        Session::flash('success', 'Product Saved');
+        return redirect()->route('products.show', $product->id);
     }
 
     /**
@@ -255,125 +248,113 @@ return redirect()->route('products.show',$product->id);
     {
         $product=Product::findOrFail($id);
         $product->delete();
-         return response()->json($product);
+        return response()->json($product);
     }
 
     public function getSubCategories($id)
     {
         // dd('helo');
      
-        $sub_categories = SubCategory::where("category_id",$id)->pluck("name","id");
+        $sub_categories = SubCategory::where("category_id", $id)->pluck("name", "id");
         // sleep(50000);
         return json_encode($sub_categories);
-
     }
 
     public function makeFeatured($id)
     {
-     
-       $product=Product::findOrFail($id);
-       $product->featured=1;
-       $product->save();
+        $product=Product::findOrFail($id);
+        $product->featured=1;
+        $product->save();
         // sleep(50000);
         return json_encode($product);
-
     }
 
     public function removeFeatured($id)
     {
-     
-       $product=Product::findOrFail($id);
-       $product->featured=0;
-       $product->save();
+        $product=Product::findOrFail($id);
+        $product->featured=0;
+        $product->save();
         // sleep(50000);
         return json_encode($product);
-
     }
 
     public function removeOutstock($id)
     {
-     
-       $product=Product::findOrFail($id);
-       $product->out_stock=0;
-       $product->save();
+        $product=Product::findOrFail($id);
+        $product->out_stock=0;
+        $product->save();
         // sleep(50000);
         return json_encode($product);
-
     }
 
     public function makeOutstock($id)
     {
-     
-       $product=Product::findOrFail($id);
-       $product->out_stock=1;
-       $product->save();
+        $product=Product::findOrFail($id);
+        $product->out_stock=1;
+        $product->save();
         // sleep(50000);
         return json_encode($product);
-
     }
 
     public function search(Request $request)
     {
-//  dd($request->query);
-            $request->validate([
+        //  dd($request->query);
+        $request->validate([
                 'query'=>'required|min:3'
             ]);
-        $category=$request->input('category_name');;
+        $category=$request->input('category_name');
+        ;
         $query=$request->input('query');
 
         
         if ($category=='all') {
-            $products = Product::where('out_stock',0)->search($query)->paginate(20);
+            $products = Product::where('out_stock', 0)->search($query)->paginate(20);
           
-            $min_price=Product::where('out_stock',0)->search($query)->min('price');
-            $max_price=Product::where('out_stock',0)->search($query)->max('price');
+            $min_price=Product::where('out_stock', 0)->search($query)->min('price');
+            $max_price=Product::where('out_stock', 0)->search($query)->max('price');
             $checked_categories=array();
-            foreach($products as $product){
+            foreach ($products as $product) {
                 $checked_categories[]=$product->category->id;
             }
-            
-            
-
-        }elseif(config('app.settings')->layout=='template3'){
-            $products = Product::where('out_stock',0)->search($query)->paginate(20);
-            $min_price=Product::where('out_stock',0)->search($query)->min('price');
-            $max_price=Product::where('out_stock',0)->search($query)->max('price');
+        } elseif (config('app.settings')->layout=='template3') {
+            $products = Product::where('out_stock', 0)->search($query)->paginate(20);
+            $min_price=Product::where('out_stock', 0)->search($query)->min('price');
+            $max_price=Product::where('out_stock', 0)->search($query)->max('price');
             $checked_categories=array();
-            foreach($products as $product){
+            foreach ($products as $product) {
                 $checked_categories[]=$product->category->id;
             }
-        }else{
+        } else {
             // dd('it came');
-            $products = Product::where('out_stock',0)->where('category_id',$category)->search($query)->paginate(20);
-            $min_price=Product::where('out_stock',0)->where('category_id',$category)->search($query)->min('price');
-            $max_price=Product::where('out_stock',0)->where('category_id',$category)->search($query)->max('price');
+            $products = Product::where('out_stock', 0)->where('category_id', $category)->search($query)->paginate(20);
+            $min_price=Product::where('out_stock', 0)->where('category_id', $category)->search($query)->min('price');
+            $max_price=Product::where('out_stock', 0)->where('category_id', $category)->search($query)->max('price');
             $checked_categories=array();
-            foreach($products as $product){
+            foreach ($products as $product) {
                 $checked_categories[]=$product->category->id;
             }
         }
 
         // $products = Product::search($query)->paginate(20);
-        if(config('app.settings')->layout=='template2'){
+        if (config('app.settings')->layout=='template2') {
             $body_class="left-sidebar";
-            return view('template.template2.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
-        }else if(config('app.settings')->layout=='template1'){
-            return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
-        }else if(config('app.settings')->layout=='template3'){
+            return view('template.template2.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price)->with('body_class', $body_class);
+        } elseif (config('app.settings')->layout=='template1') {
+            return view('template.template1.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price);
+        } elseif (config('app.settings')->layout=='template3') {
             // dd($products);
-            return view('template.template3.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
+            return view('template.template3.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price);
         }
     }
 
-    public function category(Request $request,$id){
-
-        
-        $products=Product::where('out_stock',0)->where('category_id',$id)->paginate(20);
+    public function category(Request $request, $id)
+    {
+        $products=Product::where('out_stock', 0)->where('category_id', $id)->paginate(20);
         // dd($products);
         $checked_categories=array();
         $checked_categories[]=$id;
-        $min_price=Product::where('out_stock',0)->where('category_id',$id)->min('price');
-        $max_price=Product::where('out_stock',0)->where('category_id',$id)->max('price');
+        $min_price=Product::where('out_stock', 0)->where('category_id', $id)->min('price');
+        $max_price=Product::where('out_stock', 0)->where('category_id', $id)->max('price');
 
 
 
@@ -382,17 +363,15 @@ return redirect()->route('products.show',$product->id);
 //        return view('template.template3.search')->with('products',$products)->with('row_class',$row_class)->with('min_price',$min_price)->with('max_price',$max_price);
 //    }
 
-        if(config('app.settings')->layout=='template2'){
+        if (config('app.settings')->layout=='template2') {
             $body_class="left-sidebar";
-            return view('template.template2.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price)->with('body_class',$body_class);
-        }else if(config('app.settings')->layout=='template1'){
-            return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
-        }else if(config('app.settings')->layout=='template3'){
+            return view('template.template2.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price)->with('body_class', $body_class);
+        } elseif (config('app.settings')->layout=='template1') {
+            return view('template.template1.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price);
+        } elseif (config('app.settings')->layout=='template3') {
             $row_class='single-product outer-bottom-sm';
-            return view('template.template3.search')->with('products',$products)->with('row_class',$row_class)->with('min_price',$min_price)->with('max_price',$max_price);
+            return view('template.template3.search')->with('products', $products)->with('row_class', $row_class)->with('min_price', $min_price)->with('max_price', $max_price);
         }
-       
-
     }
 
     public function filterProduct(Request $request)
@@ -401,32 +380,19 @@ return redirect()->route('products.show',$product->id);
 
         //  dd($request->all());
 
-         if(config('app.settings')->layout=='template3'){
-            $price=explode(",",$request->price);
+        if (config('app.settings')->layout=='template3') {
+            $price=explode(",", $request->price);
             $min_price=$price[0];
             $max_price=$price[1];
-            $products=Product::where('out_stock',0)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
-            return view('template.template3.search')->with('products',$products)->with('min_price',$min_price)->with('max_price',$max_price);
-    
-         }else{
-
-
-        $min_price=$request->min_price;
-        $max_price=$request->max_price;
-        $checked_categories=array();
-        $checked_categories=$request->category_id;
-        $products=Product::where('out_stock',0)->whereIn('category_id',$request->category_id)->where('price','>=',$min_price)->where('price','<=',$max_price)->paginate(20);
-        return view('template.template1.search')->with('products',$products)->with('checked_categories',$checked_categories)->with('min_price',$min_price)->with('max_price',$max_price);
-
-         }
-        
-
-        
-
-
-
-      
-        
-     
+            $products=Product::where('out_stock', 0)->where('price', '>=', $min_price)->where('price', '<=', $max_price)->paginate(20);
+            return view('template.template3.search')->with('products', $products)->with('min_price', $min_price)->with('max_price', $max_price);
+        } else {
+            $min_price=$request->min_price;
+            $max_price=$request->max_price;
+            $checked_categories=array();
+            $checked_categories=$request->category_id;
+            $products=Product::where('out_stock', 0)->whereIn('category_id', $request->category_id)->where('price', '>=', $min_price)->where('price', '<=', $max_price)->paginate(20);
+            return view('template.template1.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price);
+        }
     }
 }

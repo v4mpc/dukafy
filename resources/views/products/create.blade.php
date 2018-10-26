@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/switchery.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/file-uploaders/dropzone.min.css')}}">
+
 <script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
 
 
@@ -21,11 +21,87 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/file-uploaders/dropzone.min.css')}}"> {{-- //template specific css --}}
+ {{-- //template specific css --}}
 <link rel="stylesheet" href="{{asset('template1/css/product.css')}}">
+<link rel="stylesheet" href="{{asset('initial_screen/Croppie/croppie.css')}}">
+
+
+<style>
+
+.dropzone {
+    min-height: 72px;
+    border: 2px dashed #28D094;
+    background: #F4F5FA;
+    cursor: pointer;
+}
+
+.dropzone .dz-message {
+    /* font-size: 0.rem; */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    
+    margin-top: -30px;
+    color: black;
+    text-align: center;
+}
+
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+input.visually-hidden:focus + label {
+  outline: thin dotted;
+}
+
+
+
+
+.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+    cursor: pointer;
+}
+
+</style>
 @endsection
  
 @section('content')
+<div id="logo-modal" class="modal" role="dialog">
+    <div class="modal-dialog modal-md">
+
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+              <h1>Crop Show Case Image</h1>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="image-demo" class="img-container overflow-hidden">
+
+                        </div>
+                        <button type="button" id="crop-image" class="btn btn-info" id="button" style="
+                        margin-top: -12%;
+                    ">Done</button>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 <div class="app-content content">
   <div class="content-wrapper">
     <div class="content-header row">
@@ -90,10 +166,17 @@
                             <div class="form-group row">
                                 <label class="col-md-3 label-control">Product Image(s)</label>
                                 <div class="col-md-7">
-                                  <label id="projectinput8" class="file center-block">
-                                              <input type="file" id="product-picture" required name="images[]" multiple>
-                                              <span class="file-custom"></span>
-                                            </label>
+                                    <input type="file" id="product-pictures" multiple accept="image/*" class="visually-hidden">
+                                    <input type="hidden" id="test" name="images">
+                                    <label for="product-pictures" class="dropzone dz-message col-md-12">
+
+                                        {{-- <div class="dz-message">Click to select Image(s)</div> --}}
+                                        <ul>
+                                          <li><i>Click to Select Image(s)</i></li>
+                                          <li>Images: <b><i id="images">0</i></b></li>
+                                          <li>Size: <b><i id="size">0 KB</i></b></li>
+                                        </ul>
+                                    </label>
                                 </div>
                               </div>
 
@@ -277,22 +360,137 @@
 
                     <div class="col-md-4">
                       <!-- Product -->
-                      <div class="product img-height">
-                        <article>
-                          <img class="img-responsive img-middle" id="product_image" height="250px" width="auto" src="{{asset('images/productplaceholder.png')}}" alt="">
-                          <span id="sale_tag"></span>
-                          <!-- Content -->
-                          <span class="tag" id="category_output"></span>
-
-                          <div> <a href="#." class="tittle" id="name_output"></a></div>
-                          <div class="price" id="new_price_output">
-                            <span id="old_price_output"></span>
-                          </div>
-                          <a href="#." class="cart-btn">
-                                                <i class="icon-basket-loaded"></i>
-                                              </a>
-                        </article>
+                      <div class="row">
+<h4 class="text-center">Show Case</h4>
+                        <div class="col-sm-12">
+                            <div class="product img-height">
+                                <article>
+                                  <img class="img-responsive img-middle img-src-0" id="product_image" height="250px" width="auto"  src="{{asset('images/productplaceholder.png')}}" alt="">
+                                  <span id="sale_tag"></span>
+                                  <!-- Content -->
+                                  <span class="tag" id="category_output"></span>
+        
+                                  <div> <a href="#." class="tittle" id="name_output"></a></div>
+                                  <div class="price" id="new_price_output">
+                                    <span id="old_price_output"></span>
+                                  </div>
+                                  <a href="#." class="cart-btn">
+                                                        <i class="icon-basket-loaded"></i>
+                                                      </a>
+                                </article>
+                              </div>
+                        </div>
                       </div>
+
+                      <div class="row" style="margin-top:50%;" >
+            <div class="col-md-6 image-1" style="display:none;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="logo-input-button"> <img src="http://ecommerce.local/images/item-img-1-1.jpg"
+                                width="200" id="1" class="img-thumbnail img-src-1" alt="" srcset=""></a>
+                    </div>
+
+                </div>
+                
+                <div class="row" style="margin-top:5%;">
+                    <div class="col-md-12">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success show-case" data-index="1" data-toggle="tooltip" data-original-title="Make show case for this product"
+                            data-placement="top"><i class="ft-star"></i> </button>
+                            <button type="button" class="btn btn-outline-danger remove-image" data-index="1" data-toggle="tooltip" data-original-title="Remove Image"
+                            data-placement="top"><i class="ft-trash"></i></button>
+                            
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 image-2" style="display:none;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="logo-input-button"> <img src="http://ecommerce.local/images/item-img-1-1.jpg"
+                                width="200" id="2" class="img-thumbnail img-src-2" alt="" srcset=""></a>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top:5%;">
+                    {{-- <div class="col-md-6">
+                        <a href="http://ecommerce.local/manage/products/5" data-toggle="tooltip" data-original-title="Make show case for this product"
+                            data-placement="top" class="btn btn-outline-warning btn-sm edit-item-btn btn-block"><i class="ft-star"></i></a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="http://ecommerce.local/manage/products/5" data-toggle="tooltip" data-original-title="Remove Image"
+                            data-placement="top" class="btn btn-outline-danger btn-sm edit-item-btn btn-block"><i class="ft-trash
+                            "></i></a>
+                    </div> --}}
+
+                    <div class="col-md-12">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success show-case" data-index="2" data-toggle="tooltip" data-original-title="Make show case for this product"
+                            data-placement="top"><i class="ft-star"></i> </button>
+                            <button type="button" class="btn btn-outline-danger remove-image" data-index="2" data-toggle="tooltip" data-original-title="Remove Image"
+                            data-placement="top"><i class="ft-trash"></i></button>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<br>
+        <div class="row"  >
+            <div class="col-md-6 image-3" style="display:none;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="logo-input-button"> <img src="http://ecommerce.local/images/item-img-1-1.jpg"
+                                width="200" id="3" class="img-thumbnail img-src-3" alt="" srcset=""></a>
+                    </div>
+
+                </div>
+                
+                <div class="row" style="margin-top:5%;">
+                    <div class="col-md-12">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success show-case" data-index="3" data-toggle="tooltip" data-original-title="Make show case for this product"
+                            data-placement="top"><i class="ft-star"></i> </button>
+                            <button type="button" class="btn btn-outline-danger remove-image" data-index="3" data-toggle="tooltip" data-original-title="Remove Image"
+                            data-placement="top"><i class="ft-trash"></i></button>
+                            
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 image-4" style="display:none;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="logo-input-button"> <img src="http://ecommerce.local/images/item-img-1-1.jpg"
+                                width="200" id="4" class="img-thumbnail img-src-4" alt="" srcset=""></a>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top:5%;">
+                    {{-- <div class="col-md-6">
+                        <a href="http://ecommerce.local/manage/products/5" data-toggle="tooltip" data-original-title="Make show case for this product"
+                            data-placement="top" class="btn btn-outline-warning btn-sm edit-item-btn btn-block"><i class="ft-star"></i></a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="http://ecommerce.local/manage/products/5" data-toggle="tooltip" data-original-title="Remove Image"
+                            data-placement="top" class="btn btn-outline-danger btn-sm edit-item-btn btn-block"><i class="ft-trash
+                            "></i></a>
+                    </div> --}}
+                    <div class="col-md-12">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success show-case" data-index="4" data-toggle="tooltip" data-original-title="Make show case for this product"
+                            data-placement="top"><i class="ft-star"></i> </button>
+                            <button type="button" class="btn btn-outline-danger remove-image" data-index="4" data-toggle="tooltip" data-original-title="Remove Image"
+                            data-placement="top"><i class="ft-trash"></i></button>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
                     </div>
                   </div>
@@ -310,6 +508,8 @@
     </div>
   </div>
 </div>
+
+
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @endsection
  
@@ -319,7 +519,7 @@
 <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-checkbox.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/forms/toggle/bootstrap-switch.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/forms/toggle/switchery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/vendors/js/extensions/dropzone.min.js')}}" type="text/javascript"></script>
+
 {{--
 <script src="{{asset('vendor/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}" --}}
 @endsection
@@ -328,7 +528,8 @@
 <script src="{{asset('vendor/js/scripts/forms/checkbox-radio.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/js/scripts/extensions/dropzone.min.js')}}" type="text/javascript"></script>
+
+<script src="{{asset('initial_screen/Croppie/croppie.min.js')}}"></script>
 
 
 
@@ -473,19 +674,19 @@ function addCommas(nStr) {
 
 
 
-$("#product-picture").change(function(){
-                    readURL(this);
-                });
- function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+// $("#product-picture").change(function(){
+//                     readURL(this);
+//                 });
+//  function readURL(input) {
+//             if (input.files && input.files[0]) {
+//                 var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#product_image').attr('src', e.target.result);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+//                 reader.onload = function (e) {
+//                     $('#product_image').attr('src', e.target.result);
+//                 };
+//                 reader.readAsDataURL(input.files[0]);
+//             }
+//         }
 
 
 
@@ -498,6 +699,206 @@ $("#product-picture").change(function(){
 
 
 // });
+
+</script>
+<script>
+
+    $(document).ready(function () {
+
+
+
+        //lets declare the images object here
+        var images = {
+            image: [],
+            size: 0,
+            cropping: NaN //the size should be in kilobites
+        }
+
+           var basic = $('#image-demo').croppie({
+            viewport: {
+                width: 400,
+                height: 400,
+                type: 'square',
+                enableOrientation: true,
+                enableExif: true
+            },
+            boundary: {
+                width: 500,
+                height: 500
+            },
+        })
+
+        //#########################IMAGE LOGICS################
+
+
+        //FUNCTIONS
+
+
+        function get_size(string) {
+
+          return ((string.length ) / 1.37);
+          
+        }
+        function handleFiles(files) {
+            if (!files.length) {
+                fileList.innerHTML = "<p>No files selected!</p>";
+            } else {
+                    
+                    images.image = [];
+                    images.cropping=NaN;
+                for (var i = 0; i < files.length; i++) {//only take the first five images
+                    
+
+                    // (string_length(encoded_string) - 814) / 1.37
+                    // var reader = new FileReader();
+                    // console.log(reader.onload)
+                    // reader.onload = function (e) {
+                    images.image.push(window.URL.createObjectURL(files[i]))
+                    // };
+                    // reader.readAsDataURL(files[i]);
+                }
+                // console.log(images)
+                croppie_bind(0)
+            }
+
+        }
+
+        function croppie_bind(image_index) {
+            // console.log(images.image[0])
+            basic.croppie('bind', {
+                url: images.image[image_index],
+            });
+
+            images.cropping = image_index
+
+            $('#logo-modal').modal('show');
+        }
+
+        function load_image() {
+
+          for (let index = 0; index < 5; index++) {
+            $('.image-' + index).css('display', 'none')
+          }
+           
+           images.size=0
+            images.image.forEach(element => {
+
+                
+
+                //ffirst load images
+                $('.img-src-' + images.image.indexOf(element)).attr('src', element);
+                //TODO: we will also have to update the input element ready for uploading
+                // we will also upload the number of images and size accordingly
+
+                images.size += Math.ceil(get_size(element) / 1024)
+
+                //then show images
+                $('.image-' + images.image.indexOf(element)).css('display', '')
+
+                $('#images').text(images.image.length);
+           $('#size').text(images.size+' KB');
+
+            });
+
+            $('#test').val(images.image);
+
+        }
+
+        function swap_image(swapper) {
+            var temp
+            temp = images.image[swapper]
+            images.image[swapper] = images.image[0]
+            images.image[0] = temp
+
+        }
+
+        //START HERE
+        $("#product-pictures").change(function () {
+            handleFiles(this.files);
+        });
+        // window.URL = window.URL || window.webkitURL;
+        // var fileSelect = document.getElementById("fileSelect"),
+        //     fileElem = document.getElementById("fileElem"),
+        //     fileList = document.getElementById("fileList");
+        // fileSelect.addEventListener("click", function (e) {
+        //     if (fileElem) {
+        //         fileElem.click();
+        //     }
+        //     e.preventDefault(); // prevent navigation to "#"
+        // }, false);
+
+
+
+        //###############CROPPIEE#########################
+
+     
+
+
+        $('.show-case').click(function () {
+          
+            var image_index = $(this).data('index');
+            croppie_bind(image_index)
+        });
+
+        $('.remove-image').click(function () {
+          console.log('remove me')
+            var image_index = $(this).data('index');
+            if (image_index > -1) {
+                images.image.splice(image_index, 1);
+            }
+            load_image()
+        });
+
+        $('#crop-image').click(function (params) {
+          console.log('am here');
+            basic.croppie('result', {
+                type: 'canvas',
+                size: 'viewport',
+
+            }).then(function (response) {
+                //save the image back to its location
+                images.image[images.cropping] = response
+                if (images.cropping != 0) {
+                    //swap the values
+                    swap_image(images.cropping)
+                }
+
+
+                //then we can load the images
+                load_image()
+                $('#logo-modal').modal('hide');
+                // $('#cropped-logo').attr('src', images.image[1]);
+                // $('#remove-logo').removeClass('disabled');
+
+                // $('input[name="logo"]').val(response);
+                console.log(images.cropping)
+            })
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //################################SCRIPT END HERE##################################################################
+    });
+
+
 
 </script>
 @endsection

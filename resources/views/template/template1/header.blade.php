@@ -75,6 +75,9 @@
 
 
 @media (max-width: 768px) {
+    .cate-style {
+    background:none;
+}
 .item-col-4 .product {
     width: 50%;
 }
@@ -106,6 +109,9 @@
     text-align: center;
     color: #FFF;
 }
+
+
+
 
     </style>
 

@@ -1163,6 +1163,8 @@ $('#located').click(function(params) {
 
 				reader.onload = function (e) {
 
+                    console.log(e.target.result)
+
 					basic.croppie('bind', {
 						url: e.target.result,
 

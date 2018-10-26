@@ -16,37 +16,14 @@
           </div>
         </li>
 
-        {{--
-        <!-- Step 2 -->
-        <li class="col-sm-3">
-          <div class="media-left"> <i class="flaticon-business"></i> </div>
-          <div class="media-body"> <span>Step 2</span>
-            <h6>Payment Methods</h6>
-          </div>
-        </li> --}}
-
-        <!-- Step 3 -->
-        {{-- <li class="col-sm-3">
-          <div class="media-left"> <i class="flaticon-delivery-truck"></i> </div>
-          <div class="media-body"> <span>Step 2</span>
-            <h6>Delivery Information</h6>
-          </div>
-        </li> --}}
-
-        <!-- Step 4 -->
-        {{-- <li class="col-sm-3">
-          <div class="media-left"> <i class="fa fa-check"></i> </div>
-          <div class="media-body"> <span>Step 3</span>
-            <h6>Confirmation</h6>
-          </div>
-        </li> --}}
+      
       </ul>
     </div>
   </div>
 
   <!-- Shopping Cart -->
   <section class="shopping-cart padding-bottom-60">
-    <div class="container">
+    <div class="container" style="overflow-x:auto;">
       @if(Cart::count())
       <h5><span class="itm-cont">{{Cart::count()}}</span> Item(s) in Shopping Cart</h5>
       <table class="table">
