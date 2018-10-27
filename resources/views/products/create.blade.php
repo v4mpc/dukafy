@@ -167,13 +167,13 @@ input.visually-hidden:focus + label {
                                 <label class="col-md-3 label-control">Product Image(s)</label>
                                 <div class="col-md-7">
                                     <input type="file" id="product-pictures" multiple accept="image/*" class="visually-hidden">
-                                    <input type="hidden" id="test" name="images">
+                                    
                                     <label for="product-pictures" class="dropzone dz-message col-md-12">
 
                                         {{-- <div class="dz-message">Click to select Image(s)</div> --}}
                                         <ul>
                                           <li><i>Click to Select Image(s)</i></li>
-                                          <li>Images: <b><i id="images">0</i></b></li>
+                                          <li>Image(s): <b><i id="images">0</i></b></li>
                                           <li>Size: <b><i id="size">0 KB</i></b></li>
                                         </ul>
                                     </label>
@@ -734,37 +734,47 @@ function addCommas(nStr) {
         //FUNCTIONS
 
 
+
+
+       
+
         function get_size(string) {
 
           return ((string.length ) / 1.37);
           
         }
         function handleFiles(files) {
-            if (!files.length) {
-                fileList.innerHTML = "<p>No files selected!</p>";
-            } else {
-                    
-                    images.image = [];
-                    images.cropping=NaN;
-                for (var i = 0; i < files.length; i++) {//only take the first five images
-                    
 
-                    // (string_length(encoded_string) - 814) / 1.37
-                    // var reader = new FileReader();
-                    // console.log(reader.onload)
-                    // reader.onload = function (e) {
-                    images.image.push(window.URL.createObjectURL(files[i]))
-                    // };
-                    // reader.readAsDataURL(files[i]);
-                }
-                // console.log(images)
-                croppie_bind(0)
-            }
 
+
+          var promises=[]
+
+          for (let index = 0; index < files.length; index++) {
+           promises.push(new Promise((resolve,reject)=>{
+             var reader=new FileReader();
+             reader.onload=(e)=>{
+              resolve(e.target.result)
+             }
+             reader.readAsDataURL(files[index]);
+           }))
+
+          
+            
+          }
+
+           Promise.all(promises).then(values=>{
+
+             images.image=values;
+             croppie_bind(0);
+             
+
+           }).catch(error=>{
+             console.log(error)
+           })
         }
 
         function croppie_bind(image_index) {
-            // console.log(images.image[0])
+             console.log(images.image)
             basic.croppie('bind', {
                 url: images.image[image_index],
             });
@@ -800,7 +810,23 @@ function addCommas(nStr) {
 
             });
 
-            $('#test').val(images.image);
+            //first remove the old ones
+            $('.images-field').remove()
+
+              //then add the new ones
+            images.image.forEach(element=>{
+              $('<input>').attr({
+                type: 'hidden',
+                class: 'images-field',
+                name: 'images[]',
+                value:element
+            }).appendTo('form');
+
+            })
+
+           
+
+          
 
         }
 
@@ -816,18 +842,7 @@ function addCommas(nStr) {
         $("#product-pictures").change(function () {
             handleFiles(this.files);
         });
-        // window.URL = window.URL || window.webkitURL;
-        // var fileSelect = document.getElementById("fileSelect"),
-        //     fileElem = document.getElementById("fileElem"),
-        //     fileList = document.getElementById("fileList");
-        // fileSelect.addEventListener("click", function (e) {
-        //     if (fileElem) {
-        //         fileElem.click();
-        //     }
-        //     e.preventDefault(); // prevent navigation to "#"
-        // }, false);
-
-
+       
 
         //###############CROPPIEE#########################
 
@@ -867,10 +882,7 @@ function addCommas(nStr) {
                 //then we can load the images
                 load_image()
                 $('#logo-modal').modal('hide');
-                // $('#cropped-logo').attr('src', images.image[1]);
-                // $('#remove-logo').removeClass('disabled');
-
-                // $('input[name="logo"]').val(response);
+               
                 console.log(images.cropping)
             })
         });

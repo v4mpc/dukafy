@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use App\Scopes\AccountScope;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
@@ -73,5 +74,33 @@ class Product extends Model
         parent::boot();
 
         static::addGlobalScope(new AccountScope);
+    }
+
+    public function get_image($index=0)
+    {
+        // dd($this->images);
+
+        if ($index==count($this->images)-1||$index==0) {
+            return 'data:image/png;base64,' . base64_encode(file_get_contents(asset('images/'.$this->images[$index]->image))); # code...
+        }
+    }
+
+
+    public function get_size()
+    {
+        $sum=0;
+        foreach ($this->images as $key=>$image) {
+            $sum+=ceil((strlen($this->get_image($key))/1.37)/1024);
+        }
+        return $sum;
+    }
+
+    public function images_json_encoded()
+    {
+        $images=[];
+        foreach ($this->images as $key=>$image) {
+            $images[]=$this->get_image($key);
+        }
+        return json_encode($images);
     }
 }

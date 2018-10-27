@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Image;
 use Session;
 use Auth;
+use App\Events\ProductUpdated;
 
 class ProductController extends Controller
 {
@@ -24,6 +25,7 @@ class ProductController extends Controller
     {
         // $products=Product::where('featured',0)->where('out_stock',0)->get();
         $products=Product::get();
+        // dd($products[10]->images);
 
         return view('products.index')->with('products', $products);
     }
@@ -49,92 +51,6 @@ class ProductController extends Controller
     public function store(StoreProduct $request)
     {
         $product=new Product;
-        $product->name=$request->name;
-        $product->price=$request->price;
-        if ($request->price_visibility==='on') {
-            $price_visibility=1;
-        } else {
-            $product_visibility=0;
-        }
-        
-        $product->price_visibility=$price_visibility;
-        $product->category_id=$request->category_id;
-        // $product->sub_category_id=$request->sub_category_id;
-        $product->description=$request->description;
-
-        //temp data
-        $product->featured=0;
-        $product->out_stock=0;
-        if (substr($request->discount, -1)==='%') {
-            //validate here
-            $discount = rtrim($request->discount, '%');
-        } else {
-            $discount=round((($request->discount)/($request->price))*100);
-        }
-        $product->discount=$discount;
-        $product->account_id=Auth::user()->account_id;
-        
-        
-        $product->save();
-
-
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $filename = $image->getClientOriginalName();
-                $location=public_path('images/'.$filename);
-                $img=Image::make($image);
-                $image_width=$img->width();
-                $image_height=$img->height();
-
-                if ($image_height>=$image_width) {
-                    $img->resize(null, 600, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($location);
-                } else {
-                    $img->resize(600, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($location);
-                }
-        
-        
-       
-                //    dd('original height= '.$orignal_height.' new height='.$new_height.' original width= '.$orignal_width.' new width='.$new_width);
-                $product_image=new ProductImage;
-                $product_image->image=$filename;
-                $product_image->product_id=$product->id;
-                $product_image->save();
-            }
-        }
-
-
-        // if (count($request->variation)===0) {
-    
-        // for ($i=0; $i<count($request->variation);$i++) {
-//     $productVariation=new ProductVariation;
-//     $productVariation->variation=$request->variation[$i];
-//     $productVariation->value=$request->variation_value[$i];
-//     $productVariation->price=$request->variation_price[$i];
-//     $productVariation->product_id=$product->id;
-//     $productVariation->save();
-        // }
-
-        // if($request->hasFile('variation_images')) {
-//     foreach($request->file('variation_images') as $image) {
-//         $filename = $image->getClientOriginalName();
-//         $location=public_path('images/'.$filename);
-//         Image::make($image)->resize(400, 400)->save($location);
-//         $variation_image=new VariationImage;
-//         $variation_image->image=$filename;
-//         $variation_image->variation_id=$variation->id;
-//         $variation_image->save();
-
-//     }
-        // }
-
-        // }
-
-
-
         Session::flash('success', 'Product Saved');
         return redirect()->route('products.show', $product->id);
     }
@@ -162,6 +78,8 @@ class ProductController extends Controller
         $product=Product::findOrFail($id);
         $categories=Category::all();
 
+        
+       
         return view('products.edit')->with('product', $product)->with('categories', $categories);
     }
 
@@ -175,65 +93,8 @@ class ProductController extends Controller
     public function update(StoreProduct $request, $id)
     {
         $product=Product::findOrFail($id);
-        $product->name=$request->name;
-        $product->price=$request->price;
-        if ($request->price_visibility==='on') {
-            $price_visibility=1;
-        } else {
-            $product_visibility=0;
-        }
-        
-        $product->price_visibility=$price_visibility;
-        $product->category_id=$request->category_id;
-        $product->sub_category_id=$request->sub_category_id;
-        $product->description=$request->description;
 
-        // //temp data
-        // $product->featured=0;
-        // $product->out_stock=0;
-
-        $product->save();
-
-
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $filename = $image->getClientOriginalName();
-                $location=public_path('images/'.$filename);
-                Image::make($image)->resize(400, 400)->save($location);
-                $product_image=ProductImage::where('product_id', $id)->get();
-                $product_image->image=$filename;
-       
-                $product_image->save();
-            }
-        }
-
-
-
-        for ($i=0; $i<count($request->variation);$i++) {
-            $productVariation=ProductVariation::where('product_image', $id)->get();
-            $productVariation->variation=$request->variation[$i];
-            $productVariation->value=$request->variation_value[$i];
-            $productVariation->price=$request->variation_price[$i];
-   
-            $productVariation->save();
-        }
-
-        // if($request->hasFile('variation_images')) {
-//     foreach($request->file('variation_images') as $image) {
-//         $filename = $image->getClientOriginalName();
-//         $location=public_path('images/'.$filename);
-//         Image::make($image)->resize(400, 400)->save($location);
-//         $variation_image=VariationImage::where('product_id',$id)->get();
-//         $variation_image->image=$filename;
-//         $variation_image->variation_id=$variation->id;
-//         $variation_image->save();
-
-//     }
-        // }
-
-
-
-
+        $product=$this->store_product($request, $product, 'u');
         Session::flash('success', 'Product Saved');
         return redirect()->route('products.show', $product->id);
     }
@@ -394,5 +255,51 @@ class ProductController extends Controller
             $products=Product::where('out_stock', 0)->whereIn('category_id', $request->category_id)->where('price', '>=', $min_price)->where('price', '<=', $max_price)->paginate(20);
             return view('template.template1.search')->with('products', $products)->with('checked_categories', $checked_categories)->with('min_price', $min_price)->with('max_price', $max_price);
         }
+    }
+
+    public function store_product($request, $product, $mode='c') //c for create u for update
+    {
+        if ($mode=='u') {
+            //lets first get the images we want to delete from database
+            //then dispatch an event to delete the images from server
+            event(new ProductUpdated($product->images));
+            //then delete their database record
+            foreach ($product->images as $image) {
+                $image->delete();
+            }
+            
+            //then we are good to go we can store new imagess
+        }
+        $product->name=$request->name;
+        $product->price=$request->price;
+        $product_visibility=0;
+        if ($request->price_visibility==='on') {
+            $price_visibility=1;
+        }
+        $product->price_visibility=$price_visibility;
+        $product->category_id=$request->category_id;
+        $product->description=$request->description;
+        $product->featured=0;
+        $product->out_stock=0;
+        if (substr($request->discount, -1)==='%') {
+            //validate here
+            $discount = rtrim($request->discount, '%');
+        } else {
+            $discount=round((($request->discount)/($request->price))*100);
+        }
+        $product->discount=$discount;
+        $product->account_id=Auth::user()->account_id;
+        $product->save();
+
+        foreach ($request->images as $image) {
+            $filename = Auth::user()->account_id.time().uniqid().".png";
+            $location=public_path('images/'.$filename);
+            Image::make(file_get_contents($image))->save($location);
+            $product_image=new ProductImage;
+            $product_image->image=$filename;
+            $product_image->product_id=$product->id;
+            $product_image->save();
+        }
+        return $product;
     }
 }
