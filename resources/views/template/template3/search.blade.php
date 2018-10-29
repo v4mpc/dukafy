@@ -86,7 +86,7 @@
                 <div class="row">									
                         
 @forelse($products as $product)                        
-<div class="col-sm-6 col-md-4 wow fadeInUp">
+<div class="col-xs-6 col-md-4 wow fadeInUp">
 <div class="products">
 
 <div class="product">		

@@ -8,8 +8,9 @@
         <header class="entry-header"><h1 itemprop="name" class="entry-title">Cart</h1></header><!-- .entry-header -->
 
         <form>
+            <div class="table-responsive">
 
-<table class="shop_table shop_table_responsive cart">
+<table class="table shop_table_responsive cart">
 <thead>
 <tr>
     <th class="product-remove">&nbsp;</th>
@@ -74,6 +75,7 @@
 @endif
 </tbody>
 </table>
+</div>
 </form>
         <div class="cart-collaterals">
 

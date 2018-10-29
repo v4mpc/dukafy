@@ -86,7 +86,7 @@
                                   </h4>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
-                                  <div class="panel-body">
+                                  <div class="panel-body table-responsive">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>

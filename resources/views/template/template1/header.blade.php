@@ -78,6 +78,7 @@
     .cate-style {
     background:none;
 }
+.min-height: {341px;}
 .item-col-4 .product {
     width: 50%;
 }

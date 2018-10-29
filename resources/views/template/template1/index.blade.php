@@ -68,7 +68,7 @@
           <!-- Product -->
           <div class="product">
               <article>
-                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
+                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
@@ -124,7 +124,7 @@
           <!-- Product -->
           <div class="product">
               <article>
-                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
+                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
@@ -174,7 +174,7 @@
           <!-- Product -->
           <div class="product">
               <article>
-                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height" src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
+                  <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>

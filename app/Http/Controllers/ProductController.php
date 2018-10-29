@@ -50,7 +50,9 @@ class ProductController extends Controller
      */
     public function store(StoreProduct $request)
     {
+        // dd('ddfsd');
         $product=new Product;
+        $product=$this->store_product($request, $product);
         Session::flash('success', 'Product Saved');
         return redirect()->route('products.show', $product->id);
     }

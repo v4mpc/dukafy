@@ -23,9 +23,10 @@
 
   <!-- Shopping Cart -->
   <section class="shopping-cart padding-bottom-60">
-    <div class="container" style="overflow-x:auto;">
+    <div class="container " style="overflow-x:auto;">
       @if(Cart::count())
       <h5><span class="itm-cont">{{Cart::count()}}</span> Item(s) in Shopping Cart</h5>
+      <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>
@@ -95,6 +96,7 @@
           @endforeach
         </tbody>
       </table>
+    </div>
       <div class="g-totel">
         <h5>Grand total: <span class="items-price">{{Cart::subtotal()}} TZS</span></h5>
       </div>

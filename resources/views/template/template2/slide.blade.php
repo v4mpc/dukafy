@@ -42,11 +42,13 @@
         <div class="home-v1-deals-and-tabs deals-and-tabs row animate-in-view fadeIn animated" data-animation="fadeIn">
         <div class="tabs-block col-lg-12">
             <div class="products-carousel-tabs">
+                @if(count($featureds))
                 <ul class="nav nav-inline">
                     <li class="nav-item"><a class="nav-link active" href="#tab-products-1" data-toggle="tab">Featured</a></li>
 
 
                 </ul>
+                @endif
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab-products-1" role="tabpanel">
                         <div class="woocommerce columns-3">
@@ -61,7 +63,7 @@
             <a href="{{route('product.show',$product->id)}}">
                 <h3>{{$product->name}}</h3>
                 <div class="product-thumbnail">
-                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive  img-alig" alt="">
+                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive  " alt="">
                 </div>
             </a>
     
@@ -116,7 +118,7 @@
                                                             <a href="{{route('product.show',$product->id)}}">
                                                                 <h3>{{$product->name}}</h3>
                                                                 <div class="product-thumbnail">
-                                                                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
+                                                                    <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt="">
                                                                 </div>
                                                             </a>
                                                     
@@ -169,7 +171,7 @@
                                                         <a href="{{route('product.show',$product->id)}}">
                                                             <h3>{{$product->name}}</h3>
                                                             <div class="product-thumbnail">
-                                                                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
+                                                                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt="">
                                                             </div>
                                                         </a>
                                                 
@@ -239,7 +241,7 @@
         <a href="{{route('product.show',$product->id)}}">
             <h3>{{$product->name}}</h3>
             <div class="product-thumbnail">
-                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive  img-alig" alt="">
+                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive  " alt="">
             </div>
         </a>
 
@@ -294,7 +296,7 @@
                                                         <a href="{{route('product.show',$product->id)}}">
                                                             <h3>{{$product->name}}</h3>
                                                             <div class="product-thumbnail">
-                                                                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
+                                                                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt="">
                                                             </div>
                                                         </a>
                                                 
@@ -347,7 +349,7 @@
                                                     <a href="{{route('product.show',$product->id)}}">
                                                         <h3>{{$product->name}}</h3>
                                                         <div class="product-thumbnail">
-                                                            <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
+                                                            <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt="">
                                                         </div>
                                                     </a>
                                             
@@ -418,7 +420,7 @@
         <a href="{{route('product.show',$product->id)}}">
             <h3>{{$product->name}}</h3>
             <div class="product-thumbnail">
-                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive  img-alig" alt="">
+                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive  " alt="">
             </div>
         </a>
 
@@ -476,7 +478,7 @@
                                                         <a href="{{route('product.show',$product->id)}}">
                                                             <h3>{{$product->name}}</h3>
                                                             <div class="product-thumbnail">
-                                                                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
+                                                                <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt="">
                                                             </div>
                                                         </a>
                                                 
@@ -530,7 +532,7 @@
                                                     <a href="{{route('product.show',$product->id)}}">
                                                         <h3>{{$product->name}}</h3>
                                                         <div class="product-thumbnail">
-                                                            <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-alig" alt="">
+                                                            <img src="{{asset('images/'.$product->images[0]->image)}}" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt="">
                                                         </div>
                                                     </a>
                                             
