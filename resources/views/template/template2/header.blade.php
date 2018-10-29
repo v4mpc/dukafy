@@ -73,6 +73,14 @@
 }
 
 @media (max-width: 768px) {
+
+    .amount{
+        font-size: 12px;
+    }
+
+    .product-outer{
+        /* height: 0px !important; */
+    }
 .item-col-4 .product {
     width: 50%;
 }

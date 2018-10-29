@@ -76,7 +76,7 @@
                                     <h3>{{$product->name}}</h3>
                                     <div class="product-thumbnail">
         
-                                        <img class="img-responsive img-alig" data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" class="img-responsive  img-alig" alt="">
+                                        <img class="img-responsive " data-echo="{{asset('images/'.$product->images[0]->image)}}" src="assets/images/blank.gif" class="img-responsive  " alt="">
         
                                     </div>
                                 </a>
