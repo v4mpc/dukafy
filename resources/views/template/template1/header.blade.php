@@ -30,6 +30,10 @@
 
 
     <style>
+        .media-body{
+            vertical-align: middle;
+        }
+
         .required {
             color: red;
             font-weight: bold;
@@ -75,6 +79,9 @@
 
 
 @media (max-width: 768px) {
+    .search-cate {
+    display:block !important;
+}
     .cate-style {
     background:none;
 }

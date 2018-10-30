@@ -283,7 +283,7 @@ input.visually-hidden:focus + label {
                                     maxWordCount: -1,
 
                                     // Maximum allowed Char Count
-                                    maxCharCount: 255
+                                    maxCharCount: 65535
 
                                   }
                                 });
@@ -365,7 +365,7 @@ input.visually-hidden:focus + label {
                         <div class="col-sm-12">
                             <div class="product img-height">
                                 <article>
-                                  <img class="img-responsive img-middle img-src-0" id="product_image" height="250px" width="auto"  src="{{asset('images/productplaceholder.png')}}" alt="">
+                                  <img class="img-responsive img-middle img-src-0" id="product_image" height="250px" width="auto"  src="#." alt="">
                                   <span id="sale_tag"></span>
                                   <!-- Content -->
                                   <span class="tag" id="category_output"></span>
