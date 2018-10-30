@@ -86,7 +86,11 @@
                     
                     
                     <div class="product-info text-left">
-                    <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                    <h4
+                    
+                    class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h4
+                        
+                     >
                     
                     <div class="description"></div>
                     
@@ -152,7 +156,7 @@
                         
                         
                         <div class="product-info text-left">
-                        <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                        <h5 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h5>
                         
                         <div class="description"></div>
                         

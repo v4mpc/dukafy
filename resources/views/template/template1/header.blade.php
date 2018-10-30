@@ -76,11 +76,16 @@
     margin-right: auto;
     width: 40%;
 }
-
+/* .hotline{
+    display:block;
+} */
 
 @media (max-width: 768px) {
     .search-cate {
     display:block !important;
+}
+.hotline{
+    display:none;
 }
     .cate-style {
     background:none;
