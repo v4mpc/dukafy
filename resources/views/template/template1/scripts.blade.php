@@ -23,6 +23,8 @@
 <script>
   jQuery(document).ready(function() {
 
+    console.log(window.screen.availWidth);
+
     //new tab for social links
 
 

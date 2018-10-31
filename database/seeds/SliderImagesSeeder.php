@@ -13,8 +13,7 @@ class SliderImagesSeeder extends Seeder
     public function run()
     {
         $number_of_images=3;
-        for ($i=0; $i < 3; $i++) { 
-            
+        for ($i=0; $i < 3; $i++) {
             $slider=new SliderImage;
             $slider->image=null;
             $slider->save();
