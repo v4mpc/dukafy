@@ -8,7 +8,7 @@
 
 
 
-@if(Request::is('start')||Request::is('manage/template/*'))
+@if(Request::is('/')||Request::is('manage/template/*'))
 
 @include('template.template1.slide')
 
