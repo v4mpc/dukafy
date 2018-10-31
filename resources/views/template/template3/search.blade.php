@@ -100,7 +100,7 @@
 
 
 <div class="product-info text-left">
-<h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+<h5 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h5>
 
 <div class="description"></div>
 
@@ -165,7 +165,7 @@
 </div><!-- /.col -->
 <div class="col col-sm-8 col-lg-8">
 <div class="product-info">
-<h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+<h5 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h5>
 
 <div class="product-price">	
         @if($product->discount)

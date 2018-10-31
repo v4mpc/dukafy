@@ -53,7 +53,12 @@
 
         @endif
         </a>
+
+        
+        
     </div>
+
+    
     <!-- ============================================================= Header Logo : End============================================================= -->
     
                 <form class="navbar-search" action="{{route('search')}}" method="GET">
@@ -76,6 +81,7 @@
             </div>
         </div>
     </form>
+    
                 <ul class="navbar-mini-cart navbar-nav animate-dropdown nav pull-right flip">
         <li class="nav-item dropdown">
             <a href="cart.html" class="nav-link" data-toggle="dropdown">
@@ -84,7 +90,7 @@
                 <span class="cart-items-total-price total-price"><span  class="amount items-price">{{Cart::subtotal()}} TZS</span></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-mini-cart">
-                <li class="cart-glance-content">
+                <li class="cart-glance-content ">
                     <div class="widget_shopping_cart_content">
     
                         <ul class="cart_list product_list_widget cart-glance-content ">
@@ -126,6 +132,7 @@
         </li>
     </ul>
     
+    
     <ul class="navbar-wishlist nav navbar-nav pull-right flip">
             @if($settings->facebook!=null)
         <li class="nav-item">
@@ -148,6 +155,7 @@
         @endif
         
     </ul>
+
     
             </div><!-- /.row -->
     

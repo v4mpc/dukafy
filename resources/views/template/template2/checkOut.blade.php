@@ -88,7 +88,7 @@
 
   
 
-    <button id="confirm-order"  data-value="Place order" value="Place order" onclick="event.preventDefault();" class="button alt">Place Order</button>
+    <button   data-value="Place order" value="Place order"  class="button alt">Place Order</button>
 </div>
 </div>
 </div>

@@ -8,6 +8,12 @@ use Cart;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests\StoreOrder;
+use App\User;
+use Notification;
+use Mail;
+use App\Notifications\OrderCompleted as OrderCompletedNotification;
+use App\Setting;
+use App\Mail\OrderCompleted;
 
 class OrderController extends Controller
 {
@@ -43,11 +49,11 @@ class OrderController extends Controller
     {
 
         //check if order is already present
-        if (config('app.settings')->layout=='template1') {
-            if (session('id')) {
-                return redirect()->route('order.update', session('id'));
-            }
-        }
+        // if (config('app.settings')->layout=='template1') {
+        //     if (session('id')) {
+        //         return redirect()->route('order.update', session('id'));
+        //     }
+        // }
         // dd(Cart::content());
         $customer= new Customer;
         $customer->first_name=$request->first_name;
@@ -60,22 +66,42 @@ class OrderController extends Controller
 
         $order=new Order;
         $order->customer_id=$customer->id;
-        $order->status='pending';
+        $order->status='completed';
         $order->save();
 
         session(['id'=>$order->id]);
         foreach (Cart::content() as $item) {
             $order->products()->attach($item->id, ['quantity'=>$item->qty]);
         }
-       
+        Cart::destroy();
+        session()->forget('id');
+  
         // dd($request);
 
+
+        $users=User::all();
+  
+        // Notification::route('mail', 'taylor@laravel.com')
+        //     ->notify(new OrderCompleted($order));
+        $settings=Setting::orderBy('id', 'desc')->first();
+        Notification::send($users, new OrderCompletedNotification($order, $settings->email));
+  
+        Mail::send(new OrderCompleted($order, $settings->email));
+  
+
+        // if (config('app.settings')->layout=='template2') {
+        //     return redirect()->action('ThankYouController@index');
+        // } elseif (config('app.settings')->layout=='template1') {
+        //     return redirect()->action('ThankYouController@index');
+        // } elseif (config('app.settings')->layout=='template3') {
+        //     return redirect()->action('ThankYouController@index');
+        // }
         if (config('app.settings')->layout=='template2') {
-            return redirect()->action('ThankYouController@index');
+            return view('template.template2.thankyou');
         } elseif (config('app.settings')->layout=='template1') {
-            return redirect()->action('ThankYouController@index');
+            return view('template.template1.thankyou');
         } elseif (config('app.settings')->layout=='template3') {
-            return redirect()->action('ThankYouController@index');
+            return view('template.template3.thankyou');
         }
     }
 

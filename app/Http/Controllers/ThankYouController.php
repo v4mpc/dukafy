@@ -12,7 +12,6 @@ use App\Notifications\OrderCompleted as OrderCompletedNotification;
 use App\Setting;
 use App\Mail\OrderCompleted;
 
-
 class ThankYouController extends Controller
 {
     /**
@@ -22,37 +21,36 @@ class ThankYouController extends Controller
      */
     public function index()
     {
-          // dd('am here');
-          $order=Order::findOrFail(session('id'));
+        // dd('am here');
+        $order=Order::findOrFail(session('id'));
 
-          //send mail here
+        //send mail here
   
   
-          $order->status='completed';
-          $order->save();
+        $order->status='completed';
+        $order->save();
   
-          Cart::destroy();
-          session()->forget('id');
+        Cart::destroy();
+        session()->forget('id');
   
-          $users=User::all();
+        $users=User::all();
   
-          // Notification::route('mail', 'taylor@laravel.com')
-          //     ->notify(new OrderCompleted($order));
-       $settings=Setting::orderBy('id','desc')->first();
-          Notification::send($users, new OrderCompletedNotification($order,$settings->email));
+        // Notification::route('mail', 'taylor@laravel.com')
+        //     ->notify(new OrderCompleted($order));
+        $settings=Setting::orderBy('id', 'desc')->first();
+        Notification::send($users, new OrderCompletedNotification($order, $settings->email));
   
-           Mail::send(new OrderCompleted($order,$settings->email));
+        Mail::send(new OrderCompleted($order, $settings->email));
   
   
-        //  dd($users);
-          if(config('app.settings')->layout=='template2'){
-              return view('template.template2.thankyou');
-          }elseif(config('app.settings')->layout=='template1'){
-              return view('template.template1.thankyou');
-          }elseif(config('app.settings')->layout=='template3'){
+        dd($users);
+        if (config('app.settings')->layout=='template2') {
+            return view('template.template2.thankyou');
+        } elseif (config('app.settings')->layout=='template1') {
+            return view('template.template1.thankyou');
+        } elseif (config('app.settings')->layout=='template3') {
             return view('template.template3.thankyou');
         }
-  
     }
 
     /**
@@ -90,19 +88,18 @@ class ThankYouController extends Controller
 
         // Notification::route('mail', 'taylor@laravel.com')
         //     ->notify(new OrderCompleted($order));
-     $settings=Setting::orderBy('id','desc')->first();
+        $settings=Setting::orderBy('id', 'desc')->first();
         // Notification::send($users, new OrderCompleted($order,$settings->email));
-// dd(config('app.settings')->layout);
-         Mail::send(new OrderCompleted($order,$settings->email));
+        // dd(config('app.settings')->layout);
+        Mail::send(new OrderCompleted($order, $settings->email));
 
 
-    //   
-        if(config('app.settings')->layout=='template2'){
+        //
+        if (config('app.settings')->layout=='template2') {
             return view('template.template2.thankyou');
-        }else if(config('app.settings')->layout=='template1'){
+        } elseif (config('app.settings')->layout=='template1') {
             return view('template.template1.thankyou');
-        }else if(config('app.settings')->layout=='template3'){
-            
+        } elseif (config('app.settings')->layout=='template3') {
             return view('template.template3.thankyou');
         }
     }

@@ -64,7 +64,7 @@
                                 <textarea class="form-control unicase-form-control text-input" name="comment" id="" cols="30" rows="5" placeholder="Special Note of delivery..."></textarea>
                                 
                               </div>
-                          <button type="button" id="confirm-order" class="btn-upper btn btn-primary checkout-page-button">Place Order</button>
+                          <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Place Order</button>
                         </form>
                     </div>	
                     <!-- already-registered-login -->		

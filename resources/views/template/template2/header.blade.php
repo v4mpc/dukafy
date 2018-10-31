@@ -89,7 +89,7 @@
     display:block !important;
 }
 
-.navbar-mini-cart{
+.mini-cart{
     display:none !important;
 }
 

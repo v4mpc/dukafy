@@ -43,26 +43,6 @@
 </div>
         
 <!-- ========================================= SECTION – HERO : END ========================================= -->	
-<div class="wide-banners wow fadeInUp outer-bottom-vs">
-        <div class="row">
-    
-            <div class="col-md-7">
-                <div class="wide-banner cnt-strip">
-                    <div class="image">
-                        <img class="img-responsive" data-echo="assets/images/banners/1.jpg"  src="assets/images/blank.gif" alt="">
-                    </div>	
-                    <div class="strip">
-                        <div class="strip-inner">
-                            <h3 class="hidden-xs">samsung</h3>
-                            <h2>galaxy</h2>
-                        </div>	
-                    </div>
-                </div><!-- /.wide-banner -->
-            </div><!-- /.col -->
-    
-    
-        </div><!-- /.row -->
-    </div><!-- /.wide-banners -->
 </div>
     <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
     @if(count($featureds))
@@ -72,7 +52,7 @@
         {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
             <div class="row">
                 @foreach($featureds as $product) 
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-6 col-md-3">
                     <div class="products">
                     
                    	
@@ -142,7 +122,7 @@
             {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                     <div class="row">
                     @foreach($on_sales as $product)   
-                    <div class="col-xs-6 col-md-4 wow fadeInUp">
+                    <div class="col-xs-6 col-md-3 wow fadeInUp">
                         <div class="products">
                         
                       	
@@ -211,7 +191,7 @@
          {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                 <div class="row">
                  @foreach($recent_products as $product)   
-                 <div class="col-xs-6 col-md-4 wow fadeInUp">
+                 <div class="col-xs-6 col-md-3 wow fadeInUp">
                     <div class="products">
                     	
                     <div class="product-image">
@@ -224,7 +204,7 @@
                     
                     
                     <div class="product-info text-left">
-                    <h3 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h3>
+                    <h5 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h5>
                     
                     <div class="description"></div>
                     
