@@ -9,6 +9,7 @@
                 background: white;
                 color: {{$colour_code}};
                 margin-left:3%;
+                padding: 0.69em 1.134em;
             "  >Checkout</a>
                 </a>
             
