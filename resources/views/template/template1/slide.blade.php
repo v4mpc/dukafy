@@ -7,7 +7,7 @@
         @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
 
         <!-- Main Slider  -->
-        <div class="col-md-12 no-padding">
+        <div class="col-md-9 col-md-offset-3 no-padding">
 
           <!-- Main Slider Start -->
           <div class="tp-banner-container">
