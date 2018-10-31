@@ -89,8 +89,8 @@
     display:block !important;
 }
 
-.mini-cart{
-    display:none !important;
+.navbar-mini-cart{
+    visibility: hidden;
 }
 
 }
