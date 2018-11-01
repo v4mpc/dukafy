@@ -203,7 +203,7 @@
                     
                     
                     <div class="product-info text-left">
-                            <h5 class="hidden-xm hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>60?str_limit($product->name,60):$product->name}}</a></h5>
+                            <h5 class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>60?str_limit($product->name,60):$product->name}}</a></h5>
                             <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>37?str_limit($product->name,37):$product->name}}</a></h5>
 
                     <div class="description"></div>
