@@ -132,7 +132,7 @@
                         
                         
                         <div class="product-info text-left">
-                        <h5 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h5>
+                        <h5 class="name"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>60?str_limit($product->name,60):$product->name}}</a></h5>
                         
                         <div class="description"></div>
                         
