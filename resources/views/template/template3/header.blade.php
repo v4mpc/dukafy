@@ -68,6 +68,15 @@
 		<![endif]-->
 
 		<style>
+
+			h4,h5{
+				font-size: 16px;
+			}
+
+			.product-price{
+				font-size:18px;
+				weight:bolder;
+			}
 		
 		.thumb {
 	float: left;

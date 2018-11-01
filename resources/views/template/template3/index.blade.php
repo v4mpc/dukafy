@@ -66,11 +66,7 @@
                     
                     
                     <div class="product-info text-left">
-                    <h4
-                    
-                    class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h4
-                        
-                     >
+                    <h4 class="name"><a href="{{route('product.show',$product->id)}}">{{$product->name}}</a></h4>
                     
                     <div class="description"></div>
                     
