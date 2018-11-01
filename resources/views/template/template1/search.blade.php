@@ -38,7 +38,7 @@
                                 <span class="sale-tag">-{{$product->discount}}%</span> @endif
                                 <!-- Content -->
                                 <span class="tag">{{$product->category->name}}</span>
-                                <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                                <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>36?str_limit($product->name,36):$product->name}}</a></div>
                                 <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
                                 
                                 @if($product->discount)
