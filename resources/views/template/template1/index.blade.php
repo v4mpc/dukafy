@@ -36,7 +36,9 @@
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
-                  <div><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                  <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                  <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
+                  
                   
                   <!-- Reviews -->
                   @if($product->discount)
@@ -93,7 +95,9 @@
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
-              <div><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                  <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                  <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
+                  
                   <!-- Reviews -->
                   @if($product->discount)
                   <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
@@ -143,7 +147,9 @@
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
-                  <div><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                  <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                  <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
+                  
                   <!-- Reviews -->
                   @if($product->discount)
                   <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
