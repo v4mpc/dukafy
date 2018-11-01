@@ -24,35 +24,7 @@
                             <li>
                                 <p>Showing {{$products->firstItem()}}&ndash;{{$products->lastItem()}} of {{$products->total()}}</p>
                             </li>
-                            <!-- Short  -->
-                            {{--
-                            <li>
-                                <select class="selectpicker">
-          <option>Show 12 </option>
-          <option>Show 24 </option>
-          <option>Show 32 </option>
-        </select>
-                            </li> --}}
-                            <!-- by Default -->
-                            {{-- <li>
-                                <select class="selectpicker">
-          <option>Sort by Default </option>
-          <option>Low to High </option>
-          <option>High to Low </option>
-        </select>
-                            </li> --}}
-
-                            <!-- Grid Layer -->
-                            {{--
-                            <li class="grid-layer"> <a href="#."><i class="fa fa-list margin-right-10"></i></a> <a href="#." class="active"><i class="fa fa-th"></i></a>                                </li>
-                            <li>
-                                <!-- Columns -->
-                                <select class="selectpicker">
-          <option>4 Columns </option>
-          <option>3 Columns </option>
-          <option>5 Columns</option>
-        </select>
-                            </li> --}}
+                           
                         </ul>
                     </div>
 
@@ -66,8 +38,9 @@
                                 <span class="sale-tag">-{{$product->discount}}%</span> @endif
                                 <!-- Content -->
                                 <span class="tag">{{$product->category->name}}</span>
-                                <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
-                                <!-- Reviews -->
+                                <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
+                                <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
+                                
                                 @if($product->discount)
                                 <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
                                 </div>
