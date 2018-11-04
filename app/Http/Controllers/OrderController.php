@@ -14,6 +14,7 @@ use Mail;
 use App\Notifications\OrderCompleted as OrderCompletedNotification;
 use App\Setting;
 use App\Mail\OrderCompleted;
+use App\Account;
 
 class OrderController extends Controller
 {
@@ -47,7 +48,7 @@ class OrderController extends Controller
      */
     public function store(StoreOrder $request)
     {
-
+        dd();
         //check if order is already present
         // if (config('app.settings')->layout=='template1') {
         //     if (session('id')) {
@@ -67,6 +68,7 @@ class OrderController extends Controller
         $order=new Order;
         $order->customer_id=$customer->id;
         $order->status='completed';
+        $order->account_id=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;
         $order->save();
 
         session(['id'=>$order->id]);

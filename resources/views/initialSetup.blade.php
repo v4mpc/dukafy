@@ -1227,15 +1227,15 @@ $('#located').click(function(params) {
 		});
 		var slider1 = $('#slider1-demo').croppie({
 			viewport: {
-				width: 570,
-				height: 250,
+				width: 720,
+				height: 480,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 600,
-				height: 400
+				width: 800,
+				height: 500
 
 			}
 		});

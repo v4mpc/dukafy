@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Http\Resources\Products as ProductsResource;
+use App\Http\Resources\Product as ProductResource;
+
+use App\Order;
+use App\Http\Resources\Orders as OrdersResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +46,29 @@ Route::get('whois/{domain}', function ($domain) {
     $response = curl_exec($ch);
     echo $response;
     curl_close($ch);
+});
+
+
+
+
+//mobile api shall go here
+
+Route::prefix('mobile')->group(function () {
+    Route::get('hello', function () {
+        return response()->json('helo');
+    });
+
+    Route::get('products/{account_id}', function ($account_id) {
+        sleep(4);
+        return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->get());
+    });
+    Route::get('product/{id}', function ($id) {
+        sleep(4);
+        return new ProductResource(Product::withoutGlobalScopes()->find($id));
+    });
+
+    Route::get('orders/{account_id}', function ($account_id) {
+        sleep(4);
+        return  OrdersResource::collection(Order::withoutGlobalScopes()->where('account_id', $account_id)->get());
+    });
 });

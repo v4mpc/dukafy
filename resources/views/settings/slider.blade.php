@@ -77,7 +77,7 @@
                 <form action="{{route('update.slider',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
-                  <h4 class="info-text" align="center"> Upload Your Slider Images</h4>
+                  <h4 class="info-text" align="center"> Upload Your Slider Images (1920 x 466 pixels)</h4>
                   <br>
 
                   <div class="row">
@@ -369,7 +369,7 @@
 		});
 		var slider1 = $('#slider1-demo').croppie({
 			viewport: {
-				width: 570,
+				width: 700,
 				height: 250,
 				type: 'square',
 				enableOrientation: true,
