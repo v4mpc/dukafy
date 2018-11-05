@@ -10,10 +10,16 @@ use App\Http\Resources\Product as ProductResource;
 
 class ProductController extends Controller
 {
-    public function index($account_id='2', Request $request)
+    public function index($account_id, Request $request)
     {
         sleep(4);
         return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->get());
+    }
+
+    public function show($account_id, $id)
+    {
+        sleep(4);
+        return ProductResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->where('id', $id)->get());
     }
 
 
