@@ -143,6 +143,11 @@
     display: block;
 }
 
+
+.modal-lg {
+    max-width: 1118px !important;
+}
+
     </style>
 
 </head>

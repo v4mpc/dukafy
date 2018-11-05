@@ -181,7 +181,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="slider1-demo" class="img-container overflow-hidden">
+                                <div id="slider1-demo" class="img-container">
                                     <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
                                 </div>
                                 
@@ -252,7 +252,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="slider3-demo" class="img-container overflow-hidden">
+                                <div id="slider3-demo"  overflow-hidden">
                                     <!-- <img src="IMG_0024.JPG" style="display:none" class="img-thumbanail" id="logo-getter" alt=""> -->
                                 </div>
                                
@@ -369,15 +369,15 @@
 		});
 		var slider1 = $('#slider1-demo').croppie({
 			viewport: {
-				width: 700,
-				height: 250,
+				width: 1000,
+				height: 450,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 600,
-				height: 400
+				width: 1080,
+				height: 500
 
 			}
 		});
@@ -385,30 +385,30 @@
 
 		var slider2 = $('#slider2-demo').croppie({
 			viewport: {
-				width: 570,
-				height: 250,
+				width: 1000,
+				height: 450,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 600,
-				height: 400
+				width: 1080,
+				height: 500
 
 			}
 		});
 
 		var slider3 = $('#slider3-demo').croppie({
 			viewport: {
-				width: 570,
-				height: 250,
+				width: 1000,
+				height: 450,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 600,
-				height: 400
+				width: 1080,
+				height: 500
 
 			}
 		});

@@ -200,7 +200,9 @@
 
 
 
-
+.modal-lg {
+    max-width: 1118px !important;
+}
 
 
     </style>
@@ -1227,14 +1229,14 @@ $('#located').click(function(params) {
 		});
 		var slider1 = $('#slider1-demo').croppie({
 			viewport: {
-				width: 720,
-				height: 480,
+				width: 1000,
+				height: 450,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 800,
+				width: 1080,
 				height: 500
 
 			}
@@ -1243,30 +1245,30 @@ $('#located').click(function(params) {
 
 		var slider2 = $('#slider2-demo').croppie({
 			viewport: {
-				width: 570,
-				height: 250,
+				width: 1000,
+				height: 450,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 600,
-				height: 400
+				width: 1080,
+				height: 500
 
 			}
 		});
 
 		var slider3 = $('#slider3-demo').croppie({
 			viewport: {
-				width: 570,
-				height: 250,
+				width: 1000,
+				height: 450,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 600,
-				height: 400
+				width: 1080,
+				height: 500
 
 			}
 		});
