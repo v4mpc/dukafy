@@ -369,15 +369,15 @@
 		});
 		var slider1 = $('#slider1-demo').croppie({
 			viewport: {
-				width: 1000,
-				height: 450,
+				width: 1150,
+				height: 600,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 1080,
-				height: 500
+				width: 1200,
+				height: 650
 
 			}
 		});
@@ -385,30 +385,30 @@
 
 		var slider2 = $('#slider2-demo').croppie({
 			viewport: {
-				width: 1000,
-				height: 450,
+				width: 1150,
+				height: 600,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 1080,
-				height: 500
+				width: 1200,
+				height: 650
 
 			}
 		});
 
 		var slider3 = $('#slider3-demo').croppie({
 			viewport: {
-				width: 1000,
-				height: 450,
+				width: 1150,
+				height: 600,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 1080,
-				height: 500
+				width: 1200,
+				height: 650
 
 			}
 		});

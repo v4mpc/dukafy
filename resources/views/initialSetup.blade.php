@@ -201,7 +201,7 @@
 
 
 .modal-lg {
-    max-width: 1118px !important;
+    max-width: 1250px !important;
 }
 
 
@@ -1229,15 +1229,15 @@ $('#located').click(function(params) {
 		});
 		var slider1 = $('#slider1-demo').croppie({
 			viewport: {
-				width: 1000,
-				height: 450,
+				width: 1150,
+				height: 600,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 1080,
-				height: 500
+				width: 1200,
+				height: 650
 
 			}
 		});
@@ -1245,30 +1245,30 @@ $('#located').click(function(params) {
 
 		var slider2 = $('#slider2-demo').croppie({
 			viewport: {
-				width: 1000,
-				height: 450,
+				width: 1150,
+				height: 600,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 1080,
-				height: 500
+				width: 1200,
+				height: 650
 
 			}
 		});
 
 		var slider3 = $('#slider3-demo').croppie({
 			viewport: {
-				width: 1000,
-				height: 450,
+				width: 1150,
+				height: 600,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
 			},
 			boundary: {
-				width: 1080,
-				height: 500
+				width: 1200,
+				height: 650
 
 			}
 		});

@@ -145,7 +145,7 @@
 
 
 .modal-lg {
-    max-width: 1118px !important;
+    max-width: 1250px !important;
 }
 
     </style>
