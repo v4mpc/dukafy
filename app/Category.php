@@ -7,6 +7,8 @@ use App\Scopes\AccountScope;
 
 class Category extends Model
 {
+    protected $fillable=['name','account_id'];
+
     public function subCategories()
     {
         return $this->hasMany('App\SubCategory');
