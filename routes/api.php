@@ -53,4 +53,5 @@ Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
     Route::post('logout', 'API\AuthController@logout');
     Route::get('products/{account_id}', 'API\ProductController@index');
     Route::get('orders/{account_id}', 'API\OrderController@index');
+    Route::get('orders/{account_id}/{id}', 'API\OrderController@show');
 });

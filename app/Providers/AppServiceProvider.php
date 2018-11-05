@@ -12,6 +12,7 @@ use App\BrandImage;
 use App\Order;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Http\Resources\Json\Resource;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -135,6 +136,8 @@ class AppServiceProvider extends ServiceProvider
             View::share('out_stock_count', $out_stock_count);
             View::share('category_count', $category_count);
         }
+
+        Resource::withoutWrapping();
     }
 
     /**

@@ -12,6 +12,7 @@ class ProductController extends Controller
 {
     public function index($account_id='2', Request $request)
     {
+        sleep(4);
         return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->get());
     }
 }

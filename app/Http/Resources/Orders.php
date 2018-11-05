@@ -17,10 +17,8 @@ class Orders extends Resource
         return[
             'id'=>$this->id,
             'customer_name'=>$this->customer->first_name." ".$this->customer->last_name,
-            'customer_email'=>$this->customer->email,
-            'customer_phone'=>$this->customer->phone,
-            'customer_address'=>$this->customer->address,
-            'customer_comment'=>$this->customer->comment,
+            'products'=>count($this->products),
+            'amount'=>number_format($this->totalCost()),
             'time'=>$this->created_at->diffForHumans()
         ];
     }
