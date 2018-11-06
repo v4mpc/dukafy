@@ -306,7 +306,7 @@
 			viewport: {
 				// width: 205,
 				// height: 47,
-                width: 205,
+                width: 300,
 				height: 100,
 				type: 'square',
 				enableOrientation: true,
@@ -314,7 +314,7 @@
                
 			},
 			boundary: {
-				width: 300,
+				width: 350,
 				height: 300
 
 			},
