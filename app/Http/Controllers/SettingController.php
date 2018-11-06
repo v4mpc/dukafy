@@ -72,23 +72,7 @@ class SettingController extends Controller
         if ($request->logo) {
             $png_url = "logo-".time().".png";
             $location = public_path('images/' . $png_url);
-            // Image::make(file_get_contents($request->logo))->save($location);
-
-            $img=Image::make(file_get_contents($request->logo));
-            $image_width=$img->width();
-            $image_height=$img->height();
-
-        
-            $img->resize(null, 50, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($location);
-        
-        
-            // else {
-            //     $img->resize(, null, function ($constraint) {
-            //         $constraint->aspectRatio();
-            //     })->save($location);
-            // }
+            Image::make(file_get_contents($request->logo))->save($location);
             $setting->logo=$png_url;
         }
 
@@ -404,23 +388,7 @@ class SettingController extends Controller
         if ($request->logo) {
             $png_url = "logo-".time().".png";
             $location = public_path('images/' . $png_url);
-            // Image::make(file_get_contents($request->logo))->save($location);
-
-            $img=Image::make(file_get_contents($request->logo));
-            $image_width=$img->width();
-            $image_height=$img->height();
-
-        
-            $img->resize(null, 50, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($location);
-        
-        
-            // else {
-            //     $img->resize(, null, function ($constraint) {
-            //         $constraint->aspectRatio();
-            //     })->save($location);
-            // }
+            Image::make(file_get_contents($request->logo))->save($location);
             $setting->logo=$png_url;
         } else {
             $setting->logo=null;

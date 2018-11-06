@@ -304,18 +304,17 @@
 		});
 		var basic = $('#image-demo').croppie({
 			viewport: {
-				// width: 205,
-				// height: 47,
-                width: 300,
-				height: 100,
+				
+                width: 250,
+				height: 90,
 				type: 'square',
 				enableOrientation: true,
 				enableExif: true
                
 			},
 			boundary: {
-				width: 350,
-				height: 300
+				width: 300,
+				height: 150
 
 			},
 
