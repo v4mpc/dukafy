@@ -50,10 +50,10 @@ Route::get('whois/{domain}', function ($domain) {
 
 Route::post('mobile/login', 'API\AuthController@login');
 Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
+    Route::get('home/{account_id}', 'API\AccountController@home');
     Route::post('logout', 'API\AuthController@logout');
     Route::get('categories/{account_id}', 'API\CategoryController@index');
     Route::post('category', 'API\CategoryController@create');
-
     Route::get('products/{account_id}', 'API\ProductController@index');
     Route::get('product/{account_id}/{id}', 'API\ProductController@show');
     Route::get('orders/{account_id}', 'API\OrderController@index');
