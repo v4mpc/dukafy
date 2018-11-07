@@ -290,7 +290,7 @@ input.visually-hidden:focus + label {
                                     maxWordCount: -1,
 
                                     // Maximum allowed Char Count
-                                    maxCharCount: 255
+                                    maxCharCount: 65535
 
                                   }
                                 });
@@ -394,7 +394,7 @@ input.visually-hidden:focus + label {
                       </div>
 
                       <div class="row" style="margin-top:50%;" >
-                      <div class="col-md-6 image-1" style="{{(count($product->images)==2)?"":"display:none;"}}">
+                      <div class="col-md-6 image-1" style="{{(count($product->images)>=2)?"":"display:none;"}}">
                 <div class="row">
                     <div class="col-md-12">
                     <a href="#" class="logo-input-button"> <img 
@@ -416,10 +416,10 @@ input.visually-hidden:focus + label {
                 </div>
 
             </div>
-            <div class="col-md-6 image-2" style="{{(count($product->images)==3)?"":"display:none;"}}">
+            <div class="col-md-6 image-2" style="{{(count($product->images)>=3)?"":"display:none;"}}">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="#" class="logo-input-button"> <img src="{{$product->get_image(1)}}"
+                        <a href="#" class="logo-input-button"> <img src="{{$product->get_image(2)}}"
                                 width="200" id="2" class="img-thumbnail img-src-2" alt="" srcset=""></a>
                     </div>
 
@@ -440,7 +440,7 @@ input.visually-hidden:focus + label {
 
 <br>
         <div class="row"  >
-            <div class="col-md-6 image-3" style="{{(count($product->images)==4)?"":"display:none;"}}">
+            <div class="col-md-6 image-3" style="{{(count($product->images)>=4)?"":"display:none;"}}">
                 <div class="row">
                     <div class="col-md-12">
                         <a href="#" class="logo-input-button"> <img src="{{$product->get_image(3)}}"
@@ -462,7 +462,7 @@ input.visually-hidden:focus + label {
                 </div>
 
             </div>
-            <div class="col-md-6 image-4" style="{{(count($product->images)==5)?"":"display:none;"}}">
+            <div class="col-md-6 image-4" style="{{(count($product->images)>=5)?"":"display:none;"}}">
                 <div class="row">
                     <div class="col-md-12">
                         <a href="#" class="logo-input-button"> <img src="{{$product->get_image(4)}}"
@@ -699,6 +699,10 @@ function addCommas(nStr) {
     $(document).ready(function () {
 
 
+   var imagesUrl={!!$product->images_json_encoded()!!};
+
+  
+
 
         //lets declare the images object here
         var images = {
@@ -706,6 +710,10 @@ function addCommas(nStr) {
             size: 0,
             cropping: NaN //the size should be in kilobites
         }
+
+        images.image={!!$product->images_json_encoded()!!};
+
+
 
            var basic = $('#image-demo').croppie({
             viewport: {
@@ -736,6 +744,31 @@ function addCommas(nStr) {
           return ((string.length ) / 1.37);
           
         }
+//image url to base64 converter
+            function toDataUrl(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                var reader = new FileReader();
+                reader.onloadend = function () {
+                    callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
+        }
+
+          // for (let index = 0; index < imagesUrl.length; index++) {
+
+          // toDataUrl(imagesUrl[index], function (myBase64) {
+          // images.image.push(myBase64)
+          //   });
+
+
+          //   }
+          console.log(imagesUrl)
+
         function handleFiles(files) {
 
 

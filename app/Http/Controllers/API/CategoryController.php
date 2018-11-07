@@ -18,6 +18,9 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         $category=Category::firstOrCreate(['name'=>$request->name,'account_id'=>$request->account_id]);
-        return response()->json($category);
+        return response()->json([
+            'id'=>$category->id,
+            'name'=>$category->name
+        ]);
     }
 }

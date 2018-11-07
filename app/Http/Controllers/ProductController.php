@@ -78,6 +78,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product=Product::findOrFail($id);
+        // dd($product->images_json_encoded());
         $categories=Category::all();
 
         

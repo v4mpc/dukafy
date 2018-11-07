@@ -80,7 +80,7 @@ class Product extends Model
     {
         // dd($this->images);
 
-        if ($index==count($this->images)-1||$index==0) {
+        if ($index<=count($this->images)-1||$index==0) {
             return 'data:image/png;base64,' . base64_encode(file_get_contents(asset('images/'.$this->images[$index]->image))); # code...
         }
     }
@@ -99,6 +99,7 @@ class Product extends Model
     {
         $images=[];
         foreach ($this->images as $key=>$image) {
+            // $images[]=asset('images/'.$image->image);
             $images[]=$this->get_image($key);
         }
         return json_encode($images);

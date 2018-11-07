@@ -40,7 +40,7 @@ class StoreProduct extends FormRequest
             'price'=>'required|numeric',
             // 'category_id'=>'required',
             // 'sub_category_id'=>'required',
-            'description'=>'nullable|sometimes|max:255',
+            'description'=>'nullable|sometimes|max:65535',
             // 'images[]'=>'required|image',
             // 'variation[]'=>'sometimes|max:255',
             // 'variation_images[]'=>'sometimes|image|max:150',
