@@ -17,12 +17,15 @@ class CheckDomain
      */
     public function handle($request, Closure $next)
     {
-        $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
+        if (!$request->is('api/*')) {
+            $account=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first();
         
-        if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
-            return $next($request);
+            if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
+                return $next($request);
+            }
+    
+            return abort(404);
         }
-
-        return abort(404);
+        return $next($request);
     }
 }

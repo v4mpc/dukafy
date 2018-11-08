@@ -58,4 +58,9 @@ class Account extends Model
 
         return array_keys($products);
     }
+
+    public function orderCount()
+    {
+        return count($this->orders());
+    }
 }
