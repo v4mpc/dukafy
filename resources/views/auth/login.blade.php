@@ -33,7 +33,10 @@
                   <div class="p-1">
                     @if(count(App\Setting::all()))
                       @if($settings->logo!=null)
-                  <img src="{{asset('images/'.$settings->logo)}}" class="responsive"  lt="branding logo"> 
+                  <img src="{{asset('images/'.$settings->logo)}}" class="responsive" style="
+                  width: 250px;
+                  height: 90px;
+              " lt="branding logo"> 
                   @elseif($settings->logo_text!=null)
                
             <h3 style="color:{{$colour_code}};margin-top: 30px;" id="logo">{{$settings->logo_text}}</h3>

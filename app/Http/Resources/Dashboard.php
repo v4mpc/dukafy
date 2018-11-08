@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\Resource;
 use App\Http\Resources\Products;
 use App\Product;
+use Carbon;
 
 class Dashboard extends Resource
 {
@@ -33,6 +34,8 @@ class Dashboard extends Resource
             'store_domain'=>$this->domain,
             'dashboard_domain'=>'demostore.dukafy.co.tz/login',
             'status'=>$this->status,
+            'elapsed'=>$this->started_at->diffInDays(Carbon::now()),
+            'eta'=>$this->ended_at->diffInDays(Carbon::now()),
             'started_at'=>$this->started_at->toFormattedDateString(),
             'ended_at'=>$this->ended_at->toFormattedDateString(),
 

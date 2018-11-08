@@ -116,12 +116,8 @@
 	 background: #25d366;
 
 }
-		</style>
+	
 
-{{-- @if(Request::is('start')) --}}
-
-
-<style>
 	@if(Request::is('/'))
 	.section-hack{
 		margin-top: 35%;
@@ -159,7 +155,10 @@
 
 
 
+.tag.sale{
+	background-color: {{$colour_code}};
 
+}
 </style>
 
 

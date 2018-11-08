@@ -78,8 +78,10 @@
         font-size: 12px;
     }
 
+
+
     .product-outer{
-        /* height: 0px !important; */
+        height: unset !important;
     }
 .item-col-4 .product {
     width: 50%;
