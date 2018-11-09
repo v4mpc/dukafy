@@ -37,17 +37,24 @@
           </div>
         </div>
       </div>
+      
+      
+      
+      @if(Auth::user()->account->isMaxProduct())
       <div class="content-header-right col-md-6 col-12">
         <div class="dropdown float-md-right">
           <a href="{{route('products.create')}}" class="btn btn-float btn-round btn-primary">Add Product</a>
 
         </div>
       </div>
+      @endif
+    
     </div>
     <div class="content-body">
       <!-- Zero configuration table -->
       <section id="configuration">
         <div class="row">
+          
           <div class="col-12">
             <div class="card">
               <div class="card-header">
@@ -65,7 +72,13 @@
               </div>
               <div class="card-content collapse show">
                 <div class="card-body card-dashboard">
-
+                    @if(!Auth::user()->account->isMaxProduct())A
+                    <li class="nav-item d-none d-md-block alert alert-danger mb-2" role="alert">
+            
+                        <strong>Oops Maximum Products Reached!</strong> Contact the System Administator!
+                      
+                    </li>
+                    @endif
                   <table class="table table-striped table-bordered zero-configuration">
                     <thead>
                       <tr>

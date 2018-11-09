@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Account;
+use Carbon;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,6 +28,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+
+
+        //lets get all the accounts
+        #then we will check if they are expired date has reached.
+        #if expiry date reached then we will deactivate the account
     }
 
     /**

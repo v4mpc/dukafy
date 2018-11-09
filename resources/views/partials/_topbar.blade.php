@@ -28,6 +28,13 @@
               <input class="input" type="text" placeholder="Explore...">
             </div>
           </li> --}}
+          @if(!Auth::user()->account->status)
+          <li class="nav-item d-none d-md-block alert alert-danger mb-2" role="alert">
+            
+              <strong>Oops Your Account has Expired!</strong> Contact the System Administator!
+            
+          </li>
+          @endif
         </ul>
         <ul class="nav navbar-nav float-right">
           <li class="dropdown dropdown-user nav-item">

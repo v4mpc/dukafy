@@ -16,11 +16,19 @@ use App\Events\ProductUpdated;
 
 class ProductController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->middleware('check.products')->only(['store','create']);
+    }
     public function index()
     {
         // $products=Product::where('featured',0)->where('out_stock',0)->get();

@@ -64,4 +64,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+
+    public function account()
+    {
+        return  $this->belongsTo('App\Account');
+    }
 }

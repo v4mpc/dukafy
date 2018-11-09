@@ -34,8 +34,8 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
 Route::post('request_account', 'AccountController@store')->name('request_account');
 
 
-
-//client store routes
+Route::middleware(['check.account'])->group(function () {
+    //client store routes
 
     //the routes are store dependant
     //middleware will help us with that
@@ -61,6 +61,7 @@ Route::post('request_account', 'AccountController@store')->name('request_account
         $order = App\Order::find(7);
         return new App\Mail\OrderCompleted($order, 'yona101992@gmail.com');
     });
+});
 //login routes login and admin i think
 Auth::routes();
 // client dashboard routes

@@ -63,4 +63,19 @@ class Account extends Model
     {
         return count($this->orders());
     }
+
+    public function totalProducts()
+    {
+        return count($this->products);
+    }
+
+    public function requiredProducts()
+    {
+        return $this->package->product;
+    }
+
+    public function isMaxProduct()
+    {
+        return $this->requiredProducts()>$this->totalProducts();
+    }
 }
