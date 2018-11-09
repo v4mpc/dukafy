@@ -62,7 +62,7 @@ class Account extends Model
 
     public function orderCount()
     {
-        return count($this->orders());
+        return count($this->orders);
     }
 
     public function totalProducts()
