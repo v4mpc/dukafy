@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon;
 
 class Account extends Model
 {
@@ -77,5 +78,9 @@ class Account extends Model
     public function isMaxProduct()
     {
         return $this->requiredProducts()>$this->totalProducts();
+    }
+    public function hasExpired()
+    {
+        return Carbon::now()->gt($this->ended_at);
     }
 }

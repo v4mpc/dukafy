@@ -31,8 +31,20 @@ class Kernel extends ConsoleKernel
 
 
 
-        //lets get all the accounts
-        #then we will check if they are expired date has reached.
+       
+        $schedule->call(function () {
+            //lets get all the accounts which are not expired
+            $accounts=Account::where('id', '!=', 1)->where('status', 1)->get();
+
+            foreach ($accounts as $account) {
+                if ($account->hasExpired()) {
+                    $account->status=0;
+                    $account->save();
+                }
+            }
+        })->everyMinute();
+        
+       
         #if expiry date reached then we will deactivate the account
     }
 
