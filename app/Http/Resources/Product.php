@@ -23,7 +23,8 @@ class Product extends Resource
             'images'=>ProductImage::collection($this->images),
             'out_stock'=>$this->out_stock,
             'featured'=>$this->featured,
-            'discount'=>$this->discount
+            'discount'=>$this->discount,
+            'description'=>$this->description
 
         ];
     }

@@ -130,64 +130,14 @@
 
                             </div>
                           </div>
-                          {{-- <div class="form-group row">
+                       
+                          
 
-                            <label class="col-md-3 label-control" for="projectinput1">Expiry Date</label>
-                            <div class="col-md-7">
-                                <input type="date" name="ended_at" class="form-control"  aria-describedby="basic-addon2" value="{{$account->ended_at->format('Y-m-d')}}"
-                                  >
-                            </div>
-                          </div> --}}
-                          <h4 class="form-section"><i class="ft-message-square"></i> Bongo Live info</h4>
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Send Name</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->send_name or old('send_name')}}" placeholder="Send Name" name="send_name">
-                            </div>
-                          </div>
+                      
 
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">User Name</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->bl_username or old('bl_username')}}" placeholder="User Name" name="bl_username">
-                            </div>
-                          </div>
 
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Password</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->bl_password or old('bl_password')}}" placeholder="Password" name="bl_password">
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">API KEY</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->bl_api_key or old('bl_api_key')}}" placeholder="API KEY" name="bl_api_key">
-                            </div>
-                          </div>
-
-                          <h4 class="form-section"><i class="ft-mail"></i> MailJet info</h4>
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Sender Email</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->mj_sender_email or old('mj_sender_email')}}" placeholder="Send Name" name="mj_sender_email">
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Private API KEY</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->mj_apikey_private or old('mj_apikey_private')}}" placeholder="User Name" name="mj_apikey_private">
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Public API KEY</label>
-                            <div class="col-md-7">
-                              <input type="text" id="name" class="form-control" value="{{$account->mj_apikey_public or old('mj_apikey_public')}}"  name="mj_apikey_public">
-                            </div>
-                          </div>
+                         
+                        
 
 
                           
