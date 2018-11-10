@@ -60,7 +60,8 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    <h3 class="info">{{count($account->customers)}}</h3>
+                    
+                    <h3 class="success">{{count($account->customers)}}</h3>
                     <h6>Customers</h6>
                   </div>
                   <div>
@@ -78,11 +79,11 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    {{-- <h3 class="warning">{{$sent_sms}}</h3> --}}
+                    {{count($account->products)}}
                     <h6>Products</h6>
                   </div>
                   <div>
-                    <i class="icon-speech warning font-large-2 float-right"></i>
+                    <i class="icon-bag warning font-large-2 float-right"></i>
                   </div>
                 </div>
 
@@ -96,11 +97,11 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    {{-- <h3 class="success">{{$sent_email}}</h3> --}}
+                    <h3 class="success">{{count($account->categories)}}</h3>
                     <h6>Categories</h6>
                   </div>
                   <div>
-                    <i class="icon-envelope-open success font-large-2 float-right"></i>
+                    <i class="icon-layers success font-large-2 float-right"></i>
                   </div>
                 </div>
 
@@ -108,20 +109,28 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-12">
+        <div class="col-xl-3 col-lg-6 col-3">
           <div class="card pull-up">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    <h3 class="danger">Next Due</h3>
+                    <h3 class="warning">Expiring</h3>
                     @if(!is_null($account->ended_at))
                     <h6>{{Carbon::createFromFormat('Y-m-d H:i:s', $account->ended_at)->diffForHumans()}}</h6>
                     @endif
                   </div>
-
+                  <div>
+                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                  </div>
                 </div>
-
+                <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                    @if(!is_null($account->ended_at))
+                  <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%" aria-valuenow="{{strtotime(Carbon::now())-strtotime($account->started_at)}}"
+                    aria-valuemin="0" aria-valuemax="{{strtotime($account->ended_at)-strtotime($account->started_at)}}"></div>
+                    @endif
+                </div>
+             
               </div>
             </div>
           </div>

@@ -48,7 +48,7 @@ class OrderController extends Controller
      */
     public function store(StoreOrder $request)
     {
-        dd();
+        // dd();
         //check if order is already present
         // if (config('app.settings')->layout=='template1') {
         //     if (session('id')) {

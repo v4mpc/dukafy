@@ -259,9 +259,15 @@ class AccountController extends Controller
 
     public function renew(Request $request, $id)
     {
+        //lets get the subscription
+        $subscription=Subscription::findOrFail($request->subscription_id);
         $account=Account::findOrFail($id);
         $account->status=1;
-        $account->ended_at=date('Y-m-d h:i:s', strtotime($request->ended_at));
+        $account->subscription_id=$request->subscription_id;
+        $account->package_id=$request->package_id;
+        
+        $account->ended_at=Carbon::now()->addMonths($subscription->subscription);
+        
         $account->save();
         return redirect()->back();
     }
