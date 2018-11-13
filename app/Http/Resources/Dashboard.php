@@ -30,7 +30,7 @@ class Dashboard extends Resource
             'name'=>$this->name,
             'email'=>$this->email,
             'phone'=>$this->phone,
-            'percentage'=>round(count($this->products)/number_format($this->package->product)),
+            'percentage'=>round((count($this->products)/$this->package->product)*100),
             'store_domain'=>$this->domain,
             'dashboard_domain'=>'demostore.dukafy.co.tz/login',
             'status'=>$this->status,
