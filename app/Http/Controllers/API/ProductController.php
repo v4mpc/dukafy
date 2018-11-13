@@ -83,15 +83,15 @@ class ProductController extends Controller
         $product->save();
 
 
-        // foreach ($request->images as $image) {
-        //     $filename = Auth::user()->account_id.time().uniqid().".png";
-        //     $location=public_path('images/'.$filename);
-        //     Image::make(file_get_contents($image))->save($location);
-        //     $product_image=new ProductImage;
-        //     $product_image->image=$filename;
-        //     $product_image->product_id=$product->id;
-        //     $product_image->save();
-        // }
+        foreach ($request->images as $image) {
+            $filename = $account_id.time().uniqid().".png";
+            $location=public_path('images/'.$filename);
+            Image::make(file_get_contents($image))->save($location);
+            $product_image=new ProductImage;
+            $product_image->image=$filename;
+            $product_image->product_id=$product->id;
+            $product_image->save();
+        }
 
         return response()->json($product);
     }
