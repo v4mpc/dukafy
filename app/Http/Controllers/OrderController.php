@@ -83,6 +83,9 @@ class OrderController extends Controller
 
         $users=User::all();
         //phone notification
+        #TODO
+        //should queue the notification so as not to delay the web system
+        send_notification('all', 'Order Completed', 'Total '.number_format($order->totalCost()).' TZS', ['orderId'=>$order->id]);
 
         $settings=Setting::where('account_id', $order->account_id)->orderBy('id', 'desc')->first();
         //dashboard notification

@@ -9,24 +9,21 @@ function getAccountId($request)
 
 
 
-function send_notification($topic='all', $title='Order Completed', $body='300 TZS')
+function send_notification($account='all', $title='Order Completed', $body='300 TZS', $data)
 {
     $posturl="https://fcm.googleapis.com/fcm/send";
 
     $data = array(
         "notification" =>array(
-            "title"=>"Order Completed",
-            "body"=>"Total 33,000 TZS",
+            "title"=>$title,
+            "body"=>$body,
             "sound"=>"default",
             "click_action"=>"FCM_PLUGIN_ACTIVITY",
             "icon"=>"fcm_push_icon"
         ),
        
-        "data"=>array(
-            "param1"=>"value1",
-            "param2"=>"value2"
-        ),
-        "to"=>"/topics/all",
+        "data"=>$data,
+        "to"=>"/topics/".$account,
         "priority"=>"high",
         "restricted_package_name"=>""
     );
