@@ -82,13 +82,13 @@ class OrderController extends Controller
 
 
         $users=User::all();
-  
-        // Notification::route('mail', 'taylor@laravel.com')
-        //     ->notify(new OrderCompleted($order));
-        $settings=Setting::orderBy('id', 'desc')->first();
+        //phone notification
+
+        $settings=Setting::where('account_id', $order->account_id)->orderBy('id', 'desc')->first();
+        //dashboard notification
         Notification::send($users, new OrderCompletedNotification($order, $settings->email));
-  
-        Mail::send(new OrderCompleted($order, $settings->email));
+        //email Notification
+        Mail::to($request->email)->cc($settings->email)->send(new OrderCompleted($order, $settings));
   
 
         // if (config('app.settings')->layout=='template2') {

@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderCompleted extends Mailable
+class OrderCompleted extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -15,16 +15,17 @@ class OrderCompleted extends Mailable
      * Create a new message instance.
      *
      * @return void
-     * 
-     * 
+     *
+     *
      */
 
     public $order;
+    public $settings;
 
-    public function __construct($order,$seller_email)
+    public function __construct($order, $settings)
     {
         $this->order=$order;
-        $this->seller_email=$seller_email;
+        $this->settings=$settings;
     }
 
     /**
@@ -34,6 +35,6 @@ class OrderCompleted extends Mailable
      */
     public function build()
     {
-        return $this->to([$this->order->customer->email,$this->seller_email])->view('emails.orders.completed');
+        return $this->from(['address'=>$this->settings->email,'name'=>$this->settings->store_name])->view('emails.orders.completed');
     }
 }
