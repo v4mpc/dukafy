@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+
 // use App\Mail\OrderCompleted as Mailable;
 
 class OrderCompleted extends Notification //implements ShouldQueue
@@ -19,8 +20,8 @@ class OrderCompleted extends Notification //implements ShouldQueue
      */
     public $order;
 
-    public function __construct($order,$seller_email)
-    {   
+    public function __construct($order, $seller_email)
+    {
         $this->seller_email=$seller_email;
         $this->order=$order;
     }
@@ -48,7 +49,6 @@ class OrderCompleted extends Notification //implements ShouldQueue
         // //             ->view('emails.orders.completed',['order'=>$this->order])->to([$this->order->customer->email,$this->seller_email]);
 
         //             return (new Mailable($this->order))->to([$this->order->customer->email,$this->seller_email]);
-                    
     }
 
     /**
@@ -62,7 +62,7 @@ class OrderCompleted extends Notification //implements ShouldQueue
         return [
         
             'order_id'=>$this->order->id,
-            'account_id'=$this->order->account_id
+            // 'account_id'=$this->order->account_id
         ];
     }
 }
