@@ -15,7 +15,7 @@ function send_notification($account='all', $title='Order Completed', $body='300 
 
     $data = array(
         "notification" =>array(
-            "title"=>$title,
+            "title"=>'Dukafy',
             "body"=>$body,
             "sound"=>"default",
             "click_action"=>"FCM_PLUGIN_ACTIVITY",
