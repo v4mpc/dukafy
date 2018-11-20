@@ -51,8 +51,8 @@ class Order extends Model
                 if ($notification->data['order_id']==$this->id) {
                     return 0;
                 }
-                return 1;
             }
         }
+        return 1;
     }
 }
