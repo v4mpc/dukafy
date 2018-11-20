@@ -62,6 +62,7 @@ class OrderCompleted extends Notification //implements ShouldQueue
         return [
         
             'order_id'=>$this->order->id,
+            'account_id'=$this->order->account_id
         ];
     }
 }

@@ -14,12 +14,15 @@ class Orders extends Resource
      */
     public function toArray($request)
     {
+        // dd($request->user_id);
         return[
             'id'=>$this->id,
             'customer_name'=>$this->customer->first_name." ".$this->customer->last_name,
             'products'=>count($this->products),
             'amount'=>number_format($this->totalCost()),
-            'time'=>$this->created_at->diffForHumans()
+            'time'=>$this->created_at->diffForHumans(),
+            'read'=>$this->readOrder($request->user_id),
+            
         ];
     }
 }

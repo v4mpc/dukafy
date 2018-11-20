@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Scopes\AccountScope;
+use App\User;
 
 class Order extends Model
 {
@@ -38,5 +39,20 @@ class Order extends Model
         parent::boot();
 
         static::addGlobalScope(new AccountScope);
+    }
+
+    public function readOrder($user_id)
+    {
+        #get the user
+        $user=User::withOutGlobalScopes()->findOrFail($user_id);
+        // dd($user->unreadNotifications);
+        foreach ($user->unreadNotifications as $notification) {
+            if ($notification->type=='App\Notifications\OrderCompleted') {
+                if ($notification->data['order_id']==$this->id) {
+                    return 0;
+                }
+                return 1;
+            }
+        }
     }
 }

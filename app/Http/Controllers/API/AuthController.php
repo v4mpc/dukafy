@@ -80,7 +80,8 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'account_id'=>auth()->user()->account_id
+            'account_id'=>auth()->user()->account_id,
+            'user_id'=>auth()->user()->id,
         ]);
     }
 }
