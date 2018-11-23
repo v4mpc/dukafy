@@ -34,12 +34,15 @@
                                     <br> Please check back later.</p>
                                 <div class="mt-2"><i class="la la-cog spinner font-large-2"></i></div>
                             </div>
-                            {{--
+                          
                             <hr>
                             <p class="socialIcon card-text text-center pt-2 pb-2">
                                 <a href="#" class="btn btn-social-icon mr-1 mb-1 btn-outline-facebook">
-                            <span class="la la-facebook"></span>
+                            Powered By Dukafy
                           </a>
+                            </p>
+
+                            {{--
                                 <a href="#" class="btn btn-social-icon mr-1 mb-1 btn-outline-twitter">
                             <span class="la la-twitter"></span>
                           </a>
@@ -50,6 +53,8 @@
                             <span class="la la-github font-medium-4"></span>
                           </a>
                             </p> --}}
+
+
                         </div>
                     </div>
                 </div>

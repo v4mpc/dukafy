@@ -27,7 +27,7 @@
       @if(Cart::count())
       <h5><span class="itm-cont">{{Cart::count()}}</span> Item(s) in Shopping Cart</h5>
       <div class="table-responsive">
-      <table class="table">
+      <table class="table hidden-xs hidden-sm">
         <thead>
           <tr>
             <th>Items</th>
@@ -95,6 +95,31 @@
 
           @endforeach
         </tbody>
+      </table>
+
+
+      <table class="table hidden-md hidden-lg">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Total</th>
+          </tr>
+
+        </thead>
+        <tbody>
+            @foreach(Cart::content() as $item)
+          <tr>
+            <td>{{$item->name}} <strong>X</strong> {{$item->qty}}</td>
+            <td>{{number_format($item->price*$item->qty)}}</td>
+          </tr>
+          @endforeach
+        </tbody>
+        {{-- <tfoot>
+          <tr>
+            <th></th>
+            <th>{{Cart::subtotal()}} TZS</th>
+          </tr>
+        </tfoot> --}}
       </table>
     </div>
       <div class="g-totel">
