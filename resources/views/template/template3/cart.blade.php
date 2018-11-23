@@ -7,7 +7,7 @@
                 <div class="shopping-cart">
                     <div class="col-md-12 col-sm-12 shopping-cart-table ">
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered hidden-xs hidden-sm">
                 <thead>
                     <tr>
                         <th class="cart-romove item">Remove</th>
@@ -65,6 +65,24 @@
                     
                 </tbody><!-- /tbody -->
             </table><!-- /table -->
+            <table class="table hidden-md hidden-lg">
+                    <thead>
+                      <tr>
+                        <th>Item</th>
+                        <th>Total</th>
+                      </tr>
+            
+                    </thead>
+                    <tbody>
+                        @foreach(Cart::content() as $item)
+                      <tr>
+                        <td>{{$item->name}} <strong>X</strong> {{$item->qty}}</td>
+                        <td>{{number_format($item->price*$item->qty)}}</td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                   
+                  </table>
         </div>
     </div><!-- /.shopping-cart-table -->				
    
@@ -98,6 +116,7 @@
                    
             </tbody><!-- /tbody -->
         </table><!-- /table -->
+        
         @endif
     </div><!-- /.cart-shopping-total -->			</div><!-- /.shopping-cart -->
 

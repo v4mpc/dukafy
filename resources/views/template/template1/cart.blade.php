@@ -114,12 +114,7 @@
           </tr>
           @endforeach
         </tbody>
-        {{-- <tfoot>
-          <tr>
-            <th></th>
-            <th>{{Cart::subtotal()}} TZS</th>
-          </tr>
-        </tfoot> --}}
+       
       </table>
     </div>
       <div class="g-totel">

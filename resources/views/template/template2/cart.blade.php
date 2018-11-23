@@ -10,7 +10,7 @@
         <form>
             <div class="table-responsive">
 
-<table class="table shop_table_responsive cart">
+<table class="table shop_table_responsive cart ">
 <thead>
 <tr>
     <th class="product-remove">&nbsp;</th>
@@ -75,6 +75,24 @@
 @endif
 </tbody>
 </table>
+{{-- <table class="table .d-none">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Total</th>
+          </tr>
+
+        </thead>
+        <tbody>
+            @foreach(Cart::content() as $item)
+          <tr>
+            <td>{{$item->name}} <strong>X</strong> {{$item->qty}}</td>
+            <td>{{number_format($item->price*$item->qty)}}</td>
+          </tr>
+          @endforeach
+        </tbody>
+       
+      </table> --}}
 </div>
 </form>
         <div class="cart-collaterals">
