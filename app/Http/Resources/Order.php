@@ -17,7 +17,7 @@ class Order extends Resource
     {
         return[
             'id'=>$this->id,
-            'customer_name'=>$this->customer->first_name." ".$this->customer->last_name,
+            'customer_name'=>$this->customer->first_name,
             'customer_email'=>$this->customer->email,
             'customer_phone'=>$this->customer->phone,
             'customer_address'=>$this->customer->address,

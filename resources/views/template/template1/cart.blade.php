@@ -116,17 +116,12 @@
 
                                 <!-- Name -->
                                 <div class="col-sm-6">
-                                    <label> <span class="required">*</span> First name
+                                    <label> <span class="required">*</span> Name
                     <input class="form-control" type="text" name="first_name" required>
                   </label>
                                 </div>
 
-                                <!-- Number -->
-                                <div class="col-sm-6">
-                                    <label> <span class="required">*</span> Last Name
-                    <input class="form-control" type="text" name="last_name" required>
-                  </label>
-                                </div>
+                    
 
 
                                 <!-- Address -->

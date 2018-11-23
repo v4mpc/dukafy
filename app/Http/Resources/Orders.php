@@ -17,7 +17,7 @@ class Orders extends Resource
         // dd($request->user_id);
         return[
             'id'=>$this->id,
-            'customer_name'=>$this->customer->first_name." ".$this->customer->last_name,
+            'customer_name'=>$this->customer->first_name,
             'products'=>count($this->products),
             'amount'=>number_format($this->totalCost()),
             'time'=>$this->created_at->diffForHumans(),

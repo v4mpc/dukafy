@@ -118,14 +118,11 @@
                         <form class="register-form" role="form" action="{{route('order.store')}}" id="confirmation-form" method="POST">
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                        <label class="info-title" for="exampleInputEmail1"> First Name <span>*</span></label>
+                                        <label class="info-title" for="exampleInputEmail1"> Name <span>*</span></label>
                                         <input type="text" class="form-control unicase-form-control text-input" name="first_name" id="exampleInputEmail1" required>
                                       </div>
 
-                                      <div class="form-group">
-                                            <label class="info-title" for="exampleInputEmail1"> Last Name <span>*</span></label>
-                                            <input type="text" class="form-control unicase-form-control text-input" name="last_name" id="exampleInputEmail1"  required>
-                                          </div>
+                                      
                             <div class="form-group">
                             <label class="info-title" for="exampleInputEmail1">Email <span>*</span></label>
                             <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="email"  required>

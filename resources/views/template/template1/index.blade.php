@@ -106,7 +106,7 @@
                   <div class="price">{{number_format($product->price)}} TZS</div>
 
                   @endif
-                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
+                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
           </div>
           @endforeach
 
@@ -158,7 +158,7 @@
                   <div class="price">{{number_format($product->price)}} TZS</div>
 
                   @endif
-                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
+                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
           </div>
           @endforeach
 

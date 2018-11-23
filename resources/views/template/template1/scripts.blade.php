@@ -165,7 +165,7 @@ toastr.options = {
 				dataType: "JSON",
 				data: { id:id},
 				success: function (data) {
-          $('#'+product_id).empty().append('<i class="icon-basket-loaded"></i>');
+          $('#'+product_id).empty().append('BUY');
           
           //  var items_count={{Cart::count()}}+1;
 

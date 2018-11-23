@@ -58,7 +58,6 @@ class OrderController extends Controller
         // dd(Cart::content());
         $customer= new Customer;
         $customer->first_name=$request->first_name;
-        $customer->last_name=$request->last_name;
         $customer->phone=$request->phone;
         $customer->address=$request->address;
         $customer->email=$request->email;
