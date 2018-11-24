@@ -257,7 +257,7 @@
                     <!-- Features card 1 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
-                            <img src="{{asset('dukafy/img/layers.png')}}" alt="icon">
+                            <img src="{{asset('dukafy/img/Grocery.png')}}" alt="icon">
                             <p class="bold">Grocery Stores</p>
                             <p class="light thin">Easly allow people to submit their purchase their groceries from your store</p>
                         </div>
@@ -265,7 +265,7 @@
                     <!-- Features card 2 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
-                            <img src="{{asset('dukafy/img/running.png')}}" alt="icon">
+                            <img src="{{asset('dukafy/img/Retail Outlets.png')}}" alt="icon">
                             <p class="bold">Retail Outlets</p>
                             <p class="light thin">Allow your customers to see your catalog of products in one single platform</p>
                         </div>
@@ -273,7 +273,7 @@
                     <!-- Features card 3 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
-                            <img src="{{asset('dukafy/img/pantone.png')}}" alt="icon">
+                            <img src="{{asset('dukafy/img/Home Base Business.png')}}" alt="icon">
                             <p class="bold">Home Base Business</p>
                             <p class="light thin">Instead of Whatsapping your whole stock list,you can easily send people to your store.</p>
                         </div>
@@ -285,7 +285,7 @@
                     <!-- Features card 4 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
-                            <img src="{{asset('dukafy/img/email.png')}}" alt="icon">
+                            <img src="{{asset('dukafy/img/Supermarket.png')}}" alt="icon">
                             <p class="bold">Supermarkets</p>
                             <p class="light thin">Get ahead of the rest and allow your customers to order their shopping list online.</p>
                         </div>

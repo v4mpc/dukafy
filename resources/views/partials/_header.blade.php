@@ -70,7 +70,7 @@
     background-color: #fed700;
     border-color: #fed700;
 
-    #ce1d76
+    
 }
 
 .btn-pink,
@@ -107,7 +107,7 @@
     background-color: #ff6c6c;
     border-color: #ff6c6c;
 
-    #ce1d76
+    
 }
 
 .btn-orange,

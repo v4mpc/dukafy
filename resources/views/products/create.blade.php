@@ -31,6 +31,9 @@
 .dropzone {
     min-height: 72px;
     border: 2px dashed #28D094;
+    /* border: 2px dashed red; */
+
+
     background: #F4F5FA;
     cursor: pointer;
 }
@@ -178,6 +181,9 @@ input.visually-hidden:focus + label {
                                         </ul>
                                     </label>
                                 </div>
+                                <div class="col-md-1 remove-images" style="display:none;"> <a data-toggle="tooltip" data-target="#inlineForm" data-original-title="Remove all images" data-placement="top"
+                                  class="btn btn-xm btn-outline-danger edit-item-btn" id="removeImages"><i class="ft-minus"></i></a></div>
+                            
                               </div>
 
                           <div class="form-group row">
@@ -292,51 +298,6 @@ input.visually-hidden:focus + label {
                           </div>
 
                           
-
-
-                          {{--
-                          <h4 class="form-section"><i class="ft-layers"></i>Product Variation</h4>
-
-                          <div id="variation_fields">
-                          </div>
-
-                          <div class="form-group row">
-                            <div class="col-sm-3 nopadding">
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="Degree" name="variation[]" value="" placeholder="Title">
-                              </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                              <div class="form-group">
-                                <div class="input-group">
-                                  <input type="file" class="form-control" id="Degree" name="variation_images[]" value="" placeholder="Images">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="Degree" name="variation_value[]" value="" placeholder="Description">
-                              </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                              <div class="form-group">
-                                <div class="input-group">
-                                  <fieldset>
-                                    <div class="input-group">
-                                      <input type="text" class="form-control" name="variation_price[]" placeholder="Price" aria-describedby="button-addon2">
-                                      <div class="input-group-append">
-                                        <button type="button" class="btn btn-success" id="add_field"> <i class="ft-plus"></i></button>
-                                      </div>
-                                    </div>
-                                  </fieldset>
-                                </div>
-                              </div>
-                            </div>
-
-
-
-
-                          </div>--}}
 
                         </div>
 
@@ -733,6 +694,14 @@ function addCommas(nStr) {
 
         //FUNCTIONS
 
+        function removeAllImages() {
+          console.log('removed all the images');
+          images.image=[];
+          //reload images
+          load_image();
+
+        
+        }
 
 
 
@@ -791,38 +760,57 @@ function addCommas(nStr) {
           }
            
            images.size=0
-            images.image.forEach(element => {
 
-                
+            //let check if we have images at all
+            //if we have we will display the remove button
 
-                //ffirst load images
-                $('.img-src-' + images.image.indexOf(element)).attr('src', element);
-                //TODO: we will also have to update the input element ready for uploading
-                // we will also upload the number of images and size accordingly
+            if (images.image.length) {
+      //hide the remove buttons we have no more images
+              $('.remove-images').css({'display':'block'});
+              images.image.forEach(element => {
+              //ffirst load images
+              $('.img-src-' + images.image.indexOf(element)).attr('src', element);
+              //TODO: we will also have to update the input element ready for uploading
+              // we will also upload the number of images and size accordingly
+              images.size += Math.ceil(get_size(element) / 1024)
+              //then show images
+              $('.image-' + images.image.indexOf(element)).css({'display':'block'})
+              $('#images').text(images.image.length);
+              $('#size').text(images.size+' KB');
+              });
 
-                images.size += Math.ceil(get_size(element) / 1024)
-
-                //then show images
-                $('.image-' + images.image.indexOf(element)).css('display', '')
-
-                $('#images').text(images.image.length);
-           $('#size').text(images.size+' KB');
-
-            });
-
-            //first remove the old ones
-            $('.images-field').remove()
+              //first remove the old ones
+              $('.images-field').remove();
+              $('.product-pictures').value="";
 
               //then add the new ones
-            images.image.forEach(element=>{
+              images.image.forEach(element=>{
               $('<input>').attr({
-                type: 'hidden',
-                class: 'images-field',
-                name: 'images[]',
-                value:element
-            }).appendTo('form');
+              type: 'hidden',
+              class: 'images-field',
+              name: 'images[]',
+              value:element
+              }).appendTo('form');
 
-            })
+              })
+              
+            } else {
+
+                //hide the remove buttons we have no more images
+          $('.remove-images').css({'display':'none'});
+          //remove the show case image
+          $('.img-src-0').attr('src', '');
+          //hide the other
+          $('.img-thumbnail').css({'display':'none'});
+          $('#images').text(images.image.length);
+          $('#size').text(images.size+' KB');
+              
+            }
+
+            //else we will hide it
+           
+
+           
 
            
 
@@ -840,6 +828,7 @@ function addCommas(nStr) {
 
         //START HERE
         $("#product-pictures").change(function () {
+          console.log('am here');
             handleFiles(this.files);
         });
        
@@ -886,7 +875,8 @@ function addCommas(nStr) {
                 console.log(images.cropping)
             })
         });
-
+          //lets remove all the images;
+          $('#removeImages').click(removeAllImages);
 
 
 
