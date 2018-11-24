@@ -171,11 +171,11 @@ input.visually-hidden:focus + label {
                                 <div class="col-md-7">
                                     <input type="file" id="product-pictures" multiple accept="image/*" class="visually-hidden">
                                     
-                                    <label for="product-pictures" class="dropzone dz-message col-md-12">
+                                    <label for="product-pictures" id="file-container" class="dropzone dz-message col-md-12">
 
                                         {{-- <div class="dz-message">Click to select Image(s)</div> --}}
                                         <ul>
-                                          <li><i>Click to Select Image(s)</i></li>
+                                          <li><i id="image-title">Click to Select Image(s)</i></li>
                                           <li>Image(s): <b><i id="images">0</i></b></li>
                                           <li>Size: <b><i id="size">0 KB</i></b></li>
                                         </ul>
@@ -716,9 +716,11 @@ function addCommas(nStr) {
 
 
 
-          var promises=[]
+          
 
-          for (let index = 0; index < files.length; index++) {
+          if(files.length<=5 && images.image.length+files.length<=5){
+            var promises=[]
+            for (let index = 0; index < files.length; index++) {
            promises.push(new Promise((resolve,reject)=>{
              var reader=new FileReader();
              reader.onload=(e)=>{
@@ -733,13 +735,53 @@ function addCommas(nStr) {
 
            Promise.all(promises).then(values=>{
 
-             images.image=values;
+            //we should append to the existing array 
+            //also if the length is greater or equal to one
+            if (images.image.length>=1) {
+              images.image.push(values);
+              load_image();
+            } else {
+              images.image=values;
              croppie_bind(0);
+              
+            }
+             
              
 
            }).catch(error=>{
              console.log(error)
            })
+
+          }else{
+
+            console.log('only five images');
+            //we cant allow more than five images
+                    toastr.options = {
+                "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": true,
+        "onclick": null,
+        "showDuration": "30",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+        }
+            
+            toastr.error('Maximum of 5 Images Required');
+
+
+
+
+                  }
+
+         
         }
 
         function croppie_bind(image_index) {
@@ -793,6 +835,19 @@ function addCommas(nStr) {
               }).appendTo('form');
 
               })
+
+              //we can also display that the maximum images is reached
+              if (images.image.length==5) {
+                 //lets change the css for the dashed lines
+                 $('.dropzone').css('border-color','red');
+                 $('#image-title').text('Maximum image selection reached');
+              //lets declare that maximum images is reached
+              //lets make the file selecting process to be disabled
+
+                
+              }
+             
+
               
             } else {
 
@@ -804,6 +859,8 @@ function addCommas(nStr) {
           $('.img-thumbnail').css({'display':'none'});
           $('#images').text(images.image.length);
           $('#size').text(images.size+' KB');
+          $('.dropzone').css('border-color','#28D094');
+                $('#image-title').text('Click to Select Image(s)');
               
             }
 
@@ -828,8 +885,11 @@ function addCommas(nStr) {
 
         //START HERE
         $("#product-pictures").change(function () {
-          console.log('am here');
+          
+          if (images.image.length<=5) {
             handleFiles(this.files);
+          }
+           
         });
        
 
