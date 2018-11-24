@@ -42,7 +42,7 @@ $(document).ready(function () {
             $('.total-B').html("Total TZS <span>" + calculate_total_price(29000, 1) + "</span>");
             $('.detail-B').html('<li>Up to 400 Products</li> <li>1 Free Domain</li> ');
         } else if (this.value == 2) {
-            $('.total-B').html("Total TZS <span>" + calculate_total_price(29000, 4) + "</span>");
+            $('.total-B').html("Total TZS <span>" + calculate_total_price(29000, 3) + "</span>");
             $('.detail-B').html('<li>Up to 400 Products</li> <li>1 Free Domain</li> ');
 
         } else if (this.value == 3) {
@@ -61,7 +61,7 @@ $(document).ready(function () {
             $('.total-C').html("Total TZS <span>" + calculate_total_price(49000, 1) + "</span>");
             $('.detail-C').html('<li>Up to 1000 Products</li> <li>1 Free Domain</li> ');
         } else if (this.value == 2) {
-            $('.total-C').html("Total TZS <span>" + calculate_total_price(49000, 4) + "</span>");
+            $('.total-C').html("Total TZS <span>" + calculate_total_price(49000, 3) + "</span>");
             $('.detail-C').html('<li>Up to 1000 Products</li> <li>1 Free Domain</li> ');
 
         } else if (this.value == 3) {
@@ -78,18 +78,18 @@ $(document).ready(function () {
 
     $('.plan-D').change(function () {
         if (this.value == 1) {
-            $('.total-D').html("Total TZS <span>" + calculate_total_price(49000, 1) + "</span>");
+            $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 1) + "</span>");
             $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> ');
         } else if (this.value == 2) {
-            $('.total-D').html("Total TZS <span>" + calculate_total_price(49000, 4) + "</span>");
+            $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 3) + "</span>");
             $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> ');
 
         } else if (this.value == 3) {
-            $('.total-D').html("Total TZS <span>" + calculate_total_price(49000, 6) + "</span>");
+            $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 6) + "</span>");
             $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> <li>1 Month Free</li>');
 
         } else if (this.value == 4) {
-            $('.total-D').html("Total TZS <span>" + calculate_total_price(49000, 12) + "</span>");
+            $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 12) + "</span>");
             $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> <li>2 Month Free</li>');
         }
     });
