@@ -49,7 +49,10 @@
 
         <style>
         
-        
+        #small-table{
+        display:none;
+
+    }
 
 .map-wrapper {
     height: 350px;
@@ -73,6 +76,14 @@
 }
 
 @media (max-width: 768px) {
+
+    #small-table{
+        display:block;
+
+    }
+    #large-table{
+        display:none;
+    }
 
     .amount{
         font-size: 12px;
@@ -112,6 +123,11 @@
     color: #FFF;
 }
 
+
+.cart-collaterals {
+  
+    padding-top: 1em !important;
+}
 
 
         

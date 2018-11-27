@@ -10,7 +10,30 @@
         <form>
             <div class="table-responsive">
 
-<table class="table shop_table_responsive cart ">
+                    <table id="small-table" class="table shop_table_responsive cart">
+                            <thead>
+                              <tr>
+                                  <th></th>
+                                <th>Item</th>
+                                <th>Total</th>
+                              </tr>
+                    
+                            </thead>
+                            <tbody>
+                                @foreach(Cart::content() as $item)
+                              <tr>
+                                    <td class="product-thumbnail">
+                                            <a href="{{route('product.show',$item->model->id)}}"><img width="180" height="180" src="{{asset('images/'.$item->model->images[0]->image)}}" alt=""></a>
+                                        </td>
+                                <td>{{$item->name}} <strong>X</strong> {{$item->qty}}</td>
+                                <td>{{number_format($item->price*$item->qty)}}</td>
+                              </tr>
+                              @endforeach
+                            </tbody>
+                           
+                          </table>
+
+<table id="large-table" class="table shop_table_responsive cart ">
 <thead>
 <tr>
     <th class="product-remove">&nbsp;</th>
@@ -108,7 +131,7 @@
 
     <tr class="order-total">
         <th>Total</th>
-        <td data-title="Total"><strong><span class="amount items-price">{{Cart::subtotal()}} TZS</span></strong> </td>
+        <td data-title="Total"><strong><span class="amount items-price"><h2>{{Cart::subtotal()}} TZS</h2></span></strong> </td>
     </tr>
 </tbody>
 </table>

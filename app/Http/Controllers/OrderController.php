@@ -48,14 +48,9 @@ class OrderController extends Controller
      */
     public function store(StoreOrder $request)
     {
-        // dd();
-        //check if order is already present
-        // if (config('app.settings')->layout=='template1') {
-        //     if (session('id')) {
-        //         return redirect()->route('order.update', session('id'));
-        //     }
-        // }
-        // dd(Cart::content());
+        if (count(Cart::content())==0) {
+            return redirect()->route('start');
+        }
         $customer= new Customer;
         $customer->first_name=$request->first_name;
         $customer->phone=$request->phone;
