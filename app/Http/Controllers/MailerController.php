@@ -10,13 +10,11 @@ class MailerController extends Controller
 {
     public function sendContactForm(Request $request)
     {
-     
         $request->name;
         $request->email;
         $request->message;
-// dd('dfsd');
         Mail::send(new ContactForm($request));
 
-        return back()->with('message','Your Email Has been Sent!');
+        return back()->with('message', 'Your Email Has been Sent!');
     }
 }

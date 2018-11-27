@@ -14,7 +14,9 @@
       <p>No item!</p>
       @endforelse
 
+      @if (Cart::content())
       <li class="btn-cart"> <a href="{{route('cart.index')}}" class="btn-round"> Checkout</a> </li>
+      @endif
     </ul>
   </li>
 </ul>
