@@ -9,7 +9,7 @@ function getAccountId($request)
 
 
 
-function send_notification($account='all', $title='Order Completed', $body='300 TZS', $data)
+function send_notification($account_id, $title='Order Completed', $body='300 TZS', $data)
 {
     $posturl="https://fcm.googleapis.com/fcm/send";
 
@@ -23,7 +23,7 @@ function send_notification($account='all', $title='Order Completed', $body='300 
         ),
        
         "data"=>$data,
-        "to"=>"/topics/".$account,
+        "to"=>"/topics/account-".$account_id,
         "priority"=>"high",
         "restricted_package_name"=>""
     );

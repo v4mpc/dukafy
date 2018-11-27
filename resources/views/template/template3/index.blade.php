@@ -58,9 +58,9 @@
                    	
                     <div class="product-image">
                     <div class="image">
-                            @if($product->discount)
+                            {{-- @if($product->discount)
                             <div class="tag sale"><span>sale</span></div>
-                            @endif
+                            @endif --}}
 
 
                     <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt=""></a>
@@ -131,9 +131,9 @@
                       	
                         <div class="product-image">
                         <div class="image">
-                                @if($product->discount)
+                                {{-- @if($product->discount)
                                 <div class="tag sale"><span>sale</span></div>
-                                @endif
+                                @endif --}}
                         <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt=""></a>
                         </div><!-- /.image -->			
                         
@@ -203,9 +203,9 @@
                     	
                     <div class="product-image">
                     <div class="image">
-                            @if($product->discount)
+                            {{-- @if($product->discount)
                             <div class="tag sale"><span>sale</span></div>
-                            @endif
+                            @endif --}}
                     <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive " alt=""></a>
                     </div><!-- /.image -->			
                     

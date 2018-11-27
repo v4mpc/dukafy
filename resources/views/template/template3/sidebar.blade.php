@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+<div class="col-xs-12 col-sm-12 col-md-3 sidebar" style="z-index:1">
 			
         <!-- ================================== TOP NAVIGATION ================================== -->
 <div class="side-menu animate-dropdown outer-bottom-xs">
