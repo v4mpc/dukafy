@@ -185,6 +185,8 @@ input.visually-hidden:focus + label {
                                         </ul>
                                     </label>
                                 </div>
+                              <div class="col-md-1 remove-images" style="display:{{count($product->images)?'':'none'}};"> <a data-toggle="tooltip" data-target="#inlineForm" data-original-title="Remove all images" data-placement="top"
+                                  class="btn btn-xm btn-outline-danger edit-item-btn" id="removeImages"><i class="ft-minus"></i></a></div>
                               </div>
 
                           <div class="form-group row">
@@ -218,10 +220,10 @@ input.visually-hidden:focus + label {
                                 <div class="input-group">
                                   <div class="input-group-append">
                                     <span class="input-group-text" id="radio-addon4">
-                                                      <input type="checkbox" id="switchery3" name="price_visibility" class="switchery js-check-change" data-size="xs"/>
+                                                      <input type="checkbox" id="switchery3" name="price_visibility" class="switchery js-check-change" data-size="xs" {{$product->discount?"checked":""}} />
                                                     </span>
                                   </div>
-                                  <input type="text" id="discount" disabled name="discount" disabled class="form-control" value="{{($product->discount)?$product->discount:"" or old('price')}}" placeholder="Amount or Percentage eg 40000 or 80%"
+                                  <input type="text" id="discount"  name="discount" {{$product->discount?"":"disabled"}} class="form-control" value="{{($product->discount)?$product->discount.'%':""}}" placeholder="Amount or Percentage eg 40000 or 80%"
                                     aria-describedby="radio-addon4">
 
                                 </div>
@@ -386,7 +388,7 @@ input.visually-hidden:focus + label {
                                     <div class="price" id="new_price_output">{{number_format($product->price)}} TZS <span id="old_price_output"></span></div>
                   
                                     @endif
-                                    <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}"><i class="icon-basket-loaded"></i></a>                                </article>
+                                    <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
 
 
                               </div>
@@ -734,6 +736,15 @@ function addCommas(nStr) {
 
         //FUNCTIONS
 
+         function removeAllImages() {
+          console.log('removed all the images');
+          images.image=[];
+          //reload images
+          load_image();
+
+        
+        }
+
 
 
 
@@ -770,12 +781,9 @@ function addCommas(nStr) {
           console.log(imagesUrl)
 
         function handleFiles(files) {
-
-
-
-          var promises=[]
-
-          for (let index = 0; index < files.length; index++) {
+          if(files.length<=5 && images.image.length+files.length<=5){
+            var promises=[]
+            for (let index = 0; index < files.length; index++) {
            promises.push(new Promise((resolve,reject)=>{
              var reader=new FileReader();
              reader.onload=(e)=>{
@@ -790,13 +798,51 @@ function addCommas(nStr) {
 
            Promise.all(promises).then(values=>{
 
-             images.image=values;
+            //we should append to the existing array 
+            //also if the length is greater or equal to one
+            if (images.image.length>=1) {
+              images.image.push(values);
+              load_image();
+            } else {
+              images.image=values;
              croppie_bind(0);
+              
+            }
+             
              
 
            }).catch(error=>{
              console.log(error)
            })
+
+          }else{
+
+            console.log('only five images');
+            //we cant allow more than five images
+                    toastr.options = {
+                "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": true,
+        "onclick": null,
+        "showDuration": "30",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+        }
+            
+            toastr.error('Maximum of 5 Images Required');
+
+
+
+
+                  }
         }
 
         function croppie_bind(image_index) {
@@ -817,38 +863,73 @@ function addCommas(nStr) {
           }
            
            images.size=0
-            images.image.forEach(element => {
 
-                
+            //let check if we have images at all
+            //if we have we will display the remove button
 
-                //ffirst load images
-                $('.img-src-' + images.image.indexOf(element)).attr('src', element);
-                //TODO: we will also have to update the input element ready for uploading
-                // we will also upload the number of images and size accordingly
+            if (images.image.length) {
+      //hide the remove buttons we have no more images
+              $('.remove-images').css({'display':'block'});
+              images.image.forEach(element => {
+              //ffirst load images
+              $('.img-src-' + images.image.indexOf(element)).attr('src', element);
+              //TODO: we will also have to update the input element ready for uploading
+              // we will also upload the number of images and size accordingly
+              images.size += Math.ceil(get_size(element) / 1024)
+              //then show images
+              $('.image-' + images.image.indexOf(element)).css({'display':'block'})
+              $('#images').text(images.image.length);
+              $('#size').text(images.size+' KB');
+              });
 
-                images.size += Math.ceil(get_size(element) / 1024)
-
-                //then show images
-                $('.image-' + images.image.indexOf(element)).css('display', '')
-
-                $('#images').text(images.image.length);
-           $('#size').text(images.size+' KB');
-
-            });
-
-            //first remove the old ones
-            $('.images-field').remove()
+              //first remove the old ones
+              $('.images-field').remove();
+              $('.product-pictures').value="";
 
               //then add the new ones
-            images.image.forEach(element=>{
+              images.image.forEach(element=>{
               $('<input>').attr({
-                type: 'hidden',
-                class: 'images-field',
-                name: 'images[]',
-                value:element
-            }).appendTo('form');
+              type: 'hidden',
+              class: 'images-field',
+              name: 'images[]',
+              value:element
+              }).appendTo('form');
 
-            })
+              })
+
+              //we can also display that the maximum images is reached
+              if (images.image.length==5) {
+                 //lets change the css for the dashed lines
+                 $('.dropzone').css('border-color','red');
+                 $('#image-title').text('Maximum image selection reached');
+              //lets declare that maximum images is reached
+              //lets make the file selecting process to be disabled
+
+                
+              }
+             
+
+              
+            } else {
+
+                //hide the remove buttons we have no more images
+          $('.remove-images').css({'display':'none'});
+          //remove the show case image
+          $('.img-src-0').attr('src', '');
+          //hide the other
+          $('.img-thumbnail').css({'display':'none'});
+          $('#images').text(images.image.length);
+          $('#size').text(images.size+' KB');
+          $('.dropzone').css('border-color','#28D094');
+                $('#image-title').text('Click to Select Image(s)');
+              
+            }
+
+            //else we will hide it
+           
+
+           
+
 
            
 
@@ -912,6 +993,9 @@ function addCommas(nStr) {
                 console.log(images.cropping)
             })
         });
+
+        //lets remove all the images;
+        $('#removeImages').click(removeAllImages);
 
 
 

@@ -336,7 +336,7 @@ input.visually-hidden:focus + label {
                                     <span id="old_price_output"></span>
                                   </div>
                                   <a href="#." class="cart-btn">
-                                                        <i class="icon-basket-loaded"></i>
+                                                        BUY
                                                       </a>
                                 </article>
                               </div>
@@ -712,6 +712,22 @@ function addCommas(nStr) {
           return ((string.length ) / 1.37);
           
         }
+
+
+             function toDataUrl(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                var reader = new FileReader();
+                reader.onloadend = function () {
+                    callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
+        }
+
         function handleFiles(files) {
 
 
