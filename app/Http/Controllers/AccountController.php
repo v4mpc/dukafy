@@ -304,7 +304,7 @@ class AccountController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
 
-        dd($response);
+        // dd($response);
 
 
 
