@@ -101,20 +101,7 @@
                     </th>
                 </tr>
             </thead><!-- /thead -->
-            <tbody>
-                   
-                    <tr>
-                        <td>
-                            <div class="cart-checkout-btn pull-right">
-                               
-                                <a href="{{route('check_out.create')}}" class="btn btn-primary">PROCCED TO CHEKOUT</a>
-                                {{-- <span class="">Checkout with multiples address!</span> --}}
-                               
-                            </div>
-                        </td>
-                    </tr>
-                   
-            </tbody><!-- /tbody -->
+            
         </table><!-- /table -->
         
         @endif
