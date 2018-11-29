@@ -6,7 +6,7 @@
             <div class="row inner-bottom-sm">
                 <div class="shopping-cart">
                     <div class="col-md-12 col-sm-12 shopping-cart-table ">
-        <div class="table-responsive">
+        <div class="tsive">
             <table class="table table-bordered hidden-xs hidden-sm">
                 <thead>
                     <tr>
