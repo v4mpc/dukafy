@@ -21,6 +21,7 @@
 <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
 
 
+
 <!-- For demo purposes – can be removed on production -->
 
 {{-- <script src="switchstylesheet/switchstylesheet.js"></script> --}}

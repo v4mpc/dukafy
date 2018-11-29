@@ -1,9 +1,10 @@
 @if(Request::is('check_out/*'))
-<script src="{{asset('template1/js/vendors/jquery/jquery.min.js')}}"></script>
+{{-- <script src="{{asset('template1/js/vendors/jquery/jquery.min.js')}}"></script> --}}
 @else
-<script type="text/javascript" src="{{asset('template2/assets/js/jquery.min.js')}}"></script>
-@endif
+{{-- <script type="text/javascript" src="{{asset('template2/assets/js/jquery.min.js')}}"></script> --}}
 
+@endif
+<script src="{{asset('template1/js/vendors/jquery/jquery.min.js')}}"></script>
 
 
 <script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
@@ -21,6 +22,10 @@
 <script src="{{asset('template1/js/vendors/map.js')}}"></script>
 <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
+<script type="text/javascript" src="{{asset('template1/rs-plugin/js/jquery.tp.t.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template1/rs-plugin/js/jquery.tp.min.js')}}"></script>
+<script src="{{asset('template1/js/main.js')}}"></script>
+<script src="{{asset('template1/js/vendors/jquery.nouislider.min.js')}}"></script>
 
 
 <!-- For demo purposes – can be removed on production -->

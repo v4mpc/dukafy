@@ -188,7 +188,8 @@
             autowidth: true,
             dots: true,
             nav: false,
-            responsiveClass: true,
+            responsive: true,
+            // betweem 900px and 601px
             //navText: ["<i class='icon fa fa-angle-left'></i>", "<i class='icon fa fa-angle-right'></i>"],
             lazyLoad: true,
             stagePadding: 0,

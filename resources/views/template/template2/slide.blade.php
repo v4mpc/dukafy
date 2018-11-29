@@ -1,36 +1,50 @@
 
 
        @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
-<div class="home-v1-slider" >
+<div class="home-v1-slider slid-sec" >
         <!-- ========================================== SECTION – HERO : END========================================= -->
     
-        <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-            @if(!is_null($slider_images[0]->image))
-            <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
-             
-            </div><!-- /.item -->
-
-
-            @endif
-
-
-            @if(!is_null($slider_images[1]->image))
-            <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
-             
-            </div><!-- /.item -->
-
-
-            @endif
-
-
-            @if(!is_null($slider_images[2]->image))
-            <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
-             
-            </div><!-- /.item -->
-
-
-            @endif    
-        </div><!-- /.owl-carousel -->
+        <div class="row">
+        
+                @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
+        
+                <!-- Main Slider  -->
+                <div class="col-md-12 no-padding">
+        
+                  <!-- Main Slider Start -->
+                  <div class="tp-banner-container">
+                    <div class="tp-banner">
+                      <ul>
+                     
+                        @if(!is_null($slider_images[0]->image))
+                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+                          <!-- MAIN IMAGE -->
+                          <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   
+                         </li>
+        @endif
+        
+        
+        
+        @if(!is_null($slider_images[1]->image))
+        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+          <!-- MAIN IMAGE -->
+          <img src="{{asset('images/'.$slider_images[1]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">           
+         </li>
+        @endif
+        
+        @if(!is_null($slider_images[2]->image))
+        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+          <!-- MAIN IMAGE -->
+          <img src="{{asset('images/'.$slider_images[2]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   </li>
+        @endif
+                      
+        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                @endif 
+              </div>
     
     <!-- ========================================= SECTION – HERO : END ========================================= -->
     
