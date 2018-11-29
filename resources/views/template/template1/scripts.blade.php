@@ -145,7 +145,7 @@ toastr.options = {
 
 
 
-      $(this).empty().append('<i class="fa fa-spinner fa-spin"></i>');
+      // $(this).empty().append('<i class="fa fa-spinner fa-spin"></i>');
       var id=$(this).data('id');
       var product_id='product'+id;
     //  console.log(id);
