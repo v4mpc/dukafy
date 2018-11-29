@@ -42,7 +42,7 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span>{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} TZS</div>

@@ -26,7 +26,7 @@
     <div class="container " style="overflow-x:auto;">
       @if(Cart::count())
       <h5><span class="itm-cont">{{Cart::count()}}</span> Item(s) in Shopping Cart</h5>
-      <div class="table-responsive">
+      <div class="ressive">
       <table class="table hidden-xs hidden-sm">
         <thead>
           <tr>
