@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
             $products=Product::all();
             $orders=Order::all();
             $out_stocks=Product::where('out_stock', '1')->get();
-            $recent_products=Product::orderBy('id', 'desc')->take(15)->get();
+            $recent_products=Product::orderBy('id', 'desc')->where('out_stock', '0')->take(15)->get();
 
 
             $product_count=count($products);
