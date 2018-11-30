@@ -10,8 +10,8 @@ p.s. I am available for Freelance hire (UI design, web development). mail: mille
 
 .jump {
     position: relative;
-    -webkit-animation: jump 2s ease-in-out infinite;
-    animation: jump 2s ease-in-out infinite;
+    /* -webkit-animation: jump 2s ease-in-out infinite;
+    animation: jump 2s ease-in-out infinite; */
 }
 
 .puls {
