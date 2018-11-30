@@ -21,7 +21,7 @@
 <script src="{{asset('vendor/toaster/toaster.min.js')}}"></script>
 <script src="{{asset('template1/js/vendors/map.js')}}"></script>
 <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
+{{-- <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script> --}}
 
 
 

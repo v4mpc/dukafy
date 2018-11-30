@@ -48,7 +48,7 @@ Route::get('whois/{domain}', function ($domain) {
 //
 
 
-Route::post('mobile/login', 'API\AuthController@login');
+Route::post('mobile/login', 'API\AuthController@login')->name('login');
 Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
     Route::get('home/{account_id}', 'API\AccountController@home');
     Route::post('logout', 'API\AuthController@logout');

@@ -9,6 +9,7 @@ use App\Account;
 // use Illuminate\Http\Request;
 use Session;
 use Request;
+use Route;
 
 class AccountScope implements Scope
 {
@@ -24,11 +25,24 @@ class AccountScope implements Scope
 
     public function apply(Builder $builder, Model $model)
     {
-        if (Request::getHost()=="adshlits.dukafy.co.tz") {
-            $account_id=1;
+        
+
+        //lets check if request if from mobile
+        //if its from mobile
+        //we make we only check if its account id is greater than 1
+       
+        // dd(Request::getHost());
+        if (Request::is('api/*')) {
+            // dd('its an api');
+            $builder->where('account_id', '>', 1);
         } else {
-            $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
+            // dd('dfd');
+            if (Request::getHost()=="adshlits.dukafy.co.tz") {
+                $account_id=1;
+            } else {
+                $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
+            }
+            $builder->where('account_id', $account_id);
         }
-        $builder->where('account_id', $account_id);
     }
 }
