@@ -4,47 +4,43 @@
 <div class="home-v1-slider slid-sec" >
         <!-- ========================================== SECTION – HERO : END========================================= -->
     
-        <div class="row">
+        <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+            @if(!is_null($slider_images[0]->image))
+            <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
+             
+            </div><!-- /.item -->
+
+
+            @endif
+
+
+            @if(!is_null($slider_images[1]->image))
+            <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
+             
+            </div><!-- /.item -->
+
+
+            @endif
+
+
+            @if(!is_null($slider_images[2]->image))
+            <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
+             
+            </div><!-- /.item -->
+
+
+            @endif
+
+
+            
+    
+    
+            
+    
         
-                @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
-        
-                <!-- Main Slider  -->
-                <div class="col-md-12 no-padding">
-        
-                  <!-- Main Slider Start -->
-                  <div class="tp-banner-container">
-                    <div class="tp-banner">
-                      <ul>
-                     
-                        @if(!is_null($slider_images[0]->image))
-                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                          <!-- MAIN IMAGE -->
-                          <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   
-                         </li>
-        @endif
-        
-        
-        
-        @if(!is_null($slider_images[1]->image))
-        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-          <!-- MAIN IMAGE -->
-          <img src="{{asset('images/'.$slider_images[1]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">           
-         </li>
-        @endif
-        
-        @if(!is_null($slider_images[2]->image))
-        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-          <!-- MAIN IMAGE -->
-          <img src="{{asset('images/'.$slider_images[2]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   </li>
-        @endif
-                      
-        
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                @endif 
-              </div>
+    
+    
+        </div><!-- /.owl-carousel -->
     
     <!-- ========================================= SECTION – HERO : END ========================================= -->
     
@@ -104,7 +100,7 @@
             <div class="hover-area">
                 <div class="action-buttons">
     
-                <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
+                <a href="https://wa.me/255{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
     
                     
                 </div>
@@ -195,7 +191,7 @@
                             <div class="hover-area">
                                 <div class="action-buttons">
                     
-                                <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
+                                <a href="https://wa.me/255{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
                     
                                     
                                 </div>
@@ -285,7 +281,7 @@
         <div class="hover-area">
             <div class="action-buttons">
 
-            <a href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
+            <a href="https://wa.me/255{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" rel="nofollow" title="Inquire this product" > <i class="fa fa-whatsapp" style="font-size:15px;color:green;"></i> Whatsapp</a>
 
                 
             </div>

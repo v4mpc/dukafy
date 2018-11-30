@@ -139,7 +139,7 @@
                                 
                                 
                               
-                                <li><a class="fa fa-whatsapp" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product"></a></li>
+                                <li><a class="fa fa-whatsapp" href="https://wa.me/255{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product"></a></li>
                                 
                             </ul><!-- /.social-icons -->
                         </div>
