@@ -362,7 +362,7 @@ class AccountController extends Controller
         } else {
             $data = array(
                 "type" => "A",
-                "name" => $account->domain,
+                "name" => preg_replace('/\.co\.tz/', "", strtolower($account->domain)).".dukafy.co.tz",
                 "data"=>"178.62.44.86",
                 "priority"=>null,
                 "port"=>null,
@@ -400,12 +400,12 @@ class AccountController extends Controller
         $server_configurarion.="root ".$installation_location."/".$project_name."/public;".PHP_EOL;
         $server_configurarion.="index index.php index.htm;".PHP_EOL;
         if ($record_to_create=='domain') {
-            $server_configurarion.="server_name .".$account->domain.";".PHP_EOL;
+            $server_configurarion.="server_name .".strtolower($account->domain).";".PHP_EOL;
             $server_configurarion.="location =/login {".PHP_EOL;
             $server_configurarion.='return 404 "Page Not Found";'.PHP_EOL;
             $server_configurarion.="  }".PHP_EOL;
         } else {
-            $server_configurarion.="server_name .".preg_replace('/.co.tz/', "", $account->domain).".dukafy.co.tz;".PHP_EOL;
+            $server_configurarion.="server_name .".preg_replace('/\.co\.tz/', "", strtolower($account->domain)).".dukafy.co.tz;".PHP_EOL;
         }
      
         $server_configurarion.="location / {".PHP_EOL;
