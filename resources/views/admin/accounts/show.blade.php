@@ -182,7 +182,7 @@
                       <tr>
                         <td>Phone :</td>
                         <td>
-                          <strong>{{$account->phone}}</strong>
+                          <strong>{{$account->formatNumber()}}</strong>
                         </td>
                       </tr>
 
