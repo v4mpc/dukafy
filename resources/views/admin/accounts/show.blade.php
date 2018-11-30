@@ -182,7 +182,7 @@
                       <tr>
                         <td>Phone :</td>
                         <td>
-                          <strong>+255 {{$account->phone}}</strong>
+                          <strong>{{$account->phone}}</strong>
                         </td>
                       </tr>
 

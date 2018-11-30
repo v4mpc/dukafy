@@ -83,4 +83,15 @@ class Account extends Model
     {
         return Carbon::now()->gt($this->ended_at);
     }
+
+    public function formatNumber()
+    {
+        if (substr($this->phone, 0, strlen('+255')) === '+255') {
+            return $this->phone;
+        } elseif (substr($this->phone, 0, strlen('0')) === '0') {
+            return preg_replace('/0/', '+255', $this->phone, 1);
+        } else {
+            return $this->phone;
+        }
+    }
 }
