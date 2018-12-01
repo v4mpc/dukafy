@@ -84,10 +84,10 @@
                         
                         <div class="col-sm-4">
                             <div class="form-group" align="center">
-<a href="#" class="slider1-input-button"><img src="{{array_key_exists(0,$slider_images) && is_null($slider_images[0]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[0]->image)}}" id="cropped-slider1" class="img-thumbnail " alt="" srcset=""></a>
+<a href="#" class="slider1-input-button"><img src="{{$slider_images->has(0) && is_null($slider_images[0]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[0]->image)}}" id="cropped-slider1" class="img-thumbnail " alt="" srcset=""></a>
                                 
                                 <input type="file" id="slider1-input" style="display: none;">
-                            <input type="hidden" name="slider_one" value="{{array_key_exists(0,$slider_images) && is_null($slider_images[0]->image)?"":Image::make(Storage::disk('images')->get($slider_images[0]->image))->encode('data-url')}}" >
+                            <input type="hidden" name="slider_one" value="{{$slider_images->has(0) && is_null($slider_images[0]->image)?"":Image::make(Storage::disk('images')->get($slider_images[0]->image))->encode('data-url')}}" >
                                 <br>
                                 <br>
 
@@ -107,9 +107,9 @@
                         <div class="col-sm-4">
                             <div class="form-group" align="center">
 
-                                    <a href="#" class="slider2-input-button"> <img src="{{array_key_exists(1,$slider_images) && is_null($slider_images[1]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[1]->image)}}" id="cropped-slider2" class="img-thumbnail" alt="" srcset=""></a>
+                                    <a href="#" class="slider2-input-button"> <img src="{{$slider_images->has(1) && is_null($slider_images[1]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[1]->image)}}" id="cropped-slider2" class="img-thumbnail" alt="" srcset=""></a>
                                 <input type="file" id="slider2-input" style="display: none;">
-                                <input type="hidden" name="slider_two" value="{{array_key_exists(1,$slider_images) && is_null($slider_images[1]->image)?"":Image::make(Storage::disk('images')->get($slider_images[1]->image))->encode('data-url')}}">
+                                <input type="hidden" name="slider_two" value="{{$slider_images->has(1) && is_null($slider_images[1]->image)?"":Image::make(Storage::disk('images')->get($slider_images[1]->image))->encode('data-url')}}">
                                 <br>
                                 <br>
 
@@ -129,9 +129,9 @@
                         <div class="col-sm-4">
                             <div class="form-group" align="center">
 
-                                    <a href="#" class="slider3-input-button"> <img src="{{array_key_exists(2,$slider_images) && is_null($slider_images[2]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[2]->image)}}" id="cropped-slider3" class="img-thumbnail" alt="" srcset=""></a>
+                                    <a href="#" class="slider3-input-button"> <img src="{{$slider_images->has(2) && is_null($slider_images[2]->image)?asset('images/productplaceholder.png'):asset('images/'.$slider_images[2]->image)}}" id="cropped-slider3" class="img-thumbnail" alt="" srcset=""></a>
                                 <input type="file" id="slider3-input" style="display: none;">
-                                <input type="hidden" name="slider_three" value="{{array_key_exists(2,$slider_images) && is_null($slider_images[2]->image)?"":Image::make(Storage::disk('images')->get($slider_images[2]->image))->encode('data-url')}}">
+                                <input type="hidden" name="slider_three" value="{{$slider_images->has(2) && is_null($slider_images[2]->image)?"":Image::make(Storage::disk('images')->get($slider_images[2]->image))->encode('data-url')}}">
                                 <br>
                                 <br>
 
