@@ -2,6 +2,52 @@
 
 <?php
 
+
+function getColorCode($settings)
+{
+    switch ($settings->colour) {
+        case 'navy':
+            $colour_code='#424378';
+            break;
+        
+            case 'green':
+            $colour_code='#7a9b08';
+            break;
+
+
+            case 'blue':
+            $colour_code='#0088cc';
+            break;
+
+            case 'yellow':
+            $colour_code='#fed700';
+            break;
+
+            case 'pink':
+            $colour_code='#ce1d76';
+            break;
+
+            case 'black':
+            $colour_code='#000';
+            break;
+
+
+            case 'red':
+            $colour_code='#ff6c6c';
+            break;
+
+            case 'orange':
+            $colour_code='#f39c12';
+            break;
+
+            case 'dark_green':
+            $colour_code='#12cca7';
+            break;
+       
+    }
+    return $colour_code;
+}
+
 function getAccountId($request)
 {
     return App\Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;

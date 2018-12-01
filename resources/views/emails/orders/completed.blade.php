@@ -136,7 +136,7 @@ body { background: rgb(226, 225, 224); margin: 5px; }
 
 
     <div class="card mx-auto" style="width:550px">
-        <div class="card-header text-white text-center" style="background:{{$colour_code}}">
+        <div class="card-header text-white text-center" style="background:{{getColorCode($settings)}}">
             Order Summary
         </div>
         <div class="card-body">

@@ -15,8 +15,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/owl-carousel.css')}}" media="all" />
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/style.css')}}" media="all" />
 
-        <link rel="stylesheet" href="{{asset('template1/css/style.css')}}">
-        <link rel="stylesheet" href="{{asset('template1/css/responsive.css')}}">
+        
         @if($settings->colour=="black")
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/black.css')}}" media="all" />
         @endif @if($settings->colour=="pink")

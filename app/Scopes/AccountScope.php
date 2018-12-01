@@ -32,7 +32,7 @@ class AccountScope implements Scope
         //we make we only check if its account id is greater than 1
        
         // dd(Request::getHost());
-        if (Request::is('api/*')) {
+        if (Request::is('api/*') || strpos(php_sapi_name(), 'cli') !== false) {
             // dd('its an api');
             $builder->where('account_id', '>', 1);
         } else {

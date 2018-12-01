@@ -6,8 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Order;
 
-class OrderCompleted extends Mailable // implements ShouldQueue
+class OrderCompleted extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -21,11 +22,15 @@ class OrderCompleted extends Mailable // implements ShouldQueue
 
     public $order;
     public $settings;
+    public $products=array();
 
-    public function __construct($order, $settings)
+    public function __construct(Order $order, $settings, $products)
     {
         $this->order=$order;
         $this->settings=$settings;
+       
+        $this->products=$products;
+        // dd($products);
     }
 
     /**
@@ -35,6 +40,6 @@ class OrderCompleted extends Mailable // implements ShouldQueue
      */
     public function build()
     {
-        return $this->from(['address'=>$this->settings->email,'name'=>$this->settings->store_name])->view('emails.orders.completed');
+        return $this->from(['address'=>$this->settings->email,'name'=>$this->settings->store_name,'settings'=>$this->settings])->view('emails.orders.completed');
     }
 }

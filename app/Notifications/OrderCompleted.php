@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 // use App\Mail\OrderCompleted as Mailable;
 
-class OrderCompleted extends Notification //implements ShouldQueue
+class OrderCompleted extends Notification implements ShouldQueue
 {
     use Queueable;
 

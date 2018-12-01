@@ -15,6 +15,7 @@ use App\Notifications\OrderCompleted as OrderCompletedNotification;
 use App\Setting;
 use App\Mail\OrderCompleted;
 use App\Account;
+use App\Jobs\ProcessOrderSmsNotification;
 
 class OrderController extends Controller
 {
@@ -73,19 +74,22 @@ class OrderController extends Controller
         session()->forget('id');
   
         // dd($request);
-
+       
 
         $users=User::all();
         //phone notification
-        #TODO
-        //should queue the notification so as not to delay the web system
-        send_notification($order->account_id, 'Order Completed', 'Order Completed Total '.number_format($order->totalCost()).' TZS', ['orderId'=>$order->id]);
-
+       
+        //queued the notification so as not to delay the web system
+        ProcessOrderSmsNotification::dispatch($order);
+        // send_notification($order->account_id, 'Order Completed', 'Order Completed Total '.number_format($order->totalCost()).' TZS', ['orderId'=>$order->id]);
+         
         $settings=Setting::where('account_id', $order->account_id)->orderBy('id', 'desc')->first();
         //dashboard notification
+        # TODO: make notitification queable too
         Notification::send($users, new OrderCompletedNotification($order, $settings->email));
-        //email Notification
-        Mail::to($request->email)->cc($settings->email)->send(new OrderCompleted($order, $settings));
+        
+        //email Notification its queueable
+        Mail::to($request->email)->cc($settings->email)->send(new OrderCompleted($order, $settings, $order->products->toArray()));
   
 
         // if (config('app.settings')->layout=='template2') {
