@@ -5,7 +5,7 @@
         <!-- ========================================== SECTION – HERO : END========================================= -->
     
         <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-            @if(!is_null($slider_images[0]->image))
+            @if(array_key_exists(0,$slider_images) && !is_null($slider_images[0]->image))
             <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
              
             </div><!-- /.item -->
@@ -14,7 +14,7 @@
             @endif
 
 
-            @if(!is_null($slider_images[1]->image))
+            @if(array_key_exists(1,$slider_images) && !is_null($slider_images[1]->image))
             <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
              
             </div><!-- /.item -->
@@ -22,14 +22,15 @@
 
             @endif
 
+@if(array_key_exists(2,$slider_images) && !is_null($slider_images[2]->image) )
 
-            @if(!is_null($slider_images[2]->image))
-            <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
-             
-            </div><!-- /.item -->
+<div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
+ 
+</div><!-- /.item -->
 
 
-            @endif
+@endif
+           
 
 
             
