@@ -89,7 +89,7 @@ class OrderController extends Controller
         Notification::send($users, new OrderCompletedNotification($order, $settings->email));
         
         //email Notification its queueable
-        Mail::to($request->email)->cc($settings->email)->send(new OrderCompleted($order, $settings, $order->products->toArray()));
+        Mail::to($request->email)->cc($settings->email)->send(new OrderCompleted($order, $settings, $order->products));
   
 
         // if (config('app.settings')->layout=='template2') {

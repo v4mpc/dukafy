@@ -276,6 +276,7 @@ class ProductController extends Controller
         if ($mode=='u') {
             //lets first get the images we want to delete from database
             //then dispatch an event to delete the images from server
+            //TODO: it should be a job instead of event which can be dispacted
             event(new ProductUpdated($product->images));
             //then delete their database record
             foreach ($product->images as $image) {
