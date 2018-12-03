@@ -50,7 +50,11 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $product=Product::FindOrFail($request->id);
-        Cart::add($request->id, $product->name, $request->quantity, $product->price)->associate('App\Product');
+        $product_price=$product->price;
+        if ($product->discount) {
+            $product_price=$product->price-round(($product->discount*$product->price)/100);
+        }
+        Cart::add($request->id, $product->name, $request->quantity, $product_price)->associate('App\Product');
         return redirect()->back()->with('message', 'Item was added to your cart!');
     }
 
