@@ -51,6 +51,10 @@
 
 
 
+
+li.product .product-thumbnail{
+    margin-bottom: 2.714em;
+}
         
         #small-table{
         display:none;
@@ -91,6 +95,11 @@
     .amount{
         font-size: 12px;
     }
+
+
+    li.product .product-thumbnail{
+    margin-bottom: 0.714em;
+}
 
 
 
