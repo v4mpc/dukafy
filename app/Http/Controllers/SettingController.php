@@ -41,7 +41,7 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        // dd("sfd");
+        // dd();
 
         $request->validate([
                 'colour' => 'required',
