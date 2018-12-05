@@ -404,8 +404,11 @@
 				height: 600,
 				type: 'square',
 				enableOrientation: true,
-				enableExif: true
+				enableExif: true,
 			},
+            enableResize: false,
+            enableZoom: true,
+            inforceBoundary: true,
 			boundary: {
 				width: 1200,
 				height: 650

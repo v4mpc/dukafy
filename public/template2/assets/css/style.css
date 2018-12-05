@@ -4006,7 +4006,8 @@ div.quantity.buttons_added {
   margin-left: -50vw;
   left: 50%;
   margin-bottom: 3em;
-  height: 485px; }
+  /* height: 485px;  */
+}
   .home-v1-slider .item,
   .home-v2-slider .item,
   .home-v3-slider .item {
@@ -8767,7 +8768,10 @@ h3.faq-title {
   .home-v1-slider,
   .home-v2-slider,
   .home-v3-slider {
-    height: 300px; }
+    /* height: 300px;  */
+    height: 108px; 
+
+  }
     .home-v1-slider .owl-item,
     .home-v2-slider .owl-item,
     .home-v3-slider .owl-item {

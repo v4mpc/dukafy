@@ -4,29 +4,35 @@
 <div class="home-v1-slider slid-sec" >
         <!-- ========================================== SECTION – HERO : END========================================= -->
     
-        <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+        <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm" >
             @if($slider_images->has(0) && !is_null($slider_images[0]->image))
-            <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
+            {{-- <div class="item"  style="background-image: url({{asset('images/'.$slider_images[0]->image)}}); style="height:50px;" " >
              
-            </div><!-- /.item -->
+            </div><!-- /.item --> --}}
+
+            <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="" srcset="">
 
 
             @endif
 
 
             @if($slider_images->has(1) && !is_null($slider_images[1]->image))
-            <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
-             
-            </div><!-- /.item -->
+            {{-- <div class="item" style="background-image: url();"> --}}
+              <img src="{{asset('images/'.$slider_images[1]->image)}}" alt="" srcset="">
+            {{-- </div> --}}
+            <!-- /.item -->
 
 
             @endif
 
 @if($slider_images->has(2) && !is_null($slider_images[2]->image) )
 
-<div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
+{{-- <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
  
-</div><!-- /.item -->
+</div> --}}
+
+
+<img src="{{asset('images/'.$slider_images[2]->image)}}" alt="" srcset="">
 
 
 @endif

@@ -186,7 +186,7 @@
             navRewind: true,
             items: 1,
             autowidth: true,
-            dots: true,
+            dots: false,
             nav: false,
             responsive: true,
             // betweem 900px and 601px
