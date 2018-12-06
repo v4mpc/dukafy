@@ -159,6 +159,10 @@
 	background-color: {{$colour_code}};
 
 }
+
+.container {
+    margin-left: 10px;
+}
 </style>
 
 

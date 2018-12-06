@@ -8,9 +8,11 @@
         @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
 <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
     @if($slider_images->has(0) && !is_null($slider_images[0]->image))
-    <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});">
-       
-    </div><!-- /.item -->
+    {{-- <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});"> --}}
+      
+    {{-- </div> --}}
+
+     {{-- <img src="{{asset('images/'.$slider_images[0]->image)}}" alt=""> --}}
 
    
     
@@ -20,8 +22,8 @@
     @if($slider_images->has(1) && !is_null($slider_images[1]->image))
     <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
        
-    </div><!-- /.item -->
-
+    </div>
+    {{-- <img src="{{asset('images/'.$slider_images[1]->image)}}" alt=""> --}}
    
     
     @endif
@@ -30,7 +32,9 @@
     @if($slider_images->has(2) && !is_null($slider_images[2]->image) )
     <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
        
-    </div><!-- /.item -->
+    </div>
+
+    {{-- <img src="{{asset('images/'.$slider_images[2]->image)}}" alt=""> --}}
 
    
     
