@@ -60,7 +60,7 @@ class OrderController extends Controller
         $customer->comment=$request->comment;
         $customer->save();
 
-        $account_id=Account::where('domain', getAccountId($request))->first()->id;
+        $account_id=getAccountId($request);
 
         $order=new Order;
         $order->customer_id=$customer->id;

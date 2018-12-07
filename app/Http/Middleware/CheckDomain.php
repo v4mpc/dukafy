@@ -18,7 +18,7 @@ class CheckDomain
     public function handle($request, Closure $next)
     {
         if (!$request->is('api/*')) {
-            $account=Account::where('domain', getAccountId($request))->first();
+            $account=Account::where('id', getAccountId($request))->first();
         
             if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
                 return $next($request);
