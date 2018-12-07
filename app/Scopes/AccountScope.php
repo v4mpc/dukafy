@@ -43,6 +43,7 @@ class AccountScope implements Scope
                 $domain=preg_replace('/\.dukafy/', "", Request::getHost());
                 // dd(Request::getHost());
                 $domain=preg_replace('/www\./', "", $domain);
+                dd($domain);
                 $account_id=Account::where('domain', $domain)->first()->id;
             }
             $builder->where('account_id', $account_id);
