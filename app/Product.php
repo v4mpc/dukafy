@@ -115,4 +115,13 @@ class Product extends Model
 
         return $product_price;
     }
+
+    public function imageArray()
+    {
+        $images_array=$this->images->map(function ($item, $key) {
+            return $item->image;
+        })->toArray();
+
+        return $images_array;
+    }
 }

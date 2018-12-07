@@ -252,12 +252,13 @@ class AccountController extends Controller
             return redirect()->route('accounts.show', $account_id);
         }
         // $products=Product::withoutGlobalScopes()->where('account_id', $account_id)->get();
-        // foreach ($products as $product) {
-        //     //lets delete images from server
-        //     Storage::disk('images')->delete($product->images);
-        //     //we will delete the images from database
+        foreach ($products as $product) {
+            //     //lets delete images from server
+            
+            Storage::disk('images')->delete($product->imageArray());
+            //     //we will delete the images from database
         //     $product->images()->detach();
-        // }
+        }
         //delete the categories
         Category::withoutGlobalScopes()->where('account_id', $account_id)->delete();
         //delete the orders_product
