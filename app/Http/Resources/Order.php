@@ -16,7 +16,7 @@ class Order extends Resource
     public function toArray($request)
     {
         return[
-            'id'=>$this->id,
+            'id'=>$this->number,
             'customer_name'=>$this->customer->first_name,
             'customer_email'=>$this->customer->email,
             'customer_phone'=>$this->customer->phone,

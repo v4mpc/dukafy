@@ -60,10 +60,20 @@ class OrderController extends Controller
         $customer->comment=$request->comment;
         $customer->save();
 
+        $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;
+
         $order=new Order;
         $order->customer_id=$customer->id;
         $order->status='completed';
-        $order->account_id=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;
+        $order->account_id=$account_id;
+
+        //we should make the order number ready
+        $last_order=Order::where('account_id', $account_id)->orderBy('created_at', 'desc')->first();
+        $order->number=1;
+        if ($last_order) {
+            $order->number=$last_order->number+1;
+        }
+       
         $order->save();
 
         session(['id'=>$order->id]);

@@ -88,7 +88,7 @@
                         <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-2" id="confirm-color">Confirm Button Color</button>
                       </div> --}} @foreach($orders as $order)
                     <tr>
-                        <td>{{$order->id}}</td>
+                        <td>{{$order->number}}</td>
                         <td>{{$order->customer->first_name}}</td>
                         {{-- <td>{{count($order->products)}}</td> --}}
                         

@@ -144,7 +144,7 @@ body { background: rgb(226, 225, 224); margin: 5px; }
                 <div class="col-sm-12">
                     <div class="invoice-title">
 
-                        <h3 class="pull-right">Order # {{$order->id}}</h3>
+                        <h3 class="pull-right">Order # {{$order->number}}</h3>
                     </div>
                     <hr>
                     <div class="row">

@@ -61,7 +61,7 @@
               <div class="card-header">
                 {{--
                 <h4 class="card-title">Zero configuration</h4> --}}
-                <h4 class="form-section"><i class="ft-package"></i> Order {{$order->id}}</h4>
+                <h4 class="form-section"><i class="ft-package"></i> Order {{$order->number}}</h4>
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                 {{-- <div class="heading-elements">
                   <ul class="list-inline mb-0">

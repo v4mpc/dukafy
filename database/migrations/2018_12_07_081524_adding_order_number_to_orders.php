@@ -14,7 +14,7 @@ class AddingOrderNumberToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->integer('number')->after('id')->nullable();
+            $table->integer('number')->after('id')->default(0);
         });
     }
 
