@@ -104,4 +104,15 @@ class Product extends Model
         }
         return json_encode($images);
     }
+
+
+    public function selling_price()
+    {
+        $product_price=$this->price;
+        if ($this->discount) {
+            $product_price=$this->price-round(($this->discount*$this->price)/100);
+        }
+
+        return $product_price;
+    }
 }

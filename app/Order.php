@@ -22,7 +22,7 @@ class Order extends Model
     {
         $sum=0;
         foreach ($this->products as $product) {
-            $sum+=$product->pivot->quantity*$product->price;
+            $sum+=$product->pivot->quantity*$product->selling_price();
         }
 
         return $sum;

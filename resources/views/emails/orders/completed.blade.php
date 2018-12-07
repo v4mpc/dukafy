@@ -157,7 +157,7 @@ body { background: rgb(226, 225, 224); margin: 5px; }
                                 {{$order->customer->address}}
                                         </address>
                         </div>
-                        <div class="col-sm-6 text-right">
+                        {{-- <div class="col-sm-6 text-right">
                             <address>
                                         <strong>Shipping To:</strong><br>
                                         {{$order->customer->first_name}}<br>
@@ -165,7 +165,7 @@ body { background: rgb(226, 225, 224); margin: 5px; }
                                         {{$order->customer->email}}<br>
                                         {{$order->customer->address}}
                                         </address>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
@@ -205,9 +205,9 @@ body { background: rgb(226, 225, 224); margin: 5px; }
 
                             <tr>
                                 <td>{{$product->name}}</td>
-                                <td class="text-center">{{number_format($product->price)}}</td>
+                                <td class="text-center">{{number_format($product->selling_price())}}</td>
                                 <td class="text-center">{{$product->pivot->quantity}}</td>
-                                <td class="text-right">{{number_format($product->pivot->quantity*$product->price)}}</td>
+                                <td class="text-right">{{number_format($product->pivot->quantity*$product->selling_price())}}</td>
                             </tr>
 
                             @endforeach

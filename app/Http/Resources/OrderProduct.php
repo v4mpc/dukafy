@@ -17,9 +17,9 @@ class OrderProduct extends Resource
         return [
            
             'name'=>$this->name,
-            'price'=>number_format($this->price),
+            'price'=>number_format($this->selling_price()),
             'quantity'=>$this->pivot->quantity,
-            'amount'=>number_format($this->pivot->quantity*$this->price)
+            'amount'=>number_format($this->pivot->quantity*$this->selling_price())
 
         ];
     }
