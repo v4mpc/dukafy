@@ -40,7 +40,9 @@ class AccountScope implements Scope
             if (Request::getHost()=="adshlits.dukafy.co.tz") {
                 $account_id=1;
             } else {
-                $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", Request::getHost()))->first()->id;
+                $domain=preg_replace('/\.dukafy/', "", Request::getHost());
+                $domain=preg_replace('/www./', "", $domain);
+                $account_id=Account::where('domain', $domain)->first()->id;
             }
             $builder->where('account_id', $account_id);
         }
