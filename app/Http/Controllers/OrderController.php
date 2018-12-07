@@ -60,7 +60,7 @@ class OrderController extends Controller
         $customer->comment=$request->comment;
         $customer->save();
 
-        $account_id=Account::where('domain', preg_replace('/\.dukafy/', "", $request->getHost()))->first()->id;
+        $account_id=Account::where('domain', getAccountId($request))->first()->id;
 
         $order=new Order;
         $order->customer_id=$customer->id;
