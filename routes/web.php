@@ -16,6 +16,7 @@
 //dukafy admin dashboard routes
 // Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
+    Route::post('reset/{account_id}', 'AccountController@reset')->name('accounts.reset');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('users', 'UserController');
     Route::resource('accounts', 'AccountController');

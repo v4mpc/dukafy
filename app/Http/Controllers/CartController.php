@@ -138,7 +138,7 @@ class CartController extends Controller
                 $cart_html.='<div class="price">'.number_format($item->price) .'TZS</div></div><div class="col-xs-1 action"><a href="#"><i class="fa fa-trash"></i></a> </div> </div> </div>';
             }
             $cart_html.=' <div class="clearfix"></div><hr><div class="clearfix cart-total"><div class="pull-right">';
-            $cart_html.='<span class="text">Sub Total :</span><span class="price">'.Cart::subtotal().' TZS</span> </div> <div class="clearfix"></div><a href="" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	<div>';
+            $cart_html.='<span class="text">Sub Total :</span><span class="price">'.Cart::subtotal().' TZS</span> </div> <div class="clearfix"></div><a href="'.route('cart.index').'" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	<div>';
         }
         return response()->json(['cart_count'=>Cart::count(),
                                  'sub_total'=>Cart::subtotal(),

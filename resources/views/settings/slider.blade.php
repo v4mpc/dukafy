@@ -77,7 +77,7 @@
                 <form action="{{route('update.slider',$settings->id)}}" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
-                  <h4 class="info-text" align="center"> Upload Your Slider Images (1920 x 466 pixels)</h4>
+                  <h4 class="info-text" align="center"> Upload Your Slider Images (1600 x 900 pixels)</h4>
                   <br>
 
                   <div class="row">

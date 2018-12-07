@@ -170,7 +170,7 @@
                     </div>
                     <div class="clearfix"></div>
                         @if(Cart::count())
-                <a href="{{route('check_out.create')}}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	
+                <a href="{{route('cart.index')}}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	
                 @endif
                 </div><!-- /.cart-total-->
                         

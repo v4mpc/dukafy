@@ -151,7 +151,7 @@ body { background: rgb(226, 225, 224); margin: 5px; }
                         <div class="col-sm-6">
                             <address>
                                         <strong>Billed To:</strong><br>
-                                {{$order->customer->first_name}} {{$order->customer->last_name}}<br>
+                                {{$order->customer->first_name}}<br>
                                 {{$order->customer->phone}}<br>
                                 {{$order->customer->email}}<br>
                                 {{$order->customer->address}}

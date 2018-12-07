@@ -12,6 +12,10 @@ use App\Package;
 use App\Subscription;
 use Auth;
 use Session;
+use Illuminate\Support\Facades\Storage;
+use App\Product;
+use App\Order;
+use App\Category;
 
 class AccountController extends Controller
 {
@@ -239,6 +243,32 @@ class AccountController extends Controller
     public function destroy(Account $account)
     {
         //
+    }
+
+    public function reset(Request $request, $account_id)
+    {
+        $account=Account::findorFail($account_id);
+        if ($account->email!=$request->email) {
+            return redirect()->route('accounts.show', $account_id);
+        }
+        // $products=Product::withoutGlobalScopes()->where('account_id', $account_id)->get();
+        // foreach ($products as $product) {
+        //     //lets delete images from server
+        //     Storage::disk('images')->delete($product->images);
+        //     //we will delete the images from database
+        //     $product->images()->detach();
+        // }
+        //delete the categories
+        Category::withoutGlobalScopes()->where('account_id', $account_id)->delete();
+        //delete the orders_product
+        $orders=Order::withoutGlobalScopes()->where('account_id', $account_id)->get();
+        foreach ($orders as $order) {
+            $order->products()->detach();
+        }
+        Order::withoutGlobalScopes()->where('account_id', $account_id)->delete();
+        //delete the products
+        Product::withoutGlobalScopes()->where('account_id', $account_id)->delete();
+        return redirect()->route('accounts.show', $account_id);
     }
 
     public function suspend($id)

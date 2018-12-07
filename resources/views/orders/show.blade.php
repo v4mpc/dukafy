@@ -81,18 +81,18 @@
                       <h3>Customer Info:</h3>
                       <p>Name: {{$order->customer->first_name}} {{$order->customer->last_name}}</p>
                       <p>Email: {{$order->customer->email}}</p>
-                      <p> Addreess: {{$order->customer->email}}</p>
+                      <p> Addreess: {{$order->customer->address}}</p>
                       <p> Phone: {{$order->customer->phone}}</p>
                     </div>
-                    <div class="col">
-                      <h3>Shipping Info:</h3>
+                    {{-- <div class="col"> --}}
+                      {{-- <h3>Shipping Info:</h3> --}}
 
 
-                      <p>Shipping Method: Free Shipping </p>
+                      {{-- <p>Shipping Method: Free Shipping </p> --}}
                       {{--
                       <p>Shipping Cost: 45,565</p> --}}
 
-                    </div>
+                    {{-- </div> --}}
                     <div class="col">
                       <h3>Billing Info:</h3>
                       <p>Cash On Delivery</p>
@@ -128,9 +128,9 @@
                           <td>{{$product->pivot->quantity}}</td>
                           <td>{{$product->name}}</td>
 
-                          <td>{{number_format($product->price)}}</td>
+                          <td>{{number_format($product->selling_price())}}</td>
 
-                          <td>{{number_format($product->pivot->quantity*$product->price)}}</td>
+                          <td>{{number_format($product->pivot->quantity*$product->selling_price())}}</td>
                           {{-- <td><a href="{{route('products.show',$product->id)}}" data-toggle="tooltip" data-original-title="Detail"
                               data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
 

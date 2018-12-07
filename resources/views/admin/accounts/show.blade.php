@@ -218,6 +218,7 @@
                       </tr>
                       <tr>
                         <td>Options</td>
+
                       
                         <td>@if($account->status==2)
                             <button data-toggle="modal" data-target="#inlineForm1" class="btn btn-outline-secondary btn-sm ">Create Account</button>
@@ -229,6 +230,7 @@
                           <a href="{{route('accounts.activate',$account->id)}}" class="btn btn-outline-success btn-sm edit-item-btn">Activate</a>
                           @endif
                           @endif
+                          <button data-toggle="modal" data-target="#inlineFormReset" class="btn btn-outline-primary btn-sm ">Reset Database</button>
                         </td>
                       </tr>
                     </tbody>
@@ -335,6 +337,42 @@
                 <div class="modal-footer">
                   <input type="reset" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" value="Close">
                   <input type="submit" class="btn btn-outline-primary btn-lg" value="Create Account">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="modal fade text-left" id="inlineFormReset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <label class="modal-title text-text-bold-600" id="myModalLabel33">Reset</label>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+              </div>
+              <form action="{{route('accounts.reset',$account->id)}}" method="POST">
+    
+                {{csrf_field()}}
+                <div class="modal-body">
+                    
+                   
+                      <div class="form-group row">
+                        <label class="col-md-3 label-control" for="projectinput1">Email</label>
+                        <div class="col-md-9">
+                          <input type="email"  id="projectinput1" class="form-control" placeholder="Account Email" name="email">
+                        </div>
+                      </div>
+
+                    
+                </div>
+  
+                <div class="modal-footer">
+                  <input type="reset" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" value="Close">
+                  <input type="submit" class="btn btn-outline-primary btn-lg" value="Reset">
                 </div>
               </form>
             </div>

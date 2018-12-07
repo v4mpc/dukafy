@@ -28,7 +28,6 @@ class OrderCompleted extends Mailable implements ShouldQueue
     {
         $this->order=$order;
         $this->settings=$settings;
-       
         $this->products=$products;
         // dd($products);
     }

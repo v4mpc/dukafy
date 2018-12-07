@@ -258,3 +258,11 @@ In PDOConnection.php line 46:
 
 
 
+[2018-12-07 08:06:05] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-07 08:06:05] Processing: App\Notifications\OrderCompleted
+[2018-12-07 08:06:05] Processing: App\Mail\OrderCompleted
+[2018-12-07 08:06:05] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-07 08:06:05] Processed:  App\Notifications\OrderCompleted
+[2018-12-07 08:06:05] Processing: App\Mail\OrderCompleted
+[2018-12-07 08:06:06] Processing: App\Mail\OrderCompleted
+[2018-12-07 08:06:06] Failed:     App\Mail\OrderCompleted
