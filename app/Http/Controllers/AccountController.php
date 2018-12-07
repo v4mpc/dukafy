@@ -251,7 +251,7 @@ class AccountController extends Controller
         if ($account->email!=$request->email) {
             return redirect()->route('accounts.show', $account_id);
         }
-        // $products=Product::withoutGlobalScopes()->where('account_id', $account_id)->get();
+        $products=Product::withoutGlobalScopes()->where('account_id', $account_id)->get();
         foreach ($products as $product) {
             //     //lets delete images from server
             
