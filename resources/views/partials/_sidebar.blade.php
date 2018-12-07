@@ -77,8 +77,10 @@
           
           <li class="{{Request::is('manage/about_store')?"active":""}}" ><a href="{{route('settings.about_store_form')}}" class="menu-item "  data-i18n="nav.cards.card_statistics">About Store</a>
           </li>
+          @if(Auth::id()==1)
           <li class="{{Request::is('manage/layout')?"active":""}}"><a class="menu-item " href="{{route('settings.layout_form')}}" data-i18n="nav.cards.card_weather">Layout</a>
           </li>
+          @endif
          <li class="{{Request::is('manage/logo')?"active":""}}"><a class="menu-item" href="{{route('settings.logo_form')}}" data-i18n="nav.cards.card_charts">Logo</a>
           </li>
           
