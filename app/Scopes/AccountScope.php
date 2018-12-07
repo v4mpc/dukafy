@@ -45,7 +45,7 @@ class AccountScope implements Scope
                 $domain=preg_replace('/www\./', "", $domain);
                 // dd($domain);
                 $account_id=Account::where('domain', $domain)->first()->id;
-                dd($account_id);
+                // dd($account_id);
             }
             $builder->where('account_id', $account_id);
         }
