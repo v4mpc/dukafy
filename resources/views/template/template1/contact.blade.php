@@ -40,7 +40,7 @@
 
                   <!-- Payment information -->
                   <div class="heading">
-                    <h2>Dou You have a Question for Us ?</h2>
+                    <h2>Do You have a Question for Us ?</h2>
                   </div>
                   <ul class="row">
                     <li class="col-sm-6">

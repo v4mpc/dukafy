@@ -259,7 +259,7 @@
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/Grocery.png')}}" alt="icon">
                             <p class="bold">Grocery Stores</p>
-                            <p class="light thin">Easly allow people to submit their purchase their groceries from your store</p>
+                            <p class="light thin">Easily allow people to submit their purchase their groceries from your store</p>
                         </div>
                     </div>
                     <!-- Features card 2 -->
@@ -274,7 +274,7 @@
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/Home Base Business.png')}}" alt="icon">
-                            <p class="bold">Home Base Business</p>
+                            <p class="bold">Home Base Businesses</p>
                             <p class="light thin">Instead of Whatsapping your whole stock list,you can easily send people to your store.</p>
                         </div>
                     </div><script>
@@ -699,8 +699,8 @@
                         <!-- Section title -->
                         <div class="section-title sm-ac mb-90">
                             <p class="light bold small">Get in touch.</p>
-                            <h2><span class="thin">Write us a </span><b>message</b></h2>
-                            <p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>
+                            
+                            
                         </div>
                     </div>
                     {{-- <div class="col-12 col-md-6">
@@ -768,8 +768,7 @@
                         <ul class="footer-nav">
                             <!-- Footer Link 1 -->
                             <li class="nav-item active">
-                                <a class="nav-link mx-auto" target="_blank" href="#">Terms & Conditions / Privacy
-                                    Policy</a>
+                                <a class="nav-link mx-auto" target="_blank" href="#">Terms & Conditions</a>
                             </li>
 
                             <!--<li class="nav-item">
