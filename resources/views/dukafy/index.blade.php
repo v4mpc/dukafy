@@ -274,7 +274,7 @@
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
                             <img src="{{asset('dukafy/img/Home Base Business.png')}}" alt="icon">
-                            <p class="bold">Home Base Businesses</p>
+                            <p class="bold">Home Based Businesses</p>
                             <p class="light thin">Instead of Whatsapping your whole stock list,you can easily send people to your store.</p>
                         </div>
                     </div><script>
@@ -699,6 +699,7 @@
                         <!-- Section title -->
                         <div class="section-title sm-ac mb-90">
                             <p class="light bold small">Get in touch.</p>
+                            <h2><span class="thin">Write us a </span><b>message</b></h2>
                             
                             
                         </div>
