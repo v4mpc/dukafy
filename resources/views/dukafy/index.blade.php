@@ -361,7 +361,7 @@
                             <h2><span class="thin">Your </span> <b>Dashboard</b></h2>
                         </div>
                         <!-- Text -->
-                        <p class="light thin">Everything in one place. Selling your products should be every bit as simple as it is from your offline store. With Dukafy's Ecommerce solution you get an easy to use platform to run your online business with ease.(put in a list all the technical features)</p>
+                        <p class="light thin">Everything in one place. Selling your products should be every bit as simple as it is from your offline store. With Dukafy's Ecommerce solution you get an easy to use platform to run your online business with ease.</p>
                         <p> <i class="fa fa-check"></i> Choose from 3 Design themes.</p>
                         <p> <i class="fa fa-check"></i> See yours in one dashboard.</p>
                         <p> <i class="fa fa-check"></i> Easy add and remove products.</p>
