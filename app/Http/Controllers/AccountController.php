@@ -53,7 +53,7 @@ class AccountController extends Controller
     {
         // dd($request);
         $request->validate([
-            'domain' => 'required|unique:accounts,domain|max:255',
+            // 'domain' => 'required|unique:accounts,domain|max:255',
             'name' => 'required|max:255',
             'email' => 'required|email|unique:accounts,email|max:255',
             'phone' => 'required|max:255',
@@ -73,9 +73,14 @@ class AccountController extends Controller
         //create subdomain in digital ocean
         //create a laravel job that will handle creation of a new laravel project
         //configure domain,database mysql etc
+        // dd($request);
+        $domain=$request->domain.".co.tz";
+        if ($request->domain1) {
+            $domain=$request->domain1;
+        }
         $account=new Account;
         $account->name=$request->name;
-        $account->domain=$request->domain.".co.tz";
+        $account->domain=$domain;
         $account->phone=$request->phone;
         $account->email=$request->email;
         $account->package_id=$request->package_id;

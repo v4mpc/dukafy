@@ -610,7 +610,7 @@
                                          
                                             <input type="text" id="domain" class="form-control is-valid" name="domain" style="
                                             border-radius: 10px 0 0 10px; font-weight: 405;
-                                        " placeholder="domain">
+                                        " placeholder="Domain">
                                             
                      
                                             <div class="input-group-append">
