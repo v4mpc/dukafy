@@ -1,6 +1,6 @@
 
 
-       @if($slider_images->has(0) ||$slider_images->has(1) ||$slider_images->has(2))
+       @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
 <div class="home-v1-slider slid-sec" >
         <!-- ========================================== SECTION – HERO : END========================================= -->
     
