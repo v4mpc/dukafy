@@ -30,7 +30,8 @@ return [
 
    
     // 'host' => 'rs47.registrar-servers.com',
-    'host' => 'smtp.gmail.com',
+    // 'host' => 'smtp.gmail.com',
+    'host'=>'box.automate.co.tz',
 
 
     /*
@@ -79,7 +80,7 @@ return [
     |
     */
 
-    'encryption' => 'tls',
+    'encryption' => 'starttls',
 
     /*
     |--------------------------------------------------------------------------
@@ -92,9 +93,11 @@ return [
     |
     */
 
-    'username' => 'yona101992@gmail.com',
+    // 'username' => 'yona101992@gmail.com',
+    'username'=>'info@dukafy.co.tz',
 
-    'password' => 'novusordoseclorum',
+    // 'password' => 'novusordoseclorum',
+    'password'=>'xE67KdS4DEvu8vHS',
 
     //dukafy password lits=Op2K8(HWi2ZD
 
