@@ -55,3 +55,1785 @@
 [2018-12-14 06:52:19] Processing: App\Mail\OrderCompleted
 [2018-12-14 06:52:19] Failed:     App\Mail\OrderCompleted
 [2018-12-14 06:52:22] Processed:  App\Jobs\ProcessOrderSmsNotification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 07:47:48] Processing: App\Mail\OrderCompleted
+[2018-12-14 07:47:48] Processing: App\Notifications\OrderCompleted
+[2018-12-14 07:47:48] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 07:47:49] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 07:47:49] Processing: App\Mail\OrderCompleted
+[2018-12-14 07:47:49] Processing: App\Mail\OrderCompleted
+[2018-12-14 07:47:49] Failed:     App\Mail\OrderCompleted
+[2018-12-14 07:47:50] Processed:  App\Jobs\ProcessOrderSmsNotification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 07:58:36] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 07:58:36] Processing: App\Notifications\OrderCompleted
+[2018-12-14 07:58:36] Processing: App\Mail\OrderCompleted
+[2018-12-14 07:58:36] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 07:58:38] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 07:58:44] Processing: App\Mail\OrderCompleted
+[2018-12-14 07:58:52] Processing: App\Mail\OrderCompleted
+[2018-12-14 07:58:54] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 08:00:30] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:00:30] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:00:30] Processing: App\Notifications\OrderCompleted
+[2018-12-14 08:00:31] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 08:00:31] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:00:33] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:00:35] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:00:45] Failed:     App\Mail\OrderCompleted
+[2018-12-14 08:01:52] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:01:52] Processing: App\Notifications\OrderCompleted
+[2018-12-14 08:01:52] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 08:01:52] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:01:53] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:01:56] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:01:59] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:02:00] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 08:08:14] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:08:14] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:08:14] Processing: App\Notifications\OrderCompleted
+[2018-12-14 08:08:15] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 08:08:15] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:08:16] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:08:16] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:08:16] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 08:14:27] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:14:28] Processing: App\Notifications\OrderCompleted
+[2018-12-14 08:14:28] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:14:29] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 08:14:29] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:14:29] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 08:14:29] Processing: App\Mail\OrderCompleted
+[2018-12-14 08:14:30] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 09:07:51] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:07:51] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:07:51] Processing: App\Notifications\OrderCompleted
+[2018-12-14 09:07:51] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 09:07:53] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:07:57] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:08:02] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:08:05] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 09:46:13] Processing: App\Notifications\OrderCompleted
+[2018-12-14 09:46:13] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:46:14] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:46:14] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 09:46:16] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:46:26] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:46:40] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:46:44] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 09:47:40] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:47:40] Processing: App\Notifications\OrderCompleted
+[2018-12-14 09:47:40] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:47:40] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 09:47:41] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:47:44] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:48:15] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:48:17] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 09:56:41] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:56:41] Processing: App\Notifications\OrderCompleted
+[2018-12-14 09:56:41] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:56:41] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 09:56:43] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:56:46] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:56:49] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:56:51] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 09:58:03] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:58:03] Processing: App\Notifications\OrderCompleted
+[2018-12-14 09:58:03] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 09:58:03] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:58:04] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:58:09] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:58:14] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:58:24] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 09:59:35] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:59:35] Processing: App\Notifications\OrderCompleted
+[2018-12-14 09:59:35] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:59:37] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 09:59:38] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 09:59:38] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:59:40] Processing: App\Mail\OrderCompleted
+[2018-12-14 09:59:40] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-14 10:00:49] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 10:00:50] Processing: App\Notifications\OrderCompleted
+[2018-12-14 10:00:50] Processing: App\Mail\OrderCompleted
+[2018-12-14 10:00:50] Processed:  App\Notifications\OrderCompleted
+[2018-12-14 10:00:50] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-14 10:00:54] Processing: App\Mail\OrderCompleted
+[2018-12-14 10:00:59] Processing: App\Mail\OrderCompleted
+[2018-12-14 10:01:02] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+
+
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 50:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 46:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
