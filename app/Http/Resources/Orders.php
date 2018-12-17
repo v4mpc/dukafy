@@ -17,11 +17,13 @@ class Orders extends Resource
         // dd($request->user_id);
         return[
             'id'=>$this->id,
+            'number'=>$this->number,
             'customer_name'=>$this->customer->first_name,
             'products'=>count($this->products),
             'amount'=>number_format($this->totalCost()),
             'time'=>$this->created_at->diffForHumans(),
             'read'=>$this->readOrder($request->user_id),
+
             
         ];
     }
