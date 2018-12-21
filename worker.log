@@ -1853,3 +1853,161 @@ In PDOConnection.php line 46:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-21 08:42:25] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 08:42:25] Processing: App\Notifications\OrderCompleted
+[2018-12-21 08:42:26] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 08:42:26] Processing: App\Mail\OrderCompleted
+[2018-12-21 08:42:26] Processing: App\Mail\OrderCompleted
+[2018-12-21 08:42:26] Processing: App\Mail\OrderCompleted
+[2018-12-21 08:42:26] Failed:     App\Mail\OrderCompleted
+[2018-12-21 08:42:27] Processed:  App\Jobs\ProcessOrderSmsNotification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-21 08:50:55] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 08:50:56] Processing: App\Notifications\OrderCompleted
+[2018-12-21 08:50:56] Processing: App\Mail\OrderCompleted
+[2018-12-21 08:50:56] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 08:50:56] Processing: App\Mail\OrderCompleted
+[2018-12-21 08:50:56] Processing: App\Mail\OrderCompleted
+[2018-12-21 08:50:56] Failed:     App\Mail\OrderCompleted
+[2018-12-21 08:50:57] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 09:17:34] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 09:17:34] Processing: App\Mail\OrderCompleted
+[2018-12-21 09:17:34] Processing: App\Mail\OrderCompleted
+[2018-12-21 09:17:34] Processing: App\Notifications\OrderCompleted
+[2018-12-21 09:17:35] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 09:17:35] Processing: App\Mail\OrderCompleted
+[2018-12-21 09:17:35] Failed:     App\Mail\OrderCompleted
+[2018-12-21 09:17:35] Processed:  App\Jobs\ProcessOrderSmsNotification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-21 18:00:56] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:00:56] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:00:56] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:00:57] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 18:00:58] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:00:58] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:01:00] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:01:02] Failed:     App\Mail\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-21 18:05:11] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:05:11] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:05:11] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:05:12] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 18:05:13] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:05:15] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:05:19] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:05:22] Failed:     App\Mail\OrderCompleted
+[2018-12-21 18:18:38] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:18:38] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:18:38] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 18:18:40] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:19:30] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:19:30] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:19:30] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 18:19:32] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:37:09] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:37:09] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:37:09] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 18:37:11] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:37:20] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:37:21] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:37:21] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:37:21] Processed:  App\Notifications\OrderCompleted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[2018-12-21 18:41:13] Processing: App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:41:13] Processing: App\Notifications\OrderCompleted
+[2018-12-21 18:41:13] Processing: App\Mail\OrderCompleted
+[2018-12-21 18:41:13] Processed:  App\Notifications\OrderCompleted
+[2018-12-21 18:41:14] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2018-12-21 18:41:17] Processed:  App\Mail\OrderCompleted
