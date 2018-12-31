@@ -121,11 +121,11 @@
 }
 	
 
-	@if(Request::is('/'))
+	/* @if(Request::is('/'))
 	.section-hack{
 		margin-top: 35%;
 	}
-	@endif
+	@endif */
 
 	@media (max-width: 768px) {
 .item-col-4 .product {
