@@ -19,7 +19,8 @@
 <script src="{{asset('vendor/toaster/toaster.min.js')}}"></script>
 <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
-
+<script type="text/javascript" src="{{asset('template1/rs-plugin/js/jquery.tp.t.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template1/rs-plugin/js/jquery.tp.min.js')}}"></script>
 
 
 <!-- For demo purposes – can be removed on production -->

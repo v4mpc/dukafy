@@ -7,6 +7,17 @@
         var dragging = true;
         var owlElementID = "#owl-main";
 
+
+        //slider testing
+        jQuery('.tp-banner').revolution(
+            {
+                delay: 9000,
+                startwidth: 1200,
+                startheight: 500,
+                hideThumbs: 10
+            });
+        //
+
         function fadeInReset() {
             if (!dragging) {
                 $(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").stop().delay(800).animate({ opacity: 0 }, { duration: 400, easing: "easeInCubic" });

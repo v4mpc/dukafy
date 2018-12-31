@@ -4,41 +4,35 @@
 <div class="col-xs-12 col-sm-12 col-md-9">
         <!-- ========================================== SECTION – HERO ========================================= -->
         
-<div id="hero">
+<!-- <div id="hero"> -->
         @if(!is_null($slider_images[0]->image)||!is_null($slider_images[1]->image)||!is_null($slider_images[2]->image))
-<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-    @if($slider_images->has(0) && !is_null($slider_images[0]->image))
-    {{-- <div class="item" style="background-image: url({{asset('images/'.$slider_images[0]->image)}});"> --}}
-      
-    {{-- </div> --}}
-
-     {{-- <img src="{{asset('images/'.$slider_images[0]->image)}}" alt=""> --}}
-
-   
-    
-    @endif
 
 
-    @if($slider_images->has(1) && !is_null($slider_images[1]->image))
-    <div class="item" style="background-image: url({{asset('images/'.$slider_images[1]->image)}});">
-       
-    </div>
-    {{-- <img src="{{asset('images/'.$slider_images[1]->image)}}" alt=""> --}}
-   
-    
-    @endif
+        <div class="tp-banner-container">
+		<div class="tp-banner" >
+			<ul>
+            @if($slider_images->has(0) && !is_null($slider_images[0]->image))
+				<li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
+					<img src="{{asset('images/'.$slider_images[0]->image)}}"    data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+				</li>
+                @endif
+				@if($slider_images->has(1) && !is_null($slider_images[1]->image))
+				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
+					<img src="{{asset('images/'.$slider_images[1]->image)}}"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+				</li>
+                @endif
 
 
-    @if($slider_images->has(2) && !is_null($slider_images[2]->image) )
-    <div class="item" style="background-image: url({{asset('images/'.$slider_images[2]->image)}});">
-       
-    </div>
+                @if($slider_images->has(2) && !is_null($slider_images[2]->image))
+				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
+					<img src="{{asset('images/'.$slider_images[2]->image)}}"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+				</li>
+                @endif
+			
+			</ul>
+		</div>
+	<!-- </div> -->
 
-    {{-- <img src="{{asset('images/'.$slider_images[2]->image)}}" alt=""> --}}
-
-   
-    
-    @endif
 
     @endif
     

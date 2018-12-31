@@ -14,6 +14,9 @@
 
 	    <title>{{$settings->store_name}}</title>
 
+
+
+		<link rel="stylesheet" type="text/css" href="{{asset('template1/rs-plugin/css/settings.css')}}" media="screen" />
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="{{asset('template3/assets/css/bootstrap.min.css')}}">
 	    
