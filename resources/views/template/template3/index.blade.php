@@ -143,7 +143,7 @@
                                 <h5 class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>20?str_limit($product->name,20):$product->name}}</a></h5>
                                 <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
     
-                        <div class="description"></div>
+                        
                         
                         <div class="product-price">	
                         
@@ -215,7 +215,7 @@
                             <h5 class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>20?str_limit($product->name,20):$product->name}}</a></h5>
                             <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
 
-                    <div class="description"></div>
+                    
                     
                     <div class="product-price">	
                     
