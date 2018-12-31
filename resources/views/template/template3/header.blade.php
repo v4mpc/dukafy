@@ -167,7 +167,7 @@
     margin-left: 10px;
 }
 
-.product{
+.products{
 	margin-bottom: 30px;
 }
 </style>
