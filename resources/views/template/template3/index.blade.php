@@ -221,11 +221,10 @@
                     
                             @if($product->discount)
                         <span class="price">
-                                {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS			</span>
+                                {{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS</span>
                                                      <span class="price-before-discount">{{number_format($product->price)}}</span>
                                             @else
-                                            <span class="price">
-                                                    {{number_format($product->price)}}	 TZS			</span>
+                                            <span class="price">{{number_format($product->price)}}TZS</span>
                                             @endif
                     </div><!-- /.product-price -->
                     
