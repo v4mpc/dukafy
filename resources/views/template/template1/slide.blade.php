@@ -11,13 +11,13 @@
 
           <!-- Main Slider Start -->
           <div class="tp-banner-container">
-            <div class="tp-banner">
+            <div class="tp-banner" style="height:600px">
               <ul>
              
                 @if($slider_images->has(0) && !is_null($slider_images[0]->image))
                 <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
                   <!-- MAIN IMAGE -->
-                  <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   
+                  <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="initial" data-bgrepeat="no-repeat">   
                  </li>
 @endif
 
@@ -26,14 +26,14 @@
 @if($slider_images->has(1) && !is_null($slider_images[1]->image))
 <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
   <!-- MAIN IMAGE -->
-  <img src="{{asset('images/'.$slider_images[1]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">           
+  <img src="{{asset('images/'.$slider_images[1]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="initial" data-bgrepeat="no-repeat">           
  </li>
 @endif
 
 @if($slider_images->has(2) && !is_null($slider_images[2]->image) )
 <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
   <!-- MAIN IMAGE -->
-  <img src="{{asset('images/'.$slider_images[2]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   </li>
+  <img src="{{asset('images/'.$slider_images[2]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="initial" data-bgrepeat="no-repeat">   </li>
 @endif
               
 
