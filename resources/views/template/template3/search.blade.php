@@ -92,9 +92,7 @@
 <div class="product">		
 <div class="product-image">
 <div class="image">
-        @if($product->discount)
-        <div class="tag sale"><span>sale</span></div>
-        @endif
+        
 <a href="{{route('product.show',$product->id)}}"><img  src="assets/images/blank.gif" data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" alt=""></a>
 </div><!-- /.image -->			
 
