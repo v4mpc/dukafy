@@ -104,7 +104,7 @@
 <h5 class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>20?str_limit($product->name,20):$product->name}}</a></h5>
                             <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
 
-<div class="description"></div>
+
 
 <div class="product-price">	
 
@@ -161,9 +161,9 @@
 <div class="col col-sm-4 col-lg-4">
 <div class="product-image">
 <div class="image">
-        @if($product->discount)
+        {{-- @if($product->discount)
         <div class="tag sale"><span>sale</span></div>
-        @endif
+        @endif --}}
     <img data-echo="{{asset('images/'.$product->images[0]->image)}}" class="img-responsive img-height" src="assets/images/blank.gif" alt="">
 </div>
 </div><!-- /.product-image -->

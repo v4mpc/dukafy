@@ -166,6 +166,10 @@
 .container {
     margin-left: 10px;
 }
+
+.product{
+	margin-bottom: 30px;
+}
 </style>
 
 
