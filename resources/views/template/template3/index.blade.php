@@ -196,7 +196,7 @@
          {{-- <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs"> --}}
                 <div class="row">
                  @foreach($recent_products as $product)   
-                 <div class="col-xs-6 col-md-3 wow fadeInUp">
+                 <div class="col-xs-6 col-md-3">
                     <div class="products">
                     	
                     <div class="product-image">

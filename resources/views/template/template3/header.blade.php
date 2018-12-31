@@ -163,9 +163,9 @@
 
 }
 
-.container {
+/* .container {
     margin-left: 10px;
-}
+} */
 
 .products{
 	margin-bottom: 30px;
