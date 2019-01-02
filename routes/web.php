@@ -41,6 +41,7 @@ Route::middleware(['check.account'])->group(function () {
     //the routes are store dependant
     //middleware will help us with that
     Route::get('/', 'TemplateController@index')->name('start');
+    Route::view('app/privacy_policy', 'app_privacy_policy');
     Route::get('/products', 'TemplateController@products')->name('products');
     Route::get('/product/{id}', 'TemplateController@productshow')->name('product.show');
     Route::resource('/cart', 'CartController');

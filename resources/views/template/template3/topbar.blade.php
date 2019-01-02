@@ -16,7 +16,7 @@
 
    
 
-<li><a href="{{route('cart.index')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+
                     @if($settings->facebook)
                       <li><a href="https://{{$settings->facebook}}" id="facebook"><i class="icon fa fa-facebook"></i>Facebook</a></li> 
                       @endif
