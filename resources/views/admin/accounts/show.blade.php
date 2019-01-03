@@ -189,6 +189,13 @@
                       <tr>
                         <td>Registration Date :</td>
                         <td>
+                          <strong>{{$account->created_at}}</strong>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>Start Date :</td>
+                        <td>
                           <strong>{{$account->started_at}}</strong>
                         </td>
                       </tr>

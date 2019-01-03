@@ -42,6 +42,7 @@ Route::middleware(['check.account'])->group(function () {
     //middleware will help us with that
     Route::get('/', 'TemplateController@index')->name('start');
     Route::view('app/privacy_policy', 'app_privacy_policy');
+    Route::view('terms_and_condition', 'terms_and_condition')->name('terms');
     Route::get('/products', 'TemplateController@products')->name('products');
     Route::get('/product/{id}', 'TemplateController@productshow')->name('product.show');
     Route::resource('/cart', 'CartController');
@@ -60,8 +61,8 @@ Route::middleware(['check.account'])->group(function () {
     Route::get('/search', 'ProductController@search')->name('search');
     Route::get('/category/{id}', 'ProductController@category')->name('category');
     Route::get('/mailable', function () {
-        $order = App\Order::find(7);
-        return new App\Mail\OrderCompleted($order, 'yona101992@gmail.com');
+        $account = App\Account::find(2);
+        return new App\Mail\AccountRegistered($account);
     });
 });
 //login routes login and admin i think

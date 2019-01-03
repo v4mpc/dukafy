@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Product;
 use App\Order;
 use App\Category;
+use App\Mail\AccountRegistered;
 
 class AccountController extends Controller
 {
@@ -106,7 +107,8 @@ class AccountController extends Controller
         // return redirect()->route('accounts.index');
         $account->save();
         //else go back;
-
+        //lets send email to notify the admin
+        Mail::to('sarfaraz@legendaryits.com')->send(new AccountRegistered($account));
         // if ($request->user_email) {
         //     $user=new User;
         //     $user->name=$request->user_name;
