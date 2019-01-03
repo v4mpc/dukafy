@@ -17,6 +17,7 @@ use App\Product;
 use App\Order;
 use App\Category;
 use App\Mail\AccountRegistered;
+use Mail;
 
 class AccountController extends Controller
 {

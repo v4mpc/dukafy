@@ -2523,3 +2523,5 @@ In PDOConnection.php line 27:
 
 
 
+[2019-01-03 09:42:08] Processing: App\Mail\AccountRegistered
+[2019-01-03 09:42:23] Processed:  App\Mail\AccountRegistered
