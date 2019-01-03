@@ -8,6 +8,8 @@ use App\Category;
 use App\Setting;
 use App\SliderImage;
 use App\BrandImage;
+use App\Timer;
+use Carbon\Carbon;
 
 class TemplateController extends Controller
 {
@@ -24,8 +26,17 @@ class TemplateController extends Controller
 
           // here i should use .env app_url
         if ($request->url()==env('APP_URL')) {
-            // dd('home dukafy');
-            return view('dukafy.index');
+            // its dukafy
+            //lets check if timer has exired
+            $timer = Timer::findOrFail(1);
+            if ($timer->created_at < Carbon::now()) {
+                return view('dukafy.index');
+            } else {
+                return view('dukafy.timer')->with('timer', $timer);
+            }
+            
+
+            //its comming soon
         }
 
         // dd(config('app.settings'));
