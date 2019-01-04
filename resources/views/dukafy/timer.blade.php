@@ -18,7 +18,7 @@
 <body class="color-scheme-neue">
 	<!-- Animated background -->
 	<canvas id="bg-canvas"></canvas>
-	<div class="bg-img" style="width: 100%; height: 100%; position: fixed; background: url({{asset('timer/images/dar.jpg')}}) no-repeat center center; background-size: cover; "></div>
+	<div class="bg-img" style="width: 100%; height: 100%; position: fixed; background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{asset('timer/images/dar.jpg')}}) no-repeat center center; background-size: cover; "></div>
 	<!-- First screen -->
 	<div class="splash">
 		<div class="centered-unit">
@@ -26,7 +26,7 @@
 				<!-- Main header -->
 				<h1>We're launching Soon!</h1>
 				<!-- Sub header -->
-				<p class="lead">Stay Tuned</p>
+				<p class="lead">Stay tuned!</p>
 
 				<!-- Countdown -->
 				<div class="countdown circled large">
@@ -53,8 +53,12 @@
 				</div>
 				<!-- Countdown end -->
 			</div>
+			<p><i class="fa fa-envelope"></i> info@dukafy.co.tz</p>
 		</div>
+		
 	</div>
+
+	
 
 
 
@@ -71,7 +75,7 @@
 			// Activate countdownTimer plugin on a '.countdown' element
 			$(".countdown").countdownTimer({
 				// Set the end date for the countdown
-				endTime: new Date("{{$timer->created_at`}}")
+				endTime: new Date("{{$timer->created_at}}")
 			});
 
 
