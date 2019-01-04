@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Splined — Coming Soon Page Template</title>
+	<title>Dukafy — Coming Soon</title>
 	<!-- Modernizr -->
 	<script src="{{asset('timer/js/modernizr.js')}}"></script>
 	<!-- Open Sans from Google Webfonts -->
