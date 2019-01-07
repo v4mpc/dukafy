@@ -18,7 +18,7 @@
 <body class="color-scheme-neue">
 	<!-- Animated background -->
 	<canvas id="bg-canvas"></canvas>
-	<div class="bg-img" style="width: 100%; height: 100%; position: fixed; background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{asset('timer/images/dar.jpg')}}) no-repeat center center; background-size: cover; "></div>
+	<div class="bg-img" style="width: 100%; height: 100%; position: fixed; background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{asset('timer/images/resized.jpg')}}) no-repeat center center; background-size: cover; "></div>
 	<!-- First screen -->
 	<div class="splash">
 		<div class="centered-unit">
@@ -75,7 +75,9 @@
 			// Activate countdownTimer plugin on a '.countdown' element
 			$(".countdown").countdownTimer({
 				// Set the end date for the countdown
-				endTime: new Date("{{$timer->created_at}}")
+				// endTime: new Date("{{$timer->created_at}}")
+				
+				endTime: new Date('2014-02-18T15:00:48')
 			});
 
 
