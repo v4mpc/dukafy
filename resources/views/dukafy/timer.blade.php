@@ -77,7 +77,7 @@
 				// Set the end date for the countdown
 				// endTime: new Date("{{$timer->created_at}}")
 				
-				endTime: new Date('2018-02-18T15:00:48')
+				endTime: new Date('2019-02-18T15:00:48')
 			});
 
 
