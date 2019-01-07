@@ -23,7 +23,7 @@
                             @endif
                         <li class="menu-item animate-dropdown"><a title="Contact Us for Support" href="{{route('contact')}}"><i class="ec ec-support"></i>Contact Us</a></li>
                             
-                            <li class="menu-item animate-dropdown"><a title="Call Us 24/7" href="my-account.html"><i class="ec ec-phone"></i>Hotline:+255 {{substr_replace($settings->mobile," ", 3, 0)}}</a></li>
+                            {{-- <li class="menu-item animate-dropdown"><a title="Call Us 24/7" href="my-account.html"><i class="ec ec-phone"></i>Hotline:+255 {{substr_replace($settings->mobile," ", 3, 0)}}</a></li> --}}
                         </ul>
                     </nav>
                 </div>
