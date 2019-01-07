@@ -1,9 +1,9 @@
 @media (max-width: 992px) {
     .navbar {
         position: fixed;
-        padding: 0 15px;
+        padding: 15px 15px;
         background-color: rgb(250, 251, 255);
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 0px 0px;
         -webkit-box-shadow: 0 10px 20px 0 rgba(5, 16, 44, .15);
         box-shadow: 0 10px 20px 0 rgba(5, 16, 44, .15);
     }
