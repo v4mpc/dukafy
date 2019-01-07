@@ -75,9 +75,9 @@
 			// Activate countdownTimer plugin on a '.countdown' element
 			$(".countdown").countdownTimer({
 				// Set the end date for the countdown
-				// endTime: new Date("{{$timer->created_at}}")
+				endTime: new Date("{{$timer->created_at->format('Y-m-d\TH:i:s')}}")
 				
-				endTime: new Date('2019-02-18T15:00:48')
+				
 			});
 
 
