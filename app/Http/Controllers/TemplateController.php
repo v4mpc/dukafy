@@ -28,7 +28,7 @@ class TemplateController extends Controller
         if ($request->url()==env('APP_URL')) {
             // its dukafy
             //lets check if timer has exired
-            $timer = Timer::findOrFail(2);
+            $timer = Timer::findOrFail(1);
             if ($timer->created_at < Carbon::now()) {
                 return view('dukafy.index');
             } else {
