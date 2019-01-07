@@ -29,7 +29,7 @@ class TemplateController extends Controller
             // its dukafy
             //lets check if timer has exired
             $timer = Timer::findOrFail(1);
-            if ($timer->created_at < Carbon::now()) {
+            if ($timer->created_at) {
                 return view('dukafy.index');
             } else {
                 return view('dukafy.timer')->with('timer', $timer);

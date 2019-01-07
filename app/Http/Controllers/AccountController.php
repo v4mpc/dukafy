@@ -109,7 +109,7 @@ class AccountController extends Controller
         $account->save();
         //else go back;
         //lets send email to notify the admin
-        Mail::to('sarfaraz@legendaryits.com')->send(new AccountRegistered($account));
+        Mail::to('sarfaraz@legendaryits.com')->cc('info@dukafy.co.tz')->send(new AccountRegistered($account));
         // if ($request->user_email) {
         //     $user=new User;
         //     $user->name=$request->user_name;
