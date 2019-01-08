@@ -15,8 +15,7 @@
                 startwidth: 1200,
                 startheight: 500,
                 hideThumbs: 10,
-                fullWidth: "on",
-                forceFullWidth: "on"
+
             });
         //
 
