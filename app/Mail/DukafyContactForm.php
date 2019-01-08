@@ -7,22 +7,23 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactForm extends Mailable implements ShouldQueue
+class DukafyContactForm extends Mailable implements ShouldQueue
 {
-    use Queueable,SerializesModels;
+    use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public $mail;
     public $message;
-
+    public $email;
+    public $name;
     public function __construct($request)
     {
-        $this->mail=$request->email;
-        $this->message=$request->message;
+        $this->message = $request->message;
+        $this->email = $request->email;
+        $this->name = $request->name;
     }
 
     /**
@@ -32,8 +33,6 @@ class ContactForm extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('emails.contact')->with([
-            'message'=>$this->message
-        ]);
+        return $this->from('info@dukafy.co.tz')->markdown('emails.dukafy.contact')->with('message', $this->message)->with('email', $this->email)->with('name', $this->name);
     }
 }

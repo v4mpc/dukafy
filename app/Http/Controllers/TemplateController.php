@@ -10,6 +10,9 @@ use App\SliderImage;
 use App\BrandImage;
 use App\Timer;
 use Carbon\Carbon;
+use Session;
+use App\Mail\DukafyContactForm;
+use Mail;
 
 class TemplateController extends Controller
 {
@@ -59,6 +62,20 @@ class TemplateController extends Controller
         }
     }
 
+
+    public function sendEmail(Request $request)
+    {
+        $request->validate([
+            'email'=>'required|email',
+            'message'=>'required|max:255',
+            'name'=>'required|max:255'
+        ]);
+        
+        Mail::to('info@dukafy.co.tz')->send(new DukafyContactForm($request));
+        Session::flash('email_sent', 'Email Sent');
+        return redirect()->route('start');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -67,7 +84,7 @@ class TemplateController extends Controller
     public function products()
     {
         $products=Product::paginate(20);
-        // dd($products);
+        
         $min_price=Product::min('price');
         $max_price=Product::max('price');
 

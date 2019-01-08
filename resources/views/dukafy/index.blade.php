@@ -717,7 +717,8 @@
                     </div> --}}
                 </div>
                 <!-- Section title end -->
-                <form id="form">
+            <form method="POST" action="{{route('dukafy_contact_form')}}">
+                        {{csrf_field()}}
                     <div class="row">
                         <div class="col-12 col-md">
                             <!-- Name input -->
@@ -727,21 +728,21 @@
                         </div>
                         <div class="col-12 col-md">
                             <!-- Text input -->
-                            <textarea name="text" cols="30" rows="5" placeholder="Message" required></textarea>
+                            <textarea name="message" cols="30" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <div class="col-12 col-md-auto text-center">
                             <!-- Submit form button -->
-                            <button class="submit bg-color-1"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            <button type="submit" class="submit bg-color-1"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
             </div>
             <!-- Popup "success" -->
-            <div class="popup n-active-popup">
+        <div class="popup {{Session::has('email_sent')?"":"n-active-popup"}}">
                 <!-- Popup window -->
                 <div class="popup-window">
                     <!-- Popup icon-->
-                    <img src="img/email.png" alt="success">
+                    {{-- <img src="img/email.png" alt="success"> --}}
                     <!-- title -->
                     <p class="bold">Success</p>
                     <!-- Text -->
@@ -793,7 +794,7 @@
                 <div class="row justify-content-end">
                     <div class="col-12 col-sm-6">
                         <!-- Copyright -->
-                        <p class="small thin white-light sm-ac">Copyrights © 2018. All Rights Reserved.</p>
+                        <p class="small thin white-light sm-ac">Copyrights © {{date('Y')}}. All Rights Reserved.</p>
                     </div>
                     <div class="col-12 col-sm-6">
                         <!-- Author -->

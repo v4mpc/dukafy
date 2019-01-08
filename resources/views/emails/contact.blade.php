@@ -10,9 +10,10 @@
 
 <body>
 
-    <p>{{$message}}</p>
-    <p>from {{$name}}</p>
-    <p>Email: {{$email}}</p>
+    {{-- <p>{{$message}}</p> --}}
+
+    <p>sfsfsdfsdf</p>
+    
 
 
 
