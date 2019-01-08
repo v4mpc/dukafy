@@ -650,7 +650,7 @@
 
                                             <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" required class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">I, Agree to <a href="">Terms and Condition</a></label>
+                                            <label class="custom-control-label" for="customCheck1">I, Agree to <a href="{{route('terms')}}" target="_blank">Terms and Condition</a></label>
                                                   </div>
 
 
@@ -770,7 +770,7 @@
                         <ul class="footer-nav">
                             <!-- Footer Link 1 -->
                             <li class="nav-item active">
-                                <a class="nav-link mx-auto" target="_blank" href="#">Terms & Conditions</a>
+                            <a class="nav-link mx-auto" target="_blank" href="{{route('terms')}}">Terms & Conditions</a>
                             </li>
 
                             <!--<li class="nav-item">

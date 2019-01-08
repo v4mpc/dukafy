@@ -44,8 +44,9 @@ Route::middleware(['check.account'])->group(function () {
     //middleware will help us with that
     Route::get('/', 'TemplateController@index')->name('start');
     Route::view('app/privacy_policy', 'app_privacy_policy');
+    Route::view('terms_and_conditions', 'terms_and_conditions')->name('terms');
     Route::post('contact_email', 'TemplateController@sendEmail')->name('dukafy_contact_form');
-    Route::view('terms_and_condition', 'terms_and_condition')->name('terms');
+    // Route::view('terms_and_condition', 'terms_and_condition')->name('terms');
     Route::get('/products', 'TemplateController@products')->name('products');
     Route::get('/product/{id}', 'TemplateController@productshow')->name('product.show');
     Route::resource('/cart', 'CartController');
