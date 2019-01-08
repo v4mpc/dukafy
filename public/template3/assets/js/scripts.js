@@ -14,7 +14,9 @@
                 delay: 9000,
                 startwidth: 1200,
                 startheight: 500,
-                hideThumbs: 10
+                hideThumbs: 10,
+                fullWidth: "on",
+                forceFullWidth: "on"
             });
         //
 
