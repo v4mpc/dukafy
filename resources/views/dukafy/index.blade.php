@@ -29,15 +29,9 @@
     <link rel="stylesheet" href="{{asset('dukafy/css/media-queries.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
-    <!-- Color Theme -->
-    <!--<link rel="stylesheet" href="css/color-theme/color-theme-1.css')}}">-->
-    <!--<link rel="stylesheet" href="css/color-theme/color-theme-2.css')}}">-->
-    <!--<link rel="stylesheet" href="css/color-theme/color-theme-3.css')}}">-->
-    <!--<link rel="stylesheet" href="css/color-theme/color-theme-4.css')}}">-->
+    
     <link rel="stylesheet" href="{{asset('dukafy/css/color-theme/color-theme-5.css')}}">
-    <!-- Switch Style -->
-    <link id="switch_style" href="css/color-theme/index.html" rel="stylesheet">
-    {{-- <script src='https://www.google.com/recaptcha/api.js'></script> --}}
+    
 
    
 
@@ -84,20 +78,7 @@
 </head>
 
 <body>
-{{-- 
-        @if (Session::has('success'))
-   
 
-
-        <div class="bs-callout-success callout-border-right callout-bordered callout-transparent mt-1 p-1">
-                <h4 class="success">Success!</h4>
-                <p>{{Session::get('success')}}</p>
-              </div>
-        
-        @endif --}}
-
-
-        
         
         
 
@@ -153,9 +134,7 @@
                         <li class="nav-item button " style="background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824), to(#000100));">
                             <a class="nav-link " href="#register-form" style="color:#FFF">Register Now</a>
                         </li>
-                        <!--<li class="nav-item button header-button bg-color-1">
-                            <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i> Purchase now</a>
-                        </li>-->
+                       
                     </ul>
                 </div>
             </div>
@@ -180,17 +159,7 @@
                     <div class="col-12 col-md-6 align-self-center header-macbook">
                         <img class="jump" src="{{asset('dukafy/img/macbook.png')}}" alt="macbook">
                     </div>
-                    <!-- Phone end -->
-                    <!-- Social icons -->
-                    {{-- <div class="social-icons">
-                        <ul>
-                            <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#."><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#."><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div> --}}
-                    <!-- Social icons end -->
+                    
                 </div>
                 <!-- Tooltip -->
                 <a href="#about">
