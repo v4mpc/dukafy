@@ -141,7 +141,11 @@ li.product .product-thumbnail{
     padding-top: 1em !important;
 }
 
-
+@media (max-width: 767px){
+#content {
+    margin-bottom: 0.714em !important;
+}
+}
         
         </style>
     </head>
