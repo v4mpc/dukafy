@@ -12,8 +12,8 @@
         jQuery('.tp-banner').revolution(
             {
                 delay: 9000,
-                startwidth: 1200,
-                startheight: 500,
+                // startwidth: 1200,
+                // startheight: 500,
                 hideThumbs: 10,
 
             });
