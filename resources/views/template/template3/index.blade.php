@@ -13,19 +13,19 @@
 			<ul>
             @if($slider_images->has(0) && !is_null($slider_images[0]->image))
 				<li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
-					<img src="{{asset('images/'.$slider_images[0]->image)}}"    data-bgfit="contain" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+					<img src="{{asset('images/'.$slider_images[0]->image)}}"    data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
 				</li>
                 @endif
 				@if($slider_images->has(1) && !is_null($slider_images[1]->image))
 				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
-					<img src="{{asset('images/'.$slider_images[1]->image)}}"  data-bgfit="contain" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+					<img src="{{asset('images/'.$slider_images[1]->image)}}"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
 				</li>
                 @endif
 
 
                 @if($slider_images->has(2) && !is_null($slider_images[2]->image))
 				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
-					<img src="{{asset('images/'.$slider_images[2]->image)}}"  data-bgfit="contain" data-bgposition="center bottom" data-bgrepeat="no-repeat">
+					<img src="{{asset('images/'.$slider_images[2]->image)}}"  data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat">
 				</li>
                 @endif
 			
