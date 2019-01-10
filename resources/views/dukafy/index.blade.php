@@ -112,7 +112,7 @@
                 <!-- Logo -->
                 <a class="navbar-brand" href="#" style="width:  30%;">
                     <!--<div class="logo bg-color-1">å</div>-->
-                    <img src="{{asset('dukafy/img/logo.png')}}" style="width: 80%;" />
+                    <img src="{{asset('dukafy/img/logo.png')}}" id="logo-name" style="width: 80%;" />
                 </a>
                 <!-- Logo end -->
                 <!-- Burger menu button -->
