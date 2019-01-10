@@ -97,7 +97,7 @@
         <div class="col-sm-6">
           <p> © {{date('Y')}} <a href="#." class="ri-li"> {{$settings->store_name}} </a> </p>
         </div>
-        <div class="col-sm-6 text-right"> <img src="images/card-icon.png" alt=""> </div>
+      <div class="col-sm-6 text-right">Powered by <a href="https://dukafy.co.tz" target="__blank" class="ri-li"> Dukafy </a>  </div>
       </div>
     </div>
   </div>

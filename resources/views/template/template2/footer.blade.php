@@ -23,8 +23,12 @@
         <div class="copyright-bar">
             <div class="container">
             <div class="pull-left flip copyright">&copy; {{date('Y')}} <a href="{{route('start')}}">{{$settings->store_name}}</a></div>
-                
+            
+            <div class="pull-right flip copyright">
+                Powered by <a href="https://dukafy.co.tz" target="__blank" class="ri-li"> Dukafy </a>
+            </div>
                 </div>
+                
             </div><!-- /.container -->
         </div><!-- /.copyright-bar -->
     </footer><!-- #colophon -->

@@ -8,6 +8,13 @@
                       <a href="{{route('start')}}">{{$settings->store_name}}</a>
                    
                   </div>
+
+                 
+              </div>
+              <div class="col-xs-12 col-sm-6 no-padding">
+                <div class="pull-right copyright">
+                    Powered by <a href="https://dukafy.co.tz" target="__blank" class="ri-li"> Dukafy </a>
+                  </div>
               </div>
               {{-- <div class="col-xs-12 col-sm-6 no-padding">
                   <div class="clearfix payment-methods">
