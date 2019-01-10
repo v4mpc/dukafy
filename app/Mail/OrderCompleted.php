@@ -39,6 +39,6 @@ class OrderCompleted extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from(['address'=>$this->settings->email,'name'=>$this->settings->store_name,'settings'=>$this->settings])->view('emails.orders.completed');
+        return $this->from($this->settings->email)->view('emails.orders.completed');
     }
 }
