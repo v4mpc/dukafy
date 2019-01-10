@@ -17,7 +17,7 @@
                 @if($slider_images->has(0) && !is_null($slider_images[0]->image))
                 <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
                   <!-- MAIN IMAGE -->
-                  <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="contain" data-bgrepeat="no-repeat">   
+                  <img src="{{asset('images/'.$slider_images[0]->image)}}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">   
                  </li>
 @endif
 

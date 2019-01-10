@@ -45,3 +45,9 @@
 [2019-01-08 10:07:31] Failed:     App\Mail\ContactForm
 [2019-01-08 10:17:16] Processing: App\Mail\DukafyContactForm
 [2019-01-08 10:17:25] Processed:  App\Mail\DukafyContactForm
+
+
+[2019-01-10 09:21:03] Processing: App\Mail\DukafyContactForm
+[2019-01-10 09:21:03] Processing: App\Mail\DukafyContactForm
+[2019-01-10 09:21:03] Processing: App\Mail\DukafyContactForm
+[2019-01-10 09:21:03] Failed:     App\Mail\DukafyContactForm
