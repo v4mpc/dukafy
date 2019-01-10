@@ -99,7 +99,7 @@
 
 		@media only screen and (max-width: 980px) {
 			.main-header{
-				padding: 0px 0px 60px 0px
+				padding: 0px 0px 0px 0px
 			}
 			#logo{
 				margin-top: 0px !important;
@@ -169,6 +169,11 @@
 
 .products{
 	margin-bottom: 30px;
+}
+
+
+.outer-bottom-xs {
+    margin-bottom: 0px !important;
 }
 </style>
 
