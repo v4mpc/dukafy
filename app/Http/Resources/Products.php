@@ -21,7 +21,7 @@ class Products extends Resource
             'name'=>$this->name,
             'price'=>number_format($this->price),
             'category'=>$this->category->name,
-            'image'=>$this->images[0]->image,
+            'image'=>$this->get_image(),
             'out_stock'=>$this->out_stock,
             'featured'=>$this->featured,
             'discount'=>$this->discount
