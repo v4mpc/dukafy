@@ -78,8 +78,6 @@ class Product extends Model
 
     public function get_image($index=0)
     {
-        // dd($this->images);
-
         if ($index<=count($this->images)-1||$index==0) {
             return 'data:image/png;base64,' . base64_encode(file_get_contents(asset('images/'.$this->images[$index]->image))); # code...
         }

@@ -55,6 +55,7 @@ Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
     Route::get('categories/{account_id}', 'API\CategoryController@index');
     Route::post('category', 'API\CategoryController@create');
     Route::post('product/{account_id}', 'API\ProductController@store');
+    Route::put('product/{product_id}', 'API\ProductController@edit');
     Route::get('products/{account_id}', 'API\ProductController@index');
     Route::get('product/{account_id}/{id}', 'API\ProductController@show');
     Route::get('orders/{account_id}', 'API\OrderController@index');

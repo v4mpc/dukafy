@@ -14,13 +14,11 @@ class ProductController extends Controller
 {
     public function index($account_id, Request $request)
     {
-        // sleep(4);
         return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->orderBy('created_at', 'desc')->get());
     }
 
     public function show($account_id, $id)
     {
-        // sleep(4);
         return ProductResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->where('id', $id)->get());
     }
 
@@ -102,5 +100,60 @@ class ProductController extends Controller
        
 
         return response()->json($product);
+    }
+
+
+    public function edit(Request $request, $product_id)
+    {
+        $product=Product::findOrFail($product_id);
+        $product=$this->save_product($request, $product, 1);
+
+        return response()->json($product);
+    }
+   
+    private function save_product($request, $product, $edit=0, $account_id=null)
+    {
+        $product->name=$request->name;
+        $product->price=$request->price;
+        $price_visibility=0;
+        if ($request->price_visibility==='true') {
+            $price_visibility=1;
+        }
+        $product->category_id=$request->category_id;
+        if ($edit!=1) {
+            $product->description=$request->description;
+            $product->account_id=$account_id;
+        }
+        $product->featured=0;
+        $product->out_stock=0;
+        $discount=0;
+        if ($request->discount) {
+            if (substr($request->discount, -1)==='%') {
+                //validate here
+                $discount = rtrim($request->discount, '%');
+            } else {
+                $discount=round((($request->discount)/($request->price))*100);
+            }
+        }
+        $product->discount=$discount;
+        $product->price_visibility=$price_visibility;
+        $product->save();
+        if ($request->image_dirty || $edit!=1) {
+            foreach ($request->images as $key=>$image) {
+                $filename = $account_id.time().uniqid().".png";
+                $location=public_path('images/'.$filename);
+                if ($key==0) {
+                    Image::make(file_get_contents($image))->fit(400)->save($location);
+                } else {
+                    Image::make(file_get_contents($image))->save($location);
+                }
+                $product_image=new ProductImage;
+                $product_image->image=$filename;
+                $product_image->product_id=$product->id;
+                $product_image->save();
+            }
+        }
+
+        return $product;
     }
 }
