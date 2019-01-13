@@ -103,11 +103,10 @@ class ProductController extends Controller
     }
 
 
-    public function edit(Request $request, $product_id)
+    public function edit(Request $request, $account_id, $product_id)
     {
         $product=Product::findOrFail($product_id);
         $product=$this->save_product($request, $product, 1);
-
         return response()->json($product);
     }
    
@@ -119,13 +118,13 @@ class ProductController extends Controller
         if ($request->price_visibility==='true') {
             $price_visibility=1;
         }
-        $product->category_id=$request->category_id;
         if ($edit!=1) {
+            $product->category_id=$request->category_id;
             $product->description=$request->description;
             $product->account_id=$account_id;
+            $product->featured=0;
+            $product->out_stock=0;
         }
-        $product->featured=0;
-        $product->out_stock=0;
         $discount=0;
         if ($request->discount) {
             if (substr($request->discount, -1)==='%') {
@@ -138,7 +137,10 @@ class ProductController extends Controller
         $product->discount=$discount;
         $product->price_visibility=$price_visibility;
         $product->save();
-        if ($request->image_dirty || $edit!=1) {
+        foreach ($product->images as $image) {
+            $image->delete();
+        }
+        if (1 || $edit!=1) {
             foreach ($request->images as $key=>$image) {
                 $filename = $account_id.time().uniqid().".png";
                 $location=public_path('images/'.$filename);
@@ -155,5 +157,12 @@ class ProductController extends Controller
         }
 
         return $product;
+    }
+
+
+
+    public function search($account_id, Request $request)
+    {
+        return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->search($request->term)->get());
     }
 }
