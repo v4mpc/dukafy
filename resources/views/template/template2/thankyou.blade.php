@@ -16,7 +16,7 @@
                                     <div class="info-404">
                                         <div class="text-xs-center inner-bottom-xs">
                                             <h2 class="display-3">Order Completed! <i class="fa fa-check"></i></h2>
-                                            <p class="lead">Congratulation! Your order has been processed</p>
+                                            <p class="lead">Congratulations! Your order has been placed. We will contact you shortly</p>
                                             <hr class="m-y-2">
                                             <div class="sub-form-row inner-bottom-xs">
                                                 

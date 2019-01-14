@@ -9,7 +9,7 @@
             <!-- Payout Method -->
 
             <div class="order-success"> <i class="fa fa-check"></i>
-                <h6>Congratulation! Your order has been processed</h6>
+                <h6>Congratulations! Your order has been placed. We will contact you shortly</h6>
                 {{--
                 <p>Aenean dui mi, tempus non volutpat eget, molestie a orci. Nullam eget sem et eros laoreet rutrum. Quisque
                     sem ante, feugiat quis lorem in.</p> --}}
