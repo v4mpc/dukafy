@@ -132,4 +132,9 @@ class Product extends Model
 
         return $images_array;
     }
+
+    public function get_first_image()
+    {
+        return asset('images/'.$this->images[0]->image);
+    }
 }
