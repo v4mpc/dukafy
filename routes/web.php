@@ -43,9 +43,6 @@ Route::middleware(['check.account'])->group(function () {
     //the routes are store dependant
     //middleware will help us with that
 
-    Route::get('send_sms', function () {
-        dd(send_notification('2', 'Order Completed', 'Order Completed Total  TZS', ['orderId'=>'1']));
-    });
     Route::get('/', 'TemplateController@index')->name('start');
     Route::view('app/privacy_policy', 'app_privacy_policy');
     Route::view('terms_and_conditions', 'terms_and_conditions')->name('terms');
