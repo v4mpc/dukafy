@@ -51,6 +51,7 @@ Route::get('whois/{domain}', function ($domain) {
 Route::post('mobile/login', 'API\AuthController@login')->name('login');
 Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
     Route::get('home/{account_id}', 'API\AccountController@home');
+    Route::get('unreadnotifications/{account_id}', 'API\AccountController@unreadNotifications');
     Route::post('logout', 'API\AuthController@logout');
     Route::get('categories/{account_id}', 'API\CategoryController@index');
     Route::post('category', 'API\CategoryController@create');

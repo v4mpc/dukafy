@@ -94,4 +94,8 @@ class Account extends Model
             return $this->phone;
         }
     }
+
+    public function unreadNotification()
+    {
+    }
 }

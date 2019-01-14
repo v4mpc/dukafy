@@ -6,6 +6,7 @@ use Illuminate\Http\Resources\Json\Resource;
 use App\Http\Resources\Products;
 use App\Product;
 use Carbon;
+use JWTAuth;
 
 class Dashboard extends Resource
 {
@@ -21,12 +22,11 @@ class Dashboard extends Resource
 
             'current_products'=>count($this->products),
             'max_products'=>number_format($this->package->product),
-             'top_products'=>Products::collection(Product::whereIn('id', $this->topProducts())->where('account_id', $this->id)->get()),
+            'top_products'=>Products::collection(Product::whereIn('id', $this->topProducts())->where('account_id', $this->id)->get()),
             'total_sales'=>number_format($this->totalSales()),
             'next_due'=>$this->ended_at->diffForHumans(),
             'package_name'=>$this->package->name,
             'order_count'=>$this->orderCount(),
-            // 'days_remaining'=>,
             'name'=>$this->name,
             'email'=>$this->email,
             'phone'=>$this->phone,
