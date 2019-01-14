@@ -13,6 +13,7 @@ use App\Order;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Support\Facades\Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
+
+
         Schema::defaultStringLength(191);
         //production
         $maps_api_key="AIzaSyDF4QoRQKs5jt2XXeREKK8jB0cbrB3dhEw";

@@ -43,6 +43,7 @@ Route::middleware(['check.account'])->group(function () {
     //the routes are store dependant
     //middleware will help us with that
 
+  
     Route::get('/', 'TemplateController@index')->name('start');
     Route::view('app/privacy_policy', 'app_privacy_policy');
     Route::view('terms_and_conditions', 'terms_and_conditions')->name('terms');

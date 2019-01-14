@@ -55,11 +55,12 @@ class AccountController extends Controller
     {
         // dd($request);
         $request->validate([
-            // 'domain' => 'required|unique:accounts,domain|max:255',
+            'domain' => 'required|unique:accounts,domain|max:255',
             'name' => 'required|max:255',
             'email' => 'required|email|unique:accounts,email|max:255',
             'phone' => 'required|max:255',
             'package_id'=>'required',
+            'g-recaptcha-response' => 'required|recaptcha'
             
            
         ]);

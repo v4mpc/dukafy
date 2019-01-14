@@ -10,6 +10,8 @@ class MailerController extends Controller
 {
     public function sendContactForm(Request $request)
     {
+       
+
         $request->name;
         $request->email;
         $request->message;

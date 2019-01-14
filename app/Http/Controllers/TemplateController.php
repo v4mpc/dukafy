@@ -68,8 +68,10 @@ class TemplateController extends Controller
         $request->validate([
             'email'=>'required|email',
             'message'=>'required|max:255',
-            'name'=>'required|max:255'
+            'name'=>'required|max:255',
+            'g-recaptcha-response' => 'required|recaptcha'
         ]);
+      
         
         Mail::to('info@dukafy.co.tz')->send(new DukafyContactForm($request));
         Session::flash('email_sent', 'Email Sent');
