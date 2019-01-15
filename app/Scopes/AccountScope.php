@@ -30,22 +30,24 @@ class AccountScope implements Scope
         //lets check if request if from mobile
         //if its from mobile
         //we make we only check if its account id is greater than 1
-       
-        // dd(Request::getHost());
+        
         if (Request::is('api/*') || strpos(php_sapi_name(), 'cli') !== false) {
-            // dd('its an api');
             $builder->where('account_id', '>', 1);
         } else {
-            // dd('dfd');
             if (Request::getHost()=="adshlits.dukafy.co.tz") {
                 $account_id=1;
             } else {
-                $domain=preg_replace('/\.dukafy/', "", Request::getHost());
-                // dd(Request::getHost());
-                $domain=preg_replace('/www\./', "", $domain);
-                // dd($domain);
-                $account_id=Account::where('domain', $domain)->first()->id;
-                // dd($account_id);
+                if (strpos(Request::getHost(), 'dukafy')===false) {
+                    //lets get the domain from here xyz.abc.co.tze
+                    $domain=preg_replace('/www\./', "", Request::getHost());
+                    preg_match('/\.([a-z\.]+)/', $domain, $matches);
+                    $domain=$matches[1];
+                    $account_id=Account::where('domain', $domain)->first()->id;
+                } else {
+                    $domain=preg_replace('/\.dukafy/', "", Request::getHost());
+                    $domain=preg_replace('/www\./', "", $domain);
+                    $account_id=Account::where('domain', $domain)->first()->id;
+                }
             }
             $builder->where('account_id', $account_id);
         }

@@ -53,7 +53,6 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $request->validate([
             'domain' => 'required|unique:accounts,domain|max:255',
             'name' => 'required|max:255',
@@ -61,8 +60,6 @@ class AccountController extends Controller
             'phone' => 'required|max:255',
             'package_id'=>'required',
             'g-recaptcha-response' => 'required|recaptcha'
-            
-           
         ]);
 
         if ($request->user_email) {
@@ -72,11 +69,9 @@ class AccountController extends Controller
                 'password'=>'required|confirmed|min:6',
             ]);
         }
-
         //create subdomain in digital ocean
         //create a laravel job that will handle creation of a new laravel project
         //configure domain,database mysql etc
-        // dd($request);
         $domain=$request->domain.".co.tz";
         if ($request->domain1) {
             $domain=$request->domain1;
@@ -88,16 +83,7 @@ class AccountController extends Controller
         $account->email=$request->email;
         $account->package_id=$request->package_id;
         $account->subscription_id=$request->subscription_id;
-        
         //this value are set to null till account is alllowed or its an admin acccount
-     
-        
-       
-        
-
-      
-
-
         if (Auth::check()) {
             if (Auth::user()->account_id==1) {
                 $this->activateNewAccount($account, $user);
@@ -343,25 +329,6 @@ class AccountController extends Controller
         // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         // $response = curl_exec($ch);
         // curl_close($ch);
-
-        // dd($response);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         #if we are here means the account can now be created
 
