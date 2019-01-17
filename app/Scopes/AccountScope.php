@@ -31,13 +31,14 @@ class AccountScope implements Scope
         //if its from mobile
         //we make we only check if its account id is greater than 1
         $domain=preg_replace('/www\./', "", Request::getHost());
+        $domain=preg_replace('/www\./', "", $domain);
         if (Request::is('api/*') || strpos(php_sapi_name(), 'cli') !== false) {
             $builder->where('account_id', '>', 1);
         } else {
             if (Request::getHost()=="adshlits.dukafy.co.tz") {
                 $account_id=1;
             } else {
-                if (preg_match('/\.([a-z]+\.)/', $domain, $matches)) {
+                if (preg_match('/\.([a-z]+\.)/', $domain, $matches) && count(explode($domain, '.'))>2) {
                     //lets get the domain from here xyz.abc.co.tz
                     // $domain=preg_replace('/www\./', "", Request::getHost());
                     
@@ -45,6 +46,7 @@ class AccountScope implements Scope
                     $domain=$matches[1];
                     $account_id=Account::where('domain', $domain)->first()->id;
                 } else {
+                    // dd('adf');
                     $domain=preg_replace('/\.dukafy/', "", Request::getHost());
                     $domain=preg_replace('/www\./', "", $domain);
                     $account_id=Account::where('domain', $domain)->first()->id;
