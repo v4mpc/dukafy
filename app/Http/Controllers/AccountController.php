@@ -17,10 +17,13 @@ use App\Product;
 use App\Order;
 use App\Category;
 use App\Mail\AccountRegistered;
+use App\Mail\ClientAccountCreated;
 use Mail;
 
 class AccountController extends Controller
 {
+    private $domain;
+    private $subdomain;
     /**
      * Display a listing of the resource.
      *
@@ -54,13 +57,57 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'domain' => 'required|unique:accounts,domain|max:255',
+            'account_type' => 'required',
+        ]);
+
+        if ($request->account_type=='1') {
+            $request->validate([
+                'domain' => 'required|unique:accounts,domain|max:255',
+            ]);
+            $domain=$request->domain.".co.tz";
+            $subdomain=$request->domain.".dukafy.co.tz";
+        } elseif ($request->account_type=='2') {
+            $request->validate([
+                'subdomain' => 'required|max:255',
+            ]);
+            $domain=get_domain_from_subdomain($request->subdomain);
+            $domain_array=explode('.', $domain);
+            $subdomain=$domain_array[0].".dukafy.co.tz";
+            $domain=$request->subdomain;
+        } elseif ($request->account_type=='3') {
+            $request->validate([
+                'existing_domain' => 'required|unique:accounts,domain|max:255',
+            ]);
+            $domain = $request->existing_domain;
+            $domain_array=explode('.', $domain);
+            $subdomain=$domain_array[0].".dukafy.co.tz";
+        }
+
+        $this->domain=$domain;
+        $this->subdomain=$subdomain;
+
+        // dd('domain=> '.$this->domain.' Subdomain=> '.$this->subdomain);
+        $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email|unique:accounts,email|max:255',
             'phone' => 'required|max:255',
             'package_id'=>'required',
-            'g-recaptcha-response' => 'required|recaptcha'
         ]);
+
+        if (Auth::check()) {
+            if (Auth::user()->account_id!=1) {
+                $request->validate([
+                    'g-recaptcha-response' => 'required|recaptcha',
+                ]);
+            }
+        } else {
+            $request->validate([
+                'g-recaptcha-response' => 'required|recaptcha',
+            ]);
+        }
+
+        
+
 
         if ($request->user_email) {
             $request->validate([
@@ -69,13 +116,7 @@ class AccountController extends Controller
                 'password'=>'required|confirmed|min:6',
             ]);
         }
-        //create subdomain in digital ocean
-        //create a laravel job that will handle creation of a new laravel project
-        //configure domain,database mysql etc
-        $domain=$request->domain.".co.tz";
-        if ($request->domain1) {
-            $domain=$request->domain1;
-        }
+     
         $account=new Account;
         $account->name=$request->name;
         $account->domain=$domain;
@@ -86,7 +127,7 @@ class AccountController extends Controller
         //this value are set to null till account is alllowed or its an admin acccount
         if (Auth::check()) {
             if (Auth::user()->account_id==1) {
-                $this->activateNewAccount($account, $user);
+                $this->activateNewAccount($account, $request->password);
             }
         } else {
             $account->status=2;
@@ -96,18 +137,10 @@ class AccountController extends Controller
         $account->save();
         //else go back;
         //lets send email to notify the admin
-        Mail::to('sarfaraz@legendaryits.com')->cc('info@dukafy.co.tz')->send(new AccountRegistered($account));
-        // if ($request->user_email) {
-        //     $user=new User;
-        //     $user->name=$request->user_name;
-        //     $user->email=$request->user_email;
-        //     $user->password=bcrypt($request->password);
-        //     $user->account_id=$account->id;
-        //     $user->save();
-        // }
-
-        // dd($request);
-        Session::flash('success', 'god');
+        if (!Auth::check()) {
+            Mail::to('sarfaraz@legendaryits.com')->cc('info@dukafy.co.tz')->send(new AccountRegistered($account));
+        }
+        Session::flash('success', 'Account Created');
         return redirect()->back();
     }
     
@@ -302,66 +335,29 @@ class AccountController extends Controller
 
     public function activateNewAccount($account, $password)
     {
-//         $ch = curl_init();
-//         curl_setopt($ch, CURLOPT_URL, 'http://mydomains.dukafy.co.tz/includes/api.php');
-//         curl_setopt($ch, CURLOPT_POST, 1);
-//         curl_setopt(
-//             $ch,
-//             CURLOPT_POSTFIELDS,
-//     http_build_query(
-//         array(
-//             'action' => 'AddOrder',
-//             // See https://developers.whmcs.com/api/authentication
-//             'username' => 'sarfaraz',
-//             'password' => '$2b$10$Vqvj/2gksrNdBG6bflHvKOD/jC7xwZPiw1ciiUOdCNmj6XKI4Gl5m',
-//             'clientid' => '596',
-//             'pid' => array(1),
-//             'domain' => array('domain1.com'),
-//             'domaintype' => array('register'),
-//             'dnsmanagement' => array(1 => true),
-//             'nameserver1' => 'ns1.demo.com',
-//             'nameserver2' => 'ns2.demo.com',
-//             'paymentmethod' => 'mailin',
-//             'responsetype' => 'json',
-//         )
-//     )
-        // );
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // $response = curl_exec($ch);
-        // curl_close($ch);
-
-        #if we are here means the account can now be created
-
-        #first lets edit some account infos
-        // $account=Account::findOrFail($account);
         $account->started_at=Carbon::now();
         $account->ended_at=Carbon::now()->addMonths($account->subscription->subscription);
         $account->status=1;
         $account->save();
         #lets create the domain in digital ocean
-        $this->digitalOcean($account, 'domain');
+        // $this->digitalOcean($account, 'domain');
         // configure NGINX server for this domain
         $this->serverConfig($account, 'domain');
         //now lets create subdomains for client dashboard login
         //create subdomain in digital ocean
-        $this->digitalOcean($account, 'subdomain');
+        // $this->digitalOcean($account, 'subdomain');
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
-
         $this->createUser($password, $account);
-
-        
+        Mail::to($account->email)->send(new ClientAccountCreated($account, $password));
         return;
-        
-
-        #then we are good to go
     }
 
     public function digitalOcean($account, $record_to_create)
     {
         if ($record_to_create=='domain') {
             $data = array(
-            "name" => $account->domain,
+            "name" => $this->domain,
             "ip_address"=>"178.62.44.86",
             "ttl"=>1800,
         );
@@ -369,7 +365,7 @@ class AccountController extends Controller
         } else {
             $data = array(
                 "type" => "A",
-                "name" => preg_replace('/\.co\.tz/', "", strtolower($account->domain)).".dukafy.co.tz",
+                "name" => $this->subdomain,
                 "data"=>"178.62.44.86",
                 "priority"=>null,
                 "port"=>null,
@@ -407,14 +403,13 @@ class AccountController extends Controller
         $server_configurarion.="root ".$installation_location."/".$project_name."/public;".PHP_EOL;
         $server_configurarion.="index index.php index.htm;".PHP_EOL;
         if ($record_to_create=='domain') {
-            $server_configurarion.="server_name .".strtolower($account->domain).";".PHP_EOL;
+            $server_configurarion.="server_name .".$this->domain.";".PHP_EOL;
             $server_configurarion.="location =/login {".PHP_EOL;
             $server_configurarion.='return 404 "Page Not Found";'.PHP_EOL;
             $server_configurarion.="  }".PHP_EOL;
         } else {
-            $server_configurarion.="server_name .".preg_replace('/\.co\.tz/', "", strtolower($account->domain)).".dukafy.co.tz;".PHP_EOL;
+            $server_configurarion.="server_name .".$this->subdomain.PHP_EOL;
         }
-     
         $server_configurarion.="location / {".PHP_EOL;
         $server_configurarion.='try_files $uri $uri/ /index.php?$query_string;'.PHP_EOL;
         $server_configurarion.="}".PHP_EOL;
@@ -424,8 +419,11 @@ class AccountController extends Controller
         $server_configurarion.="location ~ /\.ht {".PHP_EOL;
         $server_configurarion.="deny all;".PHP_EOL;
         $server_configurarion.="}}".PHP_EOL;
-        file_put_contents("/etc/nginx/sites-available/dukafy", $server_configurarion, FILE_APPEND);
-
+        file_put_contents("/etc/nginx/sites-available/".$this->domain, $server_configurarion, FILE_APPEND);
+        if ($record_to_create=='domain') {
+            symlink("/etc/nginx/sites-available/".$this->domain, "/etc/nginx/sites-enabled/".$this->domain);
+        }
+       
         return;
     }
 
@@ -436,7 +434,6 @@ class AccountController extends Controller
         $user->name=$account->name;
         $user->email=$account->email;
         $user->password=bcrypt($password);
-       
         $user->account_id=$account->id;
         $user->save();
         return;
@@ -445,8 +442,6 @@ class AccountController extends Controller
 
     public function admincreateAccount(Account $account, Request $request)
     {
-        // dd($account);
-
         $this->activateNewAccount($account, $request->password);
         return redirect()->back();
     }

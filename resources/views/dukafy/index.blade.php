@@ -31,6 +31,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/extensions/sweetalert.css')}}">
     
     <link rel="stylesheet" href="{{asset('dukafy/css/color-theme/color-theme-5.css')}}">
+
+  
     
 
    
@@ -262,34 +264,7 @@
                 </div>
             </div>
         </section>
-        <!-- Features end -->
-        <!-- Video -->
-        <!-- <section class="video bg-animation p-90-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-7 align-self-center mb-30">
-                   
-                        <div class="section-title">
-                            <p class="white-light bold small">&nbsp;</p>
-                            <h2 class="h1 white"><span class="thin">Watch</span> <b>Video</b> <span class="thin">Presentation</span></h2>
-                            <p class="white-light thin m-0">&nbsp;</p>
-                        </div>
-                       
-                    </div>
-                 
-                    <div class="col-12 col-sm-5 align-self-center mb-30">
-                        <div class="play-frame play-rotate"></div>
-                        <a href="https://www.youtube.com/watch?v=_SOkFEkZPmc" data-lity>
-                            <div class="play-button bg-color-1">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                   
-                </div>
-            </div>
-        </section> -->
-        <!-- Video end -->
+       
         <!-- About right -->
         <section id="about" class="about-1 p-90-60">
             <div class="container">
@@ -346,12 +321,6 @@
             </div>
         </section>
         <!-- About left end -->
-
-
-      
-     
-       
-       
         <section id="price" class="pricing p-0-60">
             <div class="container">
                 <!-- Section title -->
@@ -368,22 +337,18 @@
                                 <div class="col-12">
                                     <p class="bold price-header">Basic</p>
                                 </div>
-                                <!-- <div class="col-12">
-                                    <p class="light thin">
-                                        Only 50 products will be added in this package
-                                    </p>
-                                </div> -->
+                               
 
                                 <div class="col-12">
                                     <select name="test" class="form-control plan-A" id="">
-                                        <option selected value="1">Monthly</option>
+                                        
                                         <option  value="2">Quaterly</option>
-                                        <option value="3">Half Yearly</option>
+                                        
                                         <option value="4">Yearly</option>
                                     </select>
                                 </div>
-                                <div class="col-12">
-                                    <p class="bold price">TZS <span>19,000</span>/Month</p>
+                                <div class="col-12 per-month-a">
+                                    <p class="bold price">TZS <span>25,000</span>/Month</p>
                                 </div>
 
                                 <div class="col-12">
@@ -394,7 +359,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <p class="bold price total-price total-A">Total TZS <span>19,000</span></p>
+                                    <p class="bold price total-price total-A">Total TZS <span>75,000</span></p>
                                 </div>
                                 <div class="col-12">
                                     <a href="#register-form" data-plan="plan-A" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
@@ -409,23 +374,16 @@
                                 <div class="col-12">
                                     <p class="bold price-header">Shop</p>
                                 </div>
-
-                                <!-- <div class="col-12">
-                                    <p class="light thin">
-                                        Only 50 products will be added in this package
-                                    </p>
-                                </div> -->
-
                                 <div class="col-12">
                                     <select name="test" class="form-control plan-B" id="">
-                                        <option selected value="1">Monthly</option>
+                                        
                                         <option value="2">Quaterly</option>
-                                        <option value="3">Half Yearly</option>
+                                        
                                         <option value="4">Yearly</option>
                                     </select>
                                 </div>
-                                <div class="col-12">
-                                    <p class="bold price">TZS <span>29,000</span>/Month</p>
+                                <div class="col-12 per-month-b">
+                                    <p class="bold price">TZS <span>35,000</span>/Month</p>
                                 </div>
 
                                 <div class="col-12">
@@ -436,7 +394,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <p class="bold price total-price total-B">Total TZS <span>29,000</span></p>
+                                    <p class="bold price total-price total-B">Total TZS <span>105,000</span></p>
                                 </div>
                                 <div class="col-12">
                                     <a href="#register-form" data-plan="plan-B" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
@@ -451,22 +409,17 @@
                                 <div class="col-12">
                                     <p class="bold price-header">Store</p>
                                 </div>
-                                <!-- <div class="col-12">
-                                    <p class="light thin">
-                                        Only 50 products will be added in this package
-                                    </p>
-                                </div> -->
+                               
 
                                 <div class="col-12">
                                     <select name="test" class="form-control plan-C" id="">
-                                        <option selected value="1">Monthly</option>
+                                        
                                         <option value="2">Quaterly</option>
-                                        <option value="3">Half Yearly</option>
                                         <option value="4">Yearly</option>
                                     </select>
                                 </div>
-                                <div class="col-12">
-                                    <p class="bold price">TZS <span>49,000</span>/Month</p>
+                                <div class="col-12 per-month-c">
+                                    <p class="bold price">TZS <span>55,000</span>/Month</p>
                                 </div>
 
                                 <div class="col-12">
@@ -477,7 +430,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <p class="bold price total-price total-C">Total TZS <span>49,000</span></p>
+                                    <p class="bold price total-price total-C">Total TZS <span>165,000</span></p>
                                 </div>
                                 <div class="col-12">
                                     <a href="#register-form" data-plan="plan-C" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
@@ -500,14 +453,14 @@
 
                                 <div class="col-12">
                                     <select name="test" class="form-control plan-D" id="">
-                                        <option selected value="1">Monthly</option>
+                                        
                                         <option value="2">Quaterly</option>
-                                        <option value="3">Half Yearly</option>
+                                        
                                         <option value="4">Yearly</option>
                                     </select>
                                 </div>
-                                <div class="col-12">
-                                    <p class="bold price">TZS <span>99,000</span>/Month</p>
+                                <div class="col-12 per-month-d">
+                                    <p class="bold price">TZS <span>105,000</span>/Month</p>
                                 </div>
 
                                 <div class="col-12">
@@ -518,7 +471,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <p class="bold price total-price total-D">Total TZS <span>99,000</span></p>
+                                    <p class="bold price total-price total-D">Total TZS <span>315,000</span></p>
                                 </div>
                                 <div class="col-12 nav-item">
                                     <a href="#register-form" data-plan="plan-D" class="button bg-color-2 nav-link select"><i class="fa fa-cart-arrow-down"></i>
@@ -557,9 +510,9 @@
                                         <input type="text" name="phone" placeholder="Valid Phone #" required>
 
 
-                                        <select class="custom-select custom-select-lg mb-3 input" id="domain-source" name="domain_source">
-                                                <option selected value="0">New Domain</option>
-                                                <option value="1">Existing Domain</option>
+                                        <select class="custom-select custom-select-lg mb-3 input" id="domain-source" name="account_type">
+                                                <option selected value="1">New Domain</option>
+                                                <option value="3">Existing Domain</option>
                                                 
 
                                               </select>
@@ -568,7 +521,7 @@
 
   
 
-                                            <input type="text" id="domain-register" class="input-group-1" name="domain1" placeholder="Type Your Domain"  >
+                                            <input type="text" id="domain-register" class="input-group-1" name="existing_domain" placeholder="Type Your Domain"  >
                                        
 
                                         <div class="input-group" id="domain-checker">
@@ -603,15 +556,13 @@
                                             <br>
                                             
 
-                                        {{-- <input type="text" name="domain" placeholder="Domain Name" required disabled> --}}
+                                      
 
                                       
 
                                             <select class="custom-select custom-select-lg mb-3 input" name="subscription_id" required>
                                                     <option value="" selected>Select Plan</option>
-                                                    <option id="1" value="1">Monthly</option>
                                                     <option id="2" value="2">Quaterly</option>
-                                                    <option id="3" value="3">Half Yearly</option>
                                                     <option id="4" value="4">Yearly</option>
                                                   </select>
 
@@ -620,19 +571,7 @@
                                             <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" required class="custom-control-input" id="customCheck1">
                                             <label class="custom-control-label" for="customCheck1">I, Agree to <a href="{{route('terms')}}" target="_blank">Terms and Condition</a></label>
-                                                  </div>
-
-
-                                        
-
-
-                                        
-
-                                        
-
-                                       
-                                       
-                                               
+                                                  </div>        
                                            
                                     </div>
                                    
@@ -653,7 +592,7 @@
                                
                             </form>
                           
-                            <!--<a class="white-link m-0" href="#" aria-haspopup="true">Download free trial <i class="fa fa-chevron-right"></i></a>-->
+                          
                         </div>
                     </div>
                 </div>
@@ -679,17 +618,7 @@
                             
                         </div>
                     </div>
-                    {{-- <div class="col-12 col-md-6">
-                        <!-- Social icons -->
-                        <div class="contact-social-icons">
-                            <ul class="sm-ac">
-                                <li><a href="#."><i class="fa fa-facebook" style="font-size: 30px;"></i></a></li>
-                                <li><a href="#."><i class="fa fa-youtube" style="font-size: 30px;"></i></a></li>
-                                <li><a href="#."><i class="fa fa-instagram" style="font-size: 30px;"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Social icons end -->
-                    </div> --}}
+                   
                 </div>
                 <!-- Section title end -->
             <form method="POST" action="{{route('dukafy_contact_form')}}">
@@ -736,6 +665,9 @@
             </div>
             <!-- Popup end -->
 
+
+            
+
             
         </section>
         <!-- Contact end -->
@@ -756,32 +688,20 @@
                             <li class="nav-item active">
                             <a class="nav-link mx-auto" target="_blank" href="{{route('terms')}}">Terms & Conditions</a>
                             </li>
-
-                            <!--<li class="nav-item">
-                                <a class="nav-link" target="_blank" href="https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign">Author</a>
-                            </li>                            
-                            <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign">More templates</a>
-                            </li>                            
-                            <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="https://www.flaticon.com/">Used icons</a>
-                            </li>-->
                         </ul>
                     </div>
                 </div>
             </div>
         </footer>
-        <!-- Footer end -->
-        <!-- Copyright -->
         <div class="footer-copyright">
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="col-12 col-sm-6">
-                        <!-- Copyright -->
+                        
                         <p class="small thin white-light sm-ac">Copyrights © {{date('Y')}}. All Rights Reserved.</p>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <!-- Author -->
+                        
                         <p class="small thin white-light author sm-ac">Designed by <a href="https://legendaryits.com">Legendary
                                 IT Solutions</a></p>
                     </div>
@@ -790,12 +710,11 @@
         </div>
         <!-- Copyright -->
     </div>
-    <!-- Page end -->
-
-    <!-- jQuery -->
+    
     <script src="{{asset('dukafy/js/jquery-1.11.2.min.js')}}"></script>
     <!-- Bootstrap -->
     <script src="{{asset('dukafy/js/bootstrap.min.js')}}"></script>
+    
     <!-- ajax -->
     <script src="{{asset('dukafy/js/ajax.js')}}"></script>
     <!-- Smooth Scroll -->
@@ -810,7 +729,7 @@
     <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
 
-        {{-- <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>  --}}
+        
         <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
 

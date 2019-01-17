@@ -657,7 +657,7 @@
 
 
                                         </div> --}}
-                                        <h5 class="info-text"> Upload Your Logo</h5>
+                                        <h5 class="info-text"> Upload Your Logo (250 X 90)pixels</h5>
                                         <div class="row row-divided" align="center">
                                             <div class="col-xs-6 column-one">
                                                 <h6>Logo</h6>

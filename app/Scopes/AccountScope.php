@@ -38,7 +38,7 @@ class AccountScope implements Scope
                 $account_id=1;
             } else {
                 if (strpos(Request::getHost(), 'dukafy')===false) {
-                    //lets get the domain from here xyz.abc.co.tze
+                    //lets get the domain from here xyz.abc.co.tz
                     $domain=preg_replace('/www\./', "", Request::getHost());
                     preg_match('/\.([a-z\.]+)/', $domain, $matches);
                     $domain=$matches[1];

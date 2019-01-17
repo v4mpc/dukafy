@@ -635,26 +635,6 @@ function addCommas(nStr) {
 
 
 
-// $("#product-picture").change(function(){
-//                     readURL(this);
-//                 });
-//  function readURL(input) {
-//             if (input.files && input.files[0]) {
-//                 var reader = new FileReader();
-
-//                 reader.onload = function (e) {
-//                     $('#product_image').attr('src', e.target.result);
-//                 };
-//                 reader.readAsDataURL(input.files[0]);
-//             }
-//         }
-
-
-
-
-        // this is the id of the form
-
-
 
 });
 

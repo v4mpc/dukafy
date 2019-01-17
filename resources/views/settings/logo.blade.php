@@ -141,7 +141,7 @@
                   <div class="row row-divided" align="center">
                     <div class="col-md-6 column-one">
                          
-                      <h4 class="info-text">Logo </h4>
+                      <h4 class="info-text">Logo(250 X 90) pixels </h4>
                       <br>
                               <a href="#" class="logo-input-button">  <img src="{{is_null($settings->logo)?asset('images/productplaceholder.png'):asset('images/'.$settings->logo)}}" id="cropped-logo" class="img-thumbnail" width="200" alt="" srcset=""></a>
                               <input type="file" id="logo-input" style="display: none;">

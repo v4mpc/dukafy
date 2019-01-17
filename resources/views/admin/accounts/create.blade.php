@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/toggle/switchery.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/file-uploaders/dropzone.min.css')}}">
+
 @endsection
  
 @section('page_level_css')
@@ -16,8 +16,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/core/colors/palette-gradient.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/fonts/simple-line-icons/style.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/file-uploaders/dropzone.min.css')}}"> {{-- //template specific css --}}
+
+ 
 @endsection
  
 @section('content')
@@ -86,8 +86,29 @@
                           </div>
 
                           <div class="form-group row">
+                            <label class="col-md-3 label-control" for="projectinput1">Account Type</label>
+                            <div class="col-md-7">
+                              <select class="form-control account-type" name="account_type">
+                                                                                        <option>Select Account Type</option>
+                                                                                       
+                                                                <option value="1">With Domain</option>
+                                                                <option value="2">With Subdomain</option>
+                                                                                        
+                                                                                   
+                                                                                      </select>
+                            </div>
+                          </div>
 
-                            <label class="col-md-3 label-control" for="projectinput1">Domain</label>
+
+                          <div class="form-group row hidden subdomain">
+                            <label class="col-md-3 label-control" >Sub domain</label>
+                            <div class="col-md-7">
+                              <input type="text"  class="form-control" value="{{old('name')}}" placeholder="xyz.abc.com" name="subdomain">
+                            </div>
+                          </div>
+
+                          <div class="form-group row hidden domain">
+                            <label class="col-md-3 label-control" >Domain</label>
                             <div class="col-md-7">
                               <div class="input-group">
                                 <input type="text" class="form-control" placeholder="abc" aria-describedby="basic-addon2" name="domain" value="{{old('sub_domain')}}">
@@ -99,18 +120,13 @@
                             </div>
                           </div>
 
-                          <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Email</label>
-                            <div class="col-md-7">
-                              <input type="email" class="form-control" value="{{old('email')}}" placeholder="Email" name="email">
-                            </div>
-                          </div>
+                         
 
                         
 
                           <div class="form-group row">
 
-                            <label class="col-md-3 label-control" for="projectinput1">Phone</label>
+                            <label class="col-md-3 label-control" >Phone</label>
                             <div class="col-md-7">
                               <div class="input-group">
                                 <div class="input-group-prepend">
@@ -153,9 +169,9 @@
                           </div> --}}
 
                           <div class="form-group row">
-                              <label class="col-md-3 label-control" for="projectinput1">Package Name</label>
+                              <label class="col-md-3 label-control" >Package Name</label>
                               <div class="col-md-7">
-                                  <select id="projectinput5" name="package_id" class="form-control">
+                                  <select name="package_id" class="form-control">
                                       @foreach($packages as $package)
                                   <option value="{{$package->id}}">{{$package->name}}</option>
                                       @endforeach
@@ -167,12 +183,15 @@
 
 
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">Subscription</label>
+                                <label class="col-md-3 label-control" >Subscription</label>
                                 <div class="col-md-7">
-                                    <select id="projectinput5" name="subscription_id" class="form-control">
+                                    <select name="subscription_id" class="form-control">
                                         
                                         @foreach($subscriptions as $subscription)
-                                    <option value="{{$subscription->id}}">{{$subscription->subscription}} Month(s)</option>
+                                        @if(!in_array($subscription->subscription,['1','6']))
+                                        <option value="{{$subscription->id}}">{{$subscription->subscription}} Month(s)</option>
+                                        @endif
+                                    
                                         @endforeach
                        
                                         
@@ -189,31 +208,23 @@
 
 
 
-
-                          {{-- <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Name</label>
-                            <div class="col-md-9">
-                              <input type="text" id="projectinput1" class="form-control" value="{{old('user_name')}}" placeholder="Name" name="user_name">
+                          <div class="form-group row">
+                            <label class="col-md-3 label-control" >Email</label>
+                            <div class="col-md-7">
+                              <input type="email" class="form-control" value="{{old('email')}}" placeholder="Email" name="email">
                             </div>
-                          </div> --}}
-
-                          {{-- <div class="form-group row">
-                            <label class="col-md-3 label-control" for="projectinput1">Email</label>
-                            <div class="col-md-9">
-                              <input type="email" id="projectinput1" class="form-control" value="{{old('user_email')}}" placeholder="Email" name="user_email">
-                            </div>
-                          </div> --}}
+                          </div>
                           <div class="form-group row">
                             <label class="col-md-3 label-control" for="projectinput1">Password</label>
                             <div class="col-md-9">
-                              <input type="password" id="projectinput1" class="form-control" placeholder="Password" name="password">
+                              <input type="password"  class="form-control" placeholder="Password" name="password">
                             </div>
                           </div>
 
                           <div class="form-group row">
                             <label class="col-md-3 label-control" for="projectinput1">Confirm Password</label>
                             <div class="col-md-9">
-                              <input type="password" id="projectinput1" class="form-control" placeholder="Re-type password" name="password_confirmation">
+                              <input type="password"  class="form-control" placeholder="Re-type password" name="password_confirmation">
                             </div>
                           </div>
 
@@ -271,177 +282,26 @@
 @section(
   'page_level_js') <script src="{{asset('vendor/js/scripts/forms/checkbox-radio.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('vendor/js/scripts/extensions/dropzone.min.js')}}" type="text/javascript"></script>
-
 
 
 <script>
-  function remove_income_fields(rid) {
-        $('.removeclass' + rid).remove();
-    }
-
 $(document).ready(function () {
-  
-  // $("#switchery3").click(function() {
-    var changeCheckbox = document.querySelector('.js-check-change');
-  // , changeField = document.querySelector('.js-check-change-field');
-  var old1_price_output=$("#new_price_output").text();
-  //added
-  
-changeCheckbox.onchange = function() {
-  if (changeCheckbox.checked) {
-    $("#discount").prop('disabled', false);
-    $("#sale_tag").show();
-    $("#old_price_output").show();
-    //added
-    done_typing();
-    // $("#new_price_output").text(addCommas(old1_price_output))
-  }else{
-    $("#discount").prop('disabled', true);
-    $("#sale_tag").hide();
-    $("#new_price_output").text(addCommas($("#price").val())).append('<span id="old_price_output">'+old_price_output+'</span>'); 
-    $("#old_price_output").hide(); 
-  }
-};
-
-var togglePrice=document.querySelector('.js-price-visible');
-  togglePrice.onchange=function(){
-    if (togglePrice.checked) {
-    $("#new_price_output").show();
-    //added
-    $("#sale_tag").show();
-    } else {
-
-      $("#new_price_output").hide();
-      //added
-      $("#sale_tag").hide();
-      
-    }
-  }
-
-///input binding to a preview
-$("#name").keyup(function(event) {
-  var stt = $(this).val();
-  $("#name_output").text(stt);
-});
-
-$("#price").keyup(function(event) {
-  var stt = $(this).val();
-  if (!isNaN(stt) && stt!=0) {
-    $("#new_price_output").text(addCommas(stt));
-  done_typing();
-  }
- 
-});
-
-var wait_time=1000;
-var wait_key_stroke=3;
-var count_time;
-var count_key_stroke;
-$('#discount').keyup(function(){
-    clearTimeout(count_time);
-    count_time=setTimeout(done_typing,wait_time);
-});
-
-  function done_typing(params) {
-   var discount=$('#discount').val();
-
-   
-      // alert(input);
-    var lastChar = discount[discount.length-1];
-      if (lastChar=='%' && discount!=0) {
-        var percentage='-'+discount;
-        var numerice_percentage=discount.replace('%','');
-        // var old_price_output=$("#new_price_output").text();
-        // var new_price_output=$("#new_price_output").text().replace(/,/g , '');
-
-        var old_price_output=$("#price").val();
-        var new_price_output=$("#price").val();
-        new_price_output=new_price_output-((new_price_output*numerice_percentage)/100);
-        //added
-        if(new_price_output==old1_price_output)
-          $("#new_price_output").text(addCommas(new_price_output));
-        else
-          $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
-        $("#sale_tag").addClass('sale-tag').text(percentage);
-      } else {
-        if(!isNaN(discount) && discount!=0){
-        // alert('its not a percentage');
-        var price=$('#price').val();
-        console.log(price);
-        var numeric_percentage=Math.ceil((discount/price)*100);
-        var percentage='-'+numeric_percentage+'%';
-
-        //var old_price_output=$("#new_price_output").text();
-       // var new_price_output=$("#new_price_output").text().replace(/,/g , '');
-        var old_price_output=price;
-        var new_price_output=price;
-        new_price_output=new_price_output-discount;
-        //added
-        if(new_price_output==old1_price_output)
-        $("#new_price_output").text(addCommas(new_price_output));
-        else
-        $("#new_price_output").text(addCommas(new_price_output)).append('<span id="old_price_output">'+old_price_output+'</span>');
-       
-        $("#sale_tag").addClass('sale-tag').text(percentage);
-        }
-
-      }
-   
-   
-    }
-  
-
-// $("#category").on('change',function () {
-//   alert("this.value");
-// }):
-$('select[name="category_id"]').on('change', function () {
-  var category=$("#category option:selected").text();
-  $("#category_output").text(category);
+  $('select[name="account_type"]').on('change',function(){
+    
+    var selected = $(this).val();
+   if (selected=='1') {
+     console.log('with domain');
+     $('.domain').removeClass('hidden');
+     $('.subdomain').addClass('hidden');
+     
+   } else if(selected=='2') {
+    console.log('with subdomain');
+    $('.domain').addClass('hidden');
+    $('.subdomain').removeClass('hidden');
+     
+   }
+  })
 
 });
-
-
-function addCommas(nStr) {
-    nStr += '';
-    var x = nStr.split('.');
-    var x1 = x[0];
-    var x2 = x.length > 1 ? '.' + x[1] : '';
-    var rgx = /(\d+)(\d{3})/;
-    while (rgx.test(x1)) {
-        x1 = x1.replace(rgx, '$1' + ',' + '$2');
-    }
-    return x1 + x2;
-}
-
-
-
-$("#product-picture").change(function(){
-                    readURL(this);
-                });
- function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#product_image').attr('src', e.target.result);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-
-
-
-        // this is the id of the form
-
-
-
-});
-
-
-// });
-
 </script>
 @endsection

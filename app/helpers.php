@@ -94,3 +94,20 @@ function send_notification($account_id, $title='Order Completed', $body='300 TZS
 
     return $result;
 }
+
+function get_domain_from_subdomain($subdomain)
+{
+    $domain=preg_replace('/www\./', "", $subdomain);
+    preg_match('/\.([a-z\.]+)/', $domain, $matches);
+    return $matches[1];
+}
+
+
+function extract_domain_name($domain, $subdomain=false)
+{
+    if ($subdomain) {
+        $domain = get_domain_from_subdomain($domain);
+        return explode('.', $domain)[0];
+    }
+    return explode('.', $domain)[0];
+}

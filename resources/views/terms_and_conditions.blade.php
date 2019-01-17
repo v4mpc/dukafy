@@ -19,6 +19,7 @@
         <li>Dukafy will not be liable for any loss or damage from your failure to maintain the security of your Account and password.</li>
         <li>You are responsible for all activity and content such as photos, images, videos, graphics, written content, audio files, code, information, or data uploaded, collected, generated, stored, displayed, distributed, transmitted or exhibited on or in connection with your Account (“Materials”).</li>
         <li>Violation of any term in the Terms of Service will result into immediate termination of your services.</li>
+        <li>You are liable for any statutory tax and duties that may arise our of purchases made at your store. Dukafy is simply a platform in showcasing your products and we do not sell anything ourselves.</li>
     </ol>
 
 
