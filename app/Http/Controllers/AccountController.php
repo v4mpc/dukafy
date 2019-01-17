@@ -340,12 +340,12 @@ class AccountController extends Controller
         $account->status=1;
         $account->save();
         #lets create the domain in digital ocean
-        // $this->digitalOcean($account, 'domain');
+        $this->digitalOcean($account, 'domain');
         // configure NGINX server for this domain
         $this->serverConfig($account, 'domain');
         //now lets create subdomains for client dashboard login
         //create subdomain in digital ocean
-        // $this->digitalOcean($account, 'subdomain');
+        $this->digitalOcean($account, 'subdomain');
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
         $this->createUser($password, $account);
