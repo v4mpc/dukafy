@@ -9,6 +9,7 @@ use App\ProductImage;
 use App\ProductVariation;
 use App\Http\Requests\StoreProduct;
 use Illuminate\Http\Request;
+use App\Rules\AtleastOneValue;
 use Image;
 use Session;
 use Auth;
@@ -58,7 +59,6 @@ class ProductController extends Controller
      */
     public function store(StoreProduct $request)
     {
-        // dd('ddfsd');
         $product=new Product;
         $product=$this->store_product($request, $product);
         Session::flash('success', 'Product Saved');

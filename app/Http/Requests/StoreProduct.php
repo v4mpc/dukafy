@@ -28,7 +28,7 @@ class StoreProduct extends FormRequest
             'name.required' => ' Product name is required',
             'category_id.required'  => 'Category name is required',
             'sub_category_id.required'  => 'Sub-category name is required',
-            'images[].required'=>'Atleast one image is required'
+            
         ];
     }
 
@@ -40,8 +40,9 @@ class StoreProduct extends FormRequest
             'price'=>'required|numeric',
             // 'category_id'=>'required',
             // 'sub_category_id'=>'required',
+            'images'=>'required',
             'description'=>'nullable|sometimes|max:65535',
-            // 'images[]'=>'required|image',
+            
             // 'variation[]'=>'sometimes|max:255',
             // 'variation_images[]'=>'sometimes|image|max:150',
             // 'variation_price[]'=>'sometimes|numeric'
