@@ -365,7 +365,7 @@ class AccountController extends Controller
         } else {
             $data = array(
                 "type" => "A",
-                "name" => $this->subdomain,
+                "name" => explode('.', $this->subdomain)[0],
                 "data"=>"178.62.44.86",
                 "priority"=>null,
                 "port"=>null,
@@ -408,7 +408,7 @@ class AccountController extends Controller
             $server_configurarion.='return 404 "Page Not Found";'.PHP_EOL;
             $server_configurarion.="  }".PHP_EOL;
         } else {
-            $server_configurarion.="server_name .".$this->subdomain.PHP_EOL;
+            $server_configurarion.="server_name .".$this->subdomain.";".PHP_EOL;
         }
         $server_configurarion.="location / {".PHP_EOL;
         $server_configurarion.='try_files $uri $uri/ /index.php?$query_string;'.PHP_EOL;

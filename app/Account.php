@@ -98,4 +98,15 @@ class Account extends Model
     public function unreadNotification()
     {
     }
+
+
+    public function slideImages()
+    {
+        return $this->hasMany('App\SliderImage');
+    }
+
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 }
