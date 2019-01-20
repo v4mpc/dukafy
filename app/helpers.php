@@ -111,3 +111,36 @@ function extract_domain_name($domain, $subdomain=false)
     }
     return explode('.', $domain)[0];
 }
+
+function get_domain_efficient($domain)
+{
+    $domain = preg_replace('/www\./', "", $domain);
+    $domain = preg_replace('/\.co\.tz/', "", $domain);
+    $domain = preg_replace('/\.com/', "", $domain);
+    $domain_array=explode('.', $domain);
+    if (count($domain_array)==1) {
+        return $domain_array[0];
+    } elseif (count($domain_array)==2) {
+        return $domain_array[1];
+    }
+}
+
+function get_subdomain_from_domain(Type $var = null)
+{
+    $domain_name=get_domain_efficient($domain);
+}
+
+function delete_domain($domain)
+{
+    $deleteurl="https://api.digitalocean.com/v2/domains/$domains";
+    $ch=curl_init();
+    curl_setopt($ch, CURLOPT_URL, $deleteurl);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'Authorization: Bearer 38d7b5a763808e70f9d50c9f5848b877fec1eb60bc3e70c3f94d21adf7d55c1c'
+    ));
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+    
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+}

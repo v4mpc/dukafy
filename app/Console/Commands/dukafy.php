@@ -43,7 +43,15 @@ class dukafy extends Command
         $account =Account::where('domain', $domain)->get();
 
         if (count($account)) {
+            //delete nginx config
+            $this->info('Deleting Nginx configurations');
+            unlink("/etc/nginx/sites-available/".$domain);
+            unlink("/etc/nginx/sites-enabled/".$domain);
+            //delete digital oceans reoords
+            // delete_domain($domain);
+            // delete_subdomain();
             //delete the users
+            $this->info('Deleting Users');
             foreach ($account as $account) {
                 foreach ($account->users as $user) {
                     $user->delete();
