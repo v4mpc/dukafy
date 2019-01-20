@@ -171,7 +171,7 @@
 
                       <tr>
                           <td>Sub-Domain:</td>
-                          <td><strong>{{substr($account->domain,0,-6)}}.dukafy.co.tz</strong></td>
+                          <td><strong>{{get_domain_efficient($domain)}}.dukafy.co.tz</strong></td>
                         </tr>
                       <tr>
                         <td>Email :</td>
