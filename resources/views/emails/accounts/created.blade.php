@@ -53,7 +53,7 @@ After the initial setup is completed, you can now fully Manage products, track s
 {{-- [Apple App Store]():  --}}
 
 
-If you have any questions or are stuck during the process, Kindly call us on +255xxxxxxxxx for support assistance.
+If you have any questions or are stuck during the process, Kindly call us on +255717344295 for support assistance.
 
 
 Happy Selling!
