@@ -54,9 +54,9 @@ function getAccountId($request)
     if (strpos($domain, 'dukafy')!==false) {
         $domain_array=explode('.', $domain);
         $subdomain=$domain_array[0];
-        return Account::where('subdomain', $subdomain)->first()->id;
+        return App\Account::where('subdomain', $subdomain)->first()->id;
     } else {
-        return Account::where('domain', $domain)->first()->id;
+        return App\Account::where('domain', $domain)->first()->id;
     }
 }
 
