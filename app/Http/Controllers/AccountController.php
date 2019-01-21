@@ -120,6 +120,7 @@ class AccountController extends Controller
         $account=new Account;
         $account->name=$request->name;
         $account->domain=$domain;
+        $account->subdomain=$subdomain;
         $account->phone=$request->phone;
         $account->email=$request->email;
         $account->package_id=$request->package_id;
