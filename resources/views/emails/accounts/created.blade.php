@@ -15,7 +15,7 @@ Visit Store
 |               |               |          |
 | ------------- |:-------------:| --------:|
 | Package       | {{$account->package->name}} |
-| Payment Received | {{number_format($account->subscription->subscription*$account->package->price)}} |
+| Payment Received | {{number_format($account->subscription->subscription*$account->package->price)}} TZS |
 | Next Due Date | {{$account->ended_at}} |
 
 @endcomponent
