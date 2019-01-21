@@ -50,11 +50,14 @@ function getColorCode($settings)
 
 function getAccountId($request)
 {
-    $domain=preg_replace('/\.dukafy/', "", $request->getHost());
-    
-    $domain=preg_replace('/www\./', "", $domain);
-       
-    return App\Account::where('domain', $domain)->first()->id;
+    $domain=preg_replace('/www\./', "", request::getHost());
+    if (strpos($domain, 'dukafy')!==false) {
+        $domain_array=explode('.', $domain);
+        $subdomain=$domain_array[0];
+        return Account::where('subdomain', $subdomain)->first()->id;
+    } else {
+        return Account::where('domain', $domain)->first()->id;
+    }
 }
 
 
