@@ -25,18 +25,12 @@ Login to your Duakfy Dashboard to complete the initial setup process (**This nee
 Please click on the link below and login with your username & password:
 
 
-@if(preg_match('/\.([a-z\.]+)/', $account->domain, $matches))
-@component('mail::button', ['url' => 'http://'.extract_domain_name($account->domain,true).'.dukafy.co.tz/login'])
+
+@component('mail::button', ['url' => 'http://'.$account->subdomain.'.dukafy.co.tz/login'])
 Visit Dashboard
 @endcomponent
     
-@else
 
-@component('mail::button', ['url' => 'http://'.extract_domain_name($account->domain).'.dukafy.co.tz/login'])
-Visit Dashboard
-@endcomponent
-
-@endif
 
 @component('mail::table')
 |               |               |          |
