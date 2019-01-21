@@ -73,7 +73,8 @@ class AccountController extends Controller
             $domain=get_domain_from_subdomain($request->subdomain);
             $domain_array=explode('.', $domain);
             $domain_array=array_shift($domain_array);
-            $subdomain=implode($domain_array).".dukafy.co.tz";
+            dd($domain_array);
+            $subdomain=implode('', $domain_array).".dukafy.co.tz";
             $domain=$request->subdomain;
         } elseif ($request->account_type=='3') {
             $request->validate([
