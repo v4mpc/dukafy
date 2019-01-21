@@ -71,10 +71,7 @@ class AccountController extends Controller
                 'subdomain' => 'required|max:255',
             ]);
             $domain=get_domain_from_subdomain($request->subdomain);
-            $domain_array=explode('.', $domain);
-            dd($domain_array);
-            $domain_array=array_slice($domain_array, 1);
-            //
+            $domain=str_replace('.', '', $domain);
             $subdomain=implode('', $domain_array).".dukafy.co.tz";
             dd($subdomain);
             $domain=$request->subdomain;
