@@ -37,7 +37,7 @@
                           
                             <hr>
                             <p class="socialIcon card-text text-center pt-2 pb-2">
-                                <a href="https://dukafy.co.tz" class="mr-1 mb-1 btn-outline-facebook">
+                                <a href="https://dukafy.co.tz" target="__blank" >
                             Powered By Dukafy
                           </a>
                             </p>
