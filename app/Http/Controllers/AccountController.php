@@ -65,14 +65,15 @@ class AccountController extends Controller
                 'domain' => 'required|unique:accounts,domain|max:255',
             ]);
             $domain=$request->domain.".co.tz";
-            $subdomain=$request->domain.".dukafy.co.tz";
+            $subdomain=preg_replace('/\./', '', $domain).".dukafy.co.tz";
         } elseif ($request->account_type=='2') {
             $request->validate([
                 'subdomain' => 'required|max:255',
             ]);
             $domain=get_domain_from_subdomain($request->subdomain);
             $domain_array=explode('.', $domain);
-            $subdomain=$domain_array[0].".dukafy.co.tz";
+            $domain_array=array_shift($domain_array);
+            $subdomain=implode($domain_array).".dukafy.co.tz";
             $domain=$request->subdomain;
         } elseif ($request->account_type=='3') {
             $request->validate([

@@ -38,20 +38,12 @@ class AccountScope implements Scope
             if (Request::getHost()=="adshlits.dukafy.co.tz") {
                 $account_id=1;
             } else {
-                if (preg_match('/\.([a-z]+\.)/', $domain, $matches) && count(explode($domain, '.'))>2) {
-                    //lets get the domain from here xyz.abc.co.tz
-                    // $domain=preg_replace('/www\./', "", Request::getHost());
-                    
-                    preg_match('/\.([a-z]+\.)/', $domain, $matches);
-                    $domain=$matches[1];
-                    $account_id=Account::where('domain', $domain)->first()->id;
+                if (strpos($domain, 'dukafy')!==false) {
+                    $domain_array=explode('.', $domain);
+                    $subdomain=$domain_array[0];
+                    $account_id=Account::where('subdomain', $subdomain)->first()->id;
                 } else {
-                    // dd('adf');
-                    $domain=preg_replace('/\.dukafy/', "", Request::getHost());
-                    $domain=preg_replace('/www\./', "", $domain);
-                    $domain2=preg_replace('/\.co\.tz/', ".com", $domain);
-                    
-                    $account_id=Account::where('domain', $domain)->orWhere('domain', 'LIKE', "%{$domain2}")->first()->id;
+                    $account_id=Account::where('domain', $domain)->first()->id;
                 }
             }
             $builder->where('account_id', $account_id);
