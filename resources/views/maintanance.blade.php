@@ -24,8 +24,8 @@
                         <div class="card border-grey border-lighten-3 px-1 py-1 box-shadow-3 m-0">
                             <div class="card-body">
                                 <span class="card-title text-center">
-                            <img src="{{asset('images/logo.png')}}" class="img-fluid mx-auto d-block pt-2"
-                            width="250" alt="logo">
+                            {{-- <img src="{{asset('images/logo.png')}}" class="img-fluid mx-auto d-block pt-2"
+                            width="250" alt="logo"> --}}
                           </span>
                             </div>
                             <div class="card-body text-center">
