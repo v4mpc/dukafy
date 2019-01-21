@@ -35,7 +35,7 @@ class AccountScope implements Scope
         if (Request::is('api/*') || strpos(php_sapi_name(), 'cli') !== false) {
             $builder->where('account_id', '>', 1);
         } else {
-            if (Request::getHost()=="adshlits.dukafy.co.tz") {
+            if (Request::getHost()=="adshlits.dukafy.co.tz" ||$domain=='dukafy.co.tz') {
                 $account_id=1;
             } else {
                 if (strpos($domain, 'dukafy')!==false) {
