@@ -51,6 +51,9 @@ function getColorCode($settings)
 function getAccountId($request)
 {
     $domain=preg_replace('/www\./', "", request::getHost());
+    if ($domain=='dukafy.co.tz' || $domain=='dukafy.local') {
+        return 1;
+    }
     if (strpos($domain, 'dukafy')!==false) {
         $domain_array=explode('.', $domain);
         $subdomain=$domain_array[0];
