@@ -16,6 +16,26 @@ $(document).ready(function () {
     });
 
 
+    $('#quaterly').click(function () {
+        $('.per-month-a').html('<p class="bold price">TZS <span>25,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
+        $('.per-month-b').html('<p class="bold price">TZS <span>35,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
+        $('.per-month-c').html('<p class="bold price">TZS <span>55,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
+        $('.per-month-d').html('<p class="bold price">TZS <span>105,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
+
+
+    });
+
+
+    $('#yearly').click(function () {
+        $('.per-month-a').html('<p class="bold price">TZS <span>19,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
+        $('.per-month-b').html('<p class="bold price">TZS <span>29,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
+        $('.per-month-c').html('<p class="bold price">TZS <span>49,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
+        $('.per-month-d').html('<p class="bold price">TZS <span>99,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
+
+
+    });
+
+
 
 
     //packages js
@@ -23,19 +43,19 @@ $(document).ready(function () {
         if (this.value == 1) {
 
             $('.total-A').html("Total TZS <span>" + calculate_total_price(19000, 1) + "</span>");
-            $('.detail-A').html('<li>Up to 50 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-A').html('<li>Up to 50 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
         } else if (this.value == 2) {
             $('.per-month-a').html('<p class="bold price">TZS <span>25,000</span>/Month</p>');
             $('.total-A').html("Total TZS <span>" + calculate_total_price(25000, 3) + "</span>");
-            $('.detail-A').html('<li>Up to 50 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-A').html('<li>Up to 50 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
 
         } else if (this.value == 3) {
             $('.total-A').html("Total TZS <span>" + calculate_total_price(19000, 6) + "</span>");
-            $('.detail-A').html('<li>Up to 50 Products</li> <li>1 Free Domain</li> <li>1 Month Free</li>');
+            $('.detail-A').html('<li>Up to 50 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> <li>1 Month Free</li>');
 
         } else if (this.value == 4) {
             $('.total-A').html("Total TZS <span>" + calculate_total_price(19000, 12) + "</span>");
-            $('.detail-A').html('<li>Up to 50 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-A').html('<li>Up to 50 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
             $('.per-month-a').html('<p class="bold price">TZS <span>19,000</span>/Month</p>');
 
         }
@@ -45,19 +65,19 @@ $(document).ready(function () {
         if (this.value == 1) {
 
             $('.total-B').html("Total TZS <span>" + calculate_total_price(29000, 1) + "</span>");
-            $('.detail-B').html('<li>Up to 400 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-B').html('<li>Up to 400 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
         } else if (this.value == 2) {
             $('.per-month-b').html('<p class="bold price">TZS <span>35,000</span>/Month</p>');
             $('.total-B').html("Total TZS <span>" + calculate_total_price(35000, 3) + "</span>");
-            $('.detail-B').html('<li>Up to 400 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-B').html('<li>Up to 400 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
 
         } else if (this.value == 3) {
             $('.total-B').html("Total TZS <span>" + calculate_total_price(29000, 6) + "</span>");
-            $('.detail-B').html('<li>Up to 400 Products</li> <li>1 Free Domain</li> <li>1 Month Free</li>');
+            $('.detail-B').html('<li>Up to 400 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> <li>1 Month Free</li>');
 
         } else if (this.value == 4) {
             $('.total-B').html("Total TZS <span>" + calculate_total_price(29000, 12) + "</span>");
-            $('.detail-B').html('<li>Up to 400 Products</li> <li>1 Free Domain</li>');
+            $('.detail-B').html('<li>Up to 400 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li>');
             $('.per-month-b').html('<p class="bold price">TZS <span>29,000</span>/Month</p>');
         }
     });
@@ -66,42 +86,45 @@ $(document).ready(function () {
     $('.plan-C').change(function () {
         if (this.value == 1) {
             $('.total-C').html("Total TZS <span>" + calculate_total_price(49000, 1) + "</span>");
-            $('.detail-C').html('<li>Up to 1000 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-C').html('<li>Up to 1000 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
             $('.per-month-a').html('<p class="bold price">TZS <span>49,000</span>/Month</p>');
         } else if (this.value == 2) {
             $('.total-C').html("Total TZS <span>" + calculate_total_price(55000, 3) + "</span>");
-            $('.detail-C').html('<li>Up to 1000 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-C').html('<li>Up to 1000 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
             $('.per-month-c').html('<p class="bold price">TZS <span>55,000</span>/Month</p>');
 
         } else if (this.value == 3) {
             $('.total-C').html("Total TZS <span>" + calculate_total_price(49000, 6) + "</span>");
-            $('.detail-C').html('<li>Up to 1000 Products</li> <li>1 Free Domain</li> <li>1 Month Free</li>');
+            $('.detail-C').html('<li>Up to 1000 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> <li>1 Month Free</li>');
 
         } else if (this.value == 4) {
             $('.total-C').html("Total TZS <span>" + calculate_total_price(49000, 12) + "</span>");
-            $('.detail-C').html('<li>Up to 1000 Products</li> <li>1 Free Domain</li> ');
+            $('.detail-C').html('<li>Up to 1000 Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
             $('.per-month-c').html('<p class="bold price">TZS <span>49,000</span>/Month</p>');
         }
     });
 
 
 
+
+
+
     $('.plan-D').change(function () {
         if (this.value == 1) {
             $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 1) + "</span>");
-            $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> ');
+            $('.detail-D').html('<li>Unlimited Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
         } else if (this.value == 2) {
             $('.total-D').html("Total TZS <span>" + calculate_total_price(105000, 3) + "</span>");
-            $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> ');
+            $('.detail-D').html('<li>Unlimited Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
             $('.per-month-d').html('<p class="bold price">TZS <span>105,000</span>/Month</p>');
 
         } else if (this.value == 3) {
             $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 6) + "</span>");
-            $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> <li>1 Month Free</li>');
+            $('.detail-D').html('<li>Unlimited Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> <li>1 Month Free</li>');
 
         } else if (this.value == 4) {
             $('.total-D').html("Total TZS <span>" + calculate_total_price(99000, 12) + "</span>");
-            $('.detail-D').html('<li>Unlimited Products</li> <li>1 Free Domain</li> ');
+            $('.detail-D').html('<li>Unlimited Products</li> <li>Free Domain</li><li>Free Hosting</li><li>Mobile App Uploads</li><li>Different Templates</li> ');
             $('.per-month-d').html('<p class="bold price">TZS <span>99,000</span>/Month</p>');
         }
     });

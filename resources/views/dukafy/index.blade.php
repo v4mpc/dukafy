@@ -329,6 +329,18 @@
                     <h2><span class="thin">Flexible </span><b>Pricing</b><span class="thin"> Plans</span></h2>
                     <!--<p class="light thin">Dolor sit Mollitia harum ea ut eaque velit.</p>-->
                 </div>
+
+             <div class="row justify-content-center">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link" id="quaterly" data-toggle="pill" href="#pills-quaterly" role="tab" aria-controls="pills-home" aria-selected="true">Quaterly</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" id="yearly"  data-toggle="pill" href="#pills-yearly" role="tab" aria-controls="pills-profile" aria-selected="false">Yearly</a>
+                            </li>
+                          
+                          </ul>
+             </div>
                 <!-- Section title end -->
                 <div class="row">
                     <div class="col-12 col-lg-3 mb-30">
@@ -339,28 +351,24 @@
                                 </div>
                                
 
-                                <div class="col-12">
-                                    <select name="test" class="form-control plan-A" id="">
-                                        
-                                        <option  value="2">Quaterly</option>
-                                        
-                                        <option value="4">Yearly</option>
-                                    </select>
-                                </div>
+  
                                 <div class="col-12 per-month-a">
                                     <p class="bold price">TZS <span>25,000</span>/Month</p>
+                                    <p class="text-muted">(Billed Yearly)</p>
                                 </div>
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-A">
                                         <li>Up to 50 Products</li>
-                                        <li>1 Free Domain</li>
+                        
+                                        <li>Free Domain</li>
+                                        <li>Free Hosting</li>
+                                        <li>Mobile App Uploads</li>
+                                        <li>Different Templates</li>
                                     </ul>
                                 </div>
 
-                                <div class="col-12">
-                                    <p class="bold price total-price total-A">Total TZS <span>75,000</span></p>
-                                </div>
+                              
                                 <div class="col-12">
                                     <a href="#register-form" data-plan="plan-A" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
                                         Select</a>
@@ -374,28 +382,23 @@
                                 <div class="col-12">
                                     <p class="bold price-header">Shop</p>
                                 </div>
-                                <div class="col-12">
-                                    <select name="test" class="form-control plan-B" id="">
-                                        
-                                        <option value="2">Quaterly</option>
-                                        
-                                        <option value="4">Yearly</option>
-                                    </select>
-                                </div>
+                               
                                 <div class="col-12 per-month-b">
                                     <p class="bold price">TZS <span>35,000</span>/Month</p>
+                                    <p class="text-muted">(Billed Yearly)</p>
                                 </div>
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-B">
                                         <li>Up to 400 Products</li>
-                                        <li>1 Free Domain</li>
+                                        <li>Free Domain</li>
+                                        <li>Free Hosting</li>
+                                        <li>Mobile App Uploads</li>
+                                        <li>Different Templates</li>
                                     </ul>
                                 </div>
 
-                                <div class="col-12">
-                                    <p class="bold price total-price total-B">Total TZS <span>105,000</span></p>
-                                </div>
+                                
                                 <div class="col-12">
                                     <a href="#register-form" data-plan="plan-B" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
                                         Select</a>
@@ -411,27 +414,23 @@
                                 </div>
                                
 
-                                <div class="col-12">
-                                    <select name="test" class="form-control plan-C" id="">
-                                        
-                                        <option value="2">Quaterly</option>
-                                        <option value="4">Yearly</option>
-                                    </select>
-                                </div>
+                               
                                 <div class="col-12 per-month-c">
                                     <p class="bold price">TZS <span>55,000</span>/Month</p>
+                                    <p class="text-muted">(Billed Yearly)</p>
                                 </div>
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-C">
                                         <li>Up to 1,000 Products</li>
-                                        <li>1 Free Domain</li>
+                                        <li>Free Domain</li>
+                                        <li>Free Hosting</li>
+                                        <li>Mobile App Uploads</li>
+                                        <li>Different Templates</li>
                                     </ul>
                                 </div>
 
-                                <div class="col-12">
-                                    <p class="bold price total-price total-C">Total TZS <span>165,000</span></p>
-                                </div>
+                                
                                 <div class="col-12">
                                     <a href="#register-form" data-plan="plan-C" class="button bg-color-2 select"><i class="fa fa-cart-arrow-down"></i>
                                         Select</a>
@@ -451,28 +450,22 @@
                                     </p>
                                 </div> -->
 
-                                <div class="col-12">
-                                    <select name="test" class="form-control plan-D" id="">
-                                        
-                                        <option value="2">Quaterly</option>
-                                        
-                                        <option value="4">Yearly</option>
-                                    </select>
-                                </div>
                                 <div class="col-12 per-month-d">
                                     <p class="bold price">TZS <span>105,000</span>/Month</p>
+                                    <p class="text-muted">(Billed Yearly)</p>
                                 </div>
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-D">
                                         <li>Unlimited Products</li>
-                                        <li>1 Free Domain</li>
+                                        <li>Free Domain</li>
+                                        <li>Free Hosting</li>
+                                        <li>Mobile App Uploads</li>
+                                        <li>Different Templates</li>
                                     </ul>
                                 </div>
 
-                                <div class="col-12">
-                                    <p class="bold price total-price total-D">Total TZS <span>315,000</span></p>
-                                </div>
+                                
                                 <div class="col-12 nav-item">
                                     <a href="#register-form" data-plan="plan-D" class="button bg-color-2 nav-link select"><i class="fa fa-cart-arrow-down"></i>
                                         Select</a>
