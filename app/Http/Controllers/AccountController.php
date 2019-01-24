@@ -94,6 +94,12 @@ class AccountController extends Controller
             'package_id'=>'required',
         ]);
 
+        if (!Auth::check()) {
+            $request->validate([
+                'terms'=>'accepted'
+            ]);
+        }
+
         if (Auth::check()) {
             if (Auth::user()->account_id!=1) {
                 $request->validate([

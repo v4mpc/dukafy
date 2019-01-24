@@ -248,11 +248,12 @@
                             <p class="bold">Home Based Businesses</p>
                             <p class="light thin">Instead of Whatsapping your whole stock list,you can easily send people to your store.</p>
                         </div>
-                    </div><script>
+                    </div>
+                    {{-- <script>
                         function onSubmit(token) {
                           document.getElementById("demo-form").submit();
                         }
-                      </script>
+                      </script> --}}
                     <!-- Features card 4 -->
                     <div class="col-12 col-sm-6 col-md-3 mb-30">
                         <div class="card-features">
@@ -381,11 +382,13 @@
                             <div class="row">
                                 <div class="col-12">
                                     <p class="bold price-header">Shop</p>
+                                    
+                                    
                                 </div>
                                
                                 <div class="col-12 per-month-b">
                                     <p class="bold price">TZS <span>29,000</span>/Month</p>
-                                    <p style="font-size: 14px;" class="text-muted">(TZS 348,000 Billed quaterly)</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 348,000 Billed yearly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -417,7 +420,7 @@
                                
                                 <div class="col-12 per-month-c">
                                     <p class="bold price">TZS <span>49,000</span>/Month</p>
-                                    <p style="font-size: 14px;" class="text-muted">(TZS 588,000 Billed quaterly)</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 588,000 Billed yearly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -452,7 +455,7 @@
 
                                 <div class="col-12 per-month-d">
                                     <p class="bold price">TZS <span>99,000</span>/Month</p>
-                                    <p style="font-size: 14px;" class="text-muted">(TZS 1,188,000 Billed quaterly)</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 1,188,000 Billed yearly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -477,6 +480,7 @@
             </div>
         </section>
 
+        
 
            <!-- Call to action -->
            <section class="call-to-action bg-animation p-90-60" id="register-form">
@@ -492,14 +496,14 @@
                             <!-- Section title end -->
                         </div>
                         <div class="col-12 col-lg-5 align-self-center mb-30">
-                            <form id="myform" action="{{route('request_account')}}" method="POST">
+                            <form id="myform"  method="POST">
                                     {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-12 col-md">
                                         <!-- Name input -->
                                         <input type="text" name="name" value="{{old('name')}}" placeholder="Full Name" required>
                                         <!-- Email input -->
-                                        <input type="email" name="email" value="{{old('email')}}" placeholder="Email" required>
+                                        <input type="email" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" name="email" value="{{old('email')}}" placeholder="Email" required>
                                         <input type="text" name="phone" placeholder="Valid Phone #" required>
 
 
@@ -538,7 +542,7 @@
                                           <br>
 
                                           <select class="custom-select custom-select-lg mb-3 input" name="package_id">
-                                                <option selected>Select Package</option>
+                                                <option value="" selected>Select Package</option>
                                                 <option id="basic" value="1">Basic</option>
                                                 <option id="shop" value="2">Shop</option>
                                                 <option id="store" value="3">Store</option>
@@ -550,7 +554,7 @@
                                             
 
                                       
-
+                                         
                                       
 
                                             <select class="custom-select custom-select-lg mb-3 input" name="subscription_id" required>
@@ -562,7 +566,7 @@
                                             <br>
 
                                             <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" required class="custom-control-input" id="customCheck1">
+                                                    <input type="checkbox" value="1" name="terms" class="custom-control-input" id="customCheck1">
                                             <label class="custom-control-label" for="customCheck1">I, Agree to <a href="{{route('terms')}}" target="_blank">Terms and Condition</a></label>
                                                   </div>        
                                            
@@ -581,7 +585,7 @@
                                 </div>  
 
 <br /> 
-                                <button type="submit" class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;" disabled id="submitBtn" >Submit</button>
+                                <button type="submit" class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;" id="submitBtn" >Submit</button>
                                
                             </form>
                           
@@ -686,6 +690,7 @@
                 </div>
             </div>
         </footer>
+        
         <div class="footer-copyright">
             <div class="container">
                 <div class="row justify-content-end">
@@ -705,6 +710,7 @@
     </div>
     
     <script src="{{asset('dukafy/js/jquery-1.11.2.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <!-- Bootstrap -->
     <script src="{{asset('dukafy/js/bootstrap.min.js')}}"></script>
     
@@ -719,8 +725,7 @@
     <!-- Main -->
     <script src="{{asset('dukafy/js/main.js')}}"></script>
 
-    <script src="{{asset('vendor/vendors/js/extensions/sweetalert.min.js')}}" type="text/javascript"></script>
-        <script src="{{asset('vendor/js/scripts/extensions/sweet-alerts.min.js')}}" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
         
         <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -736,6 +741,60 @@
 
 
         $(document).ready(function() {
+
+  
+            
+
+            $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+            $('#submitBtn').click(function (params) {
+            message_table={
+                'name':'Name',
+                'email':'Email',
+                'phone':'Phone number',
+                'existing_domain':'Existing domain',
+                'package_id':'Package',
+                'subscription_id':'Plan',
+                'g-recaptcha-response':'Google recaptcha',
+                'domain':'Domain'
+            }
+            let error_bag = ''
+            var formValues = $('#myform').serializeArray();
+            formValues.forEach(function (item) {
+                if (!item.value && item.name!='_token') {
+                    if (item.name=='existing_domain') {
+                        
+                    } else if(item.name='domain') {
+                        
+                    }
+                    error_bag+='<li>'+message_table[item.name]+'</li>'
+                    Swal.fire({
+  title: 'Error!',
+  html:error_bag,
+  type: 'error',
+  confirmButtonText: 'ok'
+})
+                }
+
+                if (!error_bag){
+                    console.log('the form is valid')
+                }
+
+
+
+                
+            })
+         
+            //submit the values
+            });
+
+
+          
+            
+        
+        
 
 
 

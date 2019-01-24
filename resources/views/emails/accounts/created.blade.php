@@ -7,13 +7,14 @@ This message is to confirm that your store is now ready.
 Please keep this email for future reference as it has important information regarding your Dukafy store.
 
 
-@component('mail::button', ['url' => 'http://'.$account->domain])
+{{-- @component('mail::button', ['url' => 'http://'.$account->domain])
 Visit Store
-@endcomponent
+@endcomponent --}}
 
 @component('mail::table')
 |               |               |          |
 | ------------- |:-------------:| --------:|
+| Store Url       | 'http://'{{$account->domain}} |
 | Package       | {{$account->package->name}} |
 | Payment Received | {{number_format($account->subscription->subscription*$account->package->price)}} TZS |
 | Next Due Date | {{$account->ended_at}} |
@@ -42,7 +43,7 @@ Visit Dashboard
 @endcomponent
 
 
-To guide you through on how to do the initial setup of your store, Here’s a quick 2 min video you can watch: (Youtube Link)[]
+To guide you through on how to do the initial setup of your store, Here’s a quick 2 min video you can watch: [Youtube](https://www.youtube.com/watch?v=3-Nge28XzTM)
 
 ---
 
