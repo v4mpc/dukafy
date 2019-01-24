@@ -17,20 +17,20 @@ $(document).ready(function () {
 
 
     $('#quaterly').click(function () {
-        $('.per-month-a').html('<p class="bold price">TZS <span>25,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
-        $('.per-month-b').html('<p class="bold price">TZS <span>35,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
-        $('.per-month-c').html('<p class="bold price">TZS <span>55,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
-        $('.per-month-d').html('<p class="bold price">TZS <span>105,000</span>/Month</p><p class="text-muted">(Billed quaterly)</p>');
+        $('.per-month-a').html('<p class="bold price">TZS <span>25,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS 75,000 Billed quaterly)</p>');
+        $('.per-month-b').html('<p class="bold price">TZS <span>35,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS 105,000 Billed quaterly)</p>');
+        $('.per-month-c').html('<p class="bold price">TZS <span>55,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS ' + calculate_total_price(55000, 3) + ' Billed quaterly)</p>');
+        $('.per-month-d').html('<p class="bold price">TZS <span>105,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS ' + calculate_total_price(105000, 3) + ' Billed quaterly)</p>');
 
 
     });
 
 
     $('#yearly').click(function () {
-        $('.per-month-a').html('<p class="bold price">TZS <span>19,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
-        $('.per-month-b').html('<p class="bold price">TZS <span>29,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
-        $('.per-month-c').html('<p class="bold price">TZS <span>49,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
-        $('.per-month-d').html('<p class="bold price">TZS <span>99,000</span>/Month</p><p class="text-muted">(Billed yearly)</p>');
+        $('.per-month-a').html('<p class="bold price">TZS <span>19,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS ' + calculate_total_price(19000, 12) + ' Billed yearly)</p>');
+        $('.per-month-b').html('<p class="bold price">TZS <span>29,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS ' + calculate_total_price(29000, 12) + ' Billed yearly)</p>');
+        $('.per-month-c').html('<p class="bold price">TZS <span>49,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS ' + calculate_total_price(49000, 12) + ' Billed yearly)</p>');
+        $('.per-month-d').html('<p class="bold price">TZS <span>99,000</span>/Month</p><p style="font-size: 14px;" class="text-muted">(TZS ' + calculate_total_price(99000, 12) + ' Billed yearly)</p>');
 
 
     });
@@ -130,12 +130,7 @@ $(document).ready(function () {
     });
 
     function calculate_total_price(price, duration) {
-        if (duration == 6) {
-            return addCommas((duration - 1) * price);
 
-        } else if (duration == 12) {
-            return addCommas((duration) * price);
-        }
         return addCommas(price * duration);
     }
 

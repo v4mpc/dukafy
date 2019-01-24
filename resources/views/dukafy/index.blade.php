@@ -333,10 +333,10 @@
              <div class="row justify-content-center">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                              <a class="nav-link" id="quaterly" data-toggle="pill" href="#pills-quaterly" role="tab" aria-controls="pills-home" aria-selected="true">Quaterly</a>
+                              <a class="nav-link" data-id='2' id="quaterly" data-toggle="pill" href="#pills-quaterly" role="tab" aria-controls="pills-home" aria-selected="true">Quaterly</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link active" id="yearly"  data-toggle="pill" href="#pills-yearly" role="tab" aria-controls="pills-profile" aria-selected="false">Yearly</a>
+                              <a class="nav-link active" data-id='4' id="yearly"  data-toggle="pill" href="#pills-yearly" role="tab" aria-controls="pills-profile" aria-selected="false">Yearly</a>
                             </li>
                           
                           </ul>
@@ -353,8 +353,8 @@
 
   
                                 <div class="col-12 per-month-a">
-                                    <p class="bold price">TZS <span>25,000</span>/Month</p>
-                                    <p class="text-muted">(Billed Yearly)</p>
+                                    <p class="bold price">TZS <span>19,000</span>/Month</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 228,000 Billed yearly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -384,8 +384,8 @@
                                 </div>
                                
                                 <div class="col-12 per-month-b">
-                                    <p class="bold price">TZS <span>35,000</span>/Month</p>
-                                    <p class="text-muted">(Billed Yearly)</p>
+                                    <p class="bold price">TZS <span>29,000</span>/Month</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 348,000 Billed quaterly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -416,8 +416,8 @@
 
                                
                                 <div class="col-12 per-month-c">
-                                    <p class="bold price">TZS <span>55,000</span>/Month</p>
-                                    <p class="text-muted">(Billed Yearly)</p>
+                                    <p class="bold price">TZS <span>49,000</span>/Month</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 588,000 Billed quaterly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -451,8 +451,8 @@
                                 </div> -->
 
                                 <div class="col-12 per-month-d">
-                                    <p class="bold price">TZS <span>105,000</span>/Month</p>
-                                    <p class="text-muted">(Billed Yearly)</p>
+                                    <p class="bold price">TZS <span>99,000</span>/Month</p>
+                                    <p style="font-size: 14px;" class="text-muted">(TZS 1,188,000 Billed quaterly)</p>
                                 </div>
 
                                 <div class="col-12">
@@ -752,11 +752,11 @@
                 var plan=$(this).data('plan');
                 
                 // var id =$('select[name=test]').val();
-                var id =$('.'+plan).val();
+                var id =$('.nav-item > .active').data('id');
 
                 console.log(id);
 
-
+console.log(plan);
                 $('#'+id).attr('selected','selected');
                 
                 if (plan=='plan-A') {
