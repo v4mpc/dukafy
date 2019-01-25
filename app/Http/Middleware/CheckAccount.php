@@ -18,10 +18,10 @@ class CheckAccount
     {
         if (!$request->is('api/*')) {
             $account=0;
-            if ($request->getHost()!="adshlits.dukafy.co.tz") {
+            if ($request->getHost()!="adshlits.dukafy.co.tz" && $request->getHost()!='dukafy.co.tz' && $request->getHost()!='www.dukafy.co.tz') {
                 $account=Account::where('id', getAccountId($request))->where('status', 1)->first();
             }
-            if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
+            if ($account || $request->getHost()=="adshlits.dukafy.co.tz" || $request->getHost()!='dukafy.co.tz' || $request->getHost()!='www.dukafy.co.tz') {
                 return $next($request);
             }
             

@@ -28,7 +28,7 @@ class TemplateController extends Controller
 
 
           // here i should use .env app_url
-        if ($request->url()==env('APP_URL')) {
+        if ($request->url()==env('APP_URL') || $request->url()=='www.dukafy.co.tz' || $request->url()=='dukafy.co.tz') {
             // its dukafy
             //lets check if timer has exired
             $timer = Timer::findOrFail(1);
