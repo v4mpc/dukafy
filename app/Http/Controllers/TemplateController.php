@@ -25,12 +25,11 @@ class TemplateController extends Controller
      
     public function index(Request $request)
     {
-
-
-          // here i should use .env app_url
+        dd($request->url());
+        // here i should use .env app_url
         if ($request->url()==env('APP_URL') || $request->url()=='www.dukafy.co.tz' || $request->url()=='dukafy.co.tz') {
             // its dukafy
-            dd($request->url());
+           
             //lets check if timer has exired
             $timer = Timer::findOrFail(1);
             if ($timer->created_at) {
