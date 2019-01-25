@@ -840,7 +840,7 @@
 
 
             @if (Session::has('success'))
-            swal("Good job!", "We will contact You soon!", "success");
+            swal("THANK YOU FOR REGISTERING!", "Thank you for registering to the Dukafy website. Before you can be given access to the website we need to verify your registration, which can take up to 3 working days to process. A notification email will be sent to you once this has been completed.", "success");
             @endif
 
             // @if(Session::has('error'))
