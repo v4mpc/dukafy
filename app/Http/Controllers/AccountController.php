@@ -56,6 +56,7 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'account_type' => 'required',
         ]);
@@ -96,7 +97,7 @@ class AccountController extends Controller
 
         if (!Auth::check()) {
             $request->validate([
-                'terms'=>'accepted'
+                'terms'=>'required'
             ]);
         }
 
@@ -148,6 +149,9 @@ class AccountController extends Controller
             Mail::to('sarfaraz@legendaryits.com')->cc('info@dukafy.co.tz')->send(new AccountRegistered($account));
         }
         Session::flash('success', 'Account Created');
+        // if ($request->ajax()) {
+        //     return response()->json(['ok']);
+        // }
         return redirect()->back();
     }
     

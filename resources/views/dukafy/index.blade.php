@@ -7,6 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dukafy</title>
 <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 
@@ -496,7 +497,7 @@
                             <!-- Section title end -->
                         </div>
                         <div class="col-12 col-lg-5 align-self-center mb-30">
-                            <form id="myform"  method="POST">
+                        <form id="myform"  method="POST" action="{{route('request_account')}}">
                                     {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-12 col-md">
@@ -504,7 +505,7 @@
                                         <input type="text" name="name" value="{{old('name')}}" placeholder="Full Name" required>
                                         <!-- Email input -->
                                         <input type="email" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" name="email" value="{{old('email')}}" placeholder="Email" required>
-                                        <input type="text" name="phone" placeholder="Valid Phone #" required>
+                                    <input type="text" name="phone" placeholder="Valid Phone #" value="{{old('phone')}}" required>
 
 
                                         <select class="custom-select custom-select-lg mb-3 input" id="domain-source" name="account_type">
@@ -578,8 +579,7 @@
 
                                 <div id="ReCaptchContainer">
                                         @if(env('GOOGLE_RECAPTCHA_KEY'))
-                                        <div class="g-recaptcha"
-                                         data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                                        <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
                          </div>
                     @endif    
                                 </div>  
@@ -725,8 +725,9 @@
     <!-- Main -->
     <script src="{{asset('dukafy/js/main.js')}}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
         
         <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
@@ -749,7 +750,7 @@
   $('[data-toggle="popover"]').popover()
 })
 
-            $('#submitBtn').click(function (params) {
+            $('#submitsfdsfdsBtn').click(function (params) {
             message_table={
                 'name':'Name',
                 'email':'Email',
@@ -763,29 +764,56 @@
             let error_bag = ''
             var formValues = $('#myform').serializeArray();
             formValues.forEach(function (item) {
-                if (!item.value && item.name!='_token') {
-                    if (item.name=='existing_domain') {
-                        
-                    } else if(item.name='domain') {
-                        
-                    }
+                if (!item.value && item.name!='_token' && item.name!='domain' && item.name!='existing_domain') {
                     error_bag+='<li>'+message_table[item.name]+'</li>'
-                    Swal.fire({
-  title: 'Error!',
-  html:error_bag,
-  type: 'error',
-  confirmButtonText: 'ok'
-})
                 }
-
-                if (!error_bag){
+            })
+                if (error_bag){
+                    Swal.fire({
+                    title: 'Error!',
+                    html:error_bag,
+                    type: 'error',
+                    confirmButtonText: 'ok'
+                    })
                     console.log('the form is valid')
+                }else{
+                    let data = $('#myform').serializeObject();
+                    Swal.fire({
+                    title: 'Valid',
+                    type: 'success',
+                    confirmButtonText: 'ok'
+                    })
+
+                    console.log(data)
+
+                    $.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+				$.ajax({
+					type: "POST",
+					url: '{{route("request_account")}}',
+                    dataType: "JSON",
+                    data:data,
+					success: function (data) {
+						console.log(data);
+                    },
+                    error:function(error){
+                        console.log(error)
+                    },
+                    
+				});
+
+
+
+
                 }
 
 
 
                 
-            })
+         
          
             //submit the values
             });
@@ -803,10 +831,16 @@
         
 
 
-  @if (Session::has('success'))
+            @if (Session::has('success'))
             swal("Good job!", "We will contact You soon!", "success");
+            @endif
 
-@endif
+            // @if(Session::has('error'))
+            //     Swal.fire({{Session::get('error')}})
+            // @endif
+
+
+
             $('.select').click(function(){
                 var plan=$(this).data('plan');
                 
