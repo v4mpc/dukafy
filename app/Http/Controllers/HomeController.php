@@ -72,9 +72,9 @@ class HomeController extends Controller
         }
     }
 
-    public function initialSetup()
+    public function initialSetup(Request $request)
     {
-        if (count(Setting::all())) {
+        if (count(Setting::all()) || $request->getHost()=='demostore.dukafy.co.tz') {
             return redirect()->route('home');
         }
         return view('initialSetup');
