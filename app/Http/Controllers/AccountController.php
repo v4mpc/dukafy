@@ -350,6 +350,8 @@ class AccountController extends Controller
         $account->ended_at=Carbon::now()->addMonths($account->subscription->subscription);
         $account->status=1;
         $account->save();
+        $this->domain=$account->domain;
+        $this->subdomain=$account->subdomain.".dukafy.co.tz";
         #lets create the domain in digital ocean
         $this->digitalOcean($account, 'domain');
         // configure NGINX server for this domain

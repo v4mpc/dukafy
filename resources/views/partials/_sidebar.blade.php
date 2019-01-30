@@ -91,7 +91,7 @@
       </li>
 
 
-      <li class=" nav-item "><a id="visit-store" ><i class="ft-corner-up-right"></i><span class="menu-title" data-i18n="nav.dash.main">Visit Site</span></a>
+      <li class=" nav-item "><a href="http://{{Auth::user()->getDomain()}}" target="_blank" ><i class="ft-corner-up-right"></i><span class="menu-title" data-i18n="nav.dash.main">Visit Site</span></a>
 
       </li>
 

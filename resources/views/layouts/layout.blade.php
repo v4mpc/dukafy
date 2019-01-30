@@ -129,18 +129,7 @@ divtest.innerHTML='<div class="form-group row"><div class="col-sm-3 nopadding"> 
    
    });
 
-$('#visit-store').click(function (params) {
-    
-    var win = window.open('{{preg_replace("/\.dukafy/", "", route("start"))}}', '_blank');
-if (win) {
-    //Browser has allowed it to be opened
-    win.focus();
-} else {
-    //Browser has blocked it
-    alert('Please allow popups for this website');
-}
-
-});
+// 
   
         </script>
 

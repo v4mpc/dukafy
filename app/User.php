@@ -70,4 +70,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return  $this->belongsTo('App\Account');
     }
+
+
+    public function getDomain()
+    {
+        return $this->account->domain;
+    }
 }
