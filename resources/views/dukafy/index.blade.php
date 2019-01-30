@@ -512,7 +512,7 @@
                                         <!-- Name input -->
                                         <input type="text" name="name" value="{{old('name')}}" placeholder="Full Name" required>
                                         <!-- Email input -->
-                                        <input type="email" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" name="email" value="{{old('email')}}" placeholder="Email" required>
+                                        <input type="email" name="email" value="{{old('email')}}" placeholder="Email" required>
                                     <input type="text" name="phone" placeholder="Valid Phone #" value="{{old('phone')}}" required>
 
 
