@@ -44,9 +44,15 @@ class dukafy extends Command
 
         if (count($account)) {
             //delete nginx config
-            $this->info('Deleting Nginx configurations');
-            unlink("/etc/nginx/sites-available/".$domain);
-            unlink("/etc/nginx/sites-enabled/".$domain);
+            ##lets check if file exixt
+            if (file_exists("/etc/nginx/sites-available/".$domain)) {
+                $this->info('Deleting Nginx configurations');
+                unlink("/etc/nginx/sites-available/".$domain);
+                unlink("/etc/nginx/sites-enabled/".$domain);
+            } else {
+                $this->info('No Nginx config. Proceeding');
+            }
+         
             //delete digital oceans reoords
             // delete_domain($domain);
             // delete_subdomain();
