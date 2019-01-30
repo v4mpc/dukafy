@@ -14,7 +14,7 @@ Visit Store
 @component('mail::table')
 |               |               |          |
 | ------------- |:-------------:| --------:|
-| Store Url       | 'http://'{{$account->domain}} |
+| Store Url       | http://{{$account->domain}} |
 | Package       | {{$account->package->name}} |
 | Payment Received | {{number_format($account->subscription->subscription*$account->package->price)}} TZS |
 | Next Due Date | {{$account->ended_at}} |
