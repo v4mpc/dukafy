@@ -113,9 +113,9 @@ class Account extends Model
     public function totalSubcriptionAmount()
     {
         if ($this->subscription->subscription==3) {
-            return number_format($account->subscription->subscription*$account->package->price);
+            return number_format($this->subscription->subscription*$this->package->price);
         } elseif ($this->subscription->subscription==12) {
-            return number_format($account->subscription->subscription*($account->package->price-6000));
+            return number_format($this->subscription->subscription*($this->package->price-6000));
         }
     }
 }

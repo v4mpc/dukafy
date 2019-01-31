@@ -16,7 +16,7 @@ Visit Store
 | ------------- |:-------------:| --------:|
 | Store Url       | http://{{$account->domain}} |
 | Package       | {{$account->package->name}} |
-| Payment Received | {{number_format($account->totalSubcriptionAmount())}} TZS |
+| Payment Received | {{$account->totalSubcriptionAmount()}} TZS |
 | Next Due Date | {{$account->ended_at}} |
 
 @endcomponent
