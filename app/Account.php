@@ -109,4 +109,13 @@ class Account extends Model
     {
         return $this->hasMany('App\User');
     }
+
+    public function totalSubcriptionAmount()
+    {
+        if ($this->subscription->subscription==3) {
+            return number_format($account->subscription->subscription*$account->package->price);
+        } elseif ($this->subscription->subscription==12) {
+            return number_format($account->subscription->subscription*($account->package->price-6000));
+        }
+    }
 }

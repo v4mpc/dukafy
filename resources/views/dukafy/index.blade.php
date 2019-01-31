@@ -469,7 +469,7 @@
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-D">
-                                        <li>Unlimited Products</li>
+                                        <li>Up to 3,000 Products</li>
                                         <li>Free Domain</li>
                                         <li>Free Hosting</li>
                                         <li>Mobile App Uploads</li>
