@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddingCurrencyIdToAccounts extends Migration
+class AddingCurrencyIdToSettings extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddingCurrencyIdToAccounts extends Migration
      */
     public function up()
     {
-        Schema::table('accounts', function (Blueprint $table) {
+        Schema::table('settings', function (Blueprint $table) {
             $table->integer('currency_id')->default('1');
         });
     }
@@ -25,7 +25,7 @@ class AddingCurrencyIdToAccounts extends Migration
      */
     public function down()
     {
-        Schema::table('accounts', function (Blueprint $table) {
+        Schema::table('settings', function (Blueprint $table) {
             //
         });
     }

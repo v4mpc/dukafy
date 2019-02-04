@@ -318,8 +318,6 @@ class SettingController extends Controller
     public function updateBasicInfo(Request $request, $id)
     {
         $setting=Setting::findOrFail($id);
-
-        // dd($request->location_name);
         if ($request->store_name) {
             $setting->store_name=$request->store_name;
             $setting->working_hours=$request->working_hours;
@@ -329,9 +327,9 @@ class SettingController extends Controller
             $setting->email=$request->email;
             $setting->mobile=$request->mobile;
             $setting->location_name=$request->location_name;
+            $setting->currency_id=$request->currency_id;
         }
         $setting->save();
-
         Session::flash('success_settings', 'Setting Saved!');
         return redirect()->back();
     }
