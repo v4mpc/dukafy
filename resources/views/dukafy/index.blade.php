@@ -932,7 +932,7 @@ function done_typing(){
     $('#status').text('Searching...').removeClass('text-danger text-warning').addClass('text-warning');
         $.ajax({
             type: "GET",
-            url: "{{env('APP_URL')}}/api/whois/"+domain,
+            url: "http://dukafy.co.tz/api/whois/"+domain,
             dataType:'json',
             success: function( response ) {
                 if (response.status=='unavailable') {
