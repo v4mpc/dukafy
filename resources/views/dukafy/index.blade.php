@@ -857,7 +857,7 @@
 
                 console.log(id);
 
-console.log(plan);
+                    console.log(plan);
                 $('#'+id).attr('selected','selected');
                 
                 if (plan=='plan-A') {
@@ -932,13 +932,12 @@ function done_typing(){
     $('#status').text('Searching...').removeClass('text-danger text-warning').addClass('text-warning');
         $.ajax({
             type: "GET",
-            url: "http://dukafy.co.tz/api/whois/"+domain,
+            url: "http://www.dukafy.co.tz/api/whois/"+domain,
             dataType:'json',
             success: function( response ) {
                 if (response.status=='unavailable') {
                     $('#status').text('Not available').removeClass('text-success text-warning').addClass('text-danger');
                 } else if(response.status=='available') {
-                   
                     $('#status').text('Available').removeClass('text-danger text-warning').addClass('text-success');
                 }
                 console.log(response.status);
