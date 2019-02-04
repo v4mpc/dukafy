@@ -22,6 +22,7 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('users', 'UserController');
     Route::resource('accounts', 'AccountController');
+    Route::resource('currency', 'CurrencyController');
     Route::get('suspend/{id}', 'AccountController@suspend')->name('accounts.suspend');
     Route::get('activate/{id}', 'AccountController@activate')->name('accounts.activate');
     Route::put('change_password', 'UserController@updatePassword')->name('admin.update.password');
@@ -29,7 +30,6 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
     Route::put('edit_user', 'UserController@updateUser')->name('admin.update.user');
     Route::put('renew/{id}', 'AccountController@renew')->name('renew');
     Route::put('new_account/{account}', 'AccountController@admincreateAccount')->name('new');
-
     Route::get('edit_user', 'UserController@getUser')->name('admin.get.user');
     Route::get('logs', 'UserController@getLogs')->name('admin.logs');
 });

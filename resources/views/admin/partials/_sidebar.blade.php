@@ -12,6 +12,12 @@
 
 
 
+      <li class=" nav-item {{Request::is('/currency')?" open ":" "}} "><a href="{{route('currency.index')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="nav.dash.main">Currency</span></a>
+
+      </li>
+
+
+
 
 
       {{-- <li class=" nav-item {{Request::is('/dashboard')?" open ":" "}} "><a href="{{route('admin.logs')}}"><i class="ft-activity"></i><span class="menu-title" data-i18n="nav.dash.main">Logs</span></a>

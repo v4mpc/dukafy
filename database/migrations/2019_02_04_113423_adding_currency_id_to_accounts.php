@@ -14,7 +14,7 @@ class AddingCurrencyIdToAccounts extends Migration
     public function up()
     {
         Schema::table('accounts', function (Blueprint $table) {
-            //
+            $table->integer('currency_id')->default('1');
         });
     }
 
