@@ -193,9 +193,9 @@ body { background: rgb(226, 225, 224); margin: 5px; }
                         <thead>
                             <tr>
                                 <td><strong>Item</strong></td>
-                                <td class="text-center"><strong>Unit Price(TZS)</strong></td>
+                                <td class="text-center"><strong>Unit Price({{$order->currency()}})</strong></td>
                                 <td class="text-center"><strong>Quantity</strong></td>
-                                <td class="text-right"><strong>Total(TZS)</strong></td>
+                                <td class="text-right"><strong>Total({{$order->currency()}})</strong></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -215,7 +215,7 @@ body { background: rgb(226, 225, 224); margin: 5px; }
                                 <td class="no-line"></td>
                                 <td class="no-line"></td>
                                 <td class="no-line text-center"><strong>Grand Total</strong></td>
-                                <td class="no-line text-right">{{number_format($order->totalCost())}} TZS</td>
+                                <td class="no-line text-right">{{number_format($order->totalCost())}} {{$order->currency()}}</td>
                             </tr>
                         </tbody>
                     </table>

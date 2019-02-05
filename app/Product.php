@@ -137,4 +137,14 @@ class Product extends Model
     {
         return asset('images/'.$this->images[0]->image);
     }
+
+    public function currency()
+    {
+        return $this->account->settings->currency->name;
+    }
+
+    public function account()
+    {
+        return $this->belongsTo('App\Account');
+    }
 }

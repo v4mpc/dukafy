@@ -53,6 +53,7 @@ class AppServiceProvider extends ServiceProvider
             $categories=Category::all();
             $category_count=count($categories);
             $settings=Setting::orderBy('id', 'desc')->first();
+            // dd($settings->currency->name);
             $previews=Preview::orderBy('id', 'desc')->first();
             config(['app.settings' => $settings]);
             // dd($settings->working_hours);
@@ -85,8 +86,6 @@ class AppServiceProvider extends ServiceProvider
                 case 'black':
                 $colour_code='#000';
                 break;
-
-
                 case 'red':
                 $colour_code='#ff6c6c';
                 break;

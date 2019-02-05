@@ -65,7 +65,7 @@ function getAccountId($request)
 
 
 
-function send_notification($account_id, $title='Order Completed', $body='300 TZS', $data)
+function send_notification($account_id, $title='Order Completed', $body='300', $data)
 {
     $posturl="https://fcm.googleapis.com/fcm/send";
 

@@ -124,7 +124,7 @@
                     <div class="total-price-basket">
                         <span class="lbl">cart -</span>
                         <span class="total-price">
-                            <span class="sign">TZS</span>
+                            <span class="sign">{{$settings->currencyName()}}</span>
                             <span class="value items-price">{{Cart::subtotal()}}</span>
                         </span>
                     </div>
@@ -148,7 +148,7 @@
                             <div class="col-xs-7">
                                 
                                 <h3 class="name"><a href="{{route('product.show',$item->model->id)}}">{{$item->name}}</a></h3>
-                                <div class="price">{{number_format($item->price) }}TZS</div>
+                                <div class="price">{{number_format($item->price) }}{{$settings->currencyName()}}</div>
                             </div>
                             <div class="col-xs-1 action">
                                 <a href="#"><i class="fa fa-trash"></i></a>
@@ -165,7 +165,7 @@
                 <div class="clearfix cart-total">
                     <div class="pull-right">
                         
-                            <span class="text">Sub Total :</span><span class='price'>{{Cart::subtotal()}} TZS</span>
+                            <span class="text">Sub Total :</span><span class='price'>{{Cart::subtotal()}} {{$settings->currencyName()}}</span>
                             
                     </div>
                     <div class="clearfix"></div>

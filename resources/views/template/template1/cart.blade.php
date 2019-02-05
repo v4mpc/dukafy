@@ -31,9 +31,9 @@
         <thead>
           <tr>
             <th>Items</th>
-            <th class="text-center">Unit Price (TZS)</th>
+            <th class="text-center">Unit Price ({{$settings->currencyName()}})</th>
             <th class="text-center">Quantity</th>
-            <th class="text-center">Total Price (TZS) </th>
+            <th class="text-center">Total Price ({{$settings->currencyName()}}) </th>
             <th>&nbsp; </th>
           </tr>
         </thead>
@@ -118,7 +118,7 @@
       </table>
     </div>
       <div class="g-totel">
-        <h5>Grand total: <span class="items-price">{{Cart::subtotal()}} TZS</span></h5>
+        <h5>Grand total: <span class="items-price">{{Cart::subtotal()}} {{$settings->currencyName()}}</span></h5>
       </div>
 
             <div class="pay-method">

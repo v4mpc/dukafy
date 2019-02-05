@@ -32,6 +32,7 @@
           <!-- Product -->
           <div class="product">
               <article>
+                
                   <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
                   <span class="sale-tag">-{{$product->discount}}%</span> @endif
                   <!-- Content -->
@@ -42,10 +43,10 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
-                  <div class="price">{{number_format($product->price)}} TZS</div>
+                  <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
 
                   @endif
                   <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">Buy</i></a>                                </article>
@@ -100,10 +101,10 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
-                  <div class="price">{{number_format($product->price)}} TZS</div>
+                  <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
 
                   @endif
                   <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
@@ -152,10 +153,10 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span class="hidden-xs hidden-sm" >{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm" >{{number_format($product->price)}}</span>
                   </div>
                   @else
-                  <div class="price">{{number_format($product->price)}} TZS</div>
+                  <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
 
                   @endif
                   <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>

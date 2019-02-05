@@ -48,7 +48,7 @@
                   <h5>{{$product->name}}</h5>
 
                   <div class="row">
-                    <div class="col-sm-6"><span class="price">{{number_format($product->selling_price())}} TZS</span></div>
+                  <div class="col-sm-6"><span class="price">{{number_format($product->selling_price())}} {{$product->currency()}}</span></div>
                     <div class="col-sm-6">
 
                       <p>Availability: @if(!$product->out_stock)

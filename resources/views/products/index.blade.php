@@ -88,7 +88,7 @@
                         <th>Sub-category</th> --}}
                         
                         <th>Image</th>
-                        <th>Price (TZS)</th>
+                        <th>Price ({{Auth::user()->account->currency()}})</th>
                         <th>Status</th>
                         <th></th>
                       </tr>

@@ -79,7 +79,7 @@
                                     <th>Category</th>
                                     {{-- <th>Sub-category</th> --}}
                                     <th>Image</th>
-                                    <th>Price</th>
+                                    <th>Price ({{Auth::user()->account->currency()}})</th>
                                     <th></th>    
                                   </tr>
                                 </thead>

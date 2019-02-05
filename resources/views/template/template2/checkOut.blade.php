@@ -48,7 +48,7 @@
 <thead>
     <tr>
         <th class="product-name">Product</th>
-        <th class="product-total">Total (TZS)</th>
+        <th class="product-total">Total ({{$settings->currencyName()}})</th>
     </tr>
 </thead>
 <tbody>
@@ -77,7 +77,7 @@
 
     <tr class="order-total">
         <th>Total</th>
-        <td><strong><span class="amount">{{Cart::subtotal()}} TZS</span></strong> </td>
+        <td><strong><span class="amount">{{Cart::subtotal()}} {{$settings->currencyName()}}</span></strong> </td>
     </tr>
 </tfoot>
 </table>

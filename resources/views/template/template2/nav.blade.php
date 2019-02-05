@@ -87,7 +87,7 @@
             <a href="cart.html" class="nav-link" data-toggle="dropdown">
                 <i class="ec ec-shopping-bag"></i>
                 <span class="cart-items-count count itm-cont" >{{Cart::count()}}</span>
-                <span class="cart-items-total-price total-price"><span  class="amount items-price">{{Cart::subtotal()}} TZS</span></span>
+                <span class="cart-items-total-price total-price"><span  class="amount items-price">{{Cart::subtotal()}} {{$settings->currencyName()}}</span></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-mini-cart">
                 <li class="cart-glance-content ">
@@ -102,7 +102,7 @@
                                     <img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="{{asset('images/'.$item->model->images[0]->image)}}" alt="">{{$item->name}}
                                 </a>
     
-                                <span class="quantity">{{$item->qty}} × <span class="amount">{{number_format($item->price) }}TZS</span></span>
+                                <span class="quantity">{{$item->qty}} × <span class="amount">{{number_format($item->price) }}{{$settings->currencyName()}}</span></span>
                             </li>
                             @empty
 
@@ -115,7 +115,7 @@
                         </ul><!-- end product list -->
     
     @if(Cart::count())
-    <p class="total delivery-button"><strong>Subtotal:</strong> <span class="amount">{{Cart::subtotal()}} TZS</span></p>
+    <p class="total delivery-button"><strong>Subtotal:</strong> <span class="amount">{{Cart::subtotal()}} {{$settings->currencyName()}}</span></p>
     
     
     <p class="buttons delivery-button">

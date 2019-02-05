@@ -75,7 +75,7 @@
                                 @if($product->discount)
                             <div class="col-sm-6">
                                 <div class="price-box">
-                                    <span class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS </span>
+                                    <span class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$product->currency()}} </span>
                                     <span class="price-strike">{{number_format($product->price)}}</span>
                                 </div>
                             </div>

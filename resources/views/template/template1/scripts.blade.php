@@ -173,7 +173,7 @@ toastr.options = {
 
           // var item_price=items_count+" item(s) - "+items_price;
 
-          $('.items-price').empty().text(data.sub_total+' TZS');
+          $('.items-price').empty().text(data.sub_total+' {{$settings->currencyName()}}');
           $('.itm-cont').empty().text(data.cart_count);
           $('.cart-glance-content').empty().append(data.cart_content);
 

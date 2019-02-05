@@ -39,9 +39,9 @@
     <th class="product-remove">&nbsp;</th>
     <th class="product-thumbnail">&nbsp;</th>
     <th class="product-name">Product</th>
-    <th class="product-price">Price (TZS)</th>
+    <th class="product-price">Price ({{$settings->currencyName()}})</th>
     <th class="product-quantity">Quantity</th>
-    <th class="product-subtotal">Total (TZS)</th>
+    <th class="product-subtotal">Total ({{$settings->currencyName()}})</th>
 </tr>
 </thead>
 <tbody>
@@ -131,7 +131,7 @@
 
     <tr class="order-total">
         <th>Total</th>
-        <td data-title="Total"><strong><span class="amount items-price"><h2>{{Cart::subtotal()}} TZS</h2></span></strong> </td>
+        <td data-title="Total"><strong><span class="amount items-price"><h2>{{Cart::subtotal()}} {{$settings->currencyName()}}</h2></span></strong> </td>
     </tr>
 </tbody>
 </table>

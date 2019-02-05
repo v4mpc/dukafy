@@ -66,9 +66,9 @@
 
 			<p class="price">
 					@if($product->discount)
-				<span class="electro-price"><del><span class="amount">{{number_format($product->price)}}</span></del> <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS </span></ins></span>
+				<span class="electro-price"><del><span class="amount">{{number_format($product->price)}}</span></del> <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$product->currency()}} </span></ins></span>
 				@else
-				<span class="electro-price"><ins><span class="amount">{{number_format($product->price)}} TZS </span></ins></span>
+				<span class="electro-price"><ins><span class="amount">{{number_format($product->price)}} {{$product->currency()}} </span></ins></span>
 				@endif
 			</p>
 
