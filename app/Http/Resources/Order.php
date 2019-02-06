@@ -25,7 +25,7 @@ class Order extends Resource
             'customer_comment'=>$this->customer->comment,
             // 'time'=>$this->created_at->diffForHumans(),
             'time'=>$this->created_at->toFormattedDateString().' | '.$this->created_at->toTimeString(),
-            'total'=>number_format($this->totalCost())
+            'total'=>number_format($this->totalCost()).' '.$this->currency()
         ];
     }
 }

@@ -20,7 +20,7 @@ class Orders extends Resource
             'number'=>$this->number,
             'customer_name'=>$this->customer->first_name,
             'products'=>count($this->products),
-            'amount'=>number_format($this->totalCost()),
+            'amount'=>number_format($this->totalCost()).' '.$this->currency(),
             'time'=>$this->created_at->diffForHumans(),
             'read'=>$this->readOrder($request->user_id),
 
