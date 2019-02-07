@@ -38,10 +38,12 @@
         </div>
       </div>
       <div class="content-header-right col-md-6 col-12">
+          @if(!Auth::user()->account->isMaxProduct())
         <div class="dropdown float-md-right">
           <a href="{{route('products.create')}}" class="btn btn-float btn-round btn-primary">Add Product</a>
 
         </div>
+        @endif
       </div>
     </div>
 
