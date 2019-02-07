@@ -352,6 +352,8 @@ class AccountController extends Controller
         $account->save();
         $this->domain=$account->domain;
         $this->subdomain=$account->subdomain.".dukafy.co.tz";
+        
+
         #lets create the domain in digital ocean
         $this->digitalOcean($account, 'domain');
         // configure NGINX server for this domain
