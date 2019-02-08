@@ -127,7 +127,7 @@
                               <label>Hotline</label>
                               <div class="input-group">
 
-                                  <span class="input-group-addon" id="basic-addon1">+255</span>
+                                  
                                   <input type="number" class="form-control" placeholder="XXX XXX XXX" value="{{$settings->mobile}}" name="mobile" aria-describedby="basic-addon1">
                               </div>
                           </div>

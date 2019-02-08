@@ -62,7 +62,7 @@
     @if($settings->mobile!=null)
 	<div class="clearfix phone-no">
 		<span class="contact-i"><i class="fa fa-mobile"></i></span>
-		<span class="contact-span">+255 {{substr_replace($settings->mobile," ", 3, 0)}}</span>
+		<span class="contact-span"> {{substr_replace($settings->mobile," ", 3, 0)}}</span>
     </div>
     @endif
 	<div class="clearfix email">

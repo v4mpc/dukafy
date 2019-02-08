@@ -164,3 +164,13 @@ In PDOConnection.php line 27:
   SQLSTATE[HY000] [2002] Connection refused  
                                              
 
+
+
+[2019-02-07 21:16:12] Processing: App\Jobs\ProcessOrderSmsNotification
+[2019-02-07 21:16:15] Processed:  App\Jobs\ProcessOrderSmsNotification
+[2019-02-07 21:16:15] Processing: App\Notifications\OrderCompleted
+[2019-02-07 21:16:16] Processed:  App\Notifications\OrderCompleted
+[2019-02-07 21:16:16] Processing: App\Mail\OrderCompleted
+[2019-02-07 21:16:24] Processed:  App\Mail\OrderCompleted
+
+
