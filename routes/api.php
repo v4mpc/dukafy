@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 
 Route::get('whois/{domain}', function ($domain) {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://mydomains.dukafy.co.tz/includes/api.php');
+    curl_setopt($ch, CURLOPT_URL, 'http://mydomains.dukafy.co.tz/includes/api.php');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt(
     $ch,
