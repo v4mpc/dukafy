@@ -64,6 +64,11 @@ class Product extends Model
         // return '345435345345345';
     }
 
+    public function discountPercentage()
+    {
+        return round((($this->discount)/($this->price))*100);
+    }
+
     public function orders()
     {
         return $this->belongsToMany('App\Order')->withPivot('quantity');
