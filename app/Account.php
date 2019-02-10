@@ -65,6 +65,11 @@ class Account extends Model
         return count($this->orders);
     }
 
+    public function settings()
+    {
+        return $this->hasOne('App\Setting');
+    }
+
     public function totalProducts()
     {
         return count($this->products);
@@ -86,13 +91,7 @@ class Account extends Model
 
     public function formatNumber()
     {
-        if (substr($this->phone, 0, strlen('+255')) === '+255') {
-            return $this->phone;
-        } elseif (substr($this->phone, 0, strlen('0')) === '0') {
-            return preg_replace('/0/', '+255', $this->phone, 1);
-        } else {
-            return $this->phone;
-        }
+        return $this->phone;
     }
 
     public function unreadNotification()
@@ -117,5 +116,10 @@ class Account extends Model
         } elseif ($this->subscription->subscription==12) {
             return number_format($this->subscription->subscription*($this->package->price-6000));
         }
+    }
+
+    public function currency()
+    {
+        return $this->settings->currency->name;
     }
 }

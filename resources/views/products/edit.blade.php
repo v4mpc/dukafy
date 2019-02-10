@@ -382,10 +382,10 @@ input.visually-hidden:focus + label {
                                     <div><a href="{{route('product.show',$product->id)}}" class="tittle" id="name_output">{{$product->name}}</a></div>
                                     <!-- Reviews -->
                                     @if($product->discount)
-                                    <div class="price" id="new_price_output">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span id="old_price_output">{{number_format($product->price)}}</span>
+                                    <div class="price" id="new_price_output">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$product->currency()}} <span id="old_price_output">{{number_format($product->price)}}</span>
                                     </div>
                                     @else
-                                    <div class="price" id="new_price_output">{{number_format($product->price)}} TZS <span id="old_price_output"></span></div>
+                                    <div class="price" id="new_price_output">{{number_format($product->price)}} {{$product->currency()}} <span id="old_price_output"></span></div>
                   
                                     @endif
                                     <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
@@ -552,7 +552,7 @@ changeCheckbox.onchange = function() {
   }else{
     $("#discount").prop('disabled', true);
     $("#sale_tag").hide();
-    $("#new_price_output").text(addCommas($("#price").val())+' TZS').append('<span id="old_price_output">'+old_price_output+'</span>'); 
+    $("#new_price_output").text(addCommas($("#price").val())+' {{$product->currency()}}').append('<span id="old_price_output">'+old_price_output+'</span>'); 
     $("#old_price_output").hide(); 
   }
 };
@@ -581,7 +581,7 @@ $("#name").keyup(function(event) {
 $("#price").keyup(function(event) {
   var stt = $(this).val();
   if (!isNaN(stt) && stt!=0) {
-    $("#new_price_output").text(addCommas(stt)+' TZS');
+    $("#new_price_output").text(addCommas(stt)+' {{$product->currency()}}');
   done_typing();
   }
  
@@ -613,9 +613,9 @@ $('#discount').keyup(function(){
         new_price_output=new_price_output-((new_price_output*numerice_percentage)/100);
         //added
         if(new_price_output==old1_price_output)
-          $("#new_price_output").text(addCommas(new_price_output)+' TZS');
+          $("#new_price_output").text(addCommas(new_price_output)+' {{$product->currency()}}');
         else
-          $("#new_price_output").text(addCommas(new_price_output)+' TZS').append('<span id="old_price_output">'+old_price_output+'</span>');
+          $("#new_price_output").text(addCommas(new_price_output)+' {{$product->currency()}}').append('<span id="old_price_output">'+old_price_output+'</span>');
         $("#sale_tag").addClass('sale-tag').text(percentage);
       } else {
         if(!isNaN(discount) && discount!=0){
@@ -632,9 +632,9 @@ $('#discount').keyup(function(){
         new_price_output=new_price_output-discount;
         //added
         if(new_price_output==old1_price_output)
-        $("#new_price_output").text(addCommas(new_price_output)+' TZS');
+        $("#new_price_output").text(addCommas(new_price_output)+' {{$product->currency()}}');
         else
-        $("#new_price_output").text(addCommas(new_price_output)+' TZS').append('<span id="old_price_output">'+old_price_output+'</span>');
+        $("#new_price_output").text(addCommas(new_price_output)+' {{$product->currency()}}').append('<span id="old_price_output">'+old_price_output+'</span>');
        
         $("#sale_tag").addClass('sale-tag').text(percentage);
         }

@@ -136,8 +136,8 @@
                           <label>Whatsapp</label>
                           <div class="input-group">
 
-                              <span class="input-group-addon" id="basic-addon1">+255</span>
-                          <input type="number" class="form-control" placeholder="XXX XXX XXX" value="{{$settings->whatsapp}}" name="whatsapp" aria-describedby="basic-addon1">
+                              <span class="input-group-addon" id="basic-addon1">+</span>
+                          <input type="number" class="form-control" placeholder="include country code" value="{{$settings->whatsapp}}" name="whatsapp" aria-describedby="basic-addon1">
                           </div>
                       </div>
                   </div>

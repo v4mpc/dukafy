@@ -25,4 +25,15 @@ class Setting extends Model
 
         static::addGlobalScope(new AccountScope);
     }
+
+    public function currency()
+    {
+        return $this->belongsTo('App\Currency');
+    }
+
+
+    public function currencyName()
+    {
+        return $this->currency->name;
+    }
 }

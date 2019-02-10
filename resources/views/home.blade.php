@@ -88,7 +88,7 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="media-body text-left">
-                    <h3 class="success">{{number_format($total_sales)}} TZS</h3>
+                  <h3 class="success">{{number_format($total_sales)}} {{Auth::user()->account->currency()}}</h3>
                     <h6>Total Sales </h6>
                   </div>
                   <div>
@@ -205,7 +205,7 @@
                       {{--
                       <th class="border-top-0">Categories</th> --}}
 
-                      <th class="border-top-0">Amount (TZS)</th>
+                      <th class="border-top-0">Amount ({{Auth::user()->account->currency()}})</th>
                       <th class="border-top-0">Time</th>
                       <th></th>
                     </tr>

@@ -120,9 +120,7 @@
                             <label class="col-md-3 label-control" for="projectinput1">Phone</label>
                             <div class="col-md-7">
                               <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon2">+255</span>
-                                </div>
+                               
                                 <input type="number" class="form-control" placeholder="XXX XXXX XXXX" aria-describedby="basic-addon2" value="{{$account->phone or old('phone')}}"
                                   name="phone">
 

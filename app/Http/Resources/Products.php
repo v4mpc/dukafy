@@ -19,7 +19,7 @@ class Products extends Resource
         return [
             'id'=>$this->id,
             'name'=>$this->name,
-            'price'=>number_format($this->price),
+            'price'=>number_format($this->price).' '.$this->currency(),
             'category'=>$this->category->name,
             'image'=>$this->get_first_image(),
             'out_stock'=>$this->out_stock,

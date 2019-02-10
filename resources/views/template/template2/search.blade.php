@@ -87,11 +87,11 @@
                                                 @if($product->discount)
                                            
                                             
-                                            <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS</span></ins>
+                                            <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}</span></ins>
                                             
-                                            <del><span class="amount">{{number_format($product->price)}} TZS</span></del>
+                                            <del><span class="amount">{{number_format($product->price)}} {{$settings->currencyName()}}</span></del>
                                             @else
-                                            <ins><span class="amount">{{number_format($product->price)}} TZS</span></ins>
+                                            <ins><span class="amount">{{number_format($product->price)}} {{$settings->currencyName()}}</span></ins>
                                             @endif
                                         </span>
                                     </span>
@@ -145,11 +145,11 @@
                                                 @if($product->discount)
                                            
                                             
-                                                <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS</span></ins>
+                                                <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}</span></ins>
                                                 
-                                                <del><span class="amount">{{number_format($product->price)}} TZS</span></del>
+                                                <del><span class="amount">{{number_format($product->price)}} {{$settings->currencyName()}}</span></del>
                                                 @else
-                                                <ins><span class="amount">{{number_format($product->price)}} TZS</span></ins>
+                                                <ins><span class="amount">{{number_format($product->price)}} {{$settings->currencyName()}}</span></ins>
                                                 @endif
                                         </span>
                                     </span>

@@ -92,8 +92,8 @@
                                             <tr>
                                                 <th>Product Name</th>
                                                 <th>Quantity</th>
-                                                <th>Unit Price (TZS)</th>
-                                                <th>Total Price (TZS)</th>
+                                                <th>Unit Price ({{$settings->currencyName()}})</th>
+                                                <th>Total Price ({{$settings->currencyName()}})</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -111,7 +111,7 @@
                                                 <th></th>
                                                 <th></th>
                                                 <th>Grand Total</th>
-                                                <th>{{Cart::subtotal()}} TZS</th>
+                                                <th>{{Cart::subtotal()}} {{$settings->currencyName()}}</th>
                                             </tr>
                                         </tfoot>
 

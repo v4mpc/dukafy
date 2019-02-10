@@ -112,7 +112,7 @@
 
    <div id="rectangle">
     <a href="#" style="font-size: large;color: white;"> <i class="flaticon-shopping-bag"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s) <span class="items-price" style="
-      margin-left: 3%; ">{{Cart::subtotal()}} TZS</span> <a href="{{route('cart.index')}}" style="
+      margin-left: 3%; ">{{Cart::subtotal()}} {{$settings->currencyName()}}</span> <a href="{{route('cart.index')}}" style="
       background: white;
       color: {{$colour_code}};
       margin-left:3%;

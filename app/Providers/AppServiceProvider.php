@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\Validator;
+use App\Currency;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -37,7 +38,6 @@ class AppServiceProvider extends ServiceProvider
         if (count(Setting::all())) {
             $max_price=0;
             $min_price=0;
-
             $start_max_price=Product::max('price');
             $start_min_price=Product::min('price');
             $featureds=Product::where('featured', '1')->where('out_stock', '0')->get();
@@ -46,22 +46,20 @@ class AppServiceProvider extends ServiceProvider
             $orders=Order::all();
             $out_stocks=Product::where('out_stock', '1')->get();
             $recent_products=Product::orderBy('id', 'desc')->where('out_stock', '0')->take(15)->get();
-
-
             $product_count=count($products);
             $featured_count=count($featureds);
             $out_stock_count=count($out_stocks);
             $order_count=count($orders);
-
             $categories=Category::all();
             $category_count=count($categories);
             $settings=Setting::orderBy('id', 'desc')->first();
+            // dd($settings->currency->name);
             $previews=Preview::orderBy('id', 'desc')->first();
             config(['app.settings' => $settings]);
-        
             // dd($settings->working_hours);
             $brand_images=BrandImage::all();
             $slider_images=SliderImage::all();
+            $currencies = Currency::all();
             // dd($slider_images);
             switch ($settings->colour) {
             case 'navy':
@@ -88,8 +86,6 @@ class AppServiceProvider extends ServiceProvider
                 case 'black':
                 $colour_code='#000';
                 break;
-
-
                 case 'red':
                 $colour_code='#ff6c6c';
                 break;
@@ -110,29 +106,22 @@ class AppServiceProvider extends ServiceProvider
             $row_class='';
 
             View::share('featureds', $featureds);
+            View::share('currencies', $currencies);
             View::share('body_class', $body_class);
             View::share('row_class', $row_class);
-
             View::share('products_count', $products);
-
             View::share('on_sales', $on_sales);
             View::share('categories', $categories);
             View::share('settings', $settings);
             View::share('previews', $previews);
             View::share('colour_code', $colour_code);
-        
             View::share('brand_images', $brand_images);
             View::share('slider_images', $slider_images);
-
             View::share('min_price', $min_price);
             View::share('max_price', $max_price);
-
             View::share('start_min_price', $start_min_price);
             View::share('start_max_price', $start_max_price);
-
             View::share('recent_products', $recent_products);
-
-
             View::share('product_count', $product_count);
             View::share('featured_count', $featured_count);
             View::share('order_count', $order_count);

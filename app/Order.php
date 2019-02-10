@@ -40,6 +40,16 @@ class Order extends Model
         static::addGlobalScope(new AccountScope);
     }
 
+    public function account()
+    {
+        return $this->belongsTo('App\Account');
+    }
+
+    public function currency()
+    {
+        return $this->account->currency();
+    }
+
     public function readOrder($user_id)
     {
         #get the user

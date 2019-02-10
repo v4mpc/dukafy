@@ -91,7 +91,7 @@ class OrderController extends Controller
        
         //queued the notification so as not to delay the web system
         ProcessOrderSmsNotification::dispatch($order);
-        // send_notification($order->account_id, 'Order Completed', 'Order Completed Total '.number_format($order->totalCost()).' TZS', ['orderId'=>$order->id]);
+        // send_notification($order->account_id, 'Order Completed', 'Order Completed Total '.number_format($order->totalCost()).' ', ['orderId'=>$order->id]);
          
         $settings=Setting::where('account_id', $order->account_id)->orderBy('id', 'desc')->first();
         //dashboard notification

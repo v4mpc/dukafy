@@ -32,6 +32,6 @@ class ProcessOrderSmsNotification implements ShouldQueue
      */
     public function handle()
     {
-        send_notification($this->order->account_id, 'Order Completed', 'Order Completed Total '.number_format($this->order->totalCost()).' TZS', ['orderId'=>$this->order->id]);
+        send_notification($this->order->account_id, 'Order Completed', 'Order Completed Total '.number_format($this->order->totalCost()).' '.$this->order->currency(), ['orderId'=>$this->order->id]);
     }
 }

@@ -72,7 +72,7 @@
               </div>
               <div class="card-content collapse show">
                 <div class="card-body card-dashboard">
-                    @if(!Auth::user()->account->isMaxProduct())A
+                    @if(!Auth::user()->account->isMaxProduct())
                     <li class="nav-item d-none d-md-block alert alert-danger mb-2" role="alert">
             
                         <strong>Oops Maximum Products Reached!</strong> Contact the System Administator!
@@ -88,7 +88,7 @@
                         <th>Sub-category</th> --}}
                         
                         <th>Image</th>
-                        <th>Price (TZS)</th>
+                        <th>Price ({{Auth::user()->account->currency()}})</th>
                         <th>Status</th>
                         <th></th>
                       </tr>

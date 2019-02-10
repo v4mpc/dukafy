@@ -586,7 +586,7 @@
 
                         <td>{{$customer->name}}</td>
                         <td>{{$customer->email}}</td>
-                        <td>+255{{$customer->phone}}</td>
+                        <td>{{$customer->phone}}</td>
                         <td>{{$customer->customerType->name}}</td>
 
 

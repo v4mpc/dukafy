@@ -4,7 +4,7 @@
         <div id="rectangle">
                 <a href="#" style="font-size: large;color: white;"> <i class="ec ec-shopping-bag"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)
                   <span class="items-price" style="
-                  margin-left: 3%; ">{{Cart::subtotal()}} TZS</span>
+                  margin-left: 3%; ">{{Cart::subtotal()}} {{$settings->currencyName()}}</span>
                 <a class="button" href="{{route('cart.index')}}" style="
                 background: white;
                 color: {{$colour_code}};

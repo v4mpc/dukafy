@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('admin.layouts.layout')
 
 @section('vendor_css')
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/vendors.min.css')}}">
@@ -31,13 +31,13 @@
         <div class="content-wrapper">
           <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-              <h3 class="content-header-title mb-0 d-inline-block">All Products</h3>
+              <h3 class="content-header-title mb-0 d-inline-block">All Currencies</h3>
               <div class="row breadcrumbs-top d-inline-block">
                 <div class="breadcrumb-wrapper col-12">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index-2.html">Home</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Products</a>
+                    <li class="breadcrumb-item"><a href="#">Currencies</a>
                     </li>
                     
                   </ol>
@@ -46,12 +46,48 @@
             </div>
             <div class="content-header-right col-md-6 col-12">
               <div class="dropdown float-md-right">
-              <a href="{{route('products.create')}}" class="btn btn-float btn-round btn-primary">Add Product</a>
+              <button data-toggle="modal" data-target="#inlineForm" class="btn btn-float btn-round btn-primary">Add Currency</button>
                 
               </div>
             </div>
           </div>
+            <!-- Modal create -->
+            <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+            aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <label class="modal-title text-text-bold-600" id="myModalLabel33">Enter Currency Name</label>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                <form action="{{route('currency.store')}}" method="POST" >
+
+                  {{csrf_field()}}
+                    <div class="modal-body">
+                      <label>Currency Name </label>
+                      <div class="form-group">
+                        <input type="text" placeholder="Currency name" class="form-control" name="name">
+                      </div>
+                     
+                    </div>
+                    <div class="modal-footer">
+                      <input type="reset" class="btn btn-outline-secondary btn-lg" data-dismiss="modal"
+                      value="Close">
+                      <input type="submit" class="btn btn-outline-primary btn-lg" value="Save">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
+            
           <div class="content-body">
+
+             @include('partials._messages')
             <!-- Zero configuration table -->
             <section id="configuration">
                     <div class="row">
@@ -75,36 +111,47 @@
                               <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                   <tr>
-                                    <th>Name</th>
-                                    <th>Category</th>
-                                    {{-- <th>Sub-category</th> --}}
-                                    <th>Image</th>
-                                    <th>Price({{Auth::user()->account->currency()}})</th>
-                                    <th></th>    
+                                    
+                                    <th>Currency</th>
+                                  
+          
+                                    <th>Action</th>    
                                   </tr>
                                 </thead>
                                 <tbody>
                                  
                                   
                                  
-                              
-                                 @foreach($products as $product)
-                                 <tr>
-                                 <td>{{$product->name}}</td>
-                                 <td>{{$product->category->name}}</td>
-                                 {{-- <td>{{$product->subCategory->name}}</td> --}}
-                                  <td><img src="{{asset('images/'.$product->images[0]->image)}}" width="100" height="100" alt=""></td>
+                              @foreach($currencies as $currency)
+
+                              <tr>
                                   
-                                 <td>{{number_format($product->price)}}</td>
+                              <td>{{$currency->name}}</td>
+                                  {{-- <td>
+<ul>
+  @foreach($Currency->subCurrencies as $sub_Currency)
+<li>{{$sub_Currency->name}}</li>
+@endforeach
+
+
+</ul>
+
+                                  </td> --}}
+                                 
                               
                                 <td>
-                                    
-                                <a data-toggle="tooltip" data-id="{{$product->id}}" data-original-title="Stock-In" data-placement="top"  class="btn btn-outline-warning edit-item-btn stock-in"><i class="ft-log-in"></i></a>
-                                   
+                                <a href="{{route('currency.edit', $currency->id)}}" data-toggle="tooltip" data-original-title="Edit" data-placement="top"  class="btn btn-outline-success edit-item-btn"><i class="ft-edit"></i></a>
+                                {{-- <a data-toggle="tooltip" data-id="{{$Currency->id}}"  data-original-title="Delete"  data-placement="top" data-url="/manage/Currencies/" data-name="Currency"  class="btn btn-outline-danger edit-item-btn confirm-color" ><i class="ft-trash"></i></a> --}}
                                    
                                   </td>
                                 </tr>
-                                 @endforeach
+
+                              @endforeach
+
+
+    
+
+                                  
                                  
                                 </tfoot>
                               </table>
@@ -140,16 +187,3 @@
 <script src="{{asset('vendor/js/scripts/tooltip/tooltip.min.js')}}" type="text/javascript"></script>
 
 @endsection
- <div class="btn-group mr-1 mb-1">
-        <button type="button" class="btn btn-light"> Action</button>
-        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{-- <span class="sr-only">Toggle Dropdown</span> --}}
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#"><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-edit"></i> Edit</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-recycle"></i> Out Of Stock</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"><i class="fa fa-remove"></i> Delete</a>
-        </div>
-      </div>

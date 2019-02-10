@@ -73,7 +73,7 @@
                         
                        
 
-                        <th>Amount (TZS)</th>
+                        <th>Amount ({{Auth::user()->account->currency()}})</th>
                         <th>Time</th>
                         <th>Status</th>
                         <th></th>

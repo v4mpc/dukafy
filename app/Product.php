@@ -64,6 +64,11 @@ class Product extends Model
         // return '345435345345345';
     }
 
+    public function discountPercentage()
+    {
+        return round((($this->discount)/($this->price))*100);
+    }
+
     public function orders()
     {
         return $this->belongsToMany('App\Order')->withPivot('quantity');
@@ -136,5 +141,15 @@ class Product extends Model
     public function get_first_image()
     {
         return asset('images/'.$this->images[0]->image);
+    }
+
+    public function currency()
+    {
+        return $this->account->settings->currency->name;
+    }
+
+    public function account()
+    {
+        return $this->belongsTo('App\Account');
     }
 }

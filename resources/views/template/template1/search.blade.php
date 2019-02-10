@@ -42,10 +42,10 @@
                                 <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
                                 
                                 @if($product->discount)
-                                <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} TZS <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
+                                <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                                 </div>
                                 @else
-                                <div class="price">{{number_format($product->price)}} TZS</div>
+                                <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
 
                                 @endif
                                 <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>

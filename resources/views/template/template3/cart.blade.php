@@ -15,8 +15,8 @@
                         <th class="cart-product-name item">Product Name</th>
                         {{-- <th class="cart-edit item">Edit</th> --}}
                         <th class="cart-qty item">Quantity</th>
-                        <th class="cart-sub-total item">Subtotal (TZS)</th>
-                        <th class="cart-total last-item">Grandtotal (TZS)</th>
+                        <th class="cart-sub-total item">Subtotal ({{$settings->currencyName()}})</th>
+                        <th class="cart-total last-item">Grandtotal ({{$settings->currencyName()}})</th>
                     </tr>
                 </thead><!-- /thead -->
                 <tfoot>
@@ -96,7 +96,7 @@
                             Subtotal<span class="inner-left-md">$600.00</span>
                         </div> --}}
                         <div class="cart-grand-total">
-                            Grand Total<span class="inner-left-md">{{Cart::subtotal()}} TZS</span>
+                            Grand Total<span class="inner-left-md">{{Cart::subtotal()}} {{$settings->currencyName()}}</span>
                         </div>
                     </th>
                 </tr>

@@ -109,9 +109,9 @@
                           <th>Qty</th>
                           <th>Products Name</th>
 
-                          <th>Unit Price (TZS)</th>
+                          <th>Unit Price ({{Auth::user()->account->currency()}})</th>
 
-                          <th>Cost (TZS)</th>
+                          <th>Cost ({{Auth::user()->acccount->currency()}})</th>
 
                           {{-- <th></th> --}}
                         </tr>
@@ -187,16 +187,16 @@
                           <tbody>
                             <tr>
                               <th style="width:50%">Subtotal:</th>
-                              <td>{{number_format($order->totalCost())}} TZS</td>
+                              <td>{{number_format($order->totalCost())}} {{Auth::user()->account->currency()}}</td>
                             </tr>
 
                             <tr>
                               <th>Shipping Cost:</th>
-                              <td>0 TZS</td>
+                              <td>0 {{Auth::user()->account->currency()}}</td>
                             </tr>
                             <tr>
                               <th>Total:</th>
-                              <td>{{number_format($order->totalCost())}} TZS</td>
+                              <td>{{number_format($order->totalCost())}} {{Auth::user()->account->currency()}}</td>
                             </tr>
                           </tbody>
                         </table>
