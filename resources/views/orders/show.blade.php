@@ -111,7 +111,7 @@
 
                           <th>Unit Price ({{Auth::user()->account->currency()}})</th>
 
-                          <th>Cost ({{Auth::user()->acccount->currency()}})</th>
+                          <th>Cost ({{Auth::user()->account->currency()}})</th>
 
                           {{-- <th></th> --}}
                         </tr>
