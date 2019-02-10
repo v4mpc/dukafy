@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
             // dd($settings->working_hours);
             $brand_images=BrandImage::all();
             $slider_images=SliderImage::all();
-            // $currencies = Currency::all();
+            $currencies = Currency::all();
             // dd($slider_images);
             switch ($settings->colour) {
             case 'navy':
@@ -106,7 +106,7 @@ class AppServiceProvider extends ServiceProvider
             $row_class='';
 
             View::share('featureds', $featureds);
-            // View::share('currencies', $currencies);
+            View::share('currencies', $currencies);
             View::share('body_class', $body_class);
             View::share('row_class', $row_class);
             View::share('products_count', $products);
