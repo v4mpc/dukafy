@@ -167,13 +167,16 @@
                           <li>Name: <strong>{{$product->name}}</strong></li>
                         </h4>
                         <h4>
-                          <li>Price: <strong>{{number_format($product->price)}} {{$product->currency()}}</strong> @if($product->price_visibility)
+                          <li>Price: <strong>{{number_format($product->price)}} {{$product->currency()}}</strong>
+                             {{-- @if($product->price_visibility)
                             <span class="badge badge-success">Visible</span> @else
-                            <span class="badge badge-danger">Invisible</span> @endif
+                            <span class="badge badge-danger">Invisible</span> @endif --}}
 
                           </li>
-                          <h4>Discount: <strong>{{number_format(round(($product->price*$product->discount)/100))}} {{$product->currency()}} <span class="badge badge-danger"> -{{ $product->discount}}%</span></strong></h4>
+                          @if($product->discount)
+                          <h4>Discount: <strong>{{number_format($product->discount)}} {{$product->currency()}} <span class="badge badge-danger"> -{{ $product->percentageDiscount()}}%</span></strong></h4>
                         </h4>
+                        @endif
                         <li></li>
                         <h4>
                           <li>Category: <strong>{{$product->category->name}}</strong></li>

@@ -64,9 +64,14 @@ class Product extends Model
         // return '345435345345345';
     }
 
-    public function discountPercentage()
+    public function percentageDiscount()
     {
-        return round((($this->discount)/($this->price))*100);
+        if ($this->discount) {
+            # code...
+            return round((($this->discount)/($this->price))*100);
+        }
+
+        return false;
     }
 
     public function orders()
@@ -123,7 +128,7 @@ class Product extends Model
     {
         $product_price=$this->price;
         if ($this->discount) {
-            $product_price=$this->price-round(($this->discount*$this->price)/100);
+            $product_price=$this->price-round(($this->discount));
         }
 
         return $product_price;
