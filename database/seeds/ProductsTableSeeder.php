@@ -18,7 +18,7 @@ class ProductsTableSeeder extends Seeder
             if ($product->discount) {
                 if ($product->discount<100) {
                     # convert percentage to amoount
-                    $discount = round(($prodct->discount*$product->price)/100);
+                    $discount = round(($product->discount*$product->price)/100);
                     $product->discount=$discount;
                     $product->save();
                 }
