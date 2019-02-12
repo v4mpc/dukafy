@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Product;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -11,6 +12,17 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Product::class,100)->create();
+        // factory(App\Product::class,100)->create();
+        $products = Product::all();
+        foreach ($products as $product) {
+            if ($product->discount) {
+                if ($product->discount<100) {
+                    # convert percentage to amoount
+                    $discount = round(($prodct->discount*$product->price)/100);
+                    $product->discount=$discount;
+                    $product->save();
+                }
+            }
+        }
     }
 }
