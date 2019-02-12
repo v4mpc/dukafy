@@ -130,8 +130,9 @@ class ProductController extends Controller
             if (substr($request->discount, -1)==='%') {
                 //validate here
                 $discount = rtrim($request->discount, '%');
+                $discount = round(($discount*$request->price)/100);
             } else {
-                $discount=round((($request->discount)/($request->price))*100);
+                $discount=$request->discount;
             }
         }
         $product->discount=$discount;
