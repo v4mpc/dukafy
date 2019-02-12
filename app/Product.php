@@ -71,7 +71,7 @@ class Product extends Model
             return round((($this->discount)/($this->price))*100);
         }
 
-        return false;
+        return 0;
     }
 
     public function orders()

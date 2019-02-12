@@ -24,7 +24,7 @@ class Products extends Resource
             'image'=>$this->get_first_image(),
             'out_stock'=>$this->out_stock,
             'featured'=>$this->featured,
-            'discount'=>$this->discount
+            'discount'=>$this->percentageDiscount()
 
         ];
     }
