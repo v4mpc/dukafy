@@ -4,10 +4,10 @@
       <ul class="nav navbar-nav flex-row">
         <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
         <li class="nav-item mr-auto">
-          <a class="navbar-brand" href="index-2.html">
+          <a class="navbar-brand" href="#.">
             {{-- <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png"> --}}
             @if(count(App\Setting::all()))
-          <h3 class="brand-text">{{$settings->store_name}}</h3>
+          <h3 class="brand-text">{{strlen($settings->store_name)>18?str_limit($settings->store_name,18):$settings->store_name}}</h3>
           @endif
           </a>
         </li>
