@@ -51,7 +51,7 @@ class CartController extends Controller
     {
         $product=Product::FindOrFail($request->id);
         $product_price=$product->price;
-        $product_price=$product->selling_price;
+        $product_price=$product->selling_price();
         Cart::add($request->id, $product->name, $request->quantity, $product_price)->associate('App\Product');
         return redirect()->back()->with('message', 'Item was added to your cart!');
     }
