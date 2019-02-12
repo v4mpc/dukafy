@@ -128,7 +128,7 @@ class Product extends Model
     {
         $product_price=$this->price;
         if ($this->discount) {
-            $product_price=$this->price-round(($this->discount));
+            $product_price=$this->price-$this->discount;
         }
 
         return $product_price;
