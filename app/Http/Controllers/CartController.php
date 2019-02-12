@@ -51,9 +51,7 @@ class CartController extends Controller
     {
         $product=Product::FindOrFail($request->id);
         $product_price=$product->price;
-        if ($product->discount) {
-            $product_price=$product->price-round(($product->discount*$product->price)/100);
-        }
+        $product_price=$product->selling_price;
         Cart::add($request->id, $product->name, $request->quantity, $product_price)->associate('App\Product');
         return redirect()->back()->with('message', 'Item was added to your cart!');
     }
@@ -109,9 +107,7 @@ class CartController extends Controller
     {
         $product=Product::findOrFail($request->id);
         $product_price=$product->price;
-        if ($product->discount) {
-            $product_price=$product->price-round(($product->discount*$product->price)/100);
-        }
+        $product_price=$product->selling_price();
         Cart::add($product->id, $product->name, 1, $product_price)->associate('App\Product');
         $cart_html='';
 

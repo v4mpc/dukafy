@@ -223,7 +223,7 @@ input.visually-hidden:focus + label {
                                                       <input type="checkbox" id="switchery3" name="price_visibility" class="switchery js-check-change" data-size="xs" {{$product->discount?"checked":""}} />
                                                     </span>
                                   </div>
-                                  <input type="text" id="discount"  name="discount" {{$product->discount?"":"disabled"}} class="form-control" value="{{($product->discount)?$product->discount.'%':""}}" placeholder="Amount or Percentage eg 40000 or 80%"
+                                  <input type="text" id="discount"  name="discount" {{$product->discount?"":"disabled"}} class="form-control" value="{{($product->discount)?$product->discount:""}}" placeholder="Amount or Percentage eg 40000 or 80%"
                                     aria-describedby="radio-addon4">
 
                                 </div>
@@ -376,13 +376,13 @@ input.visually-hidden:focus + label {
 
                                 <article>
                                     <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive img-height img-src-0" src="{{$product->get_image()}}" alt=""></div></a>                                    </div> @if($product->discount)
-                                    <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                                    <span class="sale-tag">-{{$product->percentageDiscount()}}%</span> @endif
                                     <!-- Content -->
                                     <span class="tag" id="category_output">{{$product->category->name}}</span>
                                     <div><a href="{{route('product.show',$product->id)}}" class="tittle" id="name_output">{{$product->name}}</a></div>
                                     <!-- Reviews -->
                                     @if($product->discount)
-                                    <div class="price" id="new_price_output">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$product->currency()}} <span id="old_price_output">{{number_format($product->price)}}</span>
+                                    <div class="price" id="new_price_output">{{number_format($product->selling_price())}} {{$product->currency()}} <span id="old_price_output">{{number_format($product->price)}}</span>
                                     </div>
                                     @else
                                     <div class="price" id="new_price_output">{{number_format($product->price)}} {{$product->currency()}} <span id="old_price_output"></span></div>

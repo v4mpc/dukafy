@@ -79,7 +79,7 @@
                     
                             @if($product->discount)
                         <span class="price">
-                                {{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}			</span>
+                                {{number_format($product->selling_price())}} {{$settings->currencyName()}}			</span>
                                                      <span class="price-before-discount">{{number_format($product->price)}}</span>
                                             @else
                                             <span class="price">
@@ -149,7 +149,7 @@
                         
                                 @if($product->discount)
                             <span class="price">
-                                    {{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}			</span>
+                                    {{number_format($product->selling_price())}} {{$settings->currencyName()}}			</span>
                                                          <span class="price-before-discount">{{number_format($product->price)}}</span>
                                                 @else
                                                 <span class="price">

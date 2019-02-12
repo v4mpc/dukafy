@@ -90,7 +90,7 @@
                 <span class="price">
                         @if($product->discount)
                     <span class="electro-price">
-                        <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}</span></ins>
+                        <ins><span class="amount">{{number_format($product->selling_price())}} {{$settings->currencyName()}}</span></ins>
                                                 <del><span class="amount">{{number_format($product->price)}}</span></del>
                                             <span class="amount"> </span>
                     </span>
@@ -181,7 +181,7 @@
                                 <span class="price">
                                         @if($product->discount)
                                     <span class="electro-price">
-                                        <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}</span></ins>
+                                        <ins><span class="amount">{{number_format($product->selling_price())}} {{$settings->currencyName()}}</span></ins>
                                                                 <del><span class="amount">{{number_format($product->price)}}</span></del>
                                                             <span class="amount"> </span>
                                     </span>
@@ -271,7 +271,7 @@
             <span class="price">
                     @if($product->discount)
                 <span class="electro-price">
-                    <ins><span class="amount">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}}</span></ins>
+                    <ins><span class="amount">{{number_format($product->selling_price())}} {{$settings->currencyName()}}</span></ins>
                                             <del><span class="amount">{{number_format($product->price)}}</span></del>
                                         <span class="amount"> </span>
                 </span>

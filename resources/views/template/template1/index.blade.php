@@ -34,7 +34,7 @@
               <article>
                 
                   <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
-                  <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                  <span class="sale-tag">-{{$product->percentageDiscount()}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
                   <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
@@ -43,7 +43,7 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format($product->selling_price())}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
@@ -93,7 +93,7 @@
           <div class="product">
               <article>
                   <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
-                  <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                  <span class="sale-tag">-{{$product->percentageDiscount()}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
                   <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
@@ -101,7 +101,7 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format($product->selling_price())}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
@@ -145,7 +145,7 @@
           <div class="product">
               <article>
                   <div ><a href="{{route('product.show',$product->id)}}"><div class="text-center"><img class="img-responsive " src="{{asset('images/'.$product->images[0]->image)}}" alt=""></div></a>                                    </div> @if($product->discount)
-                  <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                  <span class="sale-tag">-{{$product->percentageDiscount()}}%</span> @endif
                   <!-- Content -->
                   <span class="tag">{{$product->category->name}}</span>
                   <div class="hidden-xs hidden-sm"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>50?str_limit($product->name,50):$product->name}}</a></div>
@@ -153,7 +153,7 @@
                   
                   <!-- Reviews -->
                   @if($product->discount)
-                  <div class="price">{{number_format(($product->price)-(($product->discount*$product->price)/100))}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm" >{{number_format($product->price)}}</span>
+                  <div class="price">{{number_format($product->selling_price())}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm" >{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>

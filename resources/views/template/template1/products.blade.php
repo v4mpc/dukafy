@@ -236,7 +236,7 @@
             <!-- Product -->
             <div class="product">
               <article> <img class="img-responsive" src="{{('template1/images/item-img-1-1.jpg')}}" alt=""> @if($product->discount)
-                <span class="sale-tag">-{{$product->discount}}%</span> @endif
+                <span class="sale-tag">-{{$product->percentageDiscount()}}%</span> @endif
                 <!-- Content -->
                 <span class="tag">{{$product->category->name}}</span>
                 <div><a href="{{route('product.show',$product->id)}}" class="tittle">{{$product->name}}</a></div>
