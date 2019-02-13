@@ -174,3 +174,24 @@ In PDOConnection.php line 27:
 [2019-02-07 21:16:24] Processed:  App\Mail\OrderCompleted
 
 
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `settings` wh  
+  ere `account_id` > 1)                                                        
+                                                                               
+
+In PDOConnection.php line 31:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In PDOConnection.php line 27:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+

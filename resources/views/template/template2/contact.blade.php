@@ -85,7 +85,7 @@
                                 <p>{{$settings->location_name}}</p>
                                 <h3>Phone: </h3>
                                 @endif @if($settings->mobile!=null)
-                                <p>{{substr_replace($settings->mobile," ", 3, 0)}}</p>
+                                <p>+{{substr_replace($settings->mobile," ", 3, 0)}}</p>
                                 @endif @if($settings->email!=null)
                                 <h3>Email: </h3>
                                 <p>{{$settings->email}}</p>

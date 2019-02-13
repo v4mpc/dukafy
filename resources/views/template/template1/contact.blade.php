@@ -79,7 +79,7 @@
                     @endif @if($settings->mobile!=null)
                     <h6>Phone:</h6>
 
-                    <p>{{substr_replace($settings->mobile," ", 3, 0)}}</p>
+                    <p>+{{substr_replace($settings->mobile," ", 3, 0)}}</p>
                     @endif @if($settings->email!=null)
                     <h6>Email:</h6>
 
