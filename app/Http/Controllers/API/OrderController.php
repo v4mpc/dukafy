@@ -13,7 +13,7 @@ class OrderController extends Controller
 {
     public function index($account_id)
     {
-        return OrdersResource::collection(Order::withoutGlobalScopes()->where('account_id', $account_id)->orderBy('created_at', 'desc')->get());
+        return OrdersResource::collection(Order::withoutGlobalScopes()->where('account_id', $account_id)->orderBy('created_at', 'desc')->paginate());
     }
 
     public function show($account_id, $order_id)
