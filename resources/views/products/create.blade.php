@@ -94,6 +94,13 @@ input.visually-hidden:focus + label {
                         <button type="button" id="crop-image" class="btn btn-info" id="button" style="
                         margin-top: -12%;
                     ">Done</button>
+                      <button type="button" id="rotate-left"  class="btn btn-info"  style="
+                      margin-top: -12%;
+                      ">Rotate Left</button>
+
+                      <button type="button" id="rotate-right"  class="btn btn-info"  style="
+                      margin-top: -12%;
+                      ">Rotate Right</button>
 
                     </div>
 
@@ -489,8 +496,9 @@ input.visually-hidden:focus + label {
 <script src="{{asset('vendor/js/scripts/forms/checkbox-radio.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/switch.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/js/scripts/forms/input-groups.min.js')}}" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
 <script src="{{asset('initial_screen/Croppie/croppie.min.js')}}"></script>
+
 
 
 
@@ -660,9 +668,9 @@ function addCommas(nStr) {
                 width: 400,
                 height: 400,
                 type: 'square',
-                enableOrientation: true,
-                enableExif: true
             },
+            enableOrientation: true,
+            enableExif: true,
             boundary: {
                 width: 500,
                 height: 500
@@ -672,6 +680,19 @@ function addCommas(nStr) {
         //#########################IMAGE LOGICS################
 
 
+
+          $('#rotate-left').click(function() {
+          console.log('left');
+          basic.croppie('rotate',90);
+        });
+          $('#rotate-right').click( function() {
+          console.log('right');
+          basic.croppie('rotate',-90);
+        });
+
+        
+
+       
         //FUNCTIONS
 
         function removeAllImages() {
@@ -709,11 +730,6 @@ function addCommas(nStr) {
         }
 
         function handleFiles(files) {
-
-
-
-          
-
           if(files.length<=5 && images.image.length+files.length<=5){
             var promises=[]
             for (let index = 0; index < files.length; index++) {
@@ -723,10 +739,7 @@ function addCommas(nStr) {
               resolve(e.target.result)
              }
              reader.readAsDataURL(files[index]);
-           }))
-
-          
-            
+           }))            
           }
 
            Promise.all(promises).then(values=>{
