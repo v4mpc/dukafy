@@ -364,7 +364,7 @@ class AccountController extends Controller
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
         $this->createUser($password, $account);
-        Mail::to($account->email)->send(new ClientAccountCreated($account, $password));
+        Mail::to($account->email)->cc('sarfaraz@legendaryits.com')->bcc('imran@legendaryits.com')->send(new ClientAccountCreated($account, $password));
         return;
     }
 
