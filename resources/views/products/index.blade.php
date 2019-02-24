@@ -115,7 +115,12 @@
                           </div>
                         </td>
 
-                        <td>{{number_format($product->price)}}</td>
+                        <td>@if($product->price_visibility)
+                            {{number_format($product->price)}}
+                          @else
+                            <i>No price</i>
+                          @endif
+                        </td>
                         <td>
 
                           @if($product->out_stock==1)

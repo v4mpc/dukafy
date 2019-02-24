@@ -166,6 +166,7 @@
                         <h4>
                           <li>Name: <strong>{{$product->name}}</strong></li>
                         </h4>
+                        @if($product->price_visibility)
                         <h4>
                           <li>Price: <strong>{{number_format($product->price)}} {{$product->currency()}}</strong>
                              {{-- @if($product->price_visibility)
@@ -176,6 +177,7 @@
                           @if($product->discount)
                           <h4>Discount: <strong>{{number_format($product->discount)}} {{$product->currency()}} <span class="badge badge-danger"> -{{ $product->percentageDiscount()}}%</span></strong></h4>
                         </h4>
+                        @endif
                         @endif
                         <li></li>
                         <h4>

@@ -37,7 +37,6 @@ class StoreProduct extends FormRequest
     {
         return [
             'name'=>'required|min:2|max:255',
-            'price'=>'required|numeric',
             // 'category_id'=>'required',
             // 'sub_category_id'=>'required',
             'images'=>'required',
