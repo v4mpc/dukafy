@@ -131,6 +131,7 @@ class ProductController extends Controller
             }
         } else {
             $product->price=0;
+            $discount=0;
         }
         if ($edit!=1) {
             $product->category_id=$request->category_id;
