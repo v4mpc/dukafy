@@ -42,14 +42,15 @@
                   
                   
                   <!-- Reviews -->
+                  @if($product->price_visibility)
                   @if($product->discount)
                   <div class="price">{{number_format($product->selling_price())}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
-
                   @endif
-                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">Buy</i></a>                                </article>
+                  @endif
+                  <a href="#." class="cart-btn" style="visibility:{{$product->price_visibility?:"hidden"}}" id="product{{$product->id}}" data-id="{{$product->id}}">Buy</i></a>                                </article>
           </div>
           @endforeach
 
@@ -100,14 +101,15 @@
                   <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
                   
                   <!-- Reviews -->
+                  @if($product->price_visibility)
                   @if($product->discount)
                   <div class="price">{{number_format($product->selling_price())}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm">{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
-
                   @endif
-                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
+                  @endif
+                  <a href="#." class="cart-btn" style="visibility:{{$product->price_visibility?:"hidden"}}" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
           </div>
           @endforeach
 
@@ -152,14 +154,15 @@
                   <div class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}" class="tittle">{{strlen($product->name)>28?str_limit($product->name,28):$product->name}}</a></div>
                   
                   <!-- Reviews -->
+                  @if($product->price_visibility)
                   @if($product->discount)
                   <div class="price">{{number_format($product->selling_price())}} {{$settings->currencyName()}} <span class="hidden-xs hidden-sm" >{{number_format($product->price)}}</span>
                   </div>
                   @else
                   <div class="price">{{number_format($product->price)}} {{$settings->currencyName()}}</div>
-
                   @endif
-                  <a href="#." class="cart-btn" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
+                  @endif
+                <a href="#." class="cart-btn" style="visibility:{{$product->price_visibility?:"hidden"}}" id="product{{$product->id}}" data-id="{{$product->id}}">BUY</a>                                </article>
           </div>
           @endforeach
 

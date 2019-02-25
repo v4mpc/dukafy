@@ -148,7 +148,7 @@ class CartController extends Controller
 
     public function removeFromCart($id)
     {
-        sleep(3);
+        // sleep(3);
         Cart::remove($id);
         // dd($id);
         // return back()->with('message','Item has been removed!');

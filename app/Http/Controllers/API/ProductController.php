@@ -116,8 +116,21 @@ class ProductController extends Controller
         $product->name=$request->name;
         $product->price=$request->price;
         $price_visibility=0;
+        $discount=0;
         if ($request->price_visibility==='true') {
             $price_visibility=1;
+            
+            if ($request->discount) {
+                if (substr($request->discount, -1)==='%') {
+                    //validate here
+                    $discount = rtrim($request->discount, '%');
+                    $discount = round(($discount*$request->price)/100);
+                } else {
+                    $discount=$request->discount;
+                }
+            }
+        } else {
+            $product->price=0;
         }
         if ($edit!=1) {
             $product->category_id=$request->category_id;
@@ -126,16 +139,7 @@ class ProductController extends Controller
             $product->featured=0;
             $product->out_stock=0;
         }
-        $discount=0;
-        if ($request->discount) {
-            if (substr($request->discount, -1)==='%') {
-                //validate here
-                $discount = rtrim($request->discount, '%');
-                $discount = round(($discount*$request->price)/100);
-            } else {
-                $discount=$request->discount;
-            }
-        }
+        
         $product->discount=$discount;
         $product->price_visibility=$price_visibility;
         $product->save();

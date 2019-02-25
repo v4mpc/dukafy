@@ -57,7 +57,7 @@
                             <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
 
 
-
+@if($product->price_visibility)
 <div class="product-price">	
 
         @if($product->discount)
@@ -70,6 +70,15 @@
                         @endif
 </div><!-- /.product-price -->
 
+@else
+
+<div class="product-price" style="color:white">	                        
+    <span class="price"></span>
+    <span class="price">noprice</span>                      
+    </div>
+
+@endif
+
 
 </div><!-- /.product-info -->
 <div class="cart clearfix animate-effect">
@@ -81,8 +90,9 @@
                             <i class="fa fa-whatsapp"></i>													
                         </a>
                         @endif
-                    <button class="btn btn-primary add_to_cart_button" type="button" data-id="{{$product->id}}">BUY</button>
-                                            
+                        @if($product->price_visibility)
+                    <button class="btn btn-primary add_to_cart_button" type="button" style="display:{{($product->price_visibility)?"Block":"None"}}" data-id="{{$product->id}}">BUY</button>
+                          @endif                  
                 </li>
                
             </ul>
@@ -147,7 +157,9 @@
                 <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
                     <i class="fa fa-shopping-cart"></i>													
                 </button>
-                <button class="btn btn-primary" type="button">BUY</button>
+                
+                <button class="btn btn-primary" style="display:{{($product->price_visibility)?"Block":"None"}}" type="button">BUY</button>
+                
                                         
             </li>
 {{--            

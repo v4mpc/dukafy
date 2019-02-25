@@ -292,7 +292,9 @@ class ProductController extends Controller
             $request->validate([
                 'price'=>'required'
             ]);
+            
             $product->price=$request->price;
+
             $price_visibility=1;
             if (substr($request->discount, -1)==='%') {
                 //validate here

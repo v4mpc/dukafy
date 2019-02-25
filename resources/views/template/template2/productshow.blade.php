@@ -61,7 +61,7 @@
 		<div class="availability in-stock">
 			Availablity: <span>In stock</span>
 		</div><!-- /.availability -->
-
+@if($product->price_visibility)
 		<div itemprop="offers">
 
 			<p class="price">
@@ -73,6 +73,7 @@
 			</p>
 
 		</div>
+		@endif
 
 		<form class="variations_form cart" action="{{route('cart.store')}}" method="post">
 
@@ -91,8 +92,10 @@
 
 
 			<div class="single_variation_wrap">
+				
 				<div class="woocommerce-variation single_variation"></div>
 				<div class="woocommerce-variation-add-to-cart variations_button">
+						@if($product->price_visibility)
 					<div class="quantity">
 						<label>Quantity:</label>
 						<input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
@@ -100,6 +103,7 @@
 					<button type="submit" class="single_add_to_cart_button button alt">BUY</button>
 					<input type="hidden" name="id" value="{{$product->id}}" />
 					<input type="hidden" name="name" value="{{$product->name}}" />
+					@endif
 					{{-- <input type="hidden" name="variation_id" class="variation_id" value="0" /> --}}
 
 					@if($settings->whatsapp)
