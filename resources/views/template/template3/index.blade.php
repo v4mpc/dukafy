@@ -229,7 +229,7 @@
                     </div>
 
                     @else
-                    <div class="product-price" style="color:white">	                        
+                    <div class="product-price" style="color:white; font-size:21px">	                        
                     <span class="price"></span>
                     <span class="price">noprice</span>                      
                     </div>
