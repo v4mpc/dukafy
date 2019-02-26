@@ -72,10 +72,7 @@
 
 @else
 
-<div class="product-price" style="color:white">	                        
-    <span class="price"></span>
-    <span class="price">noprice</span>                      
-    </div>
+
 
 @endif
 
