@@ -80,8 +80,8 @@
                     </div><!-- /.product-price -->
                     @else
                     <div class="product-price" style="display:hidden">	                        
-                        <span class="price">nodiscount</span>
-                        <span class="price">noprice</span>                      
+                        <span class="price">0000</span>
+                        <span class="price">0000</span>                      
                         </div>
                     @endif
                     
