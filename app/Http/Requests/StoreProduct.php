@@ -39,6 +39,9 @@ class StoreProduct extends FormRequest
             'name'=>'required|min:2|max:255',
             // 'category_id'=>'required',
             // 'sub_category_id'=>'required',
+            
+            'price' => 'required_if:price_visibility,on',
+        
             'images'=>'required',
             'description'=>'nullable|sometimes|max:65535',
             

@@ -104,7 +104,6 @@ class ProductController extends Controller
     public function update(StoreProduct $request, $id)
     {
         $product=Product::findOrFail($id);
-
         $product=$this->store_product($request, $product, 'u');
         Session::flash('success', 'Product Saved');
         return redirect()->route('products.show', $product->id);
