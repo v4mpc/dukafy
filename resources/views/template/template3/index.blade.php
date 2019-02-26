@@ -79,7 +79,7 @@
                                             @endif
                     </div><!-- /.product-price -->
                     @else
-                    <div class="product-price" style="display:hidden">	                        
+                    <div class="product-price" style="visibility:hidden">	                        
                             <span class="price">0000</span>
                             <span class="price-before-discount">000</span>                  
                         </div>
@@ -227,10 +227,10 @@
                     </div>
 
                     @else
-                    <div class="product-price" style="display:hidden">	                        
+                    <div class="product-price" style="visibility:hidden">	                        
                             <span class="price">0000</span>
-                            <span class="price">0000</span>                      
-                            </div>
+                            <span class="price-before-discount">000</span>                  
+                        </div>
                     @endif                    
                     
                     </div><!-- /.product-info -->
