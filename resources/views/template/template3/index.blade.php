@@ -245,7 +245,7 @@
                                                 <i class="fa fa-whatsapp"></i>													
                                             </a>
                                             @endif
-                                        <button class="btn btn-primary add_to_cart_button" type="button" style="display:{{($product->price_visibility)?"Block":"None"}}" data-id="{{$product->id}}">BUY</button>
+                                        <button class="btn btn-primary add_to_cart_button" type="button" style="visibility:{{($product->price_visibility)?"visible":"hidden"}}" data-id="{{$product->id}}">BUY</button>
                                                                 
                                     </li>
                                    
