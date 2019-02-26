@@ -79,8 +79,8 @@
                                             @endif
                     </div><!-- /.product-price -->
                     @else
-                    <div class="product-price" style="color:white;font-size:21px">	                        
-                        <span class="price"></span>
+                    <div class="product-price" style="display:hidden">	                        
+                        <span class="price">nodiscount</span>
                         <span class="price">noprice</span>                      
                         </div>
                     @endif
@@ -142,7 +142,7 @@
                                 <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
     
                         
-                                @if($product->price_visibility)
+                                
                         <div class="product-price">	
                         
                                 @if($product->discount)
@@ -157,9 +157,7 @@
                         
                         
                         </div><!-- /.product-info -->
-                        @else
-                        
-                        @endif
+                       
                         <div class="cart clearfix animate-effect">
                                 <div class="action">
                                     <ul class="list-unstyled">
@@ -229,10 +227,10 @@
                     </div>
 
                     @else
-                    <div class="product-price" style="color:white; font-size:21px">	                        
-                    <span class="price"></span>
-                    <span class="price">noprice</span>                      
-                    </div>
+                    <div class="product-price" style="display:hidden">	                        
+                            <span class="price">nodiscount</span>
+                            <span class="price">noprice</span>                      
+                            </div>
                     @endif                    
                     
                     </div><!-- /.product-info -->
