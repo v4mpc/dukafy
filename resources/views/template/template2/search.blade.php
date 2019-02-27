@@ -81,7 +81,7 @@
                                     </div>
                                 </a>
         
-                                <div class="price-add-to-cart">
+                                <div class="price-add-to-cart" style="visibility:{{$product->price_visibility?:"hidden"}}">
                                     <span class="price">
                                         <span class="electro-price">
                                                 @if($product->discount)
@@ -139,7 +139,7 @@
         
                                     {{-- <div class="product-sku">SKU: 5487FB8/15</div> --}}
                                 </a>
-                                <div class="price-add-to-cart">
+                                <div class="price-add-to-cart" style="visibility:{{$product->price_visibility?:"hidden"}}">
                                     <span class="price">
                                         <span class="electro-price">
                                                 @if($product->discount)

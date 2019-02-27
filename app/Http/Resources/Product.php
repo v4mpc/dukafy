@@ -18,6 +18,7 @@ class Product extends Resource
         return [
             'id'=>$this->id,
             'name'=>$this->name,
+            'price_visibility'=>$this->price_visibility,
             'price'=>number_format($this->selling_price()).' '.$this->currency(),
             'category'=>$this->category->name,
             'images'=>$this->images_api(),

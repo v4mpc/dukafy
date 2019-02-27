@@ -106,47 +106,49 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         $product=Product::findOrFail($request->id);
-        $product_price=$product->price;
-        $product_price=$product->selling_price();
-        Cart::add($product->id, $product->name, 1, $product_price)->associate('App\Product');
-        $cart_html='';
+        if ($product->price_visibility) {
+            $product_price=$product->price;
+            $product_price=$product->selling_price();
+            Cart::add($product->id, $product->name, 1, $product_price)->associate('App\Product');
+            $cart_html='';
 
-        if (config('app.settings')->layout=='template2') {
-            $cart_html.='<div class="widget_shopping_cart_content"><ul class="cart_list product_list_widget cart-glance-content ">';
-            foreach (Cart::content() as $item) {
-                $cart_html.='<li class="mini_cart_item"><a title="Remove this item" class="remove" href="#">×</a>';
-                $cart_html.='<a href="'.route("product.show", $item->model->id).'">';
-                $cart_html.='<img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="'.asset("images/".$item->model->images[0]->image).'" alt="">'.$item->name.'</a>';
-                $cart_html.='<span class="quantity">'.$item->qty.' × <span class="amount">'.number_format($item->price).' '.$product->currency().'</span></span></li>';
+            if (config('app.settings')->layout=='template2') {
+                $cart_html.='<div class="widget_shopping_cart_content"><ul class="cart_list product_list_widget cart-glance-content ">';
+                foreach (Cart::content() as $item) {
+                    $cart_html.='<li class="mini_cart_item"><a title="Remove this item" class="remove" href="#">×</a>';
+                    $cart_html.='<a href="'.route("product.show", $item->model->id).'">';
+                    $cart_html.='<img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="'.asset("images/".$item->model->images[0]->image).'" alt="">'.$item->name.'</a>';
+                    $cart_html.='<span class="quantity">'.$item->qty.' × <span class="amount">'.number_format($item->price).' '.$product->currency().'</span></span></li>';
+                }
+                $cart_html.=' </ul><p class="total"><strong>Subtotal:</strong> <span class="amount">'.Cart::subtotal().' '.$product->currency().'</span></p>';
+                $cart_html.='<p class="buttons"><a class="button wc-forward" href="'.route('cart.index').'">Checkout</a>';
+            } elseif (config('app.settings')->layout=='template1') {
+                foreach (Cart::content() as $item) {
+                    $cart_html.='<li><div class="media-left"><a href="'.route('product.show', $item->model->id).'" class="thumb"> <img src="'.asset("images/".$item->model->images[0]->image).'" class="img-responsive" alt="" > </a></div>';
+                    $cart_html.='<div class="media-body"> <a href="'.route('product.show', $item->model->id).'" class="tittle">'.$item->name.'</a> <span>'.number_format($item->price).' '.$product->currency().' x '.$item->qty.'</span></div></li>';
+                }
+                $cart_html.=' <li class="btn-cart"> <a href="'.route('cart.index').'" class="btn-round">Checkout</a> </li>';
+            } elseif (config('app.settings')->layout=='template3') {
+                foreach (Cart::content() as $item) {
+                    $cart_html.='<div class="cart-item product-summary"> <div class="row"> <div class="col-xs-4"><div class="image"><a href="'.route('product.show', $item->model->id).'"><img src="'.asset("images/".$item->model->images[0]->image).'" class="img-responsive" alt=""></a></div></div>';
+                    $cart_html.='<div class="col-xs-7"><h3 class="name"><a href="'.route('product.show', $item->model->id).'">'.$item->name.'</a></h3>';
+                    $cart_html.='<div class="price">'.number_format($item->price) .' '.$product->currency().'</div></div><div class="col-xs-1 action"><a href="#"><i class="fa fa-trash"></i></a> </div> </div> </div>';
+                }
+                $cart_html.=' <div class="clearfix"></div><hr><div class="clearfix cart-total"><div class="pull-right">';
+                $cart_html.='<span class="text">Sub Total :</span><span class="price">'.Cart::subtotal().' '.$product->currency().'</span> </div> <div class="clearfix"></div><a href="'.route('cart.index').'" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	<div>';
             }
-            $cart_html.=' </ul><p class="total"><strong>Subtotal:</strong> <span class="amount">'.Cart::subtotal().' '.$product->currency().'</span></p>';
-            $cart_html.='<p class="buttons"><a class="button wc-forward" href="'.route('cart.index').'">Checkout</a>';
-        } elseif (config('app.settings')->layout=='template1') {
-            foreach (Cart::content() as $item) {
-                $cart_html.='<li><div class="media-left"><a href="'.route('product.show', $item->model->id).'" class="thumb"> <img src="'.asset("images/".$item->model->images[0]->image).'" class="img-responsive" alt="" > </a></div>';
-                $cart_html.='<div class="media-body"> <a href="'.route('product.show', $item->model->id).'" class="tittle">'.$item->name.'</a> <span>'.number_format($item->price).' '.$product->currency().' x '.$item->qty.'</span></div></li>';
-            }
-            $cart_html.=' <li class="btn-cart"> <a href="'.route('cart.index').'" class="btn-round">Checkout</a> </li>';
-        } elseif (config('app.settings')->layout=='template3') {
-            foreach (Cart::content() as $item) {
-                $cart_html.='<div class="cart-item product-summary"> <div class="row"> <div class="col-xs-4"><div class="image"><a href="'.route('product.show', $item->model->id).'"><img src="'.asset("images/".$item->model->images[0]->image).'" class="img-responsive" alt=""></a></div></div>';
-                $cart_html.='<div class="col-xs-7"><h3 class="name"><a href="'.route('product.show', $item->model->id).'">'.$item->name.'</a></h3>';
-                $cart_html.='<div class="price">'.number_format($item->price) .' '.$product->currency().'</div></div><div class="col-xs-1 action"><a href="#"><i class="fa fa-trash"></i></a> </div> </div> </div>';
-            }
-            $cart_html.=' <div class="clearfix"></div><hr><div class="clearfix cart-total"><div class="pull-right">';
-            $cart_html.='<span class="text">Sub Total :</span><span class="price">'.Cart::subtotal().' '.$product->currency().'</span> </div> <div class="clearfix"></div><a href="'.route('cart.index').'" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	<div>';
-        }
-        return response()->json(['cart_count'=>Cart::count(),
+            return response()->json(['cart_count'=>Cart::count(),
                                  'sub_total'=>Cart::subtotal(),
                                  'cart_content'=>$cart_html
 
         ]);
+        }
     }
 
 
     public function removeFromCart($id)
     {
-        sleep(3);
+        // sleep(3);
         Cart::remove($id);
         // dd($id);
         // return back()->with('message','Item has been removed!');

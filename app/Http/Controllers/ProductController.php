@@ -104,7 +104,6 @@ class ProductController extends Controller
     public function update(StoreProduct $request, $id)
     {
         $product=Product::findOrFail($id);
-
         $product=$this->store_product($request, $product, 'u');
         Session::flash('success', 'Product Saved');
         return redirect()->route('products.show', $product->id);
@@ -285,24 +284,34 @@ class ProductController extends Controller
             
             //then we are good to go we can store new imagess
         }
+        
         $product->name=$request->name;
-        $product->price=$request->price;
         $product_visibility=0;
         if ($request->price_visibility==='on') {
+            $request->validate([
+                'price'=>'required'
+            ]);
+            
+            $product->price=$request->price;
+
             $price_visibility=1;
+            if (substr($request->discount, -1)==='%') {
+                //validate here
+                $discount = rtrim($request->discount, '%');
+                $discount = round(($discount*$request->price)/100);
+            } else {
+                $discount=$request->discount;
+            }
+        } else {
+            $discount=0;
+            $price_visibility=0;
+            $product->price=0;
         }
         $product->price_visibility=$price_visibility;
         $product->category_id=$request->category_id;
         $product->description=$request->description;
         $product->featured=0;
         $product->out_stock=0;
-        if (substr($request->discount, -1)==='%') {
-            //validate here
-            $discount = rtrim($request->discount, '%');
-            $discount = round(($discount*$request->price)/100);
-        } else {
-            $discount=$request->discount;
-        }
         $product->discount=$discount;
         $product->account_id=Auth::user()->account_id;
         $product->save();

@@ -95,7 +95,12 @@
                               {{-- <td>{{$product->subCategory->name}}</td> --}}
                                 <td><img src="{{asset('images/'.$product->images[0]->image)}}" width="100" height="100" alt=""></td>
                                 
-                                <td>{{number_format($product->price)}}</td>
+                                <td>@if($product->price_visibility)
+                                    {{number_format($product->price)}}
+                                  @else
+                                    <i>No price</i>
+                                  @endif
+                                </td>
                             
                               <td>
                                  

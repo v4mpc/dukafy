@@ -68,7 +68,7 @@
                     <div class="description-container m-t-20">
                             {!!$product->description!!}
                     </div><!-- /.description-container -->
-
+                    @if($product->price_visibility)
                     <div class="price-container info-container m-t-20">
                         <div class="row">
                             
@@ -131,6 +131,7 @@
                             
                         </div><!-- /.row -->
                     </div><!-- /.quantity-container -->
+                    @endif
                     @if($settings->whatsapp)
                     <div class="product-social-link m-t-20 text-right">
                         <span class="social-label">Inquire :</span>

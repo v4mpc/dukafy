@@ -63,7 +63,7 @@
                     {!!$product->description!!}
                   </div>
                   
-
+                  @if($product->price_visibility)
                   <form action="{{route('cart.store')}}" method="POST">
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{$product->id}}">
@@ -79,6 +79,13 @@
 
 
                   </form>
+                  @else
+
+                  @if($settings->whatsapp!=null)
+                  <a href="https://wa.me/255{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" data-action="{{route('product.show',$product->id)}}" id="whatsapp" class="btn-round"><i  class="fa fa-whatsapp white-fonts"></i></a>
+                  @endif
+
+                  @endif
                  
                 </div>
               </div>

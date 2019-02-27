@@ -217,7 +217,7 @@ input.visually-hidden:focus + label {
                           </div>
 
 
-                          <div class="form-group row">
+                          <div class="form-group row" id="discount-element">
                             <label class="col-md-3 label-control" for="projectinput2">Discount</label>
                             <div class="col-md-7">
                               <fieldset>
@@ -508,6 +508,26 @@ input.visually-hidden:focus + label {
     }
 
 $(document).ready(function () {
+
+
+
+  var togglePrice=document.querySelector('.js-price-visible');
+  togglePrice.onchange=function(){
+    if (togglePrice.checked) {
+    $("#new_price_output").show();
+    $(".js-price-visible").prop('disabled', false);
+    //added
+    $("#sale_tag").show();
+    $('#discount-element').show();
+    } else {
+
+      $("#new_price_output").hide();
+      //added
+      $("#sale_tag").hide();
+      $(".js-price-visible").prop('disabled', true);
+      $('#discount-element').hide();
+    }
+  }
   
   // $("#switchery3").click(function() {
     var changeCheckbox = document.querySelector('.js-check-change');
@@ -531,20 +551,7 @@ changeCheckbox.onchange = function() {
   }
 };
 
-var togglePrice=document.querySelector('.js-price-visible');
-  togglePrice.onchange=function(){
-    if (togglePrice.checked) {
-    $("#new_price_output").show();
-    //added
-    $("#sale_tag").show();
-    } else {
 
-      $("#new_price_output").hide();
-      //added
-      $("#sale_tag").hide();
-      
-    }
-  }
 
 ///input binding to a preview
 $("#name").keyup(function(event) {

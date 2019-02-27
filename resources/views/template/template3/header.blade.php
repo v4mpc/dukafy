@@ -175,6 +175,10 @@
 .outer-bottom-xs {
     margin-bottom: 0px !important;
 }
+
+.product-info {
+	height: 57px;
+}
 </style>
 
 
