@@ -75,17 +75,10 @@ class ProductController extends Controller
         $product->description=$request->description;
         $product->featured=0;
         $product->out_stock=0;
-        
-
-      
         $product->discount=$discount;
         $product->price_visibility=$price_visibility;
-        
         $product->account_id=$account_id;
-     
         $product->save();
-
-
         foreach ($request->images as $key=>$image) {
             $filename = $account_id.time().uniqid().".png";
             $location=public_path('images/'.$filename);
