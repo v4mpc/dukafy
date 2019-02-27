@@ -54,7 +54,7 @@ class ProductController extends Controller
         $product=new Product;
         $product->name=$request->name;
         $price_visibility=0;
-        if ($request->price_visibility==='true') {
+        if ($request->price_visibility=='true') {
             $product->price=$request->price;
             $price_visibility=1;
             $discount=0;
