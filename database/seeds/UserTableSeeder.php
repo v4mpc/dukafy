@@ -34,10 +34,10 @@ class UserTableSeeder extends Seeder
 
 
         $user = new App\User;
-        $user->name="Admin";
-        $user->email="admin@dukafy.co.tz";
-        $user->password=bcrypt('B5r9gFuu87EDPemF');
-        $user->account_id=1;
+        $user->name="Customer";
+        $user->email="yona101992@gmail.com";
+        $user->password=bcrypt('123456');
+        $user->account_id=2;
         $user->save();
     }
 }
