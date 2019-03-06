@@ -24,12 +24,8 @@ class CheckAccount
             if ($account || $request->getHost()=="adshlits.dukafy.co.tz" || $request->getHost()!='dukafy.co.tz' || $request->getHost()!='www.dukafy.co.tz') {
                 return $next($request);
             }
-            
-           
-    
             return abort(404);
         }
-        
         return redirect()->back();
     }
 }

@@ -43,7 +43,9 @@ class AccountScope implements Scope
                     $subdomain=$domain_array[0];
                     $account_id=Account::where('subdomain', $subdomain)->first()->id;
                 } else {
+                    
                     $account_id=Account::where('domain', $domain)->first()->id;
+                    
                 }
             }
             $builder->where('account_id', $account_id);

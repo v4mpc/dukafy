@@ -17,7 +17,7 @@ class Client
     public function handle($request, Closure $next)
     {
         if (Auth::user()->account_id==1) {
-            return redirect()->route('admin/dashboard');
+            return redirect()->route('dashboard');
         }
       
         return $next($request);

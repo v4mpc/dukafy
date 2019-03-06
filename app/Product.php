@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use App\Scopes\AccountScope;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     use SearchableTrait;
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     protected $searchable = [
         /**
          * Columns and their priority in search results.
