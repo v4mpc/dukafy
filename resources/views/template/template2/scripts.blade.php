@@ -85,7 +85,7 @@ if (win) {
 
     $('#whatsapp').click(function (params) {
     
-    var win = window.open('https://wa.me/255{{$settings->whatsapp}}', '_blank');
+    var win = window.open('https://wa.me/{{$settings->whatsapp}}', '_blank');
 if (win) {
     //Browser has allowed it to be opened
     win.focus();
