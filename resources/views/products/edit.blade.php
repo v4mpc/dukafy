@@ -189,7 +189,7 @@ margin-top: -12%;
                                         <ul>
                                           <li><i>Click to Select Image(s)</i></li>
                                         <li>Image(s): <b><i id="images">{{count($product->images)}}</i></b></li>
-                                          <li>Size: <b><i id="size">{{$product->get_size()}} KB</i></b></li>
+                                          
                                         </ul>
                                     </label>
                                 </div>
@@ -799,10 +799,18 @@ function addCommas(nStr) {
 
 
           //   }
-          console.log(imagesUrl)
+          function check_file_size(files) {
+          for (let index = 0; index < files.length; index++) {
+            if (files[index].size/1024>400) {
+              return false
+            }
+          }
+          return true
+          
+        }
 
         function handleFiles(files) {
-          if(files.length<=5 && images.image.length+files.length<=5){
+          if(files.length<=5 && images.image.length+files.length<=5  && check_file_size(files)){
             var promises=[]
             for (let index = 0; index < files.length; index++) {
            promises.push(new Promise((resolve,reject)=>{

@@ -184,7 +184,7 @@ input.visually-hidden:focus + label {
                                         <ul>
                                           <li><i id="image-title">Click to Select Image(s)</i></li>
                                           <li>Image(s): <b><i id="images">0</i></b></li>
-                                          <li>Size: <b><i id="size">0 KB</i></b></li>
+                                          
                                         </ul>
                                     </label>
                                 </div>
@@ -736,10 +736,21 @@ function addCommas(nStr) {
             xhr.send();
         }
 
+        function check_file_size(files) {
+          for (let index = 0; index < files.length; index++) {
+            if (files[index].size/1024>400) {
+              return false
+            }
+          }
+          return true
+          
+        }
+
         function handleFiles(files) {
-          if(files.length<=5 && images.image.length+files.length<=5){
+          if(files.length<=5 && images.image.length+files.length<=5 && check_file_size(files)){
             var promises=[]
             for (let index = 0; index < files.length; index++) {
+              // console.log(files[index].size/1024)
            promises.push(new Promise((resolve,reject)=>{
              var reader=new FileReader();
              reader.onload=(e)=>{
@@ -790,7 +801,7 @@ function addCommas(nStr) {
         "hideMethod": "fadeOut"
         }
             
-            toastr.error('Maximum of 5 Images Required');
+            toastr.error('Maximum of 5 Images Required each with less than 400Kb');
 
 
 
