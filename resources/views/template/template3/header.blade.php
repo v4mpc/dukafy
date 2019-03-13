@@ -139,6 +139,14 @@
     display:none !important;
 }
 
+
+
+}
+
+
+
+.height-25{
+	height:25px;
 }
 
 
