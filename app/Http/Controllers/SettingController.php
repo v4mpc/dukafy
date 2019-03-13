@@ -327,7 +327,7 @@ class SettingController extends Controller
             $setting->email=$request->email;
             $setting->mobile=$request->mobile;
             $setting->location_name=$request->location_name;
-            $setting->currency_id=$request->currency_id;
+            // $setting->currency_id=$request->currency_id;
         }
         $setting->save();
         Session::flash('success_settings', 'Setting Saved!');
