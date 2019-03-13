@@ -73,8 +73,8 @@ class TemplateController extends Controller
             'g-recaptcha-response' => 'required|recaptcha'
         ]);
       
-        
-        Mail::to('info@dukafy.co.tz')->send(new DukafyContactForm($request));
+        $settings=Setting::where('account_id',getAccountId($request))->get();
+        Mail::to($settings->email)->send(new DukafyContactForm($request));
         Session::flash('email_sent', 'Email Sent');
         return redirect()->route('start');
     }
