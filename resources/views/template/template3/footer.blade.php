@@ -1,7 +1,7 @@
 <!-- ============================================================= FOOTER ============================================================= -->
 <footer id="footer" class="footer color-bg">
       <div class="copyright-bar">
-          <div class="container">
+          <div class="container hidden-xs hidden-sm">
               <div class="col-xs-12 col-sm-6 no-padding">
                   <div class="copyright">
                         &copy; {{date('Y')}}
