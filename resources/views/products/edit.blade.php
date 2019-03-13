@@ -279,7 +279,7 @@ margin-top: -12%;
                           <div class="form-group row">
                             <label class="col-md-3 label-control" for="userinput8">Description</label>
                             <div class="col-md-7">
-                              <textarea id="editor1" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{$product->desctiption or old('description')}}</textarea>
+                              <textarea id="editor1" rows="6" class="form-control" name="description" placeholder="Describe your product...">{{$product->description or old('description')}}</textarea>
                               <script>
                                 // Replace the <textarea id="editor1"> with a CKEditor
                                 // instance, using default configuration.
