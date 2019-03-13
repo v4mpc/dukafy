@@ -30,10 +30,10 @@
       <div class="contact">
         <div class="contact-form">
           <!-- FORM  -->
-          {{--
+          
           <form role="form" method="POST" id="contact_form" class="contact-form" action="{{route('send_contact_form')}}">
-            --}}
-            <form action="" role="form" class="contact-form" id="contact_form">
+            
+            <!-- <form action="" role="form" class="contact-form" id="contact_form"> -->
               {{csrf_field()}}
               <div class="row">
                 <div class="col-md-8">
@@ -58,6 +58,16 @@
                             <textarea class="form-control" name="message" id="message" rows="5" placeholder=""></textarea>
                           </label>
                     </li>
+                    <li class="col-sm-12">
+                    <li class="col-sm-4">
+                    {{captcha_img()}}</li>
+                    <li class="col-sm-8">
+                    <input type="text" class="form-control" name="captcha" placeholder="">
+                    </li>
+
+                    
+                    </li>
+                    
                     <li class="col-sm-12 no-margin">
                       <button type="submit" value="submit" class="btn-round" id="btn_submit" onClick="proceed();">Send Message</button>
                     </li>

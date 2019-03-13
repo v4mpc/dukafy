@@ -418,12 +418,12 @@ class AccountController extends Controller
         $server_configurarion.="root ".$installation_location."/".$project_name."/public;".PHP_EOL;
         $server_configurarion.="index index.php index.htm;".PHP_EOL;
         if ($record_to_create=='domain') {
-            $server_configurarion.="server_name .".$this->domain.";".PHP_EOL;
+            $server_configurarion.="server_name .".$this->domain." www.".$this->domain.";".PHP_EOL;
             $server_configurarion.="location =/login {".PHP_EOL;
             $server_configurarion.='return 404 "Page Not Found";'.PHP_EOL;
             $server_configurarion.="  }".PHP_EOL;
         } else {
-            $server_configurarion.="server_name .".$this->subdomain.";".PHP_EOL;
+            $server_configurarion.="server_name .".$this->subdomain." www.".$this->subdomain.";".PHP_EOL;
         }
         $server_configurarion.="location / {".PHP_EOL;
         $server_configurarion.='try_files $uri $uri/ /index.php?$query_string;'.PHP_EOL;

@@ -10,7 +10,14 @@ class MailerController extends Controller
 {
     public function sendContactForm(Request $request)
     {
-       
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'message'=>'required',
+            'captcha'=>'required|captcha'
+        ]);
+
+        dd('good');
 
         $request->name;
         $request->email;

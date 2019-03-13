@@ -157,7 +157,7 @@
                           </div>
                       </div>
  
-                      <div class="col-sm-5 col-sm-offset-1">
+                      <!-- <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group">
                             <label>Currency</label>
                             <select  class="form-control" name="currency_id" required>
@@ -169,7 +169,7 @@
                              
                             </select>
                         </div>
-                    </div>
+                    </div> -->
 
 
                   </div>

@@ -54,6 +54,15 @@
                                         <label>Your Message</label><br>
                                         <span class="wpcf7-form-control-wrap your-message"><textarea aria-invalid="false" class="wpcf7-form-control wpcf7-textarea" rows="10" cols="40" name="your-message"></textarea></span>
                                     </div>
+                                    <div class="col-sm-12">
+                    <div class="col-sm-4">
+                    {{captcha_img()}}</div>
+                    <div class="col-sm-8">
+                    <input type="text" class="form-control" name="captcha" placeholder="">
+                    </div>
+
+                    
+                    </div>
                                     <div class="form-group clearfix">
                 
                                         <p><input type="submit" value="Send Message"></p>

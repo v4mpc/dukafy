@@ -738,7 +738,7 @@ function addCommas(nStr) {
 
         function check_file_size(files) {
           for (let index = 0; index < files.length; index++) {
-            if (files[index].size/1024>400) {
+            if (files[index].size/1024>4096) {
               return false
             }
           }
@@ -750,7 +750,6 @@ function addCommas(nStr) {
           if(files.length<=5 && images.image.length+files.length<=5 && check_file_size(files)){
             var promises=[]
             for (let index = 0; index < files.length; index++) {
-              // console.log(files[index].size/1024)
            promises.push(new Promise((resolve,reject)=>{
              var reader=new FileReader();
              reader.onload=(e)=>{
@@ -765,7 +764,10 @@ function addCommas(nStr) {
             //we should append to the existing array 
             //also if the length is greater or equal to one
             if (images.image.length>=1) {
-              images.image.push(values);
+              values.forEach(value => {
+                images.image.push(value);
+              });
+              
               load_image();
             } else {
               images.image=values;
@@ -801,7 +803,7 @@ function addCommas(nStr) {
         "hideMethod": "fadeOut"
         }
             
-            toastr.error('Maximum of 5 Images Required each with less than 400Kb');
+            toastr.error('Maximum of 5 Images Required each with less than 4MB');
 
 
 
@@ -812,7 +814,8 @@ function addCommas(nStr) {
         }
 
         function croppie_bind(image_index) {
-             console.log(images.image)
+          console.log(images.image)
+             console.log(images.image[image_index])
             basic.croppie('bind', {
                 url: images.image[image_index],
             });

@@ -28,14 +28,6 @@
 		  </div>
 		</form>
 	</div>
-	<div class="col-md-4">
-		<form class="register-form" role="form">
-			<div class="form-group">
-		    <label class="info-title" for="exampleInputTitle">Title <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputTitle" placeholder="Title">
-		  </div>
-		</form>
-	</div>
 	<div class="col-md-12">
 		<form class="register-form" role="form">
 			<div class="form-group">
@@ -43,6 +35,13 @@
 		    <textarea class="form-control unicase-form-control" id="exampleInputComments"></textarea>
 		  </div>
 		</form>
+	</div>
+	<div class="col-sm-12">
+	<div class="col-sm-4">
+                    {{captcha_img()}}</div>
+                    <div class="col-sm-8">
+                    <input type="text" class="form-control" name="captcha" placeholder="">
+                    </div>
 	</div>
 	<div class="col-md-12 outer-bottom-small m-t-20">
 		<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Send Message</button>

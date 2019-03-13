@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
 
 
         
@@ -234,6 +235,7 @@ return [
         'Carbon'=>'Carbon\Carbon',
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
 
 
