@@ -24,7 +24,7 @@ class MailerController extends Controller
 
        
         $setting=Setting::where('account_id',getAccountId($request))->first();
-        Mail::to($setting->email)->subject($setting->store_name.' contact from')->replyTo($request->email)->send(new DukafyContactForm($request));
+        Mail::to($setting->email)->send(new DukafyContactForm($request,$setting));
         Session::flash('email_sent', 'Email Sent');
         return redirect()->route('start');
 

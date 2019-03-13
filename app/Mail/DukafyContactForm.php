@@ -19,11 +19,13 @@ class DukafyContactForm extends Mailable implements ShouldQueue
     public $message;
     public $email;
     public $name;
-    public function __construct($request)
+    public $setting;
+    public function __construct($request,$setting)
     {
         $this->message = $request->message;
         $this->email = $request->email;
         $this->name = $request->name;
+        $this->setting=$setting;
     }
 
     /**
@@ -33,6 +35,6 @@ class DukafyContactForm extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from('info@dukafy.co.tz')->markdown('emails.dukafy.contact')->with('message', $this->message)->with('email', $this->email)->with('name', $this->name);
+        return $this->from('info@dukafy.co.tz')->subject($this->setting->store_name.' contact from')->replyTo($request->email)->markdown('emails.dukafy.contact')->with('message', $this->message)->with('email', $this->email)->with('name', $this->name);
     }
 }
