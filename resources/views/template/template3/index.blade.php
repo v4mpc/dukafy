@@ -65,7 +65,7 @@
                     
                     <div class="product-info text-left">
                             <h5 class="hidden-xs hidden-sm height-25"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>35?str_limit($product->name,35):$product->name}}</a></h5>
-                            <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
+                            <h5 class="hidden-md hidden-lg height-25"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>35?str_limit($product->name,35):$product->name}}</a></h5>
                     @if($product->price_visibility)
                     <div class="product-price">	
                     
@@ -140,7 +140,7 @@
                         
                         <div class="product-info text-left">
                                 <h5 class="hidden-xs hidden-sm height-25"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>35?str_limit($product->name,35):$product->name}}</a></h5>
-                                <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
+                                <h5 class="hidden-md hidden-lg height-25"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>35?str_limit($product->name,35):$product->name}}</a></h5>
     
                         
                                 
@@ -212,7 +212,7 @@
                     
                     <div class="product-info text-left">
                             <h5 class="hidden-xs hidden-sm height-25"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>35?str_limit($product->name,35):$product->name}}</a></h5>
-                            <h5 class="hidden-md hidden-lg"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>10?str_limit($product->name,10):$product->name}}</a></h5>
+                            <h5 class="hidden-md hidden-lg height-25"><a href="{{route('product.show',$product->id)}}" title="{{$product->name}}">{{strlen($product->name)>35?str_limit($product->name,35):$product->name}}</a></h5>
 
                     
                             @if($product->price_visibility)
