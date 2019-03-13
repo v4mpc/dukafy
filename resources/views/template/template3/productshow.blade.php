@@ -124,28 +124,29 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-7">
-                            <a href="#." id="product{{$product->id}}" data-id="{{$product->id}}" class="btn btn-primary add_to_cart_button"><i class="fa fa-shopping-cart inner-right-vs"></i> BUY</a>
-                            </div>
+                            <div class="cart clearfix animate-effect">
+                                <div class="action">
+                                    <ul class="list-unstyled">
+                                        <li class="add-cart-button btn-group">
+                                                @if($settings->whatsapp)
+                                                <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                                                    <i class="fa fa-whatsapp"></i>													
+                                                </a>
+                                                @endif
+                                            <button class="btn btn-primary add_to_cart_button" type="button" style="display:{{($product->price_visibility)?"Block":"None"}}" data-id="{{$product->id}}">BUY</button>
+                                                                    
+                                        </li>
+                                       
+                                    </ul>
+                                </div><!-- /.action -->
+                            </div><!-- /.cart -->
+                        </div><!-- /.product -->
 
                             
                         </div><!-- /.row -->
                     </div><!-- /.quantity-container -->
                     @endif
-                    @if($settings->whatsapp)
-                    <div class="product-social-link m-t-20 text-right">
-                        <span class="social-label">Inquire :</span>
-                        <div class="social-icons">
-                            <ul class="list-inline">
-                                
-                                
-                              
-                                <li><a class="fa fa-whatsapp" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product"></a></li>
-                                
-                            </ul><!-- /.social-icons -->
-                        </div>
-                    </div>
-                    @endif
+                   
 
                     
 
