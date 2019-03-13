@@ -27,7 +27,7 @@
                             <div lang="en-US" dir="ltr" id="wpcf7-f2507-p2508-o1" class="wpcf7" role="form">
                                    
                                 <div class="screen-reader-response"></div>
-                                <form class="wpcf7-form" method="post" action="#">
+                                <form class="wpcf7-form" method="post" action="{{route('send_contact_form')}}">
                                     {{csrf_field()}}
                                 
                                     <div class="form-group row">
