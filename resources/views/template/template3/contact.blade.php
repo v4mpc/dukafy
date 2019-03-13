@@ -13,28 +13,29 @@
 		<h4>Contact Form</h4>
 	</div>
 	<div class="col-md-4 ">
-		<form class="register-form" role="form">
+		<form class="register-form" method="POST" role="form" action="{{route('send_contact_form')}}">
+		{{csrf_field()}}
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputName">Your Name <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="Name">
+		    <input type="text" name="name" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="Name">
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-md-4">
-		<form class="register-form" role="form">
+		
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="admin@unicase.com">
+		    <input type="email" class="form-control unicase-form-control text-input" name="email" id="exampleInputEmail1" placeholder="admin@unicase.com">
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-md-12">
-		<form class="register-form" role="form">
+		
 			<div class="form-group">
 		    <label class="info-title" for="exampleInputComments">Your Comments <span>*</span></label>
-		    <textarea class="form-control unicase-form-control" id="exampleInputComments"></textarea>
+		    <textarea class="form-control unicase-form-control" name="message" id="exampleInputComments"></textarea>
 		  </div>
-		</form>
+		
 	</div>
 	<div class="col-sm-12">
 	<div class="col-sm-4">
@@ -47,6 +48,7 @@
 		<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Send Message</button>
 	</div>
 </div>
+</form>
 <div class="col-md-3 contact-info">
 	<div class="contact-title">
 		<h4>INFORMATION</h4>

@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\ContactForm;
 use Illuminate\Support\Facades\Mail;
+use App\Setting;
+use App\Mail\DukafyContactForm;
+use Session;
 
 class MailerController extends Controller
 {
     public function sendContactForm(Request $request)
     {
+        
         $request->validate([
             'name'=>'required',
             'email'=>'required',
@@ -17,13 +21,15 @@ class MailerController extends Controller
             'captcha'=>'required|captcha'
         ]);
 
-        dd('good');
 
-        $request->name;
-        $request->email;
-        $request->message;
-        Mail::send(new ContactForm($request));
+       
+        $setting=Setting::where('account_id',getAccountId($request))->first();
+        Mail::to($setting->email)->send(new DukafyContactForm($request));
+        Session::flash('email_sent', 'Email Sent');
+        return redirect()->route('start');
 
-        return back()->with('message', 'Your Email Has been Sent!');
+        // Mail::send(new ContactForm($request));
+
+        // return back()->with('message', 'Your Email Has been Sent!');
     }
 }

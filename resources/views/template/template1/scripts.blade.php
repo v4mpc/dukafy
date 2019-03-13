@@ -360,60 +360,7 @@ $message.='<li>'.$error.'</li>';
 
 
 }
-
-// echo "toastr.error(sfsdfs)";
-
-
-
-
  echo 'toastr.error("'.$message.'");';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endphp
 
 </script>
@@ -437,6 +384,35 @@ $message.='<li>'.$error.'</li>';
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYm_K4n3phi3UVgSM-CANgdZ7iWMLtgIY&callback=initMap">
 
 </script> --}}
+
+
+
+@if (Session::has('email_sent'))
+<script>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "30",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  toastr.success('Email Sent');
+
+</script>
+
+
+@endif
+
 
 </body>
 

@@ -221,3 +221,65 @@ $.ajax({
        $('.show-theme-options').delay(2000).trigger('click');
     });
 </script>
+
+
+@if($errors->any())
+<script>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "30",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+            @php
+          $message='';
+foreach($errors->all() as $error){
+$message.='<li>'.$error.'</li>';
+
+
+}
+ echo 'toastr.error("'.$message.'");';
+@endphp
+
+</script>
+
+
+@endif
+
+
+@if (Session::has('email_sent'))
+<script>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "30",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  toastr.success('Email Sent');
+
+</script>
+
+
+@endif
