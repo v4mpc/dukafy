@@ -101,7 +101,8 @@ class Product extends Model
     public function images_api()
     {
         $images_array=$this->images->map(function ($item, $key) {
-            return 'data:image/png;base64,' . base64_encode(file_get_contents(asset('images/'.$item->image)));
+            // return 'data:image/png;base64,' . base64_encode(file_get_contents(asset('images/'.$item->image)));
+        return asset('images/'.$item->image);
         })->toArray();
 
         return $images_array;
