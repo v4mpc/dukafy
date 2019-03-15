@@ -114,10 +114,10 @@ class ProductController extends Controller
         $product->name=$request->name;
         $product->price=$request->price;
         $price_visibility=0;
-        $discount=0;
-        if ($request->price_visibility==='true') {
+        if ($request->price_visibility=='true') {
+            $product->price=$request->price;
             $price_visibility=1;
-            
+            $discount=0;
             if ($request->discount) {
                 if (substr($request->discount, -1)==='%') {
                     //validate here
