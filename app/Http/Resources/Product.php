@@ -25,6 +25,7 @@ class Product extends Resource
             'out_stock'=>$this->out_stock,
             'featured'=>$this->featured,
             'discount'=>$this->percentageDiscount(),
+            'discount_amount'=>$this->discount,
             'description'=>$this->description
 
         ];
