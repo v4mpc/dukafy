@@ -19,7 +19,7 @@ class Product extends Resource
             'id'=>$this->id,
             'name'=>$this->name,
             'price_visibility'=>$this->price_visibility,
-            'price'=>number_format($this->selling_price()).' '.$this->currency(),
+            'price'=>number_format($this->price).' '.$this->currency(),
             'category'=>$this->category->name,
             'images'=>$this->images_api(),
             'out_stock'=>$this->out_stock,
