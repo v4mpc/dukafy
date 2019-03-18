@@ -83,11 +83,9 @@ class ProductController extends Controller
         foreach ($request->images as $key=>$image) {
             $filename = $account_id.time().uniqid().".png";
             $location=public_path('images/'.$filename);
-            if ($key==0) {
-                Image::make(file_get_contents($image))->fit(400)->save($location);
-            } else {
+           
                 Image::make(file_get_contents($image))->save($location);
-            }
+            
             
             
             $product_image=new ProductImage;
@@ -149,11 +147,7 @@ class ProductController extends Controller
             foreach ($request->images as $key=>$image) {
                 $filename = $account_id.time().uniqid().".png";
                 $location=public_path('images/'.$filename);
-                if ($key==0) {
-                    Image::make(file_get_contents($image))->fit(400)->save($location);
-                } else {
-                    Image::make(file_get_contents($image))->save($location);
-                }
+                Image::make(file_get_contents($image))->save($location);
                 $product_image=new ProductImage;
                 $product_image->image=$filename;
                 $product_image->product_id=$product->id;
