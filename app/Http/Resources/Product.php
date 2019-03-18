@@ -26,7 +26,8 @@ class Product extends Resource
             'featured'=>$this->featured,
             'discount'=>$this->percentageDiscount(),
             'discount_amount'=>$this->discount,
-            'description'=>$this->description
+            'description'=>$this->description,
+            'base64_images'=>$this->images_api_base64()
 
         ];
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Config;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,16 @@ Route::get('whois/{domain}', function ($domain) {
 
 
 Route::post('mobile/login', 'API\AuthController@login')->name('login');
+Route::get('mobile/needs_update',function(Request $request){
+    if($request->version_number!=Config::get('app.version')){
+        #return true we require an update
+        
+        return response()->json('true');
+    }
+    #return false no update is required
+    return response()->json('false');
+
+});
 Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
     Route::get('home/{account_id}', 'API\AccountController@home');
     Route::get('unreadnotifications/{account_id}', 'API\AccountController@unreadNotifications');
@@ -63,4 +74,5 @@ Route::group(['prefix' => 'mobile', 'middleware' => 'jwt.auth'], function () {
     Route::get('orders/{account_id}/{id}', 'API\OrderController@show');
     Route::get('featured/{account_id}/{id}', 'API\ProductController@toggleFeatured');
     Route::get('stock/{account_id}/{id}', 'API\ProductController@toggleOutStock');
+ 
 });

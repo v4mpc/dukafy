@@ -150,3 +150,5 @@ function delete_domain($domain)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
 }
+
+

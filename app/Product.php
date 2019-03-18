@@ -108,6 +108,16 @@ class Product extends Model
         return $images_array;
     }
 
+    public function images_api_base64()
+    {
+        $images_array=$this->images->map(function ($item, $key) {
+            return 'data:image/png;base64,' . base64_encode(file_get_contents(asset('images/'.$item->image)));
+       
+        })->toArray();
+
+        return $images_array;
+    }
+
 
     public function get_size()
     {
