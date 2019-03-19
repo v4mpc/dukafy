@@ -1,7 +1,7 @@
 <!-- JavaScripts placed at the end of the document so the pages load faster -->
 {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script> --}}
 <script src="{{asset('template3/assets/js/jquery-1.11.1.min.js')}}"></script>
-<script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
+<!-- <script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script> -->
 	
 <script src="{{asset('template3/assets/js/bootstrap.min.js')}}"></script>
 
