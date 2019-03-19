@@ -3,7 +3,7 @@
     <span class="float-md-left d-block d-md-inline-block"> {{date('Y')}} <a class="text-bold-800 grey darken-2" href="#"
       target="_blank">Dukafy </a></span>
     
-      <span class="pull-right">Version 1.0.0</span>
+      <span class="pull-right">{{Config::get('app.version')}}</span>
    
   </p>
   

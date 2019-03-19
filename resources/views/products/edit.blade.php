@@ -830,7 +830,9 @@ function addCommas(nStr) {
             //we should append to the existing array 
             //also if the length is greater or equal to one
             if (images.image.length>=1) {
-              images.image.push(values);
+              values.forEach(value => {
+                images.image.push(value);
+              });
               load_image();
             } else {
               images.image=values;
