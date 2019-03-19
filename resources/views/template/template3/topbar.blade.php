@@ -40,7 +40,7 @@
             </div><!-- /.header-top-inner -->
         </div><!-- /.container -->
     </div><!-- /.header-top -->
-
+<!-- 
     <div style="display: none;" id="hidden-content">
 
         <section class="map-block">
@@ -51,7 +51,7 @@
   
   
         </section>
-      </div>
+      </div> -->
     <!-- ============================================== TOP MENU : END ============================================== -->
         <div class="main-header">
             <div class="container">
