@@ -14,8 +14,8 @@ class ProductController extends Controller
 {
     public function index($account_id, Request $request)
     {
-        // dd('am here');
-        return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->orderBy('created_at', 'desc')->paginate(10));
+        
+        return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->orderBy('created_at', 'desc')->whereNull('deleted_at')->paginate(10));
     }
 
     public function show($account_id, $id)
