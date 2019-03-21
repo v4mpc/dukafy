@@ -164,4 +164,11 @@ class ProductController extends Controller
     {
         return ProductsResource::collection(Product::withoutGlobalScopes()->where('account_id', $account_id)->search($request->term)->get());
     }
+    public function destroy(Request $request,$product_id)
+    {
+        $product=Product::findOrFail($product_id);
+        $product->delete();
+        return response()->json($product);
+        
+    }
 }
