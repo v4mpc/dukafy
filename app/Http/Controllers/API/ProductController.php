@@ -166,6 +166,7 @@ class ProductController extends Controller
     }
     public function destroy(Request $request,$product_id)
     {
+        dd($product_id);
         $product=Product::findOrFail($product_id);
         $product->delete();
         return response()->json($product);
