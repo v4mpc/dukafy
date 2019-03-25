@@ -40,7 +40,7 @@
       
       
       
-      @if(Auth::user()->account->isMaxProduct())
+      @if(Auth::user()->account->isMaxProduct() && Auth::user()->account->status)
       <div class="content-header-right col-md-6 col-12">
         <div class="dropdown float-md-right">
           <a href="{{route('products.create')}}" class="btn btn-float btn-round btn-primary">Add Product</a>

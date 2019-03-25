@@ -16,7 +16,7 @@ class CheckProducts
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->account->isMaxProduct()) {
+        if (Auth::user()->account->isMaxProduct() && Auth::user()->account->status) {
             //we have not reached max product we can proceed
             return $next($request);
         }
