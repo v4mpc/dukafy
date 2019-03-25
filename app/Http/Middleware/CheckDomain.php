@@ -20,7 +20,7 @@ class CheckDomain
         if (!$request->is('api/*')&&$request->getHost()!="dukafy.co.tz"&&$request->getHost()!='www.dukafy.co.tz') {
             $account=0;
             if ($request->getHost()!="adshlits.dukafy.co.tz") {
-                $account=Account::where('id', getAccountId($request))->where('status', 1)->first();
+                $account=Account::where('id', getAccountId($request))->first();
             }
             if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
                 return $next($request);
