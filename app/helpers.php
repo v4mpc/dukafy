@@ -59,7 +59,7 @@ function getAccountId($request)
         $subdomain=$domain_array[0];
         return App\Account::where('subdomain', $subdomain)->first()->id;
     } else {
-        return App\Account::where('domain', $domain)->first()->id;
+        return App\Account::where('domain', $domain)->where('status', 1)->first()->id;
     }
 }
 
