@@ -54,7 +54,7 @@ Route::middleware(['check.account'])->group(function () {
     Route::resource('/cart', 'CartController');
     Route::resource('/check_out', 'CheckOutController');
     Route::resource('/order', 'OrderController');
-    Route::view('maintanance', 'maintanance');
+    Route::view('maintanance', 'maintanance')->name('maintenance');
     Route::get('/filter_product', 'ProductController@filterProduct')->name('filter_products');
     Route::post('/add_to_cart', 'CartController@addToCart')->name('add_to_cart');
     Route::delete('/remove_from_cart/{id}', 'CartController@removeFromCart')->name('remove_from_cart');
