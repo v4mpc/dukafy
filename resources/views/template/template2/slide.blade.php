@@ -246,7 +246,7 @@
         <div class="products-carousel-tabs">
             <ul class="nav nav-inline">
                
-                <li class="nav-item"><a class="nav-link active" href="#tab-products-2" data-toggle="tab">Recent Product</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#tab-products-2" data-toggle="tab">Recent Products</a></li>
                
             </ul>
             <div class="tab-content">
