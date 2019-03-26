@@ -8,6 +8,9 @@ use App\Account;
 use Carbon;
 use App\ProductImage;
 use ImageOptimizer;
+use Mail;
+use App\Mail\AccountExpired;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -40,10 +43,18 @@ class Kernel extends ConsoleKernel
             #if expiry date reached then we will deactivate the account
             $accounts=Account::where('id', '!=', 1)->where('status', 1)->get();
             foreach ($accounts as $account) {
-                if ($account->hasExpired()) {
+                if ($account->ended_at->lte(Carbon::now()->SubDays(3))) {
                     $account->status=0;
                     $account->save();
                 }
+                if($account->hasExpired()){
+                    //send email
+                    Mail::to($account->email)->cc('info@dukafy.co.tz')->send(new AccountExpired($account));
+                }
+
+                // if($accounts){
+
+                // }
             }
         })->everyMinute();
 
