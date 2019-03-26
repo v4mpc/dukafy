@@ -145,11 +145,11 @@ li.product .product-thumbnail{
     margin-bottom: 0.714em;
 }
 
-@media (max-width: 991px)
+/* @media (max-width: 991px)
 .header-v1 .container > .row:first-child, .header-v3 .container > .row:first-child {
     margin: 0 0 0em;
     position: relative;
-}
+} */
 
 @media (max-width: 767px){
 #content {
