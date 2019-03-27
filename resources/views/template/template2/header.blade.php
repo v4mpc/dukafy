@@ -51,9 +51,16 @@
 
 @if(Route::is('product.show'))
 
+@media (max-width: 479px){
+  .thumbnails-all > .owl-stage-outer > .owl-stage > .owl-item {
+    width: 65px !important;
+}
+
 
 @media (min-width: 544px) and (max-width: 991px) {
   /*544-991*/
+
+
   #content #sidebar {
     margin-top: 50px !important; }
   .header-logo,
