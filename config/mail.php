@@ -96,7 +96,7 @@ return [
     'username' => 'dukafy@gmail.com',
     // 'username'=>'info@dukafy.co.tz',
 
-    'password' => 'B5r9gFuu87EDPemF',
+    'password' => 'UGqdrh3wnFFxUmDg',
     // 'password'=>'xE67KdS4DEvu8vHS',
 
     //dukafy password lits=Op2K8(HWi2ZD
