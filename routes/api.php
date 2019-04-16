@@ -50,7 +50,7 @@ Route::get('whois/{domain}', function ($domain) {
 
 Route::post('mobile/login', 'API\AuthController@login')->name('login');
 Route::get('mobile/needs_update',function(Request $request){
-    if($request->version_number!=Config::get('app.version')){
+    if($request->version_number!=Config::get('app.version')&&$request->version_number!='1.0.4'){
         #return true we require an update
         
         return response()->json('true');
