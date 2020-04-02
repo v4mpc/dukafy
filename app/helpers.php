@@ -52,6 +52,7 @@ function getAccountId($request)
 {
     $domain=preg_replace('/www\./', "", request::getHost());
     if ($domain=='dukafy.co.tz' || $domain=='dukafy.local') {
+        // dd('am here');
         return 1;
     }
     if (strpos($domain, 'dukafy')!==false) {
@@ -63,6 +64,7 @@ function getAccountId($request)
             
             return App\Account::where('domain', $domain)->where('status', 1)->first()->id;
         } catch (Exception $e) {
+            // dd('am here');
             return redirect()->route('maintenance');
         }
         

@@ -29,15 +29,15 @@ class TemplateController extends Controller
         
         // here i should use .env app_url
         if ($request->url()==env('APP_URL') || $request->url()=='https://www.dukafy.co.tz'|| $request->url()=='http://www.dukafy.co.tz' || $request->url()=='http://dukafy.co.tz') {
-            // its dukafy
+            // // its dukafy
            
-            //lets check if timer has exired
-            $timer = Timer::findOrFail(1);
-            if ($timer->created_at) {
+            // //lets check if timer has exired
+            // $timer = Timer::findOrFail(1);
+            // if ($timer->created_at) {
                 return view('dukafy.index');
-            } else {
-                return view('dukafy.timer')->with('timer', $timer);
-            }
+            // } else {
+            //     return view('dukafy.timer')->with('timer', $timer);
+            // }
             
 
             //its comming soon

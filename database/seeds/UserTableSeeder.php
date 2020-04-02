@@ -31,11 +31,16 @@ class UserTableSeeder extends Seeder
         // $user->email="shabbar@adshapemedia.com";
         // $user->password=bcrypt('shabbar@786');
         // $user->save();
-
+        // $user = new App\User;
+        // $user->name="Admin";
+        // $user->email="admin@dukafy.co.tz";
+        // $user->password=bcrypt('123456');
+        // $user->account_id=1;
+        // $user->save();
 
         $user = new App\User;
-        $user->name="Customer";
-        $user->email="yona101992@gmail.com";
+        $user->name="Client";
+        $user->email="client@dukafy.co.tz";
         $user->password=bcrypt('123456');
         $user->account_id=2;
         $user->save();

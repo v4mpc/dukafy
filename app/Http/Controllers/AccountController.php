@@ -373,7 +373,7 @@ class AccountController extends Controller
         if ($record_to_create=='domain') {
             $data = array(
             "name" => $this->domain,
-            "ip_address"=>"178.62.44.86",
+            "ip_address"=>"139.59.63.154",
             "ttl"=>1800,
         );
             $posturl="https://api.digitalocean.com/v2/domains";
@@ -398,7 +398,7 @@ class AccountController extends Controller
         curl_setopt($ch, CURLOPT_URL, $posturl);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json',
-            'Authorization: Bearer 38d7b5a763808e70f9d50c9f5848b877fec1eb60bc3e70c3f94d21adf7d55c1c'
+            'Authorization: Bearer 282e03025a8020ec66a5b8e97bab48ee94331967a0dc8999ad1682bfd5a98792'
         ));
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -430,7 +430,7 @@ class AccountController extends Controller
         $server_configurarion.="}".PHP_EOL;
         $server_configurarion.="location ~ \.php$ {".PHP_EOL;
         $server_configurarion.="include snippets/fastcgi-php.conf;".PHP_EOL;
-        $server_configurarion.="fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;}".PHP_EOL;
+        $server_configurarion.="fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;}".PHP_EOL;
         $server_configurarion.="location ~ /\.ht {".PHP_EOL;
         $server_configurarion.="deny all;".PHP_EOL;
         $server_configurarion.="}}".PHP_EOL;

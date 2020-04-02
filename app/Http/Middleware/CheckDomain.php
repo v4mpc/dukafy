@@ -23,6 +23,8 @@ class CheckDomain
                 $account=Account::where('id', getAccountId($request))->first();
             }
             if ($account || $request->getHost()=="adshlits.dukafy.co.tz") {
+                // dd($account);
+
                 return $next($request);
             }
             return abort(404);
