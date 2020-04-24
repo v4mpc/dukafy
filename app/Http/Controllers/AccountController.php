@@ -146,7 +146,7 @@ class AccountController extends Controller
         //else go back;
         //lets send email to notify the admin
         if (!Auth::check()) {
-            Mail::to('sarfaraz@legendaryits.com')->cc('info@dukafy.co.tz')->send(new AccountRegistered($account));
+            Mail::to('yona101992@gmail.com')->cc('info@dukafy.co.tz')->send(new AccountRegistered($account));
         }
         Session::flash('success', 'Account Created');
         // if ($request->ajax()) {
@@ -364,7 +364,7 @@ class AccountController extends Controller
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
         $this->createUser($password, $account);
-        Mail::to($account->email)->cc('sarfaraz@legendaryits.com')->bcc('imran@legendaryits.com')->send(new ClientAccountCreated($account, $password));
+        Mail::to($account->email)->send(new ClientAccountCreated($account, $password));
         return;
     }
 
