@@ -20,7 +20,7 @@ class CheckProducts
             //we have not reached max product we can proceed
             return $next($request);
         }
-
+// dd('test');
         //we have reached max product we are not allowed to go here so go back
         return redirect()->route('home');
     }

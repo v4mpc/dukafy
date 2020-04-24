@@ -560,7 +560,7 @@
                 <div class="card-body card-dashboard">
 
 
-                  @if(count($account->customers))
+                  @if(count($account->categories))
                   <table class="table table-striped table-bordered zero-configuration">
                     <thead>
                       <tr>

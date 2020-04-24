@@ -381,7 +381,7 @@ class AccountController extends Controller
             $data = array(
                 "type" => "A",
                 "name" => explode('.', $this->subdomain)[0],
-                "data"=>"178.62.44.86",
+                "data"=>"139.59.63.154",
                 "priority"=>null,
                 "port"=>null,
                 "ttl"=>1800,
