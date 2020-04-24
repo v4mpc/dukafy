@@ -29,8 +29,8 @@ return [
     */
 
    
-    'host' => 'smtp.gmail.com',
-    // 'host' => 'smtp.mailtrap.io',
+    // 'host' => 'smtp.gmail.com',
+    'host' => 'smtp.mailtrap.io',
 
 
 
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'port' =>'587',
-    // 'port' =>'2525',
+    // 'port' =>'587',
+    'port' =>'2525',
 
 
     /*
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'encryption' => 'tls',
+    'encryption' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,11 +95,11 @@ return [
     |
     */
 
-    'username' => 'dukafy@gmail.com',
-    'password' => 'UGqdrh3wnFFxUmDg',
+    // 'username' => 'dukafy@gmail.com',
+    // 'password' => 'UGqdrh3wnFFxUmDg',
 
-    //  'username' => '9f35a27f15af2e',
-    // 'password' => 'b529b7f8a00602',
+     'username' => '9f35a27f15af2e',
+    'password' => 'b529b7f8a00602',
    
 
     /*
