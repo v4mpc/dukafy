@@ -29,9 +29,9 @@ return [
     */
 
    
-    // 'host' => 'rs47.registrar-servers.com',
-    'host' => 'smtp.gmail.com',
-    // 'host'=>'box.automate.co.tz',
+    // 'host' => 'smtp.gmail.com',
+    'host' => 'smtp.mailtrap.io',
+
 
 
     /*
@@ -45,7 +45,9 @@ return [
     |
     */
 
-    'port' =>'587',
+    // 'port' =>'587',
+    'port' =>'2525',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +82,7 @@ return [
     |
     */
 
-    'encryption' => 'tls',
+    'encryption' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,13 +95,12 @@ return [
     |
     */
 
-    'username' => 'dukafy@gmail.com',
-    // 'username'=>'info@dukafy.co.tz',
+    // 'username' => 'dukafy@gmail.com',
+    // 'password' => 'UGqdrh3wnFFxUmDg',
 
-    'password' => 'UGqdrh3wnFFxUmDg',
-    // 'password'=>'xE67KdS4DEvu8vHS',
-
-    //dukafy password lits=Op2K8(HWi2ZD
+     'username' => '9f35a27f15af2e',
+    'password' => 'b529b7f8a00602',
+   
 
     /*
     |--------------------------------------------------------------------------
