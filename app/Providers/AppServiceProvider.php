@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
+        // Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
 
 
         // Schema::defaultStringLength(191);
@@ -130,7 +130,7 @@ class AppServiceProvider extends ServiceProvider
         //     View::share('category_count', $category_count);
         // }
 
-        Resource::withoutWrapping();
+        // Resource::withoutWrapping();
     }
 
     /**
