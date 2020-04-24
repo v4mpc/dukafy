@@ -430,7 +430,7 @@ class AccountController extends Controller
         $server_configurarion.="}".PHP_EOL;
         $server_configurarion.="location ~ \.php$ {".PHP_EOL;
         $server_configurarion.="include snippets/fastcgi-php.conf;".PHP_EOL;
-        $server_configurarion.="fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;}".PHP_EOL;
+        $server_configurarion.="fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;}".PHP_EOL;
         $server_configurarion.="location ~ /\.ht {".PHP_EOL;
         $server_configurarion.="deny all;".PHP_EOL;
         $server_configurarion.="}}".PHP_EOL;
