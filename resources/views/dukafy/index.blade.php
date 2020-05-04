@@ -369,7 +369,7 @@
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-A">
-                                        <li>Up to {{App\Package->find(1)->product}} Products</li>
+                                        <li>Up to {{App\Package::find(1)->product}} Products</li>
                         
                                         <li>Free Domain</li>
                                         <li>Free Hosting</li>
@@ -402,7 +402,7 @@
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-B">
-                                        <li>Up to {{App\Package->find(2)->product}} Products</li>
+                                        <li>Up to {{App\Package::find(2)->product}} Products</li>
                                         <li>Free Domain</li>
                                         <li>Free Hosting</li>
                                         <li>Mobile App Uploads</li>
@@ -434,7 +434,7 @@
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-C">
-                                        <li>Up to {{App\Package->find(3)->product}} Products</li>
+                                        <li>Up to {{App\Package::find(3)->product}} Products</li>
                                         <li>Free Domain</li>
                                         <li>Free Hosting</li>
                                         <li>Mobile App Uploads</li>
@@ -469,7 +469,7 @@
 
                                 <div class="col-12">
                                     <ul class="pricing-detail gray detail-D">
-                                        <li>Up to {{App\Package->find(4)->product}} Products</li>
+                                        <li>Up to {{App\Package::find(4)->product}} Products</li>
                                         <li>Free Domain</li>
                                         <li>Free Hosting</li>
                                         <li>Mobile App Uploads</li>
