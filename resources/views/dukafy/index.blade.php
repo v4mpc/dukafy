@@ -708,8 +708,8 @@
                     </div>
                     <div class="col-12 col-sm-6">
                         
-                        <p class="small thin white-light author sm-ac">Designed by <a href="https://legendaryits.com">Legendary
-                                IT Solutions</a></p>
+                        <p class="small thin white-light author sm-ac"> A Product of <a href="https://adshapemedia.co.tz">
+                            Adshape Media</a></p>
                     </div>
                 </div>
             </div>
