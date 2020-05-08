@@ -50,6 +50,7 @@ Route::get('mobile/needs_update', function (Request $request) {
     //     return response()->json('true');
     // }
     #return false no update is required
+    // dd("testing");
     return response()->json('false');
 
 });
