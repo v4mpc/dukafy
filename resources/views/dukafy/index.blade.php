@@ -158,7 +158,7 @@
                     <!-- Main title -->
                     <div class="col-sm-12 col-md-6 align-self-center main-title">
                         {{-- <p class="light bold small main-suptitle">Try on the touch</p> --}}
-                        <h1><b>Dukafy</b><span class="thin"> - Create Your Own Online Store in 60 Seconds!</span></h1>
+                        <h1><b>Dukafy</b><span class="thin"> - Build your online shop in minutes!</span></h1>
                         <!-- Buttons -->
                         <!--<a href="#.">
                             <div class="button bg-color-1">Explore Now</div>
