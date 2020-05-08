@@ -29,6 +29,8 @@
               </div> --}}
           </div>
       </div>
+@if(!Route::is('cart.index'))
+
       <div id="rectangle">
             <a href="#" style="font-size: large;color: white;"> <i class="glyphicon glyphicon-shopping-cart"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)
               <span class="items-price" style="
@@ -41,6 +43,8 @@
             "  >Checkout</a>
         
            </div>
+
+           @endif
   </footer>
   <!-- ============================================================= FOOTER : END============================================================= -->
   

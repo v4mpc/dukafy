@@ -1,5 +1,6 @@
 <footer id="colophon" class="site-footer">
 
+    @if(!Route::is('cart.index'))
 
         <div id="rectangle">
                 <a href="#" style="font-size: large;color: white;"> <i class="ec ec-shopping-bag"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s)
@@ -14,6 +15,8 @@
                 </a>
             
                </div>
+
+               @endif
 	
 
 	
