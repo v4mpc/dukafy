@@ -55,7 +55,7 @@ class TemplateController extends Controller
 
     public function sendEmail(Request $request)
     {
-        dd($request);
+        // dd($request);
         $request->validate([
             'email' => 'required|email',
             'message' => 'required|max:255',
