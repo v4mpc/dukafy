@@ -109,7 +109,7 @@
    <!-- GO TO TOP  --> 
    <a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a> 
    <!-- GO TO TOP End --> 
-@if(Route::is('cart.index'))
+@if(!Route::is('cart.index'))
    <div id="rectangle">
     <a href="#" style="font-size: large;color: white;"> <i class="flaticon-shopping-bag"></i> <strong class="itm-cont">{{Cart::count()}} </strong> item(s) <span class="items-price" style="
       margin-left: 3%; ">{{Cart::subtotal()}} {{$settings->currencyName()}}</span> <a href="{{route('cart.index')}}" style="
