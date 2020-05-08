@@ -918,37 +918,7 @@
     });
 
 
-function done_typing(){
 
-
-    
-    var domain = $('#domain').val();
-       //should show that we are search
-       console.log(domain);
-    if (domain.length>=3) {
-        $('.input-group-prepend').removeClass('input-group-1');
-        $('#domain').css('border-radius','0px');
-        
-    $('#status').text('Searching...').removeClass('text-danger text-warning').addClass('text-warning');
-        $.ajax({
-            type: "GET",
-            url: "https://www.dukafy.co.tz/api/whois/"+domain,
-            dataType:'json',
-            success: function( response ) {
-                if (response.status=='unavailable') {
-                    $('#status').text('Not available').removeClass('text-success text-warning').addClass('text-danger');
-                } else if(response.status=='available') {
-                    $('#status').text('Available').removeClass('text-danger text-warning').addClass('text-success');
-                }
-                console.log(response.status);
-            }
-        });
-    }else{
-        $('#status').text('Too Short').removeClass('text-success text-warning').addClass('text-danger');
-    }
-   
-    
-}
 });
     
     
