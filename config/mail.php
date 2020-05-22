@@ -29,7 +29,7 @@ return [
      */
 
     // 'host' => 'smtp.gmail.com',
-    'host' => 'smtp.sendgrid.net',
+    // 'host' => 'smtp.sendgrid.net',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,11 +90,11 @@ return [
     |
      */
 
-    // 'username' => 'dukafy@gmail.com',
-    // 'password' => 'UGqdrh3wnFFxUmDg',
+    'username' => 'dukafy@gmail.com',
+    'password' => 'UGqdrh3wnFFxUmDg',
 
-    'username' => 'apikey',
-    'password' => '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',
+    // 'username' => 'apikey',
+    // 'password' => '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',
 
     /*
     |--------------------------------------------------------------------------
