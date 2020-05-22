@@ -28,7 +28,7 @@ return [
     |
      */
 
-    // 'host' => 'smtp.gmail.com',
+    'host' => 'smtp.gmail.com',
     // 'host' => 'smtp.sendgrid.net',
 
     /*
