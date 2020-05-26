@@ -146,7 +146,7 @@
 
                           <div class="form-group">
                                 <label class="info-title" for="exampleInputPassword1">Comment </label>
-                                <textarea class="form-control unicase-form-control text-input" name="comment" id="" cols="30" rows="5" placeholder="Special Note of delivery..."></textarea>
+                                <textarea class="form-control unicase-form-control text-input" name="comment" id="" cols="30" rows="5" placeholder="Any Special Requests or delivery preference? Let us know here."></textarea>
                                 
                               </div>
                           <button type="submit"  class="btn-upper btn btn-primary">Place Order</button>

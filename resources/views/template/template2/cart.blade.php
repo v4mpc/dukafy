@@ -178,7 +178,7 @@
 <div class="woocommerce-shipping-fields">
 
 
-<p id="order_comments_field" class="form-row form-row notes"><label class="" for="order_comments">Order Notes</label><textarea cols="5" rows="2" placeholder="Notes about your order, e.g. special notes for delivery." id="order_comments" class="input-text " name="comment"></textarea></p>
+<p id="order_comments_field" class="form-row form-row notes"><label class="" for="order_comments">Order Notes</label><textarea cols="5" rows="2" placeholder="Any Special Requests or delivery preference? Let us know here." id="order_comments" class="input-text " name="comment"></textarea></p>
 </div>
 </div>
 </div>

@@ -138,7 +138,7 @@
 
                                 <div class="col-sm-10">
                                     <label for="">Comment</label>
-                                    <textarea class="form-control" name="comment" cols="40" rows="8" id="" placeholder="Add Your Comment">{{$order->comment}}</textarea>
+                                    <textarea class="form-control" name="comment" cols="40" rows="8" id="" placeholder="Any Special Requests or delivery preference? Let us know here.">{{$order->comment}}</textarea>
                                 </div>
 
                                 <div class="col-sm-10">
