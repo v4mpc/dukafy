@@ -7,8 +7,15 @@
                 <div class="row">
                     <div class="col-md-12 x-text text-center">
                         <h2>Success</h2>
-                        <p>Your Order Has be Processed You will receive an email soon. </p>
-                        
+                        @if($payment_option==1)
+                        <p>
+                            Thank you for choosing to pay via Mobile money. Once we confirm your order, you can pay us on {{$settings->payment_number}} which is on {{$settings->payment_carrier}} registered as {{$settings->payment_name}} 
+                        </p>
+                        @else 
+                        <p>
+                            Thank you for choosing the cash on delivery option. We will be in touch as soon as your order is confirmed to give you more information on delivery timings. 
+                        </p>
+                        @endif
                         <a href="{{route('start')}}"><i class="fa fa-home"></i> Continue shopping</a>
                     </div>
                 </div><!-- /.row -->

@@ -149,6 +149,17 @@
                                 <textarea class="form-control unicase-form-control text-input" name="comment" id="" cols="30" rows="5" placeholder="Any Special Requests or delivery preference? Let us know here."></textarea>
                                 
                               </div>
+
+                              <div class="form-group">
+                                <label class="info-title" for="exampleInputPassword1">Payment Option </label>
+                                <select class="form-control" name="payment_option" id="" required >
+                                    <option value="">--Select Payment Option--</option>
+                                    @if($settings->payment_number && $settings->payment_carrier && $settings->payment_carrier)
+                                    <option value="1">Mobile Money</option>
+                                    @endif
+                                    <option value="2">Cash on delivery</option>
+                                </select>
+                              </div>
                           <button type="submit"  class="btn-upper btn btn-primary">Place Order</button>
                         </form>
                     </div>	

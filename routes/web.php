@@ -1,7 +1,5 @@
 <?php
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,13 +9,13 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 //dukafy home page routes
 // Route::view('/home', 'dukafy.index')->name('dukafy');
 
 //dukafy admin dashboard routes
 // Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::post('reset/{account_id}', 'AccountController@reset')->name('accounts.reset');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('users', 'UserController');
@@ -36,14 +34,12 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
 
 Route::post('request_account', 'AccountController@store')->name('request_account');
 
-
 Route::middleware(['check.account'])->group(function () {
     //client store routes
 
     //the routes are store dependant
     //middleware will help us with that
 
-  
     Route::get('/', 'TemplateController@index')->name('start');
     Route::view('app/privacy_policy', 'app_privacy_policy');
     Route::view('terms_and_conditions', 'terms_and_conditions')->name('terms');
@@ -74,7 +70,7 @@ Route::middleware(['check.account'])->group(function () {
 //login routes login and admin i think
 Auth::routes();
 // client dashboard routes
-Route::prefix('manage')->middleware(['auth','client'])->group(function () {
+Route::prefix('manage')->middleware(['auth', 'client'])->group(function () {
     Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');
     Route::resource('sub_categories', 'SubCategoryController');
@@ -89,11 +85,15 @@ Route::prefix('manage')->middleware(['auth','client'])->group(function () {
     Route::put('update_slider/{id}', 'SettingController@updateSlider')->name('update.slider');
     Route::put('update_basic_info/{id}', 'SettingController@updateBasicInfo')->name('update.basic.info');
     Route::put('update_about_us/{id}', 'SettingController@updateAbout')->name('update.about.us');
+    Route::put('update_payment/{id}', 'SettingController@updatePayment')->name('update.payment');
+
     Route::get('/layout', 'SettingController@getLayoutForm')->name('settings.layout_form');
+
     Route::get('/basic_info', 'SettingController@getBasicInfoForm')->name('settings.basic_info_form');
     Route::get('/about_store', 'SettingController@getAboutForm')->name('settings.about_store_form');
     Route::get('/logo', 'SettingController@getLogoForm')->name('settings.logo_form');
     Route::get('/slider_images', 'SettingController@getSliderForm')->name('settings.slider_form');
+    Route::get('/payment', 'SettingController@getPaymentForm')->name('settings.payment_form');
     Route::get('/sub_cat/{id}', 'ProductController@getSubCategories')->name('subcategory_ajax');
     Route::get('/make_featured/{id}', 'ProductController@makeFeatured')->name('make_featured_ajax');
     Route::get('/remove_featured/{id}', 'ProductController@removeFeatured')->name('remove_featured_ajax');
@@ -109,7 +109,5 @@ Route::prefix('manage')->middleware(['auth','client'])->group(function () {
     Route::post('/upload', 'SettingController@upload')->name('upload');
     Route::get('/home', 'HomeController@index')->name('home');
 });
-
-
 
 Route::get('/initial_setup', 'HomeController@initialSetup')->name('initial_setup');

@@ -16,7 +16,15 @@
                                     <div class="info-404">
                                         <div class="text-xs-center inner-bottom-xs">
                                             <h2 class="display-3">Order Completed! <i class="fa fa-check"></i></h2>
-                                            <p class="lead">Congratulations! Your order has been placed. We will contact you shortly</p>
+                                            @if($payment_option==1)
+                                            <p class="lead">
+                                                Thank you for choosing to pay via Mobile money. Once we confirm your order, you can pay us on {{$settings->payment_number}} which is on {{$settings->payment_carrier}} registered as {{$settings->payment_name}} 
+                                            </p>
+                                            @else 
+                                            <p class="lead">
+                                                Thank you for choosing the cash on delivery option. We will be in touch as soon as your order is confirmed to give you more information on delivery timings. 
+                                            </p>
+                                            @endif
                                             <hr class="m-y-2">
                                             <div class="sub-form-row inner-bottom-xs">
                                                 

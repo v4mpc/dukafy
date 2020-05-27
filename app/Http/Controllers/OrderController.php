@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
 use App\Customer;
+use App\Http\Requests\StoreOrder;
+use App\Jobs\ProcessOrderSmsNotification;
+use App\Mail\OrderCompleted;
+use App\Notifications\OrderCompleted as OrderCompletedNotification;
+use App\Order;
+use App\Setting;
+use App\User;
+use Auth;
 use Cart;
 use Illuminate\Http\Request;
-use Auth;
-use App\Http\Requests\StoreOrder;
-use App\User;
-use Notification;
 use Mail;
-use App\Notifications\OrderCompleted as OrderCompletedNotification;
-use App\Setting;
-use App\Mail\OrderCompleted;
-use App\Account;
-use App\Jobs\ProcessOrderSmsNotification;
+use Notification;
 
 class OrderController extends Controller
 {
@@ -26,8 +25,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders=Order::orderBy('created_at', 'desc')->get();
-        
+        $orders = Order::orderBy('created_at', 'desc')->get();
+
         return view('orders.index')->with('orders', $orders);
     }
 
@@ -49,60 +48,60 @@ class OrderController extends Controller
      */
     public function store(StoreOrder $request)
     {
-        if (count(Cart::content())==0) {
+        $payment_option = $request->payment_option;
+        // dd($payment_option);
+        if (count(Cart::content()) == 0) {
             return redirect()->route('start');
         }
-        $customer= new Customer;
-        $customer->first_name=$request->first_name;
-        $customer->phone=$request->phone;
-        $customer->address=$request->address;
-        $customer->email=$request->email;
-        $customer->comment=$request->comment;
+        $customer = new Customer;
+        $customer->first_name = $request->first_name;
+        $customer->phone = $request->phone;
+        $customer->address = $request->address;
+        $customer->email = $request->email;
+        $customer->comment = $request->comment;
         $customer->save();
 
-        $account_id=getAccountId($request);
+        $account_id = getAccountId($request);
 
-        $order=new Order;
-        $order->customer_id=$customer->id;
-        $order->status='completed';
-        $order->account_id=$account_id;
+        $order = new Order;
+        $order->customer_id = $customer->id;
+        $order->status = 'completed';
+        $order->account_id = $account_id;
 
         //we should make the order number ready
-        $last_order=Order::where('account_id', $account_id)->orderBy('created_at', 'desc')->first();
-        $order->number=1;
+        $last_order = Order::where('account_id', $account_id)->orderBy('created_at', 'desc')->first();
+        $order->number = 1;
         if ($last_order) {
-            $order->number=$last_order->number+1;
+            $order->number = $last_order->number + 1;
         }
-       
+
         $order->save();
 
-        session(['id'=>$order->id]);
+        session(['id' => $order->id]);
         foreach (Cart::content() as $item) {
-            $order->products()->attach($item->id, ['quantity'=>$item->qty]);
+            $order->products()->attach($item->id, ['quantity' => $item->qty]);
         }
         Cart::destroy();
         session()->forget('id');
-  
-        // dd($request);
-       
 
-        $users=User::all();
+        // dd($request);
+
+        $users = User::all();
         //phone notification
-       
+
         //queued the notification so as not to delay the web system
         ProcessOrderSmsNotification::dispatch($order);
         // send_notification($order->account_id, 'Order Completed', 'Order Completed Total '.number_format($order->totalCost()).' ', ['orderId'=>$order->id]);
-         
-        $settings=Setting::where('account_id', $order->account_id)->orderBy('id', 'desc')->first();
+
+        $settings = Setting::where('account_id', $order->account_id)->orderBy('id', 'desc')->first();
         //dashboard notification
         # TODO: make notitification queable too
         Notification::send($users, new OrderCompletedNotification($order, $settings->email));
-        
+
         //email Notification its queueable
         // dd($request->email);
         // dd($settings->email);
         Mail::to($request->email)->cc($settings->email)->send(new OrderCompleted($order, $settings, $order->products));
-  
 
         // if (config('app.settings')->layout=='template2') {
         //     return redirect()->action('ThankYouController@index');
@@ -111,12 +110,12 @@ class OrderController extends Controller
         // } elseif (config('app.settings')->layout=='template3') {
         //     return redirect()->action('ThankYouController@index');
         // }
-        if (config('app.settings')->layout=='template2') {
-            return view('template.template2.thankyou');
-        } elseif (config('app.settings')->layout=='template1') {
-            return view('template.template1.thankyou');
-        } elseif (config('app.settings')->layout=='template3') {
-            return view('template.template3.thankyou');
+        if (config('app.settings')->layout == 'template2') {
+            return view('template.template2.thankyou')->with('payment_option', $payment_option);
+        } elseif (config('app.settings')->layout == 'template1') {
+            return view('template.template1.thankyou')->with('payment_option', $payment_option);
+        } elseif (config('app.settings')->layout == 'template3') {
+            return view('template.template3.thankyou')->with('payment_option', $payment_option);
         }
     }
 
@@ -128,7 +127,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order=Order::FindOrFail($id);
+        $order = Order::FindOrFail($id);
         return view('orders.show')->with('order', $order);
     }
 
@@ -153,24 +152,20 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request);
-        $order=Order::findOrFail($id);
-        $customer=Customer::findOrFail($order->customer->id);
-        $customer->first_name=$request->first_name;
-        $customer->last_name=$request->last_name;
-        $customer->phone=$request->phone;
-        $customer->address=$request->address;
-        $customer->email=$request->email;
-        $customer->comment=$request->comment;
+        $order = Order::findOrFail($id);
+        $customer = Customer::findOrFail($order->customer->id);
+        $customer->first_name = $request->first_name;
+        $customer->last_name = $request->last_name;
+        $customer->phone = $request->phone;
+        $customer->address = $request->address;
+        $customer->email = $request->email;
+        $customer->comment = $request->comment;
         $customer->save();
 
-       
-        
-
-
         foreach (Cart::content() as $item) {
-            $order->products()->sync($item->id, ['quantity'=>$item->qty]);
+            $order->products()->sync($item->id, ['quantity' => $item->qty]);
         }
-       
+
         return redirect()->route('confirmation.show', $order->id);
     }
 
@@ -187,8 +182,8 @@ class OrderController extends Controller
 
     public function cancelOrder(Request $request, $id)
     {
-        $order=Order::findOrFail($id);
-        $order->status='cancelled';
+        $order = Order::findOrFail($id);
+        $order->status = 'cancelled';
         $order->save();
 
         return response()->json('ok');
@@ -196,7 +191,7 @@ class OrderController extends Controller
 
     public function markOrderAsRead()
     {
-        $user=Auth::user();
+        $user = Auth::user();
         $user->unreadNotifications->markAsRead();
         return response()->json(200);
     }

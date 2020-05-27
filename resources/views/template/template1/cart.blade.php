@@ -170,6 +170,18 @@
                                     <textarea class="form-control" name="comment" cols="40" rows="8" id="" placeholder="Any Special Requests or delivery preference? Let us know here."></textarea>
                                 </div>
 
+<br> <br>
+                                <div class="col-sm-6" style="margin-top:26px;">
+                                  <label for="">Payment Option</label>
+                                  <select class="form-control" name="payment_option" required>
+                                    <option value="">--Select Payment Option--</option>
+                                    @if($settings->payment_number && $settings->payment_carrier && $settings->payment_carrier)
+                                    <option value="1">Mobile Money</option>
+                                    @endif
+                                    <option value="2">Cash on delivery</option>
+                                </select>
+                              </div>
+
                                 <div class="col-sm-10">
                                     <p> <span class="required">*</span><i> Means the field is required!</i></p>
                                 </div>

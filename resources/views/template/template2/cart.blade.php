@@ -165,6 +165,17 @@
 
 <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text " required></p>
 
+<p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Payment option <abbr title="required" class="required">*</abbr></label>
+
+<select class="input-text" name="payment_option" id="" required >
+    <option value="">--Select Payment Option--</option>
+    @if($settings->payment_number && $settings->payment_carrier && $settings->payment_carrier)
+    <option value="1">Mobile Money</option>
+    @endif
+    <option value="2">Cash on delivery</option>
+</select>
+</p>
+
 
 <div class="clear"></div>
 

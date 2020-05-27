@@ -87,6 +87,9 @@
           <li class="{{Request::is('manage/slider_images')?"active":""}}"><a class="menu-item" href="{{route('settings.slider_form')}}" data-i18n="nav.cards.card_interactive">Slider Images</a>
           </li>
 
+          <li class="{{Request::is('manage/payment')?"active":""}}"><a class="menu-item" href="{{route('settings.payment_form')}}" data-i18n="nav.cards.card_interactive">Payments</a>
+          </li>
+
         </ul>
       </li>
 
