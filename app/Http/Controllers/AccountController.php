@@ -142,7 +142,11 @@ class AccountController extends Controller
         //else go back;
         //lets send email to notify the admin
         if (!Auth::check()) {
-            Mail::to('sozexp@gmail.com')->cc('yona101992@gmail.com')->send(new AccountRegistered($account));
+            Mail::to(['sozexp@gmail.com', 'alijawaad@gmail.com'])->cc('yona101992@gmail.com')->send(new AccountRegistered($account));
+
+            // send email to client asking them to pay
+            Mail::to(['sozexp@gmail.com', $request->email, 'alijawaad@gmail.com'])->cc('yona101992@gmail.com')->send(new AskPaymentClient($account));
+
         }
         Session::flash('success', 'Account Created');
         // if ($request->ajax()) {
@@ -348,7 +352,7 @@ class AccountController extends Controller
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
         $this->createUser($password, $account);
-        Mail::to($account->email)->send(new ClientAccountCreated($account, $password));
+        Mail::to($account->email)->cc('dukafy@gmail.com')->send(new ClientAccountCreated($account, $password));
         return;
     }
 
