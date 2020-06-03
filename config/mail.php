@@ -28,7 +28,7 @@ return [
     |
      */
 
-    'host' => 'smtp.gmail.com',
+    'host' => 'in-v3.mailjet.com',
     // 'host' => 'smtp.sendgrid.net',
 
     /*
@@ -90,8 +90,8 @@ return [
     |
      */
 
-    'username' => 'dukafy@gmail.com',
-    'password' => 'UGqdrh3wnFFxUmDg',
+    'username' => 'df19134cb60265fd8401ce9c0b81df02',
+    'password' => '260c8e52eff7595b210bf8c9b86c5063',
 
     // 'username' => 'apikey',
     // 'password' => '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',
