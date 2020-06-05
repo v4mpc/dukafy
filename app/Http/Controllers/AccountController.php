@@ -30,7 +30,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $accounts = Account::all();
+        $accounts = Account::orderBy('created_at', 'desc')->get();
 
         return view('admin.accounts.index')->with('accounts', $accounts);
     }
