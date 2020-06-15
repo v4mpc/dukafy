@@ -561,12 +561,12 @@
 
                                         <div class="input-group" id="domain-checker">
 
-                                                <div class="input-group-prepend input-group-1">
-                                                        <span class="input-group-text text-warning"  style="border-radius: 10px 0 0 10px;" id="status">not available</span>
+                                                <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="border-radius: 10px 0 0 10px;" id="status">www.</span>
                                                       </div>
                                          
                                             <input type="text" id="domain" class="form-control is-valid" name="domain" style="
-                                            border-radius: 10px 0 0 10px; font-weight: 405;
+                                            border-radius: 0 0 0 0; font-weight: 405;
                                         " placeholder="Domain">
                                             
                      
