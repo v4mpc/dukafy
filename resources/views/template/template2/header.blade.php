@@ -16,13 +16,22 @@
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/style.css')}}" media="all" />
 
         
-        @if($settings->colour=="black")
+
+       @if($settings->id==27)
+       <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/purple.css')}}" media="all" />
+
+       @else
+
+       @if($settings->colour=="black")
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/black.css')}}" media="all" />
         @endif @if($settings->colour=="pink")
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/pink.css')}}" media="all" />
         @endif @if($settings->colour=="yellow")
         <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/yellow.css')}}" media="all" />
         @endif
+
+       @endif
+        
        
 
         <!-- Demo Purpose Only. Should be removed in production -->
