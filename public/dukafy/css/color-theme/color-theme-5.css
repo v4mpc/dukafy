@@ -1,12 +1,12 @@
 .bg-color-1 {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824), to(#000100))
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824))
 }
 
 .bg-color-2 {
     /*background-image: -webkit-gradient(linear, left top, left bottom, from(#26C1B9), to(#1E879A));
     background-image: linear-gradient(-180deg, #26C1B9 0%, #1E879A 100%);*/
 	
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824), to(#000100));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824));
 }
 
 .nav-container div {

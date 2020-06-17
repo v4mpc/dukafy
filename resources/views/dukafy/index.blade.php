@@ -73,6 +73,9 @@
 </script>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
+
+
    
 
     <style>
@@ -171,7 +174,7 @@
                             <a class="nav-link" href="#contact">Contact Us</a>
                         </li>
                         <!-- Navigation Link 6 -->
-                        <li class="nav-item button " style="background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824), to(#000100));">
+                        <li class="nav-item button " style="background-image: -webkit-gradient(linear, left top, left bottom, from(#2cb824));">
                             <a class="nav-link " href="#register-form" style="color:#FFF">Register Now</a>
                         </li>
                        
@@ -533,20 +536,23 @@
                             </div>
                             <!-- Section title end -->
                         </div>
-                        <div class="col-12 col-lg-5 align-self-center mb-30">
-                        <form id="myform"  method="POST" action="{{route('request_account')}}">
+                        <div ng-app="myApp" ng-controller="myCtrl" class="col-12 col-lg-5 align-self-center mb-30">
+                        <form id="myform" name="myForm"   method="POST" action="{{route('request_account')}}">
                                     {{csrf_field()}}
                                 <div class="row">
+                                    {{-- Full Name: {{firstName + " " + lastName}} --}}
+
                                     <div class="col-12 col-md">
-                                        <!-- Name input -->
+                                
+
                                         <input type="text" name="name" value="{{old('name')}}" placeholder="Full Name" required>
                                         <!-- Email input -->
                                         <input type="email" name="email" value="{{old('email')}}" placeholder="Email" required>
                                     <input type="text" name="phone" placeholder="Valid Phone #" value="{{old('phone')}}" required>
 
 
-                                        <select class="custom-select custom-select-lg mb-3 input" id="domain-source" name="account_type">
-                                                <option selected value="1">New Domain</option>
+                                        <select class="custom-select custom-select-lg mb-3 input" ng-model="account_type" id="domain-source" name="account_type">
+                                                <option ng-selected="true" value="1">New Domain</option>
                                                 <option value="3">Existing Domain</option>
                                                 
 
@@ -554,26 +560,37 @@
 
                                             <br>
 
-  
+                                                <div class="input-group" ng-if="account_type==3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="border-radius: 10px 0 0 10px;">www.</span>
+                                                      </div>
 
-                                            <input type="text" id="domain-register" class="input-group-1" name="existing_domain" placeholder="Type Your Domain"  >
+                                                    <input type="text" class="form-control" ng-required="account_type==3"  ng-pattern="/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/" ng-model="existing_domain" name="existing_domain" placeholder="Type Your Domain"  >
+
+                                                </div>
+
                                        
 
-                                        <div class="input-group" id="domain-checker">
+                                        <div class="input-group" ng-if="account_type==1" >
 
                                                 <div class="input-group-prepend">
                                                         <span class="input-group-text"  style="border-radius: 10px 0 0 10px;" id="status">www.</span>
                                                       </div>
                                          
-                                            <input type="text" id="domain" class="form-control is-valid" name="domain" style="
-                                            border-radius: 0 0 0 0; font-weight: 405;
-                                        " placeholder="Domain">
+                                            <input type="text" class="form-control is-valid" ng-required="account_type==1"  ng-model="domain" name="domain" ng-pattern="/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$/" style="border-radius: 0 0 0 0; font-weight: 405;" placeholder="Domain">
                                             
                      
                                             <div class="input-group-append">
                                                 <div class="input-group-text" style="border-radius: 0 10px 10px 0; ">.co.tz</div>
                                               </div>
+
+
+                                              
                                             
+                                          </div>
+
+                                          <div  class="form-text text-danger" ng-if="(myForm.domain.$invalid && account_type==1&&myForm.domain.$dirty)||(myForm.existing_domain.$invalid && account_type==3&&myForm.existing_domain.$dirty)">
+                                            Domain is invalid
                                           </div>
                                          
 
@@ -622,7 +639,7 @@
                                 </div>  
 
 <br /> 
-                                <button type="submit" class="m-0 button bg-color-1" aria-haspopup="true" style="float:  right;" id="submitBtn" >Submit</button>
+                                <button type="submit" class="m-0 button bg-color-1" aria-haspopup="true" ng-disabled="(myForm.domain.$invalid && account_type==1&&myForm.domain.$dirty)||(myForm.existing_domain.$invalid && account_type==3&&myForm.existing_domain.$dirty)" style="float:  right;" id="submitBtn" >Submit</button>
                                
                             </form>
                           
@@ -900,41 +917,7 @@
                     }
             });
 
-            $("#domain-source").change(function(){
-                // console.log($(this).find(":selected").text());
-                if($(this).find(":selected").text()=='New Domain'){
-                //    console.log($(this).find(":selected").text());
-
-                $('#domain-checker').removeClass('input-group-1');
-                $('#domain-register').addClass('input-group-1');
-
-                
-
-                }else{
-
-                    $('#domain-checker').addClass('input-group-1');
-                $('#domain-register').removeClass('input-group-1');
-
-                }
-
-            });
-            // (function($) {
-            // $.fn.goTo = function() {
-            //     $('html, body').animate({
-            //     scrollTop: $(this).offset().top + 'px'
-            //     }, 'fast');
-            // return this; // for chaining...
-            // }
-            // })(jQuery);
-
-
-            // //click to go to form
-
-            // $('.register').click(function(){
-            //     $('#div_element2').goTo();
-            // });
-
-
+           
 
     var wait_time=1000;
     var wait_key_stroke=3;
@@ -952,6 +935,28 @@
     
     
     </script>
+
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.account_type=1;
+        // $scope.domainInvalid=True
+        // console.log($scope.myForm)
+
+        $scope.checkV=function(){
+
+        console.log($scope.myForm)
+
+        
+        }
+
+
+
+    });
+
+</script>
 
 
 </body>
