@@ -1,6 +1,6 @@
 <!-- Cart Part -->
 <ul class="nav navbar-right cart-pop">
-  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="itm-cont">{{Cart::count()}}</span> <i class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>
+  <li class="dropdown"> <a href="#" style='{{$settings->id==27?"color:white;":""}}' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="itm-cont">{{Cart::count()}}</span> <i class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>
   <span class="items-price">{{Cart::subtotal()}} {{$settings->currencyName()}}</span></a>
     <ul class="dropdown-menu cart-glance-content">
       @forelse(Cart::content() as $item)
