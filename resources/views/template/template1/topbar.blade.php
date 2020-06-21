@@ -59,7 +59,7 @@
 
 
 
-    <header>
+    <header style='{{$settings->id==27?"background-color:black;":""}}'>
       <div class="container">
         @if($settings->logo!=null)
         <div class="logo"> <a href="{{route('start')}}"><img src="{{asset('images/'.$settings->logo)}}" alt="" ></a> </div>
