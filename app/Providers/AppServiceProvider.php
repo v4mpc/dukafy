@@ -113,7 +113,7 @@ class AppServiceProvider extends ServiceProvider
             View::share('categories', $categories);
             View::share('settings', $settings);
             View::share('previews', $previews);
-            // View::share('colour_code', $colour_code);
+            View::share('colour_code', $colour_code);
             View::share('brand_images', $brand_images);
             View::share('slider_images', $slider_images);
             View::share('min_price', $min_price);
