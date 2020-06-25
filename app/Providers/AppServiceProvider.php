@@ -60,6 +60,7 @@ class AppServiceProvider extends ServiceProvider
             $slider_images = SliderImage::all();
             $currencies = Currency::all();
             // dd($slider_images);
+            $colour_code = '#000';
             switch ($settings->colour) {
                 case 'navy':
                     $colour_code = '#424378';
