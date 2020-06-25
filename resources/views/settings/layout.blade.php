@@ -17,8 +17,17 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/checkboxes-radios.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/switch.min.css')}}">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+
+
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/css/plugins/forms/wizard.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
+
+
+   
+
 
 @endsection
  
@@ -73,7 +82,7 @@
               </div>
               <div class="card-content collapse show">
                 <div class="card-body">
-                <form action="{{route('settings.update',$settings->id)}}" method="POST" >
+                <form action="{{route('settings.update',$settings->id)}}" ng-app="myApp" ng-controller="myCtrl" method="POST" >
                   {{ csrf_field() }}
                   {{method_field('PUT')}}
                     <h4 class="info-text" align="center" >Select Template and Colour. </h4>
@@ -88,38 +97,16 @@
                                 <div id="template-buttons"><a id="img-link" href="{{asset('template1/previews/blue/1.png')}}" data-fancybox="blue-preview"
                                         data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb" src="{{asset('template1/previews/blue/1.png')}}" alt="..." class="img-thumbnail"></a>
                                     <hr>
-                                        <div>
-                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="navy" title="Navy" class="btn btn-primary colour active">
-                                          @if($settings->colour=="navy")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="green" title="Green" class="btn btn-success colour active">
-                                          @if($settings->colour=="green")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-layout="template1" data-colour="blue" title="Blue" class="btn btn-info colour active">
-                                          @if($settings->colour=="blue")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                        </button>
-                                        <input type="hidden" name="layout">
-                                        <input type="hidden" name="colour">
-                                      {{-- <input type="hidden" name="store_name" value="{{$settings->store_name}}">
-                                      <input type="hidden" name="email" value="{{$settings->email}}">
-                                      <input type="hidden" name="longitude" value="{{$settings->longitude}}">
-                                      <input type="hidden" name="latitude" value="{{$settings->latitude}}"> --}}
-                                      {{-- <input type="hidden" name="logo" value="{{$settings->logo}}"> --}}
-                                      {{-- <input type="hidden" name="working_hours" value="{{$settings->working_hours}}">
+                                        
+                                         
 
-                                      <input type="hidden" name="address" value="{{$settings->address}}">
-                                      <input type="hidden" name="mobile" value="{{$settings->mobile}}">
-                                      <input type="hidden" name="about" value="{{$settings->about}}">
-                                      <input type="hidden" name="facebook" value="{{$settings->facebook}}">
-                                      <input type="hidden" name="instagram" value="{{$settings->instagram}}">
-                                      <input type="hidden" name="twitter" value="{{$settings->twitter}}"> --}}
-                                    </div>
+                                          <input type="radio" ng-click="changeTemplate('template3')" ng-checked="selectedTemplate=='template1'" name="layout">
+
+                                          <div class="color-picker-1" ></div>
+
+
+                                
+                                  
                                 </div>
 
 
@@ -134,30 +121,18 @@
                                     <div id="template-buttons"><a id="img-link-2" href="{{asset('template2/previews/yellow/1.png')}}" data-fancybox="yellow-preview"
                                             data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-2" src="{{asset('template2/previews/yellow/1.png')}}" alt="..." class="img-thumbnail"></a>
                                             <hr>
-                                            <div>
-                                            <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="black" title="Black" class="btn btn-black colour">
-                                              @if($settings->colour=="black")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="pink" title="Pink" class="btn btn-pink colour">
-                                              @if($settings->colour=="pink")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" data-layout="template2" data-colour="yellow" title="Yellow" class="btn btn-yellow colour">
-                                              @if($settings->colour=="yellow")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                            </button>
-                                            {{-- <input type="hidden" name="layout">
-                                            <input type="hidden" name="colour"> --}}
+                                           
+                                        
+                                          <input type="radio" ng-click="changeTemplate('template2')" ng-checked="selectedTemplate=='template2'" name="layout">
+
+                                            <div class="color-picker-2"></div>
+                                           
                                         </div>
                                     </div>
 
 
                                 </div>
-                            </div>
+                            
 
 
 
@@ -169,31 +144,20 @@
                                     <div id="template-buttons"><a id="img-link-3" href="{{asset('template3/previews/dark_green/1.png')}}" data-fancybox="dark_green-preview"
                                             data-width="1366" data-height="768" data-thumbs='{"autoStart":true}'> <img id="img-thumb-3" src="{{asset('template3/previews/dark_green/1.png')}}" alt="..." class="img-thumbnail"></a>
                                         <hr>
-                                            <div>
-                                            <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="dark_green" title="Dark Green" class="btn btn-dark_green colour ">
-                                              @if($settings->colour=="dark_green")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="red" title="Red" class="btn btn-red colour ">
-                                              @if($settings->colour=="red")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" data-layout="template3" data-colour="orange" title="Orange" class="btn btn-orange colour ">
-                                              @if($settings->colour=="orange")
-                                          <i class="ft-check"></i>
-                                          @endif
-                                            </button>
-                                            {{-- <input type="hidden" name="layout">
-                                            <input type="hidden" name="colour"> --}}
+
+                                        <input type="radio" ng-click="changeTemplate('template3')" ng-checked="selectedTemplate=='template3'" name="layout">
+
+                                        <div class="color-picker-3"></div>
+
+
+      
                                         </div>
                                     </div>
 
 
                                 </div>
                             </div>
-                    </div>
+                    {{-- </div> --}}
 
 
                     
@@ -333,7 +297,7 @@
 
                     <div class="form-actions">
                     
-                      <button type="submit" class="btn btn-success">
+                      <button type="button" ng-click="submitForm()" class="btn btn-success">
                                   <i class="ft-save"></i> Save
                                 </button>
                     </div>
@@ -407,6 +371,9 @@
 <script src="{{asset('vendor/js/scripts/forms/wizard-steps.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/vendors/js/fancybox/jquery.fancybox.min.js')}}"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+
 <script>
   $(".colour").click(function () {
 			$(".colour").find('i').remove();
@@ -476,7 +443,210 @@
 
 			// alert("the template "+layout+" is and the colour is "+colour)
 
+
+
+      // Simple example, see optional options for more configuration.
+
+
 		});
+
+
+
+
+    
+
+
+
+var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+
+      $scope.selectedTemplate='{{$settings->layout}}';
+      $scope.color='{{$settings->colour}}';
+
+      console.log($scope.selectedTemplate);
+
+      initilizeColorPicker($scope.selectedTemplate,$scope.color);
+
+        
+        $scope.changeTemplate=function(value){
+          $scope.selectedTemplate=value;
+        }
+
+
+        function initilizeColorPicker(template,color) {
+
+          $scope.pickr1 = Pickr.create({
+    el: '.color-picker-1',
+    theme: 'nano', // or 'monolith', or 'nano'
+
+    swatches:null,
+    default: (template=="template1")?color:"#42445a",
+    defaultRepresentation: 'HEXA',
+
+
+    components: {
+
+        // Main components
+        preview: true,
+        // opacity: true,
+        hue: true,
+
+        // Input / output Options
+        interaction: {
+            hex: true,
+            // rgba: true,
+            // hsla: true,
+            // hsva: true,
+            // cmyk: true,
+            input: true,
+            clear: true,
+            save: true
+        }
+    }
+});
+
+
+
+$scope.pickr2 = Pickr.create({
+    el: '.color-picker-2',
+    theme: 'nano', // or 'monolith', or 'nano'
+
+    swatches:null,
+    default: (template=="template2")?color:"#42445a",
+    defaultRepresentation: 'HEXA',
+
+
+    components: {
+
+        // Main components
+        preview: true,
+        // opacity: true,
+        hue: true,
+
+        // Input / output Options
+        interaction: {
+            hex: true,
+            // rgba: true,
+            // hsla: true,
+            // hsva: true,
+            // cmyk: true,
+            input: true,
+            clear: true,
+            save: true
+        }
+    }
+});
+
+
+$scope.pickr3 = Pickr.create({
+    el: '.color-picker-3',
+    theme: 'nano', // or 'monolith', or 'nano'
+
+    swatches:null,
+    default: (template=="template3")?color:"#42445a",
+    defaultRepresentation: 'HEXA',
+
+
+    components: {
+
+        // Main components
+        preview: true,
+        // opacity: true,
+        hue: true,
+
+        // Input / output Options
+        interaction: {
+            hex: true,
+            // rgba: true,
+            // hsla: true,
+            // hsva: true,
+            // cmyk: true,
+            input: true,
+            clear: true,
+            save: true
+        }
+    }
+});
+          
+        }
+
+
+    $scope.submitForm=function(){
+
+      // console.log('submiting')
+      console.log($scope.selectedTemplate);
+
+      if ($scope.selectedTemplate=="template1") {
+        var color=$scope.pickr1.getColor().toHEXA().toString();
+
+        
+      }else if($scope.selectedTemplate=="template2"){
+        var color=$scope.pickr2.getColor().toHEXA().toString();
+      
+
+      }else{
+        var color=$scope.pickr3.getColor().toHEXA().toString();
+
+      }
+
+
+
+      var url = '{{route("update.layout")}}';
+      var data = {
+        layout:$scope.selectedTemplate,
+        color:color,
+        id:'{{$settings->id}}',
+        _token:'{{csrf_token()}}',
+
+      }
+      // var config='contenttype';
+
+      $http.put(url, data).then(function (response) {
+
+      // This function handles success
+      console.log(response)
+
+      toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "30",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+
+
+ toastr.success('Layout Saved!');
+
+
+      }, function (response) {
+
+        console.log(response)
+
+      // this function handles error
+
+});
+
+    }
+
+
+
+    });
+
+
+
+
+
 
 </script>
 @endsection

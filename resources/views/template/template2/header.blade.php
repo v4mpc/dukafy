@@ -17,20 +17,8 @@
 
         
 
-       @if($settings->id==27)
-       <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/purple.css')}}" media="all" />
-
-       @else
-
-       @if($settings->colour=="black")
-        <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/black.css')}}" media="all" />
-        @endif @if($settings->colour=="pink")
-        <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/pink.css')}}" media="all" />
-        @endif @if($settings->colour=="yellow")
-        <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/yellow.css')}}" media="all" />
-        @endif
-
-       @endif
+        <link rel="stylesheet" type="text/css" href="{{asset('template2/assets/css/colors/'.explode("#",$settings->colour)[1].'.css')}}" media="all" />
+      
         
        
 
@@ -378,7 +366,7 @@ li.product .product-thumbnail{
 
 #rectangle{
     width: 100%;
-    background-color: {{$colour_code}};
+    background-color: {{$settings->colour}};
     position: fixed;
     display:none;
     bottom: 0;

@@ -63,7 +63,7 @@
         @if($settings->logo!=null)
             <img src="{{asset('images/'.$settings->logo)}}" alt="">
             @elseif($settings->logo_text!=null)
-            <h3 style="color:{{$colour_code}};margin-top: 30px;" id="logo">{{$settings->logo_text}}</h3>
+            <h3 style="color:{{$settings->colour}};margin-top: 30px;" id="logo">{{$settings->logo_text}}</h3>
             @else
        
 

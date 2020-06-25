@@ -231,6 +231,12 @@ class SettingController extends Controller
         if ($request->layout) {
             $setting->layout = $request->layout;
             $setting->colour = $request->colour;
+
+            $this->findAndReplace($request->layout, $request->colour);
+
+            // delete old file
+            $this->deleteCssFile($this->getPathFromTemplate($request->layout) . $request->color);
+
         }
         // if($request->logo){
         //     $png_url = "logo-".time().".png";
@@ -507,4 +513,72 @@ class SettingController extends Controller
         Session::flash('success_settings', 'Setting Saved!');
         return redirect()->back();
     }
+
+    public function createCssFile()
+    {
+        $template1 = 'template1/css/';
+        $template2 = 'template2/assets/css/colors/blue.css';
+        $template3 = 'template3/assets/css/blue.css';
+    }
+
+    public function deleteCssFile($path)
+    {
+        if (file_exists($path)) {
+            unlink($path);
+            return;
+        }
+
+        return;
+    }
+
+    public function findAndReplace($template, $replacer)
+    {
+        //  to_replace = should start with # eg. #43453345
+        $to_search = $this->getSampleFile($template)[1];
+        $path_to_sample_file = $this->getPathFromTemplate($template) . $this->getSampleFile($template)[0]; # blue.css should always be in each template folder
+        $file_contents = file_get_contents($path_to_sample_file);
+        $file_contents = str_replace($to_search, $replacer, $file_contents);
+        $path_to_new_file = $this->getPathFromTemplate($template) . explode("#", $replacer)[1] . '.css';
+        file_put_contents($path_to_new_file, $file_contents);
+    }
+
+    public function getPathFromTemplate($template)
+    {
+        $path = [
+            'template1' => "template1/css/",
+            'template2' => "template2/assets/css/colors/",
+            'template3' => "template3/assets/css/",
+        ];
+        // dd($template);
+
+        return public_path($path[$template]);
+
+    }
+
+    public function getSampleFile($template)
+    {
+        $sample = [
+            'template1' => ["sample.css", "#354545"],
+            'template2' => ["sample.css", "#0787ea"],
+            'template3' => ["sample.css", "#3498db"],
+        ];
+
+        return $sample[$template];
+    }
+
+    public function updateLayout(Request $request)
+    {
+        $setting = Setting::findOrFail($request->id);
+        $this->deleteCssFile($this->getPathFromTemplate($request->layout) . explode("#", $setting->colour)[1] . '.css');
+
+        $setting->layout = $request->layout;
+        $setting->colour = $request->color;
+
+        $this->findAndReplace($request->layout, $request->color);
+        $setting->save();
+
+        return response()->json(['ok']);
+
+    }
+
 }

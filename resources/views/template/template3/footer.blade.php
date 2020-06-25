@@ -37,7 +37,7 @@
               margin-left: 3%; ">{{Cart::subtotal()}} {{$settings->currencyName()}}</span></a>
               <a class="btn btn-upper btn-primary m-t-20" href="{{route('cart.index')}}" style="
                 background: white;
-                color: {{$colour_code}};
+                color: {{$settings->colour}};
                 margin-top:0px;
                 margin-left:3%;
             "  >Checkout</a>

@@ -8,7 +8,7 @@
                   margin-left: 3%; ">{{Cart::subtotal()}} {{$settings->currencyName()}}</span>
                 <a class="button" href="{{route('cart.index')}}" style="
                 background: white;
-                color: {{$colour_code}};
+                color: {{$settings->colour}};
                 margin-left:3%;
                 padding: 0.69em 1.134em;
             "  >Checkout</a>

@@ -22,14 +22,9 @@
 	    
 	    <!-- Customizable CSS -->
 		<link rel="stylesheet" href="{{asset('template3/assets/css/main.css')}}">
-		@if($settings->colour=="dark_green")
-		<link rel="stylesheet" href="{{asset('template3/assets/css/dark-green.css')}}">
-        @endif @if($settings->colour=="red")
-        <link rel="stylesheet" href="{{asset('template3/assets/css/red.css')}}">
-        @endif @if($settings->colour=="orange")
-		<link rel="stylesheet" href="{{asset('template3/assets/css/orange.css')}}">
-        @endif
-	   
+
+		<link rel="stylesheet" href="{{asset('template3/assets/css/'.explode("#",$settings->colour)[1].'.css')}}">
+        
 	    <link rel="stylesheet" href="{{asset('template3/assets/css/owl.carousel.css')}}">
 		<link rel="stylesheet" href="{{asset('template3/assets/css/owl.transitions.css')}}">
 		<!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
@@ -152,7 +147,7 @@
 
 	#rectangle{
     width: 100%;
-    background-color: {{$colour_code}};
+    background-color: {{$settings->colour}};
     position: fixed;
 	display:none;
     bottom: 0;
@@ -167,7 +162,7 @@
 
 
 .tag.sale{
-	background-color: {{$colour_code}};
+	background-color: {{$settings->colour}};
 
 }
 

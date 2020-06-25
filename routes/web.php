@@ -88,6 +88,7 @@ Route::prefix('manage')->middleware(['auth', 'client'])->group(function () {
     Route::put('update_payment/{id}', 'SettingController@updatePayment')->name('update.payment');
 
     Route::get('/layout', 'SettingController@getLayoutForm')->name('settings.layout_form');
+    Route::put('/update_layout', 'SettingController@updateLayout')->name('update.layout');
 
     Route::get('/basic_info', 'SettingController@getBasicInfoForm')->name('settings.basic_info_form');
     Route::get('/about_store', 'SettingController@getAboutForm')->name('settings.about_store_form');
