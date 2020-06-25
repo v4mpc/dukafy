@@ -101,7 +101,8 @@ Route::prefix('manage')->middleware(['auth', 'client'])->group(function () {
     Route::get('/make_out_stock/{id}', 'ProductController@makeOutstock')->name('make_out_stock_ajax');
     Route::get('/remove_out_stock/{id}', 'ProductController@removeOutstock')->name('remove_out_stock_ajax');
     Route::post('/add_category', 'CategoryController@addCategory');
-    Route::put('/cancel_order/{id}', 'OrderController@cancelOrder');
+    Route::get('/cancel_order/{id}', 'OrderController@cancelOrder')->name('order.cancel');
+    Route::get('/complete_order/{id}', 'OrderController@completeOrder')->name('order.complete');
     Route::resource('/preview', 'PreviewController');
     Route::get('/markOrderAsRead', 'OrderController@markOrderAsRead');
     Route::get('/go_back', function () {

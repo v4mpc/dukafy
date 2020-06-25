@@ -15,6 +15,7 @@ use Cart;
 use Illuminate\Http\Request;
 use Mail;
 use Notification;
+use Session;
 
 class OrderController extends Controller
 {
@@ -65,7 +66,7 @@ class OrderController extends Controller
 
         $order = new Order;
         $order->customer_id = $customer->id;
-        $order->status = 'completed';
+        $order->status = 'pending';
         $order->account_id = $account_id;
 
         //we should make the order number ready
@@ -183,10 +184,21 @@ class OrderController extends Controller
     public function cancelOrder(Request $request, $id)
     {
         $order = Order::findOrFail($id);
-        $order->status = 'cancelled';
+        $order->status = 'void';
         $order->save();
 
-        return response()->json('ok');
+        Session::flash('success', 'Order Cancelled');
+        return redirect()->back();
+    }
+
+    public function completeOrder(Request $request, $id)
+    {
+        $order = Order::findOrFail($id);
+        $order->status = 'completed';
+        $order->save();
+
+        Session::flash('success', 'Order Completed');
+        return redirect()->back();
     }
 
     public function markOrderAsRead()

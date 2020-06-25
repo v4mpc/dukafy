@@ -16,8 +16,12 @@
  
 @section('content')
 
+
 <div class="app-content content">
+
   <div class="content-wrapper">
+@include('partials._messages')
+
     <div class="content-header row">
       <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
         <h3 class="content-header-title mb-0 d-inline-block">Order</h3>
@@ -61,7 +65,7 @@
               <div class="card-header">
                 {{--
                 <h4 class="card-title">Zero configuration</h4> --}}
-                <h4 class="form-section"><i class="ft-package"></i> Order {{$order->number}}</h4>
+                <h4 class="form-section"><i class="ft-package"></i> Order {{$order->number}}  @if ($order->status==='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status==='pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif</h4>
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                 {{-- <div class="heading-elements">
                   <ul class="list-inline mb-0">
@@ -203,12 +207,20 @@
                       </div>
                     </div>
 
+                     
+
                   
 
                     {{-- end --}}
 
                   </div>
+                  @if($order->status=='pending')
+                          <a href="{{route('order.cancel',$order->id)}}" data-toggle="tooltip"  data-original-title="Void" data-placement="top" class="btn  btn-outline-danger btn-sm edit-item-btn "><i class="ft-x"></i></a>
+                          <a href="{{route('order.complete',$order->id)}}" data-toggle="tooltip"  data-original-title="Complete" data-placement="top" class="btn  btn-outline-success btn-sm edit-item-btn "><i class="ft-check"></i></a>
+
+                          @endif
                 </div>
+                
               </div>
             </div>
           </div>

@@ -98,16 +98,16 @@
 
                         <td>
 
-                          @if ($order->status==='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status==='Pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
+                          @if ($order->status==='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status==='pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
   
   
                           </td>
 
                         <td><a href="{{route('orders.show',$order->id)}}" data-toggle="tooltip" data-original-title="Detail"
                             data-placement="top" class="btn btn-outline-primary btn-sm edit-item-btn"><i class="ft-eye"></i></a>
-                            @if($order->status!='Cancelled')
+                            {{-- @if($order->status!='Cancelled')
                           <a data-toggle="tooltip" id="cancel-{{$order->id}}" data-original-title="Cancel" data-id="{{$order->id}}" data-placement="top" class="btn  btn-outline-danger btn-sm edit-item-btn cancel-order"><i class="ft-x"></i></a>
-                          @endif
+                          @endif --}}
                         </td>
                       </tr>
                       @endforeach
