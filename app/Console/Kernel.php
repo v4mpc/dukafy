@@ -2,15 +2,14 @@
 
 namespace App\Console;
 
+use App\Account;
+use App\Mail\AccountExpired;
+use App\ProductImage;
+use Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Account;
-use Carbon;
-use App\ProductImage;
 use ImageOptimizer;
 use Mail;
-use App\Mail\AccountExpired;
-
 
 class Kernel extends ConsoleKernel
 {
@@ -34,20 +33,18 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-
-
-       // check account expiry every minute 
-       // in future we can check only in the night
+        // check account expiry every minute
+        // in future we can check only in the night
         $schedule->call(function () {
             //lets get all the accounts which are not expired
             #if expiry date reached then we will deactivate the account
-            $accounts=Account::where('id', '!=', 1)->where('status', 1)->get();
+            $accounts = Account::withOutGlobalScopes()->where('id', '!=', 1)->where('status', 1)->get();
             foreach ($accounts as $account) {
                 if ($account->ended_at->lte(Carbon::now()->SubDays(3))) {
-                    $account->status=0;
+                    $account->status = 0;
                     $account->save();
                 }
-                if($account->hasExpired()){
+                if ($account->hasExpired()) {
                     //send email
                     Mail::to($account->email)->cc('info@dukafy.co.tz')->send(new AccountExpired($account));
                 }
@@ -59,19 +56,16 @@ class Kernel extends ConsoleKernel
         })->everyMinute();
 
         # we will optimize images every day midnight if any
-        $schedule->call(function()
-        {
-            $images = ProductImage::where('optimized',0)->get();
+        $schedule->call(function () {
+            $images = ProductImage::withOutGlobalScopes()->where('optimized', 0)->get();
             foreach ($images as $image) {
-                $location=public_path('images/'.$image->image);
+                $location = public_path('images/' . $image->image);
                 ImageOptimizer::optimize($location);
-                $image->optimized=1;
+                $image->optimized = 1;
                 $image->save();
             }
         })->daily();
-        
-       
-        
+
     }
 
     /**
@@ -81,7 +75,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
