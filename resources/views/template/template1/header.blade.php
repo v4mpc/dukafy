@@ -108,6 +108,13 @@
 
 }
 
+@if($settings->id==27)
+.navy header nav {
+    background: #5f3394 !important;
+}
+
+@endif
+
 
 #rectangle{
     width: 100%;
