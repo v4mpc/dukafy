@@ -569,7 +569,10 @@ class SettingController extends Controller
     public function updateLayout(Request $request)
     {
         $setting = Setting::findOrFail($request->id);
-        $this->deleteCssFile($this->getPathFromTemplate($request->layout) . explode("#", $setting->colour)[1] . '.css');
+        if (count(explode("#", $setting->colour)) > 1) {
+            $this->deleteCssFile($this->getPathFromTemplate($request->layout) . explode("#", $setting->colour)[1] . '.css');
+
+        }
 
         $setting->layout = $request->layout;
         $setting->colour = $request->color;
