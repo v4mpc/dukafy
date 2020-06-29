@@ -66,7 +66,7 @@ class Kernel extends ConsoleKernel
                     $image->save();
                 }
             }
-        })->everyMinute();
+        })->daily();
 
     }
 
