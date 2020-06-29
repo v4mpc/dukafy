@@ -60,9 +60,11 @@ class Kernel extends ConsoleKernel
             $images = ProductImage::withOutGlobalScopes()->where('optimized', 0)->get();
             foreach ($images as $image) {
                 $location = public_path('images/' . $image->image);
-                ImageOptimizer::optimize($location);
-                $image->optimized = 1;
-                $image->save();
+                if (file_exists($location)) {
+                    ImageOptimizer::optimize($location);
+                    $image->optimized = 1;
+                    $image->save();
+                }
             }
         })->everyMinute();
 
