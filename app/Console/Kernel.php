@@ -64,7 +64,7 @@ class Kernel extends ConsoleKernel
                 $image->optimized = 1;
                 $image->save();
             }
-        })->daily();
+        })->everyMinute();
 
     }
 
