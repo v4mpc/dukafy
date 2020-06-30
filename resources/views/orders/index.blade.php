@@ -98,7 +98,7 @@
 
                         <td>
 
-                          @if ($order->status=='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status=='pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
+                          @if ($order->status=='Completed')<span class="badge badge-default badge-success order-{{$order->id}}">Completed</span>                          @elseif($order->status=='Pending')<span class="badge {{$order->id}} badge-default badge-warning">Pending</span>                          @else <span class="badge badge-default badge-danger">Cancelled</span> @endif
   
   
                           </td>
