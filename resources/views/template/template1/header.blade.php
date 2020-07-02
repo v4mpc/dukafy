@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="{{asset('template1/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('template1/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('template1/css/main.css')}}">
+    @if($settings->colour[0]!='navy' && $settings->colour[0]!='green' && $settings->colour[0]!='blue')
+    <link rel="stylesheet" href="{{asset('template1/css/'.explode("#",$settings->colour)[1].'.css')}}">
+    @else
     <link rel="stylesheet" href="{{asset('template1/css/style.css')}}">
+    @endif
     <link rel="stylesheet" href="{{asset('template1/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/toaster/toaster.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/vendors/css/fancybox/jquery.fancybox.min.css')}}">

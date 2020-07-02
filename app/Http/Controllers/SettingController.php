@@ -558,7 +558,7 @@ class SettingController extends Controller
     public function getSampleFile($template)
     {
         $sample = [
-            'template1' => ["sample.css", "#354545"],
+            'template1' => ["sample.css", "#424378"],
             'template2' => ["sample.css", "#0787ea"],
             'template3' => ["sample.css", "#3498db"],
         ];

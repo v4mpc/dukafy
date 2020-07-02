@@ -1,7 +1,7 @@
 <body>
 
   <!-- Page Wrapper -->
-  <div id="wrap" class="layout-1 {{$settings->colour}}">
+  <div id="wrap" class="layout-1 navy">
 
 
 

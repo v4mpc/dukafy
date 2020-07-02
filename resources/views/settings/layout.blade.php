@@ -100,8 +100,8 @@
                                         
                                          
 
-                                          {{-- <input type="radio" ng-click="changeTemplate('template1')" ng-checked="selectedTemplate=='template1'" name="layout"> --}}
-                                    <i>under construction</i>
+                                          <input type="radio" ng-click="changeTemplate('template1')" ng-checked="selectedTemplate=='template1'" name="layout">
+                                    {{-- <i>under construction</i> --}}
                                           <div class="color-picker-1" ></div>
 
 
