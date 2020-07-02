@@ -80,7 +80,7 @@
            
           
             <li role="presentation" class="active">
-              <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">Onsale</a>
+              <a href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">On Sale</a>
             </li>
   
           </ul>
@@ -130,7 +130,7 @@
         
         <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
             <li role="presentation" class="active">
-              <a href="#recent-product" aria-controls="recent-product" role="tab" data-toggle="tab">Recent Product</a>
+              <a href="#recent-product" aria-controls="recent-product" role="tab" data-toggle="tab">Recent Products</a>
             </li>
          
           </ul>
