@@ -40,7 +40,7 @@ class Setting extends Model
         $number = substr_replace($this->mobile, " ", 3, 0);
         $rhs = explode(" ", $number);
         if (count($rhs) > 0) {
-            return $rhs[0]+" "+number_format($rhs[1], 0, "", " ");
+            return $rhs[0] . " " . number_format($rhs[1], 0, "", " ");
 
         }
 
