@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Scopes\AccountScope;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
@@ -12,7 +11,6 @@ class Setting extends Model
     // {
     //     return "P O BOX ".$value;
     // }
-
 
     // public function getMobileAttribute($value)
     // {
@@ -31,9 +29,21 @@ class Setting extends Model
         return $this->belongsTo('App\Currency');
     }
 
-
     public function currencyName()
     {
         return $this->currency->name;
+    }
+
+    public function formatPhoneNumber()
+    {
+
+        $number = substr_replace($this->mobile, " ", 3, 0);
+        $rhs = explode(" ", $number);
+        if (count($rhs) > 0) {
+            return number_format($rhs[1], 0, "", " ");
+
+        }
+
+        return $number;
     }
 }
