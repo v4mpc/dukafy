@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+adshapedigital.com	TRUE	/	FALSE	1999999999	PHPSESSID	e27a3ce2901e491e874b3895804c323d
+

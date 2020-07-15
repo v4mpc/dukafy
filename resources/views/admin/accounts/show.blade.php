@@ -273,9 +273,9 @@
 
 
                     <div class="form-group row">
-                        <label class="col-md-3 label-control" for="projectinput1">Subscription</label>
+                        <label class="col-md-3 label-control" for="projectinput1">Subscription <i>(End Date)</i></label>
                         <div class="col-md-7">
-                            <select id="projectinput5" name="subscription_id" class="form-control">
+                            {{-- <select id="projectinput5" name="subscription_id" class="form-control">
                                 
                                 @foreach($subscriptions as $subscription)
                             <option value="{{$subscription->id}}">{{$subscription->subscription}} Month(s)</option>
@@ -283,7 +283,10 @@
                
                                 
                                
-                              </select>
+                              </select> --}}
+
+                              <input type="date" class="form-control" name="ended_at" id="">
+
                         </div>
                       </div>
               </div>

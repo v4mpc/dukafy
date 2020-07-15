@@ -181,9 +181,9 @@
 
 
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" >Subscription</label>
+                                <label class="col-md-3 label-control" >Subscription <i>(End Date)</i> </label>
                                 <div class="col-md-7">
-                                    <select name="subscription_id" class="form-control">
+                                    {{-- <select name="subscription_id" class="form-control">
                                         
                                         @foreach($subscriptions as $subscription)
                                         @if(!in_array($subscription->subscription,['1','6']))
@@ -194,7 +194,9 @@
                        
                                         
                                        
-                                      </select>
+                                      </select> --}}
+
+                                      <input type="date" class="form-control" name="ended_at" id="">
                                 </div>
                               </div>
 

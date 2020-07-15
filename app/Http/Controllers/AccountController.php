@@ -56,6 +56,7 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        // dd(date('Y-m-d h:i:s', strtotime($request->ended_at)));
         $request->validate([
             'account_type' => 'required',
         ]);
@@ -127,11 +128,11 @@ class AccountController extends Controller
         $account->phone = $request->phone;
         $account->email = $request->email;
         $account->package_id = $request->package_id;
-        $account->subscription_id = $request->subscription_id;
+        // $account->subscription_id = $request->subscription_id;
         //this value are set to null till account is alllowed or its an admin acccount
         if (Auth::check()) {
             if (Auth::user()->account_id == 1) {
-                $this->activateNewAccount($account, $request->password);
+                $this->activateNewAccount($account, $request);
             }
         } else {
             $account->status = 2;
@@ -321,22 +322,27 @@ class AccountController extends Controller
     public function renew(Request $request, $id)
     {
         //lets get the subscription
-        $subscription = Subscription::findOrFail($request->subscription_id);
+        // dd('test');
+
+        // $subscription = Subscription::findOrFail($request->subscription_id);
         $account = Account::findOrFail($id);
         $account->status = 1;
-        $account->subscription_id = $request->subscription_id;
+
+        // $account->subscription_id = $request->subscription_id;
         $account->package_id = $request->package_id;
 
-        $account->ended_at = Carbon::now()->addMonths($subscription->subscription);
+        $account->ended_at = date('Y-m-d h:i:s', strtotime($request->ended_at));
 
         $account->save();
-        return redirect()->back();
+
+        return redirect()->route('accounts.show', $id);
     }
 
-    public function activateNewAccount($account, $password)
+    public function activateNewAccount($account, $request)
     {
         $account->started_at = Carbon::now();
-        $account->ended_at = Carbon::now()->addMonths($account->subscription->subscription);
+        // $account->ended_at = Carbon::now()->addMonths($account->subscription->subscription);
+        $account->ended_at = date('Y-m-d h:i:s', strtotime($request->ended_at));
         $account->status = 1;
         $account->save();
         $this->domain = $account->domain;
@@ -351,8 +357,8 @@ class AccountController extends Controller
         $this->digitalOcean($account, 'subdomain');
         // configure NGINX server for this subdomain
         $this->serverConfig($account, 'subdomain');
-        $this->createUser($password, $account);
-        Mail::to($account->email)->cc('dukafy@gmail.com')->send(new ClientAccountCreated($account, $password));
+        $this->createUser($request->password, $account);
+        Mail::to($account->email)->cc('dukafy@gmail.com')->send(new ClientAccountCreated($account, $request->password));
         return;
     }
 

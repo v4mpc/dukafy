@@ -6,8 +6,10 @@ use App\Account;
 use App\Mail\AccountExpired;
 use App\ProductImage;
 use Carbon;
+use File;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Image;
 use ImageOptimizer;
 use Mail;
 
@@ -61,6 +63,9 @@ class Kernel extends ConsoleKernel
             foreach ($images as $image) {
                 $location = public_path('images/' . $image->image);
                 if (file_exists($location)) {
+                    $img = Image::make($location);
+                    File::delete($location);
+                    $img->resize(600, 600)->save($location);
                     ImageOptimizer::optimize($location);
                     $image->optimized = 1;
                     $image->save();
