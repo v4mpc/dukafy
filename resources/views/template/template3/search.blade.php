@@ -83,7 +83,7 @@
             <ul class="list-unstyled">
                 <li class="add-cart-button btn-group">
                         @if($settings->whatsapp)
-                        <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{$product->name}}%20at%20{{$settings->store_name}}" title="Inquire this Product" type="button">
+                        <a class="btn btn-primary icon" href="https://wa.me/{{$settings->whatsapp}}?text=I'm%20inquiring%20about%20{{urlencode(route('products.show',$product->id))}}" title="Inquire this Product" type="button">
                             <i class="fa fa-whatsapp"></i>													
                         </a>
                         @endif

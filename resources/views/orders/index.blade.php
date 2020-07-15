@@ -64,7 +64,7 @@
               <div class="card-content collapse show">
                 <div class="card-body card-dashboard">
 
-                  <table class="table table-striped table-bordered zero-configuration">
+                  <table class="table table-striped table-bordered default-ordering">
                     <thead>
                       <tr>
                         <th>Order #</th>
