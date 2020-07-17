@@ -2940,11 +2940,11 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																				<div class="elementor-widget-container">
 																					<div
 																						class="elementor-text-editor elementor-clearfix">
-																						<p>Choose a dedicated POS
+																						{{-- <p>Choose a dedicated POS
 																							package from the list. We
 																							offer bespoke inventory
 																							&amp; sales plans to suit
-																							diverse client needs.</p>
+																							diverse client needs.</p> --}}
 																					</div>
 																				</div>
 																			</div>
@@ -2977,7 +2977,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																				data-widget_type="radiant-tabs.default">
 																				<div class="elementor-widget-container">
 																					<div class="rt-tab element-one">
-																						<ul class="nav-tabs">
+																						<ul class="nav-tabs" style="display: none">
 																							<li class="matchHeight"><a
 																									data-toggle="tab"
 																									href="#monthly"><span>Monthly</span></a>
@@ -3023,63 +3023,49 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																				class="rt-pricing-table element-nine ">
 																																				<h3
 																																					class="rt-pricing-title">
-																																					Economy
-																																					Pack
+																																					Basic
 																																				</h3>
 																																				<div
 																																					class="rt-list">
-																																					Create
-																																					an
-																																					impact
-																																					for
-																																					your
-																																					clientele
-																																					by
-																																					providing
-																																					the
-																																					best.
 																																					<ul>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Sales
-																																							Management
+																																								aria-hidden="true"></i>100 Products
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Customer
-																																							Tracking
+																																								aria-hidden="true"></i>Free Domain
+																																						
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Inventory
-																																							Management
+																																								aria-hidden="true"></i>Free Hosting
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Leads
-																																							Generation
+																																								aria-hidden="true"></i>Mobile App
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Sales
-																																							&amp;
-																																							Growth
+																																								aria-hidden="true"></i>Different Templates
+																																							
 																																						</li>
 																																					</ul>
 																																				</div>
 																																				<div
 																																					class="rt-price">
-																																					Free<span
+																																					TZS 25,000
+																																					{{-- <span
 																																						class="rt-supsub"><sup
 																																							class="rt-superscript">Per
 																																							user</sup><sub
 																																							class="rt-subscript">Per
-																																							Month</sub></span>
+																																							Month</sub></span> --}}
 																																				</div>
 																																				<div
 																																					class="rt-table-buy">
@@ -3117,62 +3103,49 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																				</div>
 																																				<h3
 																																					class="rt-pricing-title">
-																																					Business
-																																					Pack
+																																					Value
 																																				</h3>
 																																				<div
 																																					class="rt-list">
-																																					Create
-																																					an
-																																					impact
-																																					for
-																																					your
-																																					clientele
-																																					by
-																																					providing
-																																					the
-																																					best.
 																																					<ul>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Retail
-																																							Management
+																																								aria-hidden="true"></i>350 Products
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Dashboard
-																																							Systems
+																																								aria-hidden="true"></i>Free Domain
+																																						
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Warehousing
+																																								aria-hidden="true"></i>Free Hosting
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Inventory
-																																							Tracking
+																																								aria-hidden="true"></i>Mobile App
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Mobile
-																																							Solutions
+																																								aria-hidden="true"></i>Different Templates
+																																							
 																																						</li>
 																																					</ul>
 																																				</div>
 																																				<div
 																																					class="rt-price">
-																																					$
-																																					16<span
+																																					TZS 45,000
+																																					{{-- <span
 																																						class="rt-supsub"><sup
 																																							class="rt-superscript">Per
 																																							user</sup><sub
 																																							class="rt-subscript">Per
-																																							Month</sub></span>
+																																							Month</sub></span> --}}
 																																				</div>
 																																				<div
 																																					class="rt-table-buy">
@@ -3203,65 +3176,50 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																				class="rt-pricing-table element-nine ">
 																																				<h3
 																																					class="rt-pricing-title">
-																																					Executive
-																																					Pack
+																																					Advanced
 																																				</h3>
 																																				<div
 																																					class="rt-list">
-																																					Create
-																																					an
-																																					impact
-																																					for
-																																					your
-																																					clientele
-																																					by
-																																					providing
-																																					the
-																																					best.
+																																					
 																																					<ul>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Warehousing
-																																							Logistics
+																																								aria-hidden="true"></i>950 Products
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Sales
-																																							&amp;
-																																							Inventory
+																																								aria-hidden="true"></i>Free Domain
+																																						
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Quality
-																																							Control
+																																								aria-hidden="true"></i>Free Hosting
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Procurement
+																																								aria-hidden="true"></i>Mobile App
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>CRM
-																																							&amp;
-																																							POS
-																																							Integration
+																																								aria-hidden="true"></i>Different Templates
+																																							
 																																						</li>
 																																					</ul>
 																																				</div>
 																																				<div
 																																					class="rt-price">
-																																					$
-																																					24<span
+																																					TZS 95,000
+																																					{{-- <span
 																																						class="rt-supsub"><sup
 																																							class="rt-superscript">Per
 																																							user</sup><sub
 																																							class="rt-subscript">Per
-																																							Month</sub></span>
+																																							Month</sub></span> --}}
 																																				</div>
 																																				<div
 																																					class="rt-table-buy">
@@ -3282,300 +3240,19 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																									</div>
 																								</div>
 																							</div>
-																							<div id="annually"
-																								class="tab-pane">
-																								<div data-elementor-type="wp-post"
-																									data-elementor-id="24225"
-																									class="elementor elementor-24225"
-																									data-elementor-settings="[]">
-																									<div
-																										class="elementor-inner">
-																										<div
-																											class="elementor-section-wrap">
-																											<section
-																												class="elementor-element elementor-element-ccc4726 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
-																												data-id="ccc4726"
-																												data-element_type="section">
-																												<div
-																													class="elementor-container elementor-column-gap-default">
-																													<div
-																														class="elementor-row">
-																														<div class="elementor-element elementor-element-06aa57f elementor-column elementor-col-33 elementor-top-column"
-																															data-id="06aa57f"
-																															data-element_type="column">
-																															<div
-																																class="elementor-column-wrap  elementor-element-populated">
-																																<div
-																																	class="elementor-widget-wrap">
-																																	<div class="elementor-element elementor-element-adef779 elementor-widget elementor-widget-radiant-pricing-table"
-																																		data-id="adef779"
-																																		data-element_type="widget"
-																																		data-widget_type="radiant-pricing-table.default">
-																																		<div
-																																			class="elementor-widget-container">
-																																			<div
-																																				class="rt-pricing-table element-nine ">
-																																				<h3
-																																					class="rt-pricing-title">
-																																					Economy
-																																					Pack
-																																				</h3>
-																																				<div
-																																					class="rt-list">
-																																					Create
-																																					an
-																																					impact
-																																					for
-																																					your
-																																					clientele
-																																					by
-																																					providing
-																																					the
-																																					best.
-																																					<ul>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Sales
-																																							Management
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Customer
-																																							Tracking
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Inventory
-																																							Management
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Leads
-																																							Generation
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Sales
-																																							&amp;
-																																							Growth
-																																						</li>
-																																					</ul>
-																																				</div>
-																																				<div
-																																					class="rt-price">
-																																					Free<span
-																																						class="rt-supsub"><sup
-																																							class="rt-superscript">Per
-																																							user</sup><sub
-																																							class="rt-subscript">Per
-																																							Year</sub></span>
-																																				</div>
-																																				<div
-																																					class="rt-table-buy">
-																																					<a href="#"
-																																						class="rt-pricing-action">Free
-																																						Demo</a>
-																																				</div>
-																																			</div>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																														<div class="elementor-element elementor-element-a89926c elementor-column elementor-col-33 elementor-top-column"
-																															data-id="a89926c"
-																															data-element_type="column">
-																															<div
-																																class="elementor-column-wrap  elementor-element-populated">
-																																<div
-																																	class="elementor-widget-wrap">
-																																	<div class="elementor-element elementor-element-2d3dbce elementor-widget elementor-widget-radiant-pricing-table"
-																																		data-id="2d3dbce"
-																																		data-element_type="widget"
-																																		data-widget_type="radiant-pricing-table.default">
-																																		<div
-																																			class="elementor-widget-container">
-																																			<div
-																																				class="rt-pricing-table element-nine spotlight">
-																																				<div
-																																					class="spotlight-tag">
-																																					<p
-																																						class="spotlight-tag-text">
-																																						Popular
-																																					</p>
-																																				</div>
-																																				<h3
-																																					class="rt-pricing-title">
-																																					Business
-																																					Pack
-																																				</h3>
-																																				<div
-																																					class="rt-list">
-																																					Create
-																																					an
-																																					impact
-																																					for
-																																					your
-																																					clientele
-																																					by
-																																					providing
-																																					the
-																																					best.
-																																					<ul>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Retail
-																																							Management
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Dashboard
-																																							Systems
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Warehousing
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Inventory
-																																							Tracking
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Mobile
-																																							Solutions
-																																						</li>
-																																					</ul>
-																																				</div>
-																																				<div
-																																					class="rt-price">
-																																					$
-																																					150<span
-																																						class="rt-supsub"><sup
-																																							class="rt-superscript">Per
-																																							user</sup><sub
-																																							class="rt-subscript">Per
-																																							Year</sub></span>
-																																				</div>
-																																				<div
-																																					class="rt-table-buy">
-																																					<a href="#"
-																																						class="rt-pricing-action">Select
-																																						Plan</a>
-																																				</div>
-																																			</div>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																														<div class="elementor-element elementor-element-2bc5710 elementor-column elementor-col-33 elementor-top-column"
-																															data-id="2bc5710"
-																															data-element_type="column">
-																															<div
-																																class="elementor-column-wrap  elementor-element-populated">
-																																<div
-																																	class="elementor-widget-wrap">
-																																	<div class="elementor-element elementor-element-2baa982 elementor-widget elementor-widget-radiant-pricing-table"
-																																		data-id="2baa982"
-																																		data-element_type="widget"
-																																		data-widget_type="radiant-pricing-table.default">
-																																		<div
-																																			class="elementor-widget-container">
-																																			<div
-																																				class="rt-pricing-table element-nine ">
-																																				<h3
-																																					class="rt-pricing-title">
-																																					Executive
-																																					Pack
-																																				</h3>
-																																				<div
-																																					class="rt-list">
-																																					Create
-																																					an
-																																					impact
-																																					for
-																																					your
-																																					clientele
-																																					by
-																																					providing
-																																					the
-																																					best.
-																																					<ul>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Warehousing
-																																							Logistics
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Sales
-																																							&amp;
-																																							Inventory
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Quality
-																																							Control
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Procurement
-																																						</li>
-																																						<li
-																																							class="support-list-icon">
-																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>CRM
-																																							&amp;
-																																							POS
-																																							Integration
-																																						</li>
-																																					</ul>
-																																				</div>
-																																				<div
-																																					class="rt-price">
-																																					$
-																																					200<span
-																																						class="rt-supsub"><sup
-																																							class="rt-superscript">Per
-																																							user</sup><sub
-																																							class="rt-subscript">Per
-																																							Year</sub></span>
-																																				</div>
-																																				<div
-																																					class="rt-table-buy">
-																																					<a href="#"
-																																						class="rt-pricing-action">Select
-																																						Plan</a>
-																																				</div>
-																																			</div>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																												</div>
-																											</section>
-																										</div>
-																									</div>
+																							<div class="elementor-element elementor-element-82bcd90 elementor-widget elementor-widget-text-editor"
+																							data-id="82bcd90"
+																							data-element_type="widget"
+																							data-widget_type="text-editor.default">
+																							<div class="elementor-widget-container">
+																								<div
+																									class="elementor-text-editor elementor-clearfix">
+																									<p>* Minimum billing is 3 months for a package selected.</p>
+																									<p>* Pay for 12 month and get 2 month free.</p>
+																									<p>* For bigger plan get in touch with us.</p>
 																								</div>
 																							</div>
+																						</div>
 																						</div>
 																					</div>
 																				</div>
