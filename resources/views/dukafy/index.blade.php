@@ -25,6 +25,10 @@
 			background: none !important;
 			padding: 0 !important;
 		}
+
+		.margin-bottom{
+			margin-bottom: 10px;
+		}
 	</style>
 	<link rel='stylesheet' id='wp-block-library-css'
 href='{{asset('dukafy/wp-includes/css/dist/block-library/style.min7661.css?ver=5.4.2')}}' type='text/css' media='all' />
@@ -609,482 +613,17 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																			<li id="menu-item-20348"
 																				class="menu-item menu-item-type-post_type menu-item-object-mega_menu menu-item-20348 menu-item-has-children mega-parent-menu">
 																				<a href="#" data-description="">Home</a>
-																				<div class="main-megamenu-holder">
-																					<ul class="mega-child-menu">
-																						<li>
-																							<div data-elementor-type="wp-post"
-																								data-elementor-id="19871"
-																								class="elementor elementor-19871"
-																								data-elementor-settings="[]">
-																								<div
-																									class="elementor-inner">
-																									<div
-																										class="elementor-section-wrap">
-																										<section
-																											class="elementor-element elementor-element-c4898af elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
-																											data-id="c4898af"
-																											data-element_type="section">
-																											<div
-																												class="elementor-container elementor-column-gap-default">
-																												<div
-																													class="elementor-row">
-																													<div class="elementor-element elementor-element-58590f1 elementor-column elementor-col-33 elementor-top-column"
-																														data-id="58590f1"
-																														data-element_type="column"
-																														data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-																														<div
-																															class="elementor-column-wrap  elementor-element-populated">
-																															<div
-																																class="elementor-widget-wrap">
-																																<div class="elementor-element elementor-element-4587b6a elementor-widget elementor-widget-wp-widget-nav_menu"
-																																	data-id="4587b6a"
-																																	data-element_type="widget"
-																																	data-widget_type="wp-widget-nav_menu.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<div
-																																			class="menu-multiple-menu-one-container">
-																																			<ul id="menu-multiple-menu-one"
-																																				class="menu">
-																																				<li id="menu-item-19887"
-																																					class="new-add menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4076 current_page_item menu-item-19887">
-																																					<a href="index.html"
-																																						aria-current="page">POS
-																																						Software</a>
-																																				</li>
-																																				<li id="menu-item-23664"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23664">
-																																					<a
-																																						href="seo-software/index.html">SEO
-																																						Software</a>
-																																				</li>
-																																				<li id="menu-item-19927"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19927">
-																																					<a
-																																						href="live-chat/index.html">Live
-																																						Chat</a>
-																																				</li>
-																																				<li id="menu-item-19926"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19926">
-																																					<a
-																																						href="crm-software/index.html">CRM
-																																						Software</a>
-																																				</li>
-																																				<li id="menu-item-19928"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19928">
-																																					<a
-																																						href="online-support/index.html">Online
-																																						Support</a>
-																																				</li>
-																																				<li id="menu-item-33038"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33038">
-																																					<a
-																																						href="online-billing/index.html">Online
-																																						Billing</a>
-																																				</li>
-																																			</ul>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																													<div class="elementor-element elementor-element-1417fb0 elementor-column elementor-col-33 elementor-top-column"
-																														data-id="1417fb0"
-																														data-element_type="column"
-																														data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-																														<div
-																															class="elementor-column-wrap  elementor-element-populated">
-																															<div
-																																class="elementor-widget-wrap">
-																																<div class="elementor-element elementor-element-390616f elementor-widget elementor-widget-wp-widget-nav_menu"
-																																	data-id="390616f"
-																																	data-element_type="widget"
-																																	data-widget_type="wp-widget-nav_menu.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<div
-																																			class="menu-multiple-menu-two-container">
-																																			<ul id="menu-multiple-menu-two"
-																																				class="menu">
-																																				<li id="menu-item-33042"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33042">
-																																					<a
-																																						href="product-analysis/index.html">Product
-																																						Analysis</a>
-																																				</li>
-																																				<li id="menu-item-23668"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23668">
-																																					<a
-																																						href="app-development/index.html">App
-																																						Development</a>
-																																				</li>
-																																				<li id="menu-item-19896"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19896">
-																																					<a
-																																						href="social-marketing/index.html">Social
-																																						Marketing</a>
-																																				</li>
-																																				<li id="menu-item-19931"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19931">
-																																					<a
-																																						href="helpdesk-software/index.html">Helpdesk
-																																						Software</a>
-																																				</li>
-																																				<li id="menu-item-33040"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33040">
-																																					<a
-																																						href="vpn/index.html">VPN
-																																						Software</a>
-																																				</li>
-																																				<li id="menu-item-33041"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33041">
-																																					<a
-																																						href="hosting/index.html">Hosting</a>
-																																				</li>
-																																			</ul>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																													<div class="elementor-element elementor-element-e01bacb elementor-column elementor-col-33 elementor-top-column"
-																														data-id="e01bacb"
-																														data-element_type="column"
-																														data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-																														<div
-																															class="elementor-column-wrap  elementor-element-populated">
-																															<div
-																																class="elementor-widget-wrap">
-																																<div class="elementor-element elementor-element-4b6385a elementor-widget elementor-widget-image"
-																																	data-id="4b6385a"
-																																	data-element_type="widget"
-																																	data-widget_type="image.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<div
-																																			class="elementor-image">
-																																			<img src="{{asset('dukafy/wp-content/uploads/2020/02/mega-menu-logo.svg')}}"
-																																				class="attachment-full size-full"
-																																				alt="" />
-																																		</div>
-																																	</div>
-																																</div>
-																																<div class="elementor-element elementor-element-1a1aee6 elementor-widget elementor-widget-heading"
-																																	data-id="1a1aee6"
-																																	data-element_type="widget"
-																																	data-widget_type="heading.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<h3
-																																			class="elementor-heading-title elementor-size-default">
-																																			Purchase
-																																			Theme
-																																		</h3>
-																																	</div>
-																																</div>
-																																<div class="elementor-element elementor-element-4853c3d elementor-widget elementor-widget-text-editor"
-																																	data-id="4853c3d"
-																																	data-element_type="widget"
-																																	data-widget_type="text-editor.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<div
-																																			class="elementor-text-editor elementor-clearfix">
-																																			SaaS
-																																			software
-																																			startup
-																																			app
-																																			agency.
-																																		</div>
-																																	</div>
-																																</div>
-																																<section
-																																	class="elementor-element elementor-element-84a420d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
-																																	data-id="84a420d"
-																																	data-element_type="section">
-																																	<div
-																																		class="elementor-container elementor-column-gap-default">
-																																		<div
-																																			class="elementor-row">
-																																			<div class="elementor-element elementor-element-9de8bce mega-menu-btn-area elementor-column elementor-col-100 elementor-inner-column"
-																																				data-id="9de8bce"
-																																				data-element_type="column">
-																																				<div
-																																					class="elementor-column-wrap  elementor-element-populated">
-																																					<div
-																																						class="elementor-widget-wrap">
-																																						<div class="elementor-element elementor-element-a3e6eb5 elementor-widget elementor-widget-radiant-custom-button"
-																																							data-id="a3e6eb5"
-																																							data-element_type="widget"
-																																							data-widget_type="radiant-custom-button.default">
-																																							<div
-																																								class="elementor-widget-container">
-																																								<div class="radiantthemes-custom-button element-one hover-style-one  "
-																																									data-button-direction="center"
-																																									data-button-fullwidth="false"
-																																									data-button-icon-position="">
-																																									<a class="radiantthemes-custom-button-main"
-																																										href="#"
-																																										target="_blank"
-																																										rel="nofollow">
-																																										<div
-																																											class="placeholder">
-																																											Purchase
-																																											Now
-																																										</div>
-																																									</a>
-																																								</div>
-																																							</div>
-																																						</div>
-																																					</div>
-																																				</div>
-																																			</div>
-																																		</div>
-																																	</div>
-																																</section>
-																															</div>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</section>
-																									</div>
-																								</div>
-																							</div>
-																						</li>
-																					</ul>
-																				</div>
+																				
 																			</li>
-																			<li id="menu-item-6327"
-																				class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6327">
-																				<a href="#"
-																					data-description="">Pages</a>
-																				<ul class="sub-menu">
-																					<li id="menu-item-5429"
-																						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5429">
-																						<a href="about/index.html"
-																							data-description="">About</a>
-																					</li>
-																					<li id="menu-item-5431"
-																						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5431">
-																						<a href="features/index.html"
-																							data-description="">Features</a>
-																					</li>
-																					<li id="menu-item-5441"
-																						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5441">
-																						<a href="how-it-works/index.html"
-																							data-description="">How It
-																							Works</a></li>
-																					<li id="menu-item-5443"
-																						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5443">
-																						<a href="team/index.html"
-																							data-description="">Team</a>
-																					</li>
-																					<li id="menu-item-27718"
-																						class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27718">
-																						<a href="404.html"
-																							data-description="">404
-																							Page</a></li>
-																				</ul>
-																			</li>
+																		
 																			<li id="menu-item-33144"
 																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33144">
-																				<a href="blog/index.html"
-																					data-description="">Blog</a></li>
-																			<li id="menu-item-25685"
-																				class="menu-item menu-item-type-post_type menu-item-object-mega_menu menu-item-25685 menu-item-has-children mega-parent-menu">
 																				<a href="#"
-																					data-description="">Portfolio</a>
-																				<div class="main-megamenu-holder">
-																					<ul class="mega-child-menu">
-																						<li>
-																							<div data-elementor-type="wp-post"
-																								data-elementor-id="25682"
-																								class="elementor elementor-25682"
-																								data-elementor-settings="[]">
-																								<div
-																									class="elementor-inner">
-																									<div
-																										class="elementor-section-wrap">
-																										<section
-																											class="elementor-element elementor-element-88aa7db elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
-																											data-id="88aa7db"
-																											data-element_type="section">
-																											<div
-																												class="elementor-container elementor-column-gap-default">
-																												<div
-																													class="elementor-row">
-																													<div class="elementor-element elementor-element-42a9c95 elementor-column elementor-col-33 elementor-top-column"
-																														data-id="42a9c95"
-																														data-element_type="column">
-																														<div
-																															class="elementor-column-wrap  elementor-element-populated">
-																															<div
-																																class="elementor-widget-wrap">
-																																<div class="elementor-element elementor-element-1643018 elementor-widget elementor-widget-wp-widget-nav_menu"
-																																	data-id="1643018"
-																																	data-element_type="widget"
-																																	data-widget_type="wp-widget-nav_menu.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<h5>Portfolio
-																																			Showcase
-																																		</h5>
-																																		<div
-																																			class="menu-portfolio-showcase-container">
-																																			<ul id="menu-portfolio-showcase"
-																																				class="menu">
-																																				<li id="menu-item-25677"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25677">
-																																					<a
-																																						href="box-overlay/index.html">Box
-																																						Overlay</a>
-																																				</li>
-																																				<li id="menu-item-25678"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25678">
-																																					<a
-																																						href="metro-boxed/index.html">Metro
-																																						Boxed</a>
-																																				</li>
-																																				<li id="menu-item-25679"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25679">
-																																					<a
-																																						href="3d-boxed-hover/index.html">3d
-																																						Boxed
-																																						Hover</a>
-																																				</li>
-																																				<li id="menu-item-25680"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25680">
-																																					<a
-																																						href="simple-zoom-out/index.html">Simple
-																																						Zoom
-																																						Out</a>
-																																				</li>
-																																				<li id="menu-item-25681"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25681">
-																																					<a
-																																						href="masonry/index.html">Masonry
-																																						Style
-																																						One</a>
-																																				</li>
-																																			</ul>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																													<div class="elementor-element elementor-element-e30a731 elementor-column elementor-col-33 elementor-top-column"
-																														data-id="e30a731"
-																														data-element_type="column">
-																														<div
-																															class="elementor-column-wrap  elementor-element-populated">
-																															<div
-																																class="elementor-widget-wrap">
-																																<div class="elementor-element elementor-element-38e69be elementor-widget elementor-widget-wp-widget-nav_menu"
-																																	data-id="38e69be"
-																																	data-element_type="widget"
-																																	data-widget_type="wp-widget-nav_menu.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<h5>Portfolio
-																																			Showcase
-																																		</h5>
-																																		<div
-																																			class="menu-portfolio-showcase-2-container">
-																																			<ul id="menu-portfolio-showcase-2"
-																																				class="menu">
-																																				<li id="menu-item-25977"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25977">
-																																					<a
-																																						href="portfolio-filter/index.html">Portfolio
-																																						Filter</a>
-																																				</li>
-																																				<li id="menu-item-25705"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25705">
-																																					<a
-																																						href="classic-overlay/index.html">Classic
-																																						Overlay</a>
-																																				</li>
-																																				<li id="menu-item-25707"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25707">
-																																					<a
-																																						href="on-hover-overlay-data/index.html">On
-																																						Hover
-																																						Overlay</a>
-																																				</li>
-																																				<li id="menu-item-27076"
-																																					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27076">
-																																					<a
-																																						href="masonry-style-two/index.html">Masonry
-																																						Style
-																																						Two</a>
-																																				</li>
-																																			</ul>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																													<div class="elementor-element elementor-element-72071bc elementor-column elementor-col-33 elementor-top-column"
-																														data-id="72071bc"
-																														data-element_type="column">
-																														<div
-																															class="elementor-column-wrap  elementor-element-populated">
-																															<div
-																																class="elementor-widget-wrap">
-																																<div class="elementor-element elementor-element-3b2dc01 elementor-widget elementor-widget-wp-widget-nav_menu"
-																																	data-id="3b2dc01"
-																																	data-element_type="widget"
-																																	data-widget_type="wp-widget-nav_menu.default">
-																																	<div
-																																		class="elementor-widget-container">
-																																		<h5>Portfolio
-																																			Single
-																																		</h5>
-																																		<div
-																																			class="menu-portfolio-single-container">
-																																			<ul id="menu-portfolio-single"
-																																				class="menu">
-																																				<li id="menu-item-25987"
-																																					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25987">
-																																					<a
-																																						href="project/sitting-alone/index.html">Style
-																																						One</a>
-																																				</li>
-																																				<li id="menu-item-25989"
-																																					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25989">
-																																					<a
-																																						href="project/nature/index.html">Style
-																																						Two</a>
-																																				</li>
-																																			</ul>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</section>
-																									</div>
-																								</div>
-																							</div>
-																						</li>
-																					</ul>
-																				</div>
-																			</li>
-																			<li id="menu-item-24431"
-																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24431">
-																				<a href="shop/index.html"
-																					data-description="">Shop</a></li>
+																					data-description="">About Us</a></li>
+																			
 																			<li id="menu-item-29415"
 																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29415">
-																				<a href="contact-us/index.html"
+																				<a href="#"
 																					data-description="">Contact Us</a>
 																			</li>
 																		</ul>
@@ -3070,8 +2609,8 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																				<div
 																																					class="rt-table-buy">
 																																					<a href="#"
-																																						class="rt-pricing-action">Free
-																																						Demo</a>
+																																						class="rt-pricing-action">Select Plan
+																																						</a>
 																																				</div>
 																																			</div>
 																																		</div>
@@ -3253,6 +2792,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																								</div>
 																							</div>
 																						</div>
+																						
 																						</div>
 																					</div>
 																				</div>
@@ -3263,6 +2803,256 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 															</div>
 														</div>
 													</section>
+
+													<div class="elementor-row">
+										<div class="elementor-element elementor-element-edf4426 elementor-column elementor-col-33 elementor-top-column"
+											data-id="edf4426" data-element_type="column">
+											<div class="elementor-column-wrap  elementor-element-populated">
+												<div class="elementor-widget-wrap">
+													<section
+														class="elementor-element elementor-element-03b11b6 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+														data-id="03b11b6" data-element_type="section"
+														data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+														<div class="elementor-container elementor-column-gap-default">
+															<div class="elementor-row">
+																<div class="elementor-element elementor-element-9fd300b icon-moving elementor-column elementor-col-100 elementor-inner-column"
+																	data-id="9fd300b" data-element_type="column"
+																	data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+																	<div
+																		class="elementor-column-wrap  elementor-element-populated">
+																		<div class="elementor-widget-wrap">
+																			<div class="elementor-element elementor-element-5d21be0 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+																				data-id="5d21be0"
+																				data-element_type="widget"
+																				data-widget_type="image-box.default">
+																				<div class="elementor-widget-container">
+																					
+{{-- form --}}
+<div class="elementor-element elementor-element-34af01cc elementor-column elementor-col-100 elementor-inner-column" data-id="34af01cc" data-element_type="column">
+	<div class="elementor-column-wrap  elementor-element-populated">
+			<div class="elementor-widget-wrap">
+	
+		<div class="elementor-element elementor-element-311d0d9 elementor-widget elementor-widget-void-section-cf7" data-id="311d0d9" data-element_type="widget" data-widget_type="void-section-cf7.default">
+		<div class="elementor-widget-container">
+	<div class="elementor-shortcode void-cf7-0"><div role="form" class="wpcf7" id="wpcf7-f29338-p29261-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response" aria-live="polite"></div>
+<form action="#/" method="post" class="wpcf7-form" novalidate="novalidate">
+
+<div class="contact-two">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
+<div class="form-row"> <span class="wpcf7-form-control-wrap Name"><input type="text" name="Name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Company Name"></span> </div>
+</div>
+<br>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
+<div class="form-row"> <span class="wpcf7-form-control-wrap email"><input type="text" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="E-mail"></span> </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
+<div class="form-row"> <span class="wpcf7-form-control-wrap phone"><input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Phone Number"></span> </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
+	<div class="form-row">
+		 <div class="wpcf7-form-control-wrap phone input-group">
+			<span class="input-group-addon">www.</span>
+			 <input type="text" name="domain" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Domain">
+			<span class="input-group-addon"> .co.tz</span>
+
+		 </div> 
+		</div>
+	</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
+<div class="form-row form-group-select-contact"><select name="menu-978" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Select">--Select Package--</option><option value="Designer">Basic</option><option value="Animator">Value</option><option value="Developer">Advanced</option></select></div>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
+	<div class="form-row form-group-select-contact"><select name="menu-978" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Select">--Select Subscribtion--</option><option value="Designer">Quarterly</option><option value="Animator">Animator</option><option value="Developer">Annually</option></select></div>
+	</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+<div class="form-row submit-btn"> <input type="submit" style="background-color: #FF6064;" value="Sign Up" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span> </div>
+</div>
+</div>
+</div>
+<div class="wpcf7-response-output wpcf7-display-none" aria-hidden="true"></div></form></div></div>		</div>
+		</div>
+				</div>
+	</div>
+</div>
+
+
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+													
+													
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-d73c164 elementor-column elementor-col-33 elementor-top-column"
+											data-id="d73c164" data-element_type="column">
+											<div class="elementor-column-wrap">
+												<div class="elementor-widget-wrap">
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-9aeabff elementor-column elementor-col-33 elementor-top-column"
+											data-id="9aeabff" data-element_type="column">
+											{{-- <div class="elementor-column-wrap  elementor-element-populated">
+												<div class="elementor-widget-wrap">
+													<div class="elementor-element elementor-element-db27c0e elementor-widget elementor-widget-heading"
+														data-id="db27c0e" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h2 class="elementor-heading-title elementor-size-default">
+																Your Business, Your Customers, Your Website</h2>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-aed81fd elementor-widget elementor-widget-text-editor"
+														data-id="aed81fd" data-element_type="widget"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-text-editor elementor-clearfix">
+																<p>Dukafy gives you the tools to build your own brand,
+																	why rely on other platforms when you can build your
+																	own website in minutes with powerful and a simple to
+																	user friendly interface.</p>
+															</div>
+														</div>
+													</div>
+													<section
+														class="elementor-element elementor-element-76a3b80 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+														data-id="76a3b80" data-element_type="section">
+														<div class="elementor-container elementor-column-gap-default">
+															<div class="elementor-row">
+																<div class="elementor-element elementor-element-40445f3 elementor-column elementor-col-50 elementor-inner-column"
+																	data-id="40445f3" data-element_type="column">
+																	<div
+																		class="elementor-column-wrap  elementor-element-populated">
+																		<div class="elementor-widget-wrap">
+																			<div class="elementor-element elementor-element-db9debd elementor-view-default elementor-widget elementor-widget-icon"
+																				data-id="db9debd"
+																				data-element_type="widget"
+																				data-widget_type="icon.default">
+																				<div class="elementor-widget-container">
+																					<div class="elementor-icon-wrapper">
+																						<div class="elementor-icon">
+																							<i aria-hidden="true"
+																								class="fas fa-check"></i>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-0f9c0b2 elementor-column elementor-col-50 elementor-inner-column"
+																	data-id="0f9c0b2" data-element_type="column">
+																	<div
+																		class="elementor-column-wrap  elementor-element-populated">
+																		<div class="elementor-widget-wrap">
+																			<div class="elementor-element elementor-element-fe72125 elementor-widget elementor-widget-heading"
+																				data-id="fe72125"
+																				data-element_type="widget"
+																				data-widget_type="heading.default">
+																				<div class="elementor-widget-container">
+																					<h3
+																						class="elementor-heading-title elementor-size-default">
+																						Exclusively for Retail Chains
+																					</h3>
+																				</div>
+																			</div>
+																			<div class="elementor-element elementor-element-c801e47 elementor-widget elementor-widget-text-editor"
+																				data-id="c801e47"
+																				data-element_type="widget"
+																				data-settings="{&quot;_animation_tablet&quot;:&quot;fadeInUp&quot;}"
+																				data-widget_type="text-editor.default">
+																				<div class="elementor-widget-container">
+																					<div
+																						class="elementor-text-editor elementor-clearfix">
+																						<p>Offer inventory, sales, order
+																							booking &amp; other
+																							integrated solutions via our
+																							POS.</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+													<section
+														class="elementor-element elementor-element-cfa147f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+														data-id="cfa147f" data-element_type="section">
+														<div class="elementor-container elementor-column-gap-default">
+															<div class="elementor-row">
+																<div class="elementor-element elementor-element-bd063f7 elementor-column elementor-col-50 elementor-inner-column"
+																	data-id="bd063f7" data-element_type="column">
+																	<div
+																		class="elementor-column-wrap  elementor-element-populated">
+																		<div class="elementor-widget-wrap">
+																			<div class="elementor-element elementor-element-dd264d5 elementor-view-default elementor-widget elementor-widget-icon"
+																				data-id="dd264d5"
+																				data-element_type="widget"
+																				data-widget_type="icon.default">
+																				<div class="elementor-widget-container">
+																					<div class="elementor-icon-wrapper">
+																						<div class="elementor-icon">
+																							<i aria-hidden="true"
+																								class="fas fa-check"></i>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-ce77db5 elementor-column elementor-col-50 elementor-inner-column"
+																	data-id="ce77db5" data-element_type="column">
+																	<div
+																		class="elementor-column-wrap  elementor-element-populated">
+																		<div class="elementor-widget-wrap">
+																			<div class="elementor-element elementor-element-8f47173 elementor-widget elementor-widget-heading"
+																				data-id="8f47173"
+																				data-element_type="widget"
+																				data-widget_type="heading.default">
+																				<div class="elementor-widget-container">
+																					<h3
+																						class="elementor-heading-title elementor-size-default">
+																						Enhanced Service Experience</h3>
+																				</div>
+																			</div>
+																			<div class="elementor-element elementor-element-413ca80 elementor-widget elementor-widget-text-editor"
+																				data-id="413ca80"
+																				data-element_type="widget"
+																				data-settings="{&quot;_animation_tablet&quot;:&quot;fadeInUp&quot;}"
+																				data-widget_type="text-editor.default">
+																				<div class="elementor-widget-container">
+																					<div
+																						class="elementor-text-editor elementor-clearfix">
+																						<p>Get an impressive feel by
+																							using our Cloud-based POS
+																							systems.</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+												</div>
+											</div> --}}
+										</div>
+									</div>
 												</div>
 											</div>
 										</div>
