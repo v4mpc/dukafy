@@ -5,9 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<title>Dukafy &#8211; Build Your Online Shop in Minutes</title>
-	<link rel='dns-prefetch' href='http://use.typekit.net/' />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	<link rel='dns-prefetch' href='http://s.w.org/' />
+	<link rel='dns-prefetch' href='https://use.typekit.net/' />
+	<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+	<link rel='dns-prefetch' href='https://s.w.org/' />
 	<link rel="alternate" type="application/rss+xml" title="Dukafy &raquo; Feed" href="feed/index.html" />
 	<link rel="alternate" type="application/rss+xml" title="Dukafy &raquo; Comments Feed"
 		href="comments/feed/index.html" />
@@ -52,7 +52,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 		href='{{asset('dukafy/wp-content/themes/qik/assets/css/radiantthemes-responsive73af.css?ver=1594802937')}}' type='text/css'
 		media='all' />
 	<link rel='stylesheet' id='radiantthemes-typekit-google-fonts-css'
-		href='http://fonts.googleapis.com/css?family=Roboto%3A400&amp;ver=1.0.0' type='text/css' media='all' />
+		href='https://fonts.googleapis.com/css?family=Roboto%3A400&amp;ver=1.0.0' type='text/css' media='all' />
 	<link rel='stylesheet' id='radiantthemes-style-css' href='{{asset('dukafy/wp-content/themes/qik-child/style73af.css?ver=1594802937')}}'
 		type='text/css' media='all' />
 	<link rel='stylesheet' id='radiantthemes-user-custom-css'
@@ -88,7 +88,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 	<link rel='stylesheet' id='elementor-post-4076-css'
 		href='{{asset('dukafy/wp-content/uploads/elementor/css/post-407695a6.css?ver=1594750880')}}' type='text/css' media='all' />
 	<link rel='stylesheet' id='redux-google-fonts-qik_theme_option-css'
-		href='http://fonts.googleapis.com/css?family=Josefin+Sans%3A600%7CRoboto%3A400%7COpen+Sans%3A400&amp;ver=1593004157'
+		href='https://fonts.googleapis.com/css?family=Josefin+Sans%3A600%7CRoboto%3A400%7COpen+Sans%3A400&amp;ver=1593004157'
 		type='text/css' media='all' />
 <script type='text/javascript' src='{{asset('dukafy/wp-includes/js/jquery/jquery4a5f.js?ver=1.12.4-wp')}}'></script>
 <script type='text/javascript' defer src='{{asset('dukafy/wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1')}}'></script>
@@ -101,9 +101,9 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 	<link rel="canonical" href="index.html" />
 	<link rel='shortlink' href='index.html' />
 	<link rel="alternate" type="application/json+oembed"
-		href="wp-json/oembed/1.0/embed584a.json?url=http%3A%2F%2Fadshapedigital.com%2F" />
+		href="wp-json/oembed/1.0/embed584a.json?url=https%3A%2F%2Fadshapedigital.com%2F" />
 	<link rel="alternate" type="text/xml+oembed"
-		href="wp-json/oembed/1.0/embedf0e4?url=http%3A%2F%2Fadshapedigital.com%2F&amp;format=xml" />
+		href="wp-json/oembed/1.0/embedf0e4?url=https%3A%2F%2Fadshapedigital.com%2F&amp;format=xml" />
 	<style type='text/css'>
 		.ae_data .elementor-editor-element-setting {
 			display: none !important;
@@ -147,7 +147,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 	<link rel="icon" href="{{asset('dukafy/wp-content/uploads/2020/02/fav-icon192.png')}}" sizes="192x192">
 	<link rel="apple-touch-icon-precomposed" href="{{asset('dukafy/wp-content/uploads/2020/02/fav-icon192.png')}}" />
 	<meta name="msapplication-TileImage"
-		content="http://adshapedigital.com/wp-content/uploads/2020/02/fav-icon192.png" />
+		content="https://adshapedigital.com/wp-content/uploads/2020/02/fav-icon192.png" />
 	<style type="text/css" title="dynamic-css" class="options-output">
 		body {
 			background-color: #ffffff;
@@ -1811,7 +1811,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																	src="{{asset('dukafy/wp-content/uploads/2020/06/header.png')}}"
 																	class="elementor-animation-float attachment-full size-full"
 																	alt=""
-																	srcset="http://adshapedigital.com/wp-content/uploads/2020/06/header.png 945w, http://adshapedigital.com/wp-content/uploads/2020/06/header-300x277.png 300w, http://adshapedigital.com/wp-content/uploads/2020/06/header-768x709.png 768w"
+																	srcset="https://adshapedigital.com/wp-content/uploads/2020/06/header.png 945w, https://adshapedigital.com/wp-content/uploads/2020/06/header-300x277.png 300w, https://adshapedigital.com/wp-content/uploads/2020/06/header-768x709.png 768w"
 																	sizes="(max-width: 945px) 100vw, 945px" /> </div>
 														</div>
 													</div>
@@ -2497,7 +2497,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																	src="{{asset('dukafy/wp-content/uploads/2020/06/banner3-e1593528467426.jpg')}}"
 																	class="elementor-animation-bounce-in attachment-full size-full"
 																	alt=""
-																	srcset="http://adshapedigital.com/wp-content/uploads/2020/06/banner3-e1593528467426.jpg 532w, http://adshapedigital.com/wp-content/uploads/2020/06/banner3-e1593528467426-300x211.jpg 300w"
+																	srcset="https://adshapedigital.com/wp-content/uploads/2020/06/banner3-e1593528467426.jpg 532w, https://adshapedigital.com/wp-content/uploads/2020/06/banner3-e1593528467426-300x211.jpg 300w"
 																	sizes="(max-width: 532px) 100vw, 532px" /> </div>
 														</div>
 													</div>
@@ -3516,7 +3516,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																	<div class="screen-reader-response"
 																		aria-live="polite"></div>
 																	<form
-																		action="http://adshapedigital.com/#wpcf7-f764-o1"
+																		action="https://adshapedigital.com/#wpcf7-f764-o1"
 																		method="post" class="wpcf7-form"
 																		novalidate="novalidate">
 																		<div style="display: none;">
@@ -3691,7 +3691,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 		type='text/css' media='all' />
 	<script type='text/javascript'>
 		/* <![CDATA[ */
-		var wpcf7 = { "apiSettings": { "root": "http:\/\/adshapedigital.com\/wp-json\/contact-form-7\/v1", "namespace": "contact-form-7\/v1" } };
+		var wpcf7 = { "apiSettings": { "root": "https:\/\/adshapedigital.com\/wp-json\/contact-form-7\/v1", "namespace": "contact-form-7\/v1" } };
 /* ]]> */
 	</script>
 	<script type='text/javascript' defer
@@ -3717,12 +3717,12 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 	<script type='text/javascript' defer src='{{asset('dukafy/wp-content/themes/qik/assets/js/loader73af.js?ver=1594802937')}}'></script>
 	<script type='text/javascript'>
 		/* <![CDATA[ */
-		var radiantthemes_loadmore_params = { "ajaxurl": "http:\/\/adshapedigital.com\/wp-admin\/admin-ajax.php", "posts": "{\"error\":\"\",\"m\":\"\",\"p\":\"4076\",\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"name\":\"\",\"pagename\":\"\",\"page_id\":\"4076\",\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"category_name\":\"\",\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":12,\"nopaging\":false,\"comments_per_page\":\"20\",\"no_found_rows\":false,\"order\":\"DESC\"}", "current_page": "1", "max_page": "0" };
+		var radiantthemes_loadmore_params = { "ajaxurl": "https:\/\/adshapedigital.com\/wp-admin\/admin-ajax.php", "posts": "{\"error\":\"\",\"m\":\"\",\"p\":\"4076\",\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"name\":\"\",\"pagename\":\"\",\"page_id\":\"4076\",\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"category_name\":\"\",\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":12,\"nopaging\":false,\"comments_per_page\":\"20\",\"no_found_rows\":false,\"order\":\"DESC\"}", "current_page": "1", "max_page": "0" };
 /* ]]> */
 	</script>
 	<script type='text/javascript' defer
 		src='{{asset('dukafy/wp-content/themes/qik-child/assets/js/radiantthemes-loadmore73af.html?ver=1594802937')}}'></script>
-	<script type='text/javascript' src='http://use.typekit.net/bks4zfl.js?ver=1.0'></script>
+	<script type='text/javascript' src='https://use.typekit.net/bks4zfl.js?ver=1.0'></script>
 	<script type='text/javascript'>
 		try { Typekit.load({ async: true }); } catch (e) { }
 	</script>
@@ -3753,7 +3753,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 	<script type='text/javascript' defer
 		src='{{asset('dukafy/wp-content/plugins/elementor/assets/lib/share-link/share-link.mincaa5.js?ver=2.9.13')}}'></script>
 	<script type='text/javascript'>
-		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "downloadImage": "Download image" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "version": "2.9.13", "urls": { "assets": "http:\/\/adshapedigital.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "general": { "elementor_global_image_lightbox": "yes", "elementor_lightbox_enable_counter": "yes", "elementor_lightbox_enable_fullscreen": "yes", "elementor_lightbox_enable_zoom": "yes", "elementor_lightbox_enable_share": "yes", "elementor_lightbox_title_src": "title", "elementor_lightbox_description_src": "description" }, "editorPreferences": [] }, "post": { "id": 4076, "title": "Dukafy%20%E2%80%93%20Build%20Your%20Online%20Shop%20in%20Minutes", "excerpt": "", "featuredImage": false } };
+		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "downloadImage": "Download image" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "version": "2.9.13", "urls": { "assets": "https:\/\/adshapedigital.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "general": { "elementor_global_image_lightbox": "yes", "elementor_lightbox_enable_counter": "yes", "elementor_lightbox_enable_fullscreen": "yes", "elementor_lightbox_enable_zoom": "yes", "elementor_lightbox_enable_share": "yes", "elementor_lightbox_title_src": "title", "elementor_lightbox_description_src": "description" }, "editorPreferences": [] }, "post": { "id": 4076, "title": "Dukafy%20%E2%80%93%20Build%20Your%20Online%20Shop%20in%20Minutes", "excerpt": "", "featuredImage": false } };
 	</script>
 	<script type='text/javascript' defer
 		src='{{asset('dukafy/wp-content/plugins/elementor/assets/js/frontend.mincaa5.js?ver=2.9.13')}}'></script>
