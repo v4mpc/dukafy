@@ -91,7 +91,7 @@
 
 
   <!-- Rights -->
-  <div class="rights">
+  <div class="rights" style='{{$settings->id==27?"color:#5f3394;":""}}'>
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
