@@ -534,6 +534,15 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 			background-size: cover;
 			background-image: url('{{asset('dukafy/wp-content/themes/saasfy/assets/images/Coming-Soon-Style-Three-Background-Image.html')}}');
 		}
+
+	
+	.left-margin{
+		margin-left: 8px;
+	}
+
+	.font-size{
+		font-size: 30px!important;
+	}
 	</style>
 </head>
 
@@ -616,10 +625,10 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																				
 																			</li>
 																		
-																			<li id="menu-item-33144"
+																			{{-- <li id="menu-item-33144"
 																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33144">
 																				<a href="#"
-																					data-description="">About Us</a></li>
+																					data-description="">About Us</a></li> --}}
 																			
 																			<li id="menu-item-29415"
 																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29415">
@@ -645,8 +654,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 														<div class="elementor-widget-container">
 															<div class="radiantthemes-custom-button element-one hover-style-five  "
 																data-button-direction="right"
-																data-button-fullwidth="false"><a
-																	class="radiantthemes-custom-button-main" href="#"
+																data-button-fullwidth="false"><a style="background-color: #FF6064"
 																	target="_blank" rel="nofollow">
 																	<div class="placeholder">Sign Up</div>
 																</a></div>
@@ -1206,10 +1214,10 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 														<div class="elementor-widget-container">
 															<div class="radiantthemes-custom-button element-one hover-style-five  "
 																data-button-direction="right"
-																data-button-fullwidth="false"><a
+																data-button-fullwidth="false"><a style="background-color: #FF6064; border-color:#FF6064;"
 																	class="radiantthemes-custom-button-main" href="#"
 																	target="_blank" rel="nofollow">
-																	<div class="placeholder">Sign Up</div>
+																	<div class="placeholder" >Sign Up</div>
 																</a></div>
 														</div>
 													</div>
@@ -1285,7 +1293,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																				<div class="elementor-widget-container">
 																					<div class="radiantthemes-custom-button element-one hover-style-five  "
 																						data-button-direction="left"
-																						data-button-fullwidth="false"><a
+																						data-button-fullwidth="false"><a style="background-color: #FF6064; border-color:#FF6064;"
 																							class="radiantthemes-custom-button-main"
 																							href="#" target="_blank"
 																							rel="nofollow">
@@ -1297,31 +1305,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																		</div>
 																	</div>
 																</div>
-																<div class="elementor-element elementor-element-4d10f3b elementor-column elementor-col-50 elementor-inner-column"
-																	data-id="4d10f3b" data-element_type="column">
-																	<div
-																		class="elementor-column-wrap  elementor-element-populated">
-																		<div class="elementor-widget-wrap">
-																			<div class="elementor-element elementor-element-e78a7f0 home-eight-watch-btn elementor-invisible elementor-widget elementor-widget-radiant-custom-button"
-																				data-id="e78a7f0"
-																				data-element_type="widget"
-																				data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:800}"
-																				data-widget_type="radiant-custom-button.default">
-																				<div class="elementor-widget-container">
-																					<div class="radiantthemes-custom-button element-one hover-style-five  "
-																						data-button-direction="left"
-																						data-button-fullwidth="false"><a
-																							class="radiantthemes-custom-button-main"
-																							href="#" target="_blank"
-																							rel="nofollow">
-																							<div class="placeholder">
-																								Watch Demo</div>
-																						</a></div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
+																
 															</div>
 														</div>
 													</section>
@@ -1429,7 +1413,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																data-button-icon-position=""><a
 																	class="radiantthemes-custom-button-main" href="#"
 																	target="_blank" rel="nofollow">
-																	<div class="placeholder">Discover More</div>
+																	<div class="placeholder">Sign Up</div>
 																</a></div>
 														</div>
 													</div>
@@ -1475,8 +1459,8 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																		</div>
 																	</div>
 																</div>
-																<div class="elementor-element elementor-element-782b59f elementor-column elementor-col-50 elementor-inner-column"
-																	data-id="782b59f" data-element_type="column">
+																<div class="elementor-element left-margin elementor-element-782b59f elementor-column elementor-col-50 elementor-inner-column"
+																	data-id="782b59f" data-element_type="column" >
 																	<div
 																		class="elementor-column-wrap  elementor-element-populated">
 																		<div class="elementor-widget-wrap">
@@ -1570,7 +1554,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																		</div>
 																	</div>
 																</div>
-																<div class="elementor-element elementor-element-87d652c elementor-column elementor-col-50 elementor-inner-column"
+																<div class="elementor-element elementor-element-87d652c left-margin elementor-column elementor-col-50 elementor-inner-column"
 																	data-id="87d652c" data-element_type="column">
 																	<div
 																		class="elementor-column-wrap  elementor-element-populated">
@@ -1664,7 +1648,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																		</div>
 																	</div>
 																</div>
-																<div class="elementor-element elementor-element-00bcc51 elementor-column elementor-col-50 elementor-inner-column"
+																<div class="elementor-element left-margin elementor-element-00bcc51 elementor-column elementor-col-50 elementor-inner-column"
 																	data-id="00bcc51" data-element_type="column">
 																	<div
 																		class="elementor-column-wrap  elementor-element-populated">
@@ -2015,7 +1999,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																data-button-icon-position=""><a
 																	class="radiantthemes-custom-button-main" href="#"
 																	target="_blank" rel="nofollow">
-																	<div class="placeholder">Discover More</div>
+																	<div class="placeholder">Sign Up</div>
 																</a></div>
 														</div>
 													</div>
@@ -2297,10 +2281,8 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 														data-widget_type="text-editor.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-text-editor elementor-clearfix">
-																<p>Dukafy gives you the tools to build your own brand,
-																	why rely on other platforms when you can build your
-																	own website in minutes with powerful and a simple to
-																	user friendly interface.</p>
+																<p>Dukafy gives you the tools to build your own brand, why rely on other platforms when you can build your own website in minutes with
+																	powerful and user friendly features.</p>
 															</div>
 														</div>
 													</div>
@@ -2342,83 +2324,37 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																				<div class="elementor-widget-container">
 																					<h3
 																						class="elementor-heading-title elementor-size-default">
-																						Exclusively for Retail Chains
+																						Choose from 3 design themes
 																					</h3>
 																				</div>
 																			</div>
-																			<div class="elementor-element elementor-element-c801e47 elementor-widget elementor-widget-text-editor"
-																				data-id="c801e47"
-																				data-element_type="widget"
-																				data-settings="{&quot;_animation_tablet&quot;:&quot;fadeInUp&quot;}"
-																				data-widget_type="text-editor.default">
-																				<div class="elementor-widget-container">
-																					<div
-																						class="elementor-text-editor elementor-clearfix">
-																						<p>Offer inventory, sales, order
-																							booking &amp; other
-																							integrated solutions via our
-																							POS.</p>
-																					</div>
-																				</div>
-																			</div>
+																		
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</section>
+
 													<section
-														class="elementor-element elementor-element-cfa147f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
-														data-id="cfa147f" data-element_type="section">
-														<div class="elementor-container elementor-column-gap-default">
-															<div class="elementor-row">
-																<div class="elementor-element elementor-element-bd063f7 elementor-column elementor-col-50 elementor-inner-column"
-																	data-id="bd063f7" data-element_type="column">
-																	<div
-																		class="elementor-column-wrap  elementor-element-populated">
-																		<div class="elementor-widget-wrap">
-																			<div class="elementor-element elementor-element-dd264d5 elementor-view-default elementor-widget elementor-widget-icon"
-																				data-id="dd264d5"
-																				data-element_type="widget"
-																				data-widget_type="icon.default">
-																				<div class="elementor-widget-container">
-																					<div class="elementor-icon-wrapper">
-																						<div class="elementor-icon">
-																							<i aria-hidden="true"
-																								class="fas fa-check"></i>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="elementor-element elementor-element-ce77db5 elementor-column elementor-col-50 elementor-inner-column"
-																	data-id="ce77db5" data-element_type="column">
-																	<div
-																		class="elementor-column-wrap  elementor-element-populated">
-																		<div class="elementor-widget-wrap">
-																			<div class="elementor-element elementor-element-8f47173 elementor-widget elementor-widget-heading"
-																				data-id="8f47173"
-																				data-element_type="widget"
-																				data-widget_type="heading.default">
-																				<div class="elementor-widget-container">
-																					<h3
-																						class="elementor-heading-title elementor-size-default">
-																						Enhanced Service Experience</h3>
-																				</div>
-																			</div>
-																			<div class="elementor-element elementor-element-413ca80 elementor-widget elementor-widget-text-editor"
-																				data-id="413ca80"
-																				data-element_type="widget"
-																				data-settings="{&quot;_animation_tablet&quot;:&quot;fadeInUp&quot;}"
-																				data-widget_type="text-editor.default">
-																				<div class="elementor-widget-container">
-																					<div
-																						class="elementor-text-editor elementor-clearfix">
-																						<p>Get an impressive feel by
-																							using our Cloud-based POS
-																							systems.</p>
+													class="elementor-element elementor-element-76a3b80 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="76a3b80" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-40445f3 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="40445f3" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-db9debd elementor-view-default elementor-widget elementor-widget-icon"
+																			data-id="db9debd"
+																			data-element_type="widget"
+																			data-widget_type="icon.default">
+																			<div class="elementor-widget-container">
+																				<div class="elementor-icon-wrapper">
+																					<div class="elementor-icon">
+																						<i aria-hidden="true"
+																							class="fas fa-check"></i>
 																					</div>
 																				</div>
 																			</div>
@@ -2426,8 +2362,232 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																	</div>
 																</div>
 															</div>
+															<div class="elementor-element elementor-element-0f9c0b2 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="0f9c0b2" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-fe72125 elementor-widget elementor-widget-heading"
+																			data-id="fe72125"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<h3
+																					class="elementor-heading-title elementor-size-default">
+																					See your orders in one dashboard
+																				</h3>
+																			</div>
+																		</div>
+																	
+																	</div>
+																</div>
+															</div>
 														</div>
-													</section>
+													</div>
+												</section>
+
+												<section
+													class="elementor-element elementor-element-76a3b80 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="76a3b80" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-40445f3 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="40445f3" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-db9debd elementor-view-default elementor-widget elementor-widget-icon"
+																			data-id="db9debd"
+																			data-element_type="widget"
+																			data-widget_type="icon.default">
+																			<div class="elementor-widget-container">
+																				<div class="elementor-icon-wrapper">
+																					<div class="elementor-icon">
+																						<i aria-hidden="true"
+																							class="fas fa-check"></i>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="elementor-element elementor-element-0f9c0b2 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="0f9c0b2" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-fe72125 elementor-widget elementor-widget-heading"
+																			data-id="fe72125"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<h3
+																					class="elementor-heading-title elementor-size-default">
+																					Easily add or remove products
+																				</h3>
+																			</div>
+																		</div>
+																	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+
+												<section
+													class="elementor-element elementor-element-76a3b80 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="76a3b80" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-40445f3 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="40445f3" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-db9debd elementor-view-default elementor-widget elementor-widget-icon"
+																			data-id="db9debd"
+																			data-element_type="widget"
+																			data-widget_type="icon.default">
+																			<div class="elementor-widget-container">
+																				<div class="elementor-icon-wrapper">
+																					<div class="elementor-icon">
+																						<i aria-hidden="true"
+																							class="fas fa-check"></i>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="elementor-element elementor-element-0f9c0b2 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="0f9c0b2" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-fe72125 elementor-widget elementor-widget-heading"
+																			data-id="fe72125"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<h3
+																					class="elementor-heading-title elementor-size-default">
+																					Feature products or put them on sale
+																				</h3>
+																			</div>
+																		</div>
+																	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+
+												<section
+													class="elementor-element elementor-element-76a3b80 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="76a3b80" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-40445f3 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="40445f3" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-db9debd elementor-view-default elementor-widget elementor-widget-icon"
+																			data-id="db9debd"
+																			data-element_type="widget"
+																			data-widget_type="icon.default">
+																			<div class="elementor-widget-container">
+																				<div class="elementor-icon-wrapper">
+																					<div class="elementor-icon">
+																						<i aria-hidden="true"
+																							class="fas fa-check"></i>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="elementor-element elementor-element-0f9c0b2 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="0f9c0b2" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-fe72125 elementor-widget elementor-widget-heading"
+																			data-id="fe72125"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<h3
+																					class="elementor-heading-title elementor-size-default">
+																					Easily make certain products out of stock
+																				</h3>
+																			</div>
+																		</div>
+																	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+
+												<section
+													class="elementor-element elementor-element-76a3b80 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="76a3b80" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-40445f3 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="40445f3" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-db9debd elementor-view-default elementor-widget elementor-widget-icon"
+																			data-id="db9debd"
+																			data-element_type="widget"
+																			data-widget_type="icon.default">
+																			<div class="elementor-widget-container">
+																				<div class="elementor-icon-wrapper">
+																					<div class="elementor-icon">
+																						<i aria-hidden="true"
+																							class="fas fa-check"></i>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="elementor-element elementor-element-0f9c0b2 elementor-column elementor-col-50 elementor-inner-column"
+																data-id="0f9c0b2" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-fe72125 elementor-widget elementor-widget-heading"
+																			data-id="fe72125"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<h3
+																					class="elementor-heading-title elementor-size-default">
+																					Track your sales with detailed analytics
+																				</h3>
+																			</div>
+																		</div>
+																	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+
+												
+												
 												</div>
 											</div>
 										</div>
@@ -2560,10 +2720,10 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																			class="elementor-widget-container">
 																																			<div
 																																				class="rt-pricing-table element-nine ">
-																																				<h3
-																																					class="rt-pricing-title">
+																																				<h2
+																																					class="rt-pricing-title font-size">
 																																					Basic
-																																				</h3>
+																																				</h2>
 																																				<div
 																																					class="rt-list">
 																																					<ul>
@@ -2583,15 +2743,28 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																							<i class="fas fa-check"
 																																								aria-hidden="true"></i>Free Hosting
 																																						</li>
+
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Mobile App
+																																								aria-hidden="true"></i>Free SSL Certification
+																																						</li>
+																																						<li
+																																							class="support-list-icon">
+																																							<i class="fas fa-check"
+																																								aria-hidden="true"></i>Mobile App Uploads
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
 																																								aria-hidden="true"></i>Different Templates
+																																							
+																																						</li>
+
+																																						<li
+																																							class="support-list-icon">
+																																							<i class="fas fa-check"
+																																								aria-hidden="true"></i>Reports
 																																							
 																																						</li>
 																																					</ul>
@@ -2641,7 +2814,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																					</p>
 																																				</div>
 																																				<h3
-																																					class="rt-pricing-title">
+																																					class="rt-pricing-title font-size">
 																																					Value
 																																				</h3>
 																																				<div
@@ -2650,7 +2823,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>350 Products
+																																								aria-hidden="true"></i>100 Products
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
@@ -2663,15 +2836,28 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																							<i class="fas fa-check"
 																																								aria-hidden="true"></i>Free Hosting
 																																						</li>
+
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Mobile App
+																																								aria-hidden="true"></i>Free SSL Certification
+																																						</li>
+																																						<li
+																																							class="support-list-icon">
+																																							<i class="fas fa-check"
+																																								aria-hidden="true"></i>Mobile App Uploads
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
 																																								aria-hidden="true"></i>Different Templates
+																																							
+																																						</li>
+
+																																						<li
+																																							class="support-list-icon">
+																																							<i class="fas fa-check"
+																																								aria-hidden="true"></i>Reports
 																																							
 																																						</li>
 																																					</ul>
@@ -2714,7 +2900,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																			<div
 																																				class="rt-pricing-table element-nine ">
 																																				<h3
-																																					class="rt-pricing-title">
+																																					class="rt-pricing-title font-size">
 																																					Advanced
 																																				</h3>
 																																				<div
@@ -2724,7 +2910,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>950 Products
+																																								aria-hidden="true"></i>100 Products
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
@@ -2737,15 +2923,28 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																																							<i class="fas fa-check"
 																																								aria-hidden="true"></i>Free Hosting
 																																						</li>
+
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
-																																								aria-hidden="true"></i>Mobile App
+																																								aria-hidden="true"></i>Free SSL Certification
+																																						</li>
+																																						<li
+																																							class="support-list-icon">
+																																							<i class="fas fa-check"
+																																								aria-hidden="true"></i>Mobile App Uploads
 																																						</li>
 																																						<li
 																																							class="support-list-icon">
 																																							<i class="fas fa-check"
 																																								aria-hidden="true"></i>Different Templates
+																																							
+																																						</li>
+
+																																						<li
+																																							class="support-list-icon">
+																																							<i class="fas fa-check"
+																																								aria-hidden="true"></i>Reports
 																																							
 																																						</li>
 																																					</ul>
@@ -2786,9 +2985,10 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																							<div class="elementor-widget-container">
 																								<div
 																									class="elementor-text-editor elementor-clearfix">
-																									<p>* Minimum billing is 3 months for a package selected.</p>
-																									<p>* Pay for 12 month and get 2 month free.</p>
-																									<p>* For bigger plan get in touch with us.</p>
+																									<p>Note: Minimum billing is 3 months for any package selected | Pay for 12 months and get 2 months absolutely free | Looking to add more
+																										products? Email us on info@adshapemedia.com to discuss your requirements.</p>
+																									{{-- <p>* Pay for 12 month and get 2 month free.</p>
+																									<p>* For bigger plan get in touch with us.</p> --}}
 																								</div>
 																							</div>
 																						</div>
@@ -2861,11 +3061,11 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 		</div>
 	</div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
-<div class="form-row form-group-select-contact"><select name="menu-978" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Select">--Select Package--</option><option value="Designer">Basic</option><option value="Animator">Value</option><option value="Developer">Advanced</option></select></div>
+<div class="form-row form-group-select-contact"><select name="menu-978" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Select">--Select Package--</option><option value="Designer">Basic (25,000 Per Month)</option><option value="Animator">Value (45,000 Per Month)</option><option value="Developer">Advanced (95,000 Per Month)</option></select></div>
 </div>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom">
-	<div class="form-row form-group-select-contact"><select name="menu-978" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Select">--Select Subscribtion--</option><option value="Designer">Quarterly</option><option value="Animator">Animator</option><option value="Developer">Annually</option></select></div>
+	<div class="form-row form-group-select-contact"><select name="menu-978" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Select">--Select Subscribtion--</option><option value="Designer">Quarterly (Billed for 3 months)</option><option value="Developer">Annually (Get 2 Months FREE)</option></select></div>
 	</div>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
@@ -3101,20 +3301,17 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																<ul id="menu-home" class="menu">
 																	<li id="menu-item-23748"
 																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4076 current_page_item menu-item-23748">
-																		<a href="index.html" aria-current="page">POS
-																			Software</a></li>
+																		<a href="index.html" aria-current="page">Home</a></li>
 																	<li id="menu-item-22816"
 																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22816">
-																		<a href="app-development/index.html">App
-																			Development</a></li>
+																		<a href="app-development/index.html">Features</a></li>
 																	<li id="menu-item-22817"
 																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22817">
-																		<a href="helpdesk-software/index.html">Helpdesk
-																			Software</a></li>
+																		<a href="helpdesk-software/index.html">Pricing
+																			</a></li>
 																	<li id="menu-item-22818"
 																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22818">
-																		<a href="online-billing/index.html">Online
-																			Billing</a></li>
+																		<a href="online-billing/index.html">Contact Us</a></li>
 																</ul>
 															</div>
 														</div>
@@ -3151,54 +3348,9 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 																				<div class="elementor-widget-container">
 																					<p
 																						class="elementor-heading-title elementor-size-default">
-																						PO Box 16122 Collins
-																						Street Victoria
-																						8007 Australia</p>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</section>
-													<section
-														class="elementor-element elementor-element-7cd4ad4f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
-														data-id="7cd4ad4f" data-element_type="section">
-														<div class="elementor-container elementor-column-gap-default">
-															<div class="elementor-row">
-																<div class="elementor-element elementor-element-8bc3e25 elementor-column elementor-col-50 elementor-inner-column"
-																	data-id="8bc3e25" data-element_type="column">
-																	<div
-																		class="elementor-column-wrap  elementor-element-populated">
-																		<div class="elementor-widget-wrap">
-																			<div class="elementor-element elementor-element-1a2f651f elementor-widget elementor-widget-heading"
-																				data-id="1a2f651f"
-																				data-element_type="widget"
-																				data-widget_type="heading.default">
-																				<div class="elementor-widget-container">
-																					<p
-																						class="elementor-heading-title elementor-size-default">
-																						Phone :</p>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="elementor-element elementor-element-ceee500 elementor-column elementor-col-50 elementor-inner-column"
-																	data-id="ceee500" data-element_type="column">
-																	<div
-																		class="elementor-column-wrap  elementor-element-populated">
-																		<div class="elementor-widget-wrap">
-																			<div class="elementor-element elementor-element-7d5e98f elementor-widget elementor-widget-heading"
-																				data-id="7d5e98f"
-																				data-element_type="widget"
-																				data-widget_type="heading.default">
-																				<div class="elementor-widget-container">
-																					<p
-																						class="elementor-heading-title elementor-size-default">
-																						<a
-																							href="tel:888-123-4567">888-123-4567</a>
+																						1M, Meharz Tower,
+																						
+																					
 																					</p>
 																				</div>
 																			</div>
@@ -3208,34 +3360,126 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 															</div>
 														</div>
 													</section>
+
 													<section
-														class="elementor-element elementor-element-6c8ba7d2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
-														data-id="6c8ba7d2" data-element_type="section">
-														<div class="elementor-container elementor-column-gap-default">
-															<div class="elementor-row">
-																<div class="elementor-element elementor-element-79e6035c elementor-column elementor-col-100 elementor-inner-column"
-																	data-id="79e6035c" data-element_type="column">
-																	<div
-																		class="elementor-column-wrap  elementor-element-populated">
-																		<div class="elementor-widget-wrap">
-																			<div class="elementor-element elementor-element-1d40974d info-underlined elementor-widget elementor-widget-heading"
-																				data-id="1d40974d"
-																				data-element_type="widget"
-																				data-widget_type="heading.default">
-																				<div class="elementor-widget-container">
-																					<h3
-																						class="elementor-heading-title elementor-size-default">
-																						<a
-																							href="mailto:info@example.com">info@example.com</a>
-																					</h3>
-																				</div>
+													class="elementor-element elementor-element-e74efd6 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="e74efd6" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-f99b1a6 elementor-column elementor-col-100 elementor-inner-column"
+																data-id="f99b1a6" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-53aca428 elementor-widget elementor-widget-heading"
+																			data-id="53aca428"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<p
+																					class="elementor-heading-title elementor-size-default">
+																					Morogoro Road,
+																					
+																				
+																				</p>
 																			</div>
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</section>
+													</div>
+												</section>
+												<section
+													class="elementor-element elementor-element-e74efd6 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="e74efd6" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-f99b1a6 elementor-column elementor-col-100 elementor-inner-column"
+																data-id="f99b1a6" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-53aca428 elementor-widget elementor-widget-heading"
+																			data-id="53aca428"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<p
+																					class="elementor-heading-title elementor-size-default">
+																					Dar es salaam Tanzania.
+																					
+																				
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+												<section
+													class="elementor-element elementor-element-e74efd6 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+													data-id="e74efd6" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-row">
+															<div class="elementor-element elementor-element-f99b1a6 elementor-column elementor-col-100 elementor-inner-column"
+																data-id="f99b1a6" data-element_type="column">
+																<div
+																	class="elementor-column-wrap  elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-53aca428 elementor-widget elementor-widget-heading"
+																			data-id="53aca428"
+																			data-element_type="widget"
+																			data-widget_type="heading.default">
+																			<div class="elementor-widget-container">
+																				<p
+																					class="elementor-heading-title elementor-size-default">
+																					Phone: +255 784 840 420,
+																					
+																				
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+
+												<section
+												class="elementor-element elementor-element-e74efd6 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+												data-id="e74efd6" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-element elementor-element-f99b1a6 elementor-column elementor-col-100 elementor-inner-column"
+															data-id="f99b1a6" data-element_type="column">
+															<div
+																class="elementor-column-wrap  elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-53aca428 elementor-widget elementor-widget-heading"
+																		data-id="53aca428"
+																		data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<p
+																				class="elementor-heading-title elementor-size-default">
+																				Email: info(at)adshapemedia.com
+																				
+																			
+																			</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+													
+													
 												</div>
 											</div>
 										</div>
@@ -3276,7 +3520,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 												</div>
 											</div>
 										</div>
-										<div class="elementor-element elementor-element-0e1cd8d elementor-column elementor-col-25 elementor-top-column"
+										{{-- <div class="elementor-element elementor-element-0e1cd8d elementor-column elementor-col-25 elementor-top-column"
 											data-id="0e1cd8d" data-element_type="column">
 											<div class="elementor-column-wrap  elementor-element-populated">
 												<div class="elementor-widget-wrap">
@@ -3344,7 +3588,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 													</div>
 												</div>
 											</div>
-										</div>
+										</div> --}}
 									</div>
 								</div>
 							</section>
@@ -3380,7 +3624,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 								data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
 								<div class="elementor-container elementor-column-gap-default">
 									<div class="elementor-row">
-										<div class="elementor-element elementor-element-5a50d48 elementor-column elementor-col-25 elementor-top-column"
+										{{-- <div class="elementor-element elementor-element-5a50d48 elementor-column elementor-col-25 elementor-top-column"
 											data-id="5a50d48" data-element_type="column">
 											<div class="elementor-column-wrap  elementor-element-populated">
 												<div class="elementor-widget-wrap">
@@ -3395,7 +3639,7 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 													</div>
 												</div>
 											</div>
-										</div>
+										</div> --}}
 										<div class="elementor-element elementor-element-4800ba31 elementor-column elementor-col-25 elementor-top-column"
 											data-id="4800ba31" data-element_type="column">
 											<div class="elementor-column-wrap">
@@ -3411,8 +3655,8 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 														data-id="ca789d1" data-element_type="widget"
 														data-widget_type="heading.default">
 														<div class="elementor-widget-container">
-															<p class="elementor-heading-title elementor-size-default">
-																Copyright © 2020 Qik. All rights reserved.</p>
+															<p class="elementor-heading-title elementor-size-default" style="font-size: 11px;">
+															A Product of Adshape Media. All Rights Reserved © {{date('Y')}}</p>
 														</div>
 													</div>
 												</div>
@@ -3428,21 +3672,14 @@ href='{{asset('dukafy/wp-content/plugins/contact-form-7/includes/css/styles38c6.
 														<div class="elementor-widget-container">
 															<div class="elementor-social-icons-wrapper">
 																<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-a78ebca"
-																	href="#" target="_blank">
+																	href="https://www.facebook.com/adshapemedia/" target="_blank">
 																	<span
 																		class="elementor-screen-only">Facebook-f</span>
 																	<i class="fab fa-facebook-f"></i> </a>
-																<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-d0db8a0"
-																	href="#" target="_blank">
-																	<span class="elementor-screen-only">Twitter</span>
-																	<i class="fab fa-twitter"></i> </a>
-																<a class="elementor-icon elementor-social-icon elementor-social-icon-google-plus-g elementor-repeater-item-31a9068"
-																	href="#" target="_blank">
-																	<span
-																		class="elementor-screen-only">Google-plus-g</span>
-																	<i class="fab fa-google-plus-g"></i> </a>
+															
+																
 																<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-bef9f8e"
-																	href="#" target="_blank">
+																	href="https://www.instagram.com/adshapemedia/" target="_blank">
 																	<span class="elementor-screen-only">Instagram</span>
 																	<i class="fab fa-instagram"></i> </a>
 															</div>
