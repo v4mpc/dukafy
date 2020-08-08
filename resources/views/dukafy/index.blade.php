@@ -4,7 +4,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
-	<title>Dukafy &#8211; Build Your Online Shop in Minutes</title>
+	<title>Dukafy &#8211; Buil Your Online Shop in Minutes</title>
 	<link rel='dns-prefetch' href='https://use.typekit.net/' />
 	<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
 	<link rel='dns-prefetch' href='https://s.w.org/' />
